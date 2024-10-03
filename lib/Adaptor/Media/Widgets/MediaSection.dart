@@ -7,6 +7,7 @@ Widget MediaSection({
   required BuildContext context,
   required int type,
   required String title,
+  bool isLarge = false,
   List<media>? mediaList,
   List<Widget>? customNullListIndicator,
 }) {
@@ -30,13 +31,18 @@ Widget MediaSection({
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    title,
-                    style: TextStyle(
-                      fontFamily: 'Poppins',
-                      color: theme.colorScheme.onSurface,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
+                  // Make the text take up available space
+                  Expanded(
+                    child: Text(
+                      title,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        fontFamily: 'Poppins',
+                        color: theme.colorScheme.onSurface,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600,
+                      ),
                     ),
                   ),
                   Transform(
@@ -74,6 +80,7 @@ Widget MediaSection({
               : MediaAdaptor(
                   type: type,
                   mediaList: mediaList,
+                  isLarge:isLarge ,
                   // Pass the callback here
                 ),
             ),
