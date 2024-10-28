@@ -169,11 +169,14 @@ class WatchPageViewModel extends GetxController {
       BuildContext context, Source source, media mediaData) async {
     var dialog = WrongTitleDialog(
         source: source,
-        mediaData: mediaData,
         selectedMedia: selectedMedia,
-        saveShowResponse: _saveShowResponse,
-        episodeList: episodeList,
-        getEpisode: _getEpisode);
+        onChanged: (m) {
+         selectedMedia.value = m;
+         _saveShowResponse(mediaData, m, source, selected: true);
+         _getEpisode(m, source);
+          episodeList.value = null;
+        }
+    );
 
     showCustomBottomDialog(context, dialog);
   }
