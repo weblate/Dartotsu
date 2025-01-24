@@ -272,7 +272,7 @@
   "@manhua": {},
   "home": "Tela Inicial",
   "@home": {},
-  "ln": "Light Novel",
+  "ln": "Novel de luz",
   "@ln": {},
   "volume": "{count, plural, =1 {Volume} other {Volumes}}",
   "@volume": {
@@ -525,5 +525,13 @@
   "totalChapters": "Capítulos",
   "@totalChapters": {},
   "simkl": "Simkl",
-  "@simkl": {}
+  "@simkl": {},
+  "selectMediaService": "Selecione o serviço de mídia",
+  "@selectMediaService": {},
+  "selectDirectory": "Selecione um diretório",
+  "@selectDirectory": {},
+  "customPath": "Caminho personalizado",
+  "@customPath": {},
+  "customPathDescription": "Defina um caminho personalizado para salvar arquivos\nImprensa longa para remover",
+  "@customPathDescription": {}
 }

@@ -147,7 +147,7 @@
   "@supportMaintainer": {},
   "theme": "الثيم",
   "@theme": {},
-  "allCaughtUpNew": "كل شيء عالق، ما هو جديد؟?",
+  "allCaughtUpNew": "مفيش حاجه هنا، ما الجديد ؟",
   "@allCaughtUpNew": {},
   "addToList": "الاضافة الي القائمة",
   "@addToList": {},
@@ -525,5 +525,13 @@
   "prequel": "السابق",
   "@prequel": {},
   "simkl": "Simkl",
-  "@simkl": {}
+  "@simkl": {},
+  "selectMediaService": "اختر مزود الوسائط",
+  "@selectMediaService": {},
+  "selectDirectory": "اختر مسار",
+  "@selectDirectory": {},
+  "customPath": "مسار التنزيل",
+  "@customPath": {},
+  "customPathDescription": "وضع مسار لتنزيل الملفات\nاضغط ضغطة طويلة لإزالته",
+  "@customPathDescription": {}
 }
