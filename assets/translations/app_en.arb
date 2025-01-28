@@ -8,9 +8,9 @@
   "mal": "MyAnimeList",
   "@mal": {},
   "kitsu": "Kitsu",
-
   "@kitsu": {},
   "simkl": "Simkl",
+  "@simkl": {},
   "discord": "Discord",
   "@discord": {},
   "login": "Login",
@@ -504,7 +504,7 @@
   "@collapseText": {},
   "comingSoon": "Coming SOON",
   "@comingSoon": {},
-  "description": "Synopsis",
+  "description": "Description",
   "@description": {},
   "endDate": "End Date",
   "@endDate": {},
@@ -553,13 +553,19 @@
   "totalChapters": "Chapters",
   "@totalChapters": {},
   "selectMediaService": "Select Media Service",
-
+  "@selectMediaService": {},
   "customPath": "Custom Path",
+  "@customPath": {},
   "customPathDescription": "Set a custom path to save files\nLong press to remove",
+  "@customPathDescription": {},
   "selectDirectory": "Select a directory",
+  "@selectDirectory": {},
   "logFile": "Log File",
+  "@logFile": {},
   "logFileDescription": "Share the log file",
-
+  "@logFileDescription": {},
   "colorPickerDefault": "Default",
-  "colorPickerCustom": "Custom"
+  "@colorPickerDefault": {},
+  "colorPickerCustom": "Custom",
+  "@colorPickerCustom": {}
 }

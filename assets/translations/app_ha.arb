@@ -97,7 +97,7 @@
   "@manga": {},
   "mangaDescription": "Tsara da keɓance ƙwarewar manga naka",
   "@mangaDescription": {},
-  "materialYou": "Kayan ku",
+  "materialYou": "Material You",
   "@materialYou": {},
   "materialYouDescription": "Yi amfani da launin bango ɗinka",
   "@materialYouDescription": {},
@@ -145,7 +145,7 @@
   "@speedDescription": {},
   "subtitles": "Subtiṭa",
   "@subtitles": {},
-  "subtitlePreview": "Nuna Subtiṭa",
+  "subtitlePreview": "Duban Subtiṭa",
   "@subtitlePreview": {},
   "addToList": "Ƙara zuwa Jerin",
   "@addToList": {},
@@ -237,7 +237,7 @@
   "@characters": {},
   "collapseText": "nuni ƙasa",
   "@collapseText": {},
-  "description": "Takaitaccen Bayani",
+  "description": "Bayanin",
   "@description": {},
   "endDate": "Ranar ƙarshe",
   "@endDate": {},
@@ -400,7 +400,7 @@
       }
     }
   },
-  "mostFavourite": "Mafi Mafi So {type}",
+  "mostFavourite": "Mafi So {type}",
   "@mostFavourite": {
     "placeholders": {
       "type": {
@@ -532,5 +532,21 @@
   "kitsu": "Kitsu",
   "@kitsu": {},
   "simkl": "Simkl",
-  "@simkl": {}
+  "@simkl": {},
+  "selectMediaService": "Zaɓi Sabis na Mai jarida",
+  "@selectMediaService": {},
+  "selectDirectory": "Zaɓi directory",
+  "@selectDirectory": {},
+  "customPath": "Hanyar Al'ada",
+  "@customPath": {},
+  "customPathDescription": "Saita hanya ta al'ada don adana fayiloli\nDogon danna don cirewa",
+  "@customPathDescription": {},
+  "colorPickerDefault": "Tsoho",
+  "@colorPickerDefault": {},
+  "logFileDescription": "Raba fayil ɗin log ɗin",
+  "@logFileDescription": {},
+  "logFile": "Fayil ɗin log",
+  "@logFile": {},
+  "colorPickerCustom": "Na musamman",
+  "@colorPickerCustom": {}
 }

@@ -1,5 +1,5 @@
 {
-  "appName": "Dantotsu",
+  "appName": "Dartotsu",
   "@appName": {},
   "notifications": "জাননীসমূহ",
   "@notifications": {},
@@ -57,7 +57,7 @@
   "@oledThemeVariant": {},
   "oledThemeVariantDescription": "ওএলইডি ম’ড সক্ৰিয় কৰক",
   "@oledThemeVariantDescription": {},
-  "materialYou": "মেটেৰিয়েল ইউ",
+  "materialYou": "Material You",
   "@materialYou": {},
   "materialYouDescription": "আপোনাৰ ৱ’লপেপাৰৰ ৰঙেৰে মিলে থকা থীম ব্যৱহাৰ কৰক",
   "@materialYouDescription": {},
@@ -328,7 +328,7 @@
   "@nextSeason": {},
   "previousSeason": "পূৰ্বৱৰ্তী সিজন",
   "@previousSeason": {},
-  "planned": "পরিকল্পিত {type}",
+  "planned": "পৰিকল্পিত {type}",
   "@planned": {
     "placeholders": {
       "type": {
@@ -525,12 +525,28 @@
   "@nameRomaji": {},
   "status": "স্থিতি",
   "@status": {},
-  "description": "সাৰাংশ",
+  "description": "বিৱৰণ",
   "@description": {},
   "author": "লেখক",
   "@author": {},
   "synopsis": "ছিনপচিছ",
   "@synopsis": {},
   "simkl": "Simkl",
-  "@simkl": {}
+  "@simkl": {},
+  "selectMediaService": "মিডিয়া সেৱা নিৰ্ব্বাচন কৰক",
+  "@selectMediaService": {},
+  "selectDirectory": "এটা ডাইৰেকটৰি নিৰ্ব্বাচন কৰক",
+  "@selectDirectory": {},
+  "customPath": "কাষ্টম পথ",
+  "@customPath": {},
+  "customPathDescription": "ফাইলসমূহ সংৰক্ষণ কৰিবলে এটা স্বনিৰ্বাচিত পথ নিৰ্ধাৰণ কৰক\nআঁতৰাবলৈ দীঘলীয়াকৈ টিপিব",
+  "@customPathDescription": {},
+  "colorPickerDefault": "ডিফল্ট",
+  "@colorPickerDefault": {},
+  "logFileDescription": "লগ ফাইলটো অংশীদাৰী কৰক",
+  "@logFileDescription": {},
+  "logFile": "লগ ফাইল",
+  "@logFile": {},
+  "colorPickerCustom": "কাষ্টম",
+  "@colorPickerCustom": {}
 }

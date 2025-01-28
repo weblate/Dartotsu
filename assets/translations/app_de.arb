@@ -302,7 +302,7 @@
   "@recommendationsEmptyMessage": {},
   "comingSoon": "Demnächst",
   "@comingSoon": {},
-  "description": "Zusammenfassung",
+  "description": "Beschreibung",
   "@description": {},
   "endDate": "Enddatum",
   "@endDate": {},
@@ -532,5 +532,21 @@
     }
   },
   "simkl": "Simkl",
-  "@simkl": {}
+  "@simkl": {},
+  "selectMediaService": "Mediendienst auswählen",
+  "@selectMediaService": {},
+  "selectDirectory": "Wählen Sie ein Verzeichnis",
+  "@selectDirectory": {},
+  "customPath": "In den Warenkorb",
+  "@customPath": {},
+  "customPathDescription": "Setzen Sie einen benutzerdefinierten Pfad, um Dateien zu speichern\nLange Presse zu entfernen",
+  "@customPathDescription": {},
+  "colorPickerDefault": "Fehler",
+  "@colorPickerDefault": {},
+  "logFileDescription": "Aktualisieren der Protokolldatei",
+  "@logFileDescription": {},
+  "logFile": "Die Datei",
+  "@logFile": {},
+  "colorPickerCustom": "Zoll",
+  "@colorPickerCustom": {}
 }

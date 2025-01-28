@@ -47,7 +47,7 @@
   "@cancel": {},
   "colorPicker": "Выбор цвета",
   "@colorPicker": {},
-  "colorPickerDescription": "Выберите цвет",
+  "colorPickerDescription": "Выберите любой цвет",
   "@colorPickerDescription": {},
   "commonDescription": "Доступ к общим настройкам для удобного использования приложения",
   "@commonDescription": {},
@@ -147,7 +147,7 @@
   "@subtitles": {},
   "yes": "Да",
   "@yes": {},
-  "trending": "{type}",
+  "trending": "Тенденция {type}",
   "@trending": {
     "placeholders": {
       "type": {
@@ -254,7 +254,7 @@
   "@chapterRead": {},
   "gridView": "Вид сетки",
   "@gridView": {},
-  "browse": "{type}",
+  "browse": "Просмотр {type}",
   "@browse": {
     "placeholders": {
       "type": {
@@ -268,7 +268,7 @@
   },
   "comingSoon": "Иду",
   "@comingSoon": {},
-  "episode": "{count, plural, =1 {Episode} other {Episodes}}",
+  "episode": "{count, plural, =1 {Эпизод} other {Эпизоды}}",
   "@episode": {
     "description": "count > 1 will use plural form",
     "placeholders": {
@@ -365,7 +365,7 @@
   "@averageDuration": {},
   "author": "Автор",
   "@author": {},
-  "description": "Краткое содержание",
+  "description": "Описание",
   "@description": {},
   "name": "Имя",
   "@name": {},
@@ -389,7 +389,7 @@
   "@manhwa": {},
   "kitsu": "Kitsu",
   "@kitsu": {},
-  "ln": "Light Novel",
+  "ln": "Ранобэ",
   "@ln": {},
   "novel": "Новинка",
   "@novel": {},
@@ -407,7 +407,7 @@
   "@thisSeason": {},
   "listView": "Вид списка",
   "@listView": {},
-  "onHold": "{type}",
+  "onHold": "На удержании {type}",
   "@onHold": {
     "placeholders": {
       "type": {
@@ -532,5 +532,21 @@
   "droppedAnime": "Сброшенное аниме",
   "@droppedAnime": {},
   "simkl": "Simkl",
-  "@simkl": {}
+  "@simkl": {},
+  "selectMediaService": "Выберите медиа-сервис",
+  "@selectMediaService": {},
+  "selectDirectory": "Выберите каталог",
+  "@selectDirectory": {},
+  "customPath": "Пользовательский путь",
+  "@customPath": {},
+  "customPathDescription": "Настройка пользовательского пути для сохранения файлов\nДлинная пресса для удаления",
+  "@customPathDescription": {},
+  "colorPickerDefault": "По умолчанию",
+  "@colorPickerDefault": {},
+  "logFileDescription": "Поделиться файлом журнала",
+  "@logFileDescription": {},
+  "logFile": "Файл журнала",
+  "@logFile": {},
+  "colorPickerCustom": "Пользователь",
+  "@colorPickerCustom": {}
 }
