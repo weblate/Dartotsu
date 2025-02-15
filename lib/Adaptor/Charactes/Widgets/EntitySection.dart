@@ -1,8 +1,4 @@
-import 'package:dantotsu/DataClass/Studio.dart';
 import 'package:flutter/material.dart';
-
-import '../../../../DataClass/Character.dart';
-import '../../../DataClass/Author.dart';
 import '../EntityAdaptor.dart';
 
 Widget entitySection({
@@ -10,13 +6,10 @@ Widget entitySection({
   required EntityType type,
   required String title,
   int adaptorType = 1,
-  List<character>? characterList,
-  List<author>? staffList,
-  List<studio>? studioList,
+  List<Object>? list,
   List<Widget>? customNullListIndicator,
 }) {
   var theme = Theme.of(context);
-  var list = type == EntityType.Character ? characterList : type == EntityType.Staff ? staffList : studioList;
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
@@ -84,10 +77,8 @@ Widget entitySection({
                     )
                   : EntityAdaptor(
                       type: type,
-                      characterList: characterList,
-                      staffList: staffList,
-                      studioList: studioList,
                       adaptorType: adaptorType,
+                      list: list,
                     ),
             ),
           ],
