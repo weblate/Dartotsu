@@ -54,10 +54,7 @@ class ExtensionsAnimeScreen extends BaseAnimeScreen {
             ))
                 ?.toMedia(isAnime: true, source: source);
             if (result != null && result.isNotEmpty) {
-              data.value = {
-                ...data.value!,
-                source.name!: result,
-              };
+              data.value = {...?data.value, source.name ?? 'Unknown': result};
             }
           } catch (e) {
             Logger.log(
