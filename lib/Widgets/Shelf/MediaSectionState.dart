@@ -48,7 +48,7 @@ class MediaSectionState {
     overscrollProgress.value = 0.0;
     final newItems = await onLoadMore?.call();
     if (newItems != null) {
-      mediaList.value = [...mediaList, ...newItems];
+      mediaList.value = _dedupe([...mediaList, ...newItems]);
     } else {
       canLoadMore.value = false;
     }
@@ -58,10 +58,15 @@ class MediaSectionState {
 
   void updateMediaList(List<Media>? media) {
     if (media != null) {
-      mediaList.value = media;
+      mediaList.value = _dedupe(media);
       return;
     }
     final count = Random().nextInt(11) + 7;
     mediaList.value = List.generate(count, (_) => Media.skeleton());
+  }
+
+  List<Media> _dedupe(List<Media> media) {
+    final seen = <String>{};
+    return [for (final m in media) if (seen.add(m.id)) m];
   }
 }
