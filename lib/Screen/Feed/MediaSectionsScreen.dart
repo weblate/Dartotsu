@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart' hide ContextExtensionss;
 
 import '../../Core/Services/Model/Media.dart';
+import '../../Core/Services/Screens/ServiceScreens.dart';
 import '../../Core/Services/SectionCache.dart';
 import '../../Utils/Animation/WidgetAnimations.dart';
 import '../../Utils/Extensions/ContextExtensions.dart';
@@ -17,7 +18,7 @@ import '../../Widgets/Shelf/MediaSection.dart';
 import 'Widgets/StackedCarousel.dart';
 
 class MediaSectionsScreen extends StatefulWidget {
-  final SectionsLoader loader;
+  final SectionsStream Function() loader;
   final String? cacheId;
   final Widget? header;
   final void Function(Media media, String? heroTag)? onMediaTap;
@@ -61,11 +62,13 @@ class _MediaSectionsScreenState extends State<MediaSectionsScreen>
 
   late final SectionCache? _cache = widget.cacheId == null
       ? null
-      : SectionCache(widget.cacheId!, widget.loader);
+      : SectionCache(widget.cacheId!);
 
   StreamSubscription<Object?>? _reloadSub;
   Worker? _signalWorker;
   bool _refreshing = false;
+  bool _queued = false;
+  bool _refreshScheduled = false;
   final _loaded = false.obs;
 
   @override
@@ -98,35 +101,63 @@ class _MediaSectionsScreenState extends State<MediaSectionsScreen>
   }
 
   Future<void> _refresh() async {
-    if (_refreshing) return;
+    if (_refreshing) {
+      _queued = true;
+      return;
+    }
     _refreshing = true;
     _error.value = null;
+    final fresh = <String, List<Media>>{};
+    var changed = false;
     try {
-      final fresh = await (_cache?.fetch() ?? widget.loader());
-      _apply(fresh);
+      await for (final patch in widget.loader()) {
+        fresh.addAll(patch);
+        changed |= _patch(patch);
+        _loaded.value = true;
+      }
+      changed |= _prune(fresh);
       _loaded.value = true;
+      if (changed && fresh.isNotEmpty) _cache?.write(fresh);
     } catch (e) {
       if (_sections.isEmpty) _error.value = e.toString();
     } finally {
       _refreshing = false;
+      if (_queued && mounted) {
+        _queued = false;
+        unawaited(_refresh());
+      }
     }
   }
 
-  void _apply(Map<String, List<Media>> fresh) {
-    var changed = _sections.length != fresh.length;
-    fresh.forEach((title, media) {
+  bool _patch(Map<String, List<Media>> patch) {
+    var changed = false;
+    patch.forEach((title, media) {
       final current = _sections[title];
       if (current == null || !_sameOrder(current, media)) {
         _sections[title] = media;
         changed = true;
       }
     });
-    _sections.removeWhere((title, _) {
-      final gone = !fresh.containsKey(title);
-      if (gone) changed = true;
-      return gone;
+    if (changed) _scheduleSectionsRefresh();
+    return changed;
+  }
+
+  bool _prune(Map<String, List<Media>> fresh) {
+    if (fresh.isEmpty) return false;
+    final before = _sections.length;
+    _sections.removeWhere((title, _) => !fresh.containsKey(title));
+    final changed = _sections.length != before;
+    if (changed) _scheduleSectionsRefresh();
+    return changed;
+  }
+
+  void _scheduleSectionsRefresh() {
+    if (_refreshScheduled) return;
+    _refreshScheduled = true;
+    scheduleMicrotask(() {
+      _refreshScheduled = false;
+      if (mounted) _sections.refresh();
     });
-    if (changed) _sections.refresh();
   }
 
   bool _sameOrder(List<Media> a, List<Media> b) {
@@ -228,6 +259,7 @@ class _MediaSectionsScreenState extends State<MediaSectionsScreen>
   }
 
   Widget _section(int index, String title, List<Media> media) {
+    final firstSeen = _seen.add(title);
     final section = MediaSection(
       key: ValueKey('section-$title'),
       data: MediaSectionData(
@@ -241,10 +273,10 @@ class _MediaSectionsScreenState extends State<MediaSectionsScreen>
             : () => _loadMoreSection(title),
       ),
     );
-    if (!_seen.add(title)) return section;
     return section.animateFadeUp(
-      begin: 0.15,
-      delay: Duration(milliseconds: 40 * index),
+      begin: firstSeen ? 0.15 : 0.0,
+      delay: firstSeen ? Duration(milliseconds: 40 * index) : Duration.zero,
+      duration: firstSeen ? 400 : 0,
     );
   }
 
