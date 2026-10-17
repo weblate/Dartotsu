@@ -335,7 +335,7 @@ packages:
     description:
       path: "."
       ref: master
-      resolved-ref: "8c25768f22a8fc3fe26f0eabd74483bd888cd146"
+      resolved-ref: d4f2cf3f3bff1a6ced6a7cbf075934e7de74b20b
       url: "https://github.com/aayush2622/DartotsuExtensionBridge.git"
     source: git
     version: "0.0.5"
@@ -722,9 +722,9 @@ packages:
     dependency: transitive
     description:
       path: "."
-      ref: main
-      resolved-ref: b64d2e3a8b2bf3b32ab4c3acef34a11636d5b87f
-      url: "https://github.com/kodjodevf/flutter_qjs.git"
+      ref: dartotsu-ios-exedir-fix
+      resolved-ref: "6f7e8de0cde6074cc31cb993523bdeb1ed31fd73"
+      url: "https://github.com/aayush2622/flutter_qjs.git"
     source: git
     version: "0.0.1"
   flutter_rust_bridge:
