@@ -26,6 +26,7 @@ class EntityHeaderDelegate extends SliverPersistentHeaderDelegate {
   final bool canFavourite;
   final Live<bool> togglingFavourite;
   final VoidCallback onToggleFavourite;
+  final VoidCallback? onShareCard;
 
   EntityHeaderDelegate({
     required this.host,
@@ -34,6 +35,7 @@ class EntityHeaderDelegate extends SliverPersistentHeaderDelegate {
     required this.canFavourite,
     required this.togglingFavourite,
     required this.onToggleFavourite,
+    this.onShareCard,
   });
 
   @override
@@ -323,9 +325,12 @@ class EntityHeaderDelegate extends SliverPersistentHeaderDelegate {
         if (v == 'share') shareLink(url);
         if (v == 'browser') openLinkInBrowser(url);
         if (v == 'copy') copyToClipboard(url, message: getString.linkCopied);
+        if (v == 'card') onShareCard?.call();
       },
       itemBuilder: (_) => [
         PopupMenuItem(value: 'share', child: Text(getString.share)),
+        if (onShareCard != null)
+          PopupMenuItem(value: 'card', child: Text(getString.shareCard)),
         PopupMenuItem(value: 'browser', child: Text(getString.openInBrowser)),
         PopupMenuItem(value: 'copy', child: Text(getString.copyLink)),
       ],

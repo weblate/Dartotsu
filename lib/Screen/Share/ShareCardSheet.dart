@@ -30,9 +30,27 @@ Future<void> showShareList(
   int? userId,
   String? name,
   String? avatar,
+  SocialUser? user,
 }) => showCustomBottomDialog<void>(
   context,
-  ShareCardSheet(service: service, userId: userId, name: name, avatar: avatar),
+  ShareCardSheet(
+    service: service,
+    userId: userId,
+    name: name,
+    avatar: avatar,
+    user: user,
+  ),
+);
+
+Future<void> showShareWidget(
+  BuildContext context,
+  MediaService service, {
+  required Widget card,
+  required String fileName,
+  String? link,
+}) => showCustomBottomDialog<void>(
+  context,
+  ShareCardSheet(service: service, card: card, fileName: fileName, link: link),
 );
 
 class ShareCardSheet extends StatefulWidget {
@@ -41,6 +59,10 @@ class ShareCardSheet extends StatefulWidget {
   final int? userId;
   final String? name;
   final String? avatar;
+  final SocialUser? user;
+  final Widget? card;
+  final String? fileName;
+  final String? link;
 
   const ShareCardSheet({
     super.key,
@@ -49,6 +71,10 @@ class ShareCardSheet extends StatefulWidget {
     this.userId,
     this.name,
     this.avatar,
+    this.user,
+    this.card,
+    this.fileName,
+    this.link,
   });
 
   @override
@@ -58,7 +84,17 @@ class ShareCardSheet extends StatefulWidget {
 class _ShareCardSheetState extends State<ShareCardSheet>
     with ScreenStateHost<ShareCardSheet, ShareCardState> {
   @override
-  ShareCardState buildState() => ShareCardState(widget.service, widget.media);
+  ShareCardState buildState() => ShareCardState(
+    widget.service,
+    widget.media,
+    userId: widget.userId,
+    name: widget.name,
+    picture: widget.avatar,
+    user: widget.user,
+    custom: widget.card,
+    customName: widget.fileName,
+    customLink: widget.link,
+  );
 
   @override
   Widget build(BuildContext context) => Watch(() => _build(context));
@@ -83,12 +119,14 @@ class _ShareCardSheetState extends State<ShareCardSheet>
                 padding: EdgeInsets.only(bottom: Dimens.gap),
                 child: Align(
                   alignment: Alignment.centerLeft,
-                  child: AppChoiceChips<bool>(
-                    value: state.anime.value,
-                    onChanged: state.setAnime,
+                  child: AppChoiceChips<int>(
+                    value: state.mode,
+                    onChanged: state.setMode,
                     options: [
-                      AppSegment(true, label: getString.anime),
-                      AppSegment(false, label: getString.manga),
+                      AppSegment(0, label: getString.anime),
+                      AppSegment(1, label: getString.manga),
+                      if (state.user != null)
+                        AppSegment(2, label: getString.profile),
                     ],
                   ),
                 ),
@@ -125,6 +163,29 @@ class _ShareCardSheetState extends State<ShareCardSheet>
   }
 
   Widget _card(BuildContext context) {
+    if (state.isCustom) {
+      return Center(
+        child: FittedBox(
+          fit: BoxFit.scaleDown,
+          child: RepaintBoundary(key: state.boundary, child: state.custom),
+        ),
+      );
+    }
+    if (state.isStats) {
+      return Center(
+        child: FittedBox(
+          fit: BoxFit.scaleDown,
+          child: RepaintBoundary(
+            key: state.boundary,
+            child: ProfileShareCard(
+              user: state.user!,
+              service: widget.service.name,
+              link: state.profileLink,
+            ),
+          ),
+        ),
+      );
+    }
     if (state.isList) {
       if (state.loading.value) {
         return const Padding(
@@ -144,6 +205,7 @@ class _ShareCardSheetState extends State<ShareCardSheet>
             name: state.userName,
             avatar: state.avatar,
             service: widget.service.name,
+            link: state.profileLink,
             anime: state.anime.value,
             top: state.top,
             count: state.count,

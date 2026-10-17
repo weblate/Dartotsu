@@ -403,6 +403,7 @@ class ProfileHeaderDelegate extends SliverPersistentHeaderDelegate {
               userId: int.tryParse(u.id),
               name: u.name,
               avatar: u.avatar,
+              user: u,
             ),
           );
         }
@@ -413,7 +414,7 @@ class ProfileHeaderDelegate extends SliverPersistentHeaderDelegate {
       itemBuilder: (_) => [
         PopupMenuItem(value: 'share', child: Text(getString.shareProfile)),
         if (u != null && service.getQueries != null)
-          PopupMenuItem(value: 'card', child: Text(getString.shareCardList)),
+          PopupMenuItem(value: 'card', child: Text(getString.shareCard)),
         PopupMenuItem(value: 'browser', child: Text(getString.openInBrowser)),
         PopupMenuItem(value: 'copy', child: Text(getString.copyLink)),
         PopupMenuItem(value: 'id', child: Text(getString.copyUserId)),

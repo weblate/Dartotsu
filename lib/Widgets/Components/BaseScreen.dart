@@ -7,6 +7,7 @@ import '../../Api/Discord/PresenceScope.dart';
 import '../../Core/ThemeManager/GlassBackgroundSource.dart';
 import '../../Core/ThemeManager/ThemeController.dart';
 import 'CachedNetworkImage.dart';
+import 'ScrollTopButton.dart';
 import '../../Core/State/State.dart';
 
 abstract class BaseScreen<T extends StatefulWidget> extends State<T> {
@@ -25,7 +26,7 @@ abstract class BaseScreen<T extends StatefulWidget> extends State<T> {
   @override
   Widget build(BuildContext context) {
     final theme = find<ThemeController>();
-    final built = Watch(() => buildContent(context));
+    final built = ScrollTopButton(child: Watch(() => buildContent(context)));
     final content = presence == null
         ? built
         : Watch(() {

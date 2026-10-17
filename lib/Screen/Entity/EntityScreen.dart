@@ -1,4 +1,9 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+
+import '../Share/ShareCard.dart';
+import '../Share/ShareCardSheet.dart';
 
 import '../../Core/Services/MediaService.dart';
 import '../../Core/ThemeManager/ThemeController.dart';
@@ -83,6 +88,21 @@ class _EntityScreenState extends BaseScreen<EntityScreen>
                     canFavourite: state.view.canFavourite(state.kind),
                     togglingFavourite: state.toggling,
                     onToggleFavourite: state.toggleFavourite,
+                    onShareCard: () {
+                      final profile = state.host.profile.value;
+                      unawaited(
+                        showShareWidget(
+                          context,
+                          state.view.service,
+                          card: EntityShareCard(
+                            profile: profile,
+                            service: state.view.service.name,
+                          ),
+                          fileName: profile.name,
+                          link: profile.url,
+                        ),
+                      );
+                    },
                   ),
                 ),
                 SliverToBoxAdapter(child: Watch(() => _body(context))),

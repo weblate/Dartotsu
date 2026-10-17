@@ -230,7 +230,7 @@ class _PlayerScreenState extends State<PlayerScreen>
                   item.title,
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
-                  style: context.textTheme.titleLarge?.copyWith(
+                  style: context.textTheme.titleMedium?.copyWith(
                     fontWeight: FontWeight.w800,
                     height: 1.2,
                   ),
@@ -421,7 +421,6 @@ class _PlayerScreenState extends State<PlayerScreen>
     final engine = state.engine;
     final visible = state.controlsVisible.value;
     final error = state.loadError.value;
-    final playerError = engine.error.value;
     return Stack(
       alignment: Alignment.center,
       children: [
@@ -496,10 +495,7 @@ class _PlayerScreenState extends State<PlayerScreen>
               child: CircularProgressIndicator(color: Colors.white),
             ),
           ),
-        if (error != null)
-          _failure(context, error)
-        else if (playerError != null && !state.loading.value)
-          _failure(context, playerError),
+        if (error != null) _failure(context, error),
       ],
     );
   }

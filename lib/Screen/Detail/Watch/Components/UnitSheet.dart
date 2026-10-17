@@ -14,6 +14,8 @@ import '../../../../Core/Downloads/DownloadEngine.dart';
 import '../../../../Core/Downloads/DownloadTask.dart';
 import '../../../Downloads/DownloadConfirm.dart';
 import '../../../Downloads/DownloadPicker.dart';
+import '../../../Share/ShareCard.dart';
+import '../../../Share/ShareCardSheet.dart';
 import '../WatchState.dart';
 import 'UnitTile.dart';
 
@@ -29,12 +31,45 @@ class UnitSheet extends StatelessWidget {
     this.onPlay,
   });
 
+  void _share(BuildContext context) {
+    final anime = state.anime;
+    final meta = [
+      if (unit.date != null) formatUnitDate(unit.date!),
+      if (unit.runtime != null) '${unit.runtime} min',
+      if (unit.rating != null && unit.rating! > 0)
+        unit.rating!.toStringAsFixed(1),
+    ].join(' · ');
+    unawaited(
+      showShareWidget(
+        context,
+        state.service,
+        card: UnitShareCard(
+          media: state.current,
+          label: unitLabel(unit, anime),
+          title: unitTitle(unit, anime),
+          thumbnail: anime ? unit.thumbnail : null,
+          meta: meta,
+          watched: unit.isWatched(state.progress),
+          anime: anime,
+          service: state.service.name,
+        ),
+        fileName: '${state.current.mainName} ${unitLabel(unit, anime)}',
+        link: state.current.shareLink,
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final scheme = context.colorScheme;
     final anime = state.anime;
     return AppSheet(
       title: unitLabel(unit, anime),
+      trailing: IconButton(
+        tooltip: getString.shareCard,
+        onPressed: () => _share(context),
+        icon: const Icon(Icons.ios_share_rounded),
+      ),
       child: SingleChildScrollView(
         padding: EdgeInsets.fromLTRB(
           Dimens.pagePad,

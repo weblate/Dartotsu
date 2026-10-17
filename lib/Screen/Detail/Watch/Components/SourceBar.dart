@@ -172,13 +172,17 @@ class SourceBar extends StatelessWidget {
               ),
             ),
             if (canFix && selectable) ...[
-              TextButton(
+              IconButton(
+                tooltip: getString.watchSearchAgain,
+                visualDensity: VisualDensity.compact,
                 onPressed: onReset,
-                child: Text(getString.watchSearchAgain),
+                icon: const Icon(Icons.refresh_rounded),
               ),
-              TextButton(
+              IconButton(
+                tooltip: getString.watchWrongTitle,
+                visualDensity: VisualDensity.compact,
                 onPressed: onWrongTitle,
-                child: Text(getString.watchWrongTitle),
+                icon: const Icon(Icons.manage_search_rounded),
               ),
             ],
           ],

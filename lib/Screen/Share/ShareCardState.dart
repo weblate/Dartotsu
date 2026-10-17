@@ -25,6 +25,10 @@ class ShareCardState extends ScreenState {
   final int? userId;
   final String? name;
   final String? picture;
+  final SocialUser? user;
+  final Widget? custom;
+  final String? customName;
+  final String? customLink;
 
   ShareCardState(
     this.service,
@@ -32,18 +36,27 @@ class ShareCardState extends ScreenState {
     this.userId,
     this.name,
     this.picture,
+    this.user,
+    this.custom,
+    this.customName,
+    this.customLink,
   });
 
   final boundary = GlobalKey();
   final anime = true.live;
+  final stats = false.live;
   final loading = false.live;
   final busy = false.live;
   final entries = Live<List<Media>?>(null);
   int _run = 0;
 
-  bool get isList => media == null;
+  bool get isCustom => custom != null;
+
+  bool get isList => media == null && !isCustom;
 
   String get userName => name ?? service.auth?.user.value?.name ?? service.name;
+
+  String? get profileLink => service.socialView?.profileUrl(userName);
 
   String? get avatar => picture ?? service.auth?.user.value?.avatar;
 
@@ -52,9 +65,16 @@ class ShareCardState extends ScreenState {
     if (isList) unawaited(loadList());
   }
 
-  void setAnime(bool value) {
-    if (anime.value == value) return;
-    anime.value = value;
+  bool get isStats => isList && user != null && stats.value;
+
+  int get mode => isStats ? 2 : (anime.value ? 0 : 1);
+
+  void setMode(int value) {
+    stats.value = value == 2;
+    if (value == 2) return;
+    final next = value == 0;
+    if (anime.value == next && entries.value != null) return;
+    anime.value = next;
     unawaited(loadList());
   }
 
@@ -114,10 +134,16 @@ class ShareCardState extends ScreenState {
   }
 
   bool get ready =>
-      !isList || (!loading.value && (entries.value?.isNotEmpty ?? false));
+      !isList ||
+      isStats ||
+      (!loading.value && (entries.value?.isNotEmpty ?? false));
 
   String get fileName => imageFileName(
-    isList
+    isCustom
+        ? customName ?? service.name
+        : isStats
+        ? '$userName profile'
+        : isList
         ? '$userName top ${anime.value ? 'anime' : 'manga'}'
         : media!.mainName,
   );
@@ -139,7 +165,14 @@ class ShareCardState extends ScreenState {
       final dir = await getTemporaryDirectory();
       final file = File(p.join(dir.path, '$fileName.png'));
       await file.writeAsBytes(bytes, flush: true);
-      shareFile(file.path, isList ? userName : media!.shareLink);
+      shareFile(
+        file.path,
+        isCustom
+            ? customLink ?? ''
+            : isList
+            ? profileLink ?? userName
+            : media!.shareLink,
+      );
     } catch (e, st) {
       logError('ShareCard', e, st);
       snackString(getString.shareCardFailed);

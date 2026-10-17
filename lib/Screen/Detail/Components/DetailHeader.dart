@@ -388,9 +388,12 @@ class DetailHeaderDelegate extends SliverPersistentHeaderDelegate {
           if (onEditList != null)
             FilledButton.icon(
               style: const ButtonStyle(
-                minimumSize: WidgetStatePropertyAll(Size(0, 44)),
+                minimumSize: WidgetStatePropertyAll(Size(0, 50)),
+                textStyle: WidgetStatePropertyAll(
+                  TextStyle(fontSize: 15, fontWeight: FontWeight.w700),
+                ),
                 padding: WidgetStatePropertyAll(
-                  EdgeInsets.symmetric(horizontal: 16),
+                  EdgeInsets.symmetric(horizontal: 22),
                 ),
                 visualDensity: VisualDensity.compact,
               ),
@@ -403,7 +406,7 @@ class DetailHeaderDelegate extends SliverPersistentHeaderDelegate {
               },
               icon: Icon(
                 onList ? Icons.edit_rounded : Icons.add_rounded,
-                size: 18,
+                size: 20,
               ),
               label: Text(listLabel?.call(m) ?? getString.addToList),
             ),

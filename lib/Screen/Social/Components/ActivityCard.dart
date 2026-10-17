@@ -21,6 +21,8 @@ import '../../../Widgets/Components/MarkupText.dart';
 import '../../../Widgets/Components/SectionCard.dart';
 import '../../Feed/FeedNavigation.dart';
 import '../SocialNavigation.dart';
+import '../../Share/ShareCard.dart';
+import '../../Share/ShareCardSheet.dart';
 import 'ActivityComposer.dart';
 import 'AniMediaCard.dart';
 import 'RepliesSheet.dart';
@@ -140,6 +142,16 @@ class _ActivityCardState extends State<ActivityCard> {
         }
       case 'share':
         if (_a.siteUrl != null) shareLink(_a.siteUrl!);
+      case 'card':
+        unawaited(
+          showShareWidget(
+            context,
+            widget.service,
+            card: ActivityShareCard(activity: _a, service: widget.service.name),
+            fileName: '${_a.user?.name ?? ''} activity',
+            link: _a.siteUrl,
+          ),
+        );
     }
   }
 
@@ -251,6 +263,11 @@ class _ActivityCardState extends State<ActivityCard> {
                       child: Text(
                         _a.isSubscribed ? 'Unsubscribe' : 'Subscribe',
                       ),
+                    ),
+                  if (!_a.isPrivate)
+                    PopupMenuItem(
+                      value: 'card',
+                      child: Text(getString.shareCard),
                     ),
                   if (_a.siteUrl != null) ...[
                     PopupMenuItem(value: 'share', child: Text(getString.share)),
