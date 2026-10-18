@@ -105,9 +105,22 @@ TapAction tapActionFor(
   Offset at, {
   required bool invert,
   bool reversed = false,
+  bool topDown = false,
 }) {
   final x = at.dx.clamp(0.0, 1.0);
   final y = at.dy.clamp(0.0, 1.0);
+  if (zones == 'off') return TapAction.menu;
+  if (topDown) {
+    TapAction vertical;
+    if (y < 0.2) {
+      vertical = TapAction.previous;
+    } else if (y > 0.8) {
+      vertical = TapAction.next;
+    } else {
+      return TapAction.menu;
+    }
+    return invert ? _swap(vertical) : vertical;
+  }
   TapAction result;
   switch (zones) {
     case 'off':

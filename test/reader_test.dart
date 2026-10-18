@@ -65,6 +65,22 @@ void main() {
     });
   });
 
+  group('tapActionFor top to bottom', () {
+    test('top scrolls up, bottom scrolls down, the middle opens the menu', () {
+      TapAction at(double x, double y, {bool invert = false}) => tapActionFor(
+        'default',
+        Offset(x, y),
+        invert: invert,
+        topDown: true,
+      );
+      expect(at(0.1, 0.1), TapAction.previous);
+      expect(at(0.9, 0.9), TapAction.next);
+      expect(at(0.1, 0.5), TapAction.menu);
+      expect(at(0.9, 0.5), TapAction.menu);
+      expect(at(0.5, 0.9, invert: true), TapAction.previous);
+    });
+  });
+
   group('tapActionFor', () {
     test('default zones', () {
       expect(

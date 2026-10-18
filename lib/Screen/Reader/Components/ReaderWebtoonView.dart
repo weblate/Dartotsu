@@ -198,7 +198,7 @@ class _ReaderWebtoonViewState extends State<ReaderWebtoonView> {
             page: p.url,
             fit: BoxFit.fitWidth,
             width: double.infinity,
-            placeholderHeight: _estimate,
+            placeholderHeight: MediaQuery.sizeOf(context).height,
           ),
         ),
         ReaderGap g => ReaderGapView(state: state, gap: g),

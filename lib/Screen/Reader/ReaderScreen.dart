@@ -172,6 +172,7 @@ class _ReaderScreenState extends State<ReaderScreen>
                 at,
                 invert: settings.invertTaps,
                 reversed: settings.reversed,
+                topDown: settings.scrolls || settings.vertical,
               );
         _act(action);
       },
