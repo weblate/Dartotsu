@@ -21,6 +21,7 @@ import '../../Core/ThemeManager/LanguageSwitcher.dart';
 import '../../Utils/Nav/DpadLayers.dart';
 import '../../Widgets/Components/ScreenState.dart';
 import 'SourceBrowseState.dart';
+import 'SourceFilterSheet.dart';
 
 class SourceBrowseScreen extends StatefulWidget {
   final Source source;
@@ -122,6 +123,16 @@ class _SourceBrowseScreenState extends BaseScreen<SourceBrowseScreen>
                       icon: const Icon(Icons.close_rounded),
                       onPressed: state.clearSearch,
                     ),
+                  if (state.filters.value.isNotEmpty)
+                    IconButton(
+                      tooltip: getString.filters,
+                      icon: Badge(
+                        isLabelVisible: state.filtering.value,
+                        smallSize: 8,
+                        child: const Icon(Icons.tune_rounded),
+                      ),
+                      onPressed: _openFilters,
+                    ),
                 ],
                 onChanged: state.onQueryChanged,
                 textInputAction: TextInputAction.search,
@@ -129,7 +140,7 @@ class _SourceBrowseScreenState extends BaseScreen<SourceBrowseScreen>
             ),
           ),
           Watch(
-            () => state.searching.value
+            () => state.searching.value || state.filtering.value
                 ? const SizedBox.shrink()
                 : Padding(
                     padding: EdgeInsets.fromLTRB(
@@ -184,6 +195,15 @@ class _SourceBrowseScreenState extends BaseScreen<SourceBrowseScreen>
         ],
       ),
     );
+  }
+
+  Future<void> _openFilters() async {
+    final picked = await showSourceFilters(
+      context,
+      state.workingFilters,
+      onReset: state.resetFilters,
+    );
+    if (picked != null) state.applyFilters(picked);
   }
 
   Widget _card(Media media, {bool skeleton = false}) {

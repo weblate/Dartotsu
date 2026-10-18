@@ -192,6 +192,16 @@ class EntityHeaderDelegate extends SliverPersistentHeaderDelegate {
     );
   }
 
+  Widget _heroed(Widget image) {
+    if (host.kind == EntityKind.studio) return image;
+    return Hero(
+      tag: 'person:${host.kind.name}:${host.profile.value.id}',
+      flightShuttleBuilder: (_, _, _, _, toContext) =>
+          (toContext.widget as Hero).child,
+      child: image,
+    );
+  }
+
   Widget _portrait(BuildContext context, String? url) {
     final scheme = context.colorScheme;
     return Material(
@@ -210,11 +220,13 @@ class EntityHeaderDelegate extends SliverPersistentHeaderDelegate {
                 size: 48,
                 color: scheme.outline,
               )
-            : cachedNetworkImage(
-                imageUrl: url,
-                fit: BoxFit.cover,
-                width: _portraitWidth,
-                height: _portraitHeight,
+            : _heroed(
+                cachedNetworkImage(
+                  imageUrl: url,
+                  fit: BoxFit.cover,
+                  width: _portraitWidth,
+                  height: _portraitHeight,
+                ),
               ),
       ),
     );

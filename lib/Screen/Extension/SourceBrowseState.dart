@@ -1,5 +1,7 @@
 import 'dart:async';
+import 'dart:convert';
 
+import 'package:dartotsu_extension_bridge/Models/SourceFilter.dart';
 import 'package:dartotsu_extension_bridge/dartotsu_extension_bridge.dart';
 import 'package:flutter/material.dart';
 
@@ -10,6 +12,7 @@ import '../../Core/State/State.dart';
 import '../../Core/ThemeManager/LanguageSwitcher.dart';
 import '../../Widgets/Components/ScreenState.dart';
 import '../Feed/FeedNavigation.dart';
+import 'SourceFilterSheet.dart';
 
 enum SourceFeed { saved, popular, latest }
 
@@ -25,6 +28,10 @@ class SourceBrowseState extends ScreenState {
   late final feed = _defaultFeed().live;
   final error = Live<String?>(null);
   final searching = false.live;
+  final filters = Live<List<SourceFilter>>(const []);
+  final filtering = false.live;
+  List<SourceFilter> _applied = const [];
+  String _pristine = '[]';
 
   Timer? _debounce;
   int _page = 1;
@@ -41,7 +48,34 @@ class SourceBrowseState extends ScreenState {
       : SourceFeed.popular;
 
   @override
-  void onInit() => reload();
+  void onInit() {
+    unawaited(_loadFilters());
+    reload();
+  }
+
+  Future<void> _loadFilters() async {
+    try {
+      final list = await source.methods.getFilterList();
+      _pristine = jsonEncode([for (final f in list) f.toJson()]);
+      _applied = copyFilters(list);
+      filters.value = list;
+    } catch (_) {}
+  }
+
+  List<SourceFilter> get workingFilters => _applied;
+
+  void applyFilters(List<SourceFilter> next) {
+    _applied = next;
+    filtering.value =
+        jsonEncode([for (final f in next) f.toJson()]) != _pristine;
+    reload();
+  }
+
+  void resetFilters() {
+    _applied = copyFilters(filters.value);
+    filtering.value = false;
+    reload();
+  }
 
   @override
   void onClose() {
@@ -61,7 +95,9 @@ class SourceBrowseState extends ScreenState {
     if (loading.value || !_hasMore) return;
     loading.value = true;
     try {
-      if (!searching.value && feed.value == SourceFeed.saved) {
+      if (!searching.value &&
+          !filtering.value &&
+          feed.value == SourceFeed.saved) {
         items.value = extensionStore(
           type,
         ).read().where(_fromThisSource).toList();
@@ -71,8 +107,11 @@ class SourceBrowseState extends ScreenState {
 
       final methods = source.methods;
       final query = controller.text.trim();
-      final pages = searching.value
-          ? await methods.search(query, _page, const [])
+      final pages = searching.value || filtering.value
+          ? await methods.search(query, _page, [
+              if (filtering.value)
+                for (final f in _applied) f.toJson(),
+            ])
           : feed.value == SourceFeed.latest
           ? await methods.getLatestUpdates(_page)
           : await methods.getPopular(_page);
@@ -123,7 +162,7 @@ class SourceBrowseState extends ScreenState {
 
   String get emptyTitle => failed
       ? getString.couldntLoadSource
-      : searching.value
+      : searching.value || filtering.value
       ? getString.nothingMatched
       : feed.value == SourceFeed.saved
       ? getString.nothingSavedFromSource
@@ -131,7 +170,7 @@ class SourceBrowseState extends ScreenState {
 
   String get emptyMessage => failed
       ? getString.checkConnectionOrSource
-      : searching.value
+      : searching.value || filtering.value
       ? getString.tryDifferentSearch
       : feed.value == SourceFeed.saved
       ? getString.savedTitlesAppearHere

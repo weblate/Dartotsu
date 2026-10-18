@@ -96,5 +96,6 @@ void openEntity(
             name: name,
             image: image,
           ),
+    hero: kind != EntityKind.studio,
   );
 }
