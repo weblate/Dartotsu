@@ -14,7 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: rewrite-re
+          ref: main
           fetch-depth: 0
 
       - uses: DeterminateSystems/nix-installer-action@main
@@ -88,4 +88,4 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add channels.json
           git commit -m "chore: bump nix channels.json"
-          git push origin HEAD:rewrite-re
+          git push origin HEAD:main

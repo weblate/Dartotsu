@@ -3,11 +3,9 @@ on:
   push:
     branches:
       - main
-      - rewrite-re
   pull_request:
     branches:
       - main
-      - rewrite-re
   workflow_dispatch:
     inputs:
       build_targets:
