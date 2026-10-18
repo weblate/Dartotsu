@@ -51,7 +51,7 @@ class TogetherRoomView extends StatelessWidget {
         color: scheme.surfaceContainerHigh,
         borderRadius: BorderRadius.circular(28),
         child: Padding(
-          padding: const EdgeInsets.fromLTRB(16, 10, 8, 10),
+          padding: const EdgeInsetsDirectional.fromSTEB(16, 10, 8, 10),
           child: Row(
             children: [
               Icon(Icons.groups_rounded, color: scheme.primary),
@@ -119,7 +119,7 @@ class TogetherRoomView extends StatelessWidget {
     final mine = u.name == s.client.username;
     final host = u.isHost || (mine && s.isHost);
     return Padding(
-      padding: EdgeInsets.only(right: Dimens.gap),
+      padding: EdgeInsetsDirectional.only(end: Dimens.gap),
       child: SizedBox(
         width: 68,
         child: Column(
@@ -183,7 +183,7 @@ class TogetherRoomView extends StatelessWidget {
         color: scheme.secondaryContainer.withValues(alpha: 0.55),
         borderRadius: BorderRadius.circular(20),
         child: Padding(
-          padding: const EdgeInsets.fromLTRB(16, 10, 8, 10),
+          padding: const EdgeInsetsDirectional.fromSTEB(16, 10, 8, 10),
           child: Row(
             children: [
               Icon(

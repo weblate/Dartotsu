@@ -78,7 +78,7 @@ class _TogetherChatPanelState extends State<TogetherChatPanel> {
                 ),
         ),
         Padding(
-          padding: EdgeInsets.fromLTRB(
+          padding: EdgeInsetsDirectional.fromSTEB(
             Dimens.pagePad,
             Dimens.gapXs,
             Dimens.gapSm,
@@ -151,7 +151,9 @@ class TogetherChatLine extends StatelessWidget {
     }
     final mine = line.mine;
     return Align(
-      alignment: mine ? Alignment.centerRight : Alignment.centerLeft,
+      alignment: mine
+          ? AlignmentDirectional.centerEnd
+          : AlignmentDirectional.centerStart,
       child: Container(
         margin: const EdgeInsets.symmetric(vertical: 2),
         padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
@@ -160,11 +162,11 @@ class TogetherChatLine extends StatelessWidget {
           color: mine
               ? scheme.primaryContainer
               : scheme.surfaceContainerHighest,
-          borderRadius: BorderRadius.only(
-            topLeft: const Radius.circular(20),
-            topRight: const Radius.circular(20),
-            bottomLeft: Radius.circular(mine ? 20 : 6),
-            bottomRight: Radius.circular(mine ? 6 : 20),
+          borderRadius: BorderRadiusDirectional.only(
+            topStart: const Radius.circular(20),
+            topEnd: const Radius.circular(20),
+            bottomStart: Radius.circular(mine ? 20 : 6),
+            bottomEnd: Radius.circular(mine ? 6 : 20),
           ),
         ),
         child: Column(
