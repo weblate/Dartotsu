@@ -39,6 +39,7 @@ import '../../Logger.dart';
 import '../../Utils/Functions/SnackBar.dart';
 import '../../Widgets/Components/ScreenState.dart';
 import 'PlayerMediaSession.dart';
+import '../Together/TogetherController.dart';
 import '../../Utils/Functions/Wakelock.dart';
 
 const resizeFits = [BoxFit.contain, BoxFit.cover, BoxFit.fill];
@@ -88,6 +89,7 @@ class PlayerState extends ScreenState {
   final previewAt = Live<Duration?>(null);
   final seekPreview = SeekPreview();
   final commentsOpen = false.live;
+  final chatOpen = false.live;
   final episodeTag = Live<int?>(null);
   final pageScroll = ScrollController();
   final commentsScroll = ScrollController();
@@ -113,6 +115,7 @@ class PlayerState extends ScreenState {
   Disposer? _playingSub;
   int _generation = 0;
   late final mediaSession = PlayerMediaSession(this);
+  TogetherController get together => find<TogetherController>();
   int _lastSave = -1;
   bool _watchedMarked = false;
   bool _tracking = true;
@@ -250,6 +253,7 @@ class PlayerState extends ScreenState {
   void onInit() {
     settings = _effective();
     engine = PlayerEngine(settings);
+    together.attach(this);
     fit.value = resizeFits[settings.resizeMode.clamp(0, 2)];
     index.value = request.index;
     _tagEpisode(request.index);
@@ -276,6 +280,7 @@ class PlayerState extends ScreenState {
       if (active) {
         controlsVisible.value = false;
         commentsOpen.value = false;
+        chatOpen.value = false;
         panel.value = false;
       }
     });
@@ -387,6 +392,7 @@ class PlayerState extends ScreenState {
   @override
   void onClose() {
     _closed = true;
+    together.detach(this);
     find<DownloadEngine>().sweepFinished();
     _generation++;
     _busyTimer?.cancel();
@@ -484,44 +490,59 @@ class PlayerState extends ScreenState {
     cancelCountdown();
     _saveProgress(force: true);
     _commitWatched();
-    index.value = next;
-    chunk.value = null;
-    _tagEpisode(next);
     loading.value = true;
     loadError.value = null;
-    stamps.clear();
-    activeStamp.value = null;
-    _skipped.clear();
-    _watchedMarked = false;
     _preloading = false;
-    _lastSave = -1;
     try {
-      await _confirmTracking();
-      if (generation != _generation) return;
-      List<v.Video> list;
+      final Future<List<v.Video>> loaded;
+      var cached = false;
       if (preset != null) {
-        list = preset;
+        loaded = Future.value(preset);
       } else if (_nextFor == next && _nextStreams != null) {
-        list = _nextStreams!;
+        loaded = Future.value(_nextStreams!);
+        cached = true;
       } else {
-        list = await fetchStreams(items[next]);
+        loaded = fetchStreams(items[next]);
       }
+      unawaited(loaded.then((_) {}, onError: (_) {}));
+      final early =
+          preset == null &&
+          !cached &&
+          askPendingStream != null &&
+          !_remembersStream();
+      final Future<int?>? sheet = early ? askPendingStream!(loaded) : null;
+      final list = await loaded;
+      if (generation != _generation) return;
+      if (sheet == null) await _confirmTracking();
+      if (generation != _generation) return;
       _nextStreams = null;
       _nextFor = null;
-      if (generation != _generation) return;
       if (list.isEmpty) {
         loadError.value = getString.playerNoStreams;
         loading.value = false;
         return;
       }
       videos.value = list;
-      final chosen = presetIndex ?? await _chooseStream(list);
+      final chosen =
+          presetIndex ??
+          (sheet != null ? await sheet : await _chooseStream(list));
+      if (generation != _generation) return;
+      if (sheet != null && chosen != null) await _confirmTracking();
       if (generation != _generation) return;
       if (chosen == null) {
         if (engine.duration.value == Duration.zero) pop();
         loading.value = false;
         return;
       }
+      _commitWatched();
+      index.value = next;
+      chunk.value = null;
+      _tagEpisode(next);
+      stamps.clear();
+      activeStamp.value = null;
+      _skipped.clear();
+      _watchedMarked = false;
+      _lastSave = -1;
       await selectStream(chosen, fromStart: false);
     } catch (e, st) {
       if (generation != _generation) return;
@@ -550,6 +571,15 @@ class PlayerState extends ScreenState {
   }
 
   Future<int?> Function(List<v.Video> list)? askStream;
+  Future<int?> Function(Future<List<v.Video>> pending)? askPendingStream;
+
+  bool _remembersStream() {
+    final rec = record;
+    final src = request.source;
+    if (rec == null || src == null) return false;
+    return (rec.streams.auto || request.resume) &&
+        rec.streams.last[src.id] != null;
+  }
 
   void rememberStream(v.Video chosen) {
     final rec = record;

@@ -73,58 +73,141 @@ Future<void> showQualitySheet(BuildContext context, PlayerState state) async {
   if (picked != null && picked.isNotEmpty) await engine.setVariant(picked);
 }
 
+Widget _streamList(
+  BuildContext context,
+  PlayerState state,
+  List<v.Video> list,
+  int selected,
+) {
+  final record = state.record;
+  final auto = (record?.streams.auto ?? false).live;
+  return ListView(
+    shrinkWrap: true,
+    padding: const EdgeInsets.fromLTRB(16, 0, 16, 24),
+    children: [
+      if (record != null)
+        Watch(
+          () => SwitchListTile(
+            contentPadding: const EdgeInsets.symmetric(horizontal: 8),
+            value: auto.value,
+            title: Text(getString.playerAutoSelect),
+            subtitle: Text(getString.playerAutoSelectDesc),
+            onChanged: (value) {
+              auto.value = value;
+              record.streams.auto = value;
+              MediaRecords.save(state.request.service!, state.request.media!);
+            },
+          ),
+        ),
+      for (final (i, video) in list.indexed)
+        SheetTile(
+          tinted: true,
+          radius: BorderRadius.vertical(
+            top: Radius.circular(i == 0 ? 20 : 6),
+            bottom: Radius.circular(i == list.length - 1 ? 20 : 6),
+          ),
+          leading: const Icon(Icons.play_circle_outline_rounded),
+          title: Text(streamLabel(video)),
+          subtitle: video.quality.isNotEmpty && video.quality != video.title
+              ? Text(video.quality)
+              : null,
+          selected: i == selected,
+          onTap: () => popPage(context, i),
+        ),
+    ],
+  );
+}
+
 Future<int?> showStreamSheet(
   BuildContext context,
   PlayerState state,
   List<v.Video> list, {
   required int selected,
   bool dismissIsCancel = true,
-}) {
-  final record = state.record;
-  final auto = (record?.streams.auto ?? false).live;
-  return showCustomBottomDialog<int>(
-    context,
-    AppSheet(
-      title: getString.playerStreams,
-      child: ListView(
-        shrinkWrap: true,
-        padding: const EdgeInsets.fromLTRB(16, 0, 16, 24),
-        children: [
-          if (record != null)
-            Watch(
-              () => SwitchListTile(
-                contentPadding: const EdgeInsets.symmetric(horizontal: 8),
-                value: auto.value,
-                title: Text(getString.playerAutoSelect),
-                subtitle: Text(getString.playerAutoSelectDesc),
-                onChanged: (value) {
-                  auto.value = value;
-                  record.streams.auto = value;
-                  MediaRecords.save(
-                    state.request.service!,
-                    state.request.media!,
-                  );
-                },
-              ),
+}) => showCustomBottomDialog<int>(
+  context,
+  AppSheet(
+    title: getString.playerStreams,
+    child: _streamList(context, state, list, selected),
+  ),
+);
+
+Future<int?> showPendingStreamSheet(
+  BuildContext context,
+  PlayerState state,
+  Future<List<v.Video>> pending,
+) => showCustomBottomDialog<int>(
+  context,
+  _PendingStreams(state: state, pending: pending),
+);
+
+class _PendingStreams extends StatefulWidget {
+  final PlayerState state;
+  final Future<List<v.Video>> pending;
+
+  const _PendingStreams({required this.state, required this.pending});
+
+  @override
+  State<_PendingStreams> createState() => _PendingStreamsState();
+}
+
+class _PendingStreamsState extends State<_PendingStreams> {
+  final _list = Live<List<v.Video>?>(null);
+  final _error = Live<String?>(null);
+
+  @override
+  void initState() {
+    super.initState();
+    widget.pending.then(
+      (list) {
+        if (!mounted) return;
+        if (list.length == 1) return popPage(context, 0);
+        if (list.isEmpty) return popPage<int?>(context, null);
+        _list.value = list;
+      },
+      onError: (Object e) {
+        if (mounted) _error.value = '$e';
+      },
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) => AppSheet(
+    title: getString.playerStreams,
+    child: Watch(() {
+      final error = _error.value;
+      final list = _list.value;
+      if (error != null) {
+        return Padding(
+          padding: const EdgeInsets.fromLTRB(16, 8, 16, 32),
+          child: Text(
+            error,
+            style: context.textTheme.bodyMedium?.copyWith(
+              color: context.colorScheme.error,
             ),
-          for (final (i, video) in list.indexed)
-            SheetTile(
-              tinted: true,
-              radius: BorderRadius.vertical(
-                top: Radius.circular(i == 0 ? 20 : 6),
-                bottom: Radius.circular(i == list.length - 1 ? 20 : 6),
+          ),
+        );
+      }
+      if (list == null) {
+        return Padding(
+          padding: const EdgeInsets.fromLTRB(16, 8, 16, 32),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              const LinearProgressIndicator(),
+              const SizedBox(height: 16),
+              Text(
+                getString.playerLoadingStreams,
+                style: context.textTheme.bodyMedium?.copyWith(
+                  color: context.colorScheme.onSurfaceVariant,
+                ),
               ),
-              leading: const Icon(Icons.play_circle_outline_rounded),
-              title: Text(streamLabel(video)),
-              subtitle: video.quality.isNotEmpty && video.quality != video.title
-                  ? Text(video.quality)
-                  : null,
-              selected: i == selected,
-              onTap: () => popPage(context, i),
-            ),
-        ],
-      ),
-    ),
+            ],
+          ),
+        );
+      }
+      return _streamList(context, widget.state, list, -1);
+    }),
   );
 }
 

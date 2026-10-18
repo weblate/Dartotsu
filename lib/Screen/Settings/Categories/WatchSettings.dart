@@ -12,6 +12,7 @@ import '../../../Widgets/Components/AppControls.dart';
 import '../../../Utils/Functions/NavigateToScreen.dart';
 import '../SubSettingsScreen.dart';
 import '../Widgets/SegmentedSetting.dart';
+import '../../Together/TogetherSheet.dart';
 import 'PlayerSettings.dart';
 import 'ReaderSettings.dart';
 
@@ -51,6 +52,13 @@ List<Setting> watchSettings(BuildContext context) => [
         settings: readerSettings,
       ),
     ),
+  ),
+  Setting.normal(
+    name: getString.togetherTitle,
+    description: getString.togetherSettingsDesc,
+    icon: Icons.groups_rounded,
+    isActivity: true,
+    onClick: () => showTogetherSheet(context),
   ),
   Setting.header(getString.watchSettingsLayout),
   Setting.switchType(

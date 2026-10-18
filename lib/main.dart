@@ -1,3 +1,4 @@
+import 'Screen/Together/TogetherLink.dart';
 import 'dart:async';
 import 'dart:io';
 
@@ -235,6 +236,7 @@ Future<void> _postInit(List<String> args) async {
   find<ActivityAlerts>().start();
   find<CommentAlerts>().start();
   installPlayerLinks();
+  DeepLink.register(TogetherLinks());
   DeepLink.init();
   unawaited(refreshLinkHandling());
   if (Platform.isWindows || Platform.isLinux || Platform.isMacOS) {

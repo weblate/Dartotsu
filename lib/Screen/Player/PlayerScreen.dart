@@ -24,6 +24,7 @@ import 'Components/EpisodePanel.dart';
 import 'Components/PlayerControls.dart';
 import 'Components/PlayerEpisodes.dart';
 import 'Components/PlayerIndicators.dart';
+import '../Together/TogetherRoomView.dart';
 import 'Components/PlayerSheets.dart';
 import 'Components/PlayerSubtitleView.dart';
 import 'PlayerState.dart';
@@ -52,6 +53,8 @@ class _PlayerScreenState extends State<PlayerScreen>
     super.initState();
     state.askStream = (list) =>
         showStreamSheet(context, state, list, selected: -1);
+    state.askPendingStream = (pending) =>
+        showPendingStreamSheet(context, state, pending);
   }
 
   @override
@@ -198,6 +201,11 @@ class _PlayerScreenState extends State<PlayerScreen>
               ),
             ),
           );
+          final together = state.together;
+          if (together.following) return _guest(context, scheme, stage);
+          if (state.chatOpen.value && together.connected) {
+            return _chat(context, scheme, stage);
+          }
           if (!state.commentsOpen.value || widget.request.service == null) {
             return _episodes(context, scheme, stage);
           }
@@ -206,6 +214,76 @@ class _PlayerScreenState extends State<PlayerScreen>
       ),
     );
   }
+
+  Widget _heading(BuildContext context, ColorScheme scheme) {
+    final item = state.item;
+    final media = widget.request.media;
+    return Padding(
+      padding: EdgeInsets.fromLTRB(
+        Dimens.pagePad,
+        Dimens.gap,
+        Dimens.pagePad,
+        Dimens.gapSm,
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            item.title,
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
+            style: context.textTheme.titleMedium?.copyWith(
+              fontWeight: FontWeight.w800,
+              height: 1.2,
+            ),
+          ),
+          if ((media?.mainName ?? item.subtitle) != null) ...[
+            SizedBox(height: Dimens.gapXs),
+            Text(
+              media?.mainName ?? item.subtitle!,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              style: context.textTheme.bodyMedium?.copyWith(
+                color: scheme.primary,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+          ],
+        ],
+      ),
+    );
+  }
+
+  Widget _guest(BuildContext context, ColorScheme scheme, Widget stage) {
+    final together = state.together;
+    return Material(
+      color: scheme.surface,
+      child: Column(
+        children: [
+          stage,
+          _heading(context, scheme),
+          _tools(context),
+          Expanded(child: TogetherRoomView(session: together)),
+        ],
+      ),
+    );
+  }
+
+  Widget _chat(BuildContext context, ColorScheme scheme, Widget stage) =>
+      Material(
+        color: scheme.surface,
+        child: Column(
+          children: [
+            stage,
+            Expanded(
+              child: TogetherRoomView(
+                session: state.together,
+                onClose: () => state.chatOpen.value = false,
+              ),
+            ),
+          ],
+        ),
+      );
 
   Widget _episodes(BuildContext context, ColorScheme scheme, Widget stage) {
     final tracked = widget.request.media != null;
@@ -252,7 +330,7 @@ class _PlayerScreenState extends State<PlayerScreen>
           ),
         ),
         SliverToBoxAdapter(child: _tools(context)),
-        if (tracked)
+        if (tracked || state.together.connected)
           SliverToBoxAdapter(
             child: Padding(
               padding: EdgeInsets.fromLTRB(
@@ -261,24 +339,29 @@ class _PlayerScreenState extends State<PlayerScreen>
                 Dimens.pagePad,
                 Dimens.gapSm,
               ),
-              child: Material(
-                color: scheme.surfaceContainerHigh,
-                borderRadius: Dimens.borderSm,
-                clipBehavior: Clip.antiAlias,
-                child: ListTile(
-                  onTap: () => state.commentsOpen.value = true,
-                  leading: Icon(Icons.forum_rounded, color: scheme.primary),
-                  title: Text(
-                    getString.playerShowComments,
-                    style: context.textTheme.titleSmall?.copyWith(
-                      fontWeight: FontWeight.w700,
+              child: Column(
+                children: [
+                  if (tracked)
+                    _tile(
+                      context,
+                      scheme,
+                      Icons.forum_rounded,
+                      getString.playerShowComments,
+                      () => state.commentsOpen.value = true,
                     ),
-                  ),
-                  trailing: Icon(
-                    Icons.keyboard_arrow_right_rounded,
-                    color: scheme.onSurfaceVariant,
-                  ),
-                ),
+                  if (state.together.connected) ...[
+                    if (tracked) SizedBox(height: Dimens.gapSm),
+                    _tile(
+                      context,
+                      scheme,
+                      state.together.unread.value > 0
+                          ? Icons.mark_unread_chat_alt_rounded
+                          : Icons.chat_rounded,
+                      getString.togetherShowChat,
+                      () => state.chatOpen.value = true,
+                    ),
+                  ],
+                ],
               ),
             ),
           ),
@@ -294,6 +377,32 @@ class _PlayerScreenState extends State<PlayerScreen>
       ],
     );
   }
+
+  Widget _tile(
+    BuildContext context,
+    ColorScheme scheme,
+    IconData icon,
+    String label,
+    VoidCallback onTap,
+  ) => Material(
+    color: scheme.surfaceContainerHigh,
+    borderRadius: Dimens.borderSm,
+    clipBehavior: Clip.antiAlias,
+    child: ListTile(
+      onTap: onTap,
+      leading: Icon(icon, color: scheme.primary),
+      title: Text(
+        label,
+        style: context.textTheme.titleSmall?.copyWith(
+          fontWeight: FontWeight.w700,
+        ),
+      ),
+      trailing: Icon(
+        Icons.keyboard_arrow_right_rounded,
+        color: scheme.onSurfaceVariant,
+      ),
+    ),
+  );
 
   Widget _tools(BuildContext context) {
     Widget chip(IconData icon, String label, VoidCallback onTap) => Padding(
@@ -338,6 +447,25 @@ class _PlayerScreenState extends State<PlayerScreen>
               getString.playerChapters,
               () => showChaptersSheet(context, state),
             ),
+          Watch(() {
+            final together = state.together;
+            if (!together.active && !together.canShare) {
+              return const SizedBox.shrink();
+            }
+            final label = together.connected
+                ? '${getString.togetherChip} · ${together.users.length}'
+                : getString.togetherChip;
+            return chip(
+              together.unread.value > 0
+                  ? Icons.mark_unread_chat_alt_rounded
+                  : Icons.groups_rounded,
+              label,
+              () {
+                if (!together.active) unawaited(together.startHosting());
+                state.chatOpen.value = true;
+              },
+            );
+          }),
           chip(
             Icons.fit_screen_rounded,
             getString.playerResize,

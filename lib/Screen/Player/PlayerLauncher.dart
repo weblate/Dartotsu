@@ -57,9 +57,11 @@ Future<void> pickAndPlayFolder() async {
   await playPaths([dir]);
 }
 
-Future<void> playTorrent(String source) async {
+Future<void> playTorrent(String source, {String? title}) async {
   if (!torrentReady) return snackString(getString.playerTorrentMissing);
-  final name = source.startsWith('magnet:')
+  final name = title != null && title.trim().isNotEmpty
+      ? title.trim()
+      : source.startsWith('magnet:')
       ? (Uri.tryParse(source)?.queryParameters['dn'] ?? 'Torrent')
       : p.basenameWithoutExtension(source);
   await openPlayer(

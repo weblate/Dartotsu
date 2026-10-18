@@ -5318,6 +5318,208 @@ class AppLocalizationsJa extends AppLocalizations {
       'Load a title with its characters, staff and your entry in one request';
 
   @override
+  String get togetherTitle => 'Watch together';
+
+  @override
+  String get togetherIntro =>
+      'Paste the room link your friend sent you. You join straight away and the player opens when they start watching.';
+
+  @override
+  String get togetherName => 'Your name';
+
+  @override
+  String get togetherRoom => 'Room';
+
+  @override
+  String get togetherNewRoom => 'New random room';
+
+  @override
+  String get togetherServer => 'Server';
+
+  @override
+  String get togetherPort => 'Port';
+
+  @override
+  String get togetherPassword => 'Server password (optional)';
+
+  @override
+  String get togetherPublicNote =>
+      'Public servers have no password and rooms are open. Use a long room name and share it only with friends.';
+
+  @override
+  String get togetherConnect => 'Connect';
+
+  @override
+  String get togetherConnecting => 'Connecting…';
+
+  @override
+  String get togetherLeave => 'Leave room';
+
+  @override
+  String get togetherLeftRoom => 'You left the room';
+
+  @override
+  String get togetherReady => 'Ready';
+
+  @override
+  String get togetherYou => 'You';
+
+  @override
+  String get togetherNoChat => 'No messages yet';
+
+  @override
+  String get togetherChatHint => 'Message';
+
+  @override
+  String get togetherCopyInvite => 'Copy invite';
+
+  @override
+  String get togetherInviteCopied => 'Server and room copied';
+
+  @override
+  String get togetherFileMismatch => 'Different file or length';
+
+  @override
+  String get togetherConnectionLost => 'Connection lost';
+
+  @override
+  String togetherConnectedTo(String room) {
+    return 'Connected to $room';
+  }
+
+  @override
+  String togetherFailed(String error) {
+    return 'Couldn\'t connect: $error';
+  }
+
+  @override
+  String togetherJoined(String name) {
+    return '$name joined';
+  }
+
+  @override
+  String togetherLeft(String name) {
+    return '$name left';
+  }
+
+  @override
+  String togetherPaused(String name) {
+    return '$name paused';
+  }
+
+  @override
+  String togetherResumed(String name) {
+    return '$name resumed';
+  }
+
+  @override
+  String togetherSeeked(String name, String time) {
+    return '$name jumped to $time';
+  }
+
+  @override
+  String togetherOtherService(String service) {
+    return 'The host is on $service, syncing is off';
+  }
+
+  @override
+  String get togetherFollowFailed =>
+      'Couldn\'t open the host\'s episode. Open it yourself.';
+
+  @override
+  String get togetherHostRole => 'Host a room';
+
+  @override
+  String get togetherJoinRole => 'Join a room';
+
+  @override
+  String get togetherFollow => 'Follow the host\'s episode';
+
+  @override
+  String get togetherFollowDesc =>
+      'Opens and switches episodes automatically when you use the same service';
+
+  @override
+  String get togetherOpenHost => 'Open host\'s episode';
+
+  @override
+  String togetherHostWatching(String title) {
+    return 'Host: $title';
+  }
+
+  @override
+  String get togetherLiveChat => 'Live chat';
+
+  @override
+  String get togetherShowChat => 'Show live chat';
+
+  @override
+  String get togetherWaitingHost => 'Waiting for the host to start an episode';
+
+  @override
+  String get togetherDifferentService =>
+      'The host is on another service, syncing is off';
+
+  @override
+  String get togetherNoSource =>
+      'Install an anime extension to follow the host';
+
+  @override
+  String togetherNoMatch(String source) {
+    return '$source has no match for the host\'s title';
+  }
+
+  @override
+  String togetherNoEpisode(String source) {
+    return '$source doesn\'t have the host\'s episode';
+  }
+
+  @override
+  String get togetherRoomLink => 'Room link';
+
+  @override
+  String get togetherBadLink => 'That isn\'t a room link';
+
+  @override
+  String get togetherHostClosed => 'The host closed the room';
+
+  @override
+  String get togetherHostBadge => 'Host';
+
+  @override
+  String get togetherNowPlaying => 'Now playing';
+
+  @override
+  String togetherWatchingCount(int count) {
+    return '$count watching';
+  }
+
+  @override
+  String togetherWantsPause(String user) {
+    return '$user wants to pause';
+  }
+
+  @override
+  String togetherWantsResume(String user) {
+    return '$user wants to resume';
+  }
+
+  @override
+  String get togetherChip => 'Together';
+
+  @override
+  String get togetherSettingsDesc => 'Join a friend\'s room with a link';
+
+  @override
+  String get togetherNoPlayer =>
+      'Open an episode and it syncs with the room automatically. Chat and the member list work right now.';
+
+  @override
+  String togetherWatching(String name, String file) {
+    return '$name is watching $file';
+  }
+
+  @override
   String get novelBilingual => 'Show original and translation';
 
   @override

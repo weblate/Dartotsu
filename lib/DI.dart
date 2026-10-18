@@ -1,3 +1,4 @@
+import 'Screen/Together/TogetherController.dart';
 import 'dart:async';
 import 'dart:io';
 
@@ -56,6 +57,7 @@ class DI {
     lazyPut<LocaleController>(LocaleController.new);
     lazyPut<MediaServiceController>(MediaServiceController.new);
     lazyPut<SyncController>(SyncController.new);
+    lazyPut<TogetherController>(TogetherController.new);
     lazyPut<AnilistAuth>(AnilistAuth.new);
     lazyPut<MalAuth>(MalAuth.new);
     lazyPut<SimklAuth>(SimklAuth.new);

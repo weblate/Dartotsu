@@ -9767,6 +9767,336 @@ abstract class AppLocalizations {
   /// **'Load a title with its characters, staff and your entry in one request'**
   String get kitsuGraphqlDetailDesc;
 
+  /// No description provided for @togetherTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Watch together'**
+  String get togetherTitle;
+
+  /// No description provided for @togetherIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'Paste the room link your friend sent you. You join straight away and the player opens when they start watching.'**
+  String get togetherIntro;
+
+  /// No description provided for @togetherName.
+  ///
+  /// In en, this message translates to:
+  /// **'Your name'**
+  String get togetherName;
+
+  /// No description provided for @togetherRoom.
+  ///
+  /// In en, this message translates to:
+  /// **'Room'**
+  String get togetherRoom;
+
+  /// No description provided for @togetherNewRoom.
+  ///
+  /// In en, this message translates to:
+  /// **'New random room'**
+  String get togetherNewRoom;
+
+  /// No description provided for @togetherServer.
+  ///
+  /// In en, this message translates to:
+  /// **'Server'**
+  String get togetherServer;
+
+  /// No description provided for @togetherPort.
+  ///
+  /// In en, this message translates to:
+  /// **'Port'**
+  String get togetherPort;
+
+  /// No description provided for @togetherPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Server password (optional)'**
+  String get togetherPassword;
+
+  /// No description provided for @togetherPublicNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Public servers have no password and rooms are open. Use a long room name and share it only with friends.'**
+  String get togetherPublicNote;
+
+  /// No description provided for @togetherConnect.
+  ///
+  /// In en, this message translates to:
+  /// **'Connect'**
+  String get togetherConnect;
+
+  /// No description provided for @togetherConnecting.
+  ///
+  /// In en, this message translates to:
+  /// **'Connecting…'**
+  String get togetherConnecting;
+
+  /// No description provided for @togetherLeave.
+  ///
+  /// In en, this message translates to:
+  /// **'Leave room'**
+  String get togetherLeave;
+
+  /// No description provided for @togetherLeftRoom.
+  ///
+  /// In en, this message translates to:
+  /// **'You left the room'**
+  String get togetherLeftRoom;
+
+  /// No description provided for @togetherReady.
+  ///
+  /// In en, this message translates to:
+  /// **'Ready'**
+  String get togetherReady;
+
+  /// No description provided for @togetherYou.
+  ///
+  /// In en, this message translates to:
+  /// **'You'**
+  String get togetherYou;
+
+  /// No description provided for @togetherNoChat.
+  ///
+  /// In en, this message translates to:
+  /// **'No messages yet'**
+  String get togetherNoChat;
+
+  /// No description provided for @togetherChatHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Message'**
+  String get togetherChatHint;
+
+  /// No description provided for @togetherCopyInvite.
+  ///
+  /// In en, this message translates to:
+  /// **'Copy invite'**
+  String get togetherCopyInvite;
+
+  /// No description provided for @togetherInviteCopied.
+  ///
+  /// In en, this message translates to:
+  /// **'Server and room copied'**
+  String get togetherInviteCopied;
+
+  /// No description provided for @togetherFileMismatch.
+  ///
+  /// In en, this message translates to:
+  /// **'Different file or length'**
+  String get togetherFileMismatch;
+
+  /// No description provided for @togetherConnectionLost.
+  ///
+  /// In en, this message translates to:
+  /// **'Connection lost'**
+  String get togetherConnectionLost;
+
+  /// No description provided for @togetherConnectedTo.
+  ///
+  /// In en, this message translates to:
+  /// **'Connected to {room}'**
+  String togetherConnectedTo(String room);
+
+  /// No description provided for @togetherFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t connect: {error}'**
+  String togetherFailed(String error);
+
+  /// No description provided for @togetherJoined.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} joined'**
+  String togetherJoined(String name);
+
+  /// No description provided for @togetherLeft.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} left'**
+  String togetherLeft(String name);
+
+  /// No description provided for @togetherPaused.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} paused'**
+  String togetherPaused(String name);
+
+  /// No description provided for @togetherResumed.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} resumed'**
+  String togetherResumed(String name);
+
+  /// No description provided for @togetherSeeked.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} jumped to {time}'**
+  String togetherSeeked(String name, String time);
+
+  /// No description provided for @togetherOtherService.
+  ///
+  /// In en, this message translates to:
+  /// **'The host is on {service}, syncing is off'**
+  String togetherOtherService(String service);
+
+  /// No description provided for @togetherFollowFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t open the host\'s episode. Open it yourself.'**
+  String get togetherFollowFailed;
+
+  /// No description provided for @togetherHostRole.
+  ///
+  /// In en, this message translates to:
+  /// **'Host a room'**
+  String get togetherHostRole;
+
+  /// No description provided for @togetherJoinRole.
+  ///
+  /// In en, this message translates to:
+  /// **'Join a room'**
+  String get togetherJoinRole;
+
+  /// No description provided for @togetherFollow.
+  ///
+  /// In en, this message translates to:
+  /// **'Follow the host\'s episode'**
+  String get togetherFollow;
+
+  /// No description provided for @togetherFollowDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Opens and switches episodes automatically when you use the same service'**
+  String get togetherFollowDesc;
+
+  /// No description provided for @togetherOpenHost.
+  ///
+  /// In en, this message translates to:
+  /// **'Open host\'s episode'**
+  String get togetherOpenHost;
+
+  /// No description provided for @togetherHostWatching.
+  ///
+  /// In en, this message translates to:
+  /// **'Host: {title}'**
+  String togetherHostWatching(String title);
+
+  /// No description provided for @togetherLiveChat.
+  ///
+  /// In en, this message translates to:
+  /// **'Live chat'**
+  String get togetherLiveChat;
+
+  /// No description provided for @togetherShowChat.
+  ///
+  /// In en, this message translates to:
+  /// **'Show live chat'**
+  String get togetherShowChat;
+
+  /// No description provided for @togetherWaitingHost.
+  ///
+  /// In en, this message translates to:
+  /// **'Waiting for the host to start an episode'**
+  String get togetherWaitingHost;
+
+  /// No description provided for @togetherDifferentService.
+  ///
+  /// In en, this message translates to:
+  /// **'The host is on another service, syncing is off'**
+  String get togetherDifferentService;
+
+  /// No description provided for @togetherNoSource.
+  ///
+  /// In en, this message translates to:
+  /// **'Install an anime extension to follow the host'**
+  String get togetherNoSource;
+
+  /// No description provided for @togetherNoMatch.
+  ///
+  /// In en, this message translates to:
+  /// **'{source} has no match for the host\'s title'**
+  String togetherNoMatch(String source);
+
+  /// No description provided for @togetherNoEpisode.
+  ///
+  /// In en, this message translates to:
+  /// **'{source} doesn\'t have the host\'s episode'**
+  String togetherNoEpisode(String source);
+
+  /// No description provided for @togetherRoomLink.
+  ///
+  /// In en, this message translates to:
+  /// **'Room link'**
+  String get togetherRoomLink;
+
+  /// No description provided for @togetherBadLink.
+  ///
+  /// In en, this message translates to:
+  /// **'That isn\'t a room link'**
+  String get togetherBadLink;
+
+  /// No description provided for @togetherHostClosed.
+  ///
+  /// In en, this message translates to:
+  /// **'The host closed the room'**
+  String get togetherHostClosed;
+
+  /// No description provided for @togetherHostBadge.
+  ///
+  /// In en, this message translates to:
+  /// **'Host'**
+  String get togetherHostBadge;
+
+  /// No description provided for @togetherNowPlaying.
+  ///
+  /// In en, this message translates to:
+  /// **'Now playing'**
+  String get togetherNowPlaying;
+
+  /// No description provided for @togetherWatchingCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} watching'**
+  String togetherWatchingCount(int count);
+
+  /// No description provided for @togetherWantsPause.
+  ///
+  /// In en, this message translates to:
+  /// **'{user} wants to pause'**
+  String togetherWantsPause(String user);
+
+  /// No description provided for @togetherWantsResume.
+  ///
+  /// In en, this message translates to:
+  /// **'{user} wants to resume'**
+  String togetherWantsResume(String user);
+
+  /// No description provided for @togetherChip.
+  ///
+  /// In en, this message translates to:
+  /// **'Together'**
+  String get togetherChip;
+
+  /// No description provided for @togetherSettingsDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Join a friend\'s room with a link'**
+  String get togetherSettingsDesc;
+
+  /// No description provided for @togetherNoPlayer.
+  ///
+  /// In en, this message translates to:
+  /// **'Open an episode and it syncs with the room automatically. Chat and the member list work right now.'**
+  String get togetherNoPlayer;
+
+  /// No description provided for @togetherWatching.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} is watching {file}'**
+  String togetherWatching(String name, String file);
+
   /// No description provided for @novelBilingual.
   ///
   /// In en, this message translates to:
