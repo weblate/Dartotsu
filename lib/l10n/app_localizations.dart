@@ -9749,6 +9749,36 @@ abstract class AppLocalizations {
   /// **'Translation'**
   String get novelSectionTranslate;
 
+  /// No description provided for @sectionExperimental.
+  ///
+  /// In en, this message translates to:
+  /// **'Experimental'**
+  String get sectionExperimental;
+
+  /// No description provided for @kitsuGraphqlDetail.
+  ///
+  /// In en, this message translates to:
+  /// **'Faster detail pages (GraphQL)'**
+  String get kitsuGraphqlDetail;
+
+  /// No description provided for @kitsuGraphqlDetailDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Load a title with its characters, staff and your entry in one request'**
+  String get kitsuGraphqlDetailDesc;
+
+  /// No description provided for @novelBilingual.
+  ///
+  /// In en, this message translates to:
+  /// **'Show original and translation'**
+  String get novelBilingual;
+
+  /// No description provided for @novelBilingualDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Each paragraph shows the original text with its translation below it'**
+  String get novelBilingualDesc;
+
   /// No description provided for @novelTranslateTo.
   ///
   /// In en, this message translates to:

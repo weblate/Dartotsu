@@ -7,6 +7,7 @@ import '../../../Core/State/State.dart';
 
 const kitsuApi = 'https://kitsu.io/api/edge';
 const kitsuWeb = 'https://kitsu.io';
+const kitsuGraphqlUrl = 'https://kitsu.io/api/graphql';
 const kitsuTokenUrl = 'https://kitsu.io/api/oauth/token';
 
 class KitsuException implements Exception {
@@ -99,6 +100,21 @@ class KitsuClient {
       _run(
         (h) => _net.post(_url(path), data: jsonEncode(body), headers: h),
       ).then(_decode);
+
+  Future<Map<String, dynamic>> graphql(
+    String query,
+    Map<String, dynamic> variables,
+  ) => _run(
+    (h) => _net.post(
+      kitsuGraphqlUrl,
+      data: jsonEncode({'query': query, 'variables': variables}),
+      headers: {
+        ...h,
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+    ),
+  ).then(_decode);
 
   Future<Map<String, dynamic>> patch(String path, Map<String, dynamic> body) =>
       _run(

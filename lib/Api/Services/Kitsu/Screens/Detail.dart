@@ -8,6 +8,7 @@ import '../../../../Screen/Review/ReactionsShelf.dart';
 import '../../../../Screen/Review/ReviewsShelf.dart';
 import '../../../../Utils/Extensions/StringExtensions.dart';
 import '../Auth.dart';
+import '../Prefs.dart';
 import '../Data/Mapper.dart';
 import 'ListEditor.dart';
 
@@ -41,6 +42,22 @@ class KitsuDetailView extends DetailScreenView {
     if (host.cached) return;
     final queries = kitsuAuth.queries;
     final base = host.media.value;
+    if (KitsuPref.graphqlDetail.value) {
+      final reviews = queries.getReviews(base.id);
+      final detail = await queries.graphDetail(base.id);
+      if (detail != null) {
+        final media = detail.media
+          ..cameFromContinue = base.cameFromContinue
+          ..characters = detail.characters
+          ..staff = detail.staff;
+        host.update(media);
+        yield _build(host);
+        media.review = (await reviews).take(3).toList();
+        host.update(media);
+        yield _build(host);
+        return;
+      }
+    }
     final characters = queries.characters(base);
     final staff = queries.staff(base);
     final reviews = queries.getReviews(base.id);

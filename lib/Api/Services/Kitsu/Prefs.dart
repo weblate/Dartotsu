@@ -47,6 +47,12 @@ class KitsuPref {
 
   static const hideNsfw = Pref('kitsuHideNsfw', true, PrefLocation.OTHER);
 
+  static const graphqlDetail = Pref(
+    'kitsuGraphqlDetail',
+    false,
+    PrefLocation.OTHER,
+  );
+
   static const alerts = Pref('kitsuAlerts', false, PrefLocation.OTHER);
   static const pollMinutes = Pref<int>(
     'kitsuPollMinutes',

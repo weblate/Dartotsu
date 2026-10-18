@@ -108,6 +108,8 @@ class ReaderSettings {
   set novelLetterSpacing(int v) => _v['novelLetterSpacing'] = v;
   bool get novelTapPaging => _get('novelTapPaging', false);
   set novelTapPaging(bool v) => _v['novelTapPaging'] = v;
+  bool get translateBilingual => _get('translateBilingual', false);
+  set translateBilingual(bool v) => _v['translateBilingual'] = v;
   String get translateTo => _get('translateTo', '');
   set translateTo(String v) => _v['translateTo'] = v;
   String get speechVoice => _get('speechVoice', '');

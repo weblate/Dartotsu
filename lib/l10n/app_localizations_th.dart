@@ -5309,6 +5309,23 @@ class AppLocalizationsTh extends AppLocalizations {
   String get novelSectionTranslate => 'Translation';
 
   @override
+  String get sectionExperimental => 'Experimental';
+
+  @override
+  String get kitsuGraphqlDetail => 'Faster detail pages (GraphQL)';
+
+  @override
+  String get kitsuGraphqlDetailDesc =>
+      'Load a title with its characters, staff and your entry in one request';
+
+  @override
+  String get novelBilingual => 'Show original and translation';
+
+  @override
+  String get novelBilingualDesc =>
+      'Each paragraph shows the original text with its translation below it';
+
+  @override
   String get novelTranslateTo => 'Translate to';
 
   @override

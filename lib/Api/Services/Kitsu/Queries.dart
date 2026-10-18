@@ -23,6 +23,7 @@ import '../../../Core/Services/Model/User.dart';
 import '../../../Utils/Functions/SnackBar.dart';
 import 'Auth.dart';
 import 'Client.dart';
+import 'Data/Graph.dart';
 import 'Data/Mapper.dart';
 import 'Prefs.dart';
 
@@ -457,6 +458,22 @@ class KitsuQueries extends Queries {
     if (full == null) return media;
     await _overlayEntry(full, ref.$1, ref.$2);
     return full..cameFromContinue = media.cameFromContinue;
+  }
+
+  Future<KitsuGraphDetail?> graphDetail(String mediaId) async {
+    final ref = parseKitsuMediaId(mediaId);
+    if (ref == null || !mediaId.contains('/')) return null;
+    final (anime, id) = ref;
+    try {
+      final body = await client.graphql(
+        kitsuDetailQuery(anime, withEntry: client.hasToken && userId() != null),
+        {'id': '$id'},
+      );
+      return parseKitsuGraphDetail(body, anime: anime);
+    } catch (e, st) {
+      logError('Queries', e, st);
+      return null;
+    }
   }
 
   Future<List<Character>> characters(Media media) async {

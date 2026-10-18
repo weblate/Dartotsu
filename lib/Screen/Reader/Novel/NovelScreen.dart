@@ -157,7 +157,32 @@ class _NovelScreenState extends State<NovelScreen>
           if (i == 0) return _heading(context, base);
           if (i == blocks.length + 1) return _end(context);
           final key = state.blockKeys.putIfAbsent(i - 1, GlobalKey.new);
-          final block = _block(context, blocks[i - 1], base, s);
+          final source = state.original;
+          final bilingual =
+              s.translateBilingual &&
+              state.translated.value != null &&
+              source.length == blocks.length &&
+              source[i - 1] is NovelParagraph &&
+              blocks[i - 1] is NovelParagraph;
+          final block = bilingual
+              ? Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    _block(
+                      context,
+                      source[i - 1],
+                      base,
+                      s.copy()..novelParagraph = 4,
+                    ),
+                    _block(
+                      context,
+                      blocks[i - 1],
+                      base.copyWith(color: base.color?.withValues(alpha: 0.6)),
+                      s,
+                    ),
+                  ],
+                )
+              : _block(context, blocks[i - 1], base, s);
           final active = state.speakingAt.value == i - 1;
           return KeyedSubtree(
             key: key,

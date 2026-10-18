@@ -369,6 +369,13 @@ List<Setting> novelReaderRows(
         if (picked != null) update((x) => x.translateTo = picked);
       },
     ),
+    switchSetting(
+      getString.novelBilingual,
+      getString.novelBilingualDesc,
+      Icons.compare_arrows_rounded,
+      s.translateBilingual,
+      (v) => update((x) => x.translateBilingual = v),
+    ),
     Setting.header(getString.novelSectionSpeech),
     Setting.normal(
       name: getString.novelSpeechVoice,

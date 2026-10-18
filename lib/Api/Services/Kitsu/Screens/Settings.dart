@@ -38,6 +38,14 @@ class KitsuSettingsView extends SettingsScreenView {
           tryFind<RefreshController>()?.all();
         },
       ),
+      Setting.header(getString.sectionExperimental),
+      Setting.switchType(
+        name: getString.kitsuGraphqlDetail,
+        description: getString.kitsuGraphqlDetailDesc,
+        icon: Icons.bolt_rounded,
+        isChecked: KitsuPref.graphqlDetail.rx.value,
+        onSwitchChange: (v) => KitsuPref.graphqlDetail.rx.value = v,
+      ),
       Setting.header(getString.feedLayout),
       Setting.normal(
         name: getString.homeSections,
