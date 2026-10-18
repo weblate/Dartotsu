@@ -48,8 +48,12 @@ class _StreamSheetState extends State<StreamSheet> {
       final list = await source.methods.getVideoList(widget.unit.raw);
       if (!mounted) return;
       shareSubtitles(list);
-      if (list.length == 1) {
-        popPage(context, StreamPick(list, 0));
+      final last = widget.state.record.streams.last[source.id];
+      final remembered = widget.state.record.streams.auto && last != null
+          ? bestStreamIndex(list, last)
+          : null;
+      if (remembered != null || list.length == 1) {
+        popPage(context, StreamPick(list, remembered ?? 0));
         return;
       }
       _streams.value = list;

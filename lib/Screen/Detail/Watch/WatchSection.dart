@@ -382,14 +382,10 @@ class _WatchSectionState extends State<WatchSection>
     if (find<OfflineMode>().isOffline.value) {
       return snackString(getString.downloadNotOffline);
     }
-    final auto = await state.autoStream(unit).catchError((_) => null);
-    if (!mounted) return;
-    final pick =
-        auto ??
-        await showCustomBottomDialog<StreamPick>(
-          context,
-          StreamSheet(state: state, unit: unit),
-        );
+    final pick = await showCustomBottomDialog<StreamPick>(
+      context,
+      StreamSheet(state: state, unit: unit),
+    );
     if (pick == null || !mounted) return;
     final chosen = pick.videos[pick.index];
     final src = state.source.value;

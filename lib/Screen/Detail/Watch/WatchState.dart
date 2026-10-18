@@ -576,17 +576,6 @@ class WatchState extends ScreenState {
     );
   }
 
-  Future<StreamPick?> autoStream(WatchUnit unit) async {
-    final src = source.value;
-    if (src == null || !record.streams.auto) return null;
-    final last = record.streams.last[src.id];
-    if (last == null) return null;
-    final list = await src.methods.getVideoList(unit.raw);
-    shareSubtitles(list);
-    final index = bestStreamIndex(list, last);
-    return index == null ? null : StreamPick(list, index);
-  }
-
   Future<void> refresh() async {
     EpisodeMetaService.clearCache();
     await start();
