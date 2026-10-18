@@ -31,6 +31,7 @@ class ReaderImageLoader {
     final process = page.process;
     if (process != null) _processors[page.url] = process;
   }
+
   static var _epoch = 0;
 
   static void cancelAll() => _epoch++;

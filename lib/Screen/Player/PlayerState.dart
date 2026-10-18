@@ -107,6 +107,8 @@ class PlayerState extends ScreenState {
   bool _busy = false;
   bool _closed = false;
   Disposer? _positionSub;
+  Disposer? _warmSub;
+  Timer? _stripTimer;
   Disposer? _completedSub;
   Disposer? _playingSub;
   int _generation = 0;
@@ -296,11 +298,19 @@ class PlayerState extends ScreenState {
     }
   }
 
+  void _warmPreview() {
+    if (!settings.seekPreview) return;
+    final target = engine.previewTarget;
+    if (target == null) return;
+    unawaited(seekPreview.open(target, engine.previewHeaders));
+  }
+
   void previewTo(Duration? at) {
     previewAt.value = at;
     if (at == null || !settings.seekPreview) return;
     final target = engine.previewTarget;
     if (target == null || engine.duration.value <= Duration.zero) return;
+    if (seekPreview.strip.nearest(at, within: 1) != null) return;
     unawaited(
       seekPreview.open(target, engine.previewHeaders).then((_) {
         if (previewAt.value != null) seekPreview.seek(previewAt.value!);
@@ -310,9 +320,25 @@ class PlayerState extends ScreenState {
 
   void _bindEngine() {
     _positionSub?.dispose();
+    _warmSub?.dispose();
     _completedSub?.dispose();
     _playingSub?.dispose();
     _positionSub = engine.position.listen(_onPosition);
+    _warmSub = engine.duration.listen((d) {
+      if (d > Duration.zero) _warmPreview();
+    });
+    _stripTimer ??= Timer.periodic(const Duration(seconds: FrameStrip.step), (
+      _,
+    ) {
+      if (!settings.seekPreview ||
+          !engine.playing.value ||
+          engine.duration.value <= Duration.zero) {
+        return;
+      }
+      unawaited(
+        seekPreview.strip.capture(engine.player, engine.position.value),
+      );
+    });
     _completedSub = engine.completed.listen((done) {
       if (done) _onCompleted();
     });
@@ -374,8 +400,10 @@ class PlayerState extends ScreenState {
     _seekBackwardTimer?.cancel();
     _osdTimer?.cancel();
     _saveTimer?.cancel();
+    _stripTimer?.cancel();
     unawaited(_metaSub?.cancel());
     _positionSub?.dispose();
+    _warmSub?.dispose();
     _completedSub?.dispose();
     _playingSub?.dispose();
     _saveProgress(force: true);

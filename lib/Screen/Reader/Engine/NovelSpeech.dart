@@ -34,7 +34,7 @@ class NovelSpeech {
     final existing = _tts;
     if (existing != null) return existing;
     final tts = FlutterTts();
-    await tts.awaitSpeakCompletion(false);
+    await tts.awaitSpeakCompletion(true);
     tts.setCompletionHandler(_finish);
     tts.setCancelHandler(_finish);
     tts.setErrorHandler((message) {
@@ -78,8 +78,14 @@ class NovelSpeech {
         }
         await tts.setSpeechRate((rate / 200).clamp(0.05, 1.0));
         await tts.setPitch((pitch / 100).clamp(0.5, 2.0));
-        await tts.speak(text);
-        await done.future;
+        final budget = Duration(
+          milliseconds:
+              4000 + (text.length * 9000 / rate.clamp(50, 400)).round(),
+        );
+        await Future.any<void>([
+          tts.speak(text),
+          done.future,
+        ]).timeout(budget, onTimeout: () => unawaited(tts.stop()));
       }
     } catch (e) {
       logger('Speech failed: $e', logLevel: LogLevel.error, tag: 'READER');

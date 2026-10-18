@@ -79,10 +79,13 @@ class PlayerControls extends StatelessWidget {
     final controller = state.settings.seekPreview
         ? state.seekPreview.controller
         : null;
+    final frame = state.settings.seekPreview
+        ? state.seekPreview.strip.nearest(at)
+        : null;
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        if (controller != null)
+        if (frame != null || controller != null)
           Container(
             width: 176,
             height: 99,
@@ -92,14 +95,16 @@ class PlayerControls extends StatelessWidget {
               border: Border.all(color: Colors.white24),
             ),
             clipBehavior: Clip.antiAlias,
-            child: Video(
-              controller: controller,
-              controls: null,
-              fit: BoxFit.cover,
-              subtitleViewConfiguration: const SubtitleViewConfiguration(
-                visible: false,
-              ),
-            ),
+            child: frame != null
+                ? RawImage(image: frame, fit: BoxFit.cover)
+                : Video(
+                    controller: controller!,
+                    controls: null,
+                    fit: BoxFit.cover,
+                    subtitleViewConfiguration: const SubtitleViewConfiguration(
+                      visible: false,
+                    ),
+                  ),
           ),
         const SizedBox(height: 4),
         Container(

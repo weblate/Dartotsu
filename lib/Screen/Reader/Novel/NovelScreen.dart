@@ -124,6 +124,7 @@ class _NovelScreenState extends State<NovelScreen>
                 ),
               _bar(context, background, foreground, top: true),
               _bar(context, background, foreground, top: false),
+              _audioBar(context, background, foreground),
             ],
           ),
         ),
@@ -474,6 +475,97 @@ class _NovelScreenState extends State<NovelScreen>
             ],
           ),
       ],
+    );
+  }
+
+  Widget _audioBar(BuildContext context, Color background, Color foreground) {
+    final speaking = state.speaking.value;
+    final scrolling = state.autoScrolling.value;
+    if (state.controlsVisible.value || (!speaking && !scrolling)) {
+      return const SizedBox.shrink();
+    }
+    final scheme = context.colorScheme;
+    final paused = speaking ? state.speechPaused.value : state.autoPaused.value;
+    final settings = state.settings;
+    final label = speaking
+        ? '${settings.speechRate}%'
+        : '${settings.autoScrollSpeed.clamp(1, 10)}';
+    void speed(int delta) {
+      if (speaking) {
+        final next = (settings.speechRate + delta * 10).clamp(50, 200);
+        state.updateSettings((s) => s.speechRate = next);
+        state.restartSpeaking();
+      } else {
+        final next = (settings.autoScrollSpeed + delta).clamp(1, 10);
+        state.updateSettings((s) => s.autoScrollSpeed = next);
+      }
+    }
+
+    Widget button(IconData icon, VoidCallback onTap, {bool filled = false}) =>
+        IconButton(
+          onPressed: onTap,
+          color: filled ? scheme.onPrimary : foreground,
+          style: IconButton.styleFrom(
+            backgroundColor: filled ? scheme.primary : Colors.transparent,
+          ),
+          icon: Icon(icon),
+        );
+
+    return Positioned(
+      left: 16,
+      right: 16,
+      bottom: 12 + MediaQuery.paddingOf(context).bottom,
+      child: Center(
+        child: Material(
+          color: Color.alphaBlend(
+            foreground.withValues(alpha: 0.14),
+            background,
+          ),
+          elevation: 3,
+          borderRadius: BorderRadius.circular(32),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                if (speaking)
+                  button(
+                    Icons.skip_previous_rounded,
+                    () => state.speakStep(-1),
+                  ),
+                button(
+                  paused ? Icons.play_arrow_rounded : Icons.pause_rounded,
+                  speaking ? state.toggleSpeechPause : state.toggleAutoPause,
+                  filled: true,
+                ),
+                if (speaking)
+                  button(Icons.skip_next_rounded, () => state.speakStep(1)),
+                const SizedBox(width: 4),
+                button(Icons.remove_rounded, () => speed(-1)),
+                SizedBox(
+                  width: 48,
+                  child: Text(
+                    label,
+                    textAlign: TextAlign.center,
+                    style: context.textTheme.labelLarge?.copyWith(
+                      color: foreground,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                ),
+                button(Icons.add_rounded, () => speed(1)),
+                const SizedBox(width: 4),
+                button(
+                  Icons.close_rounded,
+                  speaking
+                      ? state.stopSpeaking
+                      : () => state.setAutoScroll(false),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
     );
   }
 

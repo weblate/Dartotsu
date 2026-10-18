@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:ui' as ui;
 
 import 'package:media_kit/media_kit.dart';
 import 'package:media_kit_video/media_kit_video.dart';
@@ -6,7 +7,63 @@ import 'package:media_kit_video/media_kit_video.dart';
 import '../../../Logger.dart';
 import '../../../Core/Preferences/StorageManager.dart';
 
+class FrameStrip {
+  static const step = 5;
+  static const _cap = 400;
+
+  final _frames = <int, ui.Image>{};
+  bool _busy = false;
+
+  Future<void> capture(Player player, Duration at) async {
+    final key = at.inSeconds ~/ step;
+    if (_busy || _frames.containsKey(key)) return;
+    _busy = true;
+    try {
+      final bytes = await player
+          .screenshot(format: 'image/jpeg')
+          .timeout(const Duration(seconds: 2));
+      if (bytes == null) return;
+      final codec = await ui.instantiateImageCodec(bytes, targetWidth: 352);
+      final frame = await codec.getNextFrame();
+      codec.dispose();
+      _frames.remove(key)?.dispose();
+      _frames[key] = frame.image;
+      if (_frames.length > _cap) {
+        final far = _frames.keys.reduce(
+          (a, b) => (a - key).abs() >= (b - key).abs() ? a : b,
+        );
+        _frames.remove(far)?.dispose();
+      }
+    } catch (e) {
+      logger(
+        'Frame capture failed: $e',
+        logLevel: LogLevel.debug,
+        tag: 'PLAYER',
+      );
+    } finally {
+      _busy = false;
+    }
+  }
+
+  ui.Image? nearest(Duration at, {int within = 2}) {
+    final key = at.inSeconds ~/ step;
+    for (var d = 0; d <= within; d++) {
+      final hit = _frames[key - d] ?? _frames[key + d];
+      if (hit != null) return hit;
+    }
+    return null;
+  }
+
+  void clear() {
+    for (final image in _frames.values) {
+      image.dispose();
+    }
+    _frames.clear();
+  }
+}
+
 class SeekPreview {
+  final strip = FrameStrip();
   Player? _player;
   VideoController? _controller;
   String? _opened;
@@ -19,6 +76,7 @@ class SeekPreview {
   Future<void> open(String target, Map<String, String> headers) async {
     if (_disposed) return;
     if (_opened == target && _player != null) return;
+    if (_opened != target) strip.clear();
     _opened = target;
     try {
       var player = _player;
@@ -78,6 +136,9 @@ class SeekPreview {
       'vd-lavc-fast': 'yes',
       'vd-lavc-threads': '2',
       'demuxer-readahead-secs': '0',
+      'hls-bitrate': 'min',
+      'cache': 'yes',
+      'cache-pause': 'no',
       'keep-open': 'yes',
       'ytdl': 'no',
       'network-timeout': '15',
@@ -109,6 +170,7 @@ class SeekPreview {
   Future<void> dispose() async {
     _disposed = true;
     _timer?.cancel();
+    strip.clear();
     final player = _player;
     _player = null;
     _controller = null;

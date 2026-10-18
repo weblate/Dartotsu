@@ -39,6 +39,8 @@ class NovelState extends ScreenState {
   final translating = false.live;
   final translateProgress = 0.0.live;
   final speaking = false.live;
+  final speechPaused = false.live;
+  final autoPaused = false.live;
   final speakingAt = (-1).live;
   final _translator = NovelTranslator();
   final _speech = NovelSpeech();
@@ -157,14 +159,21 @@ class NovelState extends ScreenState {
               : null);
       loading.value = false;
       _scheduleRestore();
-      if (_resumeSpeakingAfterOpen) {
-        _resumeSpeakingAfterOpen = false;
+      final resume = _resumeSpeakingAfterOpen;
+      _resumeSpeakingAfterOpen = false;
+      if (settings.translateTo.isNotEmpty) {
+        if (resume) {
+          await translate();
+        } else {
+          unawaited(translate());
+        }
+      }
+      if (resume && run == _run && !_closed) {
         Future<void>.delayed(
           const Duration(milliseconds: 400),
           () => unawaited(startSpeaking(from: 0)),
         );
       }
-      if (settings.translateTo.isNotEmpty) unawaited(translate());
     } catch (e, st) {
       if (run != _run || _closed) return;
       logger(
@@ -359,7 +368,9 @@ class NovelState extends ScreenState {
     }
     _applySystem();
     settingsVersion.value++;
-    if (autoScrolling.value) setAutoScroll(true, hide: false);
+    if (autoScrolling.value && !autoPaused.value) {
+      setAutoScroll(true, hide: false);
+    }
   }
 
   int get wordsLeft {
@@ -372,8 +383,19 @@ class NovelState extends ScreenState {
 
   void toggleAutoScroll() => setAutoScroll(!autoScrolling.value);
 
+  void toggleAutoPause() {
+    if (!autoScrolling.value) return;
+    if (autoPaused.value) {
+      setAutoScroll(true, hide: false);
+    } else {
+      _autoTimer?.cancel();
+      autoPaused.value = true;
+    }
+  }
+
   void setAutoScroll(bool on, {bool hide = true}) {
     _autoTimer?.cancel();
+    autoPaused.value = false;
     autoScrolling.value = on;
     if (!on) return;
     if (hide) controlsVisible.value = false;
@@ -466,8 +488,31 @@ class NovelState extends ScreenState {
     }
   }
 
+  void pauseSpeaking() {
+    if (!speaking.value || speechPaused.value) return;
+    _speakRun++;
+    speechPaused.value = true;
+    unawaited(_speech.stop());
+  }
+
+  void resumeSpeaking() {
+    if (!speaking.value || !speechPaused.value) return;
+    final at = speakingAt.value;
+    unawaited(startSpeaking(from: at < 0 ? null : at));
+  }
+
+  void toggleSpeechPause() =>
+      speechPaused.value ? resumeSpeaking() : pauseSpeaking();
+
+  void restartSpeaking() {
+    if (!speaking.value || speechPaused.value) return;
+    final at = speakingAt.value;
+    unawaited(startSpeaking(from: at < 0 ? null : at));
+  }
+
   void stopSpeaking() {
     _speakRun++;
+    speechPaused.value = false;
     speaking.value = false;
     speakingAt.value = -1;
     unawaited(_speech.stop());
@@ -481,6 +526,7 @@ class NovelState extends ScreenState {
     final run = ++_speakRun;
     await _speech.stop();
     if (run != _speakRun) return;
+    speechPaused.value = false;
     speaking.value = true;
     controlsVisible.value = false;
     var i = from ?? _firstVisible();
