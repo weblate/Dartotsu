@@ -1,4 +1,5 @@
 import 'package:collection/collection.dart';
+
 import 'dart:async';
 import 'dart:io';
 
@@ -48,8 +49,29 @@ class DeepLink {
 
     final intent = ReceiveSharingIntent.instance;
 
-    void handleFiles(List<SharedMediaFile> files) =>
-        openFiles(files.map((e) => e.path).toList());
+    void handleFiles(List<SharedMediaFile> files) {
+      final paths = <String>[];
+      for (final file in files) {
+        final value = file.path.trim();
+        if (value.isEmpty) continue;
+        final isLink =
+            file.type == SharedMediaType.url ||
+            file.type == SharedMediaType.text;
+        final uri = Uri.tryParse(value);
+        if (isLink || (uri != null && uri.hasScheme && uri.scheme.length > 1)) {
+          if (uri != null && uri.hasScheme) {
+            if (value.toLowerCase().startsWith('magnet:')) {
+              paths.add(value);
+            } else {
+              unawaited(_dispatch(uri));
+            }
+          }
+          continue;
+        }
+        paths.add(value);
+      }
+      openFiles(paths);
+    }
 
     intent.getMediaStream().listen(handleFiles);
 

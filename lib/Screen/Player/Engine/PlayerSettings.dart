@@ -98,7 +98,10 @@ class PlayerSettings {
   bool get useLibass => _get('useLibass', false);
   set useLibass(bool v) => _v['useLibass'] = v;
 
-  String get decoder => _get('decoder', Platform.isLinux ? 'sw' : 'auto');
+  String get decoder => _get(
+    'decoder',
+    Platform.isLinux ? 'sw' : (Platform.isIOS ? 'hw' : 'auto'),
+  );
   set decoder(String v) => _v['decoder'] = v;
   String get videoOutput => _get('videoOutput', 'auto');
   set videoOutput(String v) => _v['videoOutput'] = v;

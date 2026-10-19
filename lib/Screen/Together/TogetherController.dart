@@ -1,15 +1,19 @@
 import 'dart:async';
 import 'dart:math';
 
+import 'package:flutter/widgets.dart';
+
 import '../../Core/Services/MediaServiceController.dart';
 import '../../Logger.dart';
 import '../../Core/State/State.dart';
 import '../../Core/ThemeManager/LanguageSwitcher.dart';
+import '../../Utils/Functions/CopyToClip.dart';
 import '../../Utils/Functions/SnackBar.dart';
 import '../Player/Components/PlayerSeekBar.dart';
 import '../Player/Engine/PlayerEngine.dart';
 import '../Player/PlayerState.dart';
 import 'TogetherBackend.dart';
+import 'TogetherLink.dart';
 import 'TogetherOpener.dart';
 import 'TogetherPrefs.dart';
 import 'TogetherStream.dart';
@@ -50,6 +54,12 @@ class TogetherController extends AppController {
   StreamSubscription<TogetherEvent>? _events;
   Timer? _poll;
   Timer? _reconnect;
+  Timer? _detachTimer;
+  Timer? _hostGone;
+  Timer? _waitTimer;
+  AppLifecycleListener? _lifecycle;
+  bool _announced = false;
+  final _unshared = <String>{};
   int _attempt = 0;
   bool _wanted = false;
   TogetherPlaystate? _hostPlay;
@@ -102,7 +112,22 @@ class TogetherController extends AppController {
   double get _duration => (_engine?.duration.value.inMilliseconds ?? 0) / 1000;
   double get _position => (_engine?.position.value.inMilliseconds ?? 0) / 1000;
 
+  @override
+  void onInit() {
+    _lifecycle = AppLifecycleListener(onResume: _resumed);
+  }
+
+  void _resumed() {
+    if (!_wanted || connected || status.value == TogetherStatus.connecting) {
+      return;
+    }
+    _attempt = 0;
+    _reconnect?.cancel();
+    unawaited(_open());
+  }
+
   void attach(PlayerState player) {
+    _detachTimer?.cancel();
     _player = player;
     _switching = false;
     playerOpen.value = true;
@@ -127,7 +152,11 @@ class TogetherController extends AppController {
     playerOpen.value = false;
     _sentFile = null;
     _myStream = null;
-    if (!_switching && active) unawaited(leave());
+    if (_switching || !active) return;
+    _detachTimer?.cancel();
+    _detachTimer = Timer(const Duration(seconds: 3), () {
+      if (_player == null && active && !_switching) unawaited(leave());
+    });
   }
 
   static String randomRoom() {
@@ -171,6 +200,10 @@ class TogetherController extends AppController {
     _greeted = false;
     _hostName = null;
     _openedId = null;
+    _announced = false;
+    _unshared.clear();
+    _hostGone?.cancel();
+    _waitTimer?.cancel();
     _streams.clear();
     _room = room;
     _name = name;
@@ -188,14 +221,21 @@ class TogetherController extends AppController {
       name: resolveName(),
       as: TogetherRole.host,
     );
+    copyToClipboard(
+      roomLink(_room, serverLabel, client.defaultServer),
+      message: getString.togetherInviteCopied,
+    );
   }
 
-  Future<void> join(String room, {String? server}) => connect(
-    server: server ?? client.defaultServer,
-    room: room,
-    name: resolveName(),
-    as: TogetherRole.guest,
-  );
+  Future<void> join(String room, {String? server}) async {
+    if (active) await leave();
+    await connect(
+      server: server ?? client.defaultServer,
+      room: room,
+      name: resolveName(),
+      as: TogetherRole.guest,
+    );
+  }
 
   Future<void> _open() async {
     status.value = TogetherStatus.connecting;
@@ -212,9 +252,9 @@ class TogetherController extends AppController {
   void _fail(String message) {
     error.value = message;
     _poll?.cancel();
-    if (_wanted && _attempt < 4) {
+    if (_wanted && _attempt < 8) {
       status.value = TogetherStatus.connecting;
-      final delay = Duration(seconds: [2, 4, 8, 15][_attempt]);
+      final delay = Duration(seconds: [2, 4, 8, 15, 15, 15, 15, 15][_attempt]);
       _attempt++;
       _reconnect?.cancel();
       _reconnect = Timer(delay, () {
@@ -227,8 +267,16 @@ class TogetherController extends AppController {
   }
 
   Future<void> leave() async {
+    final closing = isHost && connected;
+    if (closing) {
+      client.sendData('X:close');
+      await Future<void>.delayed(const Duration(milliseconds: 250));
+    }
     _wanted = false;
     _reconnect?.cancel();
+    _detachTimer?.cancel();
+    _hostGone?.cancel();
+    _waitTimer?.cancel();
     _poll?.cancel();
     await _events?.cancel();
     _events = null;
@@ -249,6 +297,10 @@ class TogetherController extends AppController {
   @override
   void onClose() {
     _wanted = false;
+    _lifecycle?.dispose();
+    _detachTimer?.cancel();
+    _hostGone?.cancel();
+    _waitTimer?.cancel();
     _reconnect?.cancel();
     _poll?.cancel();
     unawaited(_events?.cancel());
@@ -298,7 +350,7 @@ class TogetherController extends AppController {
   void _want({bool force = false}) {
     final id = hostTag?.id;
     final now = DateTime.now();
-    if (id == null) return;
+    if (id == null || _unshared.contains(id)) return;
     if (!force && now.difference(_lastWant) < const Duration(seconds: 3)) {
       return;
     }
@@ -357,7 +409,10 @@ class TogetherController extends AppController {
         _attempt = 0;
         error.value = null;
         status.value = TogetherStatus.connected;
-        _system(getString.togetherConnectedTo(_room));
+        if (!_announced) {
+          _announced = true;
+          _system(getString.togetherConnectedTo(_room));
+        }
         _startPoll();
       case TogetherDisconnected(:final reason):
         logger('Together disconnected: $reason', tag: 'TOGETHER');
@@ -367,11 +422,20 @@ class TogetherController extends AppController {
       case TogetherUsers(:final users):
         this.users.value = users;
         final host = hostUser;
-        if (host != null) _hostName = host.name;
+        if (host != null) {
+          _hostName = host.name;
+          _hostGone?.cancel();
+          _waitTimer?.cancel();
+        }
         if (isGuest && !_greeted) {
           _greeted = true;
           if (host == null) {
-            snackString(getString.togetherWaitingHost, simple: true);
+            _waitTimer?.cancel();
+            _waitTimer = Timer(const Duration(seconds: 8), () {
+              if (isGuest && connected && _player == null && hostUser == null) {
+                snackString(getString.togetherWaitingHost, simple: true);
+              }
+            });
           }
         }
         _checkFollow();
@@ -397,7 +461,18 @@ class TogetherController extends AppController {
           final ms = int.tryParse(payload.substring(2));
           if (ms != null && user != client.username) _hostRtt = ms / 1000;
         } else if (payload.startsWith('W:')) {
-          _share();
+          if (isHost && _player != null && _myStream == null) {
+            client.sendData('N:${payload.substring(2)}');
+          } else {
+            _share();
+          }
+        } else if (payload.startsWith('N:')) {
+          final id = payload.substring(2);
+          if (isGuest && _unshared.add(id)) {
+            snackString(getString.togetherFollowFailed, simple: true);
+          }
+        } else if (payload == 'X:close') {
+          if (isGuest) _closeFromHost();
         } else if (payload.startsWith('R:') && isHost) {
           final text = payload == 'R:pause'
               ? getString.togetherWantsPause(user)
@@ -413,6 +488,7 @@ class TogetherController extends AppController {
   void _onUserEvent(TogetherUserEvent event) {
     if (event.name == client.username) return;
     if (event.joined) {
+      if (isGuest && event.name == _hostName) _hostGone?.cancel();
       _share(force: true);
       _system(getString.togetherJoined(event.name));
       if (!sheetOpen) {
@@ -420,11 +496,10 @@ class TogetherController extends AppController {
       }
     } else if (event.left) {
       if (isGuest && event.name == _hostName) {
-        snackString(getString.togetherHostClosed, simple: true);
-        final player = _player;
-        _switching = true;
-        player?.pop();
-        unawaited(leave().whenComplete(() => _switching = false));
+        _hostGone?.cancel();
+        _hostGone = Timer(const Duration(seconds: 12), () {
+          if (isGuest && hostUser == null) _closeFromHost();
+        });
         return;
       }
       _system(getString.togetherLeft(event.name));
@@ -432,6 +507,15 @@ class TogetherController extends AppController {
         snackString(getString.togetherLeft(event.name), simple: true);
       }
     }
+  }
+
+  void _closeFromHost() {
+    if (!active || isHost) return;
+    snackString(getString.togetherHostClosed, simple: true);
+    final player = _player;
+    _switching = true;
+    player?.pop();
+    unawaited(leave().whenComplete(() => _switching = false));
   }
 
   void _system(String text) => chat.add(ChatLine('', text, system: true));
@@ -470,10 +554,11 @@ class TogetherController extends AppController {
     final name = currentFileName;
     _myStream ??= _streamOf(player!);
     final stream = _myStream;
-    final tag = stream == null
-        ? null
-        : TogetherTag(host: isHost, id: stream.id);
-    final announced = '$name${tag?.text ?? ''}';
+    final tag = TogetherTag(
+      host: isHost,
+      id: stream?.id ?? TogetherStream.idOf('${player!.itemKey}'),
+    );
+    final announced = '$name${tag.text}';
     if (name != null && _sentFile != announced) {
       _sentFile = announced;
       client.setFile(name, duration, tag: tag);

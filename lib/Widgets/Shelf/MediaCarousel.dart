@@ -1,4 +1,5 @@
 import '../../Utils/Animation/WidgetAnimations.dart';
+
 import 'dart:async';
 
 import 'package:flutter/material.dart';
@@ -213,7 +214,7 @@ class _Slide extends StatelessWidget {
     if (anime != null) {
       final next = anime.nextAiringEpisode;
       final total = '${anime.totalEpisodes ?? '??'}';
-      return next != null && next != -1 ? '$next / $total' : total;
+      return next != null && next > 1 ? '${next - 1} / $total' : total;
     }
     final chapters = m.manga?.totalChapters;
     return chapters == null || chapters == 0 ? '??' : '$chapters';
