@@ -12,8 +12,7 @@ class AppLocalizationsSa extends AppLocalizations {
   String get appName => 'Dartotsu';
 
   @override
-  String get appTagline =>
-      'नवीनतमं श्रेष्ठं अनुप्रयोग\nचित्रकथानां च अनुवर्तनाय';
+  String get appTagline => 'अनिमे-मांगा अनुसरणार्थं\nनूतनं सर्वोत्तमं ऐप्';
 
   @override
   String get anilist => 'AniList';
@@ -34,33 +33,33 @@ class AppLocalizationsSa extends AppLocalizations {
   String get discord => 'Discord';
 
   @override
-  String get loadMore => 'Load more';
+  String get loadMore => 'अधिकानि आनयतु';
 
   @override
-  String get login => 'प्रवेशनम्';
+  String get login => 'लॉगिन';
 
   @override
-  String get continueAsGuest => 'Continue as guest';
+  String get continueAsGuest => 'अतिथिरूपेण अग्रे गच्छ';
 
   @override
-  String get getStarted => 'Get Started';
+  String get getStarted => 'आरभस्व';
 
   @override
-  String get loginWithToken => 'Login with token';
+  String get loginWithToken => 'टोकनेन लॉगिन';
 
   @override
-  String get pasteTokenHint => 'Paste your access token';
+  String get pasteTokenHint => 'स्वस्य एक्सेस् टोकन् अत्र स्थापय';
 
   @override
   String loginTo(String service) {
-    return 'प्रवेशयतु $service';
+    return '$service मध्ये लॉगिन';
   }
 
   @override
-  String get settings => 'सेटिंग्स';
+  String get settings => 'सेटिंग्स्';
 
   @override
-  String get account => 'खाता';
+  String get account => 'खातम्';
 
   @override
   String get about => 'विषये';
@@ -69,67 +68,66 @@ class AppLocalizationsSa extends AppLocalizations {
   String get language => 'भाषा';
 
   @override
-  String get animationSpeed => 'Animations';
+  String get animationSpeed => 'एनिमेशन्स्';
 
   @override
-  String get animationSpeedDesc =>
-      'Speed of transitions and entrance effects across the app';
+  String get animationSpeedDesc => 'ऐप्-मध्ये संक्रमणानां प्रवेशप्रभावानां च वेगः';
 
   @override
-  String get animationSpeedOff => 'Off';
+  String get animationSpeedOff => 'निष्क्रिय';
 
   @override
   String extension(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'विस्तारणानि',
-      one: 'विस्तारणम्',
+      other: 'विस्तारकाणि',
+      one: 'विस्तारकम्',
     );
     return '$_temp0';
   }
 
   @override
-  String get unknownSource => 'Unknown Source';
+  String get unknownSource => 'अज्ञातं स्रोतः';
 
   @override
-  String get install => 'Install';
+  String get install => 'स्थापय';
 
   @override
-  String get update => 'Update';
+  String get update => 'अद्यतनं कुरु';
 
   @override
-  String get uninstall => 'Uninstall';
+  String get uninstall => 'अस्थापय';
 
   @override
-  String get installFailed => 'Install failed';
+  String get installFailed => 'स्थापना विफला';
 
   @override
-  String get updateFailed => 'Update failed';
+  String get updateFailed => 'अद्यतनं विफलम्';
 
   @override
-  String get noSourceSettings => 'Source doesn\'t have any settings';
+  String get noSourceSettings => 'अस्य स्रोतसः सेटिंग्स् न सन्ति';
 
   @override
-  String get addPluginRepository => 'Add Plugin Repository';
+  String get addPluginRepository => 'प्लगिन्-भण्डारं योजय';
 
   @override
-  String get pluginIndexUrlHint => 'Plugin index URL';
+  String get pluginIndexUrlHint => 'प्लगिन्-सूच्याः URL';
 
   @override
-  String get addRepository => 'Add Repository';
+  String get addRepository => 'भण्डारं योजय';
 
   @override
-  String get pluginRepoUpdated => 'Plugin repository updated';
+  String get pluginRepoUpdated => 'प्लगिन्-भण्डारः अद्यतनितः';
 
   @override
-  String get pluginRepoUpdateFailed => 'Failed to refresh plugin repository';
+  String get pluginRepoUpdateFailed => 'प्लगिन्-भण्डारस्य नवीकरणं विफलम्';
 
   @override
-  String get ok => 'सर्वं';
+  String get ok => 'OK';
 
   @override
-  String get cancel => 'निष्कासय';
+  String get cancel => 'रद्द कुरु';
 
   @override
   String get yes => 'आम्';
@@ -138,1014 +136,986 @@ class AppLocalizationsSa extends AppLocalizations {
   String get no => 'न';
 
   @override
-  String get save => 'Save';
+  String get save => 'रक्ष';
 
   @override
-  String get reset => 'Reset';
+  String get reset => 'पुनःस्थापय';
 
   @override
-  String get clear => 'Clear';
+  String get clear => 'मार्जय';
 
   @override
-  String get test => 'Test';
+  String get test => 'परीक्षस्व';
 
   @override
-  String get testing => 'Testing…';
+  String get testing => 'परीक्षा चलति…';
 
   @override
-  String get resolving => 'Resolving…';
+  String get resolving => 'समाधानं चलति…';
 
   @override
-  String get none => 'None';
+  String get none => 'किमपि न';
 
   @override
-  String get selectMediaService => 'मीडिया सेवां चिनोतु';
+  String get selectMediaService => 'मीडिया-सेवां चिनु';
 
   @override
-  String get pickColor => 'रंगं चयनय';
+  String get pickColor => 'वर्णं चिनु';
 
   @override
-  String get colorPickerDefault => 'पूर्वनिर्धारितम्';
+  String get colorPickerDefault => 'मूलभूतम्';
 
   @override
   String get colorPickerCustom => 'स्वनिर्मितम्';
 
   @override
-  String get colorPickerTransparent => 'Transparent';
+  String get colorPickerTransparent => 'पारदर्शकम्';
 
   @override
-  String get ltr => 'Left To Right';
+  String get ltr => 'वामतः दक्षिणम्';
 
   @override
-  String get searchSettings => 'Search settings';
+  String get searchSettings => 'सेटिंग्स् अन्विष्य';
 
   @override
   String nothingMatches(String query) {
-    return 'Nothing matches \"$query\"';
+    return '\"$query\" इत्यनेन किमपि न मिलति';
   }
 
   @override
   String searchCategory(String category) {
-    return 'Search $category';
+    return '$category मध्ये अन्वेषणम्';
   }
 
   @override
-  String get settingsAppearance => 'Appearance';
+  String get settingsAppearance => 'रूपम्';
 
   @override
-  String get settingsAppearanceDesc => 'Theme, colours, glass mode';
+  String get settingsAppearanceDesc => 'थीम्, वर्णाः, काचमोडः';
 
   @override
-  String get settingsGeneral => 'General';
+  String get settingsGeneral => 'सामान्यम्';
 
   @override
-  String get settingsGeneralDesc => 'Language and behaviour';
+  String get settingsGeneralDesc => 'भाषा आचरणं च';
 
   @override
-  String get settingsAccountDesc => 'Tracking service and sign-in';
+  String get settingsNetwork => 'Network';
 
   @override
-  String get settingsUpdates => 'Updates';
+  String get settingsNetworkDesc => 'User agent, certificates, DNS and proxy';
 
   @override
-  String get settingsUpdatesDesc => 'Release channel and checks';
+  String get settingsAccountDesc => 'अनुसरणसेवा लॉगिन् च';
 
   @override
-  String get settingsAboutDesc => 'Version, links, support';
+  String get settingsUpdates => 'अद्यतनानि';
 
   @override
-  String get amoledBlack => 'AMOLED black';
+  String get settingsUpdatesDesc => 'रिलीज्-चैनल् परीक्षाः च';
 
   @override
-  String get amoledBlackDesc => 'Pure black surfaces on dark mode';
+  String get settingsAboutDesc => 'संस्करणम्, लिङ्कानि, साहाय्यम्';
 
   @override
-  String get glassMode => 'Glass mode';
+  String get amoledBlack => 'AMOLED कृष्णम्';
 
   @override
-  String get glassModeDesc => 'Frosted surfaces over your library art';
+  String get amoledBlackDesc => 'डार्क्-मोडे शुद्धकृष्णं पृष्ठम्';
 
   @override
-  String get shelfFrame => 'Frame around sections';
+  String get glassMode => 'काचमोडः';
 
   @override
-  String get shelfFrameDesc =>
-      'Show a card behind each shelf, or let the rows sit directly on the page';
+  String get glassModeDesc => 'तव पुस्तकालयस्य चित्राणां उपरि धूमिलं पृष्ठम्';
 
   @override
-  String get settingsExtensionsDesc =>
-      'Source managers, repositories and extension options';
+  String get shelfFrame => 'विभागानां परितः चौकटम्';
 
   @override
-  String get settingsAddons => 'Addons';
+  String get shelfFrameDesc => 'प्रत्येकस्य पङ्क्तेः पृष्ठतः कार्डं दर्शय, अथवा पङ्क्तीः साक्षात् पृष्ठे तिष्ठन्तु';
 
   @override
-  String get settingsAddonsDesc =>
-      'Optional components such as the torrent server';
+  String get settingsExtensionsDesc => 'स्रोतः-प्रबन्धकाः, भण्डाराः, एक्स्टेंशन्-विकल्पाः च';
 
   @override
-  String get customPath => 'कस्टम पथ';
+  String get settingsAddons => 'ऐड्-ऑन्स्';
 
   @override
-  String get customPathDesc => 'Where app data is kept. Long-press to reset';
+  String get settingsAddonsDesc => 'वैकल्पिकाः घटकाः, यथा टोरेन्ट्-सर्वरः';
 
   @override
-  String get selectDirectory => 'एकं निर्देशिकां चिनोतु';
+  String get customPath => 'स्वनिर्मितः भण्डारणमार्गः';
 
   @override
-  String get differentCacheManager => 'Different Cache Manager';
+  String get customPathDesc => 'ऐप्-दत्तांशः कुत्र रक्ष्यते। पुनःस्थापनार्थं दीर्घं नुद';
 
   @override
-  String get differentCacheManagerDesc => 'Use different Image cache manager';
+  String get selectDirectory => 'निर्देशिकां चिनु';
 
   @override
-  String get backupAndRestore => 'Backup and restore';
+  String get differentCacheManager => 'वैकल्पिकः चित्र-कॅश्';
 
   @override
-  String get backupAndRestoreDesc => 'Save or load your preferences';
+  String get differentCacheManagerDesc => 'चित्राणां कृते अन्यं कॅश्-प्रबन्धकं प्रयुङ्क्ष्व';
 
   @override
-  String get backup => 'Backup';
+  String get backupAndRestore => 'बैकप् पुनःस्थापनं च';
 
   @override
-  String get restore => 'Restore';
+  String get backupAndRestoreDesc => 'स्वस्य प्राधान्यानि रक्ष अथवा आनय';
 
   @override
-  String get loadExtensionsIcon => 'विस्तारणचिह्नं संस्थापय';
+  String get backup => 'बैकप्';
 
   @override
-  String get loadExtensionsIconDesc =>
-      'यदि विस्तारणपृष्ठं विलम्बते तर्हि निष्क्रियं कुरु';
+  String get restore => 'पुनःस्थापय';
 
   @override
-  String get sectionStorage => 'Storage';
+  String get loadExtensionsIcon => 'एक्स्टेंशन्-चिह्नानि आनय';
 
   @override
-  String get sectionBackup => 'Backup';
+  String get loadExtensionsIconDesc => 'एक्स्टेंशन्-सूचीषु स्रोतसां चिह्नानि दर्शय';
 
   @override
-  String get sectionManagers => 'Managers';
+  String get sectionStorage => 'भण्डारणम्';
 
   @override
-  String get sectionOptions => 'Options';
+  String get sectionBackup => 'बैकप्';
 
   @override
-  String get backupTabBackup => 'Back up';
+  String get sectionManagers => 'प्रबन्धकाः';
 
   @override
-  String get backupTabRestore => 'Restore';
+  String get sectionOptions => 'विकल्पाः';
+
+  @override
+  String get backupTabBackup => 'बैकप् कुरु';
+
+  @override
+  String get backupTabRestore => 'पुनःस्थापय';
 
   @override
   String backupSummary(Object keys, Object categories) {
-    return '$keys settings in $categories categories';
+    return '$categories वर्गेषु $keys सेटिंग्स्';
   }
 
   @override
   String backupLastBackup(Object time) {
-    return 'Last backup $time';
+    return 'अन्तिमं बैकप् $time';
   }
 
   @override
-  String get backupNever => 'No backup yet';
+  String get backupNever => 'बैकप् नास्ति';
 
   @override
-  String get backupSelectAll => 'Select all';
+  String get backupSelectAll => 'सर्वं चिनु';
 
   @override
-  String get backupClearAll => 'Clear';
+  String get backupClearAll => 'मार्जय';
 
   @override
   String backupKeys(Object count) {
-    return '$count settings';
+    return '$count सेटिंग्स्';
   }
 
   @override
-  String get backupPassword => 'Password (optional)';
+  String get backupPassword => 'पासवर्ड् (वैकल्पिकम्)';
 
   @override
-  String get backupPasswordHint => 'Leave empty to use the default';
+  String get backupPasswordHint => 'मूलभूतं प्रयोक्तुं रिक्तं त्यज';
 
   @override
-  String get backupSensitive => 'Includes login tokens. Keep this file private';
+  String get backupSensitive => 'लॉगिन्-टोकन्स् अन्तर्भवन्ति। इमां फाइलं गुप्तां रक्ष';
 
   @override
-  String get backupCreate => 'Create backup';
+  String get backupCreate => 'बैकप् निर्मिणु';
 
   @override
   String backupSaved(Object name) {
-    return 'Backup saved to $name';
+    return 'बैकप् $name मध्ये रक्षितम्';
   }
 
   @override
   String backupFailed(Object error) {
-    return 'Backup failed: $error';
+    return 'बैकप् विफलम्: $error';
   }
 
   @override
-  String get backupPickFile => 'Choose a backup file';
+  String get backupPickFile => 'बैकप्-फाइलं चिनु';
 
   @override
-  String get backupPickFileDesc => 'Pick a .json file made by Dartotsu';
+  String get backupPickFileDesc => 'Dartotsu-निर्मितां .json फाइलं चिनु';
 
   @override
-  String get backupChooseAnother => 'Choose another file';
+  String get backupChooseAnother => 'अन्यां फाइलं चिनु';
 
   @override
-  String get backupCreatedAt => 'Created';
+  String get backupCreatedAt => 'निर्मितम्';
 
   @override
-  String get backupAppVersion => 'App version';
+  String get backupAppVersion => 'ऐप्-संस्करणम्';
 
   @override
-  String get backupDevice => 'Device';
+  String get backupDevice => 'उपकरणम्';
 
   @override
-  String get backupAccounts => 'Accounts';
+  String get backupAccounts => 'खातानि';
 
   @override
-  String get backupSize => 'Size';
+  String get backupSize => 'आकारः';
 
   @override
-  String get backupEncrypted => 'Password protected';
+  String get backupEncrypted => 'पासवर्ड्-रक्षितम्';
 
   @override
-  String get backupUnlock => 'Unlock';
+  String get backupUnlock => 'उद्घाटय';
 
   @override
-  String get backupWrongPassword =>
-      'Could not read this file. Check the password';
+  String get backupWrongPassword => 'इयं फाइल् पठितुं न शक्यते। पासवर्ड् परीक्षस्व';
 
   @override
-  String get backupRestoreSelected => 'Restore selected';
+  String get backupRestoreSelected => 'चितानि पुनःस्थापय';
 
   @override
   String backupRestoreConfirm(Object count) {
-    return 'Restore $count settings? Existing values in these categories are overwritten.';
+    return '$count सेटिंग्स् पुनःस्थापयसि? एतेषु वर्गेषु विद्यमानमूल्यानि अधिलिख्यन्ते।';
   }
 
   @override
-  String get backupRestored => 'Restored. Restart the app to apply everything';
+  String get backupRestored => 'पुनःस्थापितम्। सर्वं प्रयोक्तुं ऐप् पुनः आरभस्व';
 
   @override
   String backupRestoreFailed(Object error) {
-    return 'Restore failed: $error';
+    return 'पुनःस्थापनं विफलम्: $error';
   }
 
   @override
-  String get backupSelectOne => 'Select at least one category';
+  String get backupSelectOne => 'न्यूनातिन्यूनम् एकं वर्गं चिनु';
 
   @override
-  String get backupCatTheme => 'Appearance';
+  String get backupCatTheme => 'रूपम्';
 
   @override
-  String get backupCatThemeDesc => 'Theme, colors, glass, fonts and card style';
+  String get backupCatThemeDesc => 'थीम्, वर्णाः, काचः, अक्षराणि, कार्ड्-शैली च';
 
   @override
-  String get backupCatCommon => 'General';
+  String get backupCatCommon => 'सामान्यम्';
 
   @override
-  String get backupCatCommonDesc =>
-      'Language, storage, network and extension options';
+  String get backupCatCommonDesc => 'भाषा, भण्डारणम्, जालम्, एक्स्टेंशन्-विकल्पाः च';
 
   @override
-  String get backupCatPlayer => 'Player';
+  String get backupCatPlayer => 'प्लेयर्';
 
   @override
-  String get backupCatPlayerDesc => 'Player preferences';
+  String get backupCatPlayerDesc => 'प्लेयर्-प्राधान्यानि';
 
   @override
-  String get backupCatReader => 'Reader';
+  String get backupCatReader => 'रीडर्';
 
   @override
-  String get backupCatReaderDesc => 'Reader preferences';
+  String get backupCatReaderDesc => 'रीडर्-प्राधान्यानि';
 
   @override
-  String get backupCatProtected => 'Accounts';
+  String get backupCatProtected => 'खातानि';
 
   @override
-  String get backupCatProtectedDesc => 'Login tokens and sign-in data';
+  String get backupCatProtectedDesc => 'लॉगिन्-टोकन्स् सत्रदत्तांशः च';
 
   @override
-  String get backupCatOther => 'Services and feeds';
+  String get backupCatOther => 'सेवाः फीड्स् च';
 
   @override
-  String get backupCatOtherDesc => 'Feed layouts, lists and service options';
+  String get backupCatOtherDesc => 'फीड्-विन्यासः, सूच्यः, सेवा-विकल्पाः च';
 
   @override
-  String get logFile => 'अभिलेखसञ्चिका';
+  String get logFile => 'लॉग्-फाइल्';
 
   @override
-  String get logFileDesc => 'Share the app log, or copy its path on Linux';
+  String get logFileDesc => 'ऐप्-लॉग् साझां कुरु, अथवा Linux मध्ये तस्य मार्गं प्रतिलिख';
 
   @override
-  String get logFileCopied => 'Log path copied';
+  String get logFileCopied => 'लॉग्-मार्गः प्रतिलिखितः';
 
   @override
-  String get donateSheetTitle => 'Enjoying Dartotsu?';
+  String get donateSheetTitle => 'Dartotsu रोचते वा?';
 
   @override
-  String get donateSheetMessage =>
-      'Dartotsu is built and maintained by one person. If it is useful to you, consider supporting development.';
+  String get donateSheetMessage => 'Dartotsu एकेन जनेन निर्मितं पालितं च। यदि तव उपयोगि अस्ति, विकासस्य साहाय्यं कुरु।';
 
   @override
-  String get donateLater => 'Maybe later';
+  String get donateLater => 'पश्चात्';
 
   @override
-  String get glassBackground => 'Glass background';
+  String get glassBackground => 'काच-पृष्ठभूमिः';
 
   @override
-  String get glassBackgroundDesc =>
-      'Your profile banner unless you set an image link';
+  String get glassBackgroundDesc => 'चित्र-लिङ्कः न दत्तः चेत् तव प्रोफाइल्-बैनर्';
 
   @override
-  String get glassBackgroundHint => 'Image link (leave empty for your banner)';
+  String get glassBackgroundHint => 'चित्र-लिङ्कः (तव बैनर्-कृते रिक्तं त्यज)';
 
   @override
-  String get followCover => 'Follow cover';
+  String get followCover => 'आवरणम् अनुसर';
 
   @override
-  String get followCoverDesc =>
-      'Colors follow the background, and the cover on detail pages';
+  String get followCoverDesc => 'वर्णाः पृष्ठभूमिम् अनुसरन्ति, विवरणपृष्ठेषु आवरणम्';
 
   @override
-  String get cardStyle => 'Card style';
+  String get cardStyle => 'कार्ड्-शैली';
 
   @override
-  String get cardStyleDesc => 'Title placement, size, progress and badges';
+  String get cardStyleDesc => 'शीर्षकस्थानम्, आकारः, प्रगतिः, चिह्नानि च';
 
   @override
-  String get customFont => 'Font';
+  String get customFont => 'अक्षरशैली';
 
   @override
-  String get customFontDesc =>
-      'Default, a file from your device, or Google Fonts';
+  String get customFontDesc => 'मूलभूता, उपकरणात् फाइल्, अथवा Google Fonts';
 
   @override
-  String get customFontError => 'Couldn\'t load that font file';
+  String get customFontError => 'सा अक्षर-फाइल् आनेतुं न शक्यते';
 
   @override
-  String get googleFontError => 'Couldn\'t download that font';
+  String get googleFontError => 'तत् अक्षरं डाउनलोड् कर्तुं न शक्यते';
 
   @override
-  String get yourFonts => 'Your fonts';
+  String get yourFonts => 'तव अक्षराणि';
 
   @override
-  String get addFontFile => 'Add font file…';
+  String get addFontFile => 'अक्षर-फाइलं योजय…';
 
   @override
-  String get browseGoogleFonts => 'Browse Google Fonts…';
+  String get browseGoogleFonts => 'Google Fonts अन्विष्य…';
 
   @override
-  String get searchGoogleFonts => 'Search Google Fonts';
+  String get searchGoogleFonts => 'Google Fonts मध्ये अन्वेषणम्';
 
   @override
-  String get defaultFont => 'Default';
+  String get defaultFont => 'मूलभूतम्';
 
   @override
   String get materialYou => 'Material You';
 
   @override
-  String get materialYouDesc => 'Dynamic colour from the system';
+  String get materialYouDesc => 'सिस्टम्-तः गतिशीलः वर्णः';
 
   @override
-  String get jsonTheme => 'Custom theme file';
+  String get jsonTheme => 'स्वनिर्मिता थीम्-फाइल्';
 
   @override
-  String get jsonThemeDesc =>
-      'Live colours from ~/.config/dartotsu/theme.json (a custom script, or your own edits)';
+  String get jsonThemeDesc => '~/.config/dartotsu/theme.json तः सजीववर्णाः (स्वस्य स्क्रिप्ट् अथवा स्वयं सम्पादनम्)';
 
   @override
-  String get themeMode => 'Theme mode';
+  String get themeMode => 'थीम्-मोडः';
 
   @override
-  String get mode => 'Mode';
+  String get mode => 'मोडः';
 
   @override
-  String get trackingService => 'Tracking service';
+  String get trackingService => 'अनुसरणसेवा';
 
   @override
-  String get signOut => 'Sign out';
+  String get signOut => 'लॉगआउट्';
 
   @override
-  String get signIn => 'Sign in';
+  String get signIn => 'लॉगिन';
 
   @override
-  String get notSignedIn => 'Not signed in';
+  String get notSignedIn => 'लॉगिन् न कृतम्';
 
   @override
   String signOutOf(String service) {
-    return 'Sign out of $service?';
+    return '$service तः लॉगआउट् करोषि?';
   }
 
   @override
-  String get checkForUpdates => 'Check for updates';
+  String get checkForUpdates => 'अद्यतनानि परीक्षस्व';
 
   @override
-  String get checkForUpdatesDesc => 'Notify on a new GitHub release';
+  String get checkForUpdatesDesc => 'नूतने GitHub रिलीज्-काले सूचय';
 
   @override
-  String get updateChannel => 'Update channel';
+  String get updateChannel => 'अद्यतन-चैनल्';
 
   @override
-  String get channel => 'Channel';
+  String get channel => 'चैनल्';
 
   @override
-  String get stable => 'Stable';
+  String get stable => 'स्थिरम्';
 
   @override
-  String get preRelease => 'Pre-release';
+  String get preRelease => 'प्री-रिलीज्';
 
   @override
-  String get alpha => 'Alpha';
+  String get alpha => 'अल्फा';
 
   @override
-  String get checkNow => 'Check now';
+  String get checkNow => 'इदानीं परीक्षस्व';
 
   @override
   String get userAgent => 'User-Agent';
 
   @override
-  String get settingDefault => 'Default';
+  String get settingDefault => 'मूलभूतम्';
 
   @override
   String currentlyUsing(String value) {
-    return 'Currently: $value';
+    return 'सम्प्रति: $value';
   }
 
   @override
   String get dnsOverHttps => 'DNS-over-HTTPS';
 
   @override
-  String get dnsDefault => 'Default (Cloudflare)';
+  String get dnsDefault => 'मूलभूतम् (Cloudflare)';
 
   @override
-  String get proxy => 'Proxy';
+  String get proxy => 'प्रॉक्सी';
 
   @override
-  String get proxyProtocol => 'Type';
+  String get proxyProtocol => 'प्रकारः';
 
   @override
-  String get proxyHost => 'Host';
+  String get proxyHost => 'होस्ट्';
 
   @override
-  String get proxyPort => 'Port';
+  String get proxyPort => 'पोर्ट्';
 
   @override
-  String get proxyUsername => 'Username';
+  String get proxyUsername => 'उपयोक्तृनाम';
 
   @override
-  String get proxyPassword => 'Password';
+  String get proxyPassword => 'पासवर्ड्';
 
   @override
-  String get optional => 'Optional';
+  String get optional => 'वैकल्पिकम्';
 
   @override
-  String get clearCookies => 'Clear cookies';
+  String get clearCookies => 'कुकीज् मार्जय';
 
   @override
-  String get clearCookiesDesc => 'Remove every stored cookie';
+  String get clearCookiesDesc => 'सर्वाः रक्षिताः कुकीज् अपनय';
 
   @override
   String notImplementedArea(String area) {
-    return '$area — coming soon';
+    return '$area — शीघ्रम् आगच्छति';
   }
 
   @override
   String notImplementedService(String service) {
-    return '$service doesn\'t support this yet.';
+    return '$service इदानीं एतत् न समर्थयति।';
   }
 
   @override
-  String get couldNotLoadResults => 'Couldn\'t load results';
+  String get couldNotLoadResults => 'परिणामाः आनेतुं न शक्यन्ते';
 
   @override
-  String get updateCheckFailed => 'Couldn\'t check for updates';
+  String get updateCheckFailed => 'अद्यतनानि परीक्षितुं न शक्यन्ते';
 
   @override
-  String get highRefreshRate => 'High refresh rate';
+  String get highRefreshRate => 'उच्च रिफ्रेश्-दरः';
 
   @override
-  String get highRefreshRateDesc =>
-      'Use the highest refresh rate your screen supports';
+  String get highRefreshRateDesc => 'तव पटलः यावत् उच्चतमं रिफ्रेश्-दरं समर्थयति तावत् प्रयुङ्क्ष्व';
 
   @override
-  String get imageSave => 'Save image';
+  String get imageSave => 'चित्रं रक्ष';
 
   @override
   String imageSavedTo(String path) {
-    return 'Saved to $path';
+    return '$path मध्ये रक्षितम्';
   }
 
   @override
-  String get imageActionFailed => 'Couldn\'t download the image';
+  String get imageActionFailed => 'चित्रं डाउनलोड् कर्तुं न शक्यते';
 
   @override
-  String get imageTitleCover => 'Cover';
+  String get imageTitleCover => 'आवरणम्';
 
   @override
-  String get imageTitleBanner => 'Banner';
+  String get imageTitleBanner => 'बैनर्';
 
   @override
-  String get imageTitleAvatar => 'Profile picture';
+  String get imageTitleAvatar => 'प्रोफाइल्-चित्रम्';
 
   @override
-  String get verifyTls => 'Verify certificates';
+  String get verifyTls => 'प्रमाणपत्राणि सत्यापय';
 
   @override
-  String get verifyTlsDesc =>
-      'Reject servers with invalid HTTPS certificates. Turn off only for a source that uses a self-signed one';
+  String get verifyTlsDesc => 'अमान्य-HTTPS-प्रमाणपत्रयुक्तान् सर्वरान् निराकुरु। स्वहस्ताक्षरितं प्रयुञ्जानस्य स्रोतसः कृते एव निष्क्रियं कुरु';
 
   @override
-  String get clearCookiesConfirm =>
-      'Remove all stored cookies? This may sign you out of some sources.';
+  String get clearCookiesConfirm => 'सर्वाः रक्षिताः कुकीज् अपनयसि? एतेन केषुचित् स्रोतःसु लॉगआउट् भवेत्।';
 
   @override
-  String get version => 'Version';
+  String get version => 'संस्करणम्';
 
   @override
   String get gitHub => 'GitHub';
 
   @override
-  String get gitHubDesc => 'Source, issues and releases';
+  String get gitHubDesc => 'कोडः, समस्याः, रिलीज्स् च';
 
   @override
-  String get discordDesc => 'Community and support';
+  String get discordDesc => 'समाजः साहाय्यं च';
 
   @override
-  String get donate => 'Buy me a coffee';
+  String get donate => 'मह्यं कॉफीं देहि';
 
   @override
-  String get donateDesc => 'Support development';
+  String get donateDesc => 'विकासम् आश्रय';
 
   @override
-  String get contributors => 'Contributors';
+  String get contributors => 'योगदातारः';
 
   @override
-  String get contributorsDesc => 'The people who built Dartotsu';
+  String get contributorsDesc => 'Dartotsu निर्मितवन्तः जनाः';
 
   @override
-  String get contributorsLoadFailed => 'Couldn\'t load contributors';
+  String get contributorsLoadFailed => 'योगदातारः आनेतुं न शक्यन्ते';
 
   @override
   String get forks => 'Forks';
 
   @override
-  String get forksDesc => 'Projects built on top of Dartotsu';
+  String get forksDesc => 'Dartotsu उपरि निर्मिताः परियोजनाः';
 
   @override
-  String get forksEmpty => 'No forks found';
+  String get forksEmpty => 'फोर्क् न प्राप्तः';
 
   @override
-  String get sectionColors => 'Colors';
+  String get sectionColors => 'वर्णाः';
 
   @override
-  String get sectionDisplay => 'Display';
+  String get sectionDisplay => 'प्रदर्शनम्';
 
   @override
-  String get sectionStyle => 'Style';
+  String get sectionStyle => 'शैली';
 
   @override
-  String get sectionCommunity => 'Community';
+  String get sectionCommunity => 'समाजः';
 
   @override
-  String get sectionAppInfo => 'App Info';
+  String get sectionAppInfo => 'ऐप्-सूचना';
 
   @override
-  String get sectionCache => 'Cache';
+  String get sectionCache => 'कॅश्';
 
   @override
-  String get sectionRequests => 'Requests';
+  String get sectionRequests => 'अनुरोधाः';
 
   @override
-  String get sectionDnsProxy => 'DNS & Proxy';
+  String get sectionDnsProxy => 'DNS प्रॉक्सी च';
 
   @override
-  String get onboardingBack => 'Back';
+  String get onboardingBack => 'पृष्ठतः';
 
   @override
-  String get onboardingNext => 'Next';
+  String get onboardingNext => 'अग्रिमम्';
 
   @override
-  String get onboardingSkip => 'Skip';
+  String get onboardingSkip => 'त्यज';
 
   @override
-  String get onboardingPaletteTitle => 'Make it yours';
+  String get onboardingPaletteTitle => 'स्वकीयं कुरु';
 
   @override
-  String get onboardingPaletteBody =>
-      'Pick a palette. Every accent, from cards to the player, follows it.';
+  String get onboardingPaletteBody => 'वर्ण-पटलं चिनु। कार्ड्तः प्लेयर्पर्यन्तं सर्वे वर्णाः तम् अनुसरन्ति।';
 
   @override
-  String get themeModeAuto => 'Auto';
+  String get themeModeAuto => 'स्वयम्';
 
   @override
-  String get themeModeLight => 'Light';
+  String get themeModeLight => 'प्रकाशः';
 
   @override
-  String get themeModeDark => 'Dark';
+  String get themeModeDark => 'अन्धकारः';
 
   @override
-  String get onboardingSyncTitle => 'Sync your library';
+  String get onboardingSyncTitle => 'स्वस्य पुस्तकालयं समकालीनं कुरु';
 
   @override
-  String get onboardingSyncBody =>
-      'Sign in with AniList to bring your lists, progress and scores with you. Or skip and browse as a guest.';
+  String get onboardingSyncBody => 'स्वस्य सूचीः प्रगतिं अङ्कान् च आनेतुं AniList मध्ये लॉगिन् कुरु। अथवा त्यज, अतिथिरूपेण पश्य।';
 
   @override
-  String get onboardingOpenLinks => 'Open AniList and repo links in Dartotsu';
+  String get onboardingOpenLinks => 'AniList भण्डारलिङ्कान् च Dartotsu मध्ये उद्घाटय';
 
   @override
-  String get onboardingPermsTitle => 'Permissions';
+  String get onboardingPermsTitle => 'अनुमतयः';
 
   @override
-  String get onboardingPermsBody =>
-      'Allow these now so downloads, updates and alerts work without interruptions. You can change them later in system settings.';
+  String get onboardingPermsBody => 'डाउनलोड्स्, अद्यतनानि, सूचनाः च निर्विघ्नं चलितुं एताः इदानीं अनुमन्यस्व। पश्चात् सिस्टम्-सेटिंग्स् मध्ये परिवर्तयितुं शक्यते।';
 
   @override
-  String get permNotifications => 'Notifications';
+  String get permNotifications => 'सूचनाः';
 
   @override
-  String get permNotificationsDesc =>
-      'Download progress, new episodes and replies';
+  String get permNotificationsDesc => 'डाउनलोड्-प्रगतिः, नूतनाः एपिसोड्स्, उत्तराणि च';
 
   @override
-  String get permStorage => 'All files access';
+  String get permStorage => 'सर्वफाइल्-प्रवेशः';
 
   @override
-  String get permStorageDesc => 'Save downloads to the public Dartotsu folder';
+  String get permStorageDesc => 'डाउनलोड्स् सार्वजनिके Dartotsu-फोल्डरे रक्ष';
 
   @override
-  String get permInstall => 'Install updates';
+  String get permInstall => 'अद्यतनानि स्थापय';
 
   @override
-  String get permInstallDesc => 'Let Dartotsu install its own app updates';
+  String get permInstallDesc => 'Dartotsu स्वस्य अद्यतनानि स्वयं स्थापयतु';
 
   @override
-  String get permBattery => 'Unrestricted battery';
+  String get permBattery => 'अनियन्त्रितं बैटरी';
 
   @override
-  String get permBatteryDesc => 'Keep long downloads running in the background';
+  String get permBatteryDesc => 'दीर्घाणि डाउनलोड्स् पृष्ठभूमौ चलन्तु';
 
   @override
-  String get permGrant => 'Allow';
+  String get permGrant => 'अनुमन्यस्व';
 
   @override
-  String get permGranted => 'Allowed';
+  String get permGranted => 'अनुमतम्';
 
   @override
-  String get linkOpenInApp => 'Open links in Dartotsu';
+  String get linkOpenInApp => 'Dartotsu मध्ये लिङ्कानि उद्घाटय';
 
   @override
-  String get linkOpenInAppDesc => 'Let AniList and repo links open the app';
+  String get linkOpenInAppDesc => 'AniList भण्डारलिङ्काः ऐप् उद्घाटयन्तु';
 
   @override
-  String get reviewsTitle => 'Reviews';
+  String get reviewsTitle => 'समीक्षाः';
 
   @override
-  String get reviewsEmpty => 'No reviews yet';
+  String get reviewsEmpty => 'समीक्षाः नास्ति';
 
   @override
-  String get reviewsFailed => 'Couldn\'t load reviews';
+  String get reviewsFailed => 'समीक्षाः आनेतुं न शक्यन्ते';
 
   @override
-  String get reviewHelpfulQuestion => 'Was this review helpful?';
+  String get reviewHelpfulQuestion => 'इयं समीक्षा उपयोगिनी आसीत् वा?';
 
   @override
-  String get reviewVoteFailed => 'Couldn\'t save your vote';
+  String get reviewVoteFailed => 'तव मतं रक्षितुं न शक्यते';
 
   @override
   String reviewHelpful(int n, int total) {
-    return '$n of $total found this helpful';
+    return '$total मध्ये $n जनाः एतत् उपयोगि अमन्यन्त';
   }
 
   @override
-  String get calendarTitle => 'Airing schedule';
+  String get calendarTitle => 'प्रसारण-समयसूची';
 
   @override
-  String get calendarToday => 'Today';
+  String get calendarToday => 'अद्य';
 
   @override
-  String get calendarEmpty => 'Nothing airs this day';
+  String get calendarEmpty => 'अस्मिन् दिने किमपि न प्रसार्यते';
 
   @override
-  String get calendarFailed => 'Couldn\'t load the schedule';
+  String get calendarFailed => 'समयसूची आनेतुं न शक्यते';
 
   @override
   String calendarEpisode(int n) {
-    return 'Episode $n';
+    return 'एपिसोड् $n';
   }
 
   @override
-  String get shareAnalytics => 'Share anonymous usage data';
+  String get shareAnalytics => 'निनाम उपयोग-दत्तांशं साझां कुरु';
 
   @override
-  String get shareAnalyticsDesc =>
-      'Anonymous user counts and crash reports. No account or personal data';
+  String get shareAnalyticsDesc => 'निनाम उपयोक्तृ-गणना क्रैश्-प्रतिवेदनानि च। खातं व्यक्तिगतदत्तांशः च नास्ति';
 
   @override
-  String get linkOpenAnilist => 'Open AniList links in Dartotsu';
+  String get linkOpenAnilist => 'AniList लिङ्कान् Dartotsu मध्ये उद्घाटय';
 
   @override
-  String get linkOpenAnilistDesc =>
-      'Turn on link handling so anilist.co links open the app';
+  String get linkOpenAnilistDesc => 'anilist.co लिङ्काः ऐप् उद्घाटयन्तु इति लिङ्क्-सञ्चालनं सक्रियं कुरु';
 
   @override
-  String get linkSettingsFailed => 'Could not open the system settings';
+  String get linkSettingsFailed => 'सिस्टम्-सेटिंग्स् उद्घाटयितुं न शक्यन्ते';
 
   @override
   String get discordRichPresence => 'Rich Presence';
 
   @override
-  String get discordRichPresenceTokenDesc =>
-      'Show what you are doing on your Discord profile. Needs your Discord token.';
+  String get discordRichPresenceTokenDesc => 'तव Discord-प्रोफाइल् मध्ये त्वं किं करोषि इति दर्शय। तव Discord-टोकन् आवश्यकम्।';
 
   @override
-  String get discordRichPresenceDesktopDesc =>
-      'Show what you are doing on your Discord profile. Needs the Discord desktop app running.';
+  String get discordRichPresenceDesktopDesc => 'तव Discord-प्रोफाइल् मध्ये त्वं किं करोषि इति दर्शय। Discord डेस्कटॉप्-ऐप् चलनीयम्।';
 
   @override
-  String get discordBrowsing => 'Show browsing activity';
+  String get discordBrowsing => 'ब्राउज़िङ्-क्रियां दर्शय';
 
   @override
-  String get discordBrowsingDesc =>
-      'Also show the tab, page or profile you are looking at, not only what you watch or read.';
+  String get discordBrowsingDesc => 'यत् पश्यसि पठसि वा तत् केवलं न, यत् टैब्, पृष्ठं प्रोफाइल् वा पश्यसि तदपि दर्शय।';
 
   @override
-  String get discordLookHeader => 'Presence look';
+  String get discordLookHeader => 'उपस्थिति-रूपम्';
 
   @override
-  String get discordActivityType => 'Activity type';
+  String get discordActivityType => 'क्रिया-प्रकारः';
 
   @override
-  String get discordActivityTypeDesc =>
-      'How Discord words it: \"Watching …\" or \"Playing …\". Auto uses Watching for anime and Playing for everything else.';
+  String get discordActivityTypeDesc => 'Discord कथं लिखति: \"Watching …\" अथवा \"Playing …\"। स्वयम् इत्यत्र अनिमे-कृते Watching, अन्येषां कृते Playing।';
 
   @override
-  String get discordWatching => 'Watching';
+  String get discordWatching => 'पश्यति';
 
   @override
-  String get discordPlaying => 'Playing';
+  String get discordPlaying => 'क्रीडति';
 
   @override
-  String get discordCovers => 'Show covers';
+  String get discordCovers => 'आवरणानि दर्शय';
 
   @override
-  String get discordCoversDesc =>
-      'Cover art and the Dartotsu icon on the card.';
+  String get discordCoversDesc => 'कार्ड्-उपरि आवरण-चित्रं Dartotsu-चिह्नं च।';
 
   @override
-  String get discordTimer => 'Show timer';
+  String get discordTimer => 'टाइमर् दर्शय';
 
   @override
-  String get discordTimerDesc => 'Elapsed or remaining time under the title.';
+  String get discordTimerDesc => 'शीर्षकस्य अधः व्यतीतः अथवा शेषः समयः।';
 
   @override
-  String get discordButtons => 'Show buttons';
+  String get discordButtons => 'बटन्स् दर्शय';
 
   @override
-  String get discordButtonsDesc =>
-      '\"View anime / manga\" and \"Open Dartotsu\" buttons.';
+  String get discordButtonsDesc => '\"अनिमे / मांगा पश्य\" \"Dartotsu उद्घाटय\" च बटन्स्।';
 
   @override
-  String get discordHideTitles => 'Hide titles';
+  String get discordHideTitles => 'शीर्षकाणि गोपय';
 
   @override
-  String get discordHideTitlesDesc =>
-      'Replace anime and manga names (and their cover and link) with \"Something private\".';
+  String get discordHideTitlesDesc => 'अनिमे-मांगा-नामानि (आवरणं लिङ्कं च सह) \"किञ्चित् गुप्तम्\" इत्यनेन स्थापय।';
 
   @override
-  String get discordConnectionHeader => 'Connection';
+  String get discordConnectionHeader => 'संयोजनम्';
 
   @override
-  String get listSearchHint => 'Search this list';
+  String get listSearchHint => 'एतस्यां सूच्यां अन्विष्य';
 
   @override
-  String get listSort => 'Sort';
+  String get listSort => 'क्रमय';
 
   @override
-  String get listFilter => 'Filter';
+  String get listFilter => 'छानय';
 
   @override
-  String get listRandom => 'Random title';
+  String get listRandom => 'यादृच्छिकं शीर्षकम्';
 
   @override
-  String get listReverse => 'Reverse order';
+  String get listReverse => 'क्रमं विपरीतं कुरु';
 
   @override
-  String get listSortDefault => 'List order';
+  String get listSortDefault => 'सूची-क्रमः';
 
   @override
-  String get listSortScore => 'Your score';
+  String get listSortScore => 'तव अङ्कः';
 
   @override
-  String get listSortTitle => 'Title';
+  String get listSortTitle => 'शीर्षकम्';
 
   @override
-  String get listSortUpdated => 'Last updated';
+  String get listSortUpdated => 'अन्तिम-अद्यतनम्';
 
   @override
-  String get listSortProgress => 'Progress';
+  String get listSortProgress => 'प्रगतिः';
 
   @override
-  String get listSortReleased => 'Release date';
+  String get listSortReleased => 'प्रकाशन-दिनाङ्कः';
 
   @override
-  String get listSortAverage => 'Average score';
+  String get listSortAverage => 'मध्यमाङ्कः';
 
   @override
-  String get listFilterFormat => 'Format';
+  String get listFilterFormat => 'प्रारूपम्';
 
   @override
-  String get listFilterStatus => 'Status';
+  String get listFilterStatus => 'स्थितिः';
 
   @override
-  String get listFilterGenres => 'Genres';
+  String get listFilterGenres => 'विधाः';
 
   @override
-  String get listFilterClear => 'Clear filters';
+  String get listFilterClear => 'छानकानि मार्जय';
 
   @override
-  String get listNoMatches => 'Nothing in this list matches';
+  String get listNoMatches => 'अस्यां सूच्यां किमपि न मिलति';
 
   @override
-  String get discordLogin => 'Log in to Discord';
+  String get discordLogin => 'Discord मध्ये लॉगिन';
 
   @override
-  String get discordToken => 'Discord token';
+  String get discordToken => 'Discord टोकन्';
 
   @override
-  String get discordTokenSaved =>
-      'Saved. Tap to replace, long press to remove.';
+  String get discordTokenSaved => 'रक्षितम्। परिवर्तनार्थं स्पृश, अपनयनार्थं दीर्घं नुद।';
 
   @override
-  String get discordTokenNotSet => 'Not set. Tap to add.';
+  String get discordTokenNotSet => 'न स्थापितम्। योजनार्थं स्पृश।';
 
   @override
-  String get discordTokenPrompt =>
-      'Paste the token of the Discord account to show the presence on. It stays on this device.';
+  String get discordTokenPrompt => 'यस्मिन् Discord-खाते उपस्थितिं दर्शयितुम् इच्छसि तस्य टोकन् स्थापय। इदम् अस्मिन् एव उपकरणे तिष्ठति।';
 
   @override
-  String get discordTokenHint => 'Token';
+  String get discordTokenHint => 'टोकन्';
 
   @override
-  String get discordTokenSavedSnack => 'Discord token saved';
+  String get discordTokenSavedSnack => 'Discord टोकन् रक्षितम्';
 
   @override
-  String get discordTokenRemovedSnack => 'Discord token removed';
+  String get discordTokenRemovedSnack => 'Discord टोकन् अपनीतम्';
 
   @override
   String get discordRichPresenceRow => 'Discord Rich Presence';
 
   @override
-  String get discordRichPresenceRowOn => 'On · tap to change how it looks';
+  String get discordRichPresenceRowOn => 'सक्रिय · रूपपरिवर्तनार्थं स्पृश';
 
   @override
-  String get discordRichPresenceRowOff =>
-      'Show what you are doing on your Discord profile';
+  String get discordRichPresenceRowOff => 'तव Discord-प्रोफाइल् मध्ये त्वं किं करोषि इति दर्शय';
 
   @override
-  String get loginCancelled => 'Login cancelled';
+  String get loginCancelled => 'लॉगिन् रद्दम्';
 
   @override
-  String get invalidToken => 'Invalid token';
+  String get invalidToken => 'अमान्यं टोकन्';
 
   @override
   String loginFailed(String error) {
-    return 'Login failed: $error';
+    return 'लॉगिन् विफलम्: $error';
   }
 
   @override
-  String get malLoginFailed => 'MyAnimeList login failed';
+  String get malLoginFailed => 'MyAnimeList लॉगिन् विफलम्';
 
   @override
-  String get kitsuLoginFailed =>
-      'Kitsu login failed. Check your email and password.';
+  String get kitsuLoginFailed => 'Kitsu लॉगिन् विफलम्। ईमेल् पासवर्ड् च परीक्षस्व।';
 
   @override
-  String get kitsuLoginTitle => 'Sign in to Kitsu';
+  String get kitsuLoginTitle => 'Kitsu मध्ये लॉगिन';
 
   @override
-  String get emailOrUsername => 'Email or username';
+  String get emailOrUsername => 'ईमेल् अथवा उपयोक्तृनाम';
 
   @override
-  String get password => 'Password';
+  String get password => 'पासवर्ड्';
 
   @override
-  String get kitsuProfile => 'Kitsu profile';
+  String get kitsuProfile => 'Kitsu प्रोफाइल्';
 
   @override
-  String get mangaBakaLoginFailed => 'MangaBaka login failed';
+  String get mangaBakaLoginFailed => 'MangaBaka लॉगिन् विफलम्';
 
   @override
-  String get mangaBakaProfile => 'MangaBaka profile';
+  String get mangaBakaProfile => 'MangaBaka प्रोफाइल्';
 
   @override
-  String get refreshFromMangaBaka => 'Refresh from MangaBaka';
+  String get refreshFromMangaBaka => 'MangaBaka तः नवीकुरु';
 
   @override
-  String get artistsLabel => 'Artists';
+  String get artistsLabel => 'कलाकाराः';
 
   @override
-  String get authorsLabel => 'Authors';
+  String get authorsLabel => 'लेखकाः';
 
   @override
-  String get publishersLabel => 'Publishers';
+  String get publishersLabel => 'प्रकाशकाः';
 
   @override
-  String get licensedLabel => 'Licensed';
+  String get licensedLabel => 'अनुज्ञापितम्';
 
   @override
-  String get contentRatingLabel => 'Content rating';
+  String get contentRatingLabel => 'आयु-श्रेणी';
 
   @override
-  String get yesLabel => 'Yes';
+  String get yesLabel => 'आम्';
 
   @override
-  String get noLabel => 'No';
+  String get noLabel => 'न';
 
   @override
-  String get ratingSteps => 'Rating steps';
+  String get ratingSteps => 'अङ्क-सोपानानि';
 
   @override
-  String get hideNsfw => 'Hide NSFW';
+  String get hideNsfw => 'NSFW गोपय';
 
   @override
-  String get hideNsfwDesc =>
-      'Keep adult titles out of feeds and search, and list your own adult entries under Hidden Media.';
+  String get hideNsfwDesc => 'वयस्क-शीर्षकाणि फीड्स्-अन्वेषणाभ्यां दूरे स्थापय, तव वयस्क-प्रविष्टीः \"गुप्त मीडिया\" मध्ये सूचय।';
 
   @override
-  String get kitsuAccountOptions => 'Kitsu account options';
+  String get kitsuAccountOptions => 'Kitsu खाता-विकल्पाः';
 
   @override
-  String get couldNotUpdateKitsuSettings =>
-      'Could not update your Kitsu settings';
+  String get couldNotUpdateKitsuSettings => 'तव Kitsu सेटिंग्स् अद्यतनितुं न शक्यन्ते';
 
   @override
-  String get titleCanonical => 'Canonical';
+  String get titleCanonical => 'मानकम्';
 
   @override
-  String get titleRomanized => 'Romanized';
+  String get titleRomanized => 'रोमन-लिप्यन्तरितम्';
 
   @override
-  String get titleLocalized => 'Localized';
+  String get titleLocalized => 'स्थानीकृतम्';
 
   @override
-  String get ratingSystem => 'Rating system';
+  String get ratingSystem => 'अङ्कन-पद्धतिः';
 
   @override
-  String get ratingSimple => 'Simple (3 faces)';
+  String get ratingSimple => 'सरला (३ मुखानि)';
 
   @override
-  String get ratingRegular => 'Regular (5 stars)';
+  String get ratingRegular => 'सामान्या (५ तारकाः)';
 
   @override
-  String get ratingAdvanced => 'Advanced (10 points)';
+  String get ratingAdvanced => 'उन्नता (१० अङ्काः)';
 
   @override
-  String get contentFilter => 'Content filter';
+  String get contentFilter => 'सामग्री-छानकम्';
 
   @override
-  String get contentSfw => 'Safe for work only';
+  String get contentSfw => 'केवलं सुरक्षितम्';
 
   @override
-  String get contentSometimes => 'Mature content in searches';
+  String get contentSometimes => 'अन्वेषणे वयस्क-सामग्री';
 
   @override
-  String get contentEverywhere => 'Mature content everywhere';
+  String get contentEverywhere => 'सर्वत्र वयस्क-सामग्री';
 
   @override
-  String get shareToGlobal => 'Share to global feed';
+  String get shareToGlobal => 'वैश्विक-फीड् मध्ये साझां कुरु';
 
   @override
-  String get shareToGlobalDesc =>
-      'Let your activity appear in Kitsu\'s global feed.';
+  String get shareToGlobalDesc => 'तव क्रिया Kitsu-वैश्विक-फीड् मध्ये दृश्यताम्।';
 
   @override
-  String get memberSince => 'Member since';
+  String get memberSince => 'सदस्यः कालतः';
 
   @override
-  String get location => 'Location';
+  String get location => 'स्थानम्';
 
   @override
-  String get accountType => 'Account type';
+  String get accountType => 'खाता-प्रकारः';
 
   @override
-  String get accountSupporter => 'Supporter';
+  String get accountSupporter => 'समर्थकः';
 
   @override
-  String get accountFree => 'Free';
+  String get accountFree => 'निःशुल्कम्';
 
   @override
-  String get accountDetails => 'Account details';
+  String get accountDetails => 'खाता-विवरणम्';
 
   @override
-  String get refreshFromKitsu => 'Refresh from Kitsu';
+  String get refreshFromKitsu => 'Kitsu तः नवीकुरु';
 
   @override
-  String get simklReadOnly => 'Simkl granted read-only access';
+  String get simklReadOnly => 'Simkl केवल-पठन-प्रवेशं दत्तवान्';
 
   @override
-  String get incognitoEditsBlocked => 'Incognito: list edits are blocked';
+  String get incognitoEditsBlocked => 'गुप्तमोडः: सूची-सम्पादनानि निरुद्धानि';
 
   @override
   String serviceError(String service, String error) {
@@ -1153,1195 +1123,1187 @@ class AppLocalizationsSa extends AppLocalizations {
   }
 
   @override
-  String get incognitoProgressNotSaved => 'Incognito: progress not saved';
+  String get incognitoProgressNotSaved => 'गुप्तमोडः: प्रगतिः न रक्षिता';
 
   @override
   String progressSet(int progress) {
-    return 'Progress set to $progress';
+    return 'प्रगतिः $progress इति स्थापिता';
   }
 
   @override
   String removedFromList(String title) {
-    return 'Removed $title from your list';
+    return '$title तव सूचीतः अपनीतम्';
   }
 
   @override
-  String get following => 'Following';
+  String get following => 'अनुसरन्';
 
   @override
-  String get homeSections => 'Home sections';
+  String get homeSections => 'मुख्यपृष्ठ-विभागाः';
 
   @override
-  String get homeSectionsHint =>
-      'Drag to reorder. Hidden sections are never fetched.';
+  String get homeSectionsHint => 'क्रमपरिवर्तनार्थं कर्ष। गुप्ताः विभागाः कदापि न आनीयन्ते।';
 
   @override
-  String get customListDeleteFailed => 'Failed to delete custom list';
+  String get customListDeleteFailed => 'स्वनिर्मितां सूचीं मार्जयितुं न शक्यते';
 
   @override
-  String get customListsSaveFailed => 'Failed to save custom lists';
+  String get customListsSaveFailed => 'स्वनिर्मिताः सूचीः रक्षितुं न शक्यन्ते';
 
   @override
-  String get customListsSaved => 'Custom lists saved';
+  String get customListsSaved => 'स्वनिर्मिताः सूचीः रक्षिताः';
 
   @override
-  String get listName => 'List name';
+  String get listName => 'सूची-नाम';
 
   @override
-  String get addList => 'Add list';
+  String get addList => 'सूचीं योजय';
 
   @override
   String voiceActorsIn(String name) {
-    return 'Voice actors · $name';
+    return 'स्वर-कलाकाराः · $name';
   }
 
   @override
-  String get animeAppearances => 'Anime appearances';
+  String get animeAppearances => 'अनिमे-उपस्थितयः';
 
   @override
-  String get mangaAppearances => 'Manga appearances';
+  String get mangaAppearances => 'मांगा-उपस्थितयः';
 
   @override
-  String get voicedCharacters => 'Voiced characters';
+  String get voicedCharacters => 'स्वरदत्ताः पात्राणि';
 
   @override
-  String get animeCredits => 'Anime credits';
+  String get animeCredits => 'अनिमे-श्रेयः';
 
   @override
-  String get mangaCredits => 'Manga credits';
+  String get mangaCredits => 'मांगा-श्रेयः';
 
   @override
-  String get mainProductions => 'Main productions';
+  String get mainProductions => 'मुख्य-निर्मितयः';
 
   @override
-  String get otherWorks => 'Other works';
+  String get otherWorks => 'अन्ये कार्यक्रमाः';
 
   @override
-  String get prequelSequel => 'Prequel & Sequel';
+  String get prequelSequel => 'पूर्वभागः उत्तरभागः च';
 
   @override
-  String get previousSeason => 'पूर्वऋतु';
+  String get previousSeason => 'पूर्व-ऋतुः';
 
   @override
-  String get thisSeason => 'अद्यतकालीनऋतु';
+  String get thisSeason => 'अयम् ऋतुः';
 
   @override
-  String get nextSeason => 'अनन्तरऋतु';
+  String get nextSeason => 'अग्रिम-ऋतुः';
 
   @override
-  String get voiceRoles => 'Voice roles';
+  String get voiceRoles => 'स्वर-भूमिकाः';
 
   @override
-  String get staffPositions => 'Staff positions';
+  String get staffPositions => 'दल-पदानि';
 
   @override
-  String get mangaWorks => 'Manga works';
+  String get mangaWorks => 'मांगा-कृतयः';
 
   @override
-  String get malProfile => 'MyAnimeList profile';
+  String get malProfile => 'MyAnimeList प्रोफाइल्';
 
   @override
-  String get refreshFromMal => 'Refresh from MyAnimeList';
+  String get refreshFromMal => 'MyAnimeList तः नवीकुरु';
 
   @override
-  String get repullProfileCounts => 'Re-pull your profile and counts';
+  String get repullProfileCounts => 'तव प्रोफाइल् गणनाः च पुनः आनय';
 
   @override
-  String get refreshed => 'Refreshed';
+  String get refreshed => 'नवीकृतम्';
 
   @override
-  String get simklProfile => 'Simkl profile';
+  String get simklProfile => 'Simkl प्रोफाइल्';
 
   @override
-  String get refreshFromSimkl => 'Refresh from Simkl';
+  String get refreshFromSimkl => 'Simkl तः नवीकुरु';
 
   @override
-  String get repullProfileLibrary => 'Re-pull your profile and library';
+  String get repullProfileLibrary => 'तव प्रोफाइल् पुस्तकालयं च पुनः आनय';
 
   @override
-  String get simklSignInToSearch => 'Sign in to Simkl to search';
+  String get simklSignInToSearch => 'अन्वेषणार्थं Simkl मध्ये लॉगिन् कुरु';
 
   @override
-  String get dropRate => 'Drop rate';
+  String get dropRate => 'त्याग-दरः';
 
   @override
-  String get simklAttribution =>
-      'Data and artwork provided by Simkl. View on Simkl';
+  String get simklAttribution => 'दत्तांशः चित्राणि च Simkl-प्रदत्तानि। Simkl मध्ये पश्य';
 
   @override
-  String get onHold => 'निरोधितम् null';
+  String get onHold => 'स्थगितम्';
 
   @override
-  String get scoredBy => 'Scored by';
+  String get scoredBy => 'अङ्कितवन्तः';
 
   @override
-  String get planToWatch => 'Plan to watch';
+  String get planToWatch => 'द्रष्टुम् अभिप्रेतम्';
 
   @override
-  String get planToRead => 'Plan to read';
+  String get planToRead => 'पठितुम् अभिप्रेतम्';
 
   @override
-  String get timesRewatched => 'Times rewatched';
+  String get timesRewatched => 'पुनर्दृष्टवारम्';
 
   @override
-  String get timesReread => 'Times reread';
+  String get timesReread => 'पुनःपठितवारम्';
 
   @override
   String get comments => 'टिप्पण्यः';
 
   @override
-  String get moviesAndSeries => 'Movies & Series';
+  String get moviesAndSeries => 'चलचित्राणि धारावाहिकाः च';
 
   @override
-  String get trackingOnly => 'Tracking only';
+  String get trackingOnly => 'केवलम् अनुसरणम्';
 
   @override
-  String get signedIn => 'Signed in';
+  String get signedIn => 'लॉगिन् कृतम्';
 
   @override
-  String get searchLanguage => 'Search language';
+  String get searchLanguage => 'अन्वेषण-भाषा';
 
   @override
-  String get savedToList => 'Saved to your list';
+  String get savedToList => 'तव सूचीयां रक्षितम्';
 
   @override
-  String get removedFromYourList => 'Removed from your list';
+  String get removedFromYourList => 'तव सूचीतः अपनीतम्';
 
   @override
-  String get retry => 'Retry';
+  String get retry => 'पुनः यत्नं कुरु';
 
   @override
-  String get synopsis => 'सार';
+  String get synopsis => 'सारांशः';
 
   @override
-  String get details => 'Details';
+  String get details => 'विवरणम्';
 
   @override
-  String get addToList => 'सूच्यां सम्मिलय';
+  String get addToList => 'सूचीयां योजय';
 
   @override
-  String get trailer => 'Trailer';
+  String get trailer => 'ट्रेलर्';
 
   @override
-  String get titleCopied => 'Title copied';
+  String get titleCopied => 'शीर्षकं प्रतिलिखितम्';
 
   @override
-  String get linkCopied => 'Link copied';
+  String get linkCopied => 'लिङ्कः प्रतिलिखितः';
 
   @override
-  String get watchTrailer => 'Watch trailer';
+  String get watchTrailer => 'ट्रेलर् पश्य';
 
   @override
-  String get copyTitle => 'Copy title';
+  String get copyTitle => 'शीर्षकं प्रतिलिख';
 
   @override
-  String get copyLink => 'Copy link';
+  String get copyLink => 'लिङ्कं प्रतिलिख';
 
   @override
-  String get openInBrowser => 'Open in browser';
+  String get openInBrowser => 'ब्राउज़र् मध्ये उद्घाटय';
 
   @override
   String viewOnSource(String source) {
-    return 'View on $source';
+    return '$source मध्ये पश्य';
   }
 
   @override
   String episodeAirsIn(int ep, String time) {
-    return 'Episode $ep airs in $time';
+    return 'एपिसोड् $ep $time मध्ये प्रसार्यते';
   }
 
   @override
   String nextEpisodeIn(String time) {
-    return 'Next episode in $time';
+    return 'अग्रिम एपिसोड् $time मध्ये';
   }
 
   @override
-  String get logPathCopied => 'Log file path copied to clipboard';
+  String chapterExpectedIn(int chapter, String time) {
+    return 'Chapter $chapter expected in about $time';
+  }
 
   @override
-  String get animeSource => 'Anime source';
+  String get logPathCopied => 'लॉग्-फाइल्-मार्गः क्लिपबोर्ड् मध्ये प्रतिलिखितः';
 
   @override
-  String get mangaSource => 'Manga source';
+  String get animeSource => 'अनिमे-स्रोतः';
 
   @override
-  String get popular => 'लोकप्रिय null';
+  String get mangaSource => 'मांगा-स्रोतः';
 
   @override
-  String get latest => 'Latest';
+  String get popular => 'लोकप्रियम्';
 
   @override
-  String get saved => 'Saved';
+  String get latest => 'नवीनतमम्';
 
   @override
-  String get nothingMatched => 'Nothing matched';
+  String get saved => 'रक्षितम्';
 
   @override
-  String get nothingSavedFromSource => 'Nothing saved from this source yet';
+  String get nothingMatched => 'किमपि न मिलितम्';
 
   @override
-  String get sourceReturnedNothing => 'This source returned nothing';
+  String get nothingSavedFromSource => 'अस्मात् स्रोतसः किमपि न रक्षितम्';
 
   @override
-  String get checkConnectionOrSource =>
-      'Check your connection or try another source.';
+  String get sourceReturnedNothing => 'अयं स्रोतः किमपि न प्रत्यर्पयत्';
 
   @override
-  String get tryDifferentSearch => 'Try a different search term.';
+  String get checkConnectionOrSource => 'स्वस्य संयोजनं परीक्षस्व अथवा अन्यं स्रोतः प्रयत्नं कुरु।';
 
   @override
-  String get savedTitlesAppearHere =>
-      'Titles you add to your list appear here.';
+  String get tryDifferentSearch => 'अन्यं अन्वेषण-पदं प्रयत्नं कुरु।';
 
   @override
-  String get tryOtherFeed => 'Try the other feed or search instead.';
+  String get savedTitlesAppearHere => 'यानि शीर्षकाणि सूचीयां योजयसि तानि अत्र दृश्यन्ते।';
+
+  @override
+  String get tryOtherFeed => 'अन्यं फीड् अथवा अन्वेषणं प्रयत्नं कुरु।';
 
   @override
   String searchSource(String source) {
-    return 'Search $source';
+    return '$source मध्ये अन्वेषणम्';
   }
 
   @override
-  String get animeExtensions => 'Anime Extensions';
+  String get animeExtensions => 'अनिमे-एक्स्टेंशन्स्';
 
   @override
-  String get mangaExtensions => 'Manga Extensions';
+  String get mangaExtensions => 'मांगा-एक्स्टेंशन्स्';
 
   @override
-  String get nothingHereYet => 'Nothing here yet';
+  String get nothingHereYet => 'अत्र अद्यापि किमपि नास्ति';
 
   @override
-  String get savedOnDeviceUntilLogin =>
-      'Everything below is saved on this device until you do.';
+  String get savedOnDeviceUntilLogin => 'यावत् त्वं न करोषि तावत् अधः सर्वं अस्मिन् उपकरणे रक्षितम्।';
 
   @override
-  String get yourProfile => 'Your profile';
+  String get yourProfile => 'तव प्रोफाइल्';
 
   @override
-  String get activity => 'null';
+  String get activity => 'क्रिया';
 
   @override
-  String get extensions => 'Extensions';
+  String get extensions => 'एक्स्टेंशन्स्';
 
   @override
-  String get logOut => 'Log out';
+  String get logOut => 'लॉगआउट्';
 
   @override
-  String get logIn => 'Log in';
+  String get logIn => 'लॉगिन';
 
   @override
-  String get logOutConfirm => 'Are you sure you want to log out?';
+  String get logOutConfirm => 'निश्चितं लॉगआउट् कर्तुम् इच्छसि वा?';
 
   @override
-  String get incognitoMode => 'अज्ञातवृत्ति';
+  String get incognitoMode => 'गुप्तमोडः';
 
   @override
-  String get alsoBlockListEdits => 'Also block list edits';
+  String get alsoBlockListEdits => 'सूची-सम्पादनानि अपि निरुन्धि';
 
   @override
-  String get offlineMode => 'निर्बन्धजालवृत्ति';
+  String get offlineMode => 'ऑफलाइन्-मोडः';
 
   @override
-  String get switchService => 'Switch service';
+  String get switchService => 'सेवां परिवर्तय';
 
   @override
   String logOutOf(String name) {
-    return 'Log out of $name';
+    return '$name तः लॉगआउट्';
   }
 
   @override
-  String get loggedIn => 'Logged in';
+  String get loggedIn => 'लॉगिन् कृतम्';
 
   @override
-  String get notifications => 'सूचनाएँ';
+  String get notifications => 'सूचनाः';
 
   @override
-  String get nothingNew => 'Nothing new';
+  String get nothingNew => 'किमपि नूतनं नास्ति';
 
   @override
-  String get thisWeek => 'This week';
+  String get thisWeek => 'अस्मिन् सप्ताहे';
 
   @override
-  String get listOnly => 'List Only';
+  String get listOnly => 'सूची केवलम्';
 
   @override
-  String get filter => 'Filter';
+  String get filter => 'छानय';
 
   @override
-  String get searchResults => 'Search Results';
+  String get searchResults => 'अन्वेषण-परिणामाः';
 
   @override
-  String get recentSearches => 'Recent searches';
+  String get recentSearches => 'अद्यतन-अन्वेषणानि';
 
   @override
-  String get searchOrSetFilter => 'Search or set a filter';
+  String get searchOrSetFilter => 'अन्विष्य अथवा छानकं स्थापय';
 
   @override
-  String get filters => 'Filters';
+  String get filters => 'छानकानि';
 
   @override
-  String get showLess => 'Show less';
+  String get showLess => 'न्यूनं दर्शय';
 
   @override
-  String get showAll => 'Show all';
+  String get showAll => 'सर्वं दर्शय';
 
   @override
-  String get apply => 'Apply';
+  String get apply => 'प्रयुङ्क्ष्व';
 
   @override
-  String get preview => 'Preview';
+  String get preview => 'पूर्वावलोकनम्';
 
   @override
-  String get preset => 'Preset';
+  String get preset => 'प्रीसेट्';
 
   @override
-  String get cardNormal => 'Normal';
+  String get cardNormal => 'सामान्यम्';
 
   @override
-  String get cardOnCard => 'On card';
+  String get cardOnCard => 'कार्ड्-उपरि';
 
   @override
-  String get cardInCard => 'In card';
+  String get cardInCard => 'कार्ड्-अन्तः';
 
   @override
-  String get size => 'Size';
+  String get size => 'आकारः';
 
   @override
-  String get cardWidth => 'Card width';
+  String get cardWidth => 'कार्ड्-विस्तारः';
 
   @override
-  String get compact => 'Compact';
+  String get compact => 'संक्षिप्तम्';
 
   @override
-  String get coverAndTitleOnly => 'Cover and title only';
+  String get coverAndTitleOnly => 'केवलम् आवरणं शीर्षकं च';
 
   @override
-  String get titleLines => 'Title lines';
+  String get titleLines => 'शीर्षक-पङ्क्तयः';
 
   @override
-  String get shape => 'Shape';
+  String get shape => 'आकृतिः';
 
   @override
-  String get posterShape => 'Poster shape';
+  String get posterShape => 'पोस्टर्-आकृतिः';
 
   @override
-  String get cornerRadius => 'Corner radius';
+  String get cornerRadius => 'कोण-वक्रता';
 
   @override
-  String get off => 'Off';
+  String get off => 'निष्क्रिय';
 
   @override
-  String get topLeft => 'Top left';
+  String get topLeft => 'उपरि वामतः';
 
   @override
-  String get topRight => 'Top right';
+  String get topRight => 'उपरि दक्षिणतः';
 
   @override
-  String get bottomLeft => 'Bottom left';
+  String get bottomLeft => 'अधः वामतः';
 
   @override
-  String get bottomRight => 'Bottom right';
+  String get bottomRight => 'अधः दक्षिणतः';
 
   @override
-  String get overlays => 'Overlays';
+  String get overlays => 'आवरणानि';
 
   @override
-  String get progressCount => 'Progress / count';
+  String get progressCount => 'प्रगतिः / गणना';
 
   @override
-  String get pill => 'Pill';
+  String get pill => 'गुटिका';
 
   @override
-  String get bar => 'Bar';
+  String get bar => 'पट्टिका';
 
   @override
-  String get outside => 'Outside';
+  String get outside => 'बहिः';
 
   @override
-  String get scoreBadge => 'Score badge';
+  String get scoreBadge => 'अङ्क-चिह्नम्';
 
   @override
-  String get airingDot => 'Airing dot';
+  String get airingDot => 'प्रसारण-बिन्दुः';
 
   @override
-  String get updateAvailable => 'Update available';
+  String get updateAvailable => 'अद्यतनम् उपलब्धम्';
 
   @override
-  String get notInstalled => 'Not installed';
+  String get notInstalled => 'न स्थापितम्';
 
   @override
-  String get done => 'Done';
+  String get done => 'समाप्तम्';
 
   @override
-  String get searchOrEnterUrl => 'Search or enter URL';
+  String get searchOrEnterUrl => 'अन्विष्य अथवा URL लिख';
 
   @override
-  String get refresh => 'Refresh';
+  String get refresh => 'नवीकुरु';
 
   @override
-  String get share => 'Share';
+  String get share => 'साझां कुरु';
 
   @override
   String get characters => 'पात्राणि';
 
   @override
-  String get staff => 'कर्मचारीः';
+  String get staff => 'दलम्';
 
   @override
-  String get readMore => 'Read more';
+  String get readMore => 'अधिकं पठ';
 
   @override
-  String get couldNotLoadList => 'Could not load the list';
+  String get couldNotLoadList => 'सूची आनेतुं न शक्यते';
 
   @override
-  String get logInToFavourite => 'Log in to add favourites';
+  String get logInToFavourite => 'प्रियाणि योजयितुं लॉगिन् कुरु';
 
   @override
-  String get alsoKnownAs => 'Also known as';
+  String get alsoKnownAs => 'अपरनाम';
 
   @override
-  String get hideSpoilerNames => 'Hide spoiler names';
+  String get hideSpoilerNames => 'स्पॉयलर्-नामानि गोपय';
 
   @override
-  String get showSpoilerNames => 'Show spoiler names';
+  String get showSpoilerNames => 'स्पॉयलर्-नामानि दर्शय';
 
   @override
-  String get favourited => 'Favourited';
+  String get favourited => 'प्रियेषु योजितम्';
 
   @override
-  String get favourite => 'Favourite';
+  String get favourite => 'प्रियम्';
 
   @override
-  String get couldNotOpenTitle => 'Could not open this title';
+  String get couldNotOpenTitle => 'इदं शीर्षकम् उद्घाटयितुं न शक्यते';
 
   @override
-  String get nobodyHereYet => 'Nobody here yet';
+  String get nobodyHereYet => 'अत्र अद्यापि कोऽपि नास्ति';
 
   @override
-  String get noMatches => 'No matches';
+  String get noMatches => 'मेलनं नास्ति';
 
   @override
-  String get gridView => 'विस्तृतदृष्टिः';
+  String get gridView => 'जालक-दृश्यम्';
 
   @override
-  String get fullWidth => 'Full width';
+  String get fullWidth => 'पूर्ण-विस्तारः';
 
   @override
-  String get userNotFound => 'User not found';
+  String get userNotFound => 'उपयोक्ता न प्राप्तः';
 
   @override
-  String get couldNotUpdateFollow => 'Could not update follow';
+  String get couldNotUpdateFollow => 'अनुसरणं अद्यतनितुं न शक्यते';
 
   @override
   String followedUser(String name) {
-    return 'Followed $name';
+    return '$name अनुसृतः';
   }
 
   @override
   String unfollowedUser(String name) {
-    return 'Unfollowed $name';
+    return '$name अननुसृतः';
   }
 
   @override
-  String get messages => 'Messages';
+  String get messages => 'सन्देशाः';
 
   @override
-  String get logInToSeeMessages => 'Log in to see your messages';
+  String get logInToSeeMessages => 'स्वसन्देशान् द्रष्टुं लॉगिन् कुरु';
 
   @override
-  String get editActivity => 'Edit activity';
+  String get editActivity => 'क्रियां सम्पादय';
 
   @override
-  String get newActivity => 'New activity';
+  String get newActivity => 'नूतना क्रिया';
 
   @override
-  String get editMessage => 'Edit message';
+  String get editMessage => 'सन्देशं सम्पादय';
 
   @override
-  String get writeMessage => 'Write a message';
+  String get writeMessage => 'सन्देशं लिख';
 
   @override
-  String get editReply => 'Edit reply';
+  String get editReply => 'उत्तरं सम्पादय';
 
   @override
-  String get posted => 'Posted';
+  String get posted => 'प्रकाशितम्';
 
   @override
-  String get couldNotPost => 'Could not post';
+  String get couldNotPost => 'प्रकाशयितुं न शक्यते';
 
   @override
-  String get nothingToPreview => 'Nothing to preview';
+  String get nothingToPreview => 'पूर्वावलोकनार्थं किमपि नास्ति';
 
   @override
-  String get writeSomethingHint =>
-      'Write something… AniList markdown works here';
+  String get writeSomethingHint => 'किञ्चित् लिख… अत्र AniList markdown कार्यं करोति';
 
   @override
-  String get privateMessage => 'Private message';
+  String get privateMessage => 'व्यक्तिगत-सन्देशः';
 
   @override
-  String get post => 'Post';
+  String get post => 'प्रकाशय';
 
   @override
-  String get nothingHere => 'Nothing here';
+  String get nothingHere => 'अत्र किमपि नास्ति';
 
   @override
-  String get noAnimeProgress => 'No anime progress';
+  String get noAnimeProgress => 'अनिमे-प्रगतिः नास्ति';
 
   @override
-  String get noMangaProgress => 'No manga progress';
+  String get noMangaProgress => 'मांगा-प्रगतिः नास्ति';
 
   @override
-  String get noMessages => 'No messages';
+  String get noMessages => 'सन्देशाः न सन्ति';
 
   @override
-  String get writeMessageHint => 'Write a message…';
+  String get writeMessageHint => 'सन्देशं लिख…';
 
   @override
-  String get shareSomethingHint => 'Share something…';
+  String get shareSomethingHint => 'किञ्चित् साझां कुरु…';
 
   @override
-  String get all => 'All';
+  String get all => 'सर्वम्';
 
   @override
-  String get anime => 'एनीमे';
+  String get anime => 'अनिमे';
 
   @override
-  String get manga => 'मंगा';
+  String get manga => 'मांगा';
 
   @override
-  String get count => 'Count';
+  String get count => 'गणना';
 
   @override
-  String get hoursWatched => 'Hours watched';
+  String get hoursWatched => 'दृष्टाः होराः';
 
   @override
-  String get chaptersRead => 'Chapters read';
+  String get chaptersRead => 'पठिताः अध्यायाः';
 
   @override
-  String get meanScore => 'औसतांकः';
+  String get meanScore => 'मध्यमाङ्कः';
 
   @override
-  String get noStatsYet => 'No stats yet';
+  String get noStatsYet => 'सांख्यिकी अद्यापि नास्ति';
 
   @override
-  String get totalEntries => 'Total entries';
+  String get totalEntries => 'कुल-प्रविष्टयः';
 
   @override
-  String get episodesWatched => 'Episodes watched';
+  String get episodesWatched => 'दृष्टाः एपिसोड्स्';
 
   @override
-  String get daysWatched => 'Days watched';
+  String get daysWatched => 'दृष्टानि दिनानि';
 
   @override
-  String get volumesRead => 'Volumes read';
+  String get volumesRead => 'पठिताः खण्डाः';
 
   @override
-  String get standardDeviation => 'Standard deviation';
+  String get standardDeviation => 'मानक-विचलनम्';
 
   @override
-  String get showMore => 'Show more';
+  String get showMore => 'अधिकं दर्शयतु';
 
   @override
-  String get followsYou => 'Follows you';
+  String get followsYou => 'त्वाम् अनुसरति';
 
   @override
-  String get nobodyYet => 'Nobody yet';
+  String get nobodyYet => 'अद्यापि कोऽपि नास्ति';
 
   @override
-  String get logInToLike => 'Log in to like';
+  String get logInToLike => 'रोचितुं लॉगिन् कुरु';
 
   @override
-  String get failedToLikeActivity => 'Failed to like activity';
+  String get failedToLikeActivity => 'क्रियां रोचयितुं न शक्यते';
 
   @override
-  String get deleteActivityConfirm => 'Delete activity?';
+  String get deleteActivityConfirm => 'क्रियां मार्जयसि?';
 
   @override
-  String get deletedActivity => 'Deleted activity';
+  String get deletedActivity => 'क्रिया मार्जिता';
 
   @override
-  String get failedToDeleteActivity => 'Failed to delete activity';
+  String get failedToDeleteActivity => 'क्रियां मार्जयितुं न शक्यते';
 
   @override
-  String get subscribed => 'Subscribed';
+  String get subscribed => 'सदस्यता गृहीता';
 
   @override
-  String get unsubscribed => 'Unsubscribed';
+  String get unsubscribed => 'सदस्यता निरस्ता';
 
   @override
-  String get failedToUpdateSubscription => 'Failed to update subscription';
+  String get failedToUpdateSubscription => 'सदस्यतां अद्यतनितुं न शक्यते';
 
   @override
-  String get edit => 'Edit';
+  String get edit => 'सम्पादय';
 
   @override
-  String get delete => 'Delete';
+  String get delete => 'मार्जय';
 
   @override
-  String get likedBy => 'Liked by';
+  String get likedBy => 'रोचितवन्तः';
 
   @override
-  String get follow => 'Follow';
+  String get follow => 'अनुसर';
 
   @override
-  String get nameCopied => 'Name copied';
+  String get nameCopied => 'नाम प्रतिलिखितम्';
 
   @override
-  String get followsEachOther => 'Follows each other';
+  String get followsEachOther => 'परस्परम् अनुसरतः';
 
   @override
-  String get unfollow => 'Unfollow';
+  String get unfollow => 'अननुसर';
 
   @override
-  String get userIdCopied => 'User id copied';
+  String get userIdCopied => 'उपयोक्तृपरिचयः प्रतिलिपीकृतः';
 
   @override
-  String get shareProfile => 'Share profile';
+  String get shareProfile => 'प्रोफाइल् साझां कुरु';
 
   @override
-  String get copyUserId => 'Copy user id';
+  String get copyUserId => 'उपयोक्तृपरिचयं प्रतिलिपीकुरुत';
 
   @override
-  String get failedToDelete => 'Failed to delete';
+  String get failedToDelete => 'मार्जनं विफलम्';
 
   @override
-  String get failedToLike => 'Failed to like';
+  String get failedToLike => 'रोचनं विफलम्';
 
   @override
-  String get replies => 'Replies';
+  String get replies => 'उत्तराणि';
 
   @override
-  String get reply => 'Reply';
+  String get reply => 'उत्तरय';
 
   @override
-  String get noRepliesYet => 'No replies yet';
+  String get noRepliesYet => 'उत्तराणि अद्यापि न सन्ति';
 
   @override
-  String get favouriteAnime => 'Favourite anime';
+  String get favouriteAnime => 'प्रियाणि अनिमे';
 
   @override
-  String get favouriteManga => 'Favourite manga';
+  String get favouriteManga => 'प्रियाणि मांगा';
 
   @override
-  String get favouriteCharacters => 'Favourite characters';
+  String get favouriteCharacters => 'प्रियाणि पात्राणि';
 
   @override
-  String get favouriteStaff => 'Favourite staff';
+  String get favouriteStaff => 'प्रियं दलम्';
 
   @override
-  String get favouriteStudios => 'Favourite studios';
+  String get favouriteStudios => 'प्रियाणि स्टूडियो';
 
   @override
-  String get noFavouritesYet => 'No favourites yet';
+  String get noFavouritesYet => 'प्रियाणि अद्यापि न सन्ति';
 
   @override
-  String get yourStory => 'Your story';
+  String get yourStory => 'तव कथा';
 
   @override
-  String get copiedToClipboard => 'Copied to clipboard';
+  String get copiedToClipboard => 'क्लिपबोर्ड् मध्ये प्रतिलिखितम्';
 
   @override
-  String get justNow => 'Just now';
+  String get justNow => 'अधुना एव';
 
   @override
-  String get openImage => 'Open image';
+  String get openImage => 'चित्रम् उद्घाटय';
 
   @override
-  String get hideSpoiler => 'Hide spoiler';
+  String get hideSpoiler => 'स्पॉयलर् गोपय';
 
   @override
-  String get showSpoiler => 'Show spoiler';
+  String get showSpoiler => 'स्पॉयलर् दर्शय';
 
   @override
-  String get status => 'स्थिति';
+  String get status => 'स्थितिः';
 
   @override
-  String get score => 'Score';
+  String get score => 'अङ्कः';
 
   @override
-  String get started => 'Started';
+  String get started => 'आरब्धम्';
 
   @override
-  String get completed => 'Completed';
+  String get completed => 'समाप्तम्';
 
   @override
-  String get private => 'Private';
+  String get private => 'व्यक्तिगतम्';
 
   @override
-  String get hideFromStatusLists => 'Hide from status lists';
+  String get hideFromStatusLists => 'स्थिति-सूचीभ्यः गोपय';
 
   @override
-  String get totalRepeats => 'Total repeats';
+  String get totalRepeats => 'कुल-पुनरावृत्तयः';
 
   @override
-  String get other => 'Other';
+  String get other => 'अन्यत्';
 
   @override
-  String get customLists => 'Custom lists';
+  String get customLists => 'स्वनिर्मिताः सूचयः';
 
   @override
-  String get activeDays => 'Active days';
+  String get activeDays => 'सक्रियानि दिनानि';
 
   @override
-  String get longestStreak => 'Longest streak';
+  String get longestStreak => 'दीर्घतमा शृङ्खला';
 
   @override
-  String get currentStreak => 'Current streak';
+  String get currentStreak => 'वर्तमाना शृङ्खला';
 
   @override
-  String get tapOrHoverDay => 'Tap or hover a day';
+  String get tapOrHoverDay => 'दिनं स्पृश अथवा तत्र सूचकं स्थापय';
 
   @override
-  String get less => 'Less';
+  String get less => 'न्यूनम्';
 
   @override
-  String get more => 'More';
+  String get more => 'अधिकम्';
 
   @override
   String epIn(int ep, String time) {
-    return 'Ep $ep in $time';
+    return 'एप. $ep $time मध्ये';
   }
 
   @override
-  String get sectionLoading => 'Loading';
+  String get sectionLoading => 'आनीयते';
 
   @override
-  String get querySize => 'Query size';
+  String get querySize => 'क्वेरी-आकारः';
 
   @override
-  String get querySizeDesc =>
-      'One big query loads every row (and a whole profile) in a single request. Split queries send a small request per row or per profile part: each is quick and parts appear as they arrive.';
+  String get querySizeDesc => 'एका बृहती क्वेरी सर्वाः पङ्क्तीः (पूर्णं प्रोफाइल् च) एकेनैव अनुरोधेन आनयति। विभक्ताः क्वेरीः प्रतिपङ्क्ति अथवा प्रोफाइल्-भागं लघु अनुरोधं प्रेषयन्ति: प्रत्येकं शीघ्रम्, भागाः आगच्छन्तः दृश्यन्ते।';
 
   @override
-  String get oneBig => 'One big';
+  String get oneBig => 'एका बृहती';
 
   @override
-  String get split => 'Split';
+  String get split => 'विभक्ता';
 
   @override
-  String get sectionSocial => 'Social';
+  String get sectionSocial => 'सामाजिकम्';
 
   @override
-  String get systemNotifications => 'System notifications';
+  String get systemNotifications => 'सिस्टम्-सूचनाः';
 
   @override
-  String get feedLayout => 'Feed layout';
+  String get feedLayout => 'फीड्-विन्यासः';
 
   @override
   String sectionsShown(int shown, int total) {
-    return '$shown of $total shown — tap to pick and reorder';
+    return '$total मध्ये $shown दृश्यन्ते — चयनाय क्रमाय च स्पृश';
   }
 
   @override
   String labelSections(String label) {
-    return '$label sections';
+    return '$label विभागाः';
   }
 
   @override
-  String get accountOptions => 'Account options';
+  String get accountOptions => 'खाता-विकल्पाः';
 
   @override
-  String get accountOptionsDesc =>
-      'Names, score format, list order, notifications and more';
+  String get accountOptionsDesc => 'नामानि, अङ्क-प्रारूपम्, सूची-क्रमः, सूचनाः अन्यत् च';
 
   @override
-  String get anilistAccountOptions => 'AniList account options';
+  String get anilistAccountOptions => 'AniList खाता-विकल्पाः';
 
   @override
-  String get sectionPrivacy => 'Privacy';
+  String get sectionPrivacy => 'गोपनीयता';
 
   @override
-  String get hidePrivateEntries => 'Hide private entries';
+  String get hidePrivateEntries => 'व्यक्तिगत-प्रविष्टीः गोपय';
 
   @override
-  String get hidePrivateEntriesDesc =>
-      'Keep entries marked private on AniList out of the feed';
+  String get hidePrivateEntriesDesc => 'AniList मध्ये व्यक्तिगतत्वेन चिह्निताः प्रविष्टीः फीड्तः दूरे स्थापय';
 
   @override
-  String get anilistProfile => 'AniList profile';
+  String get anilistExcludeList => 'Exclude your list';
 
   @override
-  String get refreshFromAnilist => 'Refresh from AniList';
+  String get anilistExcludeListDesc => 'Keep titles already on your AniList out of the anime and manga pages';
 
   @override
-  String get couldNotUpdateAnilistSettings =>
-      'Could not update AniList settings';
+  String get anilistProfile => 'AniList प्रोफाइल्';
 
   @override
-  String get sectionNames => 'Names';
+  String get refreshFromAnilist => 'AniList तः नवीकुरु';
 
   @override
-  String get titleLanguage => 'Title language';
+  String get couldNotUpdateAnilistSettings => 'AniList सेटिंग्स् अद्यतनितुं न शक्यन्ते';
 
   @override
-  String get titleLanguageDesc =>
-      'How titles are written everywhere, e.g. Attack on Titan / Shingeki no Kyojin / 進撃の巨人.';
+  String get sectionNames => 'नामानि';
 
   @override
-  String get staffCharacterNames => 'Staff and character names';
+  String get titleLanguage => 'शीर्षक-भाषा';
 
   @override
-  String get sectionLists => 'Lists';
+  String get titleLanguageDesc => 'शीर्षकाणि सर्वत्र कथं लिख्यन्ते, यथा Attack on Titan / Shingeki no Kyojin / 進撃の巨人।';
 
   @override
-  String get scoreFormat => 'Score format';
+  String get staffCharacterNames => 'दल-पात्र-नामानि';
 
   @override
-  String get sortListsBy => 'Sort lists by';
+  String get sectionLists => 'सूचयः';
+
+  @override
+  String get scoreFormat => 'अङ्क-प्रारूपम्';
+
+  @override
+  String get sortListsBy => 'सूचीः एतेन क्रमय';
 
   @override
   String labelCustomLists(String label) {
-    return '$label custom lists';
+    return '$label स्वनिर्मिताः सूचयः';
   }
 
   @override
   String customListsCount(int count) {
-    return '$count lists — tap to add or remove';
+    return '$count सूचयः — योजनार्थं अपनयनार्थं वा स्पृश';
   }
 
   @override
-  String get mergeActivities => 'Merge activities';
+  String get mergeActivities => 'क्रियाः संयोजय';
 
   @override
   String minutesCount(int count) {
-    return '$count mins';
+    return '$count मिनिट्';
   }
 
   @override
-  String get timezone => 'Timezone';
+  String get timezone => 'समय-मण्डलम्';
 
   @override
-  String get notSet => 'Not set';
+  String get notSet => 'न स्थापितम्';
 
   @override
-  String get airingNotifications => 'Airing notifications';
+  String get airingNotifications => 'प्रसारण-सूचनाः';
 
   @override
-  String get airingNotificationsDesc =>
-      'Get notified when an episode of a followed show airs';
+  String get airingNotificationsDesc => 'अनुसृतस्य कार्यक्रमस्य एपिसोड् प्रसारिते सति सूचना प्राप्नुहि';
 
   @override
-  String get displayAdultContent => 'Display adult content';
+  String get displayAdultContent => 'वयस्क-सामग्रीं दर्शय';
 
   @override
-  String get displayAdultContentDesc =>
-      'Include 18+ titles in browse, search and feeds';
+  String get displayAdultContentDesc => 'ब्राउज़्, अन्वेषण-फीड्स् च मध्ये 18+ शीर्षकाणि अन्तर्भावय';
 
   @override
-  String get restrictMessages => 'Restrict messages to following';
+  String get restrictMessages => 'अनुसृतेभ्यः एव सन्देशाः';
 
   @override
-  String get restrictMessagesDesc => 'Only people you follow can message you';
+  String get restrictMessagesDesc => 'यान् अनुसरसि ते एव त्वां सन्देशं प्रेषयितुं शक्नुवन्ति';
 
   @override
-  String get sectionServices => 'Services';
+  String get sectionServices => 'सेवाः';
 
   @override
-  String get novel => 'उपन्यास';
+  String get novel => 'नॉवल्';
 
   @override
   String labelService(String label) {
-    return '$label service';
+    return '$label सेवा';
   }
 
   @override
   String nameSettings(String name) {
-    return '$name settings';
+    return '$name सेटिंग्स्';
   }
 
   @override
   String extensionBridgeOptions(String name) {
-    return 'Options from the $name extension bridge';
+    return '$name एक्स्टेंशन्-सेतोः विकल्पाः';
   }
 
   @override
   String extensionServiceFailed(String name, String error) {
-    return '$name could not start: $error';
+    return '$name आरब्धुं न शक्तम्: $error';
   }
 
   @override
-  String get importLists => 'Import lists';
+  String get importLists => 'सूचीः आनय';
 
   @override
-  String get importListsDesc =>
-      'From Aniyomi, Mihon / Tachiyomi or Kotatsu backups';
+  String get importListsDesc => 'Aniyomi, Mihon / Tachiyomi अथवा Kotatsu बैकप् तः';
 
   @override
-  String get exportLists => 'Export lists';
+  String get exportLists => 'सूचीः निर्यातय';
 
   @override
-  String get exportListsDesc => 'To an Aniyomi, Mihon or Kotatsu backup';
+  String get exportListsDesc => 'Aniyomi, Mihon अथवा Kotatsu बैकप् प्रति';
 
   @override
-  String get sectionBrowse => 'Browse';
+  String get sectionBrowse => 'ब्राउज़्';
 
   @override
-  String get readingTab => 'Reading tab';
+  String get readingTab => 'पठन-टैब्';
 
   @override
-  String get readingTabDesc => 'Which extensions the third tab shows';
+  String get readingTabDesc => 'तृतीयः टैब् कानि एक्स्टेंशन्स् दर्शयति';
 
   @override
-  String get defaultFeed => 'Default feed';
+  String get defaultFeed => 'मूलभूतः फीड्';
 
   @override
-  String get defaultFeedDesc => 'Which list a source opens with';
+  String get defaultFeedDesc => 'स्रोतः कया सूच्या उद्घाट्यते';
 
   @override
   String noServiceSupports(String type) {
-    return 'No service supports $type';
+    return 'कापि सेवा $type न समर्थयति';
   }
 
   @override
   String sourcesLoading(String name, int loaded, int installed) {
-    return '$name · $loaded of $installed sources loading';
+    return '$name · $installed मध्ये $loaded स्रोतांसि आनीयन्ते';
   }
 
   @override
   String noExtensionServiceSupportsHere(String type) {
-    return 'No extension service supports $type here.';
+    return 'कापि एक्स्टेंशन्-सेवा अत्र $type न समर्थयति।';
   }
 
   @override
-  String get loadDataFrom => 'Load data from';
+  String get loadDataFrom => 'दत्तांशम् अत्र आनय';
 
   @override
   String noInstalledSourcesYet(String type) {
-    return 'No installed $type sources yet.';
+    return '$type स्रोतांसि अद्यापि न स्थापितानि।';
   }
 
   @override
   String extensionNotInstalled(String name) {
-    return 'The extension for $name is not installed';
+    return '$name कृते एक्स्टेंशन् न स्थापितम्';
   }
 
   @override
-  String get thisSource => 'this source';
+  String get thisSource => 'अयं स्रोतः';
 
   @override
   String failedToAddRepository(String error) {
-    return 'Failed to add repository: $error';
+    return 'भण्डारं योजयितुं न शक्तम्: $error';
   }
 
   @override
   String installedType(String type) {
-    return 'Installed $type';
+    return 'स्थापितानि $type';
   }
 
   @override
   String availableType(String type) {
-    return 'Available $type';
+    return 'उपलब्धानि $type';
   }
 
   @override
   String noInstalledExtensions(String type) {
-    return 'No installed $type extensions';
+    return 'स्थापिताः $type एक्स्टेंशन्स् न सन्ति';
   }
 
   @override
   String noAvailableExtensions(String type) {
-    return 'No available $type extensions';
+    return 'उपलब्धाः $type एक्स्टेंशन्स् न सन्ति';
   }
 
   @override
-  String get nothingToShowYet => 'Nothing to show yet';
+  String get nothingToShowYet => 'दर्शयितुं किमपि नास्ति';
 
   @override
-  String get addTitlesHint =>
-      'Add some titles to your list and they\'ll appear here.';
+  String get addTitlesHint => 'स्वसूचीयां शीर्षकाणि योजय, तानि अत्र दृश्यन्ते।';
 
   @override
-  String get couldntLoad => 'Couldn\'t load';
+  String get couldntLoad => 'आनेतुं न शक्तम्';
 
   @override
-  String get progressStyleHint =>
-      'Pill and bar overlay the poster; outside shows the same count as plain text instead — pick one.';
+  String get progressStyleHint => 'गुटिका पट्टिका च पोस्टर् उपरि तिष्ठतः; \"बहिः\" समानां गणनां सरलपाठरूपेण दर्शयति — एकं चिनु।';
 
   @override
-  String get nixManagedUpdate =>
-      'This build is managed by Nix — run \"nix flake update\" on your flake and rebuild instead of updating from here';
+  String get nixManagedUpdate => 'इदं बिल्ड् Nix द्वारा प्रबन्धितम् — अत्र अद्यतनस्य स्थाने स्वस्य flake मध्ये \"nix flake update\" चालय पुनर्निर्मिणु च';
 
   @override
   String autoUpdateFailed(String error) {
-    return 'Automatic update failed ($error) — opening the download page instead';
+    return 'स्वयंचालितम् अद्यतनं विफलम् ($error) — डाउनलोड्-पृष्ठम् उद्घाट्यते';
   }
 
   @override
-  String get unknownPreference => 'Unknown preference';
+  String get unknownPreference => 'अज्ञातं प्राधान्यम्';
 
   @override
   String unsupportedPreferenceType(String type) {
-    return 'Unsupported preference type $type';
+    return 'असमर्थितं प्राधान्य-प्रकारः $type';
   }
 
   @override
-  String get notYetReleased => 'Not Yet Released';
+  String get notYetReleased => 'अद्यापि न प्रकाशितम्';
 
   @override
-  String get notStarted => 'Not Started';
+  String get notStarted => 'न आरब्धम्';
 
   @override
-  String get country => 'Country';
+  String get country => 'देशः';
 
   @override
-  String get sort => 'क्रमबद्धय';
+  String get sort => 'क्रमय';
 
   @override
-  String get chooseBackupDialog => 'Choose an Aniyomi, Mihon or Kotatsu backup';
+  String get chooseBackupDialog => 'Aniyomi, Mihon अथवा Kotatsu बैकप् चिनु';
 
   @override
-  String get importListsHint =>
-      'Bring a library over from Aniyomi, Mihon / Tachiyomi or Kotatsu. Titles, covers, progress and categories are kept.';
+  String get importListsHint => 'Aniyomi, Mihon / Tachiyomi अथवा Kotatsu तः पुस्तकालयम् आनय। शीर्षकाणि, आवरणानि, प्रगतिः, वर्गाः च रक्ष्यन्ते।';
 
   @override
-  String get chooseBackupFile => 'Choose backup file';
+  String get chooseBackupFile => 'बैकप्-फाइलं चिनु';
 
   @override
   String importAnimeCount(int count) {
-    return 'Import $count anime';
+    return '$count अनिमे आनय';
   }
 
   @override
   String importMangaCount(int count) {
-    return 'Import $count manga';
+    return '$count मांगा आनय';
   }
 
   @override
-  String get mergeWithExisting => 'Merge with existing lists';
+  String get mergeWithExisting => 'विद्यमानाभिः सूचीभिः सह संयोजय';
 
   @override
-  String get mergeWithExistingDesc =>
-      'Keeps what you already have; off replaces matching titles';
+  String get mergeWithExistingDesc => 'यत् अस्ति तत् रक्षति; निष्क्रिये समानशीर्षकाणि प्रतिस्थापयति';
 
   @override
-  String get chooseAnother => 'Choose another';
+  String get chooseAnother => 'अन्यत् चिनु';
 
   @override
-  String get import => 'Import';
+  String get import => 'आनय';
 
   @override
   String animeCount(int count) {
-    return '$count anime';
+    return '$count अनिमे';
   }
 
   @override
   String mangaCount(int count) {
-    return '$count manga';
+    return '$count मांगा';
   }
 
   @override
-  String get chooseSaveLocation => 'Choose where to save the backup';
+  String get chooseSaveLocation => 'बैकप् कुत्र रक्षितव्यम् इति चिनु';
 
   @override
   String savedPath(String path) {
-    return 'Saved $path';
+    return '$path मध्ये रक्षितम्';
   }
 
   @override
   String exportFailed(String error) {
-    return 'Export failed: $error';
+    return 'निर्यातः विफलः: $error';
   }
 
   @override
-  String get nothingInLocalLists => 'Nothing in your local lists yet.';
+  String get nothingInLocalLists => 'तव स्थानीय-सूचीषु अद्यापि किमपि नास्ति।';
 
   @override
   String exportsSummary(int anime, int manga) {
-    return 'Exports $anime anime and $manga manga from your local lists. Kotatsu only supports manga.';
+    return 'तव स्थानीय-सूचीभ्यः $anime अनिमे $manga मांगा च निर्यात्यन्ते। Kotatsu केवलं मांगा समर्थयति।';
   }
 
   @override
-  String get saveToFolder => 'Save to folder';
+  String get saveToFolder => 'फोल्डरे रक्ष';
 
   @override
-  String get formatAnimeManga => 'Anime and manga · .tachibk';
+  String get formatAnimeManga => 'अनिमे मांगा च · .tachibk';
 
   @override
-  String get formatMangaTachibk => 'Manga only · .tachibk';
+  String get formatMangaTachibk => 'केवलं मांगा · .tachibk';
 
   @override
-  String get formatMangaZip => 'Manga only · .zip';
+  String get formatMangaZip => 'केवलं मांगा · .zip';
 
   @override
-  String get genres => 'वर्गाः';
+  String get genres => 'विधाः';
 
   @override
-  String get relations => 'संबन्धाः';
+  String get relations => 'सम्बन्धाः';
 
   @override
-  String get recommendations => 'Recommendations';
+  String get recommendations => 'अनुशंसाः';
 
   @override
-  String get openings => 'Openings';
+  String get openings => 'आरम्भगीतानि';
 
   @override
-  String get endings => 'Endings';
+  String get endings => 'समापनगीतानि';
 
   @override
-  String get background => 'Background';
+  String get background => 'पृष्ठभूमिः';
 
   @override
-  String get links => 'Links';
+  String get links => 'लिङ्कानि';
 
   @override
-  String get rank => 'Rank';
+  String get rank => 'क्रमाङ्कः';
 
   @override
-  String get members => 'Members';
+  String get members => 'सदस्याः';
 
   @override
   String get favorites => 'प्रियाणि';
 
   @override
-  String get episodes => 'Episodes';
+  String get episodes => 'एपिसोड्स्';
 
   @override
-  String get chapters => 'Chapters';
+  String get chapters => 'अध्यायाः';
 
   @override
-  String get volumes => 'Volumes';
+  String get volumes => 'खण्डाः';
 
   @override
-  String get format => 'स्वरूप';
+  String get format => 'प्रारूपम्';
 
   @override
   String get source => 'स्रोतः';
 
   @override
-  String get duration => 'Duration';
+  String get duration => 'अवधिः';
 
   @override
   String minutesPerEpisode(int minutes) {
-    return '$minutes min per ep';
+    return 'प्रति एपिसोड् $minutes मिनिट्';
   }
 
   @override
-  String get rating => 'Rating';
+  String get rating => 'श्रेणी';
 
   @override
   String get studio => 'स्टूडियो';
 
   @override
-  String get serialization => 'Serialization';
+  String get serialization => 'धारावाहिक-प्रकाशनम्';
 
   @override
   String get season => 'ऋतुः';
 
   @override
-  String get broadcast => 'Broadcast';
+  String get broadcast => 'प्रसारणम्';
 
   @override
-  String get aired => 'Aired';
+  String get aired => 'प्रसारितम्';
 
   @override
-  String get published => 'Published';
+  String get published => 'प्रकाशितम्';
 
   @override
   String get popularity => 'लोकप्रियता';
 
   @override
-  String get community => 'Community';
+  String get community => 'समाजः';
 
   @override
   String get watching => 'पश्यन्';
@@ -2350,67 +2312,67 @@ class AppLocalizationsSa extends AppLocalizations {
   String get reading => 'पठन्';
 
   @override
-  String get dropped => 'Dropped';
+  String get dropped => 'परित्यक्तम्';
 
   @override
-  String get planned => 'योजनाया null';
+  String get planned => 'योजितम्';
 
   @override
-  String get trailers => 'Trailers';
+  String get trailers => 'ट्रेलर्स्';
 
   @override
-  String get ratings => 'Ratings';
+  String get ratings => 'अङ्काः';
 
   @override
-  String get originalTitle => 'Original';
+  String get originalTitle => 'मूलम्';
 
   @override
-  String get titleLabel => 'Title';
+  String get titleLabel => 'शीर्षकम्';
 
   @override
-  String get votes => 'Votes';
+  String get votes => 'मतानि';
 
   @override
-  String get watchedStat => 'Watched';
+  String get watchedStat => 'दृष्टम्';
 
   @override
-  String get runtime => 'Runtime';
+  String get runtime => 'चलन-काल';
 
   @override
-  String get director => 'Director';
+  String get director => 'निर्देशकः';
 
   @override
-  String get network => 'Network';
+  String get network => 'चैनल्';
 
   @override
-  String get certification => 'Certification';
+  String get certification => 'प्रमाणीकरणम्';
 
   @override
-  String get airs => 'Airs';
+  String get airs => 'प्रसार्यते';
 
   @override
-  String get budget => 'Budget';
+  String get budget => 'बजट्';
 
   @override
-  String get revenue => 'Revenue';
+  String get revenue => 'आयः';
 
   @override
-  String get released => 'Released';
+  String get released => 'प्रकाशितम्';
 
   @override
-  String get tags => 'टैग्स';
+  String get tags => 'टैग्स्';
 
   @override
   String get author => 'लेखकः';
 
   @override
-  String get born => 'Born';
+  String get born => 'जन्म';
 
   @override
-  String get website => 'Website';
+  String get website => 'वेबसाइट्';
 
   @override
-  String get established => 'Established';
+  String get established => 'स्थापितम्';
 
   @override
   String get manhwa => 'मन्ह्वा';
@@ -2419,31 +2381,31 @@ class AppLocalizationsSa extends AppLocalizations {
   String get manhua => 'मन्हुआ';
 
   @override
-  String get novels => 'Novels';
+  String get novels => 'नॉवल्स्';
 
   @override
-  String get thisMonth => 'This month';
+  String get thisMonth => 'अस्मिन् मासे';
 
   @override
-  String get movies => 'Movies';
+  String get movies => 'चलचित्राणि';
 
   @override
-  String get shows => 'Shows';
+  String get shows => 'धारावाहिकाः';
 
   @override
-  String get rewatching => 'Rewatching';
+  String get rewatching => 'पुनः पश्यन्';
 
   @override
-  String get rereading => 'Rereading';
+  String get rereading => 'पुनः पठन्';
 
   @override
-  String get watchedStatus => 'Watched';
+  String get watchedStatus => 'दृष्टम्';
 
   @override
-  String get planning => 'Planning';
+  String get planning => 'योजयन्';
 
   @override
-  String get paused => 'Paused';
+  String get paused => 'विरामे';
 
   @override
   String get watch => 'पश्य';
@@ -2452,115 +2414,114 @@ class AppLocalizationsSa extends AppLocalizations {
   String get read => 'पठ';
 
   @override
-  String get finished => 'Finished';
+  String get finished => 'समाप्तम्';
 
   @override
-  String get releasing => 'Releasing';
+  String get releasing => 'प्रसार्यमाणम्';
 
   @override
-  String get cancelled => 'Cancelled';
+  String get cancelled => 'रद्दम्';
 
   @override
-  String get hiatus => 'Hiatus';
+  String get hiatus => 'विरामः';
 
   @override
-  String get remove => 'Remove';
+  String get remove => 'अपनय';
 
   @override
   String syncToService(String service) {
-    return 'Sync to $service';
+    return '$service प्रति समकालीनं कुरु';
   }
 
   @override
   String syncedToService(String service) {
-    return 'Synced to $service';
+    return '$service प्रति समकालीकृतम्';
   }
 
   @override
-  String get latestReleases => 'Latest Releases';
+  String get latestReleases => 'नवीनतमानि प्रकाशनानि';
 
   @override
-  String get topRated => 'श्रेष्ठमूल्याङ्कनम् null';
+  String get topRated => 'सर्वोत्तम-श्रेणीयुक्तानि';
 
   @override
   String localSection(String title) {
-    return '$title · Local';
+    return '$title · स्थानीयम्';
   }
 
   @override
-  String get localEntryNote =>
-      'This title is only in your local list on this device. Editing is turned off here because it could clash with your account list; you can still remove it.';
+  String get localEntryNote => 'इदं शीर्षकम् अस्मिन् उपकरणे केवलं तव स्थानीय-सूचीयां अस्ति। अत्र सम्पादनं निष्क्रियं यतः तव खाता-सूच्या सह विरोधः भवेत्; अपनेतुं शक्यते।';
 
   @override
-  String get cardPresetPoster => 'Poster';
+  String get cardPresetPoster => 'पोस्टर्';
 
   @override
-  String get cardPresetCard => 'Card';
+  String get cardPresetCard => 'कार्ड्';
 
   @override
-  String get cardPresetCozy => 'Cozy';
+  String get cardPresetCozy => 'सुखदम्';
 
   @override
-  String get sortTopRated => 'Top rated';
+  String get sortTopRated => 'सर्वोत्तम-श्रेणीयुक्तानि';
 
   @override
-  String get sortMostPopular => 'Most popular';
+  String get sortMostPopular => 'अतिलोकप्रियानि';
 
   @override
-  String get sortTrending => 'Trending';
+  String get sortTrending => 'प्रवृत्तानि';
 
   @override
-  String get sortNewest => 'Newest';
+  String get sortNewest => 'नूतनतमानि';
 
   @override
   String get sortAz => 'A–Z';
 
   @override
-  String get sortMostFavourited => 'Most favourited';
+  String get sortMostFavourited => 'अतिप्रियानि';
 
   @override
-  String get anyCountry => 'Any country';
+  String get anyCountry => 'कोऽपि देशः';
 
   @override
-  String get orderScore => 'Score';
+  String get orderScore => 'अङ्कः';
 
   @override
-  String get orderTitle => 'Title';
+  String get orderTitle => 'शीर्षकम्';
 
   @override
-  String get orderLastUpdated => 'Last Updated';
+  String get orderLastUpdated => 'अन्तिम-अद्यतनम्';
 
   @override
-  String get orderLastAdded => 'Last Added';
+  String get orderLastAdded => 'अन्तिम-योजितम्';
 
   @override
-  String get never => 'Never';
+  String get never => 'कदापि न';
 
   @override
-  String get always => 'Always';
+  String get always => 'सर्वदा';
 
   @override
-  String get scorePoint100 => '100 Point';
+  String get scorePoint100 => '१०० अङ्काः';
 
   @override
-  String get scorePoint10Decimal => '10 Point Decimal';
+  String get scorePoint10Decimal => '१० अङ्काः दशमिकेन';
 
   @override
-  String get scorePoint10 => '10 Point';
+  String get scorePoint10 => '१० अङ्काः';
 
   @override
-  String get scorePoint5 => '5 Star';
+  String get scorePoint5 => '५ तारकाः';
 
   @override
-  String get scorePoint3 => '3 Point Smiley';
+  String get scorePoint3 => '३ मुख-चिह्नानि';
 
   @override
   String hoursCount(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count hours',
-      one: '1 hour',
+      other: '$count होराः',
+      one: '१ होरा',
     );
     return '$_temp0';
   }
@@ -2570,8 +2531,8 @@ class AppLocalizationsSa extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count days',
-      one: '1 day',
+      other: '$count दिनानि',
+      one: '१ दिनम्',
     );
     return '$_temp0';
   }
@@ -2581,252 +2542,252 @@ class AppLocalizationsSa extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count weeks',
-      one: '1 week',
+      other: '$count सप्ताहाः',
+      one: '१ सप्ताहः',
     );
     return '$_temp0';
   }
 
   @override
-  String get resumeTitle => 'Resume';
+  String get resumeTitle => 'पुनः आरभस्व';
 
   @override
-  String get resumeSourceMissing => 'Install this title\'s source to resume';
+  String get resumeSourceMissing => 'पुनः आरभ्य कर्तुं अस्य शीर्षकस्य स्रोतः स्थापय';
 
   @override
-  String get resumeRemove => 'Remove from resume';
+  String get resumeRemove => '\"पुनः आरभस्व\" तः अपनय';
 
   @override
   String resumeMissing(String title) {
-    return 'Couldn\'t find $title in this source';
+    return '$title अस्मिन् स्रोतसि न प्राप्तम्';
   }
 
   @override
   String resumeAt(String time) {
-    return '$time left';
+    return '$time शेषम्';
   }
 
   @override
   String resumePage(int page, int total) {
-    return 'Page $page of $total';
+    return 'पृष्ठं $page / $total';
   }
 
   @override
-  String get continueWatching => 'दर्शनं यथावत् जारीकुरु';
+  String get continueWatching => 'दर्शनं चालय';
 
   @override
-  String get continueReading => 'पठनं यथावत् जारीकुरु';
+  String get continueReading => 'पठनं चालय';
 
   @override
-  String get favouriteAnimeSection => 'Favourite Anime';
+  String get favouriteAnimeSection => 'प्रियाणि अनिमे';
 
   @override
-  String get favouriteMangaSection => 'Favourite Manga';
+  String get favouriteMangaSection => 'प्रियाणि मांगा';
 
   @override
-  String get plannedAnime => 'Planned Anime';
+  String get plannedAnime => 'योजितानि अनिमे';
 
   @override
-  String get plannedManga => 'Planned Manga';
+  String get plannedManga => 'योजितानि मांगा';
 
   @override
-  String get completedAnime => 'Completed Anime';
+  String get completedAnime => 'समाप्तानि अनिमे';
 
   @override
-  String get completedManga => 'Completed Manga';
+  String get completedManga => 'समाप्तानि मांगा';
 
   @override
-  String get hiddenMedia => 'गुप्तमाध्यमम्';
+  String get hiddenMedia => 'गुप्त मीडिया';
 
   @override
-  String get recentUpdates => 'नवीनतम् अद्यतनीकरणम्';
+  String get recentUpdates => 'अद्यतन-अद्यतनानि';
 
   @override
-  String get trendingNow => 'Trending Now';
+  String get trendingNow => 'इदानीं प्रवृत्तानि';
 
   @override
-  String get popularThisSeason => 'Popular This Season';
+  String get popularThisSeason => 'अस्मिन् ऋतौ लोकप्रियानि';
 
   @override
-  String get trendingMovies => 'Trending Movies';
+  String get trendingMovies => 'प्रवृत्तानि चलचित्राणि';
 
   @override
-  String get topRatedSeries => 'Top Rated Series';
+  String get topRatedSeries => 'सर्वोत्तम-श्रेणीयुक्ताः धारावाहिकाः';
 
   @override
-  String get mostFavouriteSeries => 'Most Favourite Series';
+  String get mostFavouriteSeries => 'अतिप्रियाः धारावाहिकाः';
 
   @override
-  String get popularAnime => 'Popular Anime';
+  String get popularAnime => 'लोकप्रियम् अनिमे';
 
   @override
-  String get trendingManhwa => 'Trending Manhwa';
+  String get trendingManhwa => 'प्रवृत्ताः मन्ह्वाः';
 
   @override
-  String get trendingNovels => 'Trending Novels';
+  String get trendingNovels => 'प्रवृत्ताः नॉवल्स्';
 
   @override
-  String get topRatedManga => 'Top Rated Manga';
+  String get topRatedManga => 'सर्वोत्तम-श्रेणीयुक्ता मांगा';
 
   @override
-  String get mostFavouriteManga => 'Most Favourite Manga';
+  String get mostFavouriteManga => 'अतिप्रिया मांगा';
 
   @override
-  String get popularManga => 'Popular Manga';
+  String get popularManga => 'लोकप्रिया मांगा';
 
   @override
-  String get topMovies => 'Top Movies';
+  String get topMovies => 'शीर्ष चलचित्राणि';
 
   @override
-  String get topOna => 'Top ONA';
+  String get topOna => 'शीर्ष ONA';
 
   @override
-  String get topOva => 'Top OVA';
+  String get topOva => 'शीर्ष OVA';
 
   @override
-  String get mostPopular => 'Most Popular';
+  String get mostPopular => 'अतिलोकप्रियम्';
 
   @override
-  String get mostFavourite => 'अत्यन्तप्रियतम् null';
+  String get mostFavourite => 'अतिप्रियम्';
 
   @override
-  String get upcoming => 'Upcoming';
+  String get upcoming => 'आगामि';
 
   @override
-  String get topManga => 'Top Manga';
+  String get topManga => 'शीर्ष मांगा';
 
   @override
-  String get topManhwa => 'Top Manhwa';
+  String get topManhwa => 'शीर्ष मन्ह्वा';
 
   @override
-  String get topManhua => 'Top Manhua';
+  String get topManhua => 'शीर्ष मन्हुआ';
 
   @override
-  String get topNovels => 'Top Novels';
+  String get topNovels => 'शीर्ष नॉवल्स्';
 
   @override
-  String get topOneShots => 'Top One-shots';
+  String get topOneShots => 'शीर्ष वन्-शॉट्स्';
 
   @override
-  String get trendingMoviesToday => 'Trending Movies Today';
+  String get trendingMoviesToday => 'अद्य प्रवृत्तानि चलचित्राणि';
 
   @override
-  String get trendingShowsToday => 'Trending Shows Today';
+  String get trendingShowsToday => 'अद्य प्रवृत्ताः धारावाहिकाः';
 
   @override
-  String get trendingMoviesWeek => 'Trending Movies This Week';
+  String get trendingMoviesWeek => 'अस्मिन् सप्ताहे प्रवृत्तानि चलचित्राणि';
 
   @override
-  String get trendingShowsWeek => 'Trending Shows This Week';
+  String get trendingShowsWeek => 'अस्मिन् सप्ताहे प्रवृत्ताः धारावाहिकाः';
 
   @override
-  String get mostWatchedMoviesMonth => 'Most Watched Movies This Month';
+  String get mostWatchedMoviesMonth => 'अस्मिन् मासे अतिदृष्टानि चलचित्राणि';
 
   @override
-  String get mostWatchedShowsMonth => 'Most Watched Shows This Month';
+  String get mostWatchedShowsMonth => 'अस्मिन् मासे अतिदृष्टाः धारावाहिकाः';
 
   @override
-  String get trendingThisWeek => 'Trending This Week';
+  String get trendingThisWeek => 'अस्मिन् सप्ताहे प्रवृत्तम्';
 
   @override
-  String get mostWatchedThisMonth => 'Most Watched This Month';
+  String get mostWatchedThisMonth => 'अस्मिन् मासे अतिदृष्टम्';
 
   @override
-  String get repoLinksAdded => 'Added Repo Links Successfully!';
+  String get repoLinksAdded => 'भण्डार-लिङ्काः सफलतया योजिताः!';
 
   @override
-  String get errorGettingAnilistData => 'Error getting data from AniList.';
+  String get errorGettingAnilistData => 'AniList तः दत्तांशम् आनेतुं दोषः।';
 
   @override
-  String get navInfo => 'INFO';
+  String get navInfo => 'सूचना';
 
   @override
-  String get navComments => 'COMMENTS';
+  String get navComments => 'टिप्पण्यः';
 
   @override
-  String get playerNotAvailable => 'The player is not available yet';
+  String get playerNotAvailable => 'प्लेयर् अद्यापि उपलब्धः नास्ति';
 
   @override
   String deepLinkInitialError(String error) {
-    return 'Error getting initial deep link: $error';
+    return 'प्रारम्भिक-डीप्-लिङ्कं प्राप्तुं दोषः: $error';
   }
 
   @override
   String deepLinkOpenError(String error) {
-    return 'Error Opening link: $error';
+    return 'लिङ्कम् उद्घाटयितुं दोषः: $error';
   }
 
   @override
   String linkCantBeOpened(String link) {
-    return 'This link can\'t be opened: $link';
+    return 'इदं लिङ्कम् उद्घाटयितुं न शक्यते: $link';
   }
 
   @override
   String linkOpenError(String error) {
-    return 'Error opening link: $error';
+    return 'लिङ्कम् उद्घाटयितुं दोषः: $error';
   }
 
   @override
-  String get forReleasingTitles => 'for currently releasing titles';
+  String get forReleasingTitles => 'इदानीं प्रसार्यमाणानां शीर्षकाणां कृते';
 
   @override
-  String get progress => 'Progress';
+  String get progress => 'प्रगतिः';
 
   @override
-  String get notes => 'Notes';
+  String get notes => 'टिप्पणानि';
 
   @override
   String serviceNotFound(String id) {
-    return 'Service \"$id\" not found';
+    return 'सेवा \"$id\" न प्राप्ता';
   }
 
   @override
-  String get glassEffectEnabled => 'Glass effect enabled';
+  String get glassEffectEnabled => 'काचप्रभावः सक्रियः';
 
   @override
-  String get glassEffectDisabled => 'Glass effect disabled';
+  String get glassEffectDisabled => 'काचप्रभावः निष्क्रियः';
 
   @override
-  String get materialYouEnabled => 'Material You enabled';
+  String get materialYouEnabled => 'Material You सक्रियम्';
 
   @override
-  String get materialYouDisabled => 'Material You disabled';
+  String get materialYouDisabled => 'Material You निष्क्रियम्';
 
   @override
-  String get darkModeEnabled => 'Dark mode enabled';
+  String get darkModeEnabled => 'डार्क्-मोडः सक्रियः';
 
   @override
-  String get darkModeDisabled => 'Dark mode disabled';
+  String get darkModeDisabled => 'डार्क्-मोडः निष्क्रियः';
 
   @override
-  String get animeList => 'Anime list';
+  String get animeList => 'अनिमे-सूची';
 
   @override
-  String get mangaList => 'Manga list';
+  String get mangaList => 'मांगा-सूची';
 
   @override
   String ownerAnimeList(String owner) {
-    return '$owner\'s anime list';
+    return '$owner इत्यस्य अनिमे-सूची';
   }
 
   @override
   String ownerMangaList(String owner) {
-    return '$owner\'s manga list';
+    return '$owner इत्यस्य मांगा-सूची';
   }
 
   @override
-  String get loadingList => 'Loading list';
+  String get loadingList => 'सूची आनीयते';
 
   @override
-  String get earlier => 'Earlier';
+  String get earlier => 'पूर्वम्';
 
   @override
   String daysAgo(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count days ago',
-      one: '1 day ago',
+      other: '$count दिनेभ्यः पूर्वम्',
+      one: '१ दिनात् पूर्वम्',
     );
     return '$_temp0';
   }
@@ -2836,8 +2797,8 @@ class AppLocalizationsSa extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count hours ago',
-      one: '1 hour ago',
+      other: '$count होराभ्यः पूर्वम्',
+      one: '१ होरातः पूर्वम्',
     );
     return '$_temp0';
   }
@@ -2847,41 +2808,41 @@ class AppLocalizationsSa extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count minutes ago',
-      one: '1 minute ago',
+      other: '$count मिनिट्भ्यः पूर्वम्',
+      one: '१ मिनिटात् पूर्वम्',
     );
     return '$_temp0';
   }
 
   @override
   String minutesAgoShort(int count) {
-    return '${count}m ago';
+    return '$count मि. पूर्वम्';
   }
 
   @override
   String hoursAgoShort(int count) {
-    return '${count}h ago';
+    return '$count हो. पूर्वम्';
   }
 
   @override
   String daysAgoShort(int count) {
-    return '${count}d ago';
+    return '$count दि. पूर्वम्';
   }
 
   @override
   String weeksAgoShort(int count) {
-    return '${count}w ago';
+    return '$count स. पूर्वम्';
   }
 
   @override
-  String get couldntLoadSource => 'Couldn\'t load this source';
+  String get couldntLoadSource => 'अयं स्रोतः आनेतुं न शक्तः';
 
   @override
-  String get followers => 'Followers';
+  String get followers => 'अनुयायिनः';
 
   @override
   String couldntLoadTitle(String title) {
-    return 'Couldn\'t load $title';
+    return '$title आनेतुं न शक्तम्';
   }
 
   @override
@@ -2890,285 +2851,277 @@ class AppLocalizationsSa extends AppLocalizations {
   }
 
   @override
-  String get couldntLoadProfile => 'Couldn\'t load this profile';
+  String get couldntLoadProfile => 'इदं प्रोफाइल् आनेतुं न शक्तम्';
 
   @override
-  String get profile => 'Profile';
+  String get profile => 'प्रोफाइल्';
 
   @override
-  String get feed => 'Feed';
+  String get feed => 'फीड्';
 
   @override
-  String get stats => 'Stats';
+  String get stats => 'सांख्यिकी';
 
   @override
-  String get received => 'Received';
+  String get received => 'प्राप्तम्';
 
   @override
-  String get sent => 'Sent';
+  String get sent => 'प्रेषितम्';
 
   @override
-  String get global => 'Global';
+  String get global => 'वैश्विकम्';
 
   @override
-  String get couldntLoadPage => 'Couldn\'t load this page';
+  String get couldntLoadPage => 'इदं पृष्ठम् आनेतुं न शक्तम्';
 
   @override
-  String get couldntLoadAllDetails => 'Couldn\'t load all details';
+  String get couldntLoadAllDetails => 'सर्वं विवरणम् आनेतुं न शक्तम्';
 
   @override
-  String get series => 'श्रृंखला';
+  String get series => 'धारावाहिकाः';
 
   @override
-  String get studios => 'Studios';
+  String get studios => 'स्टूडियो';
 
   @override
-  String get users => 'Users';
+  String get users => 'उपयोक्तारः';
 
   @override
   String repositoriesTitle(String type) {
-    return '$type Repositories';
+    return '$type भण्डाराः';
   }
 
   @override
-  String get repositoryUrl => 'Repository URL';
+  String get repositoryUrl => 'भण्डार-URL';
 
   @override
-  String get downloadingRepository => 'Downloading repository…';
+  String get downloadingRepository => 'भण्डारः डाउनलोड् क्रियते…';
 
   @override
-  String get noRepositories => 'No repositories added';
+  String get noRepositories => 'भण्डाराः न योजिताः';
 
   @override
   String repoExtensionsCount(String count) {
-    return '$count extensions';
+    return '$count एक्स्टेंशन्स्';
   }
 
   @override
-  String get searchExtensions => 'Search extensions...';
+  String get searchExtensions => 'एक्स्टेंशन्स् अन्विष्य...';
 
   @override
   String deletePluginTitle(String name) {
-    return 'Delete $name?';
+    return '$name मार्जयसि?';
   }
 
   @override
-  String get deletePluginMessage =>
-      'Are you sure you want to delete this plugin?';
+  String get deletePluginMessage => 'निश्चितम् इमं प्लगिन् मार्जयितुम् इच्छसि वा?';
 
   @override
   String pluginDeleted(String name) {
-    return '$name deleted';
+    return '$name मार्जितम्';
   }
 
   @override
   String pluginNotInRepo(String name) {
-    return '$name is not available in the configured repo';
+    return '$name विन्यस्ते भण्डारे उपलब्धं नास्ति';
   }
 
   @override
-  String get pluginFetchFailed => 'Failed to fetch plugin info';
+  String get pluginFetchFailed => 'प्लगिन्-सूचनां प्राप्तुं न शक्तम्';
 
   @override
   String installPluginTitle(String name) {
-    return 'Install $name';
+    return '$name स्थापय';
   }
 
   @override
   String sizeLabel(String size) {
-    return 'Size: $size';
+    return 'आकारः: $size';
   }
 
   @override
-  String get installedState => 'Installed';
+  String get installedState => 'स्थापितम्';
 
   @override
-  String get errorLabel => 'Error:';
+  String get errorLabel => 'दोषः:';
 
   @override
-  String get stackTraceDetails => 'Details (Stack Trace)';
+  String get stackTraceDetails => 'विवरणम् (स्टैक् ट्रेस्)';
 
   @override
-  String get shareLogFile => 'Share log file';
+  String get shareLogFile => 'लॉग्-फाइल् साझां कुरु';
 
   @override
-  String get copyLogs => 'Copy Logs';
+  String get copyLogs => 'लॉग्स् प्रतिलिख';
 
   @override
   String noListToEdit(String service) {
-    return '$service has no list to edit';
+    return '$service मध्ये सम्पादनार्थं सूची नास्ति';
   }
 
   @override
-  String get couldNotReadFile => 'Could not read that file';
+  String get couldNotReadFile => 'सा फाइल् पठितुं न शक्यते';
 
   @override
   String importedSummary(int anime, int manga) {
-    return 'Imported $anime anime and $manga manga';
+    return '$anime अनिमे $manga मांगा च आनीतानि';
   }
 
   @override
   String alreadyThere(int count) {
-    return ' · $count already there';
+    return ' · $count पूर्वमेव सन्ति';
   }
 
   @override
-  String get airingNow => 'Airing now';
+  String get airingNow => 'इदानीं प्रसार्यते';
 
   @override
-  String get topRatedMovies => 'Top rated movies';
+  String get topRatedMovies => 'सर्वोत्तम-श्रेणीयुक्तानि चलचित्राणि';
 
   @override
-  String get topRatedShows => 'Top rated shows';
+  String get topRatedShows => 'सर्वोत्तम-श्रेणीयुक्ताः धारावाहिकाः';
 
   @override
-  String get recommendedSection => 'Recommended';
+  String get recommendedSection => 'अनुशंसितम्';
 
   @override
-  String get syncRow => 'Sync lists';
+  String get syncRow => 'सूचीः समकालीनीकुरु';
 
   @override
-  String get syncRowDesc =>
-      'Mirror one service\'s list onto your other accounts';
+  String get syncRowDesc => 'एकस्याः सेवायाः सूचीं तव अन्येषु खातेषु प्रतिबिम्बय';
 
   @override
-  String get syncTitle => 'Sync';
+  String get syncTitle => 'समकालीनं कुरु';
 
   @override
-  String get syncMainService => 'Main service';
+  String get syncMainService => 'मुख्या सेवा';
 
   @override
-  String get syncMainServiceDesc =>
-      'Its list is the source of truth; every other signed-in service is updated to match';
+  String get syncMainServiceDesc => 'तस्याः सूची सत्यस्रोतः; अन्याः सर्वाः लॉगिन्-कृताः सेवाः तया सह मेलयितुं अद्यतन्यन्ते';
 
   @override
-  String get syncAuto => 'Auto sync';
+  String get syncAuto => 'स्वयं समकालीनीकरणम्';
 
   @override
-  String get syncAutoDesc =>
-      'Fetch and sync in the background when the app opens and every 30 minutes';
+  String get syncAutoDesc => 'ऐप् उद्घाटिते सति प्रत्येकं ३० मिनिट्-अन्तरे च पृष्ठभूमौ आनय समकालीनं च कुरु';
 
   @override
-  String get syncAddMissing => 'Add missing entries';
+  String get syncAddMissing => 'अपूर्णाः प्रविष्टीः योजय';
 
   @override
-  String get syncAddMissingDesc =>
-      'Also add entries the other service doesn\'t have yet';
+  String get syncAddMissingDesc => 'अन्यसेवायाः समीपे अद्यापि याः न सन्ति ताः अपि योजय';
 
   @override
-  String get syncOnlyForward => 'Keep further progress';
+  String get syncOnlyForward => 'अग्रिमां प्रगतिं रक्ष';
 
   @override
-  String get syncOnlyForwardDesc =>
-      'Don\'t lower the progress of a service that is already ahead';
+  String get syncOnlyForwardDesc => 'यस्याः सेवायाः प्रगतिः पूर्वमेव अग्रे अस्ति तस्याः प्रगतिं न न्यूनीकुरु';
 
   @override
-  String get syncFetch => 'Fetch';
+  String get syncFetch => 'आनय';
 
   @override
-  String get syncFetchAgain => 'Fetch again';
+  String get syncFetchAgain => 'पुनः आनय';
 
   @override
-  String get syncAll => 'Sync all';
+  String get syncAll => 'सर्वं समकालीनं कुरु';
 
   @override
-  String get syncStop => 'Stop';
+  String get syncStop => 'निरुन्धि';
 
   @override
-  String get syncResume => 'Resume';
+  String get syncResume => 'पुनः आरभस्व';
 
   @override
-  String get syncNothingToSync => 'This service can\'t be synced for this type';
+  String get syncNothingToSync => 'एषा सेवा अस्य प्रकारस्य कृते समकालीना कर्तुं न शक्यते';
 
   @override
-  String get syncNoTargets => 'Sign in to another service to sync with';
+  String get syncNoTargets => 'समकालीनीकरणार्थं अन्यस्यां सेवायां लॉगिन् कुरु';
 
   @override
-  String get syncLoadingMap => 'Loading ID mapping';
+  String get syncLoadingMap => 'ID-मानचित्रणम् आनीयते';
 
   @override
-  String get syncComparing => 'Comparing lists';
+  String get syncComparing => 'सूचीः तुल्यन्ते';
 
   @override
-  String get syncIntro =>
-      'Pick a main service and press Fetch. Each service is queried once for your list, then compared with the main one.';
+  String get syncIntro => 'मुख्यां सेवां चिनु \"आनय\" इति नुद। प्रत्येका सेवा तव सूच्यर्थम् एकवारं पृच्छ्यते, ततः मुख्यया सह तुल्यते।';
 
   @override
-  String get syncStateSynced => 'Synced';
+  String get syncStateSynced => 'समकालीनम्';
 
   @override
-  String get syncStateOutdated => 'Out of sync';
+  String get syncStateOutdated => 'असमकालीनम्';
 
   @override
-  String get syncStateMissing => 'Not in list';
+  String get syncStateMissing => 'सूचीयां नास्ति';
 
   @override
-  String get syncStateUnmapped => 'No match';
+  String get syncStateUnmapped => 'मेलनं नास्ति';
 
   @override
   String syncPaused(String time) {
-    return 'Waiting for the rate limit, resumes in $time';
+    return 'अनुरोध-सीमायाः प्रतीक्षा, $time मध्ये पुनः आरभ्यते';
   }
 
   @override
   String syncOnlyIn(int count, String name) {
-    return '$count only on $name, left untouched';
+    return 'केवलं $name मध्ये $count, अस्पृष्टाः';
   }
 
   @override
   String syncProgressOf(int done, int total) {
-    return '$done of $total';
+    return '$total मध्ये $done';
   }
 
   @override
-  String get syncNothingHere => 'Nothing to show';
+  String get syncNothingHere => 'दर्शयितुं किमपि नास्ति';
 
   @override
   String syncLimits(int used, int max, String window) {
-    return '$used of $max requests used this $window';
+    return 'अस्मिन् $window मध्ये $max मध्ये $used अनुरोधाः प्रयुक्ताः';
   }
 
   @override
-  String get syncMinute => 'minute';
+  String get syncMinute => 'मिनिट्';
 
   @override
-  String get syncDay => 'day';
+  String get syncDay => 'दिनम्';
 
   @override
-  String get syncNotInList => 'Not in list yet';
+  String get syncNotInList => 'अद्यापि सूचीयां नास्ति';
 
   @override
-  String get syncCleared => 'Plan cleared';
+  String get syncCleared => 'योजना मार्जिता';
 
   @override
-  String get syncClear => 'Clear';
+  String get syncClear => 'मार्जय';
 
   @override
-  String get syncOptions => 'Options';
+  String get syncOptions => 'विकल्पाः';
 
   @override
-  String get syncShared => 'Shares its entry with another item';
+  String get syncShared => 'अन्येन वस्तुना सह प्रविष्टिं साझां करोति';
 
   @override
   String syncNotFound(String service) {
-    return 'Not found on $service';
+    return '$service मध्ये न प्राप्तम्';
   }
 
   @override
   String syncService(String service, int count) {
-    return 'Sync $service ($count)';
+    return '$service समकालीनं कुरु ($count)';
   }
 
   @override
-  String get syncOnEdit => 'Sync changes instantly';
+  String get syncOnEdit => 'तत्क्षणं समकालीनीकरणम्';
 
   @override
-  String get syncOnEditDesc =>
-      'Push every progress update and list edit to your other signed-in services right away';
+  String get syncOnEditDesc => 'प्रत्येकं प्रगति-अद्यतनं सूची-सम्पादनं च तव अन्येषु लॉगिन्-कृतेषु सेवासु तत्क्षणं प्रेषय';
 
   @override
   String syncPushed(String services) {
-    return 'Synced to $services';
+    return '$services प्रति समकालीकृतम्';
   }
 
   @override
@@ -3177,945 +3130,909 @@ class AppLocalizationsSa extends AppLocalizations {
   }
 
   @override
-  String get syncRateLimited => 'Rate limited, try again in a moment';
+  String get syncRateLimited => 'अनुरोध-सीमा प्राप्ता, क्षणानन्तरं पुनः यत्नं कुरु';
 
   @override
-  String get syncAhead => 'Whichever is ahead';
+  String get syncAhead => 'यः अग्रे अस्ति सः';
 
   @override
-  String get syncAheadDesc =>
-      'Two-way: for every title the entry that is furthest along wins and is copied to all your other services';
+  String get syncAheadDesc => 'उभयदिशि: प्रत्येकस्य शीर्षकस्य कृते या प्रविष्टिः अग्रे सा विजयते तव अन्यासु सर्वासु सेवासु प्रतिलिख्यते च';
 
   @override
   String syncAheadFrom(String service) {
-    return 'From $service';
+    return '$service तः';
   }
 
   @override
-  String get syncConfirm => 'Review before syncing';
+  String get syncConfirm => 'समकालीनीकरणात् पूर्वं परीक्षस्व';
 
   @override
-  String get syncConfirmDesc =>
-      'Show what Sync all will change and how many requests it needs';
+  String get syncConfirmDesc => '\"सर्वं समकालीनं कुरु\" किं परिवर्तयिष्यति कति अनुरोधाः चापेक्षिताः इति दर्शय';
 
   @override
-  String get syncPreviewTitle => 'Ready to sync';
+  String get syncPreviewTitle => 'समकालीनीकरणाय सिद्धम्';
 
   @override
   String syncPreviewLine(int updates, int adds) {
-    return '$updates updates, $adds to add';
+    return '$updates अद्यतनानि, $adds योजनीयानि';
   }
 
   @override
   String syncPreviewRequests(int count) {
-    return 'About $count requests';
+    return 'प्रायः $count अनुरोधाः';
   }
 
   @override
   String syncPreviewLookups(int count) {
-    return '$count ids need a lookup first';
+    return '$count ID-नाम् प्रथमं अन्वेषणम् आवश्यकम्';
   }
 
   @override
-  String get syncPreviewNothing => 'Nothing to change';
+  String get syncPreviewNothing => 'परिवर्तनीयं किमपि नास्ति';
 
   @override
-  String get syncStart => 'Start';
+  String get syncStart => 'आरभस्व';
 
   @override
-  String get syncRetry => 'Retry';
+  String get syncRetry => 'पुनः यत्नं कुरु';
 
   @override
-  String get syncSkip => 'Skip this item';
+  String get syncSkip => 'इमां वस्तुं त्यज';
 
   @override
-  String get syncInclude => 'Include this item again';
+  String get syncInclude => 'इमां वस्तुं पुनः अन्तर्भावय';
 
   @override
-  String get syncSkippedLabel => 'Skipped';
+  String get syncSkippedLabel => 'त्यक्तम्';
 
   @override
-  String get syncChanges => 'Differences';
+  String get syncChanges => 'भेदाः';
 
   @override
-  String get syncChangeStatus => 'Status';
+  String get syncChangeStatus => 'स्थितिः';
 
   @override
-  String get syncChangeProgress => 'Progress';
+  String get syncChangeProgress => 'प्रगतिः';
 
   @override
-  String get syncChangeScore => 'Score';
+  String get syncChangeScore => 'अङ्कः';
 
   @override
-  String get syncChangeDates => 'Dates';
+  String get syncChangeDates => 'दिनाङ्काः';
 
   @override
-  String get syncChangeRepeat => 'Rewatch count';
+  String get syncChangeRepeat => 'पुनर्दर्शन-गणना';
 
   @override
-  String get syncFailedReason => 'Why it failed';
+  String get syncFailedReason => 'किमर्थं विफलम्';
 
   @override
-  String get syncSkippedHint =>
-      'Skipped items are left alone, even after fetching again';
+  String get syncSkippedHint => 'त्यक्ताः वस्तूनि पुनः आनीतेऽपि अस्पृष्टानि तिष्ठन्ति';
 
   @override
-  String get commentsRules => 'Commenting rules';
+  String get commentsRules => 'टिप्पणी-नियमाः';
 
   @override
-  String get commentsRulesBody =>
-      'BREAK ANY RULE = YOU\'RE GONE\n\n1. No racism, discrimination or hate speech\n2. No spamming or self-promotion\n3. Absolutely no NSFW content\n4. English only, no exceptions\n5. No impersonation, harassment or abuse\n6. No illegal content or extreme disrespect towards any fandom\n7. Do not request or share repositories or extensions\n8. Spoilers only with spoiler tags and a warning\n9. No sexualising or inappropriate comments about minor characters\n10. If it\'s wrong, don\'t post it!';
+  String get commentsRulesBody => 'कमपि नियमं भङ्क्ष्यसि चेत् = निष्कास्यसे\n\n१. जातिवादः, भेदभावः, द्वेषभाषणं च नास्ति\n२. स्पैमिङ्ग् स्वप्रचारः च नास्ति\n३. NSFW सामग्री सर्वथा नास्ति\n४. केवलम् आङ्ग्लभाषा, अपवादः नास्ति\n५. छद्मरूपं, उत्पीडनं, दुर्व्यवहारः च नास्ति\n६. अवैध-सामग्री कस्यापि फैन्डमस्य प्रति अत्यन्तानादरः च नास्ति\n७. भण्डारान् एक्स्टेंशन्स् वा मा याचस्व मा साझां कुरु\n८. स्पॉयलर्स् केवलं स्पॉयलर्-टैग् चेतावनी च सह\n९. अल्पवयस्क-पात्राणां विषये कामुकीकरणं अनुचिताः टिप्पण्यः च नास्ति\n१०. यदि अनुचितं, मा प्रकाशय!';
 
   @override
-  String get commentsRulesAccept => 'I understand';
+  String get commentsRulesAccept => 'अवगतम्';
 
   @override
-  String get commentsSortNewest => 'Newest';
+  String get commentsSortNewest => 'नूतनतमम्';
 
   @override
-  String get commentsSortOldest => 'Oldest';
+  String get commentsSortOldest => 'प्राचीनतमम्';
 
   @override
-  String get commentsSortHighest => 'Highest rated';
+  String get commentsSortHighest => 'उच्चतम-श्रेणीयुक्तम्';
 
   @override
-  String get commentsSortLowest => 'Lowest rated';
+  String get commentsSortLowest => 'निम्नतम-श्रेणीयुक्तम्';
 
   @override
   String commentsEpisodeShort(int number) {
-    return 'Ep $number';
+    return 'एप. $number';
   }
 
   @override
   String commentsChapterShort(int number) {
-    return 'Ch $number';
+    return 'अ. $number';
   }
 
   @override
-  String get commentsFilterEpisodeTitle => 'Filter by episode';
+  String get commentsFilterEpisodeTitle => 'एपिसोड्-अनुसारं छानय';
 
   @override
-  String get commentsFilterChapterTitle => 'Filter by chapter';
+  String get commentsFilterChapterTitle => 'अध्याय-अनुसारं छानय';
 
   @override
-  String get commentsFilterTagTitle => 'Enter an episode or chapter number';
+  String get commentsFilterTagTitle => 'एपिसोड्-सङ्ख्यां अध्याय-सङ्ख्यां वा लिख';
 
   @override
-  String get commentsFilterHint => 'Number';
+  String get commentsFilterHint => 'सङ्ख्या';
 
   @override
-  String get commentsFilterApply => 'Filter';
+  String get commentsFilterApply => 'छानय';
 
   @override
-  String get commentsFilterClear => 'Show all';
+  String get commentsFilterClear => 'सर्वं दर्शय';
 
   @override
-  String get commentsPlaceholder => 'Add a comment…';
+  String get commentsPlaceholder => 'टिप्पणीं योजय…';
 
   @override
   String commentsReplyingTo(String name) {
-    return 'Replying to $name';
+    return '$name प्रति उत्तरम्';
   }
 
   @override
-  String get commentsSend => 'Send';
+  String get commentsSend => 'प्रेषय';
 
   @override
-  String get commentsTagButton => 'Tag';
+  String get commentsTagButton => 'टैग्';
 
   @override
   String commentsTagTitle(String label) {
-    return 'Tag $label (optional)';
+    return 'टैग् $label (वैकल्पिकम्)';
   }
 
   @override
-  String get commentsTagEpisode => 'episode';
+  String get commentsTagEpisode => 'एपिसोड्';
 
   @override
-  String get commentsTagChapter => 'chapter';
+  String get commentsTagChapter => 'अध्यायः';
 
   @override
   String commentsTagRange(int total) {
-    return '1–$total';
+    return '१–$total';
   }
 
   @override
   String commentsTagNumber(String label) {
-    return '$label number';
+    return '$label सङ्ख्या';
   }
 
   @override
   String commentsTagTooHigh(int total) {
-    return 'Tag cannot exceed the total ($total)';
+    return 'टैग् कुल-सङ्ख्यां ($total) न अतिक्रामेत्';
   }
 
   @override
-  String get commentsNoTag => 'No tag';
+  String get commentsNoTag => 'टैग् नास्ति';
 
   @override
-  String get commentsSpoiler => 'Spoiler';
+  String get commentsSpoiler => 'स्पॉयलर्';
 
   @override
   String get commentsGif => 'GIF';
 
   @override
-  String get commentsGifSearch => 'Search GIFs';
+  String get commentsGifSearch => 'GIF अन्विष्य';
 
   @override
-  String get commentsGifEmpty => 'No GIFs found';
+  String get commentsGifEmpty => 'GIF न प्राप्ताः';
 
   @override
-  String get commentsEmptyText => 'Comment cannot be empty';
+  String get commentsEmptyText => 'टिप्पणी रिक्ता न भवेत्';
 
   @override
-  String get commentsBannedYou => 'You are banned from commenting';
+  String get commentsBannedYou => 'त्वं टिप्पणीतः निषिद्धः असि';
 
   @override
-  String get commentsEdited => 'Comment edited';
+  String get commentsEdited => 'टिप्पणी सम्पादिता';
 
   @override
-  String get commentsDeleted => 'Comment deleted';
+  String get commentsDeleted => 'टिप्पणी मार्जिता';
 
   @override
-  String get commentsDeletedPlaceholder => '[deleted]';
+  String get commentsDeletedPlaceholder => '[मार्जितम्]';
 
   @override
-  String get commentsReported => 'Comment reported';
+  String get commentsReported => 'टिप्पणी निवेदिता';
 
   @override
-  String get commentsUserBanned => 'User banned';
+  String get commentsUserBanned => 'उपयोक्ता निषिद्धः';
 
   @override
-  String get commentsReport => 'Report';
+  String get commentsReport => 'निवेदय';
 
   @override
-  String get commentsReportAsk => 'Report this comment to the moderators?';
+  String get commentsReportAsk => 'इमां टिप्पणीं संयोजकेभ्यः निवेदयसि?';
 
   @override
-  String get commentsDelete => 'Delete';
+  String get commentsDelete => 'मार्जय';
 
   @override
-  String get commentsDeleteAsk => 'This comment will be removed for everyone.';
+  String get commentsDeleteAsk => 'इयं टिप्पणी सर्वेषां कृते अपनीयते।';
 
   @override
-  String get commentsBan => 'Ban';
+  String get commentsBan => 'निषेधय';
 
   @override
-  String get commentsBanAsk => 'Ban this user from commenting?';
+  String get commentsBanAsk => 'इमम् उपयोक्तारं टिप्पणीतः निषेधयसि?';
 
   @override
-  String get commentsCopy => 'Copy';
+  String get commentsCopy => 'प्रतिलिख';
 
   @override
-  String get commentsViewReply => 'View 1 reply';
+  String get commentsViewReply => '१ उत्तरं पश्य';
 
   @override
   String commentsViewReplies(int count) {
-    return 'View $count replies';
+    return '$count उत्तराणि पश्य';
   }
 
   @override
-  String get commentsHideReplies => 'Hide replies';
+  String get commentsHideReplies => 'उत्तराणि गोपय';
 
   @override
-  String get commentsLoadMore => 'Load more comments';
+  String get commentsLoadMore => 'अधिकाः टिप्पण्यः आनय';
 
   @override
-  String get commentsEmpty => 'No comments yet. Be the first!';
+  String get commentsEmpty => 'टिप्पण्यः अद्यापि नास्ति। प्रथमः भव!';
 
   @override
-  String get commentsEmptyFiltered => 'No comments for this filter';
+  String get commentsEmptyFiltered => 'अस्य छानकस्य कृते टिप्पण्यः नास्ति';
 
   @override
-  String get commentsSignIn => 'Sign in to AniList to read and write comments';
+  String get commentsSignIn => 'टिप्पण्यः पठितुं लेखितुं च AniList मध्ये लॉगिन् कुरु';
 
   @override
-  String get commentsSignInMessage =>
-      'Comments are shared between every service and use your AniList account.';
+  String get commentsSignInMessage => 'टिप्पण्यः सर्वासु सेवासु साझाः तव AniList खातं च प्रयुञ्जते।';
 
   @override
-  String get commentsUnavailable => 'Comments aren\'t available for this title';
+  String get commentsUnavailable => 'अस्य शीर्षकस्य कृते टिप्पण्यः उपलब्धाः न सन्ति';
 
   @override
-  String get commentsUnavailableMessage =>
-      'It couldn\'t be matched to an AniList entry.';
+  String get commentsUnavailableMessage => 'इदं AniList-प्रविष्ट्या सह मेलयितुं न शक्तम्।';
 
   @override
-  String get commentsDisabled => 'Comments are turned off';
+  String get commentsDisabled => 'टिप्पण्यः निष्क्रियाः';
 
   @override
-  String get commentsDisabledMessage =>
-      'You can turn them back on in Settings › General.';
+  String get commentsDisabledMessage => 'सेटिंग्स् › सामान्यम् मध्ये पुनः सक्रियां कर्तुं शक्यते।';
 
   @override
-  String get commentsOffline => 'Couldn\'t load comments';
+  String get commentsOffline => 'टिप्पण्यः आनेतुं न शक्याः';
 
   @override
-  String get commentsSingleTitle => 'Showing one comment';
+  String get commentsSingleTitle => 'एका टिप्पणी दृश्यते';
 
   @override
-  String get commentsShowAll => 'Show all comments';
+  String get commentsShowAll => 'सर्वाः टिप्पणीः दर्शय';
 
   @override
-  String get commentsSettingsHeader => 'Comments';
+  String get commentsSettingsHeader => 'टिप्पण्यः';
 
   @override
-  String get commentsSettingEnabled => 'Comments';
+  String get commentsSettingEnabled => 'टिप्पण्यः';
 
   @override
-  String get commentsSettingEnabledDesc =>
-      'Show the Comments tab on titles and sign in to the comment server with your AniList account';
+  String get commentsSettingEnabledDesc => 'शीर्षकेषु टिप्पणी-टैब् दर्शय तव AniList खातेन टिप्पणी-सर्वरे लॉगिन् कुरु च';
 
   @override
-  String get commentsSettingAlerts => 'Reply notifications';
+  String get commentsSettingAlerts => 'उत्तर-सूचनाः';
 
   @override
-  String get commentsSettingAlertsDesc =>
-      'Notify me when someone replies to my comments';
+  String get commentsSettingAlertsDesc => 'मम टिप्पणीषु कोऽपि उत्तरं ददाति चेत् मां सूचय';
 
   @override
-  String get commentsNoticeReplyTitle => 'New comment reply';
+  String get commentsNoticeReplyTitle => 'नूतनम् टिप्पणी-उत्तरम्';
 
   @override
   String commentsNoticeReply(String name) {
-    return '$name replied to your comment';
+    return '$name तव टिप्पणीम् उत्तरितवान्';
   }
 
   @override
-  String get commentsNoticeWarningTitle => 'You received a warning';
+  String get commentsNoticeWarningTitle => 'त्वया चेतावनी प्राप्ता';
 
   @override
-  String get commentsNoticeWarning => 'Be more thoughtful with your comments';
+  String get commentsNoticeWarning => 'स्वटिप्पणीषु अधिकं विचारशीलः भव';
 
   @override
-  String get commentsNoticeUpdateTitle => 'Update from Dantotsu';
+  String get commentsNoticeUpdateTitle => 'Dantotsu तः अद्यतनम्';
 
   @override
-  String get barcodeTitle => 'Scan a barcode';
+  String get barcodeTitle => 'बारकोड् स्कैन् कुरु';
 
   @override
-  String get barcodeTooltip => 'Find a manga or novel from its barcode';
+  String get barcodeTooltip => 'बारकोड् द्वारा मांगा अथवा नॉवल् अन्विष्य';
 
   @override
-  String get barcodeIntro =>
-      'Point the camera at the barcode on the back of a volume, or type its ISBN.';
+  String get barcodeIntro => 'खण्डस्य पृष्ठतः बारकोड् प्रति कॅमेरां निर्दिश, अथवा ISBN लिख।';
 
   @override
-  String get barcodeIntroManual =>
-      'Type the ISBN printed above the barcode on the back of a volume.';
+  String get barcodeIntroManual => 'खण्डस्य पृष्ठतः बारकोड्-उपरि मुद्रितं ISBN लिख।';
 
   @override
   String get barcodeIsbnHint => 'ISBN';
 
   @override
-  String get barcodeInvalid => 'That is not a valid ISBN';
+  String get barcodeInvalid => 'इदं मान्यं ISBN न अस्ति';
 
   @override
   String barcodeNotFound(String isbn) {
-    return 'No book found for $isbn';
+    return '$isbn कृते पुस्तकं न प्राप्तम्';
   }
 
   @override
-  String get barcodeCameraDenied =>
-      'The camera is not available. Allow camera access or type the ISBN instead.';
+  String get barcodeCameraDenied => 'कॅमेरा उपलब्धः नास्ति। कॅमेरा-प्रवेशम् अनुमन्यस्व अथवा ISBN लिख।';
 
   @override
-  String get themesTitle => 'Openings & endings';
+  String get themesTitle => 'आरम्भगीतानि समापनगीतानि च';
 
   @override
-  String get themesOpening => 'Opening';
+  String get themesOpening => 'आरम्भगीतम्';
 
   @override
-  String get themesEnding => 'Ending';
+  String get themesEnding => 'समापनगीतम्';
 
   @override
-  String get themesPlayVideo => 'Play video';
+  String get themesPlayVideo => 'वीडियो चालय';
 
   @override
-  String get themesPlayAudio => 'Play audio only';
+  String get themesPlayAudio => 'केवलं ध्वनिं चालय';
 
   @override
-  String get themesOpenSite => 'Open on AnimeThemes';
+  String get themesOpenSite => 'AnimeThemes मध्ये उद्घाटय';
 
   @override
-  String get themesCredit => 'Themes from AnimeThemes';
+  String get themesCredit => 'AnimeThemes तः थीम्स्';
 
   @override
-  String get themesVersions => 'Versions';
+  String get themesVersions => 'संस्करणानि';
 
   @override
   String get muTitle => 'MangaUpdates';
 
   @override
-  String get muReleases => 'Recent releases';
+  String get muReleases => 'अद्यतनानि प्रकाशनानि';
 
   @override
-  String get muNoReleases => 'No recent releases';
+  String get muNoReleases => 'अद्यतनानि प्रकाशनानि नास्ति';
 
   @override
-  String get muLicensed => 'Licensed';
+  String get muLicensed => 'अनुज्ञापितम्';
 
   @override
-  String get muOpen => 'View on MangaUpdates';
+  String get muOpen => 'MangaUpdates मध्ये पश्य';
 
   @override
-  String get muCredit => 'Data from MangaUpdates';
+  String get muCredit => 'MangaUpdates तः दत्तांशः';
 
   @override
-  String get muPublishers => 'Publishers';
+  String get muPublishers => 'प्रकाशकाः';
 
   @override
-  String get sauceTitle => 'Find the source';
+  String get sauceTitle => 'स्रोतः अन्विष्य';
 
   @override
-  String get sauceIntro =>
-      'Upload a manga page or an artwork, or paste its link, to find where it comes from.';
+  String get sauceIntro => 'उत्पत्तिस्थानं ज्ञातुं मांगा-पृष्ठं अथवा चित्रं उत्थापय, अथवा तस्य लिङ्कं स्थापय।';
 
   @override
-  String get sauceKeyTitle => 'SauceNAO API key';
+  String get sauceKeyTitle => 'SauceNAO API कुञ्जी';
 
   @override
-  String get sauceKeyHint => 'Optional, raises the daily search limit';
+  String get sauceKeyHint => 'वैकल्पिकम्, दैनिक-अन्वेषण-सीमां वर्धयति';
 
   @override
-  String get sauceKeyDesc => 'Get a free key at saucenao.com/user.php';
+  String get sauceKeyDesc => 'saucenao.com/user.php मध्ये निःशुल्कं कुञ्जीं प्राप्नुहि';
 
   @override
-  String get sauceSearchTitle => 'Search this title';
+  String get sauceSearchTitle => 'इदं शीर्षकम् अन्विष्य';
 
   @override
-  String get sauceOpen => 'Open source';
+  String get sauceOpen => 'स्रोतः उद्घाटय';
 
   @override
-  String get sauceCredit => 'Image search by SauceNAO';
+  String get sauceCredit => 'SauceNAO द्वारा चित्रान्वेषणम्';
 
   @override
-  String get sauceEmpty => 'No match found';
+  String get sauceEmpty => 'मेलनं न प्राप्तम्';
 
   @override
-  String get sauceTooltip => 'Find the source of a manga page or artwork';
+  String get sauceTooltip => 'मांगा-पृष्ठस्य अथवा चित्रस्य स्रोतः अन्विष्य';
 
   @override
-  String get sauceLowMatch => 'Low match';
+  String get sauceLowMatch => 'दुर्बलं मेलनम्';
 
   @override
-  String get trendzTitle => 'Anime charts';
+  String get trendzTitle => 'अनिमे-चार्ट्स्';
 
   @override
-  String get trendzAnime => 'Anime';
+  String get trendzAnime => 'अनिमे';
 
   @override
-  String get trendzFemale => 'Female characters';
+  String get trendzFemale => 'स्त्री-पात्राणि';
 
   @override
-  String get trendzMale => 'Male characters';
+  String get trendzMale => 'पुरुष-पात्राणि';
 
   @override
-  String get trendzCouple => 'Couples';
+  String get trendzCouple => 'युग्मानि';
 
   @override
-  String get trendzCredit => 'Weekly charts by AniTrendz';
+  String get trendzCredit => 'AniTrendz द्वारा साप्ताहिक-चार्ट्स्';
 
   @override
-  String get trendzNew => 'NEW';
+  String get trendzNew => 'नूतनम्';
 
   @override
-  String get trendzSearch => 'Search this title';
+  String get trendzSearch => 'इदं शीर्षकम् अन्विष्य';
 
   @override
-  String get trendzEmpty => 'The chart is empty';
+  String get trendzEmpty => 'चार्ट् रिक्तम् अस्ति';
 
   @override
-  String get shareCard => 'Share card';
+  String get shareCard => 'कार्ड् साझां कुरु';
 
   @override
-  String get shareCardList => 'Share list card';
+  String get shareCardList => 'सूची-कार्ड् साझां कुरु';
 
   @override
-  String get muNotFound => 'No MangaUpdates match for this title';
+  String get muNotFound => 'अस्य शीर्षकस्य कृते MangaUpdates-मेलनं नास्ति';
 
   @override
-  String get shareCardWorking => 'Making the card…';
+  String get shareCardWorking => 'कार्ड् निर्मीयते…';
 
   @override
-  String get shareCardSaved => 'Card saved';
+  String get shareCardSaved => 'कार्ड् रक्षितम्';
 
   @override
-  String get shareCardFailed => 'Could not make the card';
+  String get shareCardFailed => 'कार्ड् निर्मातुं न शक्तम्';
 
   @override
-  String get shareCardListEmpty => 'Your list has nothing to share yet';
+  String get shareCardListEmpty => 'तव सूचीयां साझां कर्तुं किमपि नास्ति';
 
   @override
-  String get shareCardTop => 'My top picks';
+  String get shareCardTop => 'मम शीर्ष-चयनानि';
 
   @override
   String themesEpisodes(String eps) {
-    return 'Episodes $eps';
+    return 'एपिसोड्स् $eps';
   }
 
   @override
   String muLatest(String count) {
-    return 'Chapter $count';
+    return 'अध्यायः $count';
   }
 
   @override
   String muRating(String rating, String votes) {
-    return '$rating from $votes votes';
+    return '$votes मतेभ्यः $rating';
   }
 
   @override
   String sauceSimilarity(String percent) {
-    return '$percent% match';
+    return '$percent% मेलनम्';
   }
 
   @override
   String trendzWeek(String week, String season) {
-    return 'Week $week · $season';
+    return 'सप्ताहः $week · $season';
   }
 
   @override
   String trendzVotes(String count) {
-    return '$count votes';
+    return '$count मतानि';
   }
 
   @override
   String trendzPeak(String rank) {
-    return 'Peak #$rank';
+    return 'शिखरम् #$rank';
   }
 
   @override
   String trendzWeeks(String count) {
-    return '$count weeks in the top ten';
+    return 'शीर्ष-दशसु $count सप्ताहाः';
   }
 
   @override
   String shareCardEntries(String count) {
-    return '$count titles';
+    return '$count शीर्षकाणि';
   }
 
   @override
-  String get imageSearchTitle => 'Search by image';
+  String get imageSearchTitle => 'चित्रेण अन्विष्य';
 
   @override
-  String get imageSearchTooltip => 'Find an anime from a screenshot';
+  String get imageSearchTooltip => 'स्क्रीनशॉट् तः अनिमे अन्विष्य';
 
   @override
-  String get imageSearchIntro =>
-      'Pick a screenshot or paste an image link and trace.moe will find the episode and the moment it comes from.';
+  String get imageSearchIntro => 'स्क्रीनशॉट् चिनु अथवा चित्र-लिङ्कं स्थापय, trace.moe च एपिसोड् तं क्षणं च अन्वेषिष्यति।';
 
   @override
-  String get imageSearchPick => 'Choose image';
+  String get imageSearchPick => 'चित्रं चिनु';
 
   @override
-  String get imageSearchLinkHint => 'Paste an image link';
+  String get imageSearchLinkHint => 'चित्र-लिङ्कं स्थापय';
 
   @override
-  String get imageSearchGo => 'Search';
+  String get imageSearchGo => 'अन्विष्य';
 
   @override
-  String get imageSearchEmpty => 'No match found';
+  String get imageSearchEmpty => 'मेलनं न प्राप्तम्';
 
   @override
-  String get imageSearchAdult => '18+';
+  String get imageSearchAdult => '१८+';
 
   @override
   String imageSearchEpisode(String number) {
-    return 'Episode $number';
+    return 'एपिसोड् $number';
   }
 
   @override
   String imageSearchAt(String time) {
-    return 'at $time';
+    return '$time मध्ये';
   }
 
   @override
-  String get imageSearchPreview => 'Preview clip';
+  String get imageSearchPreview => 'क्लिप्-पूर्वावलोकनम्';
 
   @override
   String imageSearchSimilarity(int percent) {
-    return '$percent% match';
+    return '$percent% मेलनम्';
   }
 
   @override
-  String get imageSearchCredit => 'Powered by trace.moe';
+  String get imageSearchCredit => 'trace.moe द्वारा सञ्चालितम्';
 
   @override
-  String get imageSearchOpenFailed => 'Couldn\'t open this title';
+  String get imageSearchOpenFailed => 'इदं शीर्षकम् उद्घाटयितुं न शक्तम्';
 
   @override
-  String get groups => 'Groups';
+  String get groups => 'समूहाः';
 
   @override
-  String get groupsYours => 'Your groups';
+  String get groupsYours => 'तव समूहाः';
 
   @override
-  String get groupsPopular => 'Popular';
+  String get groupsPopular => 'लोकप्रियाः';
 
   @override
-  String get groupsNew => 'New';
+  String get groupsNew => 'नूतनाः';
 
   @override
-  String get groupsFeatured => 'Featured';
+  String get groupsFeatured => 'विशिष्टाः';
 
   @override
-  String get groupsSearch => 'Search groups';
+  String get groupsSearch => 'समूहान् अन्विष्य';
 
   @override
-  String get groupsAll => 'All';
+  String get groupsAll => 'सर्वे';
 
   @override
-  String get groupsEmpty => 'No groups found';
+  String get groupsEmpty => 'समूहाः न प्राप्ताः';
 
   @override
-  String get groupsEmptyYours => 'You haven\'t joined any groups yet';
+  String get groupsEmptyYours => 'त्वम् अद्यापि कमपि समूहं न संयुक्तः';
 
   @override
-  String get groupsSignIn => 'Sign in to see the groups you joined';
+  String get groupsSignIn => 'संयुक्तान् समूहान् द्रष्टुं लॉगिन् कुरु';
 
   @override
   String groupsMembersCount(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count members',
-      one: '1 member',
+      other: '$count सदस्याः',
+      one: '१ सदस्यः',
     );
     return '$_temp0';
   }
 
   @override
-  String get groupsJoin => 'Join';
+  String get groupsJoin => 'संयुज्यस्व';
 
   @override
-  String get groupsJoined => 'Joined';
+  String get groupsJoined => 'संयुक्तः';
 
   @override
-  String get groupsLeave => 'Leave group';
+  String get groupsLeave => 'समूहं त्यज';
 
   @override
-  String get groupsLeaveAsk =>
-      'You\'ll stop seeing this group\'s posts in your feed.';
+  String get groupsLeaveAsk => 'तव फीड् मध्ये अस्य समूहस्य पोस्ट्स् द्रष्टुं निवर्तिष्यसे।';
 
   @override
-  String get groupsJoinFailed =>
-      'Couldn\'t join this group, it may be invite only';
+  String get groupsJoinFailed => 'अस्मिन् समूहे संयोक्तुं न शक्तम्, आमन्त्रण-मात्रम् भवेत्';
 
   @override
-  String get groupsLeaveFailed => 'Couldn\'t leave this group';
+  String get groupsLeaveFailed => 'इमं समूहं त्यक्तुं न शक्तम्';
 
   @override
-  String get groupsPosts => 'Posts';
+  String get groupsPosts => 'पोस्ट्स्';
 
   @override
-  String get groupsMembersTab => 'Members';
+  String get groupsMembersTab => 'सदस्याः';
 
   @override
-  String get groupsAbout => 'About';
+  String get groupsAbout => 'विषये';
 
   @override
-  String get groupsRules => 'Rules';
+  String get groupsRules => 'नियमाः';
 
   @override
-  String get groupsPrivacyOpen => 'Open';
+  String get groupsPrivacyOpen => 'मुक्तः';
 
   @override
-  String get groupsPrivacyRestricted => 'Restricted';
+  String get groupsPrivacyRestricted => 'प्रतिबन्धितः';
 
   @override
-  String get groupsPrivacyClosed => 'Closed';
+  String get groupsPrivacyClosed => 'बद्धः';
 
   @override
-  String get groupsAdult => '18+';
+  String get groupsAdult => '१८+';
 
   @override
-  String get groupsRoleAdmin => 'Admin';
+  String get groupsRoleAdmin => 'प्रशासकः';
 
   @override
-  String get groupsRoleMod => 'Mod';
+  String get groupsRoleMod => 'संयोजकः';
 
   @override
-  String get groupsCouldntLoad => 'Couldn\'t load this group';
+  String get groupsCouldntLoad => 'इमं समूहं आनेतुं न शक्तम्';
 
   @override
-  String get groupsNewPost => 'Post to group';
+  String get groupsNewPost => 'समूहे पोस्ट् कुरु';
 
   @override
-  String get groupsPostHint => 'Share something with the group';
+  String get groupsPostHint => 'समूहेन सह किञ्चित् साझां कुरु';
 
   @override
-  String get groupsOpenInBrowser => 'Open in browser';
+  String get groupsOpenInBrowser => 'ब्राउज़र् मध्ये उद्घाटय';
 
   @override
-  String get groupsCategory => 'Category';
+  String get groupsCategory => 'वर्गः';
 
   @override
-  String get groupsLanguage => 'Language';
+  String get groupsLanguage => 'भाषा';
 
   @override
-  String get groupsCreated => 'Created';
+  String get groupsCreated => 'निर्मितम्';
 
   @override
   String groupsLeaders(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count leaders',
-      one: '1 leader',
+      other: '$count नेतारः',
+      one: '१ नेता',
     );
     return '$_temp0';
   }
 
   @override
-  String get groupsPrivacy => 'Privacy';
+  String get groupsPrivacy => 'गोपनीयता';
 
   @override
-  String get notificationsAll => 'All';
+  String get notificationsAll => 'सर्वम्';
 
   @override
-  String get notificationsAiring => 'Airing';
+  String get notificationsAiring => 'प्रसार्यमाणम्';
 
   @override
-  String get notificationsMedia => 'New titles';
+  String get notificationsMedia => 'नूतनानि शीर्षकाणि';
 
   @override
-  String get notificationsReplies => 'Replies';
+  String get notificationsReplies => 'उत्तराणि';
 
   @override
-  String get notificationsMentions => 'Mentions';
+  String get notificationsMentions => 'उल्लेखाः';
 
   @override
-  String get notificationsMessages => 'Messages';
+  String get notificationsMessages => 'सन्देशाः';
 
   @override
-  String get notificationsLikes => 'Likes';
+  String get notificationsLikes => 'रोचनानि';
 
   @override
-  String get notificationsFollows => 'Follows';
+  String get notificationsFollows => 'अनुयायिनः';
 
   @override
-  String get notificationsNoServices =>
-      'No signed-in service has notifications';
+  String get notificationsNoServices => 'कस्याः अपि लॉगिन्-कृतायाः सेवायाः सूचनाः न सन्ति';
 
   @override
-  String get notificationsNoServicesMessage =>
-      'Sign in to a service that sends notifications and they will show up here.';
+  String get notificationsNoServicesMessage => 'सूचनाः प्रेषयन्तीं सेवां लॉगिन् कुरु, ताः अत्र दृश्यन्ते।';
 
   @override
-  String get notificationsEmptyKind => 'Nothing in this category yet';
+  String get notificationsEmptyKind => 'अस्मिन् वर्गे अद्यापि किमपि नास्ति';
 
   @override
-  String get notificationsCommentsEmpty => 'No comment notifications';
+  String get notificationsCommentsEmpty => 'टिप्पणी-सूचनाः न सन्ति';
 
   @override
-  String get notificationsCommentsEmptyMessage =>
-      'Replies to your comments and announcements from Dantotsu show up here.';
+  String get notificationsCommentsEmptyMessage => 'तव टिप्पणीनाम् उत्तराणि Dantotsu-घोषणाः च अत्र दृश्यन्ते।';
 
   @override
-  String get notificationsSettings => 'Notification settings';
+  String get notificationsSettings => 'सूचना-सेटिंग्स्';
 
   @override
-  String get notificationsPollTitle => 'Check for new notifications';
+  String get notificationsPollTitle => 'नूतनाः सूचनाः परीक्षस्व';
 
   @override
   String notificationsPollDesc(int minutes) {
-    return 'Every $minutes minutes while the app is open';
+    return 'ऐप् उद्घाटिते सति प्रत्येकं $minutes मिनिट्';
   }
 
   @override
-  String get notificationsNotifyAbout => 'Notify me about';
+  String get notificationsNotifyAbout => 'एतेषां विषये सूचय';
 
   @override
-  String get notificationsCommentsHeader => 'Comment notifications';
+  String get notificationsCommentsHeader => 'टिप्पणी-सूचनाः';
 
   @override
   String systemNotificationsDescFor(String service) {
-    return 'Show a system notification for each unread $service notification while the app is running.';
+    return 'ऐप् चलति सति प्रत्येकस्य अपठितस्य $service सूचनायाः कृते सिस्टम्-सूचनां दर्शय।';
   }
 
   @override
-  String get notificationsTestSent => 'Test notification sent';
+  String get notificationsTestSent => 'परीक्षा-सूचना प्रेषिता';
 
   @override
-  String get notificationsTestDenied =>
-      'Notifications are not allowed for Dartotsu. Turn them on in system settings.';
+  String get notificationsTestDenied => 'Dartotsu कृते सूचनाः अनुमताः न सन्ति। सिस्टम्-सेटिंग्स् मध्ये सक्रियाः कुरु।';
 
   @override
-  String get notificationsTestHint => 'Long press to send a test notification';
+  String get notificationsTestHint => 'परीक्षा-सूचना प्रेषयितुं दीर्घं नुद';
 
   @override
-  String get notificationsTestSample => 'This is a test notification';
+  String get notificationsTestSample => 'इयं परीक्षा-सूचना अस्ति';
 
   @override
   String commentsNoticeReplyIn(String name, String media) {
-    return '$name replied to your comment in $media';
+    return '$name $media मध्ये तव टिप्पणीम् उत्तरितवान्';
   }
 
   @override
-  String get imageSearchNotLink => 'That doesn\'t look like a link';
+  String get imageSearchNotLink => 'इदं लिङ्कवत् न दृश्यते';
 
   @override
-  String get imageSearchQuota => 'Search quota exceeded';
+  String get imageSearchQuota => 'अन्वेषण-सीमा अतिक्रान्ता';
 
   @override
-  String get imageSearchBusy => 'Too many requests, try again in a moment';
+  String get imageSearchBusy => 'बहवः अनुरोधाः, क्षणानन्तरं पुनः यत्नं कुरु';
 
   @override
   String imageSearchFailed(int code) {
-    return 'Search failed ($code)';
+    return 'अन्वेषणं विफलम् ($code)';
   }
 
   @override
   String notificationsNewCount(int count) {
-    return '$count new notifications';
+    return '$count नूतनाः सूचनाः';
   }
 
   @override
-  String get reactionsTitle => 'Reactions';
+  String get reactionsTitle => 'प्रतिक्रियाः';
 
   @override
-  String get reactionsNeedEntry =>
-      'Add this title to your list before reacting';
+  String get reactionsNeedEntry => 'प्रतिक्रियां दातुं पूर्वम् इदं शीर्षकं स्वसूचीयां योजय';
 
   @override
-  String get reactionsAdd => 'Add a reaction';
+  String get reactionsAdd => 'प्रतिक्रियां योजय';
 
   @override
-  String get reactionsHint => 'What did you think? (short and spoiler-free)';
+  String get reactionsHint => 'कथम् आसीत्? (लघु स्पॉयलर्-रहितं च)';
 
   @override
-  String get reactionsPost => 'Post';
+  String get reactionsPost => 'प्रकाशय';
 
   @override
-  String get reactionsFailed => 'Couldn\'t update the reaction';
+  String get reactionsFailed => 'प्रतिक्रियां अद्यतनितुं न शक्तम्';
 
   @override
-  String get settingsWatch => 'Watch & read';
+  String get settingsWatch => 'पश्य पठ च';
 
   @override
-  String get settingsWatchDesc =>
-      'Episode lists, source matching and episode details';
+  String get settingsWatchDesc => 'एपिसोड्-सूचयः, स्रोत-मेलनं, एपिसोड्-विवरणं च';
 
   @override
-  String get watchSettingsLayout => 'Episode list';
+  String get watchSettingsLayout => 'एपिसोड्-सूची';
 
   @override
-  String get watchSettingsSources => 'Sources';
+  String get watchSettingsSources => 'स्रोतांसि';
 
   @override
-  String get watchSettingsMetadata => 'Episode details';
+  String get watchSettingsMetadata => 'एपिसोड्-विवरणम्';
 
   @override
-  String get watchLayout => 'Layout';
+  String get watchLayout => 'विन्यासः';
 
   @override
-  String get watchListView => 'List';
+  String get watchListView => 'सूची';
 
   @override
-  String get watchGridView => 'Grid';
+  String get watchGridView => 'जालकम्';
 
   @override
-  String get watchCompactView => 'Compact';
+  String get watchCompactView => 'संक्षिप्तम्';
 
   @override
-  String get watchDefaultLayoutDesc =>
-      'How episodes and chapters are laid out until you change it for a title';
+  String get watchDefaultLayoutDesc => 'शीर्षके परिवर्तनं यावत् न करोषि तावत् एपिसोड्स् अध्यायाः च कथं विन्यस्ताः';
 
   @override
-  String get watchChunkSize => 'Range size';
+  String get watchChunkSize => 'परिसर-आकारः';
 
   @override
-  String get watchChunkSizeDesc =>
-      'How many episodes or chapters each range tab holds';
+  String get watchChunkSizeDesc => 'प्रत्येकस्मिन् परिसर-टैब् मध्ये कति एपिसोड्स् अध्यायाः वा';
 
   @override
-  String get watchShowDescription => 'Show descriptions';
+  String get watchShowDescription => 'विवरणानि दर्शय';
 
   @override
-  String get watchShowDescriptionDesc =>
-      'Show the episode summary under each title in the list layout';
+  String get watchShowDescriptionDesc => 'सूची-विन्यासे प्रत्येकस्य शीर्षकस्य अधः एपिसोड्-सारांशं दर्शय';
 
   @override
-  String get watchShowFiller => 'Show filler episodes';
+  String get watchShowFiller => 'फिलर्-एपिसोड्स् दर्शय';
 
   @override
-  String get watchShowFillerDesc =>
-      'Turn off to hide episodes marked as filler';
+  String get watchShowFillerDesc => 'फिलर्-चिह्नितान् एपिसोड्स् गोपयितुं निष्क्रियं कुरु';
 
   @override
-  String get watchBlurUnwatched => 'Hide spoiler thumbnails';
+  String get watchBlurUnwatched => 'स्पॉयलर्-थम्बनेल्स् गोपय';
 
   @override
-  String get watchBlurUnwatchedDesc =>
-      'Blur the thumbnail of episodes you have not watched yet';
+  String get watchBlurUnwatchedDesc => 'यान् एपिसोड्स् अद्यापि न दृष्टवान् तेषां थम्बनेल् अस्पष्टं कुरु';
 
   @override
-  String get watchResumeShelf => 'Resume shelf';
+  String get watchResumeShelf => 'पुनः आरम्भ-पङ्क्तिः';
 
   @override
-  String get watchResumeShelfDesc => 'Show the Resume row on Home';
+  String get watchResumeShelfDesc => 'मुख्यपृष्ठे पुनः आरम्भ-पङ्क्तिं दर्शय';
 
   @override
-  String get watchMarkOnLongPress => 'Long press marks progress';
+  String get watchMarkOnLongPress => 'दीर्घ-नोदनं प्रगतिं चिह्नयति';
 
   @override
-  String get watchMarkOnLongPressDesc =>
-      'Long press an episode or chapter to mark it watched or unwatched';
+  String get watchMarkOnLongPressDesc => 'एपिसोड्-अध्यायं दृष्टम् अदृष्टं वा चिह्नयितुं दीर्घं नुद';
 
   @override
-  String get watchMatching => 'Source matching';
+  String get watchMatching => 'स्रोत-मेलनम्';
 
   @override
-  String get watchMatchingDesc =>
-      'Closest takes the best search result. Exact only accepts a near-identical title and leaves the rest for you to pick.';
+  String get watchMatchingDesc => '\"निकटतमम्\" सर्वोत्तमं अन्वेषण-परिणामं गृह्णाति। \"केवलं सटीकम्\" प्रायः समानं शीर्षकमेव स्वीकरोति शेषं त्वया चेतव्यम्।';
 
   @override
-  String get watchMatchClosest => 'Closest match';
+  String get watchMatchClosest => 'निकटतमं मेलनम्';
 
   @override
-  String get watchMatchExact => 'Exact match only';
+  String get watchMatchExact => 'केवलं सटीकं मेलनम्';
 
   @override
-  String get watchMetadataDesc =>
-      'Where episode titles, summaries, thumbnails, air dates and filler flags come from. Drag to set priority; the first source with a value wins.';
+  String get watchMetadataDesc => 'एपिसोड्-शीर्षकानि, सारांशाः, थम्बनेल्स्, प्रसारण-दिनाङ्काः, फिलर्-चिह्नानि च कुतः आगच्छन्ति। प्राथमिकतायै कर्ष; मूल्ययुक्तः प्रथमः स्रोतः विजयते।';
 
   @override
-  String get watchMetaAniZipDesc =>
-      'Episode titles, summaries, stills and air dates';
+  String get watchMetaAniZipDesc => 'एपिसोड्-शीर्षकानि, सारांशाः, चित्राणि, प्रसारण-दिनाङ्काः च';
 
   @override
-  String get watchMetaKitsuDesc =>
-      'Episode titles, descriptions and thumbnails';
+  String get watchMetaKitsuDesc => 'एपिसोड्-शीर्षकानि, विवरणानि, थम्बनेल्स् च';
 
   @override
-  String get watchMetaSimklDesc =>
-      'Episode titles, descriptions, stills and air dates';
+  String get watchMetaSimklDesc => 'एपिसोड्-शीर्षकानि, विवरणानि, चित्राणि, प्रसारण-दिनाङ्काः च';
 
   @override
-  String get watchMetaAniListDesc =>
-      'Streaming episode titles, thumbnails and the airing schedule';
+  String get watchMetaAniListDesc => 'स्ट्रीमिङ्ग्-एपिसोड्-शीर्षकानि, थम्बनेल्स्, प्रसारण-समयसूची च';
 
   @override
-  String get watchMetaTenraiDesc =>
-      'MyAnimeList episode titles, air dates, filler and recap flags through Tenrai';
+  String get watchMetaTenraiDesc => 'Tenrai द्वारा MyAnimeList एपिसोड्-शीर्षकानि, प्रसारण-दिनाङ्काः, फिलर् रिकैप्-चिह्नानि च';
 
   @override
-  String get watchClearMetadata => 'Refresh episode details';
+  String get watchClearMetadata => 'एपिसोड्-विवरणं नवीकुरु';
 
   @override
-  String get watchClearMetadataDesc =>
-      'Forget the cached episode details so they are fetched again';
+  String get watchClearMetadataDesc => 'कॅश्-कृतं एपिसोड्-विवरणं विस्मर यथा पुनः आनीयते';
 
   @override
-  String get watchMetadataCleared => 'Episode details will be fetched again';
+  String get watchMetadataCleared => 'एपिसोड्-विवरणं पुनः आनीयते';
 
   @override
   String watchEpisodeCount(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count Episodes',
-      one: '1 Episode',
+      other: '$count एपिसोड्स्',
+      one: '१ एपिसोड्',
     );
     return '$_temp0';
   }
@@ -4125,1795 +4042,1739 @@ class AppLocalizationsSa extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count Chapters',
-      one: '1 Chapter',
+      other: '$count अध्यायाः',
+      one: '१ अध्यायः',
     );
     return '$_temp0';
   }
 
   @override
   String watchEpisodeNumber(String number) {
-    return 'Episode $number';
+    return 'एपिसोड् $number';
   }
 
   @override
   String watchChapterNumber(String number) {
-    return 'Chapter $number';
+    return 'अध्यायः $number';
   }
 
   @override
-  String get watchSearching => 'Searching…';
+  String get watchSearching => 'अन्वेषणं चलति…';
 
   @override
   String watchSearchingFor(String term) {
-    return 'Searching: $term';
+    return 'अन्वेषणम्: $term';
   }
 
   @override
   String watchSelected(String title) {
-    return 'Selected: $title';
+    return 'चितम्: $title';
   }
 
   @override
   String watchFound(String title) {
-    return 'Found: $title';
+    return 'प्राप्तम्: $title';
   }
 
   @override
-  String get watchNothingFound => 'Nothing found on this source';
+  String get watchNothingFound => 'अस्मिन् स्रोतसि किमपि न प्राप्तम्';
 
   @override
-  String get watchSearchFailed => 'The source search failed';
+  String get watchSearchFailed => 'स्रोत-अन्वेषणं विफलम्';
 
   @override
-  String get watchLoadFailed => 'Couldn\'t load the list';
+  String get watchLoadFailed => 'सूची आनेतुं न शक्तम्';
 
   @override
-  String get watchSignInToTrack => 'Sign in to track your progress';
+  String get watchSignInToTrack => 'प्रगतिम् अनुसर्तुं लॉगिन् कुरु';
 
   @override
   String watchInstallSource(String action) {
-    return 'Install an extension to start $action';
+    return '$action आरब्धुं एक्स्टेंशन् स्थापय';
   }
 
   @override
-  String get watchSourceMissing => 'This source isn\'t installed';
+  String get watchSourceMissing => 'अयं स्रोतः न स्थापितः';
 
   @override
-  String get watchWrongTitle => 'Wrong title?';
+  String get watchWrongTitle => 'अशुद्धं शीर्षकम्?';
 
   @override
-  String get watchSearchAgain => 'Search again';
+  String get watchSearchAgain => 'पुनः अन्विष्य';
 
   @override
   String watchSearchSource(String source) {
-    return 'Search $source';
+    return '$source मध्ये अन्वेषणम्';
   }
 
   @override
-  String get watchSource => 'Source';
+  String get watchSource => 'स्रोतः';
 
   @override
-  String get watchOptions => 'Options';
+  String get watchOptions => 'विकल्पाः';
 
   @override
-  String get watchReverse => 'Reverse order';
+  String get watchReverse => 'क्रमं विपरीतं कुरु';
 
   @override
-  String get watchScanlators => 'Groups';
+  String get watchScanlators => 'समूहाः';
 
   @override
-  String get watchResetOptions => 'Reset these options';
+  String get watchResetOptions => 'एतान् विकल्पान् पुनःस्थापय';
 
   @override
-  String get watchContinue => 'Continue';
+  String get watchContinue => 'अग्रे गच्छ';
 
   @override
-  String get watchStart => 'Start';
+  String get watchStart => 'आरभस्व';
 
   @override
-  String get watchPlay => 'Play';
+  String get watchPlay => 'चालय';
 
   @override
-  String get watchRead => 'Read';
+  String get watchRead => 'पठ';
 
   @override
-  String get watchMarkWatched => 'Mark watched';
+  String get watchMarkWatched => 'दृष्टम् इति चिह्नय';
 
   @override
-  String get watchMarkUnwatched => 'Mark unwatched';
+  String get watchMarkUnwatched => 'अदृष्टम् इति चिह्नय';
 
   @override
-  String get watchMarkRead => 'Mark read';
+  String get watchMarkRead => 'पठितम् इति चिह्नय';
 
   @override
-  String get watchMarkUnread => 'Mark unread';
+  String get watchMarkUnread => 'अपठितम् इति चिह्नय';
 
   @override
-  String get watchFiller => 'Filler';
+  String get watchFiller => 'फिलर्';
 
   @override
-  String get watchRecap => 'Recap';
+  String get watchRecap => 'रिकैप्';
 
   @override
-  String get watchNoEpisodes => 'No episodes found';
+  String get watchNoEpisodes => 'एपिसोड्स् न प्राप्ताः';
 
   @override
-  String get watchNoChapters => 'No chapters found';
+  String get watchNoChapters => 'अध्यायाः न प्राप्ताः';
 
   @override
-  String get watchSourceTools => 'Source tools';
+  String get watchSourceTools => 'स्रोत-साधनानि';
 
   @override
-  String get watchSourceSettings => 'Source settings';
+  String get watchSourceSettings => 'स्रोत-सेटिंग्स्';
 
   @override
-  String get watchOpenWebView => 'Open in web view';
+  String get watchOpenWebView => 'वेब्-व्यू मध्ये उद्घाटय';
 
   @override
-  String get watchOpenWebViewDesc =>
-      'Solve a Cloudflare check or log in; the cookies are shared with the source requests';
+  String get watchOpenWebViewDesc => 'Cloudflare-परीक्षां समाधेहि अथवा लॉगिन् कुरु; कुकीज् स्रोत-अनुरोधैः सह साझाः';
 
   @override
   String watchCookieCount(int count, String host) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count cookies saved for $host',
-      one: '1 cookie saved for $host',
-      zero: 'No cookies saved for $host',
+      other: '$host कृते $count कुकीज् रक्षिताः',
+      one: '$host कृते १ कुकी रक्षिता',
+      zero: '$host कृते कुकीज् रक्षिताः न सन्ति',
     );
     return '$_temp0';
   }
 
   @override
   String watchClearanceActive(String time) {
-    return 'Cloudflare clearance active, $time';
+    return 'Cloudflare-अनुमतिः सक्रिया, $time';
   }
 
   @override
-  String get watchClearanceMissing => 'No Cloudflare clearance cookie';
+  String get watchClearanceMissing => 'Cloudflare-अनुमति-कुकी नास्ति';
 
   @override
-  String get watchClearanceSession => 'lasts until the app closes';
+  String get watchClearanceSession => 'ऐप् बन्द-पर्यन्तं स्थायि';
 
   @override
-  String get watchAgentShared =>
-      'Requests use the web view\'s user agent, which Cloudflare checks';
+  String get watchAgentShared => 'अनुरोधाः वेब्-व्यू-इत्यस्य user agent प्रयुञ्जते, यं Cloudflare परीक्षते';
 
   @override
-  String get watchAgentCustom =>
-      'A custom user agent is set, so a Cloudflare clearance from the web view may be rejected';
+  String get watchAgentCustom => 'स्वनिर्मितः user agent स्थापितः, अतः वेब्-व्यू तः Cloudflare-अनुमतिः निराक्रियेत';
 
   @override
-  String get watchTestConnection => 'Test connection';
+  String get watchTestConnection => 'संयोजनं परीक्षस्व';
 
   @override
-  String get watchSolveChallenge => 'Solve it';
+  String get watchSolveChallenge => 'समाधेहि';
 
   @override
   String watchProbeOk(int code) {
-    return 'Reachable (HTTP $code)';
+    return 'सुलभम् (HTTP $code)';
   }
 
   @override
-  String get watchProbeChallenge => 'Cloudflare is still asking for a check';
+  String get watchProbeChallenge => 'Cloudflare अद्यापि परीक्षां याचते';
 
   @override
   String watchProbeBlocked(int code) {
-    return 'Blocked by the site (HTTP $code)';
+    return 'जालस्थलेन निरुद्धम् (HTTP $code)';
   }
 
   @override
-  String get watchProbeFailed => 'The site could not be reached';
+  String get watchProbeFailed => 'जालस्थलं प्राप्तुं न शक्तम्';
 
   @override
-  String get watchClearCookies => 'Clear cookies for this site';
+  String get watchClearCookies => 'अस्य जालस्थलस्य कुकीज् मार्जय';
 
   @override
-  String get watchCookiesCleared => 'Cookies cleared';
+  String get watchCookiesCleared => 'कुकीज् मार्जिताः';
 
   @override
-  String get watchResults => 'Results';
+  String get watchResults => 'परिणामाः';
 
   @override
-  String get watchMetaSource => 'Episode details from';
+  String get watchMetaSource => 'एपिसोड्-विवरणं कुतः';
 
   @override
-  String get watchMetaAuto => 'Automatic';
+  String get watchMetaAuto => 'स्वयंचालितम्';
 
   @override
-  String get watchMetaOff => 'Off';
+  String get watchMetaOff => 'निष्क्रिय';
 
   @override
-  String get settingsPlayer => 'Player';
+  String get settingsPlayer => 'प्लेयर्';
 
   @override
-  String get settingsPlayerDesc =>
-      'Playback, subtitles, shaders, mpv and opening files';
+  String get settingsPlayerDesc => 'चालनम्, उपशीर्षकाणि, शेडर्स्, mpv, फाइल्-उद्घाटनं च';
 
   @override
-  String get playerSettingsTitle => 'क्रीडक संयोजनानि';
+  String get playerSettingsTitle => 'प्लेयर्-सेटिंग्स्';
 
   @override
-  String get playerSectionPlayback => 'Playback';
+  String get playerSectionPlayback => 'चालनम्';
 
   @override
-  String get playerSectionSkip => 'Skipping';
+  String get playerSectionSkip => 'त्यजनम्';
 
   @override
-  String get playerSectionGestures => 'Controls';
+  String get playerSectionGestures => 'नियन्त्रणानि';
 
   @override
-  String get playerSectionSubtitles => 'Subtitles';
+  String get playerSectionSubtitles => 'उपशीर्षकाणि';
 
   @override
-  String get playerSectionShaders => 'Shaders';
+  String get playerSectionShaders => 'शेडर्स्';
 
   @override
-  String get playerSectionEngine => 'Engine';
+  String get playerSectionEngine => 'इञ्जिन्';
 
   @override
   String get playerSectionMpv => 'mpv';
 
   @override
-  String get playerSectionOpen => 'Open media';
+  String get playerSectionOpen => 'मीडिया उद्घाटय';
 
   @override
-  String get playerSpeed => 'Playback speed';
+  String get playerSpeed => 'चालन-वेगः';
 
   @override
-  String get playerCursedSpeed => 'Extra speeds';
+  String get playerCursedSpeed => 'अतिरिक्त-वेगाः';
 
   @override
-  String get playerCursedSpeedDesc => 'Add speeds up to 10x to the list';
+  String get playerCursedSpeedDesc => 'सूचीयां १०x पर्यन्तं वेगान् योजय';
 
   @override
-  String get playerResize => 'Resize mode';
+  String get playerResize => 'आकार-परिवर्तन-मोडः';
 
   @override
-  String get playerFitFit => 'Fit';
+  String get playerFitFit => 'योग्यं कुरु';
 
   @override
-  String get playerFitCover => 'Cover';
+  String get playerFitCover => 'आच्छादय';
 
   @override
-  String get playerFitStretch => 'Stretch';
+  String get playerFitStretch => 'विस्तारय';
 
   @override
-  String get playerSkipDuration => 'Skip button length';
+  String get playerSkipDuration => 'त्यजन-बटनस्य दैर्घ्यम्';
 
   @override
-  String get playerSkipDurationDesc =>
-      'Seconds the skip button jumps outside openings and endings';
+  String get playerSkipDurationDesc => 'आरम्भ-समापनगीतेभ्यः बहिः त्यजन-बटनं कति सेकण्ड्स् उत्पतति';
 
   @override
-  String get playerSeekDuration => 'Double tap seek';
+  String get playerSeekDuration => 'द्विःस्पर्श-अग्रे';
 
   @override
-  String get playerSeekDurationDesc =>
-      'Seconds to jump on a double tap or arrow key';
+  String get playerSeekDurationDesc => 'द्विःस्पर्शेन अथवा बाण-कुञ्जिकया कति सेकण्ड्स् उत्पतनीयम्';
 
   @override
-  String get playerAutoPlay => 'Play next automatically';
+  String get playerAutoPlay => 'अग्रिमं स्वयं चालय';
 
   @override
-  String get playerAutoPlayDesc => 'Start the next episode when this one ends';
+  String get playerAutoPlayDesc => 'एषः एपिसोड् समाप्ते सति अग्रिमम् आरभस्व';
 
   @override
-  String get playerResume => 'Resume where you left off';
+  String get playerResume => 'यत्र त्यक्तं तत्र पुनः आरभस्व';
 
   @override
-  String get playerResumeDesc => 'Continue an episode from its last position';
+  String get playerResumeDesc => 'एपिसोड् अन्तिम-स्थानात् अनुवर्तय';
 
   @override
-  String get playerOrientation => 'Orientation';
+  String get playerOrientation => 'दिशा';
 
   @override
-  String get playerOrientationAuto => 'Follow the device';
+  String get playerOrientationAuto => 'उपकरणम् अनुसर';
 
   @override
-  String get playerOrientationLandscape => 'Landscape';
+  String get playerOrientationLandscape => 'क्षैतिजम्';
 
   @override
-  String get playerOrientationPortrait => 'Portrait';
+  String get playerOrientationPortrait => 'ऊर्ध्वम्';
 
   @override
-  String get playerAutoSkipOpening => 'Skip openings';
+  String get playerAutoSkipOpening => 'आरम्भगीतानि त्यज';
 
   @override
-  String get playerAutoSkipEnding => 'Skip endings';
+  String get playerAutoSkipEnding => 'समापनगीतानि त्यज';
 
   @override
-  String get playerAutoSkipRecap => 'Skip recaps';
+  String get playerAutoSkipRecap => 'रिकैप्स् त्यज';
 
   @override
-  String get playerAutoSkipDesc =>
-      'Jump past it as soon as it starts, using AniSkip and stream timestamps';
+  String get playerAutoSkipDesc => 'AniSkip स्ट्रीम्-समय-चिह्नानि च प्रयुज्य आरम्भे एव उत्पत';
 
   @override
-  String get playerSkipOnce => 'Skip once only';
+  String get playerSkipOnce => 'एकवारमेव त्यज';
 
   @override
-  String get playerSkipOnceDesc =>
-      'Don\'t skip the same part again if you seek back into it';
+  String get playerSkipOnceDesc => 'पुनः तत्र गच्छसि चेत् समानं भागं पुनः मा त्यज';
 
   @override
-  String get playerAdjustBrightness => 'Brightness gesture';
+  String get playerAdjustBrightness => 'प्रकाश-संकेतः';
 
   @override
-  String get playerAdjustBrightnessDesc =>
-      'Swipe up and down on the left half of the screen';
+  String get playerAdjustBrightnessDesc => 'पटलस्य दक्षिणार्धे ऊर्ध्वम् अधः च कर्ष';
 
   @override
-  String get playerAdjustVolume => 'Volume gesture';
+  String get playerAdjustVolume => 'ध्वनि-संकेतः';
 
   @override
-  String get playerAdjustVolumeDesc =>
-      'Swipe up and down on the right half of the screen';
+  String get playerAdjustVolumeDesc => 'पटलस्य वामार्धे ऊर्ध्वम् अधः च कर्ष';
 
   @override
-  String get playerHoldToSpeed => 'Hold to speed up';
+  String get playerHoldToSpeed => 'वेगाय धारय';
 
   @override
-  String get playerHoldToSpeedDesc =>
-      'Press and hold the video to play faster, drag sideways to change the speed';
+  String get playerHoldToSpeedDesc => 'शीघ्रं चालयितुं वीडियो धारय, वेगपरिवर्तनाय पार्श्वतः कर्ष';
 
   @override
-  String get playerThumbless => 'Thicker seek bar';
+  String get playerThumbless => 'स्थूला सीक्-पट्टिका';
 
   @override
-  String get playerThumblessDesc => 'A thick bar without a thumb';
+  String get playerThumblessDesc => 'अङ्गुलि-चिह्नं विना स्थूला पट्टिका';
 
   @override
-  String get playerShowSubtitles => 'Show subtitles';
+  String get playerShowSubtitles => 'उपशीर्षकाणि दर्शय';
 
   @override
-  String get playerShowSubtitlesDesc => 'Turn off to hide every subtitle track';
+  String get playerShowSubtitlesDesc => 'सर्वान् उपशीर्षक-मार्गान् गोपयितुं निष्क्रियं कुरु';
 
   @override
-  String get playerSubtitleLanguage => 'Preferred subtitle language';
+  String get playerSubtitleLanguage => 'प्राधान्य-उपशीर्षक-भाषा';
 
   @override
-  String get playerSubtitleSize => 'Subtitle size';
+  String get playerSubtitleSize => 'उपशीर्षक-आकारः';
 
   @override
-  String get playerSubtitleWeight => 'Subtitle weight';
+  String get playerSubtitleWeight => 'उपशीर्षक-स्थूलता';
 
   @override
-  String get playerSubtitleBottom => 'Subtitle bottom padding';
+  String get playerSubtitleBottom => 'उपशीर्षकस्य अधः अन्तरम्';
 
   @override
-  String get playerSubtitleFont => 'Subtitle font';
+  String get playerSubtitleFont => 'उपशीर्षक-अक्षरम्';
 
   @override
-  String get playerSubtitleColor => 'Subtitle colour';
+  String get playerSubtitleColor => 'उपशीर्षक-वर्णः';
 
   @override
-  String get playerSubtitleBackground => 'Subtitle background';
+  String get playerSubtitleBackground => 'उपशीर्षक-पृष्ठभूमिः';
 
   @override
-  String get playerSubtitleOutline => 'Subtitle outline';
+  String get playerSubtitleOutline => 'उपशीर्षक-रेखा';
 
   @override
-  String get playerLibass => 'Use libass';
+  String get playerLibass => 'libass प्रयुङ्क्ष्व';
 
   @override
-  String get playerLibassDesc =>
-      'Render styled .ass subtitles. The size, colour and font above then no longer apply';
+  String get playerLibassDesc => 'शैलीयुक्ताः .ass उपशीर्षकाणि चित्रय। उपरि आकारः वर्णः अक्षरं च तदा न प्रयुज्यन्ते';
 
   @override
-  String get playerShaders => 'Shaders';
+  String get playerShaders => 'शेडर्स्';
 
   @override
-  String get playerShadersEnable => 'Enable shaders';
+  String get playerShadersEnable => 'शेडर्स् सक्रियं कुरु';
 
   @override
-  String get playerShadersEnableDesc =>
-      'Upscale and clean the picture with GLSL shaders such as Anime4K';
+  String get playerShadersEnableDesc => 'Anime4K सदृशैः GLSL शेडर्स् द्वारा चित्रं वर्धय शोधय च';
 
   @override
-  String get playerShadersOff => 'Shaders off';
+  String get playerShadersOff => 'शेडर्स् निष्क्रियाः';
 
   @override
-  String get playerShadersMissing => 'Anime4K is not installed';
+  String get playerShadersMissing => 'Anime4K न स्थापितम्';
 
   @override
-  String get playerShadersMissingDesc =>
-      'Download the Anime4K shader pack (about 0.8 MB) to use the built-in modes.';
+  String get playerShadersMissingDesc => 'अन्तर्निहित-मोडान् प्रयोक्तुं Anime4K शेडर्-पैकं (प्रायः ०.८ MB) डाउनलोड् कुरु।';
 
   @override
-  String get playerShadersDownload => 'Download Anime4K';
+  String get playerShadersDownload => 'Anime4K डाउनलोड् कुरु';
 
   @override
-  String get playerShadersPreview => 'Preview on this frame';
+  String get playerShadersPreview => 'अस्मिन् फ्रेम् मध्ये पूर्वावलोकनम्';
 
   @override
-  String get playerShadersUse => 'Use this';
+  String get playerShadersUse => 'इदं प्रयुङ्क्ष्व';
 
   @override
-  String get playerPicture => 'Picture';
+  String get playerPicture => 'चित्रम्';
 
   @override
-  String get playerColors => 'Colors';
+  String get playerColors => 'वर्णाः';
 
   @override
-  String get playerColorDefault => 'Default';
+  String get playerColorDefault => 'मूलभूतम्';
 
   @override
-  String get playerColorVivid => 'Vivid';
+  String get playerColorVivid => 'उज्ज्वलम्';
 
   @override
-  String get playerColorPop => 'Anime pop';
+  String get playerColorPop => 'अनिमे-पॉप्';
 
   @override
-  String get playerColorSoft => 'Soft';
+  String get playerColorSoft => 'मृदु';
 
   @override
-  String get playerColorCinematic => 'Cinematic';
+  String get playerColorCinematic => 'चलचित्रवत्';
 
   @override
-  String get playerColorBright => 'Bright';
+  String get playerColorBright => 'प्रकाशमयम्';
 
   @override
-  String get playerColorNight => 'Night';
+  String get playerColorNight => 'रात्रिः';
 
   @override
-  String get playerColorMono => 'Mono';
+  String get playerColorMono => 'एकवर्णम्';
 
   @override
-  String get playerColorCustom => 'Custom';
+  String get playerColorCustom => 'स्वनिर्मितम्';
 
   @override
-  String get playerColorBrightness => 'Brightness';
+  String get playerColorBrightness => 'प्रकाशः';
 
   @override
-  String get playerColorContrast => 'Contrast';
+  String get playerColorContrast => 'विषमता';
 
   @override
-  String get playerColorSaturation => 'Saturation';
+  String get playerColorSaturation => 'सघनता';
 
   @override
-  String get playerColorGamma => 'Gamma';
+  String get playerColorGamma => 'गामा';
 
   @override
-  String get playerColorHue => 'Hue';
+  String get playerColorHue => 'वर्णच्छटा';
 
   @override
-  String get playerColorReset => 'Reset';
+  String get playerColorReset => 'पुनःस्थापय';
 
   @override
-  String get playerColorAdjust => 'Adjust';
+  String get playerColorAdjust => 'समायोजय';
 
   @override
-  String get playerShadersOriginal => 'Original';
+  String get playerShadersOriginal => 'मूलम्';
 
   @override
-  String get playerShadersPreviewFailed => 'Couldn\'t grab a frame to preview';
+  String get playerShadersPreviewFailed => 'पूर्वावलोकनार्थं फ्रेम् ग्रहीतुं न शक्तम्';
 
   @override
-  String get playerShadersCustomFiles => 'Your shaders';
+  String get playerShadersCustomFiles => 'तव शेडर्स्';
 
   @override
-  String get playerShadersCustom => 'Custom shaders';
+  String get playerShadersCustom => 'स्वनिर्मिताः शेडर्स्';
 
   @override
-  String get playerShadersImport => 'Import .glsl';
+  String get playerShadersImport => '.glsl आनय';
 
   @override
-  String get playerShadersNone =>
-      'Import your own .glsl or .hook files and tick them to chain them';
+  String get playerShadersNone => 'स्वस्य .glsl अथवा .hook फाइल्स् आनय शृङ्खलितुं च चिह्नय';
 
   @override
-  String get playerShadersBadFile => 'Choose a .glsl or .hook shader file';
+  String get playerShadersBadFile => '.glsl अथवा .hook शेडर्-फाइलं चिनु';
 
   @override
-  String get playerDecoder => 'Decoder';
+  String get playerDecoder => 'डीकोडर्';
 
   @override
-  String get playerDecoderAuto => 'Auto';
+  String get playerDecoderAuto => 'स्वयम्';
 
   @override
-  String get playerDecoderAutoSafe => 'Auto (safe)';
+  String get playerDecoderAutoSafe => 'स्वयम् (सुरक्षितम्)';
 
   @override
-  String get playerDecoderSoftware => 'Software';
+  String get playerDecoderSoftware => 'सॉफ्टवेयर्';
 
   @override
-  String get playerDecoderHardware => 'Hardware';
+  String get playerDecoderHardware => 'हार्डवेयर्';
 
   @override
-  String get playerDecoderHardwarePlus => 'Hardware+';
+  String get playerDecoderHardwarePlus => 'हार्डवेयर्+';
 
   @override
-  String get playerVideoOutput => 'Video output';
+  String get playerVideoOutput => 'वीडियो-निर्गमः';
 
   @override
-  String get playerAudioChannels => 'Audio channels';
+  String get playerAudioChannels => 'ध्वनि-मार्गाः';
 
   @override
-  String get playerBuffer => 'Buffer size (MB)';
+  String get playerBuffer => 'बफर्-आकारः (MB)';
 
   @override
-  String get playerBufferDesc => 'Memory the player may use to buffer a stream';
+  String get playerBufferDesc => 'स्ट्रीम् बफर् कर्तुं प्लेयर् कियत् स्मृतिं प्रयोक्तुं शक्नोति';
 
   @override
-  String get playerUseMpvConf => 'Use mpv.conf';
+  String get playerUseMpvConf => 'mpv.conf प्रयुङ्क्ष्व';
 
   @override
-  String get playerUseMpvConfDesc =>
-      'Apply the options in your mpv.conf when playback starts';
+  String get playerUseMpvConfDesc => 'चालनारम्भे तव mpv.conf-विकल्पान् प्रयुङ्क्ष्व';
 
   @override
   String get playerMpvConf => 'mpv.conf';
 
   @override
-  String get playerMpvConfEdit => 'Edit the mpv configuration';
+  String get playerMpvConfEdit => 'mpv-विन्यासं सम्पादय';
 
   @override
-  String get playerMpvConfDesc =>
-      'One option per line, like --hwdec=auto in a normal mpv.conf. Profiles in [brackets] are ignored.';
+  String get playerMpvConfDesc => 'सामान्ये mpv.conf मध्ये --hwdec=auto इव प्रतिपङ्क्ति एकः विकल्पः। [कोष्ठके] प्रोफाइल्स् उपेक्ष्यन्ते।';
 
   @override
-  String get playerMpvConfSaved => 'mpv.conf saved';
+  String get playerMpvConfSaved => 'mpv.conf रक्षितम्';
 
   @override
-  String get playerUseScripts => 'Use mpv scripts';
+  String get playerUseScripts => 'mpv-स्क्रिप्ट्स् प्रयुङ्क्ष्व';
 
   @override
-  String get playerUseScriptsDesc =>
-      'Load the plugins from the scripts folder. They need a libmpv build with Lua or JavaScript support';
+  String get playerUseScriptsDesc => 'स्क्रिप्ट्-फोल्डरतः प्लगिन्स् आनय। तेषां कृते Lua अथवा JavaScript-समर्थनयुक्तः libmpv बिल्ड् आवश्यकः';
 
   @override
-  String get playerScripts => 'mpv scripts';
+  String get playerScripts => 'mpv-स्क्रिप्ट्स्';
 
   @override
-  String get playerScriptsManage => 'Add, remove and switch plugins';
+  String get playerScriptsManage => 'प्लगिन्स् योजय, अपनय, परिवर्तय च';
 
   @override
-  String get playerScriptsAdd => 'Add script';
+  String get playerScriptsAdd => 'स्क्रिप्ट् योजय';
 
   @override
-  String get playerScriptsDesc =>
-      'Lua, JavaScript and native plugins placed here are loaded when playback starts.';
+  String get playerScriptsDesc => 'अत्र स्थापिताः Lua, JavaScript, नेटिव् च प्लगिन्स् चालनारम्भे आनीयन्ते।';
 
   @override
-  String get playerScriptsNone => 'No scripts yet';
+  String get playerScriptsNone => 'स्क्रिप्ट्स् अद्यापि न सन्ति';
 
   @override
-  String get playerScriptsBadFile => 'Choose a .lua, .js or native plugin file';
+  String get playerScriptsBadFile => '.lua, .js अथवा नेटिव्-प्लगिन् फाइलं चिनु';
 
   @override
-  String get playerTuning => 'Advanced video tuning';
+  String get playerTuning => 'उन्नत-वीडियो-समायोजनम्';
 
   @override
-  String get playerTuningDesc =>
-      'Override sync, caching, scaling and tone mapping. Wrong values can hurt playback';
+  String get playerTuningDesc => 'सिङ्क्, कॅश्, स्केलिङ्, टोन्-मैपिङ् च अधिलिख। दोषयुक्तानि मूल्यानि चालनं बाधेरन्';
 
   @override
-  String get playerVideoSync => 'Video sync';
+  String get playerVideoSync => 'वीडियो-सिङ्क्';
 
   @override
-  String get playerInterpolation => 'Frame interpolation';
+  String get playerInterpolation => 'फ्रेम्-इण्टर्पोलेशन्';
 
   @override
-  String get playerInterpolationDesc =>
-      'Smooth motion, needs display-resample sync';
+  String get playerInterpolationDesc => 'मृदु गतिः, display-resample सिङ्क् आवश्यकम्';
 
   @override
-  String get playerPitch => 'Pitch correction';
+  String get playerPitch => 'स्वर-शोधनम्';
 
   @override
-  String get playerPitchDesc => 'Keep voices natural at other speeds';
+  String get playerPitchDesc => 'अन्यवेगेषु अपि स्वराः स्वाभाविकाः तिष्ठन्तु';
 
   @override
-  String get playerCacheSeconds => 'Cache (seconds)';
+  String get playerCacheSeconds => 'कॅश् (सेकण्ड्स्)';
 
   @override
-  String get playerReadahead => 'Read ahead (seconds)';
+  String get playerReadahead => 'अग्रे पठनम् (सेकण्ड्स्)';
 
   @override
-  String get playerThreads => 'Decoder threads';
+  String get playerThreads => 'डीकोडर्-थ्रेड्स्';
 
   @override
-  String get playerDeband => 'Deband';
+  String get playerDeband => 'डीबैण्ड्';
 
   @override
-  String get playerDebandDesc => 'Reduce colour banding in gradients';
+  String get playerDebandDesc => 'ग्रेडिएण्ट्स् मध्ये वर्णपट्टान् न्यूनीकुरु';
 
   @override
-  String get playerDebandIterations => 'Deband iterations';
+  String get playerDebandIterations => 'डीबैण्ड्-पुनरावृत्तयः';
 
   @override
-  String get playerDebandThreshold => 'Deband threshold';
+  String get playerDebandThreshold => 'डीबैण्ड्-सीमा';
 
   @override
-  String get playerCorrectDownscaling => 'Correct downscaling';
+  String get playerCorrectDownscaling => 'सम्यक् लघूकरणम्';
 
   @override
-  String get playerSigmoid => 'Sigmoid upscaling';
+  String get playerSigmoid => 'सिग्मॉयड्-वर्धनम्';
 
   @override
-  String get playerScale => 'Upscaler';
+  String get playerScale => 'वर्धकः';
 
   @override
-  String get playerCscale => 'Chroma upscaler';
+  String get playerCscale => 'क्रोमा-वर्धकः';
 
   @override
-  String get playerDscale => 'Downscaler';
+  String get playerDscale => 'लघूकारकः';
 
   @override
-  String get playerToneMapping => 'Tone mapping';
+  String get playerToneMapping => 'टोन्-मैपिङ्';
 
   @override
-  String get playerTargetPeak => 'Target peak';
+  String get playerTargetPeak => 'लक्ष्य-शिखरम्';
 
   @override
-  String get playerOpenFiles => 'Open video files';
+  String get playerOpenFiles => 'वीडियो-फाइल्स् उद्घाटय';
 
   @override
-  String get playerOpenFilesDesc => 'Play files from this device';
+  String get playerOpenFilesDesc => 'अस्मात् उपकरणात् फाइल्स् चालय';
 
   @override
-  String get playerOpenFolder => 'Open a folder';
+  String get playerOpenFolder => 'फोल्डरं उद्घाटय';
 
   @override
-  String get playerOpenFolderDesc =>
-      'Play every video in a folder as a playlist';
+  String get playerOpenFolderDesc => 'फोल्डरस्थान् सर्वान् वीडियोन् प्लेलिस्ट्-रूपेण चालय';
 
   @override
-  String get playerNetworkStream => 'Network stream';
+  String get playerNetworkStream => 'जाल-स्ट्रीम्';
 
   @override
-  String get playerNetworkStreamDesc => 'Open a direct video or HLS link';
+  String get playerNetworkStreamDesc => 'साक्षात् वीडियो अथवा HLS लिङ्कं उद्घाटय';
 
   @override
-  String get playerStreamUrl => 'Stream URL';
+  String get playerStreamUrl => 'स्ट्रीम् URL';
 
   @override
-  String get playerStreamReferer => 'Referer (optional)';
+  String get playerStreamReferer => 'रेफरर् (वैकल्पिकम्)';
 
   @override
-  String get playerTorrent => 'Torrent';
+  String get playerTorrent => 'टोरेन्ट्';
 
   @override
-  String get playerTorrentDesc => 'Stream a magnet link or .torrent file';
+  String get playerTorrentDesc => 'मैग्नेट्-लिङ्कं अथवा .torrent फाइलं स्ट्रीम् कुरु';
 
   @override
-  String get playerMagnetLink => 'Magnet link or torrent URL';
+  String get playerMagnetLink => 'मैग्नेट्-लिङ्कः अथवा टोरेन्ट्-URL';
 
   @override
-  String get playerPickTorrent => 'Choose a .torrent file';
+  String get playerPickTorrent => '.torrent फाइलं चिनु';
 
   @override
-  String get playerTorrentMissing =>
-      'Install the torrent addon from Settings > Addons first';
+  String get playerTorrentMissing => 'पूर्वं सेटिंग्स् > ऐड्-ऑन्स् मध्ये टोरेन्ट्-ऐड्-ऑनं स्थापय';
 
   @override
-  String get playerNoVideos => 'No playable videos found';
+  String get playerNoVideos => 'चालनीयाः वीडियोः न प्राप्ताः';
 
   @override
-  String get playerReset => 'Reset player settings';
+  String get playerReset => 'प्लेयर्-सेटिंग्स् पुनःस्थापय';
 
   @override
-  String get playerResetDesc => 'Restore every player option to its default';
+  String get playerResetDesc => 'सर्वान् प्लेयर्-विकल्पान् मूलभूतान् कुरु';
 
   @override
-  String get playerResetConfirm => 'Reset all player settings?';
+  String get playerResetConfirm => 'सर्वाणि प्लेयर्-सेटिंग्स् पुनःस्थापयसि?';
 
   @override
-  String get playerResetDone => 'Player settings reset';
+  String get playerResetDone => 'प्लेयर्-सेटिंग्स् पुनःस्थापिताः';
 
   @override
-  String get playerQuality => 'Quality';
+  String get playerQuality => 'गुणवत्ता';
 
   @override
-  String get playerStreams => 'Streams';
+  String get playerStreams => 'स्ट्रीम्स्';
 
   @override
-  String get playerAutoSelect => 'Auto select stream';
+  String get playerAutoSelect => 'स्ट्रीम् स्वयं चिनु';
 
   @override
-  String get playerAutoSelectDesc =>
-      'Pick the stream most like your last choice for this title';
+  String get playerAutoSelectDesc => 'अस्य शीर्षकस्य कृते तव अन्तिम-चयनस्य सदृशं स्ट्रीम् चिनु';
 
   @override
-  String get playerLoadingStreams => 'Looking for streams…';
+  String get playerLoadingStreams => 'स्ट्रीम्स् अन्विष्यन्ते…';
 
   @override
-  String get playerNoStreams => 'This episode has no streams';
+  String get playerNoStreams => 'अस्य एपिसोड्-मध्ये स्ट्रीम्स् न सन्ति';
 
   @override
-  String get playerNoStreamsTitle => 'No streams found';
+  String get playerNoStreamsTitle => 'स्ट्रीम्स् न प्राप्ताः';
 
   @override
-  String get playerFailed => 'Playback failed';
+  String get playerFailed => 'चालनं विफलम्';
 
   @override
-  String get playerTorrentNeeded => 'This stream is a torrent';
+  String get playerTorrentNeeded => 'एषः स्ट्रीम् टोरेन्ट् अस्ति';
 
   @override
-  String get playerTorrentNeededDesc =>
-      'Install the torrent addon to play magnet links and .torrent files';
+  String get playerTorrentNeededDesc => 'मैग्नेट्-लिङ्कान् .torrent फाइल्स् च चालयितुं टोरेन्ट्-ऐड्-ऑनं स्थापय';
 
   @override
-  String get playerOpenAddons => 'Open addons';
+  String get playerOpenAddons => 'ऐड्-ऑन्स् उद्घाटय';
 
   @override
-  String get playerTryAnotherStream => 'Try another stream';
+  String get playerTryAnotherStream => 'अन्यं स्ट्रीम् प्रयत्नं कुरु';
 
   @override
-  String get playerEpisodes => 'Episodes';
+  String get playerEpisodes => 'एपिसोड्स्';
 
   @override
-  String get playerLock => 'Lock controls';
+  String get playerLock => 'नियन्त्रणानि बधान';
 
   @override
-  String get playerFullscreen => 'Fullscreen';
+  String get playerFullscreen => 'पूर्ण-पटलम्';
 
   @override
-  String get settingsReader => 'Reader';
+  String get settingsReader => 'रीडर्';
 
   @override
-  String get settingsReaderDesc => 'Manga, manhwa and novel reading';
+  String get settingsReaderDesc => 'मांगा, मन्ह्वा, नॉवल्स् च पठनम्';
 
   @override
-  String get readerChapters => 'Chapters';
+  String get readerChapters => 'अध्यायाः';
 
   @override
-  String get readerSettingsTitle => 'Reader settings';
+  String get readerSettingsTitle => 'रीडर्-सेटिंग्स्';
 
   @override
-  String get readerPreviousChapter => 'Previous chapter';
+  String get readerPreviousChapter => 'पूर्वः अध्यायः';
 
   @override
-  String get readerNextChapter => 'Next chapter';
+  String get readerNextChapter => 'अग्रिमः अध्यायः';
 
   @override
-  String get readerFirstChapter => 'This is the first chapter';
+  String get readerFirstChapter => 'एषः प्रथमः अध्यायः';
 
   @override
-  String get readerLastChapter => 'You\'re all caught up';
+  String get readerLastChapter => 'त्वं सर्वं पठितवान्';
 
   @override
-  String get readerFailed => 'Couldn\'t open this chapter';
+  String get readerFailed => 'इमम् अध्यायम् उद्घाटयितुं न शक्तम्';
 
   @override
-  String get readerNoText => 'This chapter has no text';
+  String get readerNoText => 'अस्मिन् अध्याये पाठः नास्ति';
 
   @override
-  String get readerPerTitle => 'Only for this title';
+  String get readerPerTitle => 'अस्य शीर्षकस्य कृते केवलम्';
 
   @override
-  String get readerPerTitleDesc =>
-      'Keep these reader settings for this title only';
+  String get readerPerTitleDesc => 'एताः रीडर्-सेटिंग्स् केवलं अस्य शीर्षकस्य कृते रक्ष';
 
   @override
-  String get readerSectionReading => 'Reading';
+  String get readerSectionReading => 'पठनम्';
 
   @override
-  String get readerSectionControls => 'Controls';
+  String get readerSectionControls => 'नियन्त्रणानि';
 
   @override
-  String get readerSectionDisplay => 'Display';
+  String get readerSectionDisplay => 'प्रदर्शनम्';
 
   @override
-  String get readerSectionNovel => 'Novel';
+  String get readerSectionNovel => 'नॉवल्';
 
   @override
-  String get readerSectionReset => 'Reset';
+  String get readerSectionReset => 'पुनःस्थापय';
 
   @override
-  String get readerMode => 'Reading mode';
+  String get readerMode => 'पठन-मोडः';
 
   @override
-  String get readerModeRtl => 'Right to left';
+  String get readerModeRtl => 'दक्षिणतः वामम्';
 
   @override
-  String get readerModeLtr => 'Left to right';
+  String get readerModeLtr => 'वामतः दक्षिणम्';
 
   @override
-  String get readerModeVertical => 'Vertical pages';
+  String get readerModeVertical => 'ऊर्ध्व-पृष्ठानि';
 
   @override
-  String get readerModeWebtoon => 'Webtoon';
+  String get readerModeWebtoon => 'वेबटून्';
 
   @override
-  String get readerModeContinuous => 'Continuous scroll';
+  String get readerModeContinuous => 'निरन्तर-स्क्रोल्';
 
   @override
-  String get readerScale => 'Image scale';
+  String get readerScale => 'चित्र-मापः';
 
   @override
-  String get readerScaleFit => 'Fit screen';
+  String get readerScaleFit => 'पटलानुसारं योग्यम्';
 
   @override
-  String get readerScaleWidth => 'Fit width';
+  String get readerScaleWidth => 'विस्तारानुसारं योग्यम्';
 
   @override
-  String get readerScaleHeight => 'Fit height';
+  String get readerScaleHeight => 'उच्चतानुसारं योग्यम्';
 
   @override
-  String get readerScaleOriginal => 'Original size';
+  String get readerScaleOriginal => 'मूल-आकारः';
 
   @override
-  String get readerScaleSmart => 'Smart fit';
+  String get readerScaleSmart => 'चतुरं योग्यीकरणम्';
 
   @override
-  String get readerDoublePage => 'Double pages';
+  String get readerDoublePage => 'द्वि-पृष्ठानि';
 
   @override
-  String get readerDoublePageDesc => 'Show two pages side by side in landscape';
+  String get readerDoublePageDesc => 'क्षैतिजे द्वे पृष्ठे एकस्मिन् पङ्क्तौ दर्शय';
 
   @override
-  String get readerDoubleTapZoom => 'Double tap to zoom';
+  String get readerDoubleTapZoom => 'द्विःस्पर्शेन ज़ूम्';
 
   @override
-  String get readerDoubleTapZoomDesc =>
-      'Zoom a page in and out with a double tap';
+  String get readerDoubleTapZoomDesc => 'द्विःस्पर्शेन पृष्ठं वर्धय लघूकुरु च';
 
   @override
-  String get readerAnimate => 'Page animation';
+  String get readerAnimate => 'पृष्ठ-एनिमेशन्';
 
   @override
-  String get readerAnimateDesc => 'Animate page turns';
+  String get readerAnimateDesc => 'पृष्ठ-परिवर्तनं सचलं कुरु';
 
   @override
-  String get readerSidePadding => 'Side padding';
+  String get readerSidePadding => 'पार्श्व-अन्तरम्';
 
   @override
-  String get readerSidePaddingDesc => 'Space beside the pages in percent';
+  String get readerSidePaddingDesc => 'पृष्ठानां पार्श्वे स्थानं शतांशे';
 
   @override
-  String get readerPageGap => 'Page gap';
+  String get readerPageGap => 'पृष्ठान्तरम्';
 
   @override
-  String get readerPageGapDesc => 'Space between pages';
+  String get readerPageGapDesc => 'पृष्ठयोः मध्ये स्थानम्';
 
   @override
-  String get readerAutoNext => 'Continue into the next chapter';
+  String get readerAutoNext => 'अग्रिमे अध्याये अनुवर्तय';
 
   @override
-  String get readerAutoNextDesc =>
-      'Load the next chapter while you read the end of this one';
+  String get readerAutoNextDesc => 'अस्य अध्यायस्य अन्तं पठन् अग्रिमम् अध्यायम् आनय';
 
   @override
-  String get readerPreload => 'Preload pages';
+  String get readerPreload => 'पृष्ठानि पूर्वम् आनय';
 
   @override
-  String get readerPreloadDesc => 'How many pages to download ahead';
+  String get readerPreloadDesc => 'कति पृष्ठानि पूर्वं डाउनलोड् कर्तव्यानि';
 
   @override
-  String get readerTapZones => 'Tap zones';
+  String get readerTapZones => 'स्पर्श-क्षेत्राणि';
 
   @override
-  String get readerTapDefault => 'Default';
+  String get readerTapDefault => 'मूलभूतम्';
 
   @override
-  String get readerTapLShaped => 'L-shaped';
+  String get readerTapLShaped => 'L-आकारम्';
 
   @override
-  String get readerTapKindle => 'Kindle-like';
+  String get readerTapKindle => 'Kindle-सदृशम्';
 
   @override
-  String get readerTapEdge => 'Edges only';
+  String get readerTapEdge => 'केवलं प्रान्ताः';
 
   @override
-  String get readerTapOff => 'Disabled';
+  String get readerTapOff => 'निष्क्रियम्';
 
   @override
-  String get readerInvertTaps => 'Invert tap zones';
+  String get readerInvertTaps => 'स्पर्श-क्षेत्राणि विपरीतानि कुरु';
 
   @override
-  String get readerInvertTapsDesc => 'Swap the previous and next areas';
+  String get readerInvertTapsDesc => 'पूर्व-अग्रिम-क्षेत्रे परिवर्तय';
 
   @override
-  String get readerBackground => 'Background';
+  String get readerBackground => 'पृष्ठभूमिः';
 
   @override
-  String get readerBackgroundBlack => 'Black';
+  String get readerBackgroundBlack => 'कृष्णम्';
 
   @override
-  String get readerBackgroundGray => 'Gray';
+  String get readerBackgroundGray => 'धूसरम्';
 
   @override
-  String get readerBackgroundWhite => 'White';
+  String get readerBackgroundWhite => 'श्वेतम्';
 
   @override
-  String get readerBackgroundTheme => 'App theme';
+  String get readerBackgroundTheme => 'ऐप्-थीम्';
 
   @override
-  String get readerFilter => 'Color filter';
+  String get readerFilter => 'वर्ण-छानकम्';
 
   @override
-  String get readerFilterNone => 'None';
+  String get readerFilterNone => 'किमपि न';
 
   @override
-  String get readerFilterGrayscale => 'Grayscale';
+  String get readerFilterGrayscale => 'धूसरस्तरः';
 
   @override
-  String get readerFilterInvert => 'Invert';
+  String get readerFilterInvert => 'विपरीतम्';
 
   @override
-  String get readerFilterSepia => 'Sepia';
+  String get readerFilterSepia => 'सीपिया';
 
   @override
-  String get readerDim => 'Dim';
+  String get readerDim => 'मन्दय';
 
   @override
-  String get readerDimDesc => 'Darken the pages';
+  String get readerDimDesc => 'पृष्ठानि अन्धकारय';
 
   @override
-  String get readerPageNumber => 'Page number';
+  String get readerPageNumber => 'पृष्ठ-सङ्ख्या';
 
   @override
-  String get readerPageNumberDesc => 'Show the page number while reading';
+  String get readerPageNumberDesc => 'पठन्ती समये पृष्ठ-सङ्ख्यां दर्शय';
 
   @override
-  String get readerFullscreen => 'Fullscreen';
+  String get readerFullscreen => 'पूर्ण-पटलम्';
 
   @override
-  String get readerFullscreenDesc => 'Hide the system bars';
+  String get readerFullscreenDesc => 'सिस्टम्-पट्टिकाः गोपय';
 
   @override
-  String get readerCropBorders => 'Crop borders';
+  String get readerCropBorders => 'प्रान्तान् कर्तय';
 
   @override
-  String get readerCropBordersDesc =>
-      'Trim blank white or black margins from pages';
+  String get readerCropBordersDesc => 'पृष्ठेभ्यः रिक्तान् श्वेतान् कृष्णान् वा प्रान्तान् कर्तय';
 
   @override
-  String get readerVolumeKeys => 'Volume keys turn pages';
+  String get readerVolumeKeys => 'ध्वनि-कुञ्जिकाभिः पृष्ठं परिवर्तय';
 
   @override
-  String get readerVolumeKeysDesc =>
-      'Volume down goes forward, volume up goes back';
+  String get readerVolumeKeysDesc => 'ध्वनि-अधः अग्रे, ध्वनि-उपरि पृष्ठतः';
 
   @override
-  String get readerBookmarks => 'Bookmarks';
+  String get readerBookmarks => 'पृष्ठचिह्नानि';
 
   @override
-  String get readerBookmarkAdd => 'Add bookmark';
+  String get readerBookmarkAdd => 'पृष्ठचिह्नं योजय';
 
   @override
-  String get readerBookmarkRemove => 'Remove bookmark';
+  String get readerBookmarkRemove => 'पृष्ठचिह्नम् अपनय';
 
   @override
-  String get readerBookmarksEmpty => 'No bookmarks yet';
+  String get readerBookmarksEmpty => 'पृष्ठचिह्नानि अद्यापि न सन्ति';
 
   @override
   String readerBookmarkPage(int page, int total) {
-    return 'Page $page of $total';
+    return 'पृष्ठं $page / $total';
   }
 
   @override
-  String get readerAutoScroll => 'Auto scroll';
+  String get readerAutoScroll => 'स्वयं-स्क्रोल्';
 
   @override
-  String get readerAutoScrollStop => 'Stop auto scroll';
+  String get readerAutoScrollStop => 'स्वयं-स्क्रोल् निरुन्धि';
 
   @override
-  String get readerAutoScrollSpeed => 'Auto scroll speed';
+  String get readerAutoScrollSpeed => 'स्वयं-स्क्रोल्-वेगः';
 
   @override
-  String get readerAutoScrollSpeedDesc =>
-      'How fast pages scroll or turn on their own';
+  String get readerAutoScrollSpeedDesc => 'पृष्ठानि स्वयं कियता वेगेन स्क्रोल् भवन्ति परिवर्तन्ते वा';
 
   @override
-  String get readerKeepOn => 'Keep screen on';
+  String get readerKeepOn => 'पटलं प्रज्वलितं रक्ष';
 
   @override
-  String get readerKeepOnDesc =>
-      'Stop the screen from turning off while reading';
+  String get readerKeepOnDesc => 'पठन्ती समये पटलं निर्वापितं मा भवतु';
 
   @override
-  String get readerOrientation => 'Orientation';
+  String get readerOrientation => 'दिशा';
 
   @override
-  String get readerOrientationFree => 'Free';
+  String get readerOrientationFree => 'मुक्तम्';
 
   @override
-  String get readerOrientationPortrait => 'Portrait';
+  String get readerOrientationPortrait => 'ऊर्ध्वम्';
 
   @override
-  String get readerOrientationLandscape => 'Landscape';
+  String get readerOrientationLandscape => 'क्षैतिजम्';
 
   @override
-  String get readerSaveProgress => 'Save progress';
+  String get readerSaveProgress => 'प्रगतिं रक्ष';
 
   @override
-  String get readerSaveProgressDesc =>
-      'Remember your page and mark chapters as read';
+  String get readerSaveProgressDesc => 'तव पृष्ठं स्मर अध्यायान् च पठितान् चिह्नय';
 
   @override
-  String get readerReset => 'Reset reader settings';
+  String get readerReset => 'रीडर्-सेटिंग्स् पुनःस्थापय';
 
   @override
-  String get readerResetDesc => 'Back to the defaults';
+  String get readerResetDesc => 'मूलभूतानि प्रति प्रत्यागच्छ';
 
   @override
-  String get novelSize => 'Text size';
+  String get novelSize => 'पाठ-आकारः';
 
   @override
-  String get novelFont => 'Font';
+  String get novelFont => 'अक्षरशैली';
 
   @override
-  String get novelLineHeight => 'Line height';
+  String get novelLineHeight => 'पङ्क्ति-उच्चता';
 
   @override
-  String get novelParagraph => 'Paragraph spacing';
+  String get novelParagraph => 'अनुच्छेद-अन्तरम्';
 
   @override
-  String get novelMargin => 'Margins';
+  String get novelMargin => 'प्रान्ताः';
 
   @override
-  String get novelTheme => 'Reader theme';
+  String get novelTheme => 'रीडर्-थीम्';
 
   @override
-  String get novelThemeApp => 'App theme';
+  String get novelThemeApp => 'ऐप्-थीम्';
 
   @override
-  String get novelThemeLight => 'Light';
+  String get novelThemeLight => 'प्रकाशः';
 
   @override
-  String get novelThemeSepia => 'Sepia';
+  String get novelThemeSepia => 'सीपिया';
 
   @override
-  String get novelThemeDark => 'Dark';
+  String get novelThemeDark => 'अन्धकारः';
 
   @override
-  String get novelThemeBlack => 'Black';
+  String get novelThemeBlack => 'कृष्णम्';
 
   @override
-  String get novelJustify => 'Justify text';
+  String get novelJustify => 'पाठं समायोजय';
 
   @override
-  String get novelJustifyDesc => 'Align text to both edges';
+  String get novelJustifyDesc => 'पाठम् उभयप्रान्तयोः समं कुरु';
 
   @override
-  String get trackProgressTitle => 'Save progress?';
+  String get trackProgressTitle => 'प्रगतिं रक्षसि?';
 
   @override
   String trackProgressAnime(String name) {
-    return 'Track $name on your list as you watch? Choose \"This device only\" to keep it local, or No to save nothing.';
+    return 'पश्यन्ती समये $name तव सूचीयां अनुसर्तव्यं वा? केवलं स्थानीयं रक्षितुं \"केवलम् अस्मिन् उपकरणे\" चिनु, किमपि न रक्षितुं न इति चिनु।';
   }
 
   @override
   String trackProgressManga(String name) {
-    return 'Track $name on your list when you finish a chapter? Choose \"This device only\" to keep it local, or No to save nothing.';
+    return 'अध्यायं समाप्य $name तव सूचीयां अनुसर्तव्यं वा? केवलं स्थानीयं रक्षितुं \"केवलम् अस्मिन् उपकरणे\" चिनु, किमपि न रक्षितुं न इति चिनु।';
   }
 
   @override
-  String get trackProgressRemember => 'Remember my choice';
+  String get trackProgressRemember => 'मम चयनं स्मर';
 
   @override
-  String get trackProgressYes => 'Save';
+  String get trackProgressYes => 'रक्ष';
 
   @override
-  String get trackProgressReset =>
-      'Save progress prompt reset for this type, it will ask again';
+  String get trackProgressReset => 'अस्य प्रकारस्य प्रगति-रक्षण-प्रश्नः पुनःस्थापितः, पुनः प्रक्ष्यति';
 
   @override
-  String get trackProgressNo => 'No';
+  String get trackProgressNo => 'न';
 
   @override
-  String get trackProgressOff => 'Off';
+  String get trackProgressOff => 'निष्क्रिय';
 
   @override
-  String get trackProgressLocal => 'This device only';
+  String get trackProgressLocal => 'केवलम् अस्मिन् उपकरणे';
 
   @override
-  String get trackProgressSettingAnime => 'Track anime progress';
+  String get trackProgressSettingAnime => 'अनिमे-प्रगतिम् अनुसर';
 
   @override
-  String get trackProgressSettingManga => 'Track manga and novel progress';
+  String get trackProgressSettingManga => 'मांगा-नॉवल्-प्रगतिम् अनुसर';
 
   @override
-  String get trackProgressSettingDesc =>
-      'What to do when you open an episode or finish a chapter';
+  String get trackProgressSettingDesc => 'एपिसोड् उद्घाटिते अध्याये समाप्ते वा किं कर्तव्यम्';
 
   @override
-  String get trackProgressAsk => 'Ask';
+  String get trackProgressAsk => 'पृच्छ';
 
   @override
-  String get trackProgressAlways => 'Always';
+  String get trackProgressAlways => 'सर्वदा';
 
   @override
-  String get trackProgressNever => 'Never';
+  String get trackProgressNever => 'कदापि न';
 
   @override
-  String get dantotsuImport => 'Import from Dantotsu';
+  String get dantotsuImport => 'Dantotsu तः आनय';
 
   @override
-  String get dantotsuImportDesc =>
-      'Read a Dantotsu settings backup (.ani, or encrypted .sani)';
+  String get dantotsuImportDesc => 'Dantotsu-सेटिंग्स्-बैकप् पठ (.ani, अथवा गूढलिखितं .sani)';
 
   @override
-  String get dantotsuPick => 'Choose a Dantotsu backup';
+  String get dantotsuPick => 'Dantotsu-बैकप् चिनु';
 
   @override
-  String get dantotsuNothing => 'Nothing in this file can be imported';
+  String get dantotsuNothing => 'अस्यां फाइल् मध्ये आनेतुं किमपि नास्ति';
 
   @override
-  String get dantotsuApply => 'Import selected';
+  String get dantotsuApply => 'चितान् आनय';
 
   @override
   String dantotsuDone(int done, int total) {
-    return 'Imported $done of $total';
+    return '$total मध्ये $done आनीताः';
   }
 
   @override
-  String get dantotsuGroupAccounts => 'Accounts';
+  String get dantotsuGroupAccounts => 'खातानि';
 
   @override
-  String get dantotsuGroupAppearance => 'Appearance';
+  String get dantotsuGroupAppearance => 'रूपम्';
 
   @override
-  String get dantotsuGroupExtensions => 'Extensions';
+  String get dantotsuGroupExtensions => 'एक्स्टेंशन्स्';
 
   @override
-  String get dantotsuGroupApp => 'App';
+  String get dantotsuGroupApp => 'ऐप्';
 
   @override
-  String get dantotsuGroupPlayer => 'Player';
+  String get dantotsuGroupPlayer => 'प्लेयर्';
 
   @override
-  String get dantotsuAnilist => 'AniList login';
+  String get dantotsuAnilist => 'AniList लॉगिन';
 
   @override
-  String get dantotsuMal => 'MyAnimeList login';
+  String get dantotsuMal => 'MyAnimeList लॉगिन';
 
   @override
-  String get dantotsuDiscord => 'Discord Rich Presence token';
+  String get dantotsuDiscord => 'Discord Rich Presence टोकन्';
 
   @override
-  String get dantotsuTheme => 'Theme';
+  String get dantotsuTheme => 'थीम्';
 
   @override
-  String get dantotsuReposAnime => 'Anime extension repositories';
+  String get dantotsuReposAnime => 'अनिमे-एक्स्टेंशन्-भण्डाराः';
 
   @override
-  String get dantotsuReposManga => 'Manga extension repositories';
+  String get dantotsuReposManga => 'मांगा-एक्स्टेंशन्-भण्डाराः';
 
   @override
-  String get dantotsuReposNovel => 'Novel extension repositories';
+  String get dantotsuReposNovel => 'नॉवल्-एक्स्टेंशन्-भण्डाराः';
 
   @override
-  String get dantotsuUpdates => 'Update check';
+  String get dantotsuUpdates => 'अद्यतन-परीक्षा';
 
   @override
-  String get dantotsuComments => 'Comments';
+  String get dantotsuComments => 'टिप्पण्यः';
 
   @override
-  String get dantotsuActivity => 'AniList notification polling';
+  String get dantotsuActivity => 'AniList सूचना-पोलिङ्';
 
   @override
-  String get dantotsuDns => 'DNS provider';
+  String get dantotsuDns => 'DNS प्रदाता';
 
   @override
-  String get dantotsuPlayer => 'Player speed and subtitle colours';
+  String get dantotsuPlayer => 'प्लेयर्-वेगः उपशीर्षक-वर्णाः च';
 
   @override
-  String get dantotsuWarning =>
-      'This file holds login tokens. Keep it private.';
+  String get dantotsuWarning => 'अस्यां फाइल् मध्ये लॉगिन्-टोकन्स् सन्ति। इमां गुप्तां रक्ष।';
 
   @override
-  String get novelIndent => 'Indent paragraphs';
+  String get novelIndent => 'अनुच्छेदान् अन्तःसारय';
 
   @override
-  String get novelIndentDesc => 'Start each paragraph with a first-line indent';
+  String get novelIndentDesc => 'प्रत्येकम् अनुच्छेदं प्रथम-पङ्क्ति-अन्तःसारणेन आरभस्व';
 
   @override
-  String get novelLetterSpacing => 'Letter spacing';
+  String get novelLetterSpacing => 'अक्षरान्तरम्';
 
   @override
-  String get novelSectionTranslate => 'Translation';
+  String get novelSectionTranslate => 'अनुवादः';
 
   @override
-  String get sectionExperimental => 'Experimental';
+  String get sectionExperimental => 'प्रायोगिकम्';
 
   @override
-  String get kitsuGraphqlDetail => 'Faster detail pages (GraphQL)';
+  String get kitsuGraphqlDetail => 'द्रुततराणि विवरणपृष्ठानि (GraphQL)';
 
   @override
-  String get kitsuGraphqlDetailDesc =>
-      'Load a title with its characters, staff and your entry in one request';
+  String get kitsuGraphqlDetailDesc => 'शीर्षकं तस्य पात्रैः दलेन तव प्रविष्ट्या च सह एकेन अनुरोधेन आनय';
 
   @override
-  String get togetherTitle => 'Watch together';
+  String get togetherTitle => 'सह पश्य';
 
   @override
-  String get togetherIntro =>
-      'Paste the room link your friend sent you. You join straight away and the player opens when they start watching.';
+  String get togetherIntro => 'तव मित्रेण प्रेषितं कक्ष-लिङ्कं स्थापय। त्वं तत्क्षणं संयुज्यसे, सः पश्यति चेत् प्लेयर् उद्घाट्यते।';
 
   @override
-  String get togetherName => 'Your name';
+  String get togetherName => 'तव नाम';
 
   @override
-  String get togetherRoom => 'Room';
+  String get togetherRoom => 'कक्षः';
 
   @override
-  String get togetherNewRoom => 'New random room';
+  String get togetherNewRoom => 'नूतनः यादृच्छिकः कक्षः';
 
   @override
-  String get togetherServer => 'Server';
+  String get togetherServer => 'सर्वरः';
 
   @override
-  String get togetherPort => 'Port';
+  String get togetherPort => 'पोर्ट्';
 
   @override
-  String get togetherPassword => 'Server password (optional)';
+  String get togetherPassword => 'सर्वर्-पासवर्ड् (वैकल्पिकम्)';
 
   @override
-  String get togetherPublicNote =>
-      'Public servers have no password and rooms are open. Use a long room name and share it only with friends.';
+  String get togetherPublicNote => 'सार्वजनिक-सर्वरेषु पासवर्ड् नास्ति कक्षाः मुक्ताः च। दीर्घं कक्ष-नाम प्रयुङ्क्ष्व केवलं मित्रैः सह साझां च कुरु।';
 
   @override
-  String get togetherConnect => 'Connect';
+  String get togetherConnect => 'संयोजय';
 
   @override
-  String get togetherConnecting => 'Connecting…';
+  String get togetherConnecting => 'संयोज्यते…';
 
   @override
-  String get togetherLeave => 'Leave room';
+  String get togetherLeave => 'कक्षं त्यज';
 
   @override
-  String get togetherLeftRoom => 'You left the room';
+  String get togetherLeftRoom => 'त्वं कक्षं त्यक्तवान्';
 
   @override
-  String get togetherReady => 'Ready';
+  String get togetherReady => 'सिद्धः';
 
   @override
-  String get togetherYou => 'You';
+  String get togetherYou => 'त्वम्';
 
   @override
-  String get togetherNoChat => 'No messages yet';
+  String get togetherNoChat => 'सन्देशाः अद्यापि न सन्ति';
 
   @override
-  String get togetherChatHint => 'Message';
+  String get togetherChatHint => 'सन्देशः';
 
   @override
-  String get togetherCopyInvite => 'Copy invite';
+  String get togetherCopyInvite => 'आमन्त्रणं प्रतिलिख';
 
   @override
-  String get togetherInviteCopied => 'Server and room copied';
+  String get togetherInviteCopied => 'सर्वरः कक्षः च प्रतिलिखितौ';
 
   @override
-  String get togetherFileMismatch => 'Different file or length';
+  String get togetherFileMismatch => 'भिन्ना फाइल् अथवा दैर्घ्यम्';
 
   @override
-  String get togetherConnectionLost => 'Connection lost';
+  String get togetherConnectionLost => 'संयोजनं नष्टम्';
 
   @override
   String togetherConnectedTo(String room) {
-    return 'Connected to $room';
+    return '$room प्रति संयुक्तः';
   }
 
   @override
   String togetherFailed(String error) {
-    return 'Couldn\'t connect: $error';
+    return 'संयोजयितुं न शक्तम्: $error';
   }
 
   @override
   String togetherJoined(String name) {
-    return '$name joined';
+    return '$name संयुक्तः';
   }
 
   @override
   String togetherLeft(String name) {
-    return '$name left';
+    return '$name निर्गतः';
   }
 
   @override
   String togetherPaused(String name) {
-    return '$name paused';
+    return '$name विरामं कृतवान्';
   }
 
   @override
   String togetherResumed(String name) {
-    return '$name resumed';
+    return '$name पुनः आरब्धवान्';
   }
 
   @override
   String togetherSeeked(String name, String time) {
-    return '$name jumped to $time';
+    return '$name $time प्रति उत्पतितवान्';
   }
 
   @override
   String togetherOtherService(String service) {
-    return 'The host is on $service, syncing is off';
+    return 'होस्ट् $service मध्ये अस्ति, समकालीनीकरणं निष्क्रियम्';
   }
 
   @override
-  String get togetherFollowFailed =>
-      'Couldn\'t open the host\'s episode. Open it yourself.';
+  String get togetherFollowFailed => 'होस्ट्-एपिसोड् उद्घाटयितुं न शक्तम्। स्वयम् उद्घाटय।';
 
   @override
-  String get togetherHostRole => 'Host a room';
+  String get togetherHostRole => 'कक्षं आयोजय';
 
   @override
-  String get togetherJoinRole => 'Join a room';
+  String get togetherJoinRole => 'कक्षे संयुज्यस्व';
 
   @override
-  String get togetherFollow => 'Follow the host\'s episode';
+  String get togetherFollow => 'होस्ट्-एपिसोड् अनुसर';
 
   @override
-  String get togetherFollowDesc =>
-      'Opens and switches episodes automatically when you use the same service';
+  String get togetherFollowDesc => 'समाने सेवायां प्रयुक्ते सति एपिसोड्स् स्वयं उद्घाटयति परिवर्तयति च';
 
   @override
-  String get togetherOpenHost => 'Open host\'s episode';
+  String get togetherOpenHost => 'होस्ट्-एपिसोड् उद्घाटय';
 
   @override
   String togetherHostWatching(String title) {
-    return 'Host: $title';
+    return 'होस्ट्: $title';
   }
 
   @override
-  String get togetherLiveChat => 'Live chat';
+  String get togetherLiveChat => 'सजीव-चैट्';
 
   @override
-  String get togetherShowChat => 'Show live chat';
+  String get togetherShowChat => 'सजीव-चैट् दर्शय';
 
   @override
-  String get togetherWaitingHost => 'Waiting for the host to start an episode';
+  String get togetherWaitingHost => 'होस्ट् एपिसोड् आरभताम् इति प्रतीक्षा';
 
   @override
-  String get togetherDifferentService =>
-      'The host is on another service, syncing is off';
+  String get togetherDifferentService => 'होस्ट् अन्यस्यां सेवायाम् अस्ति, समकालीनीकरणं निष्क्रियम्';
 
   @override
-  String get togetherNoSource =>
-      'Install an anime extension to follow the host';
+  String get togetherNoSource => 'होस्ट् अनुसर्तुं अनिमे-एक्स्टेंशन् स्थापय';
 
   @override
   String togetherNoMatch(String source) {
-    return '$source has no match for the host\'s title';
+    return '$source मध्ये होस्ट्-शीर्षकस्य मेलनं नास्ति';
   }
 
   @override
   String togetherNoEpisode(String source) {
-    return '$source doesn\'t have the host\'s episode';
+    return '$source मध्ये होस्ट्-एपिसोड् नास्ति';
   }
 
   @override
-  String get togetherRoomLink => 'Room link';
+  String get togetherRoomLink => 'कक्ष-लिङ्कः';
 
   @override
-  String get togetherBadLink => 'That isn\'t a room link';
+  String get togetherBadLink => 'एषः कक्ष-लिङ्कः न अस्ति';
 
   @override
-  String get togetherHostClosed => 'The host closed the room';
+  String get togetherHostClosed => 'होस्ट् कक्षं पिहितवान्';
 
   @override
-  String get togetherHostBadge => 'Host';
+  String get togetherHostBadge => 'होस्ट्';
 
   @override
-  String get togetherNowPlaying => 'Now playing';
+  String get togetherNowPlaying => 'इदानीं चलति';
 
   @override
   String togetherWatchingCount(int count) {
-    return '$count watching';
+    return '$count पश्यन्ति';
   }
 
   @override
   String togetherWantsPause(String user) {
-    return '$user wants to pause';
+    return '$user विरामं कर्तुम् इच्छति';
   }
 
   @override
   String togetherWantsResume(String user) {
-    return '$user wants to resume';
+    return '$user पुनः आरब्धुम् इच्छति';
   }
 
   @override
-  String get togetherChip => 'Together';
+  String get togetherChip => 'सह';
 
   @override
-  String get togetherSettingsDesc => 'Join a friend\'s room with a link';
+  String get togetherSettingsDesc => 'मित्रस्य कक्षे लिङ्केन संयुज्यस्व';
 
   @override
-  String get togetherNoPlayer =>
-      'Open an episode and it syncs with the room automatically. Chat and the member list work right now.';
+  String get togetherNoPlayer => 'एपिसोड् उद्घाटय, सः कक्षेण सह स्वयं समकालीनः भवति। चैट् सदस्य-सूची च इदानीं कार्यं कुरुतः।';
 
   @override
   String togetherWatching(String name, String file) {
-    return '$name is watching $file';
+    return '$name $file पश्यति';
   }
 
   @override
-  String get novelBilingual => 'Show original and translation';
+  String get novelBilingual => 'मूलम् अनुवादं च दर्शय';
 
   @override
-  String get novelBilingualDesc =>
-      'Each paragraph shows the original text with its translation below it';
+  String get novelBilingualDesc => 'प्रत्येकः अनुच्छेदः मूलपाठं तस्य अधः अनुवादं च दर्शयति';
 
   @override
-  String get novelTranslateTo => 'Translate to';
+  String get novelTranslateTo => 'एतत् प्रति अनुवादय';
 
   @override
-  String get novelTranslateOff => 'Off';
+  String get novelTranslateOff => 'निष्क्रिय';
 
   @override
-  String get novelSectionSpeech => 'Text to speech';
+  String get novelSectionSpeech => 'पाठतः वाणी';
 
   @override
-  String get novelSpeechRate => 'Speech speed';
+  String get novelSpeechRate => 'वाणी-वेगः';
 
   @override
-  String get novelSpeechPitch => 'Speech pitch';
+  String get novelSpeechPitch => 'वाणी-स्वरः';
 
   @override
-  String get novelSpeak => 'Read aloud';
+  String get novelSpeak => 'उच्चैः पठ';
 
   @override
-  String get novelSpeakStop => 'Stop reading aloud';
+  String get novelSpeakStop => 'उच्चैः पठनं निरुन्धि';
 
   @override
-  String get novelTranslate => 'Translate chapter';
+  String get novelTranslate => 'अध्यायम् अनुवादय';
 
   @override
-  String get novelTranslateShowOriginal => 'Show original';
+  String get novelTranslateShowOriginal => 'मूलं दर्शय';
 
   @override
-  String get novelTranslating => 'Translating…';
+  String get novelTranslating => 'अनुवादः चलति…';
 
   @override
   String novelTranslateFailed(String error) {
-    return 'Translation failed: $error';
+    return 'अनुवादः विफलः: $error';
   }
 
   @override
-  String get novelSpeechUnavailable =>
-      'Text to speech is not available on this device';
+  String get novelSpeechUnavailable => 'अस्मिन् उपकरणे पाठतः वाणी उपलब्धा नास्ति';
 
   @override
-  String get novelSpeechVoice => 'Voice';
+  String get novelSpeechVoice => 'स्वरः';
 
   @override
-  String get novelSpeechVoiceDefault => 'System default';
+  String get novelSpeechVoiceDefault => 'सिस्टम्-मूलभूतम्';
 
   @override
-  String get novelSpeakPrevious => 'Previous line';
+  String get novelSpeakPrevious => 'पूर्वा पङ्क्तिः';
 
   @override
-  String get novelSpeakNext => 'Next line';
+  String get novelSpeakNext => 'अग्रिमा पङ्क्तिः';
 
   @override
-  String get novelTapPaging => 'Tap edges to turn page';
+  String get novelTapPaging => 'पृष्ठ-परिवर्तनाय प्रान्तौ स्पृश';
 
   @override
-  String get novelTapPagingDesc =>
-      'Tap the left or right side to scroll a page, the middle shows the controls';
+  String get novelTapPagingDesc => 'पृष्ठं स्क्रोल् कर्तुं वामं दक्षिणं वा पार्श्वं स्पृश, मध्यं नियन्त्रणानि दर्शयति';
 
   @override
   String novelMinutesLeft(int count) {
-    return '$count min left';
+    return '$count मिनिट्स् शेषाः';
   }
 
   @override
-  String get novelBold => 'Bold text';
+  String get novelBold => 'स्थूल-पाठः';
 
   @override
-  String get novelBoldDesc => 'Use a heavier weight';
+  String get novelBoldDesc => 'स्थूलतरं भारं प्रयुङ्क्ष्व';
 
   @override
   String readerFinishedChapter(String chapter) {
-    return 'Finished $chapter';
+    return '$chapter समाप्तम्';
   }
 
   @override
   String readerNextUp(String chapter) {
-    return 'Next: $chapter';
+    return 'अग्रिमम्: $chapter';
   }
 
   @override
   String readerPreviousUp(String chapter) {
-    return 'Previous: $chapter';
+    return 'पूर्वम्: $chapter';
   }
 
   @override
-  String get readerNoPages => 'This chapter has no pages';
+  String get readerNoPages => 'अस्मिन् अध्याये पृष्ठानि न सन्ति';
 
   @override
-  String get readerLoadingPages => 'Loading pages…';
+  String get readerLoadingPages => 'पृष्ठानि आनीयन्ते…';
 
   @override
-  String get readerSlowPage => 'Still loading this page…';
+  String get readerSlowPage => 'इदं पृष्ठम् अद्यापि आनीयते…';
 
   @override
-  String get readerPageFailed => 'Couldn\'t load this page';
+  String get readerPageFailed => 'इदं पृष्ठम् आनेतुं न शक्तम्';
 
   @override
-  String get playerShowComments => 'Show comments';
+  String get playerShowComments => 'टिप्पण्यः दर्शय';
 
   @override
-  String get playerHideComments => 'Hide comments';
+  String get playerHideComments => 'टिप्पण्यः गोपय';
 
   @override
-  String get playerSubtitles => 'Subtitles';
+  String get playerSubtitles => 'उपशीर्षकाणि';
 
   @override
-  String get playerSubtitlesOff => 'Subtitles off';
+  String get playerSubtitlesOff => 'उपशीर्षकाणि निष्क्रियानि';
 
   @override
-  String get playerAudio => 'Audio';
+  String get playerAudio => 'ध्वनिः';
 
   @override
-  String get playerAddSubtitle => 'Add subtitle file';
+  String get playerAddSubtitle => 'उपशीर्षक-फाइलं योजय';
 
   @override
-  String get playerAddAudio => 'Add audio file';
+  String get playerAddAudio => 'ध्वनि-फाइलं योजय';
 
   @override
-  String get playerChapters => 'Chapters';
+  String get playerChapters => 'अध्यायाः';
 
   @override
-  String get playerNoChapters => 'No chapters';
+  String get playerNoChapters => 'अध्यायाः न सन्ति';
 
   @override
-  String get playerTimestamp => 'Timestamp';
+  String get playerTimestamp => 'समय-चिह्नम्';
 
   @override
-  String get playerAutoPlayDelay => 'Next episode countdown';
+  String get playerAutoPlayDelay => 'अग्रिम-एपिसोड्-गणना';
 
   @override
-  String get playerWatchedAt => 'Count as watched at';
+  String get playerWatchedAt => 'एतस्मिन् समये दृष्टम् इति गणय';
 
   @override
   String playerNextIn(int seconds) {
-    return 'Next episode in ${seconds}s';
+    return 'अग्रिम एपिसोड् ${seconds}s मध्ये';
   }
 
   @override
-  String get playerPlayNow => 'Play now';
+  String get playerPlayNow => 'इदानीं चालय';
 
   @override
   String playerAutoSkipOn(String name) {
-    return '$name: will skip automatically for this title';
+    return '$name: अस्य शीर्षकस्य कृते स्वयं त्यक्ष्यति';
   }
 
   @override
   String playerAutoSkipOff(String name) {
-    return '$name: will not skip automatically for this title';
+    return '$name: अस्य शीर्षकस्य कृते स्वयं न त्यक्ष्यति';
   }
 
   @override
-  String get playerAudioLanguage => 'Preferred audio language';
+  String get playerAudioLanguage => 'प्राधान्य-ध्वनि-भाषा';
 
   @override
-  String get playerLanguageOrderHint =>
-      'Separate languages with commas. The first one found is used.';
+  String get playerLanguageOrderHint => 'भाषाः अल्पविरामैः पृथक् कुरु। प्रथमा प्राप्ता प्रयुज्यते।';
 
   @override
-  String get playerPip => 'Picture in picture';
+  String get playerPip => 'चित्रे चित्रम्';
 
   @override
-  String get playerPipRestore => 'Back to the player';
+  String get playerPipRestore => 'प्लेयर् प्रति प्रत्यागच्छ';
 
   @override
-  String get playerAutoPip => 'Picture in picture on leave';
+  String get playerAutoPip => 'निर्गमने चित्रे चित्रम्';
 
   @override
-  String get playerAutoPipDesc =>
-      'Keep playing in a small window when you leave the app';
+  String get playerAutoPipDesc => 'ऐप्तः निर्गते सति लघु-वातायने चालनं अनुवर्तय';
 
   @override
   String playerAutoPlaying(String title) {
-    return 'Playing $title next…';
+    return 'अग्रे $title चाल्यते…';
   }
 
   @override
   String playerShadersFailed(String error) {
-    return 'Couldn\'t install the shaders: $error';
+    return 'शेडर्स् स्थापयितुं न शक्तम्: $error';
   }
 
   @override
   String playerChapter(int number) {
-    return 'Chapter $number';
+    return 'अध्यायः $number';
   }
 
   @override
-  String get playerPerTitle => 'Only for this title';
+  String get playerPerTitle => 'अस्य शीर्षकस्य कृते केवलम्';
 
   @override
-  String get playerPerTitleDesc =>
-      'Keep these options for this title and leave your defaults alone';
+  String get playerPerTitleDesc => 'एतान् विकल्पान् अस्य शीर्षकस्य कृते रक्ष तव मूलभूतानि अस्पृष्टानि तिष्ठन्तु';
 
   @override
-  String get playerHoldSpeed => 'Hold speed';
+  String get playerHoldSpeed => 'धारण-वेगः';
 
   @override
-  String get playerAudioOutput => 'Audio output';
+  String get playerAudioOutput => 'ध्वनि-निर्गमः';
 
   @override
-  String get fontAppDefault => 'App font';
+  String get fontAppDefault => 'ऐप्-अक्षरशैली';
 
   @override
-  String get fontImport => 'Import font';
+  String get fontImport => 'अक्षरं आनय';
 
   @override
-  String get fontSample => 'The quick brown fox jumps over the lazy dog';
+  String get fontSample => 'शीघ्रः धूसरः शृगालः आलसं श्वानम् उल्लङ्घते';
 
   @override
-  String get playerSubtitleDelay => 'Subtitle delay';
+  String get playerSubtitleDelay => 'उपशीर्षक-विलम्बः';
 
   @override
-  String get playerAudioDelay => 'Audio delay';
+  String get playerAudioDelay => 'ध्वनि-विलम्बः';
 
   @override
-  String get playerDelayReset => 'Reset';
+  String get playerDelayReset => 'पुनःस्थापय';
 
   @override
-  String get playerOnlineSubtitles => 'Online subtitles';
+  String get playerOnlineSubtitles => 'जाल-उपशीर्षकाणि';
 
   @override
-  String get playerOnlineSearchHint => 'Title and episode';
+  String get playerOnlineSearchHint => 'शीर्षकम् एपिसोड् च';
 
   @override
-  String get playerOnlineNone => 'No subtitles found';
+  String get playerOnlineNone => 'उपशीर्षकाणि न प्राप्तानि';
 
   @override
   String playerOnlineFailed(String error) {
-    return 'Subtitle search failed: $error';
+    return 'उपशीर्षक-अन्वेषणं विफलम्: $error';
   }
 
   @override
   String playerOnlineDownloadFailed(String error) {
-    return 'Could not download this subtitle: $error';
+    return 'इदम् उपशीर्षकं डाउनलोड् कर्तुं न शक्तम्: $error';
   }
 
   @override
-  String get playerOnlineMatch => 'Matches this file';
+  String get playerOnlineMatch => 'अस्याः फाइलेन सह मेलति';
 
   @override
-  String get playerOnlineEpisode => 'Episode match';
+  String get playerOnlineEpisode => 'एपिसोड्-मेलनम्';
 
   @override
   String playerOnlineDownloads(int count) {
-    return '$count downloads';
+    return '$count डाउनलोड्स्';
   }
 
   @override
-  String get playerSeekPreview => 'Seek preview';
+  String get playerSeekPreview => 'सीक्-पूर्वावलोकनम्';
 
   @override
-  String get playerSeekPreviewDesc =>
-      'Show a small frame preview above the seek bar while scrubbing. Opens a second low resolution decoder, so it uses extra data on streams.';
+  String get playerSeekPreviewDesc => 'कर्षणसमये सीक्-पट्टिकायाः उपरि लघु फ्रेम्-पूर्वावलोकनं दर्शय। द्वितीयं न्यून-रिजोल्यूशन्-डीकोडर् उद्घाटयति, अतः स्ट्रीम्स् मध्ये अधिकं दत्तांशं प्रयुङ्क्ते।';
 
   @override
-  String get playerSettingsChip => 'Settings';
+  String get playerSettingsChip => 'सेटिंग्स्';
 
   @override
-  String get playerAudioDevice => 'Audio device';
+  String get playerAudioDevice => 'ध्वनि-उपकरणम्';
 
   @override
-  String get settingsDownloads => 'Downloads';
+  String get settingsDownloads => 'डाउनलोड्स्';
 
   @override
-  String get settingsDownloadsDesc =>
-      'Offline episodes, queue and offline mode';
+  String get settingsDownloadsDesc => 'ऑफलाइन्-एपिसोड्स्, पङ्क्तिः, ऑफलाइन्-मोडः च';
 
   @override
-  String get downloadsTitle => 'Downloads';
+  String get downloadsTitle => 'डाउनलोड्स्';
 
   @override
-  String get downloadsOpenDesc =>
-      'See the queue and everything saved on this device';
+  String get downloadsOpenDesc => 'पङ्क्तिं अस्मिन् उपकरणे रक्षितं सर्वं च पश्य';
 
   @override
-  String get downloadTitle => 'Download';
+  String get downloadTitle => 'डाउनलोड्';
 
   @override
-  String get downloadAlready => 'Already downloaded or in the queue';
+  String get downloadAlready => 'पूर्वमेव डाउनलोडितम् अथवा पङ्क्तौ';
 
   @override
-  String get downloadPickStream => 'Download which stream?';
+  String get downloadPickStream => 'कः स्ट्रीम् डाउनलोड् कर्तव्यः?';
 
   @override
-  String get downloadPickSubtitle => 'Download which subtitle?';
+  String get downloadPickSubtitle => 'कानि उपशीर्षकाणि डाउनलोड् कर्तव्यानि?';
 
   @override
-  String get downloadPickAudio => 'Download which audio track?';
+  String get downloadPickAudio => 'कः ध्वनि-मार्गः डाउनलोड् कर्तव्यः?';
 
   @override
-  String get downloadNoAudio => 'No extra audio';
+  String get downloadNoAudio => 'अतिरिक्त-ध्वनिः नास्ति';
 
   @override
-  String get downloadAudio => 'Audio';
+  String get downloadAudio => 'ध्वनिः';
 
   @override
-  String get downloadNoSubtitle => 'No subtitle';
+  String get downloadNoSubtitle => 'उपशीर्षकं नास्ति';
 
   @override
-  String get downloadHlsNeedsFfmpeg =>
-      'This stream is an HLS playlist. Downloading it needs the FFmpeg addon.';
+  String get downloadHlsNeedsFfmpeg => 'एषः स्ट्रीम् HLS प्लेलिस्ट् अस्ति। तं डाउनलोड् कर्तुं FFmpeg ऐड्-ऑन् आवश्यकम्।';
 
   @override
-  String get downloadSourceMissing =>
-      'The source for this episode is not installed';
+  String get downloadSourceMissing => 'अस्य एपिसोड्-स्रोतः न स्थापितः';
 
   @override
-  String get downloadWaitingConnection => 'Waiting for a connection';
+  String get downloadWaitingConnection => 'संयोजनस्य प्रतीक्षा';
 
   @override
-  String get downloadSubtitles => 'Subtitles';
+  String get downloadSubtitles => 'उपशीर्षकाणि';
 
   @override
-  String get downloadDownloaded => 'Downloaded';
+  String get downloadDownloaded => 'डाउनलोडितम्';
 
   @override
-  String get downloadOffline => 'Offline';
+  String get downloadOffline => 'ऑफलाइन्';
 
   @override
-  String get downloadDelete => 'Delete download';
+  String get downloadDelete => 'डाउनलोड् मार्जय';
 
   @override
-  String get downloadCancel => 'Cancel';
+  String get downloadCancel => 'रद्द कुरु';
 
   @override
-  String get downloadPause => 'Pause';
+  String get downloadPause => 'विरामय';
 
   @override
-  String get downloadPaused => 'Paused';
+  String get downloadPaused => 'विरामे';
 
   @override
-  String get downloadResume => 'Resume';
+  String get downloadResume => 'पुनः आरभस्व';
 
   @override
-  String get downloadPauseAll => 'Pause all';
+  String get downloadPauseAll => 'सर्वं विरामय';
 
   @override
-  String get downloadResumeAll => 'Resume all';
+  String get downloadResumeAll => 'सर्वं पुनः आरभस्व';
 
   @override
-  String get downloadQueuedState => 'Waiting in the queue';
+  String get downloadQueuedState => 'पङ्क्तौ प्रतीक्षा';
 
   @override
-  String get downloadResolving => 'Getting the stream…';
+  String get downloadResolving => 'स्ट्रीम् प्राप्यते…';
 
   @override
-  String get downloadUsedFallback => 'No matching stream, used the first one';
+  String get downloadUsedFallback => 'मेलनशीलः स्ट्रीम् नास्ति, प्रथमः प्रयुक्तः';
 
   @override
-  String get downloadTabQueue => 'Queue';
+  String get downloadTabQueue => 'पङ्क्तिः';
 
   @override
-  String get downloadTabDone => 'Done';
+  String get downloadTabDone => 'समाप्तम्';
 
   @override
-  String get downloadTabFailed => 'Failed';
+  String get downloadTabFailed => 'विफलम्';
 
   @override
-  String get downloadEmptyQueue => 'Nothing is downloading';
+  String get downloadEmptyQueue => 'किमपि डाउनलोड् न भवति';
 
   @override
-  String get downloadEmptyDone => 'Nothing downloaded yet';
+  String get downloadEmptyDone => 'अद्यापि किमपि डाउनलोड् न कृतम्';
 
   @override
-  String get downloadEmptyFailed => 'No failed downloads';
+  String get downloadEmptyFailed => 'विफलाः डाउनलोड्स् न सन्ति';
 
   @override
-  String get downloadNext => 'Next episode';
+  String get downloadNext => 'अग्रिम एपिसोड्';
 
   @override
   String downloadNextN(int count) {
-    return 'Next $count episodes';
+    return 'अग्रिमाः $count एपिसोड्स्';
   }
 
   @override
   String downloadUnwatched(int count) {
-    return 'All unwatched ($count)';
+    return 'सर्वे अदृष्टाः ($count)';
   }
 
   @override
   String downloadRange(int count) {
-    return 'This range ($count)';
+    return 'अयं परिसरः ($count)';
   }
 
   @override
   String downloadAll(int count) {
-    return 'All episodes ($count)';
+    return 'सर्वे एपिसोड्स् ($count)';
   }
 
   @override
@@ -5921,97 +5782,91 @@ class AppLocalizationsSa extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count episodes queued',
-      one: '1 episode queued',
+      other: '$count एपिसोड्स् पङ्क्तौ',
+      one: '१ एपिसोड् पङ्क्तौ',
     );
     return '$_temp0';
   }
 
   @override
   String downloadFinished(String name) {
-    return '$name downloaded';
+    return '$name डाउनलोडितम्';
   }
 
   @override
   String downloadFailedBody(String name) {
-    return '$name failed to download';
+    return '$name डाउनलोड् विफलम्';
   }
 
   @override
   String downloadStorage(String size) {
-    return '$size used by downloads';
+    return 'डाउनलोड्स्-द्वारा $size प्रयुक्तम्';
   }
 
   @override
-  String get downloadQueueHeader => 'Queue';
+  String get downloadQueueHeader => 'पङ्क्तिः';
 
   @override
-  String get downloadParallel => 'Downloads at once';
+  String get downloadParallel => 'एकदा डाउनलोड्स्';
 
   @override
-  String get downloadParallelDesc =>
-      'Run one download at a time or several together';
+  String get downloadParallelDesc => 'एकैकं डाउनलोड् चालय अथवा बहूनि सह';
 
   @override
-  String get downloadOneByOne => 'One by one';
+  String get downloadOneByOne => 'एकैकम्';
 
   @override
-  String get downloadNotifications => 'Download notifications';
+  String get downloadNotifications => 'डाउनलोड्-सूचनाः';
 
   @override
-  String get downloadNotificationsDesc =>
-      'Live progress where the system supports it, otherwise a note when a download finishes';
+  String get downloadNotificationsDesc => 'यत्र सिस्टम् समर्थयति तत्र सजीव-प्रगतिः, अन्यथा डाउनलोड् समाप्ते सूचना';
 
   @override
-  String get downloadNotifyLive => 'Live';
+  String get downloadNotifyLive => 'सजीवम्';
 
   @override
-  String get downloadNotifyDone => 'When done';
+  String get downloadNotifyDone => 'समाप्ते सति';
 
   @override
-  String get downloadNotifyOff => 'Off';
+  String get downloadNotifyOff => 'निष्क्रिय';
 
   @override
-  String get downloadInfoFile => 'Write an info file next to each download';
+  String get downloadInfoFile => 'प्रत्येकस्य डाउनलोड्-पार्श्वे info-फाइलं लिख';
 
   @override
-  String get downloadInfoFileDesc =>
-      'Saves the stream, quality, subtitle and skip times as a small .json file';
+  String get downloadInfoFileDesc => 'स्ट्रीम्, गुणवत्ता, उपशीर्षकं त्यजन-समयाः च लघौ .json फाइल् मध्ये रक्षति';
 
   @override
-  String get offlineHeader => 'Offline';
+  String get offlineHeader => 'ऑफलाइन्';
 
   @override
-  String get offlineModeDesc =>
-      'Auto goes offline only when the app starts without a connection. Always stays offline until you change it.';
+  String get offlineModeDesc => 'ऐप् संयोजनं विना आरभ्यते चेत् एव स्वयम् ऑफलाइन् भवति। सर्वदा यावत् त्वं न परिवर्तयसि तावत् ऑफलाइन् तिष्ठति।';
 
   @override
-  String get offlineModeOff => 'Off';
+  String get offlineModeOff => 'निष्क्रिय';
 
   @override
-  String get offlineModeAlways => 'Always';
+  String get offlineModeAlways => 'सर्वदा';
 
   @override
-  String get offlineModeOn =>
-      'Offline mode is on. Changes are saved here and sent when you are back online.';
+  String get offlineModeOn => 'ऑफलाइन्-मोडः सक्रियः। परिवर्तनानि अत्र रक्ष्यन्ते पुनः ऑनलाइन् सति प्रेष्यन्ते च।';
 
   @override
-  String get offlineLost => 'You\'re offline. Changes are saved on this device';
+  String get offlineLost => 'त्वं ऑफलाइन् असि। परिवर्तनानि अस्मिन् उपकरणे रक्ष्यन्ते';
 
   @override
-  String get offlineBack => 'Back online. Syncing your changes';
+  String get offlineBack => 'पुनः ऑनलाइन्। तव परिवर्तनानि समकालीनानि क्रियन्ते';
 
   @override
-  String get offlineSaved =>
-      'Saved on this device, it will sync when you are online';
+  String get offlineSaved => 'अस्मिन् उपकरणे रक्षितम्, ऑनलाइन् सति समकालीनं भविष्यति';
 
   @override
   String offlineSynced(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count changes synced',
-      one: '1 change synced',
+      other: '$count परिवर्तनानि समकालीनानि',
+      one: '१ परिवर्तनं समकालीनम्',
     );
     return '$_temp0';
   }
@@ -6021,309 +5876,293 @@ class AppLocalizationsSa extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count changes waiting to sync',
-      one: '1 change waiting to sync',
+      other: '$count परिवर्तनानि समकालीनीकरणाय प्रतीक्षन्ते',
+      one: '१ परिवर्तनं समकालीनीकरणाय प्रतीक्षते',
     );
     return '$_temp0';
   }
 
   @override
-  String get offlinePendingTitle => 'Changes waiting to sync';
+  String get offlinePendingTitle => 'समकालीनीकरणाय प्रतीक्षमाणानि परिवर्तनानि';
 
   @override
-  String get offlinePendingNone => 'Nothing waiting';
+  String get offlinePendingNone => 'किमपि न प्रतीक्षते';
 
   @override
-  String get offlineSyncNow => 'Sync now';
+  String get offlineSyncNow => 'इदानीं समकालीनं कुरु';
 
   @override
-  String get offlineDiscard => 'Discard';
+  String get offlineDiscard => 'परित्यज';
 
   @override
-  String get downloadNotOffline =>
-      'This episode is not downloaded, so it is not available offline';
+  String get downloadNotOffline => 'एषः एपिसोड् डाउनलोडितः नास्ति, अतः ऑफलाइन् उपलब्धः नास्ति';
 
   @override
-  String get offlineModeChip => 'Offline';
+  String get offlineModeChip => 'ऑफलाइन्';
 
   @override
-  String get downloadNextChapter => 'Next chapter';
+  String get downloadNextChapter => 'अग्रिमः अध्यायः';
 
   @override
   String downloadNextChapters(int count) {
-    return 'Next $count chapters';
+    return 'अग्रिमाः $count अध्यायाः';
   }
 
   @override
   String downloadUnread(int count) {
-    return 'All unread ($count)';
+    return 'सर्वे अपठिताः ($count)';
   }
 
   @override
   String downloadAllChapters(int count) {
-    return 'All chapters ($count)';
+    return 'सर्वे अध्यायाः ($count)';
   }
 
   @override
   String downloadPagesProgress(int done, int total) {
-    return '$done / $total pages';
+    return '$done / $total पृष्ठानि';
   }
 
   @override
   String downloadPagesCount(int count) {
-    return '$count pages';
+    return '$count पृष्ठानि';
   }
 
   @override
-  String get downloadFfmpegTitle => 'FFmpeg addon needed';
+  String get downloadFfmpegTitle => 'FFmpeg ऐड्-ऑन् आवश्यकम्';
 
   @override
-  String get downloadFfmpegBody =>
-      'This stream is an HLS playlist. The FFmpeg addon joins its pieces into one mp4 file. Without it the pieces are kept in an episode folder and play from there.';
+  String get downloadFfmpegBody => 'एषः स्ट्रीम् HLS प्लेलिस्ट् अस्ति। FFmpeg ऐड्-ऑन् तस्य खण्डान् एकां mp4 फाइल् मध्ये योजयति। तं विना खण्डाः एपिसोड्-फोल्डरे तिष्ठन्ति ततः एव चाल्यन्ते।';
 
   @override
-  String get downloadFfmpegInstall => 'Install';
+  String get downloadFfmpegInstall => 'स्थापय';
 
   @override
-  String get downloadFfmpegInstalling =>
-      'Installing FFmpeg, this can take a while…';
+  String get downloadFfmpegInstalling => 'FFmpeg स्थाप्यते, किञ्चित् कालः भवेत्…';
 
   @override
-  String get downloadFinishing => 'Joining the pieces into one file…';
+  String get downloadFinishing => 'खण्डाः एकां फाइल् मध्ये योज्यन्ते…';
 
   @override
   String downloadSegmentsProgress(int done, int total) {
-    return '$done / $total parts';
+    return '$done / $total खण्डाः';
   }
 
   @override
-  String get downloadTorrentNoFile =>
-      'The torrent has no video file to download';
+  String get downloadTorrentNoFile => 'टोरेन्ट् मध्ये डाउनलोड् कर्तुं वीडियो-फाइल् नास्ति';
 
   @override
   String downloadServiceText(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'Downloading $count items',
-      one: 'Downloading 1 item',
+      other: '$count वस्तूनि डाउनलोड् भवन्ति',
+      one: '१ वस्तु डाउनलोड् भवति',
     );
     return '$_temp0';
   }
 
   @override
-  String get downloadAutoDelete => 'Delete watched downloads';
+  String get downloadAutoDelete => 'दृष्टानि डाउनलोड्स् मार्जय';
 
   @override
-  String get downloadAutoDeleteDesc =>
-      'Removes a download once your progress reaches that episode or chapter';
+  String get downloadAutoDeleteDesc => 'तव प्रगतिः तं एपिसोड् अध्यायं वा प्राप्नोति चेत् डाउनलोड् अपनय';
 
   @override
-  String get downloadConnections => 'Connections per download';
+  String get downloadConnections => 'प्रति डाउनलोड् संयोजनानि';
 
   @override
-  String get downloadConnectionsDesc =>
-      'Splits a big file into parts fetched at the same time. Some servers limit this.';
+  String get downloadConnectionsDesc => 'बृहतीं फाइलं युगपत् आनीतेषु खण्डेषु विभजति। केचन सर्वराः एतत् सीमितं कुर्वन्ति।';
 
   @override
-  String get downloadPlayChoice => 'Play from';
+  String get downloadPlayChoice => 'तः चालय';
 
   @override
-  String get downloadPlayLocalDesc => 'The file saved on this device';
+  String get downloadPlayLocalDesc => 'अस्मिन् उपकरणे रक्षिता फाइल्';
 
   @override
-  String get downloadPlayStream => 'Stream online';
+  String get downloadPlayStream => 'ऑनलाइन् स्ट्रीम्';
 
   @override
-  String get downloadPlayStreamDesc => 'Load the episode from the source';
+  String get downloadPlayStreamDesc => 'स्रोततः एपिसोड् आनय';
 
   @override
-  String get offlineFeedTitle => 'Downloaded on this device';
+  String get offlineFeedTitle => 'अस्मिन् उपकरणे डाउनलोडितम्';
 
   @override
-  String get offlineFeedEmpty =>
-      'Download something while you are online and it shows up here';
+  String get offlineFeedEmpty => 'ऑनलाइन् सति किमपि डाउनलोड् कुरु तद् अत्र दृश्यते';
 
   @override
-  String get offlineEnabled => 'Offline mode is on';
+  String get offlineEnabled => 'ऑफलाइन्-मोडः सक्रियः';
 
   @override
-  String get offlineDisabled => 'Offline mode is off';
+  String get offlineDisabled => 'ऑफलाइन्-मोडः निष्क्रियः';
 
   @override
-  String get downloadReadChoice => 'Read from';
+  String get downloadReadChoice => 'तः पठ';
 
   @override
-  String get downloadReadLocalDesc => 'The pages saved on this device';
+  String get downloadReadLocalDesc => 'अस्मिन् उपकरणे रक्षितानि पृष्ठानि';
 
   @override
-  String get downloadReadOnline => 'Read online';
+  String get downloadReadOnline => 'ऑनलाइन् पठ';
 
   @override
-  String get downloadReadOnlineDesc => 'Load the chapter from the source';
+  String get downloadReadOnlineDesc => 'स्रोततः अध्यायम् आनय';
 
   @override
   String downloadDeleteConfirm(String name) {
-    return 'Delete $name from this device?';
+    return '$name अस्मात् उपकरणात् मार्जयसि?';
   }
 
   @override
   String downloadCancelConfirm(String name) {
-    return 'Cancel the download of $name? What was already downloaded is deleted.';
+    return '$name डाउनलोड् रद्दं करोषि? यत् पूर्वमेव डाउनलोडितं तत् मार्ज्यते।';
   }
 
   @override
-  String get downloadFfmpegFolder => 'Keep as folder';
+  String get downloadFfmpegFolder => 'फोल्डर्-रूपेण रक्ष';
 
   @override
   String offlineDiscardConfirm(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other:
-          'Throw away $count changes that were never sent? This can\'t be undone.',
-      one: 'Throw away the change that was never sent? This can\'t be undone.',
+      other: 'यानि $count परिवर्तनानि कदापि न प्रेषितानि तानि परित्यजसि? एतत् पूर्ववत् कर्तुं न शक्यते।',
+      one: 'यत् परिवर्तनं कदापि न प्रेषितं तत् परित्यजसि? एतत् पूर्ववत् कर्तुं न शक्यते।',
     );
     return '$_temp0';
   }
 
   @override
-  String get downloadWaitingWifi => 'Waiting for Wi-Fi';
+  String get downloadWaitingWifi => 'Wi-Fi प्रतीक्षा';
 
   @override
-  String get downloadWaitingMetered => 'Paused on a metered connection';
+  String get downloadWaitingMetered => 'सीमित-संयोजने विरामे';
 
   @override
-  String get downloadWifiOnly => 'Wi-Fi only';
+  String get downloadWifiOnly => 'केवलं Wi-Fi';
 
   @override
-  String get downloadWifiOnlyDesc =>
-      'Downloads wait while you are on mobile data';
+  String get downloadWifiOnlyDesc => 'मोबाइल्-दत्तांशे सति डाउनलोड्स् प्रतीक्षन्ते';
 
   @override
-  String get downloadMetered => 'Pause on metered connections';
+  String get downloadMetered => 'सीमित-संयोजनेषु विरामय';
 
   @override
-  String get downloadMeteredDesc =>
-      'Also waits on Wi-Fi that your device marks as metered';
+  String get downloadMeteredDesc => 'तव उपकरणं यं Wi-Fi सीमितं चिह्नयति तत्रापि प्रतीक्षते';
 
   @override
-  String get downloadSpeedLimit => 'Speed limit';
+  String get downloadSpeedLimit => 'वेग-सीमा';
 
   @override
-  String get downloadSpeedLimitDesc => 'Caps the total download speed';
+  String get downloadSpeedLimitDesc => 'कुल-डाउनलोड्-वेगं सीमितं करोति';
 
   @override
-  String get downloadUnlimited => 'Unlimited';
+  String get downloadUnlimited => 'असीमितम्';
 
   @override
-  String get downloadMoveToTop => 'Move to top';
+  String get downloadMoveToTop => 'उपरि नय';
 
   @override
   String downloadSwarm(int seeds, int peers) {
-    return '$seeds seeds · $peers peers';
+    return '$seeds सीड्स् · $peers पीयर्स्';
   }
 
   @override
-  String get downloadTorrentFile => 'Which file?';
+  String get downloadTorrentFile => 'का फाइल्?';
 
   @override
-  String get downloadTorrentAuto => 'Match the episode automatically';
+  String get downloadTorrentAuto => 'एपिसोड् स्वयं मेलय';
 
   @override
-  String get downloadTorrentLoading => 'Reading the torrent…';
+  String get downloadTorrentLoading => 'टोरेन्ट् पठ्यते…';
 
   @override
-  String get watchAutoSource => 'Switch to the next source automatically';
+  String get watchAutoSource => 'अग्रिमं स्रोतः स्वयं परिवर्तय';
 
   @override
-  String get watchAutoSourceDesc =>
-      'If the source can\'t find the title or fails to load, try the next installed source';
+  String get watchAutoSourceDesc => 'स्रोतः शीर्षकं न प्राप्नोति आनेतुं वा विफलः चेत् अग्रिमं स्थापितं स्रोतः प्रयत्नं कुरु';
 
   @override
-  String get extensionTest => 'Test extensions';
+  String get extensionTest => 'एक्स्टेंशन्स् परीक्षस्व';
 
   @override
-  String get extensionTestCopy => 'Copy the failures and their logs';
+  String get extensionTestCopy => 'विफलताः तेषां लॉग्स् च प्रतिलिख';
 
   @override
-  String get extensionTestQuery => 'Search term';
+  String get extensionTestQuery => 'अन्वेषण-पदम्';
 
   @override
-  String get extensionTestRun => 'Run';
+  String get extensionTestRun => 'चालय';
 
   @override
-  String get extensionTestStop => 'Stop';
+  String get extensionTestStop => 'निरुन्धि';
 
   @override
-  String get extensionTestNone => 'No installed extensions of this type';
+  String get extensionTestNone => 'अस्य प्रकारस्य स्थापिताः एक्स्टेंशन्स् न सन्ति';
 
   @override
-  String get extensionTestNotRun => 'Not tested yet';
+  String get extensionTestNotRun => 'अद्यापि न परीक्षितम्';
 
   @override
-  String get extensionTestSearch => 'Search';
+  String get extensionTestSearch => 'अन्वेषणम्';
 
   @override
-  String get extensionTestDetail => 'Details';
+  String get extensionTestDetail => 'विवरणम्';
 
   @override
-  String get extensionTestUnits => 'Episodes / chapters';
+  String get extensionTestUnits => 'एपिसोड्स् / अध्यायाः';
 
   @override
-  String get extensionTestLinks => 'Streams / pages';
+  String get extensionTestLinks => 'स्ट्रीम्स् / पृष्ठानि';
 
   @override
   String extensionTestFailedAt(String step) {
-    return 'Failed at $step';
+    return '$step मध्ये विफलम्';
   }
 
   @override
   String extensionTestSummary(int done, int total, int passed, int failed) {
-    return '$done of $total tested · $passed passed · $failed failed';
+    return '$total मध्ये $done परीक्षितानि · $passed उत्तीर्णानि · $failed विफलानि';
   }
 
   @override
-  String get extensionTestCopyLogs => 'Copy everything with the full logs';
+  String get extensionTestCopyLogs => 'सर्वं पूर्ण-लॉग्स् सह प्रतिलिख';
 
   @override
-  String get onboardingFeaturesTitle => 'All of it in one place';
+  String get onboardingFeaturesTitle => 'सर्वं एकत्र';
 
   @override
-  String get onboardingFeaturesBody =>
-      'Everything you track, watch and read, without juggling apps.';
+  String get onboardingFeaturesBody => 'यत् किमपि त्वम् अनुसरसि पश्यसि पठसि च, ऐप्स् मध्ये भ्रमणं विना।';
 
   @override
-  String get onboardingFeatureTrack => 'Track everything';
+  String get onboardingFeatureTrack => 'सर्वम् अनुसर';
 
   @override
-  String get onboardingFeatureTrackDesc =>
-      'Lists, progress and scores on AniList, MyAnimeList, Simkl, Kitsu and MangaBaka.';
+  String get onboardingFeatureTrackDesc => 'AniList, MyAnimeList, Simkl, Kitsu, MangaBaka च मध्ये सूचयः प्रगतिः अङ्काः च।';
 
   @override
-  String get onboardingFeatureWatch => 'Watch and read';
+  String get onboardingFeatureWatch => 'पश्य पठ च';
 
   @override
-  String get onboardingFeatureWatchDesc =>
-      'Install extensions and stream anime or read manga and novels right in the app.';
+  String get onboardingFeatureWatchDesc => 'एक्स्टेंशन्स् स्थापय अनिमे स्ट्रीम् कुरु अथवा मांगा नॉवल्स् च ऐप् मध्ये एव पठ।';
 
   @override
-  String get onboardingFeatureOffline => 'Take it offline';
+  String get onboardingFeatureOffline => 'ऑफलाइन् नय';
 
   @override
-  String get onboardingFeatureOfflineDesc =>
-      'Download episodes and chapters, and keep going without a connection.';
+  String get onboardingFeatureOfflineDesc => 'एपिसोड्स् अध्यायान् च डाउनलोड् कुरु संयोजनं विना अपि अनुवर्तय।';
 
   @override
-  String get onboardingFeatureSync => 'Keep lists in sync';
+  String get onboardingFeatureSync => 'सूचीः समकालीनाः रक्ष';
 
   @override
-  String get onboardingFeatureSyncDesc =>
-      'Mirror your list across services, or let whichever is ahead win.';
+  String get onboardingFeatureSyncDesc => 'सेवासु स्वसूचीं प्रतिबिम्बय, अथवा यः अग्रे सः विजयताम्।';
 
   @override
-  String get onboardingThemeShape => 'Colours';
+  String get onboardingThemeShape => 'वर्णाः';
 
   @override
-  String get onboardingServices => 'Works with';
+  String get onboardingServices => 'सह कार्यं करोति';
 }

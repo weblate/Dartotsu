@@ -73,7 +73,7 @@ class MangaBakaDetailView extends DetailScreenView {
       if ((m.meanScore ?? 0) > 0)
         (getString.score, (m.meanScore! / 10).toStringAsFixed(1)),
       if (extras?.popularityRank != null)
-        (getString.rank, '#${extras!.popularityRank}'),
+        (getString.rank, extras!.popularityRank?.toString() ?? ''),
       if (m.manga?.totalChapters != null)
         (getString.chapters, DetailStats.compact(m.manga!.totalChapters!)),
     ];

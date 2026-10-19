@@ -12,7 +12,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get appName => 'Dartotsu';
 
   @override
-  String get appTagline => 'O NOVO Melhor App Para\nAcompanhar Animes & Mangás';
+  String get appTagline => 'O NOVO melhor app pra\nacompanhar anime e mangá';
 
   @override
   String get anilist => 'AniList';
@@ -33,6327 +33,22 @@ class AppLocalizationsPt extends AppLocalizations {
   String get discord => 'Discord';
 
   @override
-  String get loadMore => 'Load more';
+  String get loadMore => 'Carregar mais';
 
   @override
   String get login => 'Entrar';
 
   @override
-  String get continueAsGuest => 'Continue as guest';
+  String get continueAsGuest => 'Continuar como visitante';
 
   @override
-  String get getStarted => 'Get Started';
+  String get getStarted => 'Começar';
 
   @override
-  String get loginWithToken => 'Login with token';
+  String get loginWithToken => 'Entrar com token';
 
   @override
-  String get pasteTokenHint => 'Paste your access token';
-
-  @override
-  String loginTo(String service) {
-    return 'Conecte-se ao $service';
-  }
-
-  @override
-  String get settings => 'Configurações';
-
-  @override
-  String get account => 'Conta';
-
-  @override
-  String get about => 'Sobre';
-
-  @override
-  String get language => 'Idioma';
-
-  @override
-  String get animationSpeed => 'Animations';
-
-  @override
-  String get animationSpeedDesc =>
-      'Speed of transitions and entrance effects across the app';
-
-  @override
-  String get animationSpeedOff => 'Off';
-
-  @override
-  String extension(int count) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: 'Extensões',
-      one: 'Extensão',
-    );
-    return '$_temp0';
-  }
-
-  @override
-  String get unknownSource => 'Unknown Source';
-
-  @override
-  String get install => 'Install';
-
-  @override
-  String get update => 'Update';
-
-  @override
-  String get uninstall => 'Uninstall';
-
-  @override
-  String get installFailed => 'Install failed';
-
-  @override
-  String get updateFailed => 'Update failed';
-
-  @override
-  String get noSourceSettings => 'Source doesn\'t have any settings';
-
-  @override
-  String get addPluginRepository => 'Add Plugin Repository';
-
-  @override
-  String get pluginIndexUrlHint => 'Plugin index URL';
-
-  @override
-  String get addRepository => 'Add Repository';
-
-  @override
-  String get pluginRepoUpdated => 'Plugin repository updated';
-
-  @override
-  String get pluginRepoUpdateFailed => 'Failed to refresh plugin repository';
-
-  @override
-  String get ok => 'OK';
-
-  @override
-  String get cancel => 'Cancelar';
-
-  @override
-  String get yes => 'Sim';
-
-  @override
-  String get no => 'Não';
-
-  @override
-  String get save => 'Save';
-
-  @override
-  String get reset => 'Reset';
-
-  @override
-  String get clear => 'Clear';
-
-  @override
-  String get test => 'Test';
-
-  @override
-  String get testing => 'Testing…';
-
-  @override
-  String get resolving => 'Resolving…';
-
-  @override
-  String get none => 'None';
-
-  @override
-  String get selectMediaService => 'Selecione o serviço de mídia';
-
-  @override
-  String get pickColor => 'Selecione uma cor';
-
-  @override
-  String get colorPickerDefault => 'Padrão';
-
-  @override
-  String get colorPickerCustom => 'Personalizado';
-
-  @override
-  String get colorPickerTransparent => 'Transparent';
-
-  @override
-  String get ltr => 'Esquerda para a direita';
-
-  @override
-  String get searchSettings => 'Search settings';
-
-  @override
-  String nothingMatches(String query) {
-    return 'Nothing matches \"$query\"';
-  }
-
-  @override
-  String searchCategory(String category) {
-    return 'Search $category';
-  }
-
-  @override
-  String get settingsAppearance => 'Appearance';
-
-  @override
-  String get settingsAppearanceDesc => 'Theme, colours, glass mode';
-
-  @override
-  String get settingsGeneral => 'General';
-
-  @override
-  String get settingsGeneralDesc => 'Language and behaviour';
-
-  @override
-  String get settingsAccountDesc => 'Tracking service and sign-in';
-
-  @override
-  String get settingsUpdates => 'Updates';
-
-  @override
-  String get settingsUpdatesDesc => 'Release channel and checks';
-
-  @override
-  String get settingsAboutDesc => 'Version, links, support';
-
-  @override
-  String get amoledBlack => 'AMOLED black';
-
-  @override
-  String get amoledBlackDesc => 'Pure black surfaces on dark mode';
-
-  @override
-  String get glassMode => 'Glass mode';
-
-  @override
-  String get glassModeDesc => 'Frosted surfaces over your library art';
-
-  @override
-  String get shelfFrame => 'Frame around sections';
-
-  @override
-  String get shelfFrameDesc =>
-      'Show a card behind each shelf, or let the rows sit directly on the page';
-
-  @override
-  String get settingsExtensionsDesc =>
-      'Source managers, repositories and extension options';
-
-  @override
-  String get settingsAddons => 'Addons';
-
-  @override
-  String get settingsAddonsDesc =>
-      'Optional components such as the torrent server';
-
-  @override
-  String get customPath => 'Caminho personalizado';
-
-  @override
-  String get customPathDesc => 'Where app data is kept. Long-press to reset';
-
-  @override
-  String get selectDirectory => 'Selecione um diretório';
-
-  @override
-  String get differentCacheManager => 'Gerente de Cache diferente';
-
-  @override
-  String get differentCacheManagerDesc =>
-      'Use o gerenciador de cache de imagem diferente';
-
-  @override
-  String get backupAndRestore => 'Backup and restore';
-
-  @override
-  String get backupAndRestoreDesc => 'Save or load your preferences';
-
-  @override
-  String get backup => 'Backup';
-
-  @override
-  String get restore => 'Restore';
-
-  @override
-  String get loadExtensionsIcon => 'Ícone de extensões de carga';
-
-  @override
-  String get loadExtensionsIconDesc => 'Desabilitar se extensões página lags';
-
-  @override
-  String get sectionStorage => 'Storage';
-
-  @override
-  String get sectionBackup => 'Backup';
-
-  @override
-  String get sectionManagers => 'Managers';
-
-  @override
-  String get sectionOptions => 'Options';
-
-  @override
-  String get backupTabBackup => 'Back up';
-
-  @override
-  String get backupTabRestore => 'Restore';
-
-  @override
-  String backupSummary(Object keys, Object categories) {
-    return '$keys settings in $categories categories';
-  }
-
-  @override
-  String backupLastBackup(Object time) {
-    return 'Last backup $time';
-  }
-
-  @override
-  String get backupNever => 'No backup yet';
-
-  @override
-  String get backupSelectAll => 'Select all';
-
-  @override
-  String get backupClearAll => 'Clear';
-
-  @override
-  String backupKeys(Object count) {
-    return '$count settings';
-  }
-
-  @override
-  String get backupPassword => 'Password (optional)';
-
-  @override
-  String get backupPasswordHint => 'Leave empty to use the default';
-
-  @override
-  String get backupSensitive => 'Includes login tokens. Keep this file private';
-
-  @override
-  String get backupCreate => 'Create backup';
-
-  @override
-  String backupSaved(Object name) {
-    return 'Backup saved to $name';
-  }
-
-  @override
-  String backupFailed(Object error) {
-    return 'Backup failed: $error';
-  }
-
-  @override
-  String get backupPickFile => 'Choose a backup file';
-
-  @override
-  String get backupPickFileDesc => 'Pick a .json file made by Dartotsu';
-
-  @override
-  String get backupChooseAnother => 'Choose another file';
-
-  @override
-  String get backupCreatedAt => 'Created';
-
-  @override
-  String get backupAppVersion => 'App version';
-
-  @override
-  String get backupDevice => 'Device';
-
-  @override
-  String get backupAccounts => 'Accounts';
-
-  @override
-  String get backupSize => 'Size';
-
-  @override
-  String get backupEncrypted => 'Password protected';
-
-  @override
-  String get backupUnlock => 'Unlock';
-
-  @override
-  String get backupWrongPassword =>
-      'Could not read this file. Check the password';
-
-  @override
-  String get backupRestoreSelected => 'Restore selected';
-
-  @override
-  String backupRestoreConfirm(Object count) {
-    return 'Restore $count settings? Existing values in these categories are overwritten.';
-  }
-
-  @override
-  String get backupRestored => 'Restored. Restart the app to apply everything';
-
-  @override
-  String backupRestoreFailed(Object error) {
-    return 'Restore failed: $error';
-  }
-
-  @override
-  String get backupSelectOne => 'Select at least one category';
-
-  @override
-  String get backupCatTheme => 'Appearance';
-
-  @override
-  String get backupCatThemeDesc => 'Theme, colors, glass, fonts and card style';
-
-  @override
-  String get backupCatCommon => 'General';
-
-  @override
-  String get backupCatCommonDesc =>
-      'Language, storage, network and extension options';
-
-  @override
-  String get backupCatPlayer => 'Player';
-
-  @override
-  String get backupCatPlayerDesc => 'Player preferences';
-
-  @override
-  String get backupCatReader => 'Reader';
-
-  @override
-  String get backupCatReaderDesc => 'Reader preferences';
-
-  @override
-  String get backupCatProtected => 'Accounts';
-
-  @override
-  String get backupCatProtectedDesc => 'Login tokens and sign-in data';
-
-  @override
-  String get backupCatOther => 'Services and feeds';
-
-  @override
-  String get backupCatOtherDesc => 'Feed layouts, lists and service options';
-
-  @override
-  String get logFile => 'Arquivo de log';
-
-  @override
-  String get logFileDesc => 'Share the app log, or copy its path on Linux';
-
-  @override
-  String get logFileCopied => 'Log path copied';
-
-  @override
-  String get donateSheetTitle => 'Enjoying Dartotsu?';
-
-  @override
-  String get donateSheetMessage =>
-      'Dartotsu is built and maintained by one person. If it is useful to you, consider supporting development.';
-
-  @override
-  String get donateLater => 'Maybe later';
-
-  @override
-  String get glassBackground => 'Glass background';
-
-  @override
-  String get glassBackgroundDesc =>
-      'Your profile banner unless you set an image link';
-
-  @override
-  String get glassBackgroundHint => 'Image link (leave empty for your banner)';
-
-  @override
-  String get followCover => 'Follow cover';
-
-  @override
-  String get followCoverDesc =>
-      'Colors follow the background, and the cover on detail pages';
-
-  @override
-  String get cardStyle => 'Card style';
-
-  @override
-  String get cardStyleDesc => 'Title placement, size, progress and badges';
-
-  @override
-  String get customFont => 'Font';
-
-  @override
-  String get customFontDesc =>
-      'Default, a file from your device, or Google Fonts';
-
-  @override
-  String get customFontError => 'Couldn\'t load that font file';
-
-  @override
-  String get googleFontError => 'Couldn\'t download that font';
-
-  @override
-  String get yourFonts => 'Your fonts';
-
-  @override
-  String get addFontFile => 'Add font file…';
-
-  @override
-  String get browseGoogleFonts => 'Browse Google Fonts…';
-
-  @override
-  String get searchGoogleFonts => 'Search Google Fonts';
-
-  @override
-  String get defaultFont => 'Default';
-
-  @override
-  String get materialYou => 'Material You';
-
-  @override
-  String get materialYouDesc => 'Dynamic colour from the system';
-
-  @override
-  String get jsonTheme => 'Custom theme file';
-
-  @override
-  String get jsonThemeDesc =>
-      'Live colours from ~/.config/dartotsu/theme.json (a custom script, or your own edits)';
-
-  @override
-  String get themeMode => 'Theme mode';
-
-  @override
-  String get mode => 'Mode';
-
-  @override
-  String get trackingService => 'Tracking service';
-
-  @override
-  String get signOut => 'Sign out';
-
-  @override
-  String get signIn => 'Sign in';
-
-  @override
-  String get notSignedIn => 'Not signed in';
-
-  @override
-  String signOutOf(String service) {
-    return 'Sign out of $service?';
-  }
-
-  @override
-  String get checkForUpdates => 'Check for updates';
-
-  @override
-  String get checkForUpdatesDesc => 'Notify on a new GitHub release';
-
-  @override
-  String get updateChannel => 'Update channel';
-
-  @override
-  String get channel => 'Channel';
-
-  @override
-  String get stable => 'Stable';
-
-  @override
-  String get preRelease => 'Pre-release';
-
-  @override
-  String get alpha => 'Alpha';
-
-  @override
-  String get checkNow => 'Check now';
-
-  @override
-  String get userAgent => 'User-Agent';
-
-  @override
-  String get settingDefault => 'Default';
-
-  @override
-  String currentlyUsing(String value) {
-    return 'Currently: $value';
-  }
-
-  @override
-  String get dnsOverHttps => 'DNS-over-HTTPS';
-
-  @override
-  String get dnsDefault => 'Default (Cloudflare)';
-
-  @override
-  String get proxy => 'Proxy';
-
-  @override
-  String get proxyProtocol => 'Type';
-
-  @override
-  String get proxyHost => 'Host';
-
-  @override
-  String get proxyPort => 'Port';
-
-  @override
-  String get proxyUsername => 'Username';
-
-  @override
-  String get proxyPassword => 'Password';
-
-  @override
-  String get optional => 'Optional';
-
-  @override
-  String get clearCookies => 'Clear cookies';
-
-  @override
-  String get clearCookiesDesc => 'Remove every stored cookie';
-
-  @override
-  String notImplementedArea(String area) {
-    return '$area — coming soon';
-  }
-
-  @override
-  String notImplementedService(String service) {
-    return '$service doesn\'t support this yet.';
-  }
-
-  @override
-  String get couldNotLoadResults => 'Couldn\'t load results';
-
-  @override
-  String get updateCheckFailed => 'Couldn\'t check for updates';
-
-  @override
-  String get highRefreshRate => 'High refresh rate';
-
-  @override
-  String get highRefreshRateDesc =>
-      'Use the highest refresh rate your screen supports';
-
-  @override
-  String get imageSave => 'Save image';
-
-  @override
-  String imageSavedTo(String path) {
-    return 'Saved to $path';
-  }
-
-  @override
-  String get imageActionFailed => 'Couldn\'t download the image';
-
-  @override
-  String get imageTitleCover => 'Cover';
-
-  @override
-  String get imageTitleBanner => 'Banner';
-
-  @override
-  String get imageTitleAvatar => 'Profile picture';
-
-  @override
-  String get verifyTls => 'Verify certificates';
-
-  @override
-  String get verifyTlsDesc =>
-      'Reject servers with invalid HTTPS certificates. Turn off only for a source that uses a self-signed one';
-
-  @override
-  String get clearCookiesConfirm =>
-      'Remove all stored cookies? This may sign you out of some sources.';
-
-  @override
-  String get version => 'Version';
-
-  @override
-  String get gitHub => 'GitHub';
-
-  @override
-  String get gitHubDesc => 'Source, issues and releases';
-
-  @override
-  String get discordDesc => 'Community and support';
-
-  @override
-  String get donate => 'Buy me a coffee';
-
-  @override
-  String get donateDesc => 'Support development';
-
-  @override
-  String get contributors => 'Contributors';
-
-  @override
-  String get contributorsDesc => 'The people who built Dartotsu';
-
-  @override
-  String get contributorsLoadFailed => 'Couldn\'t load contributors';
-
-  @override
-  String get forks => 'Forks';
-
-  @override
-  String get forksDesc => 'Projects built on top of Dartotsu';
-
-  @override
-  String get forksEmpty => 'No forks found';
-
-  @override
-  String get sectionColors => 'Colors';
-
-  @override
-  String get sectionDisplay => 'Display';
-
-  @override
-  String get sectionStyle => 'Style';
-
-  @override
-  String get sectionCommunity => 'Community';
-
-  @override
-  String get sectionAppInfo => 'App Info';
-
-  @override
-  String get sectionCache => 'Cache';
-
-  @override
-  String get sectionRequests => 'Requests';
-
-  @override
-  String get sectionDnsProxy => 'DNS & Proxy';
-
-  @override
-  String get onboardingBack => 'Back';
-
-  @override
-  String get onboardingNext => 'Next';
-
-  @override
-  String get onboardingSkip => 'Skip';
-
-  @override
-  String get onboardingPaletteTitle => 'Make it yours';
-
-  @override
-  String get onboardingPaletteBody =>
-      'Pick a palette. Every accent, from cards to the player, follows it.';
-
-  @override
-  String get themeModeAuto => 'Auto';
-
-  @override
-  String get themeModeLight => 'Light';
-
-  @override
-  String get themeModeDark => 'Dark';
-
-  @override
-  String get onboardingSyncTitle => 'Sync your library';
-
-  @override
-  String get onboardingSyncBody =>
-      'Sign in with AniList to bring your lists, progress and scores with you. Or skip and browse as a guest.';
-
-  @override
-  String get onboardingOpenLinks => 'Open AniList and repo links in Dartotsu';
-
-  @override
-  String get onboardingPermsTitle => 'Permissions';
-
-  @override
-  String get onboardingPermsBody =>
-      'Allow these now so downloads, updates and alerts work without interruptions. You can change them later in system settings.';
-
-  @override
-  String get permNotifications => 'Notifications';
-
-  @override
-  String get permNotificationsDesc =>
-      'Download progress, new episodes and replies';
-
-  @override
-  String get permStorage => 'All files access';
-
-  @override
-  String get permStorageDesc => 'Save downloads to the public Dartotsu folder';
-
-  @override
-  String get permInstall => 'Install updates';
-
-  @override
-  String get permInstallDesc => 'Let Dartotsu install its own app updates';
-
-  @override
-  String get permBattery => 'Unrestricted battery';
-
-  @override
-  String get permBatteryDesc => 'Keep long downloads running in the background';
-
-  @override
-  String get permGrant => 'Allow';
-
-  @override
-  String get permGranted => 'Allowed';
-
-  @override
-  String get linkOpenInApp => 'Open links in Dartotsu';
-
-  @override
-  String get linkOpenInAppDesc => 'Let AniList and repo links open the app';
-
-  @override
-  String get reviewsTitle => 'Reviews';
-
-  @override
-  String get reviewsEmpty => 'No reviews yet';
-
-  @override
-  String get reviewsFailed => 'Couldn\'t load reviews';
-
-  @override
-  String get reviewHelpfulQuestion => 'Was this review helpful?';
-
-  @override
-  String get reviewVoteFailed => 'Couldn\'t save your vote';
-
-  @override
-  String reviewHelpful(int n, int total) {
-    return '$n of $total found this helpful';
-  }
-
-  @override
-  String get calendarTitle => 'Airing schedule';
-
-  @override
-  String get calendarToday => 'Today';
-
-  @override
-  String get calendarEmpty => 'Nothing airs this day';
-
-  @override
-  String get calendarFailed => 'Couldn\'t load the schedule';
-
-  @override
-  String calendarEpisode(int n) {
-    return 'Episode $n';
-  }
-
-  @override
-  String get shareAnalytics => 'Share anonymous usage data';
-
-  @override
-  String get shareAnalyticsDesc =>
-      'Anonymous user counts and crash reports. No account or personal data';
-
-  @override
-  String get linkOpenAnilist => 'Open AniList links in Dartotsu';
-
-  @override
-  String get linkOpenAnilistDesc =>
-      'Turn on link handling so anilist.co links open the app';
-
-  @override
-  String get linkSettingsFailed => 'Could not open the system settings';
-
-  @override
-  String get discordRichPresence => 'Rich Presence';
-
-  @override
-  String get discordRichPresenceTokenDesc =>
-      'Show what you are doing on your Discord profile. Needs your Discord token.';
-
-  @override
-  String get discordRichPresenceDesktopDesc =>
-      'Show what you are doing on your Discord profile. Needs the Discord desktop app running.';
-
-  @override
-  String get discordBrowsing => 'Show browsing activity';
-
-  @override
-  String get discordBrowsingDesc =>
-      'Also show the tab, page or profile you are looking at, not only what you watch or read.';
-
-  @override
-  String get discordLookHeader => 'Presence look';
-
-  @override
-  String get discordActivityType => 'Activity type';
-
-  @override
-  String get discordActivityTypeDesc =>
-      'How Discord words it: \"Watching …\" or \"Playing …\". Auto uses Watching for anime and Playing for everything else.';
-
-  @override
-  String get discordWatching => 'Watching';
-
-  @override
-  String get discordPlaying => 'Playing';
-
-  @override
-  String get discordCovers => 'Show covers';
-
-  @override
-  String get discordCoversDesc =>
-      'Cover art and the Dartotsu icon on the card.';
-
-  @override
-  String get discordTimer => 'Show timer';
-
-  @override
-  String get discordTimerDesc => 'Elapsed or remaining time under the title.';
-
-  @override
-  String get discordButtons => 'Show buttons';
-
-  @override
-  String get discordButtonsDesc =>
-      '\"View anime / manga\" and \"Open Dartotsu\" buttons.';
-
-  @override
-  String get discordHideTitles => 'Hide titles';
-
-  @override
-  String get discordHideTitlesDesc =>
-      'Replace anime and manga names (and their cover and link) with \"Something private\".';
-
-  @override
-  String get discordConnectionHeader => 'Connection';
-
-  @override
-  String get listSearchHint => 'Search this list';
-
-  @override
-  String get listSort => 'Sort';
-
-  @override
-  String get listFilter => 'Filter';
-
-  @override
-  String get listRandom => 'Random title';
-
-  @override
-  String get listReverse => 'Reverse order';
-
-  @override
-  String get listSortDefault => 'List order';
-
-  @override
-  String get listSortScore => 'Your score';
-
-  @override
-  String get listSortTitle => 'Title';
-
-  @override
-  String get listSortUpdated => 'Last updated';
-
-  @override
-  String get listSortProgress => 'Progress';
-
-  @override
-  String get listSortReleased => 'Release date';
-
-  @override
-  String get listSortAverage => 'Average score';
-
-  @override
-  String get listFilterFormat => 'Format';
-
-  @override
-  String get listFilterStatus => 'Status';
-
-  @override
-  String get listFilterGenres => 'Genres';
-
-  @override
-  String get listFilterClear => 'Clear filters';
-
-  @override
-  String get listNoMatches => 'Nothing in this list matches';
-
-  @override
-  String get discordLogin => 'Log in to Discord';
-
-  @override
-  String get discordToken => 'Discord token';
-
-  @override
-  String get discordTokenSaved =>
-      'Saved. Tap to replace, long press to remove.';
-
-  @override
-  String get discordTokenNotSet => 'Not set. Tap to add.';
-
-  @override
-  String get discordTokenPrompt =>
-      'Paste the token of the Discord account to show the presence on. It stays on this device.';
-
-  @override
-  String get discordTokenHint => 'Token';
-
-  @override
-  String get discordTokenSavedSnack => 'Discord token saved';
-
-  @override
-  String get discordTokenRemovedSnack => 'Discord token removed';
-
-  @override
-  String get discordRichPresenceRow => 'Discord Rich Presence';
-
-  @override
-  String get discordRichPresenceRowOn => 'On · tap to change how it looks';
-
-  @override
-  String get discordRichPresenceRowOff =>
-      'Show what you are doing on your Discord profile';
-
-  @override
-  String get loginCancelled => 'Login cancelled';
-
-  @override
-  String get invalidToken => 'Invalid token';
-
-  @override
-  String loginFailed(String error) {
-    return 'Login failed: $error';
-  }
-
-  @override
-  String get malLoginFailed => 'MyAnimeList login failed';
-
-  @override
-  String get kitsuLoginFailed =>
-      'Kitsu login failed. Check your email and password.';
-
-  @override
-  String get kitsuLoginTitle => 'Sign in to Kitsu';
-
-  @override
-  String get emailOrUsername => 'Email or username';
-
-  @override
-  String get password => 'Password';
-
-  @override
-  String get kitsuProfile => 'Kitsu profile';
-
-  @override
-  String get mangaBakaLoginFailed => 'MangaBaka login failed';
-
-  @override
-  String get mangaBakaProfile => 'MangaBaka profile';
-
-  @override
-  String get refreshFromMangaBaka => 'Refresh from MangaBaka';
-
-  @override
-  String get artistsLabel => 'Artists';
-
-  @override
-  String get authorsLabel => 'Authors';
-
-  @override
-  String get publishersLabel => 'Publishers';
-
-  @override
-  String get licensedLabel => 'Licensed';
-
-  @override
-  String get contentRatingLabel => 'Content rating';
-
-  @override
-  String get yesLabel => 'Yes';
-
-  @override
-  String get noLabel => 'No';
-
-  @override
-  String get ratingSteps => 'Rating steps';
-
-  @override
-  String get hideNsfw => 'Hide NSFW';
-
-  @override
-  String get hideNsfwDesc =>
-      'Keep adult titles out of feeds and search, and list your own adult entries under Hidden Media.';
-
-  @override
-  String get kitsuAccountOptions => 'Kitsu account options';
-
-  @override
-  String get couldNotUpdateKitsuSettings =>
-      'Could not update your Kitsu settings';
-
-  @override
-  String get titleCanonical => 'Canonical';
-
-  @override
-  String get titleRomanized => 'Romanized';
-
-  @override
-  String get titleLocalized => 'Localized';
-
-  @override
-  String get ratingSystem => 'Rating system';
-
-  @override
-  String get ratingSimple => 'Simple (3 faces)';
-
-  @override
-  String get ratingRegular => 'Regular (5 stars)';
-
-  @override
-  String get ratingAdvanced => 'Advanced (10 points)';
-
-  @override
-  String get contentFilter => 'Content filter';
-
-  @override
-  String get contentSfw => 'Safe for work only';
-
-  @override
-  String get contentSometimes => 'Mature content in searches';
-
-  @override
-  String get contentEverywhere => 'Mature content everywhere';
-
-  @override
-  String get shareToGlobal => 'Share to global feed';
-
-  @override
-  String get shareToGlobalDesc =>
-      'Let your activity appear in Kitsu\'s global feed.';
-
-  @override
-  String get memberSince => 'Member since';
-
-  @override
-  String get location => 'Location';
-
-  @override
-  String get accountType => 'Account type';
-
-  @override
-  String get accountSupporter => 'Supporter';
-
-  @override
-  String get accountFree => 'Free';
-
-  @override
-  String get accountDetails => 'Account details';
-
-  @override
-  String get refreshFromKitsu => 'Refresh from Kitsu';
-
-  @override
-  String get simklReadOnly => 'Simkl granted read-only access';
-
-  @override
-  String get incognitoEditsBlocked => 'Incognito: list edits are blocked';
-
-  @override
-  String serviceError(String service, String error) {
-    return '$service: $error';
-  }
-
-  @override
-  String get incognitoProgressNotSaved => 'Incognito: progress not saved';
-
-  @override
-  String progressSet(int progress) {
-    return 'Progress set to $progress';
-  }
-
-  @override
-  String removedFromList(String title) {
-    return 'Removed $title from your list';
-  }
-
-  @override
-  String get following => 'Following';
-
-  @override
-  String get homeSections => 'Home sections';
-
-  @override
-  String get homeSectionsHint =>
-      'Drag to reorder. Hidden sections are never fetched.';
-
-  @override
-  String get customListDeleteFailed => 'Failed to delete custom list';
-
-  @override
-  String get customListsSaveFailed => 'Failed to save custom lists';
-
-  @override
-  String get customListsSaved => 'Custom lists saved';
-
-  @override
-  String get listName => 'List name';
-
-  @override
-  String get addList => 'Add list';
-
-  @override
-  String voiceActorsIn(String name) {
-    return 'Voice actors · $name';
-  }
-
-  @override
-  String get animeAppearances => 'Anime appearances';
-
-  @override
-  String get mangaAppearances => 'Manga appearances';
-
-  @override
-  String get voicedCharacters => 'Voiced characters';
-
-  @override
-  String get animeCredits => 'Anime credits';
-
-  @override
-  String get mangaCredits => 'Manga credits';
-
-  @override
-  String get mainProductions => 'Main productions';
-
-  @override
-  String get otherWorks => 'Other works';
-
-  @override
-  String get prequelSequel => 'Prequel & Sequel';
-
-  @override
-  String get previousSeason => 'Temporada Anterior';
-
-  @override
-  String get thisSeason => 'Esta Temporada';
-
-  @override
-  String get nextSeason => 'Próxima Temporada';
-
-  @override
-  String get voiceRoles => 'Voice roles';
-
-  @override
-  String get staffPositions => 'Staff positions';
-
-  @override
-  String get mangaWorks => 'Manga works';
-
-  @override
-  String get malProfile => 'MyAnimeList profile';
-
-  @override
-  String get refreshFromMal => 'Refresh from MyAnimeList';
-
-  @override
-  String get repullProfileCounts => 'Re-pull your profile and counts';
-
-  @override
-  String get refreshed => 'Refreshed';
-
-  @override
-  String get simklProfile => 'Simkl profile';
-
-  @override
-  String get refreshFromSimkl => 'Refresh from Simkl';
-
-  @override
-  String get repullProfileLibrary => 'Re-pull your profile and library';
-
-  @override
-  String get simklSignInToSearch => 'Sign in to Simkl to search';
-
-  @override
-  String get dropRate => 'Drop rate';
-
-  @override
-  String get simklAttribution =>
-      'Data and artwork provided by Simkl. View on Simkl';
-
-  @override
-  String get onHold => 'null Em Pausa';
-
-  @override
-  String get scoredBy => 'Scored by';
-
-  @override
-  String get planToWatch => 'Plan to watch';
-
-  @override
-  String get planToRead => 'Plan to read';
-
-  @override
-  String get timesRewatched => 'Times rewatched';
-
-  @override
-  String get timesReread => 'Times reread';
-
-  @override
-  String get comments => 'Comentários';
-
-  @override
-  String get moviesAndSeries => 'Movies & Series';
-
-  @override
-  String get trackingOnly => 'Tracking only';
-
-  @override
-  String get signedIn => 'Signed in';
-
-  @override
-  String get searchLanguage => 'Search language';
-
-  @override
-  String get savedToList => 'Saved to your list';
-
-  @override
-  String get removedFromYourList => 'Removed from your list';
-
-  @override
-  String get retry => 'Retry';
-
-  @override
-  String get synopsis => 'Sinopse';
-
-  @override
-  String get details => 'Details';
-
-  @override
-  String get addToList => 'Adicionar à Lista';
-
-  @override
-  String get trailer => 'Trailer';
-
-  @override
-  String get titleCopied => 'Title copied';
-
-  @override
-  String get linkCopied => 'Link copied';
-
-  @override
-  String get watchTrailer => 'Watch trailer';
-
-  @override
-  String get copyTitle => 'Copy title';
-
-  @override
-  String get copyLink => 'Copy link';
-
-  @override
-  String get openInBrowser => 'Open in browser';
-
-  @override
-  String viewOnSource(String source) {
-    return 'View on $source';
-  }
-
-  @override
-  String episodeAirsIn(int ep, String time) {
-    return 'Episode $ep airs in $time';
-  }
-
-  @override
-  String nextEpisodeIn(String time) {
-    return 'Next episode in $time';
-  }
-
-  @override
-  String get logPathCopied => 'Log file path copied to clipboard';
-
-  @override
-  String get animeSource => 'Anime source';
-
-  @override
-  String get mangaSource => 'Manga source';
-
-  @override
-  String get popular => 'null Popular';
-
-  @override
-  String get latest => 'Latest';
-
-  @override
-  String get saved => 'Saved';
-
-  @override
-  String get nothingMatched => 'Nothing matched';
-
-  @override
-  String get nothingSavedFromSource => 'Nothing saved from this source yet';
-
-  @override
-  String get sourceReturnedNothing => 'This source returned nothing';
-
-  @override
-  String get checkConnectionOrSource =>
-      'Check your connection or try another source.';
-
-  @override
-  String get tryDifferentSearch => 'Try a different search term.';
-
-  @override
-  String get savedTitlesAppearHere =>
-      'Titles you add to your list appear here.';
-
-  @override
-  String get tryOtherFeed => 'Try the other feed or search instead.';
-
-  @override
-  String searchSource(String source) {
-    return 'Search $source';
-  }
-
-  @override
-  String get animeExtensions => 'Anime Extensions';
-
-  @override
-  String get mangaExtensions => 'Manga Extensions';
-
-  @override
-  String get nothingHereYet => 'Nothing here yet';
-
-  @override
-  String get savedOnDeviceUntilLogin =>
-      'Everything below is saved on this device until you do.';
-
-  @override
-  String get yourProfile => 'Your profile';
-
-  @override
-  String get activity => 'null';
-
-  @override
-  String get extensions => 'Extensions';
-
-  @override
-  String get logOut => 'Log out';
-
-  @override
-  String get logIn => 'Log in';
-
-  @override
-  String get logOutConfirm => 'Are you sure you want to log out?';
-
-  @override
-  String get incognitoMode => 'Modo Anônimo';
-
-  @override
-  String get alsoBlockListEdits => 'Also block list edits';
-
-  @override
-  String get offlineMode => 'Modo Offline';
-
-  @override
-  String get switchService => 'Switch service';
-
-  @override
-  String logOutOf(String name) {
-    return 'Log out of $name';
-  }
-
-  @override
-  String get loggedIn => 'Logged in';
-
-  @override
-  String get notifications => 'Notificações';
-
-  @override
-  String get nothingNew => 'Nothing new';
-
-  @override
-  String get thisWeek => 'This week';
-
-  @override
-  String get listOnly => 'List Only';
-
-  @override
-  String get filter => 'Filter';
-
-  @override
-  String get searchResults => 'Search Results';
-
-  @override
-  String get recentSearches => 'Recent searches';
-
-  @override
-  String get searchOrSetFilter => 'Search or set a filter';
-
-  @override
-  String get filters => 'Filters';
-
-  @override
-  String get showLess => 'Show less';
-
-  @override
-  String get showAll => 'Show all';
-
-  @override
-  String get apply => 'Apply';
-
-  @override
-  String get preview => 'Preview';
-
-  @override
-  String get preset => 'Preset';
-
-  @override
-  String get cardNormal => 'Normal';
-
-  @override
-  String get cardOnCard => 'On card';
-
-  @override
-  String get cardInCard => 'In card';
-
-  @override
-  String get size => 'Size';
-
-  @override
-  String get cardWidth => 'Card width';
-
-  @override
-  String get compact => 'Compact';
-
-  @override
-  String get coverAndTitleOnly => 'Cover and title only';
-
-  @override
-  String get titleLines => 'Title lines';
-
-  @override
-  String get shape => 'Shape';
-
-  @override
-  String get posterShape => 'Poster shape';
-
-  @override
-  String get cornerRadius => 'Corner radius';
-
-  @override
-  String get off => 'Off';
-
-  @override
-  String get topLeft => 'Top left';
-
-  @override
-  String get topRight => 'Top right';
-
-  @override
-  String get bottomLeft => 'Bottom left';
-
-  @override
-  String get bottomRight => 'Bottom right';
-
-  @override
-  String get overlays => 'Overlays';
-
-  @override
-  String get progressCount => 'Progress / count';
-
-  @override
-  String get pill => 'Pill';
-
-  @override
-  String get bar => 'Bar';
-
-  @override
-  String get outside => 'Outside';
-
-  @override
-  String get scoreBadge => 'Score badge';
-
-  @override
-  String get airingDot => 'Airing dot';
-
-  @override
-  String get updateAvailable => 'Update available';
-
-  @override
-  String get notInstalled => 'Not installed';
-
-  @override
-  String get done => 'Done';
-
-  @override
-  String get searchOrEnterUrl => 'Search or enter URL';
-
-  @override
-  String get refresh => 'Refresh';
-
-  @override
-  String get share => 'Share';
-
-  @override
-  String get characters => 'Personagens';
-
-  @override
-  String get staff => 'Funcionários';
-
-  @override
-  String get readMore => 'Read more';
-
-  @override
-  String get couldNotLoadList => 'Could not load the list';
-
-  @override
-  String get logInToFavourite => 'Log in to add favourites';
-
-  @override
-  String get alsoKnownAs => 'Also known as';
-
-  @override
-  String get hideSpoilerNames => 'Hide spoiler names';
-
-  @override
-  String get showSpoilerNames => 'Show spoiler names';
-
-  @override
-  String get favourited => 'Favourited';
-
-  @override
-  String get favourite => 'Favourite';
-
-  @override
-  String get couldNotOpenTitle => 'Could not open this title';
-
-  @override
-  String get nobodyHereYet => 'Nobody here yet';
-
-  @override
-  String get noMatches => 'No matches';
-
-  @override
-  String get gridView => 'Visualização Em Grade';
-
-  @override
-  String get fullWidth => 'Full width';
-
-  @override
-  String get userNotFound => 'User not found';
-
-  @override
-  String get couldNotUpdateFollow => 'Could not update follow';
-
-  @override
-  String followedUser(String name) {
-    return 'Followed $name';
-  }
-
-  @override
-  String unfollowedUser(String name) {
-    return 'Unfollowed $name';
-  }
-
-  @override
-  String get messages => 'Messages';
-
-  @override
-  String get logInToSeeMessages => 'Log in to see your messages';
-
-  @override
-  String get editActivity => 'Edit activity';
-
-  @override
-  String get newActivity => 'New activity';
-
-  @override
-  String get editMessage => 'Edit message';
-
-  @override
-  String get writeMessage => 'Write a message';
-
-  @override
-  String get editReply => 'Edit reply';
-
-  @override
-  String get posted => 'Posted';
-
-  @override
-  String get couldNotPost => 'Could not post';
-
-  @override
-  String get nothingToPreview => 'Nothing to preview';
-
-  @override
-  String get writeSomethingHint =>
-      'Write something… AniList markdown works here';
-
-  @override
-  String get privateMessage => 'Private message';
-
-  @override
-  String get post => 'Post';
-
-  @override
-  String get nothingHere => 'Nothing here';
-
-  @override
-  String get noAnimeProgress => 'No anime progress';
-
-  @override
-  String get noMangaProgress => 'No manga progress';
-
-  @override
-  String get noMessages => 'No messages';
-
-  @override
-  String get writeMessageHint => 'Write a message…';
-
-  @override
-  String get shareSomethingHint => 'Share something…';
-
-  @override
-  String get all => 'All';
-
-  @override
-  String get anime => 'Anime';
-
-  @override
-  String get manga => 'Mangá';
-
-  @override
-  String get count => 'Count';
-
-  @override
-  String get hoursWatched => 'Hours watched';
-
-  @override
-  String get chaptersRead => 'Chapters read';
-
-  @override
-  String get meanScore => 'Nota Média';
-
-  @override
-  String get noStatsYet => 'No stats yet';
-
-  @override
-  String get totalEntries => 'Total entries';
-
-  @override
-  String get episodesWatched => 'Episodes watched';
-
-  @override
-  String get daysWatched => 'Days watched';
-
-  @override
-  String get volumesRead => 'Volumes read';
-
-  @override
-  String get standardDeviation => 'Standard deviation';
-
-  @override
-  String get showMore => 'Show more';
-
-  @override
-  String get followsYou => 'Follows you';
-
-  @override
-  String get nobodyYet => 'Nobody yet';
-
-  @override
-  String get logInToLike => 'Log in to like';
-
-  @override
-  String get failedToLikeActivity => 'Failed to like activity';
-
-  @override
-  String get deleteActivityConfirm => 'Delete activity?';
-
-  @override
-  String get deletedActivity => 'Deleted activity';
-
-  @override
-  String get failedToDeleteActivity => 'Failed to delete activity';
-
-  @override
-  String get subscribed => 'Subscribed';
-
-  @override
-  String get unsubscribed => 'Unsubscribed';
-
-  @override
-  String get failedToUpdateSubscription => 'Failed to update subscription';
-
-  @override
-  String get edit => 'Edit';
-
-  @override
-  String get delete => 'Delete';
-
-  @override
-  String get likedBy => 'Liked by';
-
-  @override
-  String get follow => 'Follow';
-
-  @override
-  String get nameCopied => 'Name copied';
-
-  @override
-  String get followsEachOther => 'Follows each other';
-
-  @override
-  String get unfollow => 'Unfollow';
-
-  @override
-  String get userIdCopied => 'User id copied';
-
-  @override
-  String get shareProfile => 'Share profile';
-
-  @override
-  String get copyUserId => 'Copy user id';
-
-  @override
-  String get failedToDelete => 'Failed to delete';
-
-  @override
-  String get failedToLike => 'Failed to like';
-
-  @override
-  String get replies => 'Replies';
-
-  @override
-  String get reply => 'Reply';
-
-  @override
-  String get noRepliesYet => 'No replies yet';
-
-  @override
-  String get favouriteAnime => 'Favourite anime';
-
-  @override
-  String get favouriteManga => 'Favourite manga';
-
-  @override
-  String get favouriteCharacters => 'Favourite characters';
-
-  @override
-  String get favouriteStaff => 'Favourite staff';
-
-  @override
-  String get favouriteStudios => 'Favourite studios';
-
-  @override
-  String get noFavouritesYet => 'No favourites yet';
-
-  @override
-  String get yourStory => 'Your story';
-
-  @override
-  String get copiedToClipboard => 'Copied to clipboard';
-
-  @override
-  String get justNow => 'Just now';
-
-  @override
-  String get openImage => 'Open image';
-
-  @override
-  String get hideSpoiler => 'Hide spoiler';
-
-  @override
-  String get showSpoiler => 'Show spoiler';
-
-  @override
-  String get status => 'Status';
-
-  @override
-  String get score => 'Score';
-
-  @override
-  String get started => 'Started';
-
-  @override
-  String get completed => 'Completed';
-
-  @override
-  String get private => 'Private';
-
-  @override
-  String get hideFromStatusLists => 'Hide from status lists';
-
-  @override
-  String get totalRepeats => 'Total repeats';
-
-  @override
-  String get other => 'Other';
-
-  @override
-  String get customLists => 'Custom lists';
-
-  @override
-  String get activeDays => 'Active days';
-
-  @override
-  String get longestStreak => 'Longest streak';
-
-  @override
-  String get currentStreak => 'Current streak';
-
-  @override
-  String get tapOrHoverDay => 'Tap or hover a day';
-
-  @override
-  String get less => 'Less';
-
-  @override
-  String get more => 'More';
-
-  @override
-  String epIn(int ep, String time) {
-    return 'Ep $ep in $time';
-  }
-
-  @override
-  String get sectionLoading => 'Loading';
-
-  @override
-  String get querySize => 'Query size';
-
-  @override
-  String get querySizeDesc =>
-      'One big query loads every row (and a whole profile) in a single request. Split queries send a small request per row or per profile part: each is quick and parts appear as they arrive.';
-
-  @override
-  String get oneBig => 'One big';
-
-  @override
-  String get split => 'Split';
-
-  @override
-  String get sectionSocial => 'Social';
-
-  @override
-  String get systemNotifications => 'System notifications';
-
-  @override
-  String get feedLayout => 'Feed layout';
-
-  @override
-  String sectionsShown(int shown, int total) {
-    return '$shown of $total shown — tap to pick and reorder';
-  }
-
-  @override
-  String labelSections(String label) {
-    return '$label sections';
-  }
-
-  @override
-  String get accountOptions => 'Account options';
-
-  @override
-  String get accountOptionsDesc =>
-      'Names, score format, list order, notifications and more';
-
-  @override
-  String get anilistAccountOptions => 'AniList account options';
-
-  @override
-  String get sectionPrivacy => 'Privacy';
-
-  @override
-  String get hidePrivateEntries => 'Hide private entries';
-
-  @override
-  String get hidePrivateEntriesDesc =>
-      'Keep entries marked private on AniList out of the feed';
-
-  @override
-  String get anilistProfile => 'AniList profile';
-
-  @override
-  String get refreshFromAnilist => 'Refresh from AniList';
-
-  @override
-  String get couldNotUpdateAnilistSettings =>
-      'Could not update AniList settings';
-
-  @override
-  String get sectionNames => 'Names';
-
-  @override
-  String get titleLanguage => 'Title language';
-
-  @override
-  String get titleLanguageDesc =>
-      'How titles are written everywhere, e.g. Attack on Titan / Shingeki no Kyojin / 進撃の巨人.';
-
-  @override
-  String get staffCharacterNames => 'Staff and character names';
-
-  @override
-  String get sectionLists => 'Lists';
-
-  @override
-  String get scoreFormat => 'Score format';
-
-  @override
-  String get sortListsBy => 'Sort lists by';
-
-  @override
-  String labelCustomLists(String label) {
-    return '$label custom lists';
-  }
-
-  @override
-  String customListsCount(int count) {
-    return '$count lists — tap to add or remove';
-  }
-
-  @override
-  String get mergeActivities => 'Merge activities';
-
-  @override
-  String minutesCount(int count) {
-    return '$count mins';
-  }
-
-  @override
-  String get timezone => 'Timezone';
-
-  @override
-  String get notSet => 'Not set';
-
-  @override
-  String get airingNotifications => 'Airing notifications';
-
-  @override
-  String get airingNotificationsDesc =>
-      'Get notified when an episode of a followed show airs';
-
-  @override
-  String get displayAdultContent => 'Display adult content';
-
-  @override
-  String get displayAdultContentDesc =>
-      'Include 18+ titles in browse, search and feeds';
-
-  @override
-  String get restrictMessages => 'Restrict messages to following';
-
-  @override
-  String get restrictMessagesDesc => 'Only people you follow can message you';
-
-  @override
-  String get sectionServices => 'Services';
-
-  @override
-  String get novel => 'Novel';
-
-  @override
-  String labelService(String label) {
-    return '$label service';
-  }
-
-  @override
-  String nameSettings(String name) {
-    return '$name settings';
-  }
-
-  @override
-  String extensionBridgeOptions(String name) {
-    return 'Options from the $name extension bridge';
-  }
-
-  @override
-  String extensionServiceFailed(String name, String error) {
-    return '$name could not start: $error';
-  }
-
-  @override
-  String get importLists => 'Import lists';
-
-  @override
-  String get importListsDesc =>
-      'From Aniyomi, Mihon / Tachiyomi or Kotatsu backups';
-
-  @override
-  String get exportLists => 'Export lists';
-
-  @override
-  String get exportListsDesc => 'To an Aniyomi, Mihon or Kotatsu backup';
-
-  @override
-  String get sectionBrowse => 'Browse';
-
-  @override
-  String get readingTab => 'Reading tab';
-
-  @override
-  String get readingTabDesc => 'Which extensions the third tab shows';
-
-  @override
-  String get defaultFeed => 'Default feed';
-
-  @override
-  String get defaultFeedDesc => 'Which list a source opens with';
-
-  @override
-  String noServiceSupports(String type) {
-    return 'No service supports $type';
-  }
-
-  @override
-  String sourcesLoading(String name, int loaded, int installed) {
-    return '$name · $loaded of $installed sources loading';
-  }
-
-  @override
-  String noExtensionServiceSupportsHere(String type) {
-    return 'No extension service supports $type here.';
-  }
-
-  @override
-  String get loadDataFrom => 'Load data from';
-
-  @override
-  String noInstalledSourcesYet(String type) {
-    return 'No installed $type sources yet.';
-  }
-
-  @override
-  String extensionNotInstalled(String name) {
-    return 'The extension for $name is not installed';
-  }
-
-  @override
-  String get thisSource => 'this source';
-
-  @override
-  String failedToAddRepository(String error) {
-    return 'Failed to add repository: $error';
-  }
-
-  @override
-  String installedType(String type) {
-    return 'Installed $type';
-  }
-
-  @override
-  String availableType(String type) {
-    return 'Available $type';
-  }
-
-  @override
-  String noInstalledExtensions(String type) {
-    return 'No installed $type extensions';
-  }
-
-  @override
-  String noAvailableExtensions(String type) {
-    return 'No available $type extensions';
-  }
-
-  @override
-  String get nothingToShowYet => 'Nothing to show yet';
-
-  @override
-  String get addTitlesHint =>
-      'Add some titles to your list and they\'ll appear here.';
-
-  @override
-  String get couldntLoad => 'Couldn\'t load';
-
-  @override
-  String get progressStyleHint =>
-      'Pill and bar overlay the poster; outside shows the same count as plain text instead — pick one.';
-
-  @override
-  String get nixManagedUpdate =>
-      'This build is managed by Nix — run \"nix flake update\" on your flake and rebuild instead of updating from here';
-
-  @override
-  String autoUpdateFailed(String error) {
-    return 'Automatic update failed ($error) — opening the download page instead';
-  }
-
-  @override
-  String get unknownPreference => 'Unknown preference';
-
-  @override
-  String unsupportedPreferenceType(String type) {
-    return 'Unsupported preference type $type';
-  }
-
-  @override
-  String get notYetReleased => 'Not Yet Released';
-
-  @override
-  String get notStarted => 'Not Started';
-
-  @override
-  String get country => 'Country';
-
-  @override
-  String get sort => 'Ordenar';
-
-  @override
-  String get chooseBackupDialog => 'Choose an Aniyomi, Mihon or Kotatsu backup';
-
-  @override
-  String get importListsHint =>
-      'Bring a library over from Aniyomi, Mihon / Tachiyomi or Kotatsu. Titles, covers, progress and categories are kept.';
-
-  @override
-  String get chooseBackupFile => 'Choose backup file';
-
-  @override
-  String importAnimeCount(int count) {
-    return 'Import $count anime';
-  }
-
-  @override
-  String importMangaCount(int count) {
-    return 'Import $count manga';
-  }
-
-  @override
-  String get mergeWithExisting => 'Merge with existing lists';
-
-  @override
-  String get mergeWithExistingDesc =>
-      'Keeps what you already have; off replaces matching titles';
-
-  @override
-  String get chooseAnother => 'Choose another';
-
-  @override
-  String get import => 'Import';
-
-  @override
-  String animeCount(int count) {
-    return '$count anime';
-  }
-
-  @override
-  String mangaCount(int count) {
-    return '$count manga';
-  }
-
-  @override
-  String get chooseSaveLocation => 'Choose where to save the backup';
-
-  @override
-  String savedPath(String path) {
-    return 'Saved $path';
-  }
-
-  @override
-  String exportFailed(String error) {
-    return 'Export failed: $error';
-  }
-
-  @override
-  String get nothingInLocalLists => 'Nothing in your local lists yet.';
-
-  @override
-  String exportsSummary(int anime, int manga) {
-    return 'Exports $anime anime and $manga manga from your local lists. Kotatsu only supports manga.';
-  }
-
-  @override
-  String get saveToFolder => 'Save to folder';
-
-  @override
-  String get formatAnimeManga => 'Anime and manga · .tachibk';
-
-  @override
-  String get formatMangaTachibk => 'Manga only · .tachibk';
-
-  @override
-  String get formatMangaZip => 'Manga only · .zip';
-
-  @override
-  String get genres => 'Gêneros';
-
-  @override
-  String get relations => 'Relações';
-
-  @override
-  String get recommendations => 'Recommendations';
-
-  @override
-  String get openings => 'Openings';
-
-  @override
-  String get endings => 'Endings';
-
-  @override
-  String get background => 'Background';
-
-  @override
-  String get links => 'Links';
-
-  @override
-  String get rank => 'Rank';
-
-  @override
-  String get members => 'Members';
-
-  @override
-  String get favorites => 'Favoritos';
-
-  @override
-  String get episodes => 'Episodes';
-
-  @override
-  String get chapters => 'Chapters';
-
-  @override
-  String get volumes => 'Volumes';
-
-  @override
-  String get format => 'Formato';
-
-  @override
-  String get source => 'Fonte';
-
-  @override
-  String get duration => 'Duration';
-
-  @override
-  String minutesPerEpisode(int minutes) {
-    return '$minutes min per ep';
-  }
-
-  @override
-  String get rating => 'Rating';
-
-  @override
-  String get studio => 'Estúdio';
-
-  @override
-  String get serialization => 'Serialization';
-
-  @override
-  String get season => 'Temporada';
-
-  @override
-  String get broadcast => 'Broadcast';
-
-  @override
-  String get aired => 'Aired';
-
-  @override
-  String get published => 'Published';
-
-  @override
-  String get popularity => 'Popularidade';
-
-  @override
-  String get community => 'Community';
-
-  @override
-  String get watching => 'Observando';
-
-  @override
-  String get reading => 'Leitura';
-
-  @override
-  String get dropped => 'Dropped';
-
-  @override
-  String get planned => 'null Planejado';
-
-  @override
-  String get trailers => 'Trailers';
-
-  @override
-  String get ratings => 'Ratings';
-
-  @override
-  String get originalTitle => 'Original';
-
-  @override
-  String get titleLabel => 'Title';
-
-  @override
-  String get votes => 'Votes';
-
-  @override
-  String get watchedStat => 'Watched';
-
-  @override
-  String get runtime => 'Runtime';
-
-  @override
-  String get director => 'Director';
-
-  @override
-  String get network => 'Network';
-
-  @override
-  String get certification => 'Certification';
-
-  @override
-  String get airs => 'Airs';
-
-  @override
-  String get budget => 'Budget';
-
-  @override
-  String get revenue => 'Revenue';
-
-  @override
-  String get released => 'Released';
-
-  @override
-  String get tags => 'Tags';
-
-  @override
-  String get author => 'Autor';
-
-  @override
-  String get born => 'Born';
-
-  @override
-  String get website => 'Website';
-
-  @override
-  String get established => 'Established';
-
-  @override
-  String get manhwa => 'Manhwa';
-
-  @override
-  String get manhua => 'Manhua';
-
-  @override
-  String get novels => 'Novels';
-
-  @override
-  String get thisMonth => 'This month';
-
-  @override
-  String get movies => 'Movies';
-
-  @override
-  String get shows => 'Shows';
-
-  @override
-  String get rewatching => 'Rewatching';
-
-  @override
-  String get rereading => 'Rereading';
-
-  @override
-  String get watchedStatus => 'Watched';
-
-  @override
-  String get planning => 'Planning';
-
-  @override
-  String get paused => 'Paused';
-
-  @override
-  String get watch => 'Assistir';
-
-  @override
-  String get read => 'Ler';
-
-  @override
-  String get finished => 'Finished';
-
-  @override
-  String get releasing => 'Releasing';
-
-  @override
-  String get cancelled => 'Cancelled';
-
-  @override
-  String get hiatus => 'Hiatus';
-
-  @override
-  String get remove => 'Remove';
-
-  @override
-  String syncToService(String service) {
-    return 'Sync to $service';
-  }
-
-  @override
-  String syncedToService(String service) {
-    return 'Synced to $service';
-  }
-
-  @override
-  String get latestReleases => 'Latest Releases';
-
-  @override
-  String get topRated => 'null Mais Bem Avaliado';
-
-  @override
-  String localSection(String title) {
-    return '$title · Local';
-  }
-
-  @override
-  String get localEntryNote =>
-      'This title is only in your local list on this device. Editing is turned off here because it could clash with your account list; you can still remove it.';
-
-  @override
-  String get cardPresetPoster => 'Poster';
-
-  @override
-  String get cardPresetCard => 'Card';
-
-  @override
-  String get cardPresetCozy => 'Cozy';
-
-  @override
-  String get sortTopRated => 'Top rated';
-
-  @override
-  String get sortMostPopular => 'Most popular';
-
-  @override
-  String get sortTrending => 'Trending';
-
-  @override
-  String get sortNewest => 'Newest';
-
-  @override
-  String get sortAz => 'A–Z';
-
-  @override
-  String get sortMostFavourited => 'Most favourited';
-
-  @override
-  String get anyCountry => 'Any country';
-
-  @override
-  String get orderScore => 'Score';
-
-  @override
-  String get orderTitle => 'Title';
-
-  @override
-  String get orderLastUpdated => 'Last Updated';
-
-  @override
-  String get orderLastAdded => 'Last Added';
-
-  @override
-  String get never => 'Never';
-
-  @override
-  String get always => 'Always';
-
-  @override
-  String get scorePoint100 => '100 Point';
-
-  @override
-  String get scorePoint10Decimal => '10 Point Decimal';
-
-  @override
-  String get scorePoint10 => '10 Point';
-
-  @override
-  String get scorePoint5 => '5 Star';
-
-  @override
-  String get scorePoint3 => '3 Point Smiley';
-
-  @override
-  String hoursCount(int count) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: '$count hours',
-      one: '1 hour',
-    );
-    return '$_temp0';
-  }
-
-  @override
-  String daysCount(int count) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: '$count days',
-      one: '1 day',
-    );
-    return '$_temp0';
-  }
-
-  @override
-  String weeksCount(int count) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: '$count weeks',
-      one: '1 week',
-    );
-    return '$_temp0';
-  }
-
-  @override
-  String get resumeTitle => 'Resume';
-
-  @override
-  String get resumeSourceMissing => 'Install this title\'s source to resume';
-
-  @override
-  String get resumeRemove => 'Remove from resume';
-
-  @override
-  String resumeMissing(String title) {
-    return 'Couldn\'t find $title in this source';
-  }
-
-  @override
-  String resumeAt(String time) {
-    return '$time left';
-  }
-
-  @override
-  String resumePage(int page, int total) {
-    return 'Page $page of $total';
-  }
-
-  @override
-  String get continueWatching => 'Continue Assistindo';
-
-  @override
-  String get continueReading => 'Continue Lendo';
-
-  @override
-  String get favouriteAnimeSection => 'Favourite Anime';
-
-  @override
-  String get favouriteMangaSection => 'Favourite Manga';
-
-  @override
-  String get plannedAnime => 'Planned Anime';
-
-  @override
-  String get plannedManga => 'Planned Manga';
-
-  @override
-  String get completedAnime => 'Completed Anime';
-
-  @override
-  String get completedManga => 'Completed Manga';
-
-  @override
-  String get hiddenMedia => 'Mídia Oculta';
-
-  @override
-  String get recentUpdates => 'Atualizações Recentes';
-
-  @override
-  String get trendingNow => 'Trending Now';
-
-  @override
-  String get popularThisSeason => 'Popular This Season';
-
-  @override
-  String get trendingMovies => 'Trending Movies';
-
-  @override
-  String get topRatedSeries => 'Top Rated Series';
-
-  @override
-  String get mostFavouriteSeries => 'Most Favourite Series';
-
-  @override
-  String get popularAnime => 'Popular Anime';
-
-  @override
-  String get trendingManhwa => 'Trending Manhwa';
-
-  @override
-  String get trendingNovels => 'Trending Novels';
-
-  @override
-  String get topRatedManga => 'Top Rated Manga';
-
-  @override
-  String get mostFavouriteManga => 'Most Favourite Manga';
-
-  @override
-  String get popularManga => 'Popular Manga';
-
-  @override
-  String get topMovies => 'Top Movies';
-
-  @override
-  String get topOna => 'Top ONA';
-
-  @override
-  String get topOva => 'Top OVA';
-
-  @override
-  String get mostPopular => 'Most Popular';
-
-  @override
-  String get mostFavourite => 'null Mais Preferido';
-
-  @override
-  String get upcoming => 'Upcoming';
-
-  @override
-  String get topManga => 'Top Manga';
-
-  @override
-  String get topManhwa => 'Top Manhwa';
-
-  @override
-  String get topManhua => 'Top Manhua';
-
-  @override
-  String get topNovels => 'Top Novels';
-
-  @override
-  String get topOneShots => 'Top One-shots';
-
-  @override
-  String get trendingMoviesToday => 'Trending Movies Today';
-
-  @override
-  String get trendingShowsToday => 'Trending Shows Today';
-
-  @override
-  String get trendingMoviesWeek => 'Trending Movies This Week';
-
-  @override
-  String get trendingShowsWeek => 'Trending Shows This Week';
-
-  @override
-  String get mostWatchedMoviesMonth => 'Most Watched Movies This Month';
-
-  @override
-  String get mostWatchedShowsMonth => 'Most Watched Shows This Month';
-
-  @override
-  String get trendingThisWeek => 'Trending This Week';
-
-  @override
-  String get mostWatchedThisMonth => 'Most Watched This Month';
-
-  @override
-  String get repoLinksAdded => 'Added Repo Links Successfully!';
-
-  @override
-  String get errorGettingAnilistData => 'Error getting data from AniList.';
-
-  @override
-  String get navInfo => 'INFO';
-
-  @override
-  String get navComments => 'COMMENTS';
-
-  @override
-  String get playerNotAvailable => 'The player is not available yet';
-
-  @override
-  String deepLinkInitialError(String error) {
-    return 'Error getting initial deep link: $error';
-  }
-
-  @override
-  String deepLinkOpenError(String error) {
-    return 'Error Opening link: $error';
-  }
-
-  @override
-  String linkCantBeOpened(String link) {
-    return 'This link can\'t be opened: $link';
-  }
-
-  @override
-  String linkOpenError(String error) {
-    return 'Error opening link: $error';
-  }
-
-  @override
-  String get forReleasingTitles => 'for currently releasing titles';
-
-  @override
-  String get progress => 'Progress';
-
-  @override
-  String get notes => 'Notes';
-
-  @override
-  String serviceNotFound(String id) {
-    return 'Service \"$id\" not found';
-  }
-
-  @override
-  String get glassEffectEnabled => 'Glass effect enabled';
-
-  @override
-  String get glassEffectDisabled => 'Glass effect disabled';
-
-  @override
-  String get materialYouEnabled => 'Material You enabled';
-
-  @override
-  String get materialYouDisabled => 'Material You disabled';
-
-  @override
-  String get darkModeEnabled => 'Dark mode enabled';
-
-  @override
-  String get darkModeDisabled => 'Dark mode disabled';
-
-  @override
-  String get animeList => 'Anime list';
-
-  @override
-  String get mangaList => 'Manga list';
-
-  @override
-  String ownerAnimeList(String owner) {
-    return '$owner\'s anime list';
-  }
-
-  @override
-  String ownerMangaList(String owner) {
-    return '$owner\'s manga list';
-  }
-
-  @override
-  String get loadingList => 'Loading list';
-
-  @override
-  String get earlier => 'Earlier';
-
-  @override
-  String daysAgo(int count) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: '$count days ago',
-      one: '1 day ago',
-    );
-    return '$_temp0';
-  }
-
-  @override
-  String hoursAgo(int count) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: '$count hours ago',
-      one: '1 hour ago',
-    );
-    return '$_temp0';
-  }
-
-  @override
-  String minutesAgo(int count) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: '$count minutes ago',
-      one: '1 minute ago',
-    );
-    return '$_temp0';
-  }
-
-  @override
-  String minutesAgoShort(int count) {
-    return '${count}m ago';
-  }
-
-  @override
-  String hoursAgoShort(int count) {
-    return '${count}h ago';
-  }
-
-  @override
-  String daysAgoShort(int count) {
-    return '${count}d ago';
-  }
-
-  @override
-  String weeksAgoShort(int count) {
-    return '${count}w ago';
-  }
-
-  @override
-  String get couldntLoadSource => 'Couldn\'t load this source';
-
-  @override
-  String get followers => 'Followers';
-
-  @override
-  String couldntLoadTitle(String title) {
-    return 'Couldn\'t load $title';
-  }
-
-  @override
-  String userTitle(String name, String title) {
-    return '$name · $title';
-  }
-
-  @override
-  String get couldntLoadProfile => 'Couldn\'t load this profile';
-
-  @override
-  String get profile => 'Profile';
-
-  @override
-  String get feed => 'Feed';
-
-  @override
-  String get stats => 'Stats';
-
-  @override
-  String get received => 'Received';
-
-  @override
-  String get sent => 'Sent';
-
-  @override
-  String get global => 'Global';
-
-  @override
-  String get couldntLoadPage => 'Couldn\'t load this page';
-
-  @override
-  String get couldntLoadAllDetails => 'Couldn\'t load all details';
-
-  @override
-  String get series => 'Séries';
-
-  @override
-  String get studios => 'Studios';
-
-  @override
-  String get users => 'Users';
-
-  @override
-  String repositoriesTitle(String type) {
-    return '$type Repositories';
-  }
-
-  @override
-  String get repositoryUrl => 'Repository URL';
-
-  @override
-  String get downloadingRepository => 'Downloading repository…';
-
-  @override
-  String get noRepositories => 'No repositories added';
-
-  @override
-  String repoExtensionsCount(String count) {
-    return '$count extensions';
-  }
-
-  @override
-  String get searchExtensions => 'Search extensions...';
-
-  @override
-  String deletePluginTitle(String name) {
-    return 'Delete $name?';
-  }
-
-  @override
-  String get deletePluginMessage =>
-      'Are you sure you want to delete this plugin?';
-
-  @override
-  String pluginDeleted(String name) {
-    return '$name deleted';
-  }
-
-  @override
-  String pluginNotInRepo(String name) {
-    return '$name is not available in the configured repo';
-  }
-
-  @override
-  String get pluginFetchFailed => 'Failed to fetch plugin info';
-
-  @override
-  String installPluginTitle(String name) {
-    return 'Install $name';
-  }
-
-  @override
-  String sizeLabel(String size) {
-    return 'Size: $size';
-  }
-
-  @override
-  String get installedState => 'Installed';
-
-  @override
-  String get errorLabel => 'Error:';
-
-  @override
-  String get stackTraceDetails => 'Details (Stack Trace)';
-
-  @override
-  String get shareLogFile => 'Share log file';
-
-  @override
-  String get copyLogs => 'Copy Logs';
-
-  @override
-  String noListToEdit(String service) {
-    return '$service has no list to edit';
-  }
-
-  @override
-  String get couldNotReadFile => 'Could not read that file';
-
-  @override
-  String importedSummary(int anime, int manga) {
-    return 'Imported $anime anime and $manga manga';
-  }
-
-  @override
-  String alreadyThere(int count) {
-    return ' · $count already there';
-  }
-
-  @override
-  String get airingNow => 'Airing now';
-
-  @override
-  String get topRatedMovies => 'Top rated movies';
-
-  @override
-  String get topRatedShows => 'Top rated shows';
-
-  @override
-  String get recommendedSection => 'Recommended';
-
-  @override
-  String get syncRow => 'Sync lists';
-
-  @override
-  String get syncRowDesc =>
-      'Mirror one service\'s list onto your other accounts';
-
-  @override
-  String get syncTitle => 'Sync';
-
-  @override
-  String get syncMainService => 'Main service';
-
-  @override
-  String get syncMainServiceDesc =>
-      'Its list is the source of truth; every other signed-in service is updated to match';
-
-  @override
-  String get syncAuto => 'Auto sync';
-
-  @override
-  String get syncAutoDesc =>
-      'Fetch and sync in the background when the app opens and every 30 minutes';
-
-  @override
-  String get syncAddMissing => 'Add missing entries';
-
-  @override
-  String get syncAddMissingDesc =>
-      'Also add entries the other service doesn\'t have yet';
-
-  @override
-  String get syncOnlyForward => 'Keep further progress';
-
-  @override
-  String get syncOnlyForwardDesc =>
-      'Don\'t lower the progress of a service that is already ahead';
-
-  @override
-  String get syncFetch => 'Fetch';
-
-  @override
-  String get syncFetchAgain => 'Fetch again';
-
-  @override
-  String get syncAll => 'Sync all';
-
-  @override
-  String get syncStop => 'Stop';
-
-  @override
-  String get syncResume => 'Resume';
-
-  @override
-  String get syncNothingToSync => 'This service can\'t be synced for this type';
-
-  @override
-  String get syncNoTargets => 'Sign in to another service to sync with';
-
-  @override
-  String get syncLoadingMap => 'Loading ID mapping';
-
-  @override
-  String get syncComparing => 'Comparing lists';
-
-  @override
-  String get syncIntro =>
-      'Pick a main service and press Fetch. Each service is queried once for your list, then compared with the main one.';
-
-  @override
-  String get syncStateSynced => 'Synced';
-
-  @override
-  String get syncStateOutdated => 'Out of sync';
-
-  @override
-  String get syncStateMissing => 'Not in list';
-
-  @override
-  String get syncStateUnmapped => 'No match';
-
-  @override
-  String syncPaused(String time) {
-    return 'Waiting for the rate limit, resumes in $time';
-  }
-
-  @override
-  String syncOnlyIn(int count, String name) {
-    return '$count only on $name, left untouched';
-  }
-
-  @override
-  String syncProgressOf(int done, int total) {
-    return '$done of $total';
-  }
-
-  @override
-  String get syncNothingHere => 'Nothing to show';
-
-  @override
-  String syncLimits(int used, int max, String window) {
-    return '$used of $max requests used this $window';
-  }
-
-  @override
-  String get syncMinute => 'minute';
-
-  @override
-  String get syncDay => 'day';
-
-  @override
-  String get syncNotInList => 'Not in list yet';
-
-  @override
-  String get syncCleared => 'Plan cleared';
-
-  @override
-  String get syncClear => 'Clear';
-
-  @override
-  String get syncOptions => 'Options';
-
-  @override
-  String get syncShared => 'Shares its entry with another item';
-
-  @override
-  String syncNotFound(String service) {
-    return 'Not found on $service';
-  }
-
-  @override
-  String syncService(String service, int count) {
-    return 'Sync $service ($count)';
-  }
-
-  @override
-  String get syncOnEdit => 'Sync changes instantly';
-
-  @override
-  String get syncOnEditDesc =>
-      'Push every progress update and list edit to your other signed-in services right away';
-
-  @override
-  String syncPushed(String services) {
-    return 'Synced to $services';
-  }
-
-  @override
-  String syncPushFailed(String service, String error) {
-    return '$service: $error';
-  }
-
-  @override
-  String get syncRateLimited => 'Rate limited, try again in a moment';
-
-  @override
-  String get syncAhead => 'Whichever is ahead';
-
-  @override
-  String get syncAheadDesc =>
-      'Two-way: for every title the entry that is furthest along wins and is copied to all your other services';
-
-  @override
-  String syncAheadFrom(String service) {
-    return 'From $service';
-  }
-
-  @override
-  String get syncConfirm => 'Review before syncing';
-
-  @override
-  String get syncConfirmDesc =>
-      'Show what Sync all will change and how many requests it needs';
-
-  @override
-  String get syncPreviewTitle => 'Ready to sync';
-
-  @override
-  String syncPreviewLine(int updates, int adds) {
-    return '$updates updates, $adds to add';
-  }
-
-  @override
-  String syncPreviewRequests(int count) {
-    return 'About $count requests';
-  }
-
-  @override
-  String syncPreviewLookups(int count) {
-    return '$count ids need a lookup first';
-  }
-
-  @override
-  String get syncPreviewNothing => 'Nothing to change';
-
-  @override
-  String get syncStart => 'Start';
-
-  @override
-  String get syncRetry => 'Retry';
-
-  @override
-  String get syncSkip => 'Skip this item';
-
-  @override
-  String get syncInclude => 'Include this item again';
-
-  @override
-  String get syncSkippedLabel => 'Skipped';
-
-  @override
-  String get syncChanges => 'Differences';
-
-  @override
-  String get syncChangeStatus => 'Status';
-
-  @override
-  String get syncChangeProgress => 'Progress';
-
-  @override
-  String get syncChangeScore => 'Score';
-
-  @override
-  String get syncChangeDates => 'Dates';
-
-  @override
-  String get syncChangeRepeat => 'Rewatch count';
-
-  @override
-  String get syncFailedReason => 'Why it failed';
-
-  @override
-  String get syncSkippedHint =>
-      'Skipped items are left alone, even after fetching again';
-
-  @override
-  String get commentsRules => 'Commenting rules';
-
-  @override
-  String get commentsRulesBody =>
-      'BREAK ANY RULE = YOU\'RE GONE\n\n1. No racism, discrimination or hate speech\n2. No spamming or self-promotion\n3. Absolutely no NSFW content\n4. English only, no exceptions\n5. No impersonation, harassment or abuse\n6. No illegal content or extreme disrespect towards any fandom\n7. Do not request or share repositories or extensions\n8. Spoilers only with spoiler tags and a warning\n9. No sexualising or inappropriate comments about minor characters\n10. If it\'s wrong, don\'t post it!';
-
-  @override
-  String get commentsRulesAccept => 'I understand';
-
-  @override
-  String get commentsSortNewest => 'Newest';
-
-  @override
-  String get commentsSortOldest => 'Oldest';
-
-  @override
-  String get commentsSortHighest => 'Highest rated';
-
-  @override
-  String get commentsSortLowest => 'Lowest rated';
-
-  @override
-  String commentsEpisodeShort(int number) {
-    return 'Ep $number';
-  }
-
-  @override
-  String commentsChapterShort(int number) {
-    return 'Ch $number';
-  }
-
-  @override
-  String get commentsFilterEpisodeTitle => 'Filter by episode';
-
-  @override
-  String get commentsFilterChapterTitle => 'Filter by chapter';
-
-  @override
-  String get commentsFilterTagTitle => 'Enter an episode or chapter number';
-
-  @override
-  String get commentsFilterHint => 'Number';
-
-  @override
-  String get commentsFilterApply => 'Filter';
-
-  @override
-  String get commentsFilterClear => 'Show all';
-
-  @override
-  String get commentsPlaceholder => 'Add a comment…';
-
-  @override
-  String commentsReplyingTo(String name) {
-    return 'Replying to $name';
-  }
-
-  @override
-  String get commentsSend => 'Send';
-
-  @override
-  String get commentsTagButton => 'Tag';
-
-  @override
-  String commentsTagTitle(String label) {
-    return 'Tag $label (optional)';
-  }
-
-  @override
-  String get commentsTagEpisode => 'episode';
-
-  @override
-  String get commentsTagChapter => 'chapter';
-
-  @override
-  String commentsTagRange(int total) {
-    return '1–$total';
-  }
-
-  @override
-  String commentsTagNumber(String label) {
-    return '$label number';
-  }
-
-  @override
-  String commentsTagTooHigh(int total) {
-    return 'Tag cannot exceed the total ($total)';
-  }
-
-  @override
-  String get commentsNoTag => 'No tag';
-
-  @override
-  String get commentsSpoiler => 'Spoiler';
-
-  @override
-  String get commentsGif => 'GIF';
-
-  @override
-  String get commentsGifSearch => 'Search GIFs';
-
-  @override
-  String get commentsGifEmpty => 'No GIFs found';
-
-  @override
-  String get commentsEmptyText => 'Comment cannot be empty';
-
-  @override
-  String get commentsBannedYou => 'You are banned from commenting';
-
-  @override
-  String get commentsEdited => 'Comment edited';
-
-  @override
-  String get commentsDeleted => 'Comment deleted';
-
-  @override
-  String get commentsDeletedPlaceholder => '[deleted]';
-
-  @override
-  String get commentsReported => 'Comment reported';
-
-  @override
-  String get commentsUserBanned => 'User banned';
-
-  @override
-  String get commentsReport => 'Report';
-
-  @override
-  String get commentsReportAsk => 'Report this comment to the moderators?';
-
-  @override
-  String get commentsDelete => 'Delete';
-
-  @override
-  String get commentsDeleteAsk => 'This comment will be removed for everyone.';
-
-  @override
-  String get commentsBan => 'Ban';
-
-  @override
-  String get commentsBanAsk => 'Ban this user from commenting?';
-
-  @override
-  String get commentsCopy => 'Copy';
-
-  @override
-  String get commentsViewReply => 'View 1 reply';
-
-  @override
-  String commentsViewReplies(int count) {
-    return 'View $count replies';
-  }
-
-  @override
-  String get commentsHideReplies => 'Hide replies';
-
-  @override
-  String get commentsLoadMore => 'Load more comments';
-
-  @override
-  String get commentsEmpty => 'No comments yet. Be the first!';
-
-  @override
-  String get commentsEmptyFiltered => 'No comments for this filter';
-
-  @override
-  String get commentsSignIn => 'Sign in to AniList to read and write comments';
-
-  @override
-  String get commentsSignInMessage =>
-      'Comments are shared between every service and use your AniList account.';
-
-  @override
-  String get commentsUnavailable => 'Comments aren\'t available for this title';
-
-  @override
-  String get commentsUnavailableMessage =>
-      'It couldn\'t be matched to an AniList entry.';
-
-  @override
-  String get commentsDisabled => 'Comments are turned off';
-
-  @override
-  String get commentsDisabledMessage =>
-      'You can turn them back on in Settings › General.';
-
-  @override
-  String get commentsOffline => 'Couldn\'t load comments';
-
-  @override
-  String get commentsSingleTitle => 'Showing one comment';
-
-  @override
-  String get commentsShowAll => 'Show all comments';
-
-  @override
-  String get commentsSettingsHeader => 'Comments';
-
-  @override
-  String get commentsSettingEnabled => 'Comments';
-
-  @override
-  String get commentsSettingEnabledDesc =>
-      'Show the Comments tab on titles and sign in to the comment server with your AniList account';
-
-  @override
-  String get commentsSettingAlerts => 'Reply notifications';
-
-  @override
-  String get commentsSettingAlertsDesc =>
-      'Notify me when someone replies to my comments';
-
-  @override
-  String get commentsNoticeReplyTitle => 'New comment reply';
-
-  @override
-  String commentsNoticeReply(String name) {
-    return '$name replied to your comment';
-  }
-
-  @override
-  String get commentsNoticeWarningTitle => 'You received a warning';
-
-  @override
-  String get commentsNoticeWarning => 'Be more thoughtful with your comments';
-
-  @override
-  String get commentsNoticeUpdateTitle => 'Update from Dantotsu';
-
-  @override
-  String get barcodeTitle => 'Scan a barcode';
-
-  @override
-  String get barcodeTooltip => 'Find a manga or novel from its barcode';
-
-  @override
-  String get barcodeIntro =>
-      'Point the camera at the barcode on the back of a volume, or type its ISBN.';
-
-  @override
-  String get barcodeIntroManual =>
-      'Type the ISBN printed above the barcode on the back of a volume.';
-
-  @override
-  String get barcodeIsbnHint => 'ISBN';
-
-  @override
-  String get barcodeInvalid => 'That is not a valid ISBN';
-
-  @override
-  String barcodeNotFound(String isbn) {
-    return 'No book found for $isbn';
-  }
-
-  @override
-  String get barcodeCameraDenied =>
-      'The camera is not available. Allow camera access or type the ISBN instead.';
-
-  @override
-  String get themesTitle => 'Openings & endings';
-
-  @override
-  String get themesOpening => 'Opening';
-
-  @override
-  String get themesEnding => 'Ending';
-
-  @override
-  String get themesPlayVideo => 'Play video';
-
-  @override
-  String get themesPlayAudio => 'Play audio only';
-
-  @override
-  String get themesOpenSite => 'Open on AnimeThemes';
-
-  @override
-  String get themesCredit => 'Themes from AnimeThemes';
-
-  @override
-  String get themesVersions => 'Versions';
-
-  @override
-  String get muTitle => 'MangaUpdates';
-
-  @override
-  String get muReleases => 'Recent releases';
-
-  @override
-  String get muNoReleases => 'No recent releases';
-
-  @override
-  String get muLicensed => 'Licensed';
-
-  @override
-  String get muOpen => 'View on MangaUpdates';
-
-  @override
-  String get muCredit => 'Data from MangaUpdates';
-
-  @override
-  String get muPublishers => 'Publishers';
-
-  @override
-  String get sauceTitle => 'Find the source';
-
-  @override
-  String get sauceIntro =>
-      'Upload a manga page or an artwork, or paste its link, to find where it comes from.';
-
-  @override
-  String get sauceKeyTitle => 'SauceNAO API key';
-
-  @override
-  String get sauceKeyHint => 'Optional, raises the daily search limit';
-
-  @override
-  String get sauceKeyDesc => 'Get a free key at saucenao.com/user.php';
-
-  @override
-  String get sauceSearchTitle => 'Search this title';
-
-  @override
-  String get sauceOpen => 'Open source';
-
-  @override
-  String get sauceCredit => 'Image search by SauceNAO';
-
-  @override
-  String get sauceEmpty => 'No match found';
-
-  @override
-  String get sauceTooltip => 'Find the source of a manga page or artwork';
-
-  @override
-  String get sauceLowMatch => 'Low match';
-
-  @override
-  String get trendzTitle => 'Anime charts';
-
-  @override
-  String get trendzAnime => 'Anime';
-
-  @override
-  String get trendzFemale => 'Female characters';
-
-  @override
-  String get trendzMale => 'Male characters';
-
-  @override
-  String get trendzCouple => 'Couples';
-
-  @override
-  String get trendzCredit => 'Weekly charts by AniTrendz';
-
-  @override
-  String get trendzNew => 'NEW';
-
-  @override
-  String get trendzSearch => 'Search this title';
-
-  @override
-  String get trendzEmpty => 'The chart is empty';
-
-  @override
-  String get shareCard => 'Share card';
-
-  @override
-  String get shareCardList => 'Share list card';
-
-  @override
-  String get muNotFound => 'No MangaUpdates match for this title';
-
-  @override
-  String get shareCardWorking => 'Making the card…';
-
-  @override
-  String get shareCardSaved => 'Card saved';
-
-  @override
-  String get shareCardFailed => 'Could not make the card';
-
-  @override
-  String get shareCardListEmpty => 'Your list has nothing to share yet';
-
-  @override
-  String get shareCardTop => 'My top picks';
-
-  @override
-  String themesEpisodes(String eps) {
-    return 'Episodes $eps';
-  }
-
-  @override
-  String muLatest(String count) {
-    return 'Chapter $count';
-  }
-
-  @override
-  String muRating(String rating, String votes) {
-    return '$rating from $votes votes';
-  }
-
-  @override
-  String sauceSimilarity(String percent) {
-    return '$percent% match';
-  }
-
-  @override
-  String trendzWeek(String week, String season) {
-    return 'Week $week · $season';
-  }
-
-  @override
-  String trendzVotes(String count) {
-    return '$count votes';
-  }
-
-  @override
-  String trendzPeak(String rank) {
-    return 'Peak #$rank';
-  }
-
-  @override
-  String trendzWeeks(String count) {
-    return '$count weeks in the top ten';
-  }
-
-  @override
-  String shareCardEntries(String count) {
-    return '$count titles';
-  }
-
-  @override
-  String get imageSearchTitle => 'Search by image';
-
-  @override
-  String get imageSearchTooltip => 'Find an anime from a screenshot';
-
-  @override
-  String get imageSearchIntro =>
-      'Pick a screenshot or paste an image link and trace.moe will find the episode and the moment it comes from.';
-
-  @override
-  String get imageSearchPick => 'Choose image';
-
-  @override
-  String get imageSearchLinkHint => 'Paste an image link';
-
-  @override
-  String get imageSearchGo => 'Search';
-
-  @override
-  String get imageSearchEmpty => 'No match found';
-
-  @override
-  String get imageSearchAdult => '18+';
-
-  @override
-  String imageSearchEpisode(String number) {
-    return 'Episode $number';
-  }
-
-  @override
-  String imageSearchAt(String time) {
-    return 'at $time';
-  }
-
-  @override
-  String get imageSearchPreview => 'Preview clip';
-
-  @override
-  String imageSearchSimilarity(int percent) {
-    return '$percent% match';
-  }
-
-  @override
-  String get imageSearchCredit => 'Powered by trace.moe';
-
-  @override
-  String get imageSearchOpenFailed => 'Couldn\'t open this title';
-
-  @override
-  String get groups => 'Groups';
-
-  @override
-  String get groupsYours => 'Your groups';
-
-  @override
-  String get groupsPopular => 'Popular';
-
-  @override
-  String get groupsNew => 'New';
-
-  @override
-  String get groupsFeatured => 'Featured';
-
-  @override
-  String get groupsSearch => 'Search groups';
-
-  @override
-  String get groupsAll => 'All';
-
-  @override
-  String get groupsEmpty => 'No groups found';
-
-  @override
-  String get groupsEmptyYours => 'You haven\'t joined any groups yet';
-
-  @override
-  String get groupsSignIn => 'Sign in to see the groups you joined';
-
-  @override
-  String groupsMembersCount(int count) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: '$count members',
-      one: '1 member',
-    );
-    return '$_temp0';
-  }
-
-  @override
-  String get groupsJoin => 'Join';
-
-  @override
-  String get groupsJoined => 'Joined';
-
-  @override
-  String get groupsLeave => 'Leave group';
-
-  @override
-  String get groupsLeaveAsk =>
-      'You\'ll stop seeing this group\'s posts in your feed.';
-
-  @override
-  String get groupsJoinFailed =>
-      'Couldn\'t join this group, it may be invite only';
-
-  @override
-  String get groupsLeaveFailed => 'Couldn\'t leave this group';
-
-  @override
-  String get groupsPosts => 'Posts';
-
-  @override
-  String get groupsMembersTab => 'Members';
-
-  @override
-  String get groupsAbout => 'About';
-
-  @override
-  String get groupsRules => 'Rules';
-
-  @override
-  String get groupsPrivacyOpen => 'Open';
-
-  @override
-  String get groupsPrivacyRestricted => 'Restricted';
-
-  @override
-  String get groupsPrivacyClosed => 'Closed';
-
-  @override
-  String get groupsAdult => '18+';
-
-  @override
-  String get groupsRoleAdmin => 'Admin';
-
-  @override
-  String get groupsRoleMod => 'Mod';
-
-  @override
-  String get groupsCouldntLoad => 'Couldn\'t load this group';
-
-  @override
-  String get groupsNewPost => 'Post to group';
-
-  @override
-  String get groupsPostHint => 'Share something with the group';
-
-  @override
-  String get groupsOpenInBrowser => 'Open in browser';
-
-  @override
-  String get groupsCategory => 'Category';
-
-  @override
-  String get groupsLanguage => 'Language';
-
-  @override
-  String get groupsCreated => 'Created';
-
-  @override
-  String groupsLeaders(int count) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: '$count leaders',
-      one: '1 leader',
-    );
-    return '$_temp0';
-  }
-
-  @override
-  String get groupsPrivacy => 'Privacy';
-
-  @override
-  String get notificationsAll => 'All';
-
-  @override
-  String get notificationsAiring => 'Airing';
-
-  @override
-  String get notificationsMedia => 'New titles';
-
-  @override
-  String get notificationsReplies => 'Replies';
-
-  @override
-  String get notificationsMentions => 'Mentions';
-
-  @override
-  String get notificationsMessages => 'Messages';
-
-  @override
-  String get notificationsLikes => 'Likes';
-
-  @override
-  String get notificationsFollows => 'Follows';
-
-  @override
-  String get notificationsNoServices =>
-      'No signed-in service has notifications';
-
-  @override
-  String get notificationsNoServicesMessage =>
-      'Sign in to a service that sends notifications and they will show up here.';
-
-  @override
-  String get notificationsEmptyKind => 'Nothing in this category yet';
-
-  @override
-  String get notificationsCommentsEmpty => 'No comment notifications';
-
-  @override
-  String get notificationsCommentsEmptyMessage =>
-      'Replies to your comments and announcements from Dantotsu show up here.';
-
-  @override
-  String get notificationsSettings => 'Notification settings';
-
-  @override
-  String get notificationsPollTitle => 'Check for new notifications';
-
-  @override
-  String notificationsPollDesc(int minutes) {
-    return 'Every $minutes minutes while the app is open';
-  }
-
-  @override
-  String get notificationsNotifyAbout => 'Notify me about';
-
-  @override
-  String get notificationsCommentsHeader => 'Comment notifications';
-
-  @override
-  String systemNotificationsDescFor(String service) {
-    return 'Show a system notification for each unread $service notification while the app is running.';
-  }
-
-  @override
-  String get notificationsTestSent => 'Test notification sent';
-
-  @override
-  String get notificationsTestDenied =>
-      'Notifications are not allowed for Dartotsu. Turn them on in system settings.';
-
-  @override
-  String get notificationsTestHint => 'Long press to send a test notification';
-
-  @override
-  String get notificationsTestSample => 'This is a test notification';
-
-  @override
-  String commentsNoticeReplyIn(String name, String media) {
-    return '$name replied to your comment in $media';
-  }
-
-  @override
-  String get imageSearchNotLink => 'That doesn\'t look like a link';
-
-  @override
-  String get imageSearchQuota => 'Search quota exceeded';
-
-  @override
-  String get imageSearchBusy => 'Too many requests, try again in a moment';
-
-  @override
-  String imageSearchFailed(int code) {
-    return 'Search failed ($code)';
-  }
-
-  @override
-  String notificationsNewCount(int count) {
-    return '$count new notifications';
-  }
-
-  @override
-  String get reactionsTitle => 'Reactions';
-
-  @override
-  String get reactionsNeedEntry =>
-      'Add this title to your list before reacting';
-
-  @override
-  String get reactionsAdd => 'Add a reaction';
-
-  @override
-  String get reactionsHint => 'What did you think? (short and spoiler-free)';
-
-  @override
-  String get reactionsPost => 'Post';
-
-  @override
-  String get reactionsFailed => 'Couldn\'t update the reaction';
-
-  @override
-  String get settingsWatch => 'Watch & read';
-
-  @override
-  String get settingsWatchDesc =>
-      'Episode lists, source matching and episode details';
-
-  @override
-  String get watchSettingsLayout => 'Episode list';
-
-  @override
-  String get watchSettingsSources => 'Sources';
-
-  @override
-  String get watchSettingsMetadata => 'Episode details';
-
-  @override
-  String get watchLayout => 'Layout';
-
-  @override
-  String get watchListView => 'List';
-
-  @override
-  String get watchGridView => 'Grid';
-
-  @override
-  String get watchCompactView => 'Compact';
-
-  @override
-  String get watchDefaultLayoutDesc =>
-      'How episodes and chapters are laid out until you change it for a title';
-
-  @override
-  String get watchChunkSize => 'Range size';
-
-  @override
-  String get watchChunkSizeDesc =>
-      'How many episodes or chapters each range tab holds';
-
-  @override
-  String get watchShowDescription => 'Show descriptions';
-
-  @override
-  String get watchShowDescriptionDesc =>
-      'Show the episode summary under each title in the list layout';
-
-  @override
-  String get watchShowFiller => 'Show filler episodes';
-
-  @override
-  String get watchShowFillerDesc =>
-      'Turn off to hide episodes marked as filler';
-
-  @override
-  String get watchBlurUnwatched => 'Hide spoiler thumbnails';
-
-  @override
-  String get watchBlurUnwatchedDesc =>
-      'Blur the thumbnail of episodes you have not watched yet';
-
-  @override
-  String get watchResumeShelf => 'Resume shelf';
-
-  @override
-  String get watchResumeShelfDesc => 'Show the Resume row on Home';
-
-  @override
-  String get watchMarkOnLongPress => 'Long press marks progress';
-
-  @override
-  String get watchMarkOnLongPressDesc =>
-      'Long press an episode or chapter to mark it watched or unwatched';
-
-  @override
-  String get watchMatching => 'Source matching';
-
-  @override
-  String get watchMatchingDesc =>
-      'Closest takes the best search result. Exact only accepts a near-identical title and leaves the rest for you to pick.';
-
-  @override
-  String get watchMatchClosest => 'Closest match';
-
-  @override
-  String get watchMatchExact => 'Exact match only';
-
-  @override
-  String get watchMetadataDesc =>
-      'Where episode titles, summaries, thumbnails, air dates and filler flags come from. Drag to set priority; the first source with a value wins.';
-
-  @override
-  String get watchMetaAniZipDesc =>
-      'Episode titles, summaries, stills and air dates';
-
-  @override
-  String get watchMetaKitsuDesc =>
-      'Episode titles, descriptions and thumbnails';
-
-  @override
-  String get watchMetaSimklDesc =>
-      'Episode titles, descriptions, stills and air dates';
-
-  @override
-  String get watchMetaAniListDesc =>
-      'Streaming episode titles, thumbnails and the airing schedule';
-
-  @override
-  String get watchMetaTenraiDesc =>
-      'MyAnimeList episode titles, air dates, filler and recap flags through Tenrai';
-
-  @override
-  String get watchClearMetadata => 'Refresh episode details';
-
-  @override
-  String get watchClearMetadataDesc =>
-      'Forget the cached episode details so they are fetched again';
-
-  @override
-  String get watchMetadataCleared => 'Episode details will be fetched again';
-
-  @override
-  String watchEpisodeCount(int count) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: '$count Episodes',
-      one: '1 Episode',
-    );
-    return '$_temp0';
-  }
-
-  @override
-  String watchChapterCount(int count) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: '$count Chapters',
-      one: '1 Chapter',
-    );
-    return '$_temp0';
-  }
-
-  @override
-  String watchEpisodeNumber(String number) {
-    return 'Episode $number';
-  }
-
-  @override
-  String watchChapterNumber(String number) {
-    return 'Chapter $number';
-  }
-
-  @override
-  String get watchSearching => 'Searching…';
-
-  @override
-  String watchSearchingFor(String term) {
-    return 'Searching: $term';
-  }
-
-  @override
-  String watchSelected(String title) {
-    return 'Selected: $title';
-  }
-
-  @override
-  String watchFound(String title) {
-    return 'Found: $title';
-  }
-
-  @override
-  String get watchNothingFound => 'Nothing found on this source';
-
-  @override
-  String get watchSearchFailed => 'The source search failed';
-
-  @override
-  String get watchLoadFailed => 'Couldn\'t load the list';
-
-  @override
-  String get watchSignInToTrack => 'Sign in to track your progress';
-
-  @override
-  String watchInstallSource(String action) {
-    return 'Install an extension to start $action';
-  }
-
-  @override
-  String get watchSourceMissing => 'This source isn\'t installed';
-
-  @override
-  String get watchWrongTitle => 'Wrong title?';
-
-  @override
-  String get watchSearchAgain => 'Search again';
-
-  @override
-  String watchSearchSource(String source) {
-    return 'Search $source';
-  }
-
-  @override
-  String get watchSource => 'Source';
-
-  @override
-  String get watchOptions => 'Options';
-
-  @override
-  String get watchReverse => 'Reverse order';
-
-  @override
-  String get watchScanlators => 'Groups';
-
-  @override
-  String get watchResetOptions => 'Reset these options';
-
-  @override
-  String get watchContinue => 'Continue';
-
-  @override
-  String get watchStart => 'Start';
-
-  @override
-  String get watchPlay => 'Play';
-
-  @override
-  String get watchRead => 'Read';
-
-  @override
-  String get watchMarkWatched => 'Mark watched';
-
-  @override
-  String get watchMarkUnwatched => 'Mark unwatched';
-
-  @override
-  String get watchMarkRead => 'Mark read';
-
-  @override
-  String get watchMarkUnread => 'Mark unread';
-
-  @override
-  String get watchFiller => 'Filler';
-
-  @override
-  String get watchRecap => 'Recap';
-
-  @override
-  String get watchNoEpisodes => 'No episodes found';
-
-  @override
-  String get watchNoChapters => 'No chapters found';
-
-  @override
-  String get watchSourceTools => 'Source tools';
-
-  @override
-  String get watchSourceSettings => 'Source settings';
-
-  @override
-  String get watchOpenWebView => 'Open in web view';
-
-  @override
-  String get watchOpenWebViewDesc =>
-      'Solve a Cloudflare check or log in; the cookies are shared with the source requests';
-
-  @override
-  String watchCookieCount(int count, String host) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: '$count cookies saved for $host',
-      one: '1 cookie saved for $host',
-      zero: 'No cookies saved for $host',
-    );
-    return '$_temp0';
-  }
-
-  @override
-  String watchClearanceActive(String time) {
-    return 'Cloudflare clearance active, $time';
-  }
-
-  @override
-  String get watchClearanceMissing => 'No Cloudflare clearance cookie';
-
-  @override
-  String get watchClearanceSession => 'lasts until the app closes';
-
-  @override
-  String get watchAgentShared =>
-      'Requests use the web view\'s user agent, which Cloudflare checks';
-
-  @override
-  String get watchAgentCustom =>
-      'A custom user agent is set, so a Cloudflare clearance from the web view may be rejected';
-
-  @override
-  String get watchTestConnection => 'Test connection';
-
-  @override
-  String get watchSolveChallenge => 'Solve it';
-
-  @override
-  String watchProbeOk(int code) {
-    return 'Reachable (HTTP $code)';
-  }
-
-  @override
-  String get watchProbeChallenge => 'Cloudflare is still asking for a check';
-
-  @override
-  String watchProbeBlocked(int code) {
-    return 'Blocked by the site (HTTP $code)';
-  }
-
-  @override
-  String get watchProbeFailed => 'The site could not be reached';
-
-  @override
-  String get watchClearCookies => 'Clear cookies for this site';
-
-  @override
-  String get watchCookiesCleared => 'Cookies cleared';
-
-  @override
-  String get watchResults => 'Results';
-
-  @override
-  String get watchMetaSource => 'Episode details from';
-
-  @override
-  String get watchMetaAuto => 'Automatic';
-
-  @override
-  String get watchMetaOff => 'Off';
-
-  @override
-  String get settingsPlayer => 'Player';
-
-  @override
-  String get settingsPlayerDesc =>
-      'Playback, subtitles, shaders, mpv and opening files';
-
-  @override
-  String get playerSettingsTitle => 'Configurações Do Reprodutor';
-
-  @override
-  String get playerSectionPlayback => 'Playback';
-
-  @override
-  String get playerSectionSkip => 'Skipping';
-
-  @override
-  String get playerSectionGestures => 'Controls';
-
-  @override
-  String get playerSectionSubtitles => 'Subtitles';
-
-  @override
-  String get playerSectionShaders => 'Shaders';
-
-  @override
-  String get playerSectionEngine => 'Engine';
-
-  @override
-  String get playerSectionMpv => 'mpv';
-
-  @override
-  String get playerSectionOpen => 'Open media';
-
-  @override
-  String get playerSpeed => 'Playback speed';
-
-  @override
-  String get playerCursedSpeed => 'Extra speeds';
-
-  @override
-  String get playerCursedSpeedDesc => 'Add speeds up to 10x to the list';
-
-  @override
-  String get playerResize => 'Resize mode';
-
-  @override
-  String get playerFitFit => 'Fit';
-
-  @override
-  String get playerFitCover => 'Cover';
-
-  @override
-  String get playerFitStretch => 'Stretch';
-
-  @override
-  String get playerSkipDuration => 'Skip button length';
-
-  @override
-  String get playerSkipDurationDesc =>
-      'Seconds the skip button jumps outside openings and endings';
-
-  @override
-  String get playerSeekDuration => 'Double tap seek';
-
-  @override
-  String get playerSeekDurationDesc =>
-      'Seconds to jump on a double tap or arrow key';
-
-  @override
-  String get playerAutoPlay => 'Play next automatically';
-
-  @override
-  String get playerAutoPlayDesc => 'Start the next episode when this one ends';
-
-  @override
-  String get playerResume => 'Resume where you left off';
-
-  @override
-  String get playerResumeDesc => 'Continue an episode from its last position';
-
-  @override
-  String get playerOrientation => 'Orientation';
-
-  @override
-  String get playerOrientationAuto => 'Follow the device';
-
-  @override
-  String get playerOrientationLandscape => 'Landscape';
-
-  @override
-  String get playerOrientationPortrait => 'Portrait';
-
-  @override
-  String get playerAutoSkipOpening => 'Skip openings';
-
-  @override
-  String get playerAutoSkipEnding => 'Skip endings';
-
-  @override
-  String get playerAutoSkipRecap => 'Skip recaps';
-
-  @override
-  String get playerAutoSkipDesc =>
-      'Jump past it as soon as it starts, using AniSkip and stream timestamps';
-
-  @override
-  String get playerSkipOnce => 'Skip once only';
-
-  @override
-  String get playerSkipOnceDesc =>
-      'Don\'t skip the same part again if you seek back into it';
-
-  @override
-  String get playerAdjustBrightness => 'Brightness gesture';
-
-  @override
-  String get playerAdjustBrightnessDesc =>
-      'Swipe up and down on the left half of the screen';
-
-  @override
-  String get playerAdjustVolume => 'Volume gesture';
-
-  @override
-  String get playerAdjustVolumeDesc =>
-      'Swipe up and down on the right half of the screen';
-
-  @override
-  String get playerHoldToSpeed => 'Hold to speed up';
-
-  @override
-  String get playerHoldToSpeedDesc =>
-      'Press and hold the video to play faster, drag sideways to change the speed';
-
-  @override
-  String get playerThumbless => 'Thicker seek bar';
-
-  @override
-  String get playerThumblessDesc => 'A thick bar without a thumb';
-
-  @override
-  String get playerShowSubtitles => 'Show subtitles';
-
-  @override
-  String get playerShowSubtitlesDesc => 'Turn off to hide every subtitle track';
-
-  @override
-  String get playerSubtitleLanguage => 'Preferred subtitle language';
-
-  @override
-  String get playerSubtitleSize => 'Subtitle size';
-
-  @override
-  String get playerSubtitleWeight => 'Subtitle weight';
-
-  @override
-  String get playerSubtitleBottom => 'Subtitle bottom padding';
-
-  @override
-  String get playerSubtitleFont => 'Subtitle font';
-
-  @override
-  String get playerSubtitleColor => 'Subtitle colour';
-
-  @override
-  String get playerSubtitleBackground => 'Subtitle background';
-
-  @override
-  String get playerSubtitleOutline => 'Subtitle outline';
-
-  @override
-  String get playerLibass => 'Use libass';
-
-  @override
-  String get playerLibassDesc =>
-      'Render styled .ass subtitles. The size, colour and font above then no longer apply';
-
-  @override
-  String get playerShaders => 'Shaders';
-
-  @override
-  String get playerShadersEnable => 'Enable shaders';
-
-  @override
-  String get playerShadersEnableDesc =>
-      'Upscale and clean the picture with GLSL shaders such as Anime4K';
-
-  @override
-  String get playerShadersOff => 'Shaders off';
-
-  @override
-  String get playerShadersMissing => 'Anime4K is not installed';
-
-  @override
-  String get playerShadersMissingDesc =>
-      'Download the Anime4K shader pack (about 0.8 MB) to use the built-in modes.';
-
-  @override
-  String get playerShadersDownload => 'Download Anime4K';
-
-  @override
-  String get playerShadersPreview => 'Preview on this frame';
-
-  @override
-  String get playerShadersUse => 'Use this';
-
-  @override
-  String get playerPicture => 'Picture';
-
-  @override
-  String get playerColors => 'Colors';
-
-  @override
-  String get playerColorDefault => 'Default';
-
-  @override
-  String get playerColorVivid => 'Vivid';
-
-  @override
-  String get playerColorPop => 'Anime pop';
-
-  @override
-  String get playerColorSoft => 'Soft';
-
-  @override
-  String get playerColorCinematic => 'Cinematic';
-
-  @override
-  String get playerColorBright => 'Bright';
-
-  @override
-  String get playerColorNight => 'Night';
-
-  @override
-  String get playerColorMono => 'Mono';
-
-  @override
-  String get playerColorCustom => 'Custom';
-
-  @override
-  String get playerColorBrightness => 'Brightness';
-
-  @override
-  String get playerColorContrast => 'Contrast';
-
-  @override
-  String get playerColorSaturation => 'Saturation';
-
-  @override
-  String get playerColorGamma => 'Gamma';
-
-  @override
-  String get playerColorHue => 'Hue';
-
-  @override
-  String get playerColorReset => 'Reset';
-
-  @override
-  String get playerColorAdjust => 'Adjust';
-
-  @override
-  String get playerShadersOriginal => 'Original';
-
-  @override
-  String get playerShadersPreviewFailed => 'Couldn\'t grab a frame to preview';
-
-  @override
-  String get playerShadersCustomFiles => 'Your shaders';
-
-  @override
-  String get playerShadersCustom => 'Custom shaders';
-
-  @override
-  String get playerShadersImport => 'Import .glsl';
-
-  @override
-  String get playerShadersNone =>
-      'Import your own .glsl or .hook files and tick them to chain them';
-
-  @override
-  String get playerShadersBadFile => 'Choose a .glsl or .hook shader file';
-
-  @override
-  String get playerDecoder => 'Decoder';
-
-  @override
-  String get playerDecoderAuto => 'Auto';
-
-  @override
-  String get playerDecoderAutoSafe => 'Auto (safe)';
-
-  @override
-  String get playerDecoderSoftware => 'Software';
-
-  @override
-  String get playerDecoderHardware => 'Hardware';
-
-  @override
-  String get playerDecoderHardwarePlus => 'Hardware+';
-
-  @override
-  String get playerVideoOutput => 'Video output';
-
-  @override
-  String get playerAudioChannels => 'Audio channels';
-
-  @override
-  String get playerBuffer => 'Buffer size (MB)';
-
-  @override
-  String get playerBufferDesc => 'Memory the player may use to buffer a stream';
-
-  @override
-  String get playerUseMpvConf => 'Use mpv.conf';
-
-  @override
-  String get playerUseMpvConfDesc =>
-      'Apply the options in your mpv.conf when playback starts';
-
-  @override
-  String get playerMpvConf => 'mpv.conf';
-
-  @override
-  String get playerMpvConfEdit => 'Edit the mpv configuration';
-
-  @override
-  String get playerMpvConfDesc =>
-      'One option per line, like --hwdec=auto in a normal mpv.conf. Profiles in [brackets] are ignored.';
-
-  @override
-  String get playerMpvConfSaved => 'mpv.conf saved';
-
-  @override
-  String get playerUseScripts => 'Use mpv scripts';
-
-  @override
-  String get playerUseScriptsDesc =>
-      'Load the plugins from the scripts folder. They need a libmpv build with Lua or JavaScript support';
-
-  @override
-  String get playerScripts => 'mpv scripts';
-
-  @override
-  String get playerScriptsManage => 'Add, remove and switch plugins';
-
-  @override
-  String get playerScriptsAdd => 'Add script';
-
-  @override
-  String get playerScriptsDesc =>
-      'Lua, JavaScript and native plugins placed here are loaded when playback starts.';
-
-  @override
-  String get playerScriptsNone => 'No scripts yet';
-
-  @override
-  String get playerScriptsBadFile => 'Choose a .lua, .js or native plugin file';
-
-  @override
-  String get playerTuning => 'Advanced video tuning';
-
-  @override
-  String get playerTuningDesc =>
-      'Override sync, caching, scaling and tone mapping. Wrong values can hurt playback';
-
-  @override
-  String get playerVideoSync => 'Video sync';
-
-  @override
-  String get playerInterpolation => 'Frame interpolation';
-
-  @override
-  String get playerInterpolationDesc =>
-      'Smooth motion, needs display-resample sync';
-
-  @override
-  String get playerPitch => 'Pitch correction';
-
-  @override
-  String get playerPitchDesc => 'Keep voices natural at other speeds';
-
-  @override
-  String get playerCacheSeconds => 'Cache (seconds)';
-
-  @override
-  String get playerReadahead => 'Read ahead (seconds)';
-
-  @override
-  String get playerThreads => 'Decoder threads';
-
-  @override
-  String get playerDeband => 'Deband';
-
-  @override
-  String get playerDebandDesc => 'Reduce colour banding in gradients';
-
-  @override
-  String get playerDebandIterations => 'Deband iterations';
-
-  @override
-  String get playerDebandThreshold => 'Deband threshold';
-
-  @override
-  String get playerCorrectDownscaling => 'Correct downscaling';
-
-  @override
-  String get playerSigmoid => 'Sigmoid upscaling';
-
-  @override
-  String get playerScale => 'Upscaler';
-
-  @override
-  String get playerCscale => 'Chroma upscaler';
-
-  @override
-  String get playerDscale => 'Downscaler';
-
-  @override
-  String get playerToneMapping => 'Tone mapping';
-
-  @override
-  String get playerTargetPeak => 'Target peak';
-
-  @override
-  String get playerOpenFiles => 'Open video files';
-
-  @override
-  String get playerOpenFilesDesc => 'Play files from this device';
-
-  @override
-  String get playerOpenFolder => 'Open a folder';
-
-  @override
-  String get playerOpenFolderDesc =>
-      'Play every video in a folder as a playlist';
-
-  @override
-  String get playerNetworkStream => 'Network stream';
-
-  @override
-  String get playerNetworkStreamDesc => 'Open a direct video or HLS link';
-
-  @override
-  String get playerStreamUrl => 'Stream URL';
-
-  @override
-  String get playerStreamReferer => 'Referer (optional)';
-
-  @override
-  String get playerTorrent => 'Torrent';
-
-  @override
-  String get playerTorrentDesc => 'Stream a magnet link or .torrent file';
-
-  @override
-  String get playerMagnetLink => 'Magnet link or torrent URL';
-
-  @override
-  String get playerPickTorrent => 'Choose a .torrent file';
-
-  @override
-  String get playerTorrentMissing =>
-      'Install the torrent addon from Settings > Addons first';
-
-  @override
-  String get playerNoVideos => 'No playable videos found';
-
-  @override
-  String get playerReset => 'Reset player settings';
-
-  @override
-  String get playerResetDesc => 'Restore every player option to its default';
-
-  @override
-  String get playerResetConfirm => 'Reset all player settings?';
-
-  @override
-  String get playerResetDone => 'Player settings reset';
-
-  @override
-  String get playerQuality => 'Quality';
-
-  @override
-  String get playerStreams => 'Streams';
-
-  @override
-  String get playerAutoSelect => 'Auto select stream';
-
-  @override
-  String get playerAutoSelectDesc =>
-      'Pick the stream most like your last choice for this title';
-
-  @override
-  String get playerLoadingStreams => 'Looking for streams…';
-
-  @override
-  String get playerNoStreams => 'This episode has no streams';
-
-  @override
-  String get playerNoStreamsTitle => 'No streams found';
-
-  @override
-  String get playerFailed => 'Playback failed';
-
-  @override
-  String get playerTorrentNeeded => 'This stream is a torrent';
-
-  @override
-  String get playerTorrentNeededDesc =>
-      'Install the torrent addon to play magnet links and .torrent files';
-
-  @override
-  String get playerOpenAddons => 'Open addons';
-
-  @override
-  String get playerTryAnotherStream => 'Try another stream';
-
-  @override
-  String get playerEpisodes => 'Episodes';
-
-  @override
-  String get playerLock => 'Lock controls';
-
-  @override
-  String get playerFullscreen => 'Fullscreen';
-
-  @override
-  String get settingsReader => 'Reader';
-
-  @override
-  String get settingsReaderDesc => 'Manga, manhwa and novel reading';
-
-  @override
-  String get readerChapters => 'Chapters';
-
-  @override
-  String get readerSettingsTitle => 'Reader settings';
-
-  @override
-  String get readerPreviousChapter => 'Previous chapter';
-
-  @override
-  String get readerNextChapter => 'Next chapter';
-
-  @override
-  String get readerFirstChapter => 'This is the first chapter';
-
-  @override
-  String get readerLastChapter => 'You\'re all caught up';
-
-  @override
-  String get readerFailed => 'Couldn\'t open this chapter';
-
-  @override
-  String get readerNoText => 'This chapter has no text';
-
-  @override
-  String get readerPerTitle => 'Only for this title';
-
-  @override
-  String get readerPerTitleDesc =>
-      'Keep these reader settings for this title only';
-
-  @override
-  String get readerSectionReading => 'Reading';
-
-  @override
-  String get readerSectionControls => 'Controls';
-
-  @override
-  String get readerSectionDisplay => 'Display';
-
-  @override
-  String get readerSectionNovel => 'Novel';
-
-  @override
-  String get readerSectionReset => 'Reset';
-
-  @override
-  String get readerMode => 'Reading mode';
-
-  @override
-  String get readerModeRtl => 'Right to left';
-
-  @override
-  String get readerModeLtr => 'Left to right';
-
-  @override
-  String get readerModeVertical => 'Vertical pages';
-
-  @override
-  String get readerModeWebtoon => 'Webtoon';
-
-  @override
-  String get readerModeContinuous => 'Continuous scroll';
-
-  @override
-  String get readerScale => 'Image scale';
-
-  @override
-  String get readerScaleFit => 'Fit screen';
-
-  @override
-  String get readerScaleWidth => 'Fit width';
-
-  @override
-  String get readerScaleHeight => 'Fit height';
-
-  @override
-  String get readerScaleOriginal => 'Original size';
-
-  @override
-  String get readerScaleSmart => 'Smart fit';
-
-  @override
-  String get readerDoublePage => 'Double pages';
-
-  @override
-  String get readerDoublePageDesc => 'Show two pages side by side in landscape';
-
-  @override
-  String get readerDoubleTapZoom => 'Double tap to zoom';
-
-  @override
-  String get readerDoubleTapZoomDesc =>
-      'Zoom a page in and out with a double tap';
-
-  @override
-  String get readerAnimate => 'Page animation';
-
-  @override
-  String get readerAnimateDesc => 'Animate page turns';
-
-  @override
-  String get readerSidePadding => 'Side padding';
-
-  @override
-  String get readerSidePaddingDesc => 'Space beside the pages in percent';
-
-  @override
-  String get readerPageGap => 'Page gap';
-
-  @override
-  String get readerPageGapDesc => 'Space between pages';
-
-  @override
-  String get readerAutoNext => 'Continue into the next chapter';
-
-  @override
-  String get readerAutoNextDesc =>
-      'Load the next chapter while you read the end of this one';
-
-  @override
-  String get readerPreload => 'Preload pages';
-
-  @override
-  String get readerPreloadDesc => 'How many pages to download ahead';
-
-  @override
-  String get readerTapZones => 'Tap zones';
-
-  @override
-  String get readerTapDefault => 'Default';
-
-  @override
-  String get readerTapLShaped => 'L-shaped';
-
-  @override
-  String get readerTapKindle => 'Kindle-like';
-
-  @override
-  String get readerTapEdge => 'Edges only';
-
-  @override
-  String get readerTapOff => 'Disabled';
-
-  @override
-  String get readerInvertTaps => 'Invert tap zones';
-
-  @override
-  String get readerInvertTapsDesc => 'Swap the previous and next areas';
-
-  @override
-  String get readerBackground => 'Background';
-
-  @override
-  String get readerBackgroundBlack => 'Black';
-
-  @override
-  String get readerBackgroundGray => 'Gray';
-
-  @override
-  String get readerBackgroundWhite => 'White';
-
-  @override
-  String get readerBackgroundTheme => 'App theme';
-
-  @override
-  String get readerFilter => 'Color filter';
-
-  @override
-  String get readerFilterNone => 'None';
-
-  @override
-  String get readerFilterGrayscale => 'Grayscale';
-
-  @override
-  String get readerFilterInvert => 'Invert';
-
-  @override
-  String get readerFilterSepia => 'Sepia';
-
-  @override
-  String get readerDim => 'Dim';
-
-  @override
-  String get readerDimDesc => 'Darken the pages';
-
-  @override
-  String get readerPageNumber => 'Page number';
-
-  @override
-  String get readerPageNumberDesc => 'Show the page number while reading';
-
-  @override
-  String get readerFullscreen => 'Fullscreen';
-
-  @override
-  String get readerFullscreenDesc => 'Hide the system bars';
-
-  @override
-  String get readerCropBorders => 'Crop borders';
-
-  @override
-  String get readerCropBordersDesc =>
-      'Trim blank white or black margins from pages';
-
-  @override
-  String get readerVolumeKeys => 'Volume keys turn pages';
-
-  @override
-  String get readerVolumeKeysDesc =>
-      'Volume down goes forward, volume up goes back';
-
-  @override
-  String get readerBookmarks => 'Bookmarks';
-
-  @override
-  String get readerBookmarkAdd => 'Add bookmark';
-
-  @override
-  String get readerBookmarkRemove => 'Remove bookmark';
-
-  @override
-  String get readerBookmarksEmpty => 'No bookmarks yet';
-
-  @override
-  String readerBookmarkPage(int page, int total) {
-    return 'Page $page of $total';
-  }
-
-  @override
-  String get readerAutoScroll => 'Auto scroll';
-
-  @override
-  String get readerAutoScrollStop => 'Stop auto scroll';
-
-  @override
-  String get readerAutoScrollSpeed => 'Auto scroll speed';
-
-  @override
-  String get readerAutoScrollSpeedDesc =>
-      'How fast pages scroll or turn on their own';
-
-  @override
-  String get readerKeepOn => 'Keep screen on';
-
-  @override
-  String get readerKeepOnDesc =>
-      'Stop the screen from turning off while reading';
-
-  @override
-  String get readerOrientation => 'Orientation';
-
-  @override
-  String get readerOrientationFree => 'Free';
-
-  @override
-  String get readerOrientationPortrait => 'Portrait';
-
-  @override
-  String get readerOrientationLandscape => 'Landscape';
-
-  @override
-  String get readerSaveProgress => 'Save progress';
-
-  @override
-  String get readerSaveProgressDesc =>
-      'Remember your page and mark chapters as read';
-
-  @override
-  String get readerReset => 'Reset reader settings';
-
-  @override
-  String get readerResetDesc => 'Back to the defaults';
-
-  @override
-  String get novelSize => 'Text size';
-
-  @override
-  String get novelFont => 'Font';
-
-  @override
-  String get novelLineHeight => 'Line height';
-
-  @override
-  String get novelParagraph => 'Paragraph spacing';
-
-  @override
-  String get novelMargin => 'Margins';
-
-  @override
-  String get novelTheme => 'Reader theme';
-
-  @override
-  String get novelThemeApp => 'App theme';
-
-  @override
-  String get novelThemeLight => 'Light';
-
-  @override
-  String get novelThemeSepia => 'Sepia';
-
-  @override
-  String get novelThemeDark => 'Dark';
-
-  @override
-  String get novelThemeBlack => 'Black';
-
-  @override
-  String get novelJustify => 'Justify text';
-
-  @override
-  String get novelJustifyDesc => 'Align text to both edges';
-
-  @override
-  String get trackProgressTitle => 'Save progress?';
-
-  @override
-  String trackProgressAnime(String name) {
-    return 'Track $name on your list as you watch? Choose \"This device only\" to keep it local, or No to save nothing.';
-  }
-
-  @override
-  String trackProgressManga(String name) {
-    return 'Track $name on your list when you finish a chapter? Choose \"This device only\" to keep it local, or No to save nothing.';
-  }
-
-  @override
-  String get trackProgressRemember => 'Remember my choice';
-
-  @override
-  String get trackProgressYes => 'Save';
-
-  @override
-  String get trackProgressReset =>
-      'Save progress prompt reset for this type, it will ask again';
-
-  @override
-  String get trackProgressNo => 'No';
-
-  @override
-  String get trackProgressOff => 'Off';
-
-  @override
-  String get trackProgressLocal => 'This device only';
-
-  @override
-  String get trackProgressSettingAnime => 'Track anime progress';
-
-  @override
-  String get trackProgressSettingManga => 'Track manga and novel progress';
-
-  @override
-  String get trackProgressSettingDesc =>
-      'What to do when you open an episode or finish a chapter';
-
-  @override
-  String get trackProgressAsk => 'Ask';
-
-  @override
-  String get trackProgressAlways => 'Always';
-
-  @override
-  String get trackProgressNever => 'Never';
-
-  @override
-  String get dantotsuImport => 'Import from Dantotsu';
-
-  @override
-  String get dantotsuImportDesc =>
-      'Read a Dantotsu settings backup (.ani, or encrypted .sani)';
-
-  @override
-  String get dantotsuPick => 'Choose a Dantotsu backup';
-
-  @override
-  String get dantotsuNothing => 'Nothing in this file can be imported';
-
-  @override
-  String get dantotsuApply => 'Import selected';
-
-  @override
-  String dantotsuDone(int done, int total) {
-    return 'Imported $done of $total';
-  }
-
-  @override
-  String get dantotsuGroupAccounts => 'Accounts';
-
-  @override
-  String get dantotsuGroupAppearance => 'Appearance';
-
-  @override
-  String get dantotsuGroupExtensions => 'Extensions';
-
-  @override
-  String get dantotsuGroupApp => 'App';
-
-  @override
-  String get dantotsuGroupPlayer => 'Player';
-
-  @override
-  String get dantotsuAnilist => 'AniList login';
-
-  @override
-  String get dantotsuMal => 'MyAnimeList login';
-
-  @override
-  String get dantotsuDiscord => 'Discord Rich Presence token';
-
-  @override
-  String get dantotsuTheme => 'Theme';
-
-  @override
-  String get dantotsuReposAnime => 'Anime extension repositories';
-
-  @override
-  String get dantotsuReposManga => 'Manga extension repositories';
-
-  @override
-  String get dantotsuReposNovel => 'Novel extension repositories';
-
-  @override
-  String get dantotsuUpdates => 'Update check';
-
-  @override
-  String get dantotsuComments => 'Comments';
-
-  @override
-  String get dantotsuActivity => 'AniList notification polling';
-
-  @override
-  String get dantotsuDns => 'DNS provider';
-
-  @override
-  String get dantotsuPlayer => 'Player speed and subtitle colours';
-
-  @override
-  String get dantotsuWarning =>
-      'This file holds login tokens. Keep it private.';
-
-  @override
-  String get novelIndent => 'Indent paragraphs';
-
-  @override
-  String get novelIndentDesc => 'Start each paragraph with a first-line indent';
-
-  @override
-  String get novelLetterSpacing => 'Letter spacing';
-
-  @override
-  String get novelSectionTranslate => 'Translation';
-
-  @override
-  String get sectionExperimental => 'Experimental';
-
-  @override
-  String get kitsuGraphqlDetail => 'Faster detail pages (GraphQL)';
-
-  @override
-  String get kitsuGraphqlDetailDesc =>
-      'Load a title with its characters, staff and your entry in one request';
-
-  @override
-  String get togetherTitle => 'Watch together';
-
-  @override
-  String get togetherIntro =>
-      'Paste the room link your friend sent you. You join straight away and the player opens when they start watching.';
-
-  @override
-  String get togetherName => 'Your name';
-
-  @override
-  String get togetherRoom => 'Room';
-
-  @override
-  String get togetherNewRoom => 'New random room';
-
-  @override
-  String get togetherServer => 'Server';
-
-  @override
-  String get togetherPort => 'Port';
-
-  @override
-  String get togetherPassword => 'Server password (optional)';
-
-  @override
-  String get togetherPublicNote =>
-      'Public servers have no password and rooms are open. Use a long room name and share it only with friends.';
-
-  @override
-  String get togetherConnect => 'Connect';
-
-  @override
-  String get togetherConnecting => 'Connecting…';
-
-  @override
-  String get togetherLeave => 'Leave room';
-
-  @override
-  String get togetherLeftRoom => 'You left the room';
-
-  @override
-  String get togetherReady => 'Ready';
-
-  @override
-  String get togetherYou => 'You';
-
-  @override
-  String get togetherNoChat => 'No messages yet';
-
-  @override
-  String get togetherChatHint => 'Message';
-
-  @override
-  String get togetherCopyInvite => 'Copy invite';
-
-  @override
-  String get togetherInviteCopied => 'Server and room copied';
-
-  @override
-  String get togetherFileMismatch => 'Different file or length';
-
-  @override
-  String get togetherConnectionLost => 'Connection lost';
-
-  @override
-  String togetherConnectedTo(String room) {
-    return 'Connected to $room';
-  }
-
-  @override
-  String togetherFailed(String error) {
-    return 'Couldn\'t connect: $error';
-  }
-
-  @override
-  String togetherJoined(String name) {
-    return '$name joined';
-  }
-
-  @override
-  String togetherLeft(String name) {
-    return '$name left';
-  }
-
-  @override
-  String togetherPaused(String name) {
-    return '$name paused';
-  }
-
-  @override
-  String togetherResumed(String name) {
-    return '$name resumed';
-  }
-
-  @override
-  String togetherSeeked(String name, String time) {
-    return '$name jumped to $time';
-  }
-
-  @override
-  String togetherOtherService(String service) {
-    return 'The host is on $service, syncing is off';
-  }
-
-  @override
-  String get togetherFollowFailed =>
-      'Couldn\'t open the host\'s episode. Open it yourself.';
-
-  @override
-  String get togetherHostRole => 'Host a room';
-
-  @override
-  String get togetherJoinRole => 'Join a room';
-
-  @override
-  String get togetherFollow => 'Follow the host\'s episode';
-
-  @override
-  String get togetherFollowDesc =>
-      'Opens and switches episodes automatically when you use the same service';
-
-  @override
-  String get togetherOpenHost => 'Open host\'s episode';
-
-  @override
-  String togetherHostWatching(String title) {
-    return 'Host: $title';
-  }
-
-  @override
-  String get togetherLiveChat => 'Live chat';
-
-  @override
-  String get togetherShowChat => 'Show live chat';
-
-  @override
-  String get togetherWaitingHost => 'Waiting for the host to start an episode';
-
-  @override
-  String get togetherDifferentService =>
-      'The host is on another service, syncing is off';
-
-  @override
-  String get togetherNoSource =>
-      'Install an anime extension to follow the host';
-
-  @override
-  String togetherNoMatch(String source) {
-    return '$source has no match for the host\'s title';
-  }
-
-  @override
-  String togetherNoEpisode(String source) {
-    return '$source doesn\'t have the host\'s episode';
-  }
-
-  @override
-  String get togetherRoomLink => 'Room link';
-
-  @override
-  String get togetherBadLink => 'That isn\'t a room link';
-
-  @override
-  String get togetherHostClosed => 'The host closed the room';
-
-  @override
-  String get togetherHostBadge => 'Host';
-
-  @override
-  String get togetherNowPlaying => 'Now playing';
-
-  @override
-  String togetherWatchingCount(int count) {
-    return '$count watching';
-  }
-
-  @override
-  String togetherWantsPause(String user) {
-    return '$user wants to pause';
-  }
-
-  @override
-  String togetherWantsResume(String user) {
-    return '$user wants to resume';
-  }
-
-  @override
-  String get togetherChip => 'Together';
-
-  @override
-  String get togetherSettingsDesc => 'Join a friend\'s room with a link';
-
-  @override
-  String get togetherNoPlayer =>
-      'Open an episode and it syncs with the room automatically. Chat and the member list work right now.';
-
-  @override
-  String togetherWatching(String name, String file) {
-    return '$name is watching $file';
-  }
-
-  @override
-  String get novelBilingual => 'Show original and translation';
-
-  @override
-  String get novelBilingualDesc =>
-      'Each paragraph shows the original text with its translation below it';
-
-  @override
-  String get novelTranslateTo => 'Translate to';
-
-  @override
-  String get novelTranslateOff => 'Off';
-
-  @override
-  String get novelSectionSpeech => 'Text to speech';
-
-  @override
-  String get novelSpeechRate => 'Speech speed';
-
-  @override
-  String get novelSpeechPitch => 'Speech pitch';
-
-  @override
-  String get novelSpeak => 'Read aloud';
-
-  @override
-  String get novelSpeakStop => 'Stop reading aloud';
-
-  @override
-  String get novelTranslate => 'Translate chapter';
-
-  @override
-  String get novelTranslateShowOriginal => 'Show original';
-
-  @override
-  String get novelTranslating => 'Translating…';
-
-  @override
-  String novelTranslateFailed(String error) {
-    return 'Translation failed: $error';
-  }
-
-  @override
-  String get novelSpeechUnavailable =>
-      'Text to speech is not available on this device';
-
-  @override
-  String get novelSpeechVoice => 'Voice';
-
-  @override
-  String get novelSpeechVoiceDefault => 'System default';
-
-  @override
-  String get novelSpeakPrevious => 'Previous line';
-
-  @override
-  String get novelSpeakNext => 'Next line';
-
-  @override
-  String get novelTapPaging => 'Tap edges to turn page';
-
-  @override
-  String get novelTapPagingDesc =>
-      'Tap the left or right side to scroll a page, the middle shows the controls';
-
-  @override
-  String novelMinutesLeft(int count) {
-    return '$count min left';
-  }
-
-  @override
-  String get novelBold => 'Bold text';
-
-  @override
-  String get novelBoldDesc => 'Use a heavier weight';
-
-  @override
-  String readerFinishedChapter(String chapter) {
-    return 'Finished $chapter';
-  }
-
-  @override
-  String readerNextUp(String chapter) {
-    return 'Next: $chapter';
-  }
-
-  @override
-  String readerPreviousUp(String chapter) {
-    return 'Previous: $chapter';
-  }
-
-  @override
-  String get readerNoPages => 'This chapter has no pages';
-
-  @override
-  String get readerLoadingPages => 'Loading pages…';
-
-  @override
-  String get readerSlowPage => 'Still loading this page…';
-
-  @override
-  String get readerPageFailed => 'Couldn\'t load this page';
-
-  @override
-  String get playerShowComments => 'Show comments';
-
-  @override
-  String get playerHideComments => 'Hide comments';
-
-  @override
-  String get playerSubtitles => 'Subtitles';
-
-  @override
-  String get playerSubtitlesOff => 'Subtitles off';
-
-  @override
-  String get playerAudio => 'Audio';
-
-  @override
-  String get playerAddSubtitle => 'Add subtitle file';
-
-  @override
-  String get playerAddAudio => 'Add audio file';
-
-  @override
-  String get playerChapters => 'Chapters';
-
-  @override
-  String get playerNoChapters => 'No chapters';
-
-  @override
-  String get playerTimestamp => 'Timestamp';
-
-  @override
-  String get playerAutoPlayDelay => 'Next episode countdown';
-
-  @override
-  String get playerWatchedAt => 'Count as watched at';
-
-  @override
-  String playerNextIn(int seconds) {
-    return 'Next episode in ${seconds}s';
-  }
-
-  @override
-  String get playerPlayNow => 'Play now';
-
-  @override
-  String playerAutoSkipOn(String name) {
-    return '$name: will skip automatically for this title';
-  }
-
-  @override
-  String playerAutoSkipOff(String name) {
-    return '$name: will not skip automatically for this title';
-  }
-
-  @override
-  String get playerAudioLanguage => 'Preferred audio language';
-
-  @override
-  String get playerLanguageOrderHint =>
-      'Separate languages with commas. The first one found is used.';
-
-  @override
-  String get playerPip => 'Picture in picture';
-
-  @override
-  String get playerPipRestore => 'Back to the player';
-
-  @override
-  String get playerAutoPip => 'Picture in picture on leave';
-
-  @override
-  String get playerAutoPipDesc =>
-      'Keep playing in a small window when you leave the app';
-
-  @override
-  String playerAutoPlaying(String title) {
-    return 'Playing $title next…';
-  }
-
-  @override
-  String playerShadersFailed(String error) {
-    return 'Couldn\'t install the shaders: $error';
-  }
-
-  @override
-  String playerChapter(int number) {
-    return 'Chapter $number';
-  }
-
-  @override
-  String get playerPerTitle => 'Only for this title';
-
-  @override
-  String get playerPerTitleDesc =>
-      'Keep these options for this title and leave your defaults alone';
-
-  @override
-  String get playerHoldSpeed => 'Hold speed';
-
-  @override
-  String get playerAudioOutput => 'Audio output';
-
-  @override
-  String get fontAppDefault => 'App font';
-
-  @override
-  String get fontImport => 'Import font';
-
-  @override
-  String get fontSample => 'The quick brown fox jumps over the lazy dog';
-
-  @override
-  String get playerSubtitleDelay => 'Subtitle delay';
-
-  @override
-  String get playerAudioDelay => 'Audio delay';
-
-  @override
-  String get playerDelayReset => 'Reset';
-
-  @override
-  String get playerOnlineSubtitles => 'Online subtitles';
-
-  @override
-  String get playerOnlineSearchHint => 'Title and episode';
-
-  @override
-  String get playerOnlineNone => 'No subtitles found';
-
-  @override
-  String playerOnlineFailed(String error) {
-    return 'Subtitle search failed: $error';
-  }
-
-  @override
-  String playerOnlineDownloadFailed(String error) {
-    return 'Could not download this subtitle: $error';
-  }
-
-  @override
-  String get playerOnlineMatch => 'Matches this file';
-
-  @override
-  String get playerOnlineEpisode => 'Episode match';
-
-  @override
-  String playerOnlineDownloads(int count) {
-    return '$count downloads';
-  }
-
-  @override
-  String get playerSeekPreview => 'Seek preview';
-
-  @override
-  String get playerSeekPreviewDesc =>
-      'Show a small frame preview above the seek bar while scrubbing. Opens a second low resolution decoder, so it uses extra data on streams.';
-
-  @override
-  String get playerSettingsChip => 'Settings';
-
-  @override
-  String get playerAudioDevice => 'Audio device';
-
-  @override
-  String get settingsDownloads => 'Downloads';
-
-  @override
-  String get settingsDownloadsDesc =>
-      'Offline episodes, queue and offline mode';
-
-  @override
-  String get downloadsTitle => 'Downloads';
-
-  @override
-  String get downloadsOpenDesc =>
-      'See the queue and everything saved on this device';
-
-  @override
-  String get downloadTitle => 'Download';
-
-  @override
-  String get downloadAlready => 'Already downloaded or in the queue';
-
-  @override
-  String get downloadPickStream => 'Download which stream?';
-
-  @override
-  String get downloadPickSubtitle => 'Download which subtitle?';
-
-  @override
-  String get downloadPickAudio => 'Download which audio track?';
-
-  @override
-  String get downloadNoAudio => 'No extra audio';
-
-  @override
-  String get downloadAudio => 'Audio';
-
-  @override
-  String get downloadNoSubtitle => 'No subtitle';
-
-  @override
-  String get downloadHlsNeedsFfmpeg =>
-      'This stream is an HLS playlist. Downloading it needs the FFmpeg addon.';
-
-  @override
-  String get downloadSourceMissing =>
-      'The source for this episode is not installed';
-
-  @override
-  String get downloadWaitingConnection => 'Waiting for a connection';
-
-  @override
-  String get downloadSubtitles => 'Subtitles';
-
-  @override
-  String get downloadDownloaded => 'Downloaded';
-
-  @override
-  String get downloadOffline => 'Offline';
-
-  @override
-  String get downloadDelete => 'Delete download';
-
-  @override
-  String get downloadCancel => 'Cancel';
-
-  @override
-  String get downloadPause => 'Pause';
-
-  @override
-  String get downloadPaused => 'Paused';
-
-  @override
-  String get downloadResume => 'Resume';
-
-  @override
-  String get downloadPauseAll => 'Pause all';
-
-  @override
-  String get downloadResumeAll => 'Resume all';
-
-  @override
-  String get downloadQueuedState => 'Waiting in the queue';
-
-  @override
-  String get downloadResolving => 'Getting the stream…';
-
-  @override
-  String get downloadUsedFallback => 'No matching stream, used the first one';
-
-  @override
-  String get downloadTabQueue => 'Queue';
-
-  @override
-  String get downloadTabDone => 'Done';
-
-  @override
-  String get downloadTabFailed => 'Failed';
-
-  @override
-  String get downloadEmptyQueue => 'Nothing is downloading';
-
-  @override
-  String get downloadEmptyDone => 'Nothing downloaded yet';
-
-  @override
-  String get downloadEmptyFailed => 'No failed downloads';
-
-  @override
-  String get downloadNext => 'Next episode';
-
-  @override
-  String downloadNextN(int count) {
-    return 'Next $count episodes';
-  }
-
-  @override
-  String downloadUnwatched(int count) {
-    return 'All unwatched ($count)';
-  }
-
-  @override
-  String downloadRange(int count) {
-    return 'This range ($count)';
-  }
-
-  @override
-  String downloadAll(int count) {
-    return 'All episodes ($count)';
-  }
-
-  @override
-  String downloadQueued(int count) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: '$count episodes queued',
-      one: '1 episode queued',
-    );
-    return '$_temp0';
-  }
-
-  @override
-  String downloadFinished(String name) {
-    return '$name downloaded';
-  }
-
-  @override
-  String downloadFailedBody(String name) {
-    return '$name failed to download';
-  }
-
-  @override
-  String downloadStorage(String size) {
-    return '$size used by downloads';
-  }
-
-  @override
-  String get downloadQueueHeader => 'Queue';
-
-  @override
-  String get downloadParallel => 'Downloads at once';
-
-  @override
-  String get downloadParallelDesc =>
-      'Run one download at a time or several together';
-
-  @override
-  String get downloadOneByOne => 'One by one';
-
-  @override
-  String get downloadNotifications => 'Download notifications';
-
-  @override
-  String get downloadNotificationsDesc =>
-      'Live progress where the system supports it, otherwise a note when a download finishes';
-
-  @override
-  String get downloadNotifyLive => 'Live';
-
-  @override
-  String get downloadNotifyDone => 'When done';
-
-  @override
-  String get downloadNotifyOff => 'Off';
-
-  @override
-  String get downloadInfoFile => 'Write an info file next to each download';
-
-  @override
-  String get downloadInfoFileDesc =>
-      'Saves the stream, quality, subtitle and skip times as a small .json file';
-
-  @override
-  String get offlineHeader => 'Offline';
-
-  @override
-  String get offlineModeDesc =>
-      'Auto goes offline only when the app starts without a connection. Always stays offline until you change it.';
-
-  @override
-  String get offlineModeOff => 'Off';
-
-  @override
-  String get offlineModeAlways => 'Always';
-
-  @override
-  String get offlineModeOn =>
-      'Offline mode is on. Changes are saved here and sent when you are back online.';
-
-  @override
-  String get offlineLost => 'You\'re offline. Changes are saved on this device';
-
-  @override
-  String get offlineBack => 'Back online. Syncing your changes';
-
-  @override
-  String get offlineSaved =>
-      'Saved on this device, it will sync when you are online';
-
-  @override
-  String offlineSynced(int count) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: '$count changes synced',
-      one: '1 change synced',
-    );
-    return '$_temp0';
-  }
-
-  @override
-  String offlinePending(int count) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: '$count changes waiting to sync',
-      one: '1 change waiting to sync',
-    );
-    return '$_temp0';
-  }
-
-  @override
-  String get offlinePendingTitle => 'Changes waiting to sync';
-
-  @override
-  String get offlinePendingNone => 'Nothing waiting';
-
-  @override
-  String get offlineSyncNow => 'Sync now';
-
-  @override
-  String get offlineDiscard => 'Discard';
-
-  @override
-  String get downloadNotOffline =>
-      'This episode is not downloaded, so it is not available offline';
-
-  @override
-  String get offlineModeChip => 'Offline';
-
-  @override
-  String get downloadNextChapter => 'Next chapter';
-
-  @override
-  String downloadNextChapters(int count) {
-    return 'Next $count chapters';
-  }
-
-  @override
-  String downloadUnread(int count) {
-    return 'All unread ($count)';
-  }
-
-  @override
-  String downloadAllChapters(int count) {
-    return 'All chapters ($count)';
-  }
-
-  @override
-  String downloadPagesProgress(int done, int total) {
-    return '$done / $total pages';
-  }
-
-  @override
-  String downloadPagesCount(int count) {
-    return '$count pages';
-  }
-
-  @override
-  String get downloadFfmpegTitle => 'FFmpeg addon needed';
-
-  @override
-  String get downloadFfmpegBody =>
-      'This stream is an HLS playlist. The FFmpeg addon joins its pieces into one mp4 file. Without it the pieces are kept in an episode folder and play from there.';
-
-  @override
-  String get downloadFfmpegInstall => 'Install';
-
-  @override
-  String get downloadFfmpegInstalling =>
-      'Installing FFmpeg, this can take a while…';
-
-  @override
-  String get downloadFinishing => 'Joining the pieces into one file…';
-
-  @override
-  String downloadSegmentsProgress(int done, int total) {
-    return '$done / $total parts';
-  }
-
-  @override
-  String get downloadTorrentNoFile =>
-      'The torrent has no video file to download';
-
-  @override
-  String downloadServiceText(int count) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: 'Downloading $count items',
-      one: 'Downloading 1 item',
-    );
-    return '$_temp0';
-  }
-
-  @override
-  String get downloadAutoDelete => 'Delete watched downloads';
-
-  @override
-  String get downloadAutoDeleteDesc =>
-      'Removes a download once your progress reaches that episode or chapter';
-
-  @override
-  String get downloadConnections => 'Connections per download';
-
-  @override
-  String get downloadConnectionsDesc =>
-      'Splits a big file into parts fetched at the same time. Some servers limit this.';
-
-  @override
-  String get downloadPlayChoice => 'Play from';
-
-  @override
-  String get downloadPlayLocalDesc => 'The file saved on this device';
-
-  @override
-  String get downloadPlayStream => 'Stream online';
-
-  @override
-  String get downloadPlayStreamDesc => 'Load the episode from the source';
-
-  @override
-  String get offlineFeedTitle => 'Downloaded on this device';
-
-  @override
-  String get offlineFeedEmpty =>
-      'Download something while you are online and it shows up here';
-
-  @override
-  String get offlineEnabled => 'Offline mode is on';
-
-  @override
-  String get offlineDisabled => 'Offline mode is off';
-
-  @override
-  String get downloadReadChoice => 'Read from';
-
-  @override
-  String get downloadReadLocalDesc => 'The pages saved on this device';
-
-  @override
-  String get downloadReadOnline => 'Read online';
-
-  @override
-  String get downloadReadOnlineDesc => 'Load the chapter from the source';
-
-  @override
-  String downloadDeleteConfirm(String name) {
-    return 'Delete $name from this device?';
-  }
-
-  @override
-  String downloadCancelConfirm(String name) {
-    return 'Cancel the download of $name? What was already downloaded is deleted.';
-  }
-
-  @override
-  String get downloadFfmpegFolder => 'Keep as folder';
-
-  @override
-  String offlineDiscardConfirm(int count) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other:
-          'Throw away $count changes that were never sent? This can\'t be undone.',
-      one: 'Throw away the change that was never sent? This can\'t be undone.',
-    );
-    return '$_temp0';
-  }
-
-  @override
-  String get downloadWaitingWifi => 'Waiting for Wi-Fi';
-
-  @override
-  String get downloadWaitingMetered => 'Paused on a metered connection';
-
-  @override
-  String get downloadWifiOnly => 'Wi-Fi only';
-
-  @override
-  String get downloadWifiOnlyDesc =>
-      'Downloads wait while you are on mobile data';
-
-  @override
-  String get downloadMetered => 'Pause on metered connections';
-
-  @override
-  String get downloadMeteredDesc =>
-      'Also waits on Wi-Fi that your device marks as metered';
-
-  @override
-  String get downloadSpeedLimit => 'Speed limit';
-
-  @override
-  String get downloadSpeedLimitDesc => 'Caps the total download speed';
-
-  @override
-  String get downloadUnlimited => 'Unlimited';
-
-  @override
-  String get downloadMoveToTop => 'Move to top';
-
-  @override
-  String downloadSwarm(int seeds, int peers) {
-    return '$seeds seeds · $peers peers';
-  }
-
-  @override
-  String get downloadTorrentFile => 'Which file?';
-
-  @override
-  String get downloadTorrentAuto => 'Match the episode automatically';
-
-  @override
-  String get downloadTorrentLoading => 'Reading the torrent…';
-
-  @override
-  String get watchAutoSource => 'Switch to the next source automatically';
-
-  @override
-  String get watchAutoSourceDesc =>
-      'If the source can\'t find the title or fails to load, try the next installed source';
-
-  @override
-  String get extensionTest => 'Test extensions';
-
-  @override
-  String get extensionTestCopy => 'Copy the failures and their logs';
-
-  @override
-  String get extensionTestQuery => 'Search term';
-
-  @override
-  String get extensionTestRun => 'Run';
-
-  @override
-  String get extensionTestStop => 'Stop';
-
-  @override
-  String get extensionTestNone => 'No installed extensions of this type';
-
-  @override
-  String get extensionTestNotRun => 'Not tested yet';
-
-  @override
-  String get extensionTestSearch => 'Search';
-
-  @override
-  String get extensionTestDetail => 'Details';
-
-  @override
-  String get extensionTestUnits => 'Episodes / chapters';
-
-  @override
-  String get extensionTestLinks => 'Streams / pages';
-
-  @override
-  String extensionTestFailedAt(String step) {
-    return 'Failed at $step';
-  }
-
-  @override
-  String extensionTestSummary(int done, int total, int passed, int failed) {
-    return '$done of $total tested · $passed passed · $failed failed';
-  }
-
-  @override
-  String get extensionTestCopyLogs => 'Copy everything with the full logs';
-
-  @override
-  String get onboardingFeaturesTitle => 'All of it in one place';
-
-  @override
-  String get onboardingFeaturesBody =>
-      'Everything you track, watch and read, without juggling apps.';
-
-  @override
-  String get onboardingFeatureTrack => 'Track everything';
-
-  @override
-  String get onboardingFeatureTrackDesc =>
-      'Lists, progress and scores on AniList, MyAnimeList, Simkl, Kitsu and MangaBaka.';
-
-  @override
-  String get onboardingFeatureWatch => 'Watch and read';
-
-  @override
-  String get onboardingFeatureWatchDesc =>
-      'Install extensions and stream anime or read manga and novels right in the app.';
-
-  @override
-  String get onboardingFeatureOffline => 'Take it offline';
-
-  @override
-  String get onboardingFeatureOfflineDesc =>
-      'Download episodes and chapters, and keep going without a connection.';
-
-  @override
-  String get onboardingFeatureSync => 'Keep lists in sync';
-
-  @override
-  String get onboardingFeatureSyncDesc =>
-      'Mirror your list across services, or let whichever is ahead win.';
-
-  @override
-  String get onboardingThemeShape => 'Colours';
-
-  @override
-  String get onboardingServices => 'Works with';
-}
-
-/// The translations for Portuguese, as used in Brazil (`pt_BR`).
-class AppLocalizationsPtBr extends AppLocalizationsPt {
-  AppLocalizationsPtBr() : super('pt_BR');
-
-  @override
-  String get appName => 'Dartotsu';
-
-  @override
-  String get appTagline => 'O NOVO Melhor App Para\nAcompanhar Animes e Mangás';
-
-  @override
-  String get anilist => 'AniList';
-
-  @override
-  String get mal => 'MyAnimeList';
-
-  @override
-  String get simkl => 'Simkl';
-
-  @override
-  String get kitsu => 'Kitsu';
-
-  @override
-  String get discord => 'Discord';
-
-  @override
-  String get login => 'Login';
+  String get pasteTokenHint => 'Cole seu token de acesso';
 
   @override
   String loginTo(String service) {
@@ -6373,6 +68,15 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get language => 'Idioma';
 
   @override
+  String get animationSpeed => 'Animações';
+
+  @override
+  String get animationSpeedDesc => 'Velocidade das transições e dos efeitos de entrada no app';
+
+  @override
+  String get animationSpeedOff => 'Desligado';
+
+  @override
   String extension(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -6382,6 +86,42 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
     );
     return '$_temp0';
   }
+
+  @override
+  String get unknownSource => 'Fonte desconhecida';
+
+  @override
+  String get install => 'Instalar';
+
+  @override
+  String get update => 'Atualizar';
+
+  @override
+  String get uninstall => 'Desinstalar';
+
+  @override
+  String get installFailed => 'Falha ao instalar';
+
+  @override
+  String get updateFailed => 'Falha ao atualizar';
+
+  @override
+  String get noSourceSettings => 'A fonte não tem configurações';
+
+  @override
+  String get addPluginRepository => 'Adicionar repositório de plugins';
+
+  @override
+  String get pluginIndexUrlHint => 'URL do índice de plugins';
+
+  @override
+  String get addRepository => 'Adicionar repositório';
+
+  @override
+  String get pluginRepoUpdated => 'Repositório de plugins atualizado';
+
+  @override
+  String get pluginRepoUpdateFailed => 'Falha ao atualizar o repositório de plugins';
 
   @override
   String get ok => 'OK';
@@ -6396,10 +136,31 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get no => 'Não';
 
   @override
-  String get selectMediaService => 'Selecionar Serviço de Mídia';
+  String get save => 'Salvar';
 
   @override
-  String get pickColor => 'Selecione uma cor';
+  String get reset => 'Redefinir';
+
+  @override
+  String get clear => 'Limpar';
+
+  @override
+  String get test => 'Testar';
+
+  @override
+  String get testing => 'Testando…';
+
+  @override
+  String get resolving => 'Resolvendo…';
+
+  @override
+  String get none => 'Nenhum';
+
+  @override
+  String get selectMediaService => 'Escolher serviço de mídia';
+
+  @override
+  String get pickColor => 'Escolha uma cor';
 
   @override
   String get colorPickerDefault => 'Padrão';
@@ -6408,78 +169,1508 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get colorPickerCustom => 'Personalizado';
 
   @override
-  String get ltr => 'Esquerda para a direita';
+  String get colorPickerTransparent => 'Transparente';
 
   @override
-  String get customPath => 'Caminho Personalizado';
+  String get ltr => 'Da esquerda pra direita';
 
   @override
-  String get selectDirectory => 'Escolha uma pasta';
+  String get searchSettings => 'Buscar configurações';
 
   @override
-  String get differentCacheManager => 'Gerenciador de Cache Alternativo';
+  String nothingMatches(String query) {
+    return 'Nada encontrado pra \"$query\"';
+  }
 
   @override
-  String get differentCacheManagerDesc =>
-      'Usar um gerenciador diferente para o cache de imagens';
+  String searchCategory(String category) {
+    return 'Buscar em $category';
+  }
 
   @override
-  String get loadExtensionsIcon => 'Carregar ícone das extensões';
+  String get settingsAppearance => 'Aparência';
 
   @override
-  String get loadExtensionsIconDesc =>
-      'Desative se a página de extensões ficar lenta';
+  String get settingsAppearanceDesc => 'Tema, cores, modo vidro';
 
   @override
-  String get logFile => 'Arquivo de Log';
+  String get settingsGeneral => 'Geral';
+
+  @override
+  String get settingsGeneralDesc => 'Idioma e comportamento';
+
+  @override
+  String get settingsNetwork => 'Network';
+
+  @override
+  String get settingsNetworkDesc => 'User agent, certificates, DNS and proxy';
+
+  @override
+  String get settingsAccountDesc => 'Serviço de acompanhamento e login';
+
+  @override
+  String get settingsUpdates => 'Atualizações';
+
+  @override
+  String get settingsUpdatesDesc => 'Canal de versões e verificações';
+
+  @override
+  String get settingsAboutDesc => 'Versão, links, suporte';
+
+  @override
+  String get amoledBlack => 'Preto AMOLED';
+
+  @override
+  String get amoledBlackDesc => 'Superfícies totalmente pretas no modo escuro';
+
+  @override
+  String get glassMode => 'Modo vidro';
+
+  @override
+  String get glassModeDesc => 'Superfícies foscas sobre as capas da sua biblioteca';
+
+  @override
+  String get shelfFrame => 'Moldura em volta das seções';
+
+  @override
+  String get shelfFrameDesc => 'Mostra um cartão atrás de cada prateleira, ou deixa as linhas direto na página';
+
+  @override
+  String get settingsExtensionsDesc => 'Gerenciadores de fontes, repositórios e opções das extensões';
+
+  @override
+  String get settingsAddons => 'Complementos';
+
+  @override
+  String get settingsAddonsDesc => 'Componentes opcionais, como o servidor de torrent';
+
+  @override
+  String get customPath => 'Caminho de armazenamento personalizado';
+
+  @override
+  String get customPathDesc => 'Onde ficam os dados do app. Segure pra redefinir';
+
+  @override
+  String get selectDirectory => 'Selecionar pasta';
+
+  @override
+  String get differentCacheManager => 'Cache de imagens alternativo';
+
+  @override
+  String get differentCacheManagerDesc => 'Usa outro gerenciador de cache pras imagens';
+
+  @override
+  String get backupAndRestore => 'Backup e restauração';
+
+  @override
+  String get backupAndRestoreDesc => 'Salve ou carregue suas preferências';
+
+  @override
+  String get backup => 'Backup';
+
+  @override
+  String get restore => 'Restaurar';
+
+  @override
+  String get loadExtensionsIcon => 'Carregar ícones das extensões';
+
+  @override
+  String get loadExtensionsIconDesc => 'Mostra os ícones das fontes nas listas de extensões';
+
+  @override
+  String get sectionStorage => 'Armazenamento';
+
+  @override
+  String get sectionBackup => 'Backup';
+
+  @override
+  String get sectionManagers => 'Gerenciadores';
+
+  @override
+  String get sectionOptions => 'Opções';
+
+  @override
+  String get backupTabBackup => 'Fazer backup';
+
+  @override
+  String get backupTabRestore => 'Restaurar';
+
+  @override
+  String backupSummary(Object keys, Object categories) {
+    return '$keys configurações em $categories categorias';
+  }
+
+  @override
+  String backupLastBackup(Object time) {
+    return 'Último backup $time';
+  }
+
+  @override
+  String get backupNever => 'Nenhum backup ainda';
+
+  @override
+  String get backupSelectAll => 'Selecionar tudo';
+
+  @override
+  String get backupClearAll => 'Limpar';
+
+  @override
+  String backupKeys(Object count) {
+    return '$count configurações';
+  }
+
+  @override
+  String get backupPassword => 'Senha (opcional)';
+
+  @override
+  String get backupPasswordHint => 'Deixe vazio pra usar a padrão';
+
+  @override
+  String get backupSensitive => 'Inclui tokens de login. Mantenha esse arquivo privado';
+
+  @override
+  String get backupCreate => 'Criar backup';
+
+  @override
+  String backupSaved(Object name) {
+    return 'Backup salvo em $name';
+  }
+
+  @override
+  String backupFailed(Object error) {
+    return 'Falha no backup: $error';
+  }
+
+  @override
+  String get backupPickFile => 'Escolha um arquivo de backup';
+
+  @override
+  String get backupPickFileDesc => 'Escolha um arquivo .json feito pelo Dartotsu';
+
+  @override
+  String get backupChooseAnother => 'Escolher outro arquivo';
+
+  @override
+  String get backupCreatedAt => 'Criado';
+
+  @override
+  String get backupAppVersion => 'Versão do app';
+
+  @override
+  String get backupDevice => 'Dispositivo';
+
+  @override
+  String get backupAccounts => 'Contas';
+
+  @override
+  String get backupSize => 'Tamanho';
+
+  @override
+  String get backupEncrypted => 'Protegido por senha';
+
+  @override
+  String get backupUnlock => 'Desbloquear';
+
+  @override
+  String get backupWrongPassword => 'Não consegui ler esse arquivo. Confira a senha';
+
+  @override
+  String get backupRestoreSelected => 'Restaurar selecionados';
+
+  @override
+  String backupRestoreConfirm(Object count) {
+    return 'Restaurar $count configurações? Os valores existentes nessas categorias serão sobrescritos.';
+  }
+
+  @override
+  String get backupRestored => 'Restaurado. Reinicie o app pra aplicar tudo';
+
+  @override
+  String backupRestoreFailed(Object error) {
+    return 'Falha na restauração: $error';
+  }
+
+  @override
+  String get backupSelectOne => 'Selecione pelo menos uma categoria';
+
+  @override
+  String get backupCatTheme => 'Aparência';
+
+  @override
+  String get backupCatThemeDesc => 'Tema, cores, vidro, fontes e estilo dos cartões';
+
+  @override
+  String get backupCatCommon => 'Geral';
+
+  @override
+  String get backupCatCommonDesc => 'Idioma, armazenamento, rede e opções das extensões';
+
+  @override
+  String get backupCatPlayer => 'Player';
+
+  @override
+  String get backupCatPlayerDesc => 'Preferências do player';
+
+  @override
+  String get backupCatReader => 'Leitor';
+
+  @override
+  String get backupCatReaderDesc => 'Preferências do leitor';
+
+  @override
+  String get backupCatProtected => 'Contas';
+
+  @override
+  String get backupCatProtectedDesc => 'Tokens de login e dados de sessão';
+
+  @override
+  String get backupCatOther => 'Serviços e feeds';
+
+  @override
+  String get backupCatOtherDesc => 'Layout dos feeds, listas e opções dos serviços';
+
+  @override
+  String get logFile => 'Arquivo de log';
+
+  @override
+  String get logFileDesc => 'Compartilhe o log do app ou copie o caminho no Linux';
+
+  @override
+  String get logFileCopied => 'Caminho do log copiado';
+
+  @override
+  String get donateSheetTitle => 'Curtindo o Dartotsu?';
+
+  @override
+  String get donateSheetMessage => 'O Dartotsu é feito e mantido por uma pessoa só. Se ele é útil pra você, pense em apoiar o desenvolvimento.';
+
+  @override
+  String get donateLater => 'Talvez depois';
+
+  @override
+  String get glassBackground => 'Fundo de vidro';
+
+  @override
+  String get glassBackgroundDesc => 'O banner do seu perfil, a menos que você defina um link de imagem';
+
+  @override
+  String get glassBackgroundHint => 'Link da imagem (deixe vazio pra usar seu banner)';
+
+  @override
+  String get followCover => 'Seguir a capa';
+
+  @override
+  String get followCoverDesc => 'As cores seguem o fundo e, nas páginas de detalhes, a capa';
+
+  @override
+  String get cardStyle => 'Estilo dos cartões';
+
+  @override
+  String get cardStyleDesc => 'Posição do título, tamanho, progresso e selos';
+
+  @override
+  String get customFont => 'Fonte';
+
+  @override
+  String get customFontDesc => 'Padrão, um arquivo do seu dispositivo ou Google Fonts';
+
+  @override
+  String get customFontError => 'Não consegui carregar esse arquivo de fonte';
+
+  @override
+  String get googleFontError => 'Não consegui baixar essa fonte';
+
+  @override
+  String get yourFonts => 'Suas fontes';
+
+  @override
+  String get addFontFile => 'Adicionar arquivo de fonte…';
+
+  @override
+  String get browseGoogleFonts => 'Explorar Google Fonts…';
+
+  @override
+  String get searchGoogleFonts => 'Buscar no Google Fonts';
+
+  @override
+  String get defaultFont => 'Padrão';
 
   @override
   String get materialYou => 'Material You';
 
   @override
-  String get previousSeason => 'Temporada Anterior';
+  String get materialYouDesc => 'Cor dinâmica do sistema';
 
   @override
-  String get thisSeason => 'Temporada Atual';
+  String get jsonTheme => 'Arquivo de tema personalizado';
 
   @override
-  String get nextSeason => 'Próxima Temporada';
+  String get jsonThemeDesc => 'Cores ao vivo de ~/.config/dartotsu/theme.json (um script seu ou edições manuais)';
 
   @override
-  String get onHold => 'null Em Espera';
+  String get themeMode => 'Modo do tema';
+
+  @override
+  String get mode => 'Modo';
+
+  @override
+  String get trackingService => 'Serviço de acompanhamento';
+
+  @override
+  String get signOut => 'Sair';
+
+  @override
+  String get signIn => 'Entrar';
+
+  @override
+  String get notSignedIn => 'Sem login';
+
+  @override
+  String signOutOf(String service) {
+    return 'Sair do $service?';
+  }
+
+  @override
+  String get checkForUpdates => 'Buscar atualizações';
+
+  @override
+  String get checkForUpdatesDesc => 'Avisar quando sair uma nova versão no GitHub';
+
+  @override
+  String get updateChannel => 'Canal de atualização';
+
+  @override
+  String get channel => 'Canal';
+
+  @override
+  String get stable => 'Estável';
+
+  @override
+  String get preRelease => 'Pré-lançamento';
+
+  @override
+  String get alpha => 'Alfa';
+
+  @override
+  String get checkNow => 'Verificar agora';
+
+  @override
+  String get userAgent => 'User-Agent';
+
+  @override
+  String get settingDefault => 'Padrão';
+
+  @override
+  String currentlyUsing(String value) {
+    return 'Atual: $value';
+  }
+
+  @override
+  String get dnsOverHttps => 'DNS-over-HTTPS';
+
+  @override
+  String get dnsDefault => 'Padrão (Cloudflare)';
+
+  @override
+  String get proxy => 'Proxy';
+
+  @override
+  String get proxyProtocol => 'Tipo';
+
+  @override
+  String get proxyHost => 'Host';
+
+  @override
+  String get proxyPort => 'Porta';
+
+  @override
+  String get proxyUsername => 'Nome de usuário';
+
+  @override
+  String get proxyPassword => 'Senha';
+
+  @override
+  String get optional => 'Opcional';
+
+  @override
+  String get clearCookies => 'Limpar cookies';
+
+  @override
+  String get clearCookiesDesc => 'Remove todos os cookies salvos';
+
+  @override
+  String notImplementedArea(String area) {
+    return '$area — em breve';
+  }
+
+  @override
+  String notImplementedService(String service) {
+    return 'O $service ainda não suporta isso.';
+  }
+
+  @override
+  String get couldNotLoadResults => 'Não consegui carregar os resultados';
+
+  @override
+  String get updateCheckFailed => 'Não consegui verificar atualizações';
+
+  @override
+  String get highRefreshRate => 'Taxa de atualização alta';
+
+  @override
+  String get highRefreshRateDesc => 'Usa a maior taxa de atualização que a sua tela suporta';
+
+  @override
+  String get imageSave => 'Salvar imagem';
+
+  @override
+  String imageSavedTo(String path) {
+    return 'Salvo em $path';
+  }
+
+  @override
+  String get imageActionFailed => 'Não consegui baixar a imagem';
+
+  @override
+  String get imageTitleCover => 'Capa';
+
+  @override
+  String get imageTitleBanner => 'Banner';
+
+  @override
+  String get imageTitleAvatar => 'Foto de perfil';
+
+  @override
+  String get verifyTls => 'Verificar certificados';
+
+  @override
+  String get verifyTlsDesc => 'Rejeita servidores com certificado HTTPS inválido. Desligue só pra uma fonte que usa um autoassinado';
+
+  @override
+  String get clearCookiesConfirm => 'Remover todos os cookies salvos? Isso pode deslogar você de algumas fontes.';
+
+  @override
+  String get version => 'Versão';
+
+  @override
+  String get gitHub => 'GitHub';
+
+  @override
+  String get gitHubDesc => 'Código, issues e releases';
+
+  @override
+  String get discordDesc => 'Comunidade e suporte';
+
+  @override
+  String get donate => 'Me pague um café';
+
+  @override
+  String get donateDesc => 'Apoiar o desenvolvimento';
+
+  @override
+  String get contributors => 'Colaboradores';
+
+  @override
+  String get contributorsDesc => 'As pessoas que construíram o Dartotsu';
+
+  @override
+  String get contributorsLoadFailed => 'Não consegui carregar os colaboradores';
+
+  @override
+  String get forks => 'Forks';
+
+  @override
+  String get forksDesc => 'Projetos feitos em cima do Dartotsu';
+
+  @override
+  String get forksEmpty => 'Nenhum fork encontrado';
+
+  @override
+  String get sectionColors => 'Cores';
+
+  @override
+  String get sectionDisplay => 'Tela';
+
+  @override
+  String get sectionStyle => 'Estilo';
+
+  @override
+  String get sectionCommunity => 'Comunidade';
+
+  @override
+  String get sectionAppInfo => 'Info do app';
+
+  @override
+  String get sectionCache => 'Cache';
+
+  @override
+  String get sectionRequests => 'Requisições';
+
+  @override
+  String get sectionDnsProxy => 'DNS e proxy';
+
+  @override
+  String get onboardingBack => 'Voltar';
+
+  @override
+  String get onboardingNext => 'Próximo';
+
+  @override
+  String get onboardingSkip => 'Pular';
+
+  @override
+  String get onboardingPaletteTitle => 'Deixe com a sua cara';
+
+  @override
+  String get onboardingPaletteBody => 'Escolha uma paleta. Todos os destaques, dos cartões ao player, seguem ela.';
+
+  @override
+  String get themeModeAuto => 'Auto';
+
+  @override
+  String get themeModeLight => 'Claro';
+
+  @override
+  String get themeModeDark => 'Escuro';
+
+  @override
+  String get onboardingSyncTitle => 'Sincronize sua biblioteca';
+
+  @override
+  String get onboardingSyncBody => 'Entre com o AniList pra trazer suas listas, progresso e notas. Ou pule e explore como visitante.';
+
+  @override
+  String get onboardingOpenLinks => 'Abrir links do AniList e de repositórios no Dartotsu';
+
+  @override
+  String get onboardingPermsTitle => 'Permissões';
+
+  @override
+  String get onboardingPermsBody => 'Libere agora pra downloads, atualizações e alertas funcionarem sem interrupção. Você pode mudar depois nas configurações do sistema.';
+
+  @override
+  String get permNotifications => 'Notificações';
+
+  @override
+  String get permNotificationsDesc => 'Progresso dos downloads, novos episódios e respostas';
+
+  @override
+  String get permStorage => 'Acesso a todos os arquivos';
+
+  @override
+  String get permStorageDesc => 'Salvar downloads na pasta pública do Dartotsu';
+
+  @override
+  String get permInstall => 'Instalar atualizações';
+
+  @override
+  String get permInstallDesc => 'Deixa o Dartotsu instalar as próprias atualizações';
+
+  @override
+  String get permBattery => 'Bateria sem restrições';
+
+  @override
+  String get permBatteryDesc => 'Mantém downloads longos rodando em segundo plano';
+
+  @override
+  String get permGrant => 'Permitir';
+
+  @override
+  String get permGranted => 'Permitido';
+
+  @override
+  String get linkOpenInApp => 'Abrir links no Dartotsu';
+
+  @override
+  String get linkOpenInAppDesc => 'Deixa os links do AniList e de repositórios abrirem o app';
+
+  @override
+  String get reviewsTitle => 'Reviews';
+
+  @override
+  String get reviewsEmpty => 'Nenhum review ainda';
+
+  @override
+  String get reviewsFailed => 'Não consegui carregar os reviews';
+
+  @override
+  String get reviewHelpfulQuestion => 'Esse review foi útil?';
+
+  @override
+  String get reviewVoteFailed => 'Não consegui salvar seu voto';
+
+  @override
+  String reviewHelpful(int n, int total) {
+    return '$n de $total acharam isso útil';
+  }
+
+  @override
+  String get calendarTitle => 'Calendário de exibição';
+
+  @override
+  String get calendarToday => 'Hoje';
+
+  @override
+  String get calendarEmpty => 'Nada vai ao ar nesse dia';
+
+  @override
+  String get calendarFailed => 'Não consegui carregar o calendário';
+
+  @override
+  String calendarEpisode(int n) {
+    return 'Episódio $n';
+  }
+
+  @override
+  String get shareAnalytics => 'Compartilhar dados de uso anônimos';
+
+  @override
+  String get shareAnalyticsDesc => 'Contagem anônima de usuários e relatórios de falha. Sem conta nem dados pessoais';
+
+  @override
+  String get linkOpenAnilist => 'Abrir links do AniList no Dartotsu';
+
+  @override
+  String get linkOpenAnilistDesc => 'Ative o tratamento de links pra os links anilist.co abrirem o app';
+
+  @override
+  String get linkSettingsFailed => 'Não consegui abrir as configurações do sistema';
+
+  @override
+  String get discordRichPresence => 'Rich Presence';
+
+  @override
+  String get discordRichPresenceTokenDesc => 'Mostra o que você está fazendo no seu perfil do Discord. Precisa do seu token do Discord.';
+
+  @override
+  String get discordRichPresenceDesktopDesc => 'Mostra o que você está fazendo no seu perfil do Discord. Precisa do app de desktop do Discord aberto.';
+
+  @override
+  String get discordBrowsing => 'Mostrar atividade de navegação';
+
+  @override
+  String get discordBrowsingDesc => 'Mostra também a aba, página ou perfil que você está vendo, não só o que assiste ou lê.';
+
+  @override
+  String get discordLookHeader => 'Visual da presença';
+
+  @override
+  String get discordActivityType => 'Tipo de atividade';
+
+  @override
+  String get discordActivityTypeDesc => 'Como o Discord escreve: \"Assistindo …\" ou \"Jogando …\". Auto usa Assistindo pra anime e Jogando pro resto.';
+
+  @override
+  String get discordWatching => 'Assistindo';
+
+  @override
+  String get discordPlaying => 'Jogando';
+
+  @override
+  String get discordCovers => 'Mostrar capas';
+
+  @override
+  String get discordCoversDesc => 'Capa e ícone do Dartotsu no cartão.';
+
+  @override
+  String get discordTimer => 'Mostrar timer';
+
+  @override
+  String get discordTimerDesc => 'Tempo decorrido ou restante embaixo do título.';
+
+  @override
+  String get discordButtons => 'Mostrar botões';
+
+  @override
+  String get discordButtonsDesc => 'Botões \"Ver anime / mangá\" e \"Abrir Dartotsu\".';
+
+  @override
+  String get discordHideTitles => 'Esconder títulos';
+
+  @override
+  String get discordHideTitlesDesc => 'Troca os nomes de anime e mangá (e a capa e o link) por \"Algo privado\".';
+
+  @override
+  String get discordConnectionHeader => 'Conexão';
+
+  @override
+  String get listSearchHint => 'Buscar nessa lista';
+
+  @override
+  String get listSort => 'Ordenar';
+
+  @override
+  String get listFilter => 'Filtrar';
+
+  @override
+  String get listRandom => 'Título aleatório';
+
+  @override
+  String get listReverse => 'Inverter ordem';
+
+  @override
+  String get listSortDefault => 'Ordem da lista';
+
+  @override
+  String get listSortScore => 'Sua nota';
+
+  @override
+  String get listSortTitle => 'Título';
+
+  @override
+  String get listSortUpdated => 'Última atualização';
+
+  @override
+  String get listSortProgress => 'Progresso';
+
+  @override
+  String get listSortReleased => 'Data de lançamento';
+
+  @override
+  String get listSortAverage => 'Nota média';
+
+  @override
+  String get listFilterFormat => 'Formato';
+
+  @override
+  String get listFilterStatus => 'Status';
+
+  @override
+  String get listFilterGenres => 'Gêneros';
+
+  @override
+  String get listFilterClear => 'Limpar filtros';
+
+  @override
+  String get listNoMatches => 'Nada nessa lista corresponde';
+
+  @override
+  String get discordLogin => 'Entrar no Discord';
+
+  @override
+  String get discordToken => 'Token do Discord';
+
+  @override
+  String get discordTokenSaved => 'Salvo. Toque pra trocar, segure pra remover.';
+
+  @override
+  String get discordTokenNotSet => 'Não definido. Toque pra adicionar.';
+
+  @override
+  String get discordTokenPrompt => 'Cole o token da conta do Discord em que você quer mostrar a presença. Ele fica só nesse dispositivo.';
+
+  @override
+  String get discordTokenHint => 'Token';
+
+  @override
+  String get discordTokenSavedSnack => 'Token do Discord salvo';
+
+  @override
+  String get discordTokenRemovedSnack => 'Token do Discord removido';
+
+  @override
+  String get discordRichPresenceRow => 'Discord Rich Presence';
+
+  @override
+  String get discordRichPresenceRowOn => 'Ligado · toque pra mudar o visual';
+
+  @override
+  String get discordRichPresenceRowOff => 'Mostra o que você está fazendo no seu perfil do Discord';
+
+  @override
+  String get loginCancelled => 'Login cancelado';
+
+  @override
+  String get invalidToken => 'Token inválido';
+
+  @override
+  String loginFailed(String error) {
+    return 'Falha no login: $error';
+  }
+
+  @override
+  String get malLoginFailed => 'Falha no login do MyAnimeList';
+
+  @override
+  String get kitsuLoginFailed => 'Falha no login do Kitsu. Confira seu e-mail e senha.';
+
+  @override
+  String get kitsuLoginTitle => 'Entrar no Kitsu';
+
+  @override
+  String get emailOrUsername => 'E-mail ou nome de usuário';
+
+  @override
+  String get password => 'Senha';
+
+  @override
+  String get kitsuProfile => 'Perfil do Kitsu';
+
+  @override
+  String get mangaBakaLoginFailed => 'Falha no login do MangaBaka';
+
+  @override
+  String get mangaBakaProfile => 'Perfil do MangaBaka';
+
+  @override
+  String get refreshFromMangaBaka => 'Atualizar do MangaBaka';
+
+  @override
+  String get artistsLabel => 'Artistas';
+
+  @override
+  String get authorsLabel => 'Autores';
+
+  @override
+  String get publishersLabel => 'Editoras';
+
+  @override
+  String get licensedLabel => 'Licenciado';
+
+  @override
+  String get contentRatingLabel => 'Classificação indicativa';
+
+  @override
+  String get yesLabel => 'Sim';
+
+  @override
+  String get noLabel => 'Não';
+
+  @override
+  String get ratingSteps => 'Escala de notas';
+
+  @override
+  String get hideNsfw => 'Esconder NSFW';
+
+  @override
+  String get hideNsfwDesc => 'Tira títulos adultos dos feeds e da busca e lista suas entradas adultas em Mídia oculta.';
+
+  @override
+  String get kitsuAccountOptions => 'Opções da conta Kitsu';
+
+  @override
+  String get couldNotUpdateKitsuSettings => 'Não consegui atualizar suas configurações do Kitsu';
+
+  @override
+  String get titleCanonical => 'Canônico';
+
+  @override
+  String get titleRomanized => 'Romanizado';
+
+  @override
+  String get titleLocalized => 'Localizado';
+
+  @override
+  String get ratingSystem => 'Sistema de notas';
+
+  @override
+  String get ratingSimple => 'Simples (3 carinhas)';
+
+  @override
+  String get ratingRegular => 'Normal (5 estrelas)';
+
+  @override
+  String get ratingAdvanced => 'Avançado (10 pontos)';
+
+  @override
+  String get contentFilter => 'Filtro de conteúdo';
+
+  @override
+  String get contentSfw => 'Só conteúdo seguro';
+
+  @override
+  String get contentSometimes => 'Conteúdo adulto nas buscas';
+
+  @override
+  String get contentEverywhere => 'Conteúdo adulto em todo lugar';
+
+  @override
+  String get shareToGlobal => 'Compartilhar no feed global';
+
+  @override
+  String get shareToGlobalDesc => 'Deixa sua atividade aparecer no feed global do Kitsu.';
+
+  @override
+  String get memberSince => 'Membro desde';
+
+  @override
+  String get location => 'Localização';
+
+  @override
+  String get accountType => 'Tipo de conta';
+
+  @override
+  String get accountSupporter => 'Apoiador';
+
+  @override
+  String get accountFree => 'Grátis';
+
+  @override
+  String get accountDetails => 'Detalhes da conta';
+
+  @override
+  String get refreshFromKitsu => 'Atualizar do Kitsu';
+
+  @override
+  String get simklReadOnly => 'O Simkl deu acesso somente leitura';
+
+  @override
+  String get incognitoEditsBlocked => 'Anônimo: edições na lista bloqueadas';
+
+  @override
+  String serviceError(String service, String error) {
+    return '$service: $error';
+  }
+
+  @override
+  String get incognitoProgressNotSaved => 'Anônimo: progresso não salvo';
+
+  @override
+  String progressSet(int progress) {
+    return 'Progresso definido pra $progress';
+  }
+
+  @override
+  String removedFromList(String title) {
+    return '$title removido da sua lista';
+  }
+
+  @override
+  String get following => 'Seguindo';
+
+  @override
+  String get homeSections => 'Seções do início';
+
+  @override
+  String get homeSectionsHint => 'Arraste pra reordenar. Seções escondidas nunca são carregadas.';
+
+  @override
+  String get customListDeleteFailed => 'Falha ao apagar a lista personalizada';
+
+  @override
+  String get customListsSaveFailed => 'Falha ao salvar as listas personalizadas';
+
+  @override
+  String get customListsSaved => 'Listas personalizadas salvas';
+
+  @override
+  String get listName => 'Nome da lista';
+
+  @override
+  String get addList => 'Adicionar lista';
+
+  @override
+  String voiceActorsIn(String name) {
+    return 'Dubladores · $name';
+  }
+
+  @override
+  String get animeAppearances => 'Aparições em anime';
+
+  @override
+  String get mangaAppearances => 'Aparições em mangá';
+
+  @override
+  String get voicedCharacters => 'Personagens dubladas';
+
+  @override
+  String get animeCredits => 'Créditos em anime';
+
+  @override
+  String get mangaCredits => 'Créditos em mangá';
+
+  @override
+  String get mainProductions => 'Produções principais';
+
+  @override
+  String get otherWorks => 'Outros trabalhos';
+
+  @override
+  String get prequelSequel => 'Prequel e sequência';
+
+  @override
+  String get previousSeason => 'Temporada anterior';
+
+  @override
+  String get thisSeason => 'Essa temporada';
+
+  @override
+  String get nextSeason => 'Próxima temporada';
+
+  @override
+  String get voiceRoles => 'Papéis de dublagem';
+
+  @override
+  String get staffPositions => 'Cargos na equipe';
+
+  @override
+  String get mangaWorks => 'Obras de mangá';
+
+  @override
+  String get malProfile => 'Perfil do MyAnimeList';
+
+  @override
+  String get refreshFromMal => 'Atualizar do MyAnimeList';
+
+  @override
+  String get repullProfileCounts => 'Puxa de novo seu perfil e contagens';
+
+  @override
+  String get refreshed => 'Atualizado';
+
+  @override
+  String get simklProfile => 'Perfil do Simkl';
+
+  @override
+  String get refreshFromSimkl => 'Atualizar do Simkl';
+
+  @override
+  String get repullProfileLibrary => 'Puxa de novo seu perfil e biblioteca';
+
+  @override
+  String get simklSignInToSearch => 'Entre no Simkl pra buscar';
+
+  @override
+  String get dropRate => 'Taxa de abandono';
+
+  @override
+  String get simklAttribution => 'Dados e arte fornecidos pelo Simkl. Ver no Simkl';
+
+  @override
+  String get onHold => 'Em pausa';
+
+  @override
+  String get scoredBy => 'Avaliado por';
+
+  @override
+  String get planToWatch => 'Pretendo assistir';
+
+  @override
+  String get planToRead => 'Pretendo ler';
+
+  @override
+  String get timesRewatched => 'Vezes reassistido';
+
+  @override
+  String get timesReread => 'Vezes relido';
 
   @override
   String get comments => 'Comentários';
 
   @override
+  String get moviesAndSeries => 'Filmes e séries';
+
+  @override
+  String get trackingOnly => 'Só acompanhamento';
+
+  @override
+  String get signedIn => 'Logado';
+
+  @override
+  String get searchLanguage => 'Idioma da busca';
+
+  @override
+  String get savedToList => 'Salvo na sua lista';
+
+  @override
+  String get removedFromYourList => 'Removido da sua lista';
+
+  @override
+  String get retry => 'Tentar de novo';
+
+  @override
   String get synopsis => 'Sinopse';
 
   @override
-  String get addToList => 'Adicionar à Lista';
+  String get details => 'Detalhes';
 
   @override
-  String get popular => 'null Populares';
+  String get addToList => 'Adicionar à lista';
 
   @override
-  String get activity => 'null';
+  String get trailer => 'Trailer';
 
   @override
-  String get incognitoMode => 'Modo Anônimo';
+  String get titleCopied => 'Título copiado';
 
   @override
-  String get offlineMode => 'Modo Offline';
+  String get linkCopied => 'Link copiado';
+
+  @override
+  String get watchTrailer => 'Ver trailer';
+
+  @override
+  String get copyTitle => 'Copiar título';
+
+  @override
+  String get copyLink => 'Copiar link';
+
+  @override
+  String get openInBrowser => 'Abrir no navegador';
+
+  @override
+  String viewOnSource(String source) {
+    return 'Ver no $source';
+  }
+
+  @override
+  String episodeAirsIn(int ep, String time) {
+    return 'O episódio $ep sai em $time';
+  }
+
+  @override
+  String nextEpisodeIn(String time) {
+    return 'Próximo episódio em $time';
+  }
+
+  @override
+  String chapterExpectedIn(int chapter, String time) {
+    return 'Chapter $chapter expected in about $time';
+  }
+
+  @override
+  String get logPathCopied => 'Caminho do arquivo de log copiado';
+
+  @override
+  String get animeSource => 'Fonte de anime';
+
+  @override
+  String get mangaSource => 'Fonte de mangá';
+
+  @override
+  String get popular => 'Populares';
+
+  @override
+  String get latest => 'Mais recentes';
+
+  @override
+  String get saved => 'Salvos';
+
+  @override
+  String get nothingMatched => 'Nada encontrado';
+
+  @override
+  String get nothingSavedFromSource => 'Nada salvo dessa fonte ainda';
+
+  @override
+  String get sourceReturnedNothing => 'Essa fonte não retornou nada';
+
+  @override
+  String get checkConnectionOrSource => 'Confira sua conexão ou tente outra fonte.';
+
+  @override
+  String get tryDifferentSearch => 'Tente outro termo de busca.';
+
+  @override
+  String get savedTitlesAppearHere => 'Os títulos que você adicionar à lista aparecem aqui.';
+
+  @override
+  String get tryOtherFeed => 'Tente o outro feed ou faça uma busca.';
+
+  @override
+  String searchSource(String source) {
+    return 'Buscar em $source';
+  }
+
+  @override
+  String get animeExtensions => 'Extensões de anime';
+
+  @override
+  String get mangaExtensions => 'Extensões de mangá';
+
+  @override
+  String get nothingHereYet => 'Nada aqui ainda';
+
+  @override
+  String get savedOnDeviceUntilLogin => 'Tudo abaixo fica salvo nesse dispositivo até você fazer isso.';
+
+  @override
+  String get yourProfile => 'Seu perfil';
+
+  @override
+  String get activity => 'Atividade';
+
+  @override
+  String get extensions => 'Extensões';
+
+  @override
+  String get logOut => 'Sair';
+
+  @override
+  String get logIn => 'Entrar';
+
+  @override
+  String get logOutConfirm => 'Tem certeza que quer sair?';
+
+  @override
+  String get incognitoMode => 'Modo anônimo';
+
+  @override
+  String get alsoBlockListEdits => 'Bloquear também edições na lista';
+
+  @override
+  String get offlineMode => 'Modo offline';
+
+  @override
+  String get switchService => 'Trocar de serviço';
+
+  @override
+  String logOutOf(String name) {
+    return 'Sair do $name';
+  }
+
+  @override
+  String get loggedIn => 'Logado';
 
   @override
   String get notifications => 'Notificações';
 
   @override
+  String get nothingNew => 'Nada de novo';
+
+  @override
+  String get thisWeek => 'Essa semana';
+
+  @override
+  String get listOnly => 'Só da lista';
+
+  @override
+  String get filter => 'Filtrar';
+
+  @override
+  String get searchResults => 'Resultados da busca';
+
+  @override
+  String get recentSearches => 'Buscas recentes';
+
+  @override
+  String get searchOrSetFilter => 'Busque ou defina um filtro';
+
+  @override
+  String get filters => 'Filtros';
+
+  @override
+  String get showLess => 'Mostrar menos';
+
+  @override
+  String get showAll => 'Mostrar tudo';
+
+  @override
+  String get apply => 'Aplicar';
+
+  @override
+  String get preview => 'Prévia';
+
+  @override
+  String get preset => 'Predefinição';
+
+  @override
+  String get cardNormal => 'Normal';
+
+  @override
+  String get cardOnCard => 'No cartão';
+
+  @override
+  String get cardInCard => 'Dentro do cartão';
+
+  @override
+  String get size => 'Tamanho';
+
+  @override
+  String get cardWidth => 'Largura do cartão';
+
+  @override
+  String get compact => 'Compacto';
+
+  @override
+  String get coverAndTitleOnly => 'Só capa e título';
+
+  @override
+  String get titleLines => 'Linhas do título';
+
+  @override
+  String get shape => 'Formato';
+
+  @override
+  String get posterShape => 'Formato do pôster';
+
+  @override
+  String get cornerRadius => 'Raio dos cantos';
+
+  @override
+  String get off => 'Desligado';
+
+  @override
+  String get topLeft => 'Topo esquerdo';
+
+  @override
+  String get topRight => 'Topo direito';
+
+  @override
+  String get bottomLeft => 'Base esquerda';
+
+  @override
+  String get bottomRight => 'Base direita';
+
+  @override
+  String get overlays => 'Sobreposições';
+
+  @override
+  String get progressCount => 'Progresso / contagem';
+
+  @override
+  String get pill => 'Pílula';
+
+  @override
+  String get bar => 'Barra';
+
+  @override
+  String get outside => 'Fora';
+
+  @override
+  String get scoreBadge => 'Selo de nota';
+
+  @override
+  String get airingDot => 'Ponto de exibição';
+
+  @override
+  String get updateAvailable => 'Atualização disponível';
+
+  @override
+  String get notInstalled => 'Não instalado';
+
+  @override
+  String get done => 'Concluído';
+
+  @override
+  String get searchOrEnterUrl => 'Busque ou digite uma URL';
+
+  @override
+  String get refresh => 'Atualizar';
+
+  @override
+  String get share => 'Compartilhar';
+
+  @override
   String get characters => 'Personagens';
 
   @override
-  String get staff => 'Equipe Técnica';
+  String get staff => 'Equipe';
 
   @override
-  String get gridView => 'Visual em Grade';
+  String get readMore => 'Ler mais';
+
+  @override
+  String get couldNotLoadList => 'Não consegui carregar a lista';
+
+  @override
+  String get logInToFavourite => 'Entre pra adicionar favoritos';
+
+  @override
+  String get alsoKnownAs => 'Também conhecido como';
+
+  @override
+  String get hideSpoilerNames => 'Esconder nomes com spoiler';
+
+  @override
+  String get showSpoilerNames => 'Mostrar nomes com spoiler';
+
+  @override
+  String get favourited => 'Nos favoritos';
+
+  @override
+  String get favourite => 'Favoritar';
+
+  @override
+  String get couldNotOpenTitle => 'Não consegui abrir esse título';
+
+  @override
+  String get nobodyHereYet => 'Ninguém aqui ainda';
+
+  @override
+  String get noMatches => 'Nada encontrado';
+
+  @override
+  String get gridView => 'Visualização em grade';
+
+  @override
+  String get fullWidth => 'Largura total';
+
+  @override
+  String get userNotFound => 'Usuário não encontrado';
+
+  @override
+  String get couldNotUpdateFollow => 'Não consegui atualizar o seguir';
+
+  @override
+  String followedUser(String name) {
+    return 'Você começou a seguir $name';
+  }
+
+  @override
+  String unfollowedUser(String name) {
+    return 'Você deixou de seguir $name';
+  }
+
+  @override
+  String get messages => 'Mensagens';
+
+  @override
+  String get logInToSeeMessages => 'Entre pra ver suas mensagens';
+
+  @override
+  String get editActivity => 'Editar atividade';
+
+  @override
+  String get newActivity => 'Nova atividade';
+
+  @override
+  String get editMessage => 'Editar mensagem';
+
+  @override
+  String get writeMessage => 'Escrever uma mensagem';
+
+  @override
+  String get editReply => 'Editar resposta';
+
+  @override
+  String get posted => 'Publicado';
+
+  @override
+  String get couldNotPost => 'Não consegui publicar';
+
+  @override
+  String get nothingToPreview => 'Nada pra visualizar';
+
+  @override
+  String get writeSomethingHint => 'Escreva algo… o markdown do AniList funciona aqui';
+
+  @override
+  String get privateMessage => 'Mensagem privada';
+
+  @override
+  String get post => 'Publicar';
+
+  @override
+  String get nothingHere => 'Nada aqui';
+
+  @override
+  String get noAnimeProgress => 'Sem progresso de anime';
+
+  @override
+  String get noMangaProgress => 'Sem progresso de mangá';
+
+  @override
+  String get noMessages => 'Sem mensagens';
+
+  @override
+  String get writeMessageHint => 'Escreva uma mensagem…';
+
+  @override
+  String get shareSomethingHint => 'Compartilhe algo…';
+
+  @override
+  String get all => 'Tudo';
 
   @override
   String get anime => 'Anime';
@@ -6488,40 +1679,631 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get manga => 'Mangá';
 
   @override
-  String get meanScore => 'Nota Média';
+  String get count => 'Contagem';
 
   @override
-  String get status => 'Estado Atual';
+  String get hoursWatched => 'Horas assistidas';
+
+  @override
+  String get chaptersRead => 'Capítulos lidos';
+
+  @override
+  String get meanScore => 'Nota média';
+
+  @override
+  String get noStatsYet => 'Sem estatísticas ainda';
+
+  @override
+  String get totalEntries => 'Total de entradas';
+
+  @override
+  String get episodesWatched => 'Episódios assistidos';
+
+  @override
+  String get daysWatched => 'Dias assistidos';
+
+  @override
+  String get volumesRead => 'Volumes lidos';
+
+  @override
+  String get standardDeviation => 'Desvio padrão';
+
+  @override
+  String get showMore => 'Mostrar mais';
+
+  @override
+  String get followsYou => 'Segue você';
+
+  @override
+  String get nobodyYet => 'Ninguém ainda';
+
+  @override
+  String get logInToLike => 'Entre pra curtir';
+
+  @override
+  String get failedToLikeActivity => 'Falha ao curtir a atividade';
+
+  @override
+  String get deleteActivityConfirm => 'Apagar atividade?';
+
+  @override
+  String get deletedActivity => 'Atividade apagada';
+
+  @override
+  String get failedToDeleteActivity => 'Falha ao apagar a atividade';
+
+  @override
+  String get subscribed => 'Inscrito';
+
+  @override
+  String get unsubscribed => 'Inscrição cancelada';
+
+  @override
+  String get failedToUpdateSubscription => 'Falha ao atualizar a inscrição';
+
+  @override
+  String get edit => 'Editar';
+
+  @override
+  String get delete => 'Apagar';
+
+  @override
+  String get likedBy => 'Curtido por';
+
+  @override
+  String get follow => 'Seguir';
+
+  @override
+  String get nameCopied => 'Nome copiado';
+
+  @override
+  String get followsEachOther => 'Se seguem';
+
+  @override
+  String get unfollow => 'Deixar de seguir';
+
+  @override
+  String get userIdCopied => 'ID de usuário copiado';
+
+  @override
+  String get shareProfile => 'Compartilhar perfil';
+
+  @override
+  String get copyUserId => 'Copiar ID de usuário';
+
+  @override
+  String get failedToDelete => 'Falha ao apagar';
+
+  @override
+  String get failedToLike => 'Falha ao curtir';
+
+  @override
+  String get replies => 'Respostas';
+
+  @override
+  String get reply => 'Responder';
+
+  @override
+  String get noRepliesYet => 'Nenhuma resposta ainda';
+
+  @override
+  String get favouriteAnime => 'Animes favoritos';
+
+  @override
+  String get favouriteManga => 'Mangás favoritos';
+
+  @override
+  String get favouriteCharacters => 'Personagens favoritas';
+
+  @override
+  String get favouriteStaff => 'Equipe favorita';
+
+  @override
+  String get favouriteStudios => 'Estúdios favoritos';
+
+  @override
+  String get noFavouritesYet => 'Nenhum favorito ainda';
+
+  @override
+  String get yourStory => 'Seu story';
+
+  @override
+  String get copiedToClipboard => 'Copiado pra área de transferência';
+
+  @override
+  String get justNow => 'Agora mesmo';
+
+  @override
+  String get openImage => 'Abrir imagem';
+
+  @override
+  String get hideSpoiler => 'Esconder spoiler';
+
+  @override
+  String get showSpoiler => 'Mostrar spoiler';
+
+  @override
+  String get status => 'Status';
+
+  @override
+  String get score => 'Nota';
+
+  @override
+  String get started => 'Início';
+
+  @override
+  String get completed => 'Concluído';
+
+  @override
+  String get private => 'Privado';
+
+  @override
+  String get hideFromStatusLists => 'Esconder das listas de status';
+
+  @override
+  String get totalRepeats => 'Total de repetições';
+
+  @override
+  String get other => 'Outro';
+
+  @override
+  String get customLists => 'Listas personalizadas';
+
+  @override
+  String get activeDays => 'Dias ativos';
+
+  @override
+  String get longestStreak => 'Maior sequência';
+
+  @override
+  String get currentStreak => 'Sequência atual';
+
+  @override
+  String get tapOrHoverDay => 'Toque ou passe o mouse num dia';
+
+  @override
+  String get less => 'Menos';
+
+  @override
+  String get more => 'Mais';
+
+  @override
+  String epIn(int ep, String time) {
+    return 'Ep. $ep em $time';
+  }
+
+  @override
+  String get sectionLoading => 'Carregando';
+
+  @override
+  String get querySize => 'Tamanho da consulta';
+
+  @override
+  String get querySizeDesc => 'Uma consulta grande carrega todas as linhas (e um perfil inteiro) numa requisição só. Consultas divididas mandam uma requisição pequena por linha ou parte do perfil: cada uma é rápida e as partes vão aparecendo.';
+
+  @override
+  String get oneBig => 'Uma grande';
+
+  @override
+  String get split => 'Dividida';
+
+  @override
+  String get sectionSocial => 'Social';
+
+  @override
+  String get systemNotifications => 'Notificações do sistema';
+
+  @override
+  String get feedLayout => 'Layout do feed';
+
+  @override
+  String sectionsShown(int shown, int total) {
+    return '$shown de $total visíveis — toque pra escolher e reordenar';
+  }
+
+  @override
+  String labelSections(String label) {
+    return 'Seções de $label';
+  }
+
+  @override
+  String get accountOptions => 'Opções da conta';
+
+  @override
+  String get accountOptionsDesc => 'Nomes, formato de nota, ordem das listas, notificações e mais';
+
+  @override
+  String get anilistAccountOptions => 'Opções da conta AniList';
+
+  @override
+  String get sectionPrivacy => 'Privacidade';
+
+  @override
+  String get hidePrivateEntries => 'Esconder entradas privadas';
+
+  @override
+  String get hidePrivateEntriesDesc => 'Mantém fora do feed as entradas marcadas como privadas no AniList';
+
+  @override
+  String get anilistExcludeList => 'Exclude your list';
+
+  @override
+  String get anilistExcludeListDesc => 'Keep titles already on your AniList out of the anime and manga pages';
+
+  @override
+  String get anilistProfile => 'Perfil do AniList';
+
+  @override
+  String get refreshFromAnilist => 'Atualizar do AniList';
+
+  @override
+  String get couldNotUpdateAnilistSettings => 'Não consegui atualizar as configurações do AniList';
+
+  @override
+  String get sectionNames => 'Nomes';
+
+  @override
+  String get titleLanguage => 'Idioma dos títulos';
+
+  @override
+  String get titleLanguageDesc => 'Como os títulos são escritos em todo lugar, ex.: Attack on Titan / Shingeki no Kyojin / 進撃の巨人.';
+
+  @override
+  String get staffCharacterNames => 'Nomes da equipe e dos personagens';
+
+  @override
+  String get sectionLists => 'Listas';
+
+  @override
+  String get scoreFormat => 'Formato da nota';
+
+  @override
+  String get sortListsBy => 'Ordenar listas por';
+
+  @override
+  String labelCustomLists(String label) {
+    return 'Listas personalizadas de $label';
+  }
+
+  @override
+  String customListsCount(int count) {
+    return '$count listas — toque pra adicionar ou remover';
+  }
+
+  @override
+  String get mergeActivities => 'Agrupar atividades';
+
+  @override
+  String minutesCount(int count) {
+    return '$count min';
+  }
+
+  @override
+  String get timezone => 'Fuso horário';
+
+  @override
+  String get notSet => 'Não definido';
+
+  @override
+  String get airingNotifications => 'Notificações de exibição';
+
+  @override
+  String get airingNotificationsDesc => 'Receba um aviso quando sair um episódio de uma série que você segue';
+
+  @override
+  String get displayAdultContent => 'Mostrar conteúdo adulto';
+
+  @override
+  String get displayAdultContentDesc => 'Inclui títulos 18+ na exploração, busca e feeds';
+
+  @override
+  String get restrictMessages => 'Limitar mensagens a quem eu sigo';
+
+  @override
+  String get restrictMessagesDesc => 'Só quem você segue pode te mandar mensagem';
+
+  @override
+  String get sectionServices => 'Serviços';
 
   @override
   String get novel => 'Novel';
 
   @override
+  String labelService(String label) {
+    return 'Serviço de $label';
+  }
+
+  @override
+  String nameSettings(String name) {
+    return 'Configurações do $name';
+  }
+
+  @override
+  String extensionBridgeOptions(String name) {
+    return 'Opções da ponte de extensões do $name';
+  }
+
+  @override
+  String extensionServiceFailed(String name, String error) {
+    return 'O $name não conseguiu iniciar: $error';
+  }
+
+  @override
+  String get importLists => 'Importar listas';
+
+  @override
+  String get importListsDesc => 'De backups do Aniyomi, Mihon / Tachiyomi ou Kotatsu';
+
+  @override
+  String get exportLists => 'Exportar listas';
+
+  @override
+  String get exportListsDesc => 'Pra um backup do Aniyomi, Mihon ou Kotatsu';
+
+  @override
+  String get sectionBrowse => 'Explorar';
+
+  @override
+  String get readingTab => 'Aba de leitura';
+
+  @override
+  String get readingTabDesc => 'Quais extensões a terceira aba mostra';
+
+  @override
+  String get defaultFeed => 'Feed padrão';
+
+  @override
+  String get defaultFeedDesc => 'Com qual lista uma fonte abre';
+
+  @override
+  String noServiceSupports(String type) {
+    return 'Nenhum serviço suporta $type';
+  }
+
+  @override
+  String sourcesLoading(String name, int loaded, int installed) {
+    return '$name · $loaded de $installed fontes carregando';
+  }
+
+  @override
+  String noExtensionServiceSupportsHere(String type) {
+    return 'Nenhum serviço de extensões suporta $type aqui.';
+  }
+
+  @override
+  String get loadDataFrom => 'Carregar dados de';
+
+  @override
+  String noInstalledSourcesYet(String type) {
+    return 'Nenhuma fonte de $type instalada ainda.';
+  }
+
+  @override
+  String extensionNotInstalled(String name) {
+    return 'A extensão do $name não está instalada';
+  }
+
+  @override
+  String get thisSource => 'essa fonte';
+
+  @override
+  String failedToAddRepository(String error) {
+    return 'Falha ao adicionar o repositório: $error';
+  }
+
+  @override
+  String installedType(String type) {
+    return '$type instalados';
+  }
+
+  @override
+  String availableType(String type) {
+    return '$type disponíveis';
+  }
+
+  @override
+  String noInstalledExtensions(String type) {
+    return 'Nenhuma extensão de $type instalada';
+  }
+
+  @override
+  String noAvailableExtensions(String type) {
+    return 'Nenhuma extensão de $type disponível';
+  }
+
+  @override
+  String get nothingToShowYet => 'Nada pra mostrar ainda';
+
+  @override
+  String get addTitlesHint => 'Adicione alguns títulos à sua lista e eles aparecem aqui.';
+
+  @override
+  String get couldntLoad => 'Não consegui carregar';
+
+  @override
+  String get progressStyleHint => 'Pílula e barra ficam sobre o pôster; \"fora\" mostra a mesma contagem como texto simples — escolha um.';
+
+  @override
+  String get nixManagedUpdate => 'Essa build é gerenciada pelo Nix — rode \"nix flake update\" na sua flake e recompile em vez de atualizar por aqui';
+
+  @override
+  String autoUpdateFailed(String error) {
+    return 'A atualização automática falhou ($error) — abrindo a página de download';
+  }
+
+  @override
+  String get unknownPreference => 'Preferência desconhecida';
+
+  @override
+  String unsupportedPreferenceType(String type) {
+    return 'Tipo de preferência não suportado $type';
+  }
+
+  @override
+  String get notYetReleased => 'Ainda não lançado';
+
+  @override
+  String get notStarted => 'Não iniciado';
+
+  @override
+  String get country => 'País';
+
+  @override
   String get sort => 'Ordenar';
+
+  @override
+  String get chooseBackupDialog => 'Escolha um backup do Aniyomi, Mihon ou Kotatsu';
+
+  @override
+  String get importListsHint => 'Traga uma biblioteca do Aniyomi, Mihon / Tachiyomi ou Kotatsu. Títulos, capas, progresso e categorias são mantidos.';
+
+  @override
+  String get chooseBackupFile => 'Escolher arquivo de backup';
+
+  @override
+  String importAnimeCount(int count) {
+    return 'Importar $count animes';
+  }
+
+  @override
+  String importMangaCount(int count) {
+    return 'Importar $count mangás';
+  }
+
+  @override
+  String get mergeWithExisting => 'Mesclar com as listas existentes';
+
+  @override
+  String get mergeWithExistingDesc => 'Mantém o que você já tem; desligado substitui títulos iguais';
+
+  @override
+  String get chooseAnother => 'Escolher outro';
+
+  @override
+  String get import => 'Importar';
+
+  @override
+  String animeCount(int count) {
+    return '$count animes';
+  }
+
+  @override
+  String mangaCount(int count) {
+    return '$count mangás';
+  }
+
+  @override
+  String get chooseSaveLocation => 'Escolha onde salvar o backup';
+
+  @override
+  String savedPath(String path) {
+    return 'Salvo em $path';
+  }
+
+  @override
+  String exportFailed(String error) {
+    return 'Falha ao exportar: $error';
+  }
+
+  @override
+  String get nothingInLocalLists => 'Nada nas suas listas locais ainda.';
+
+  @override
+  String exportsSummary(int anime, int manga) {
+    return 'Exporta $anime animes e $manga mangás das suas listas locais. O Kotatsu só suporta mangá.';
+  }
+
+  @override
+  String get saveToFolder => 'Salvar na pasta';
+
+  @override
+  String get formatAnimeManga => 'Anime e mangá · .tachibk';
+
+  @override
+  String get formatMangaTachibk => 'Só mangá · .tachibk';
+
+  @override
+  String get formatMangaZip => 'Só mangá · .zip';
 
   @override
   String get genres => 'Gêneros';
 
   @override
-  String get relations => 'Relacionados';
+  String get relations => 'Relações';
+
+  @override
+  String get recommendations => 'Recomendações';
+
+  @override
+  String get openings => 'Aberturas';
+
+  @override
+  String get endings => 'Encerramentos';
+
+  @override
+  String get background => 'Contexto';
+
+  @override
+  String get links => 'Links';
+
+  @override
+  String get rank => 'Ranking';
+
+  @override
+  String get members => 'Membros';
 
   @override
   String get favorites => 'Favoritos';
 
   @override
-  String get format => 'Formato/Categoria';
+  String get episodes => 'Episódios';
 
   @override
-  String get source => 'Origem';
+  String get chapters => 'Capítulos';
+
+  @override
+  String get volumes => 'Volumes';
+
+  @override
+  String get format => 'Formato';
+
+  @override
+  String get source => 'Fonte';
+
+  @override
+  String get duration => 'Duração';
+
+  @override
+  String minutesPerEpisode(int minutes) {
+    return '$minutes min por ep.';
+  }
+
+  @override
+  String get rating => 'Classificação';
 
   @override
   String get studio => 'Estúdio';
 
   @override
+  String get serialization => 'Serialização';
+
+  @override
   String get season => 'Temporada';
 
   @override
+  String get broadcast => 'Transmissão';
+
+  @override
+  String get aired => 'Exibido';
+
+  @override
+  String get published => 'Publicado';
+
+  @override
   String get popularity => 'Popularidade';
+
+  @override
+  String get community => 'Comunidade';
 
   @override
   String get watching => 'Assistindo';
@@ -6530,7 +2312,52 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get reading => 'Lendo';
 
   @override
-  String get planned => 'null Planejado';
+  String get dropped => 'Abandonado';
+
+  @override
+  String get planned => 'Planejado';
+
+  @override
+  String get trailers => 'Trailers';
+
+  @override
+  String get ratings => 'Notas';
+
+  @override
+  String get originalTitle => 'Original';
+
+  @override
+  String get titleLabel => 'Título';
+
+  @override
+  String get votes => 'Votos';
+
+  @override
+  String get watchedStat => 'Assistido';
+
+  @override
+  String get runtime => 'Duração';
+
+  @override
+  String get director => 'Diretor';
+
+  @override
+  String get network => 'Emissora';
+
+  @override
+  String get certification => 'Certificação';
+
+  @override
+  String get airs => 'Exibição';
+
+  @override
+  String get budget => 'Orçamento';
+
+  @override
+  String get revenue => 'Receita';
+
+  @override
+  String get released => 'Lançado';
 
   @override
   String get tags => 'Tags';
@@ -6539,10 +2366,46 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get author => 'Autor';
 
   @override
+  String get born => 'Nascimento';
+
+  @override
+  String get website => 'Site';
+
+  @override
+  String get established => 'Fundação';
+
+  @override
   String get manhwa => 'Manhwa';
 
   @override
   String get manhua => 'Manhua';
+
+  @override
+  String get novels => 'Novels';
+
+  @override
+  String get thisMonth => 'Esse mês';
+
+  @override
+  String get movies => 'Filmes';
+
+  @override
+  String get shows => 'Séries';
+
+  @override
+  String get rewatching => 'Reassistindo';
+
+  @override
+  String get rereading => 'Relendo';
+
+  @override
+  String get watchedStatus => 'Assistido';
+
+  @override
+  String get planning => 'Planejando';
+
+  @override
+  String get paused => 'Pausado';
 
   @override
   String get watch => 'Assistir';
@@ -6551,26 +2414,9901 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get read => 'Ler';
 
   @override
-  String get topRated => 'null Mais Bem Avaliados';
+  String get finished => 'Finalizado';
 
   @override
-  String get continueWatching => 'Continue Assistindo';
+  String get releasing => 'Em exibição';
 
   @override
-  String get continueReading => 'Continue Lendo';
+  String get cancelled => 'Cancelado';
 
   @override
-  String get hiddenMedia => 'Mídias Ocultas';
+  String get hiatus => 'Hiato';
 
   @override
-  String get recentUpdates => 'Atualizado Recentemente';
+  String get remove => 'Remover';
 
   @override
-  String get mostFavourite => 'null Mais Favoritados';
+  String syncToService(String service) {
+    return 'Sincronizar com o $service';
+  }
 
   @override
-  String get series => 'Série';
+  String syncedToService(String service) {
+    return 'Sincronizado com o $service';
+  }
 
   @override
-  String get playerSettingsTitle => 'Configurações do Player';
+  String get latestReleases => 'Últimos lançamentos';
+
+  @override
+  String get topRated => 'Mais bem avaliados';
+
+  @override
+  String localSection(String title) {
+    return '$title · Local';
+  }
+
+  @override
+  String get localEntryNote => 'Esse título está só na sua lista local nesse dispositivo. A edição fica desligada aqui porque poderia conflitar com a lista da sua conta; você ainda pode removê-lo.';
+
+  @override
+  String get cardPresetPoster => 'Pôster';
+
+  @override
+  String get cardPresetCard => 'Cartão';
+
+  @override
+  String get cardPresetCozy => 'Aconchegante';
+
+  @override
+  String get sortTopRated => 'Mais bem avaliados';
+
+  @override
+  String get sortMostPopular => 'Mais populares';
+
+  @override
+  String get sortTrending => 'Em alta';
+
+  @override
+  String get sortNewest => 'Mais novos';
+
+  @override
+  String get sortAz => 'A–Z';
+
+  @override
+  String get sortMostFavourited => 'Mais favoritados';
+
+  @override
+  String get anyCountry => 'Qualquer país';
+
+  @override
+  String get orderScore => 'Nota';
+
+  @override
+  String get orderTitle => 'Título';
+
+  @override
+  String get orderLastUpdated => 'Última atualização';
+
+  @override
+  String get orderLastAdded => 'Último adicionado';
+
+  @override
+  String get never => 'Nunca';
+
+  @override
+  String get always => 'Sempre';
+
+  @override
+  String get scorePoint100 => '100 pontos';
+
+  @override
+  String get scorePoint10Decimal => '10 pontos decimal';
+
+  @override
+  String get scorePoint10 => '10 pontos';
+
+  @override
+  String get scorePoint5 => '5 estrelas';
+
+  @override
+  String get scorePoint3 => '3 carinhas';
+
+  @override
+  String hoursCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count horas',
+      one: '1 hora',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String daysCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count dias',
+      one: '1 dia',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String weeksCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count semanas',
+      one: '1 semana',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get resumeTitle => 'Continuar';
+
+  @override
+  String get resumeSourceMissing => 'Instale a fonte desse título pra continuar';
+
+  @override
+  String get resumeRemove => 'Remover de continuar';
+
+  @override
+  String resumeMissing(String title) {
+    return 'Não achei $title nessa fonte';
+  }
+
+  @override
+  String resumeAt(String time) {
+    return 'faltam $time';
+  }
+
+  @override
+  String resumePage(int page, int total) {
+    return 'Página $page de $total';
+  }
+
+  @override
+  String get continueWatching => 'Continuar assistindo';
+
+  @override
+  String get continueReading => 'Continuar lendo';
+
+  @override
+  String get favouriteAnimeSection => 'Animes favoritos';
+
+  @override
+  String get favouriteMangaSection => 'Mangás favoritos';
+
+  @override
+  String get plannedAnime => 'Animes planejados';
+
+  @override
+  String get plannedManga => 'Mangás planejados';
+
+  @override
+  String get completedAnime => 'Animes concluídos';
+
+  @override
+  String get completedManga => 'Mangás concluídos';
+
+  @override
+  String get hiddenMedia => 'Mídia oculta';
+
+  @override
+  String get recentUpdates => 'Atualizações recentes';
+
+  @override
+  String get trendingNow => 'Em alta agora';
+
+  @override
+  String get popularThisSeason => 'Populares dessa temporada';
+
+  @override
+  String get trendingMovies => 'Filmes em alta';
+
+  @override
+  String get topRatedSeries => 'Séries mais bem avaliadas';
+
+  @override
+  String get mostFavouriteSeries => 'Séries mais favoritadas';
+
+  @override
+  String get popularAnime => 'Animes populares';
+
+  @override
+  String get trendingManhwa => 'Manhwas em alta';
+
+  @override
+  String get trendingNovels => 'Novels em alta';
+
+  @override
+  String get topRatedManga => 'Mangás mais bem avaliados';
+
+  @override
+  String get mostFavouriteManga => 'Mangás mais favoritados';
+
+  @override
+  String get popularManga => 'Mangás populares';
+
+  @override
+  String get topMovies => 'Melhores filmes';
+
+  @override
+  String get topOna => 'Melhores ONA';
+
+  @override
+  String get topOva => 'Melhores OVA';
+
+  @override
+  String get mostPopular => 'Mais populares';
+
+  @override
+  String get mostFavourite => 'Mais favoritados';
+
+  @override
+  String get upcoming => 'Em breve';
+
+  @override
+  String get topManga => 'Melhores mangás';
+
+  @override
+  String get topManhwa => 'Melhores manhwas';
+
+  @override
+  String get topManhua => 'Melhores manhuas';
+
+  @override
+  String get topNovels => 'Melhores novels';
+
+  @override
+  String get topOneShots => 'Melhores one-shots';
+
+  @override
+  String get trendingMoviesToday => 'Filmes em alta hoje';
+
+  @override
+  String get trendingShowsToday => 'Séries em alta hoje';
+
+  @override
+  String get trendingMoviesWeek => 'Filmes em alta essa semana';
+
+  @override
+  String get trendingShowsWeek => 'Séries em alta essa semana';
+
+  @override
+  String get mostWatchedMoviesMonth => 'Filmes mais assistidos do mês';
+
+  @override
+  String get mostWatchedShowsMonth => 'Séries mais assistidas do mês';
+
+  @override
+  String get trendingThisWeek => 'Em alta essa semana';
+
+  @override
+  String get mostWatchedThisMonth => 'Mais assistidos do mês';
+
+  @override
+  String get repoLinksAdded => 'Links do repositório adicionados com sucesso!';
+
+  @override
+  String get errorGettingAnilistData => 'Erro ao buscar dados do AniList.';
+
+  @override
+  String get navInfo => 'INFO';
+
+  @override
+  String get navComments => 'COMENTÁRIOS';
+
+  @override
+  String get playerNotAvailable => 'O player ainda não está disponível';
+
+  @override
+  String deepLinkInitialError(String error) {
+    return 'Erro ao obter o deep link inicial: $error';
+  }
+
+  @override
+  String deepLinkOpenError(String error) {
+    return 'Erro ao abrir link: $error';
+  }
+
+  @override
+  String linkCantBeOpened(String link) {
+    return 'Não dá pra abrir esse link: $link';
+  }
+
+  @override
+  String linkOpenError(String error) {
+    return 'Erro ao abrir link: $error';
+  }
+
+  @override
+  String get forReleasingTitles => 'pra títulos ainda em exibição';
+
+  @override
+  String get progress => 'Progresso';
+
+  @override
+  String get notes => 'Notas';
+
+  @override
+  String serviceNotFound(String id) {
+    return 'Serviço \"$id\" não encontrado';
+  }
+
+  @override
+  String get glassEffectEnabled => 'Efeito vidro ligado';
+
+  @override
+  String get glassEffectDisabled => 'Efeito vidro desligado';
+
+  @override
+  String get materialYouEnabled => 'Material You ligado';
+
+  @override
+  String get materialYouDisabled => 'Material You desligado';
+
+  @override
+  String get darkModeEnabled => 'Modo escuro ligado';
+
+  @override
+  String get darkModeDisabled => 'Modo escuro desligado';
+
+  @override
+  String get animeList => 'Lista de animes';
+
+  @override
+  String get mangaList => 'Lista de mangás';
+
+  @override
+  String ownerAnimeList(String owner) {
+    return 'Lista de animes de $owner';
+  }
+
+  @override
+  String ownerMangaList(String owner) {
+    return 'Lista de mangás de $owner';
+  }
+
+  @override
+  String get loadingList => 'Carregando lista';
+
+  @override
+  String get earlier => 'Anteriores';
+
+  @override
+  String daysAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'há $count dias',
+      one: 'há 1 dia',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String hoursAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'há $count horas',
+      one: 'há 1 hora',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String minutesAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'há $count minutos',
+      one: 'há 1 minuto',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String minutesAgoShort(int count) {
+    return 'há $count min';
+  }
+
+  @override
+  String hoursAgoShort(int count) {
+    return 'há $count h';
+  }
+
+  @override
+  String daysAgoShort(int count) {
+    return 'há $count d';
+  }
+
+  @override
+  String weeksAgoShort(int count) {
+    return 'há $count sem.';
+  }
+
+  @override
+  String get couldntLoadSource => 'Não consegui carregar essa fonte';
+
+  @override
+  String get followers => 'Seguidores';
+
+  @override
+  String couldntLoadTitle(String title) {
+    return 'Não consegui carregar $title';
+  }
+
+  @override
+  String userTitle(String name, String title) {
+    return '$name · $title';
+  }
+
+  @override
+  String get couldntLoadProfile => 'Não consegui carregar esse perfil';
+
+  @override
+  String get profile => 'Perfil';
+
+  @override
+  String get feed => 'Feed';
+
+  @override
+  String get stats => 'Estatísticas';
+
+  @override
+  String get received => 'Recebidas';
+
+  @override
+  String get sent => 'Enviadas';
+
+  @override
+  String get global => 'Global';
+
+  @override
+  String get couldntLoadPage => 'Não consegui carregar essa página';
+
+  @override
+  String get couldntLoadAllDetails => 'Não consegui carregar todos os detalhes';
+
+  @override
+  String get series => 'Séries';
+
+  @override
+  String get studios => 'Estúdios';
+
+  @override
+  String get users => 'Usuários';
+
+  @override
+  String repositoriesTitle(String type) {
+    return 'Repositórios de $type';
+  }
+
+  @override
+  String get repositoryUrl => 'URL do repositório';
+
+  @override
+  String get downloadingRepository => 'Baixando repositório…';
+
+  @override
+  String get noRepositories => 'Nenhum repositório adicionado';
+
+  @override
+  String repoExtensionsCount(String count) {
+    return '$count extensões';
+  }
+
+  @override
+  String get searchExtensions => 'Buscar extensões...';
+
+  @override
+  String deletePluginTitle(String name) {
+    return 'Apagar $name?';
+  }
+
+  @override
+  String get deletePluginMessage => 'Tem certeza que quer apagar esse plugin?';
+
+  @override
+  String pluginDeleted(String name) {
+    return '$name apagado';
+  }
+
+  @override
+  String pluginNotInRepo(String name) {
+    return '$name não está disponível no repositório configurado';
+  }
+
+  @override
+  String get pluginFetchFailed => 'Falha ao buscar info do plugin';
+
+  @override
+  String installPluginTitle(String name) {
+    return 'Instalar $name';
+  }
+
+  @override
+  String sizeLabel(String size) {
+    return 'Tamanho: $size';
+  }
+
+  @override
+  String get installedState => 'Instalado';
+
+  @override
+  String get errorLabel => 'Erro:';
+
+  @override
+  String get stackTraceDetails => 'Detalhes (stack trace)';
+
+  @override
+  String get shareLogFile => 'Compartilhar arquivo de log';
+
+  @override
+  String get copyLogs => 'Copiar logs';
+
+  @override
+  String noListToEdit(String service) {
+    return 'O $service não tem lista pra editar';
+  }
+
+  @override
+  String get couldNotReadFile => 'Não consegui ler esse arquivo';
+
+  @override
+  String importedSummary(int anime, int manga) {
+    return 'Importados $anime animes e $manga mangás';
+  }
+
+  @override
+  String alreadyThere(int count) {
+    return ' · $count já estavam lá';
+  }
+
+  @override
+  String get airingNow => 'No ar agora';
+
+  @override
+  String get topRatedMovies => 'Filmes mais bem avaliados';
+
+  @override
+  String get topRatedShows => 'Séries mais bem avaliadas';
+
+  @override
+  String get recommendedSection => 'Recomendados';
+
+  @override
+  String get syncRow => 'Sincronizar listas';
+
+  @override
+  String get syncRowDesc => 'Espelha a lista de um serviço nas suas outras contas';
+
+  @override
+  String get syncTitle => 'Sincronizar';
+
+  @override
+  String get syncMainService => 'Serviço principal';
+
+  @override
+  String get syncMainServiceDesc => 'A lista dele é a fonte da verdade; todos os outros serviços logados são atualizados pra ficar iguais';
+
+  @override
+  String get syncAuto => 'Sincronização automática';
+
+  @override
+  String get syncAutoDesc => 'Busca e sincroniza em segundo plano quando o app abre e a cada 30 minutos';
+
+  @override
+  String get syncAddMissing => 'Adicionar entradas faltando';
+
+  @override
+  String get syncAddMissingDesc => 'Adiciona também entradas que o outro serviço ainda não tem';
+
+  @override
+  String get syncOnlyForward => 'Manter o progresso mais adiantado';
+
+  @override
+  String get syncOnlyForwardDesc => 'Não diminui o progresso de um serviço que já está na frente';
+
+  @override
+  String get syncFetch => 'Buscar';
+
+  @override
+  String get syncFetchAgain => 'Buscar de novo';
+
+  @override
+  String get syncAll => 'Sincronizar tudo';
+
+  @override
+  String get syncStop => 'Parar';
+
+  @override
+  String get syncResume => 'Continuar';
+
+  @override
+  String get syncNothingToSync => 'Esse serviço não pode ser sincronizado pra esse tipo';
+
+  @override
+  String get syncNoTargets => 'Entre em outro serviço pra sincronizar';
+
+  @override
+  String get syncLoadingMap => 'Carregando mapeamento de IDs';
+
+  @override
+  String get syncComparing => 'Comparando listas';
+
+  @override
+  String get syncIntro => 'Escolha um serviço principal e toque em Buscar. Cada serviço é consultado uma vez pela sua lista e depois comparado com o principal.';
+
+  @override
+  String get syncStateSynced => 'Sincronizado';
+
+  @override
+  String get syncStateOutdated => 'Fora de sincronia';
+
+  @override
+  String get syncStateMissing => 'Não está na lista';
+
+  @override
+  String get syncStateUnmapped => 'Sem correspondência';
+
+  @override
+  String syncPaused(String time) {
+    return 'Esperando o limite de requisições, volta em $time';
+  }
+
+  @override
+  String syncOnlyIn(int count, String name) {
+    return '$count só no $name, deixados como estão';
+  }
+
+  @override
+  String syncProgressOf(int done, int total) {
+    return '$done de $total';
+  }
+
+  @override
+  String get syncNothingHere => 'Nada pra mostrar';
+
+  @override
+  String syncLimits(int used, int max, String window) {
+    return '$used de $max requisições usadas nesse $window';
+  }
+
+  @override
+  String get syncMinute => 'minuto';
+
+  @override
+  String get syncDay => 'dia';
+
+  @override
+  String get syncNotInList => 'Ainda não está na lista';
+
+  @override
+  String get syncCleared => 'Plano limpo';
+
+  @override
+  String get syncClear => 'Limpar';
+
+  @override
+  String get syncOptions => 'Opções';
+
+  @override
+  String get syncShared => 'Divide a entrada com outro item';
+
+  @override
+  String syncNotFound(String service) {
+    return 'Não encontrado no $service';
+  }
+
+  @override
+  String syncService(String service, int count) {
+    return 'Sincronizar $service ($count)';
+  }
+
+  @override
+  String get syncOnEdit => 'Sincronizar na hora';
+
+  @override
+  String get syncOnEditDesc => 'Manda cada atualização de progresso e edição de lista pros seus outros serviços logados na hora';
+
+  @override
+  String syncPushed(String services) {
+    return 'Sincronizado com $services';
+  }
+
+  @override
+  String syncPushFailed(String service, String error) {
+    return '$service: $error';
+  }
+
+  @override
+  String get syncRateLimited => 'Limite de requisições atingido, tente de novo daqui a pouco';
+
+  @override
+  String get syncAhead => 'Quem estiver na frente';
+
+  @override
+  String get syncAheadDesc => 'Nos dois sentidos: pra cada título, vence a entrada mais adiantada e ela é copiada pros seus outros serviços';
+
+  @override
+  String syncAheadFrom(String service) {
+    return 'Do $service';
+  }
+
+  @override
+  String get syncConfirm => 'Revisar antes de sincronizar';
+
+  @override
+  String get syncConfirmDesc => 'Mostra o que o Sincronizar tudo vai mudar e quantas requisições precisa';
+
+  @override
+  String get syncPreviewTitle => 'Pronto pra sincronizar';
+
+  @override
+  String syncPreviewLine(int updates, int adds) {
+    return '$updates atualizações, $adds pra adicionar';
+  }
+
+  @override
+  String syncPreviewRequests(int count) {
+    return 'Cerca de $count requisições';
+  }
+
+  @override
+  String syncPreviewLookups(int count) {
+    return '$count IDs precisam de consulta antes';
+  }
+
+  @override
+  String get syncPreviewNothing => 'Nada pra mudar';
+
+  @override
+  String get syncStart => 'Iniciar';
+
+  @override
+  String get syncRetry => 'Tentar de novo';
+
+  @override
+  String get syncSkip => 'Pular esse item';
+
+  @override
+  String get syncInclude => 'Incluir esse item de novo';
+
+  @override
+  String get syncSkippedLabel => 'Pulado';
+
+  @override
+  String get syncChanges => 'Diferenças';
+
+  @override
+  String get syncChangeStatus => 'Status';
+
+  @override
+  String get syncChangeProgress => 'Progresso';
+
+  @override
+  String get syncChangeScore => 'Nota';
+
+  @override
+  String get syncChangeDates => 'Datas';
+
+  @override
+  String get syncChangeRepeat => 'Nº de reassistidas';
+
+  @override
+  String get syncFailedReason => 'Por que falhou';
+
+  @override
+  String get syncSkippedHint => 'Itens pulados ficam como estão, mesmo depois de buscar de novo';
+
+  @override
+  String get commentsRules => 'Regras dos comentários';
+
+  @override
+  String get commentsRulesBody => 'QUEBROU UMA REGRA = TÁ FORA\n\n1. Nada de racismo, discriminação ou discurso de ódio\n2. Nada de spam ou autopromoção\n3. Absolutamente nada de conteúdo NSFW\n4. Só em inglês, sem exceção\n5. Nada de se passar por outra pessoa, assédio ou abuso\n6. Nada de conteúdo ilegal nem desrespeito extremo a qualquer fandom\n7. Não peça nem compartilhe repositórios ou extensões\n8. Spoiler só com tag de spoiler e aviso\n9. Nada de sexualizar nem comentários impróprios sobre personagens menores de idade\n10. Se tá errado, não poste!';
+
+  @override
+  String get commentsRulesAccept => 'Entendi';
+
+  @override
+  String get commentsSortNewest => 'Mais recentes';
+
+  @override
+  String get commentsSortOldest => 'Mais antigos';
+
+  @override
+  String get commentsSortHighest => 'Mais bem avaliados';
+
+  @override
+  String get commentsSortLowest => 'Pior avaliados';
+
+  @override
+  String commentsEpisodeShort(int number) {
+    return 'Ep. $number';
+  }
+
+  @override
+  String commentsChapterShort(int number) {
+    return 'Cap. $number';
+  }
+
+  @override
+  String get commentsFilterEpisodeTitle => 'Filtrar por episódio';
+
+  @override
+  String get commentsFilterChapterTitle => 'Filtrar por capítulo';
+
+  @override
+  String get commentsFilterTagTitle => 'Digite um número de episódio ou capítulo';
+
+  @override
+  String get commentsFilterHint => 'Número';
+
+  @override
+  String get commentsFilterApply => 'Filtrar';
+
+  @override
+  String get commentsFilterClear => 'Mostrar tudo';
+
+  @override
+  String get commentsPlaceholder => 'Adicione um comentário…';
+
+  @override
+  String commentsReplyingTo(String name) {
+    return 'Respondendo a $name';
+  }
+
+  @override
+  String get commentsSend => 'Enviar';
+
+  @override
+  String get commentsTagButton => 'Tag';
+
+  @override
+  String commentsTagTitle(String label) {
+    return 'Tag $label (opcional)';
+  }
+
+  @override
+  String get commentsTagEpisode => 'episódio';
+
+  @override
+  String get commentsTagChapter => 'capítulo';
+
+  @override
+  String commentsTagRange(int total) {
+    return '1–$total';
+  }
+
+  @override
+  String commentsTagNumber(String label) {
+    return 'Número do $label';
+  }
+
+  @override
+  String commentsTagTooHigh(int total) {
+    return 'A tag não pode passar do total ($total)';
+  }
+
+  @override
+  String get commentsNoTag => 'Sem tag';
+
+  @override
+  String get commentsSpoiler => 'Spoiler';
+
+  @override
+  String get commentsGif => 'GIF';
+
+  @override
+  String get commentsGifSearch => 'Buscar GIFs';
+
+  @override
+  String get commentsGifEmpty => 'Nenhum GIF encontrado';
+
+  @override
+  String get commentsEmptyText => 'O comentário não pode ficar vazio';
+
+  @override
+  String get commentsBannedYou => 'Você está banido de comentar';
+
+  @override
+  String get commentsEdited => 'Comentário editado';
+
+  @override
+  String get commentsDeleted => 'Comentário apagado';
+
+  @override
+  String get commentsDeletedPlaceholder => '[apagado]';
+
+  @override
+  String get commentsReported => 'Comentário denunciado';
+
+  @override
+  String get commentsUserBanned => 'Usuário banido';
+
+  @override
+  String get commentsReport => 'Denunciar';
+
+  @override
+  String get commentsReportAsk => 'Denunciar esse comentário pros moderadores?';
+
+  @override
+  String get commentsDelete => 'Apagar';
+
+  @override
+  String get commentsDeleteAsk => 'Esse comentário vai ser removido pra todo mundo.';
+
+  @override
+  String get commentsBan => 'Banir';
+
+  @override
+  String get commentsBanAsk => 'Banir esse usuário de comentar?';
+
+  @override
+  String get commentsCopy => 'Copiar';
+
+  @override
+  String get commentsViewReply => 'Ver 1 resposta';
+
+  @override
+  String commentsViewReplies(int count) {
+    return 'Ver $count respostas';
+  }
+
+  @override
+  String get commentsHideReplies => 'Esconder respostas';
+
+  @override
+  String get commentsLoadMore => 'Carregar mais comentários';
+
+  @override
+  String get commentsEmpty => 'Nenhum comentário ainda. Seja o primeiro!';
+
+  @override
+  String get commentsEmptyFiltered => 'Nenhum comentário pra esse filtro';
+
+  @override
+  String get commentsSignIn => 'Entre no AniList pra ler e escrever comentários';
+
+  @override
+  String get commentsSignInMessage => 'Os comentários são compartilhados entre todos os serviços e usam sua conta do AniList.';
+
+  @override
+  String get commentsUnavailable => 'Comentários indisponíveis pra esse título';
+
+  @override
+  String get commentsUnavailableMessage => 'Não deu pra associar a uma entrada do AniList.';
+
+  @override
+  String get commentsDisabled => 'Os comentários estão desligados';
+
+  @override
+  String get commentsDisabledMessage => 'Você pode ligar de novo em Configurações › Geral.';
+
+  @override
+  String get commentsOffline => 'Não consegui carregar os comentários';
+
+  @override
+  String get commentsSingleTitle => 'Mostrando um comentário';
+
+  @override
+  String get commentsShowAll => 'Mostrar todos os comentários';
+
+  @override
+  String get commentsSettingsHeader => 'Comentários';
+
+  @override
+  String get commentsSettingEnabled => 'Comentários';
+
+  @override
+  String get commentsSettingEnabledDesc => 'Mostra a aba Comentários nos títulos e faz login no servidor de comentários com sua conta do AniList';
+
+  @override
+  String get commentsSettingAlerts => 'Notificações de respostas';
+
+  @override
+  String get commentsSettingAlertsDesc => 'Me avise quando alguém responder aos meus comentários';
+
+  @override
+  String get commentsNoticeReplyTitle => 'Nova resposta a comentário';
+
+  @override
+  String commentsNoticeReply(String name) {
+    return '$name respondeu ao seu comentário';
+  }
+
+  @override
+  String get commentsNoticeWarningTitle => 'Você recebeu um aviso';
+
+  @override
+  String get commentsNoticeWarning => 'Pense melhor nos seus comentários';
+
+  @override
+  String get commentsNoticeUpdateTitle => 'Atualização do Dantotsu';
+
+  @override
+  String get barcodeTitle => 'Escanear código de barras';
+
+  @override
+  String get barcodeTooltip => 'Ache um mangá ou novel pelo código de barras';
+
+  @override
+  String get barcodeIntro => 'Aponte a câmera pro código de barras na parte de trás de um volume, ou digite o ISBN.';
+
+  @override
+  String get barcodeIntroManual => 'Digite o ISBN impresso acima do código de barras na parte de trás de um volume.';
+
+  @override
+  String get barcodeIsbnHint => 'ISBN';
+
+  @override
+  String get barcodeInvalid => 'Esse ISBN não é válido';
+
+  @override
+  String barcodeNotFound(String isbn) {
+    return 'Nenhum livro encontrado pra $isbn';
+  }
+
+  @override
+  String get barcodeCameraDenied => 'A câmera não está disponível. Permita o acesso à câmera ou digite o ISBN.';
+
+  @override
+  String get themesTitle => 'Aberturas e encerramentos';
+
+  @override
+  String get themesOpening => 'Abertura';
+
+  @override
+  String get themesEnding => 'Encerramento';
+
+  @override
+  String get themesPlayVideo => 'Reproduzir vídeo';
+
+  @override
+  String get themesPlayAudio => 'Reproduzir só o áudio';
+
+  @override
+  String get themesOpenSite => 'Abrir no AnimeThemes';
+
+  @override
+  String get themesCredit => 'Temas do AnimeThemes';
+
+  @override
+  String get themesVersions => 'Versões';
+
+  @override
+  String get muTitle => 'MangaUpdates';
+
+  @override
+  String get muReleases => 'Lançamentos recentes';
+
+  @override
+  String get muNoReleases => 'Sem lançamentos recentes';
+
+  @override
+  String get muLicensed => 'Licenciado';
+
+  @override
+  String get muOpen => 'Ver no MangaUpdates';
+
+  @override
+  String get muCredit => 'Dados do MangaUpdates';
+
+  @override
+  String get muPublishers => 'Editoras';
+
+  @override
+  String get sauceTitle => 'Achar a origem';
+
+  @override
+  String get sauceIntro => 'Envie uma página de mangá ou uma arte, ou cole o link, pra descobrir de onde vem.';
+
+  @override
+  String get sauceKeyTitle => 'Chave de API do SauceNAO';
+
+  @override
+  String get sauceKeyHint => 'Opcional, aumenta o limite diário de buscas';
+
+  @override
+  String get sauceKeyDesc => 'Pegue uma chave grátis em saucenao.com/user.php';
+
+  @override
+  String get sauceSearchTitle => 'Buscar esse título';
+
+  @override
+  String get sauceOpen => 'Abrir origem';
+
+  @override
+  String get sauceCredit => 'Busca de imagem pelo SauceNAO';
+
+  @override
+  String get sauceEmpty => 'Nenhuma correspondência';
+
+  @override
+  String get sauceTooltip => 'Ache a origem de uma página de mangá ou arte';
+
+  @override
+  String get sauceLowMatch => 'Correspondência fraca';
+
+  @override
+  String get trendzTitle => 'Rankings de anime';
+
+  @override
+  String get trendzAnime => 'Anime';
+
+  @override
+  String get trendzFemale => 'Personagens femininas';
+
+  @override
+  String get trendzMale => 'Personagens masculinos';
+
+  @override
+  String get trendzCouple => 'Casais';
+
+  @override
+  String get trendzCredit => 'Rankings semanais do AniTrendz';
+
+  @override
+  String get trendzNew => 'NOVO';
+
+  @override
+  String get trendzSearch => 'Buscar esse título';
+
+  @override
+  String get trendzEmpty => 'O ranking está vazio';
+
+  @override
+  String get shareCard => 'Compartilhar cartão';
+
+  @override
+  String get shareCardList => 'Compartilhar cartão da lista';
+
+  @override
+  String get muNotFound => 'Sem correspondência no MangaUpdates pra esse título';
+
+  @override
+  String get shareCardWorking => 'Criando o cartão…';
+
+  @override
+  String get shareCardSaved => 'Cartão salvo';
+
+  @override
+  String get shareCardFailed => 'Não consegui criar o cartão';
+
+  @override
+  String get shareCardListEmpty => 'Sua lista ainda não tem nada pra compartilhar';
+
+  @override
+  String get shareCardTop => 'Minhas escolhas';
+
+  @override
+  String themesEpisodes(String eps) {
+    return 'Episódios $eps';
+  }
+
+  @override
+  String muLatest(String count) {
+    return 'Capítulo $count';
+  }
+
+  @override
+  String muRating(String rating, String votes) {
+    return '$rating de $votes votos';
+  }
+
+  @override
+  String sauceSimilarity(String percent) {
+    return '$percent% de correspondência';
+  }
+
+  @override
+  String trendzWeek(String week, String season) {
+    return 'Semana $week · $season';
+  }
+
+  @override
+  String trendzVotes(String count) {
+    return '$count votos';
+  }
+
+  @override
+  String trendzPeak(String rank) {
+    return 'Pico #$rank';
+  }
+
+  @override
+  String trendzWeeks(String count) {
+    return '$count semanas no top dez';
+  }
+
+  @override
+  String shareCardEntries(String count) {
+    return '$count títulos';
+  }
+
+  @override
+  String get imageSearchTitle => 'Buscar por imagem';
+
+  @override
+  String get imageSearchTooltip => 'Ache um anime a partir de um print';
+
+  @override
+  String get imageSearchIntro => 'Escolha um print ou cole o link de uma imagem e o trace.moe descobre o episódio e o momento de onde veio.';
+
+  @override
+  String get imageSearchPick => 'Escolher imagem';
+
+  @override
+  String get imageSearchLinkHint => 'Cole o link de uma imagem';
+
+  @override
+  String get imageSearchGo => 'Buscar';
+
+  @override
+  String get imageSearchEmpty => 'Nenhuma correspondência';
+
+  @override
+  String get imageSearchAdult => '18+';
+
+  @override
+  String imageSearchEpisode(String number) {
+    return 'Episódio $number';
+  }
+
+  @override
+  String imageSearchAt(String time) {
+    return 'aos $time';
+  }
+
+  @override
+  String get imageSearchPreview => 'Prévia do clipe';
+
+  @override
+  String imageSearchSimilarity(int percent) {
+    return '$percent% de correspondência';
+  }
+
+  @override
+  String get imageSearchCredit => 'Feito com trace.moe';
+
+  @override
+  String get imageSearchOpenFailed => 'Não consegui abrir esse título';
+
+  @override
+  String get groups => 'Grupos';
+
+  @override
+  String get groupsYours => 'Seus grupos';
+
+  @override
+  String get groupsPopular => 'Populares';
+
+  @override
+  String get groupsNew => 'Novos';
+
+  @override
+  String get groupsFeatured => 'Em destaque';
+
+  @override
+  String get groupsSearch => 'Buscar grupos';
+
+  @override
+  String get groupsAll => 'Todos';
+
+  @override
+  String get groupsEmpty => 'Nenhum grupo encontrado';
+
+  @override
+  String get groupsEmptyYours => 'Você ainda não entrou em nenhum grupo';
+
+  @override
+  String get groupsSignIn => 'Entre pra ver os grupos de que você participa';
+
+  @override
+  String groupsMembersCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count membros',
+      one: '1 membro',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get groupsJoin => 'Entrar';
+
+  @override
+  String get groupsJoined => 'Participando';
+
+  @override
+  String get groupsLeave => 'Sair do grupo';
+
+  @override
+  String get groupsLeaveAsk => 'Você vai parar de ver as postagens desse grupo no seu feed.';
+
+  @override
+  String get groupsJoinFailed => 'Não consegui entrar nesse grupo, pode ser só por convite';
+
+  @override
+  String get groupsLeaveFailed => 'Não consegui sair desse grupo';
+
+  @override
+  String get groupsPosts => 'Postagens';
+
+  @override
+  String get groupsMembersTab => 'Membros';
+
+  @override
+  String get groupsAbout => 'Sobre';
+
+  @override
+  String get groupsRules => 'Regras';
+
+  @override
+  String get groupsPrivacyOpen => 'Aberto';
+
+  @override
+  String get groupsPrivacyRestricted => 'Restrito';
+
+  @override
+  String get groupsPrivacyClosed => 'Fechado';
+
+  @override
+  String get groupsAdult => '18+';
+
+  @override
+  String get groupsRoleAdmin => 'Admin';
+
+  @override
+  String get groupsRoleMod => 'Mod';
+
+  @override
+  String get groupsCouldntLoad => 'Não consegui carregar esse grupo';
+
+  @override
+  String get groupsNewPost => 'Postar no grupo';
+
+  @override
+  String get groupsPostHint => 'Compartilhe algo com o grupo';
+
+  @override
+  String get groupsOpenInBrowser => 'Abrir no navegador';
+
+  @override
+  String get groupsCategory => 'Categoria';
+
+  @override
+  String get groupsLanguage => 'Idioma';
+
+  @override
+  String get groupsCreated => 'Criado';
+
+  @override
+  String groupsLeaders(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count líderes',
+      one: '1 líder',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get groupsPrivacy => 'Privacidade';
+
+  @override
+  String get notificationsAll => 'Tudo';
+
+  @override
+  String get notificationsAiring => 'No ar';
+
+  @override
+  String get notificationsMedia => 'Novos títulos';
+
+  @override
+  String get notificationsReplies => 'Respostas';
+
+  @override
+  String get notificationsMentions => 'Menções';
+
+  @override
+  String get notificationsMessages => 'Mensagens';
+
+  @override
+  String get notificationsLikes => 'Curtidas';
+
+  @override
+  String get notificationsFollows => 'Seguidores';
+
+  @override
+  String get notificationsNoServices => 'Nenhum serviço logado tem notificações';
+
+  @override
+  String get notificationsNoServicesMessage => 'Entre num serviço que envia notificações e elas aparecem aqui.';
+
+  @override
+  String get notificationsEmptyKind => 'Nada nessa categoria ainda';
+
+  @override
+  String get notificationsCommentsEmpty => 'Sem notificações de comentários';
+
+  @override
+  String get notificationsCommentsEmptyMessage => 'As respostas aos seus comentários e os avisos do Dantotsu aparecem aqui.';
+
+  @override
+  String get notificationsSettings => 'Configurações de notificações';
+
+  @override
+  String get notificationsPollTitle => 'Verificar novas notificações';
+
+  @override
+  String notificationsPollDesc(int minutes) {
+    return 'A cada $minutes minutos com o app aberto';
+  }
+
+  @override
+  String get notificationsNotifyAbout => 'Me avise sobre';
+
+  @override
+  String get notificationsCommentsHeader => 'Notificações de comentários';
+
+  @override
+  String systemNotificationsDescFor(String service) {
+    return 'Mostra uma notificação do sistema pra cada notificação não lida do $service enquanto o app está rodando.';
+  }
+
+  @override
+  String get notificationsTestSent => 'Notificação de teste enviada';
+
+  @override
+  String get notificationsTestDenied => 'As notificações não estão permitidas pro Dartotsu. Ligue nas configurações do sistema.';
+
+  @override
+  String get notificationsTestHint => 'Segure pra enviar uma notificação de teste';
+
+  @override
+  String get notificationsTestSample => 'Essa é uma notificação de teste';
+
+  @override
+  String commentsNoticeReplyIn(String name, String media) {
+    return '$name respondeu ao seu comentário em $media';
+  }
+
+  @override
+  String get imageSearchNotLink => 'Isso não parece um link';
+
+  @override
+  String get imageSearchQuota => 'Limite de buscas excedido';
+
+  @override
+  String get imageSearchBusy => 'Muitas requisições, tente de novo daqui a pouco';
+
+  @override
+  String imageSearchFailed(int code) {
+    return 'A busca falhou ($code)';
+  }
+
+  @override
+  String notificationsNewCount(int count) {
+    return '$count novas notificações';
+  }
+
+  @override
+  String get reactionsTitle => 'Reações';
+
+  @override
+  String get reactionsNeedEntry => 'Adicione esse título à sua lista antes de reagir';
+
+  @override
+  String get reactionsAdd => 'Adicionar uma reação';
+
+  @override
+  String get reactionsHint => 'O que achou? (curto e sem spoiler)';
+
+  @override
+  String get reactionsPost => 'Postar';
+
+  @override
+  String get reactionsFailed => 'Não consegui atualizar a reação';
+
+  @override
+  String get settingsWatch => 'Assistir e ler';
+
+  @override
+  String get settingsWatchDesc => 'Listas de episódios, associação de fontes e detalhes dos episódios';
+
+  @override
+  String get watchSettingsLayout => 'Lista de episódios';
+
+  @override
+  String get watchSettingsSources => 'Fontes';
+
+  @override
+  String get watchSettingsMetadata => 'Detalhes do episódio';
+
+  @override
+  String get watchLayout => 'Layout';
+
+  @override
+  String get watchListView => 'Lista';
+
+  @override
+  String get watchGridView => 'Grade';
+
+  @override
+  String get watchCompactView => 'Compacto';
+
+  @override
+  String get watchDefaultLayoutDesc => 'Como episódios e capítulos aparecem até você mudar num título';
+
+  @override
+  String get watchChunkSize => 'Tamanho do intervalo';
+
+  @override
+  String get watchChunkSizeDesc => 'Quantos episódios ou capítulos cada aba de intervalo tem';
+
+  @override
+  String get watchShowDescription => 'Mostrar descrições';
+
+  @override
+  String get watchShowDescriptionDesc => 'Mostra o resumo do episódio embaixo de cada título no layout em lista';
+
+  @override
+  String get watchShowFiller => 'Mostrar episódios filler';
+
+  @override
+  String get watchShowFillerDesc => 'Desligue pra esconder episódios marcados como filler';
+
+  @override
+  String get watchBlurUnwatched => 'Esconder miniaturas com spoiler';
+
+  @override
+  String get watchBlurUnwatchedDesc => 'Desfoca a miniatura dos episódios que você ainda não assistiu';
+
+  @override
+  String get watchResumeShelf => 'Prateleira de continuar';
+
+  @override
+  String get watchResumeShelfDesc => 'Mostra a linha Continuar no Início';
+
+  @override
+  String get watchMarkOnLongPress => 'Segurar marca o progresso';
+
+  @override
+  String get watchMarkOnLongPressDesc => 'Segure um episódio ou capítulo pra marcar como assistido ou não assistido';
+
+  @override
+  String get watchMatching => 'Associação de fontes';
+
+  @override
+  String get watchMatchingDesc => '\"Mais próxima\" pega o melhor resultado da busca. \"Só exata\" aceita apenas um título quase idêntico e deixa o resto pra você escolher.';
+
+  @override
+  String get watchMatchClosest => 'Correspondência mais próxima';
+
+  @override
+  String get watchMatchExact => 'Só correspondência exata';
+
+  @override
+  String get watchMetadataDesc => 'De onde vêm os títulos, resumos, miniaturas, datas de exibição e marcas de filler dos episódios. Arraste pra definir a prioridade; vale a primeira fonte com valor.';
+
+  @override
+  String get watchMetaAniZipDesc => 'Títulos, resumos, imagens e datas de exibição dos episódios';
+
+  @override
+  String get watchMetaKitsuDesc => 'Títulos, descrições e miniaturas dos episódios';
+
+  @override
+  String get watchMetaSimklDesc => 'Títulos, descrições, imagens e datas de exibição dos episódios';
+
+  @override
+  String get watchMetaAniListDesc => 'Títulos e miniaturas dos episódios em streaming e o calendário de exibição';
+
+  @override
+  String get watchMetaTenraiDesc => 'Títulos, datas de exibição, filler e recaps de episódios do MyAnimeList via Tenrai';
+
+  @override
+  String get watchClearMetadata => 'Atualizar detalhes dos episódios';
+
+  @override
+  String get watchClearMetadataDesc => 'Esquece os detalhes de episódios em cache pra buscar de novo';
+
+  @override
+  String get watchMetadataCleared => 'Os detalhes dos episódios vão ser buscados de novo';
+
+  @override
+  String watchEpisodeCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count episódios',
+      one: '1 episódio',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String watchChapterCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count capítulos',
+      one: '1 capítulo',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String watchEpisodeNumber(String number) {
+    return 'Episódio $number';
+  }
+
+  @override
+  String watchChapterNumber(String number) {
+    return 'Capítulo $number';
+  }
+
+  @override
+  String get watchSearching => 'Buscando…';
+
+  @override
+  String watchSearchingFor(String term) {
+    return 'Buscando: $term';
+  }
+
+  @override
+  String watchSelected(String title) {
+    return 'Selecionado: $title';
+  }
+
+  @override
+  String watchFound(String title) {
+    return 'Encontrado: $title';
+  }
+
+  @override
+  String get watchNothingFound => 'Nada encontrado nessa fonte';
+
+  @override
+  String get watchSearchFailed => 'A busca na fonte falhou';
+
+  @override
+  String get watchLoadFailed => 'Não consegui carregar a lista';
+
+  @override
+  String get watchSignInToTrack => 'Entre pra acompanhar seu progresso';
+
+  @override
+  String watchInstallSource(String action) {
+    return 'Instale uma extensão pra começar a $action';
+  }
+
+  @override
+  String get watchSourceMissing => 'Essa fonte não está instalada';
+
+  @override
+  String get watchWrongTitle => 'Título errado?';
+
+  @override
+  String get watchSearchAgain => 'Buscar de novo';
+
+  @override
+  String watchSearchSource(String source) {
+    return 'Buscar em $source';
+  }
+
+  @override
+  String get watchSource => 'Fonte';
+
+  @override
+  String get watchOptions => 'Opções';
+
+  @override
+  String get watchReverse => 'Inverter ordem';
+
+  @override
+  String get watchScanlators => 'Grupos';
+
+  @override
+  String get watchResetOptions => 'Redefinir essas opções';
+
+  @override
+  String get watchContinue => 'Continuar';
+
+  @override
+  String get watchStart => 'Iniciar';
+
+  @override
+  String get watchPlay => 'Reproduzir';
+
+  @override
+  String get watchRead => 'Ler';
+
+  @override
+  String get watchMarkWatched => 'Marcar como assistido';
+
+  @override
+  String get watchMarkUnwatched => 'Marcar como não assistido';
+
+  @override
+  String get watchMarkRead => 'Marcar como lido';
+
+  @override
+  String get watchMarkUnread => 'Marcar como não lido';
+
+  @override
+  String get watchFiller => 'Filler';
+
+  @override
+  String get watchRecap => 'Recap';
+
+  @override
+  String get watchNoEpisodes => 'Nenhum episódio encontrado';
+
+  @override
+  String get watchNoChapters => 'Nenhum capítulo encontrado';
+
+  @override
+  String get watchSourceTools => 'Ferramentas da fonte';
+
+  @override
+  String get watchSourceSettings => 'Configurações da fonte';
+
+  @override
+  String get watchOpenWebView => 'Abrir na webview';
+
+  @override
+  String get watchOpenWebViewDesc => 'Resolva uma verificação da Cloudflare ou faça login; os cookies são compartilhados com as requisições da fonte';
+
+  @override
+  String watchCookieCount(int count, String host) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count cookies salvos pra $host',
+      one: '1 cookie salvo pra $host',
+      zero: 'Nenhum cookie salvo pra $host',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String watchClearanceActive(String time) {
+    return 'Liberação da Cloudflare ativa, $time';
+  }
+
+  @override
+  String get watchClearanceMissing => 'Sem cookie de liberação da Cloudflare';
+
+  @override
+  String get watchClearanceSession => 'dura até o app fechar';
+
+  @override
+  String get watchAgentShared => 'As requisições usam o user agent da webview, que a Cloudflare confere';
+
+  @override
+  String get watchAgentCustom => 'Há um user agent personalizado, então a liberação da Cloudflare da webview pode ser rejeitada';
+
+  @override
+  String get watchTestConnection => 'Testar conexão';
+
+  @override
+  String get watchSolveChallenge => 'Resolver';
+
+  @override
+  String watchProbeOk(int code) {
+    return 'Acessível (HTTP $code)';
+  }
+
+  @override
+  String get watchProbeChallenge => 'A Cloudflare ainda pede uma verificação';
+
+  @override
+  String watchProbeBlocked(int code) {
+    return 'Bloqueado pelo site (HTTP $code)';
+  }
+
+  @override
+  String get watchProbeFailed => 'Não foi possível acessar o site';
+
+  @override
+  String get watchClearCookies => 'Limpar cookies desse site';
+
+  @override
+  String get watchCookiesCleared => 'Cookies limpos';
+
+  @override
+  String get watchResults => 'Resultados';
+
+  @override
+  String get watchMetaSource => 'Detalhes dos episódios de';
+
+  @override
+  String get watchMetaAuto => 'Automático';
+
+  @override
+  String get watchMetaOff => 'Desligado';
+
+  @override
+  String get settingsPlayer => 'Player';
+
+  @override
+  String get settingsPlayerDesc => 'Reprodução, legendas, shaders, mpv e abrir arquivos';
+
+  @override
+  String get playerSettingsTitle => 'Configurações do player';
+
+  @override
+  String get playerSectionPlayback => 'Reprodução';
+
+  @override
+  String get playerSectionSkip => 'Pular';
+
+  @override
+  String get playerSectionGestures => 'Controles';
+
+  @override
+  String get playerSectionSubtitles => 'Legendas';
+
+  @override
+  String get playerSectionShaders => 'Shaders';
+
+  @override
+  String get playerSectionEngine => 'Engine';
+
+  @override
+  String get playerSectionMpv => 'mpv';
+
+  @override
+  String get playerSectionOpen => 'Abrir mídia';
+
+  @override
+  String get playerSpeed => 'Velocidade de reprodução';
+
+  @override
+  String get playerCursedSpeed => 'Velocidades extras';
+
+  @override
+  String get playerCursedSpeedDesc => 'Adiciona velocidades de até 10x à lista';
+
+  @override
+  String get playerResize => 'Modo de redimensionamento';
+
+  @override
+  String get playerFitFit => 'Ajustar';
+
+  @override
+  String get playerFitCover => 'Cobrir';
+
+  @override
+  String get playerFitStretch => 'Esticar';
+
+  @override
+  String get playerSkipDuration => 'Duração do botão de pular';
+
+  @override
+  String get playerSkipDurationDesc => 'Segundos que o botão de pular avança fora das aberturas e encerramentos';
+
+  @override
+  String get playerSeekDuration => 'Toque duplo pra avançar';
+
+  @override
+  String get playerSeekDurationDesc => 'Segundos pra pular com um toque duplo ou tecla de seta';
+
+  @override
+  String get playerAutoPlay => 'Reproduzir o próximo automaticamente';
+
+  @override
+  String get playerAutoPlayDesc => 'Começa o próximo episódio quando esse acabar';
+
+  @override
+  String get playerResume => 'Continuar de onde parou';
+
+  @override
+  String get playerResumeDesc => 'Continua um episódio da última posição';
+
+  @override
+  String get playerOrientation => 'Orientação';
+
+  @override
+  String get playerOrientationAuto => 'Seguir o dispositivo';
+
+  @override
+  String get playerOrientationLandscape => 'Paisagem';
+
+  @override
+  String get playerOrientationPortrait => 'Retrato';
+
+  @override
+  String get playerAutoSkipOpening => 'Pular aberturas';
+
+  @override
+  String get playerAutoSkipEnding => 'Pular encerramentos';
+
+  @override
+  String get playerAutoSkipRecap => 'Pular recaps';
+
+  @override
+  String get playerAutoSkipDesc => 'Pula assim que começa, usando AniSkip e marcações de tempo do stream';
+
+  @override
+  String get playerSkipOnce => 'Pular só uma vez';
+
+  @override
+  String get playerSkipOnceDesc => 'Não pula a mesma parte de novo se você voltar nela';
+
+  @override
+  String get playerAdjustBrightness => 'Gesto de brilho';
+
+  @override
+  String get playerAdjustBrightnessDesc => 'Deslize pra cima e pra baixo na metade direita da tela';
+
+  @override
+  String get playerAdjustVolume => 'Gesto de volume';
+
+  @override
+  String get playerAdjustVolumeDesc => 'Deslize pra cima e pra baixo na metade esquerda da tela';
+
+  @override
+  String get playerHoldToSpeed => 'Segurar pra acelerar';
+
+  @override
+  String get playerHoldToSpeedDesc => 'Segure o vídeo pra reproduzir mais rápido, arraste pro lado pra mudar a velocidade';
+
+  @override
+  String get playerThumbless => 'Barra de progresso mais grossa';
+
+  @override
+  String get playerThumblessDesc => 'Uma barra grossa sem indicador';
+
+  @override
+  String get playerShowSubtitles => 'Mostrar legendas';
+
+  @override
+  String get playerShowSubtitlesDesc => 'Desligue pra esconder todas as faixas de legenda';
+
+  @override
+  String get playerSubtitleLanguage => 'Idioma preferido das legendas';
+
+  @override
+  String get playerSubtitleSize => 'Tamanho da legenda';
+
+  @override
+  String get playerSubtitleWeight => 'Espessura da legenda';
+
+  @override
+  String get playerSubtitleBottom => 'Margem inferior da legenda';
+
+  @override
+  String get playerSubtitleFont => 'Fonte da legenda';
+
+  @override
+  String get playerSubtitleColor => 'Cor da legenda';
+
+  @override
+  String get playerSubtitleBackground => 'Fundo da legenda';
+
+  @override
+  String get playerSubtitleOutline => 'Contorno da legenda';
+
+  @override
+  String get playerLibass => 'Usar libass';
+
+  @override
+  String get playerLibassDesc => 'Renderiza legendas .ass estilizadas. O tamanho, a cor e a fonte acima deixam de valer';
+
+  @override
+  String get playerShaders => 'Shaders';
+
+  @override
+  String get playerShadersEnable => 'Ativar shaders';
+
+  @override
+  String get playerShadersEnableDesc => 'Aumenta a resolução e limpa a imagem com shaders GLSL como o Anime4K';
+
+  @override
+  String get playerShadersOff => 'Shaders desligados';
+
+  @override
+  String get playerShadersMissing => 'O Anime4K não está instalado';
+
+  @override
+  String get playerShadersMissingDesc => 'Baixe o pacote de shaders do Anime4K (cerca de 0,8 MB) pra usar os modos integrados.';
+
+  @override
+  String get playerShadersDownload => 'Baixar Anime4K';
+
+  @override
+  String get playerShadersPreview => 'Prévia nesse frame';
+
+  @override
+  String get playerShadersUse => 'Usar esse';
+
+  @override
+  String get playerPicture => 'Imagem';
+
+  @override
+  String get playerColors => 'Cores';
+
+  @override
+  String get playerColorDefault => 'Padrão';
+
+  @override
+  String get playerColorVivid => 'Vívido';
+
+  @override
+  String get playerColorPop => 'Anime pop';
+
+  @override
+  String get playerColorSoft => 'Suave';
+
+  @override
+  String get playerColorCinematic => 'Cinematográfico';
+
+  @override
+  String get playerColorBright => 'Brilhante';
+
+  @override
+  String get playerColorNight => 'Noite';
+
+  @override
+  String get playerColorMono => 'Mono';
+
+  @override
+  String get playerColorCustom => 'Personalizado';
+
+  @override
+  String get playerColorBrightness => 'Brilho';
+
+  @override
+  String get playerColorContrast => 'Contraste';
+
+  @override
+  String get playerColorSaturation => 'Saturação';
+
+  @override
+  String get playerColorGamma => 'Gama';
+
+  @override
+  String get playerColorHue => 'Matiz';
+
+  @override
+  String get playerColorReset => 'Redefinir';
+
+  @override
+  String get playerColorAdjust => 'Ajustar';
+
+  @override
+  String get playerShadersOriginal => 'Original';
+
+  @override
+  String get playerShadersPreviewFailed => 'Não consegui pegar um frame pra prévia';
+
+  @override
+  String get playerShadersCustomFiles => 'Seus shaders';
+
+  @override
+  String get playerShadersCustom => 'Shaders personalizados';
+
+  @override
+  String get playerShadersImport => 'Importar .glsl';
+
+  @override
+  String get playerShadersNone => 'Importe seus próprios arquivos .glsl ou .hook e marque pra encadear';
+
+  @override
+  String get playerShadersBadFile => 'Escolha um arquivo de shader .glsl ou .hook';
+
+  @override
+  String get playerDecoder => 'Decodificador';
+
+  @override
+  String get playerDecoderAuto => 'Auto';
+
+  @override
+  String get playerDecoderAutoSafe => 'Auto (seguro)';
+
+  @override
+  String get playerDecoderSoftware => 'Software';
+
+  @override
+  String get playerDecoderHardware => 'Hardware';
+
+  @override
+  String get playerDecoderHardwarePlus => 'Hardware+';
+
+  @override
+  String get playerVideoOutput => 'Saída de vídeo';
+
+  @override
+  String get playerAudioChannels => 'Canais de áudio';
+
+  @override
+  String get playerBuffer => 'Tamanho do buffer (MB)';
+
+  @override
+  String get playerBufferDesc => 'Memória que o player pode usar pra fazer buffer de um stream';
+
+  @override
+  String get playerUseMpvConf => 'Usar mpv.conf';
+
+  @override
+  String get playerUseMpvConfDesc => 'Aplica as opções do seu mpv.conf quando a reprodução começa';
+
+  @override
+  String get playerMpvConf => 'mpv.conf';
+
+  @override
+  String get playerMpvConfEdit => 'Edite a configuração do mpv';
+
+  @override
+  String get playerMpvConfDesc => 'Uma opção por linha, como --hwdec=auto num mpv.conf normal. Perfis entre [colchetes] são ignorados.';
+
+  @override
+  String get playerMpvConfSaved => 'mpv.conf salvo';
+
+  @override
+  String get playerUseScripts => 'Usar scripts do mpv';
+
+  @override
+  String get playerUseScriptsDesc => 'Carrega os plugins da pasta de scripts. Precisam de uma build do libmpv com suporte a Lua ou JavaScript';
+
+  @override
+  String get playerScripts => 'Scripts do mpv';
+
+  @override
+  String get playerScriptsManage => 'Adicione, remova e alterne plugins';
+
+  @override
+  String get playerScriptsAdd => 'Adicionar script';
+
+  @override
+  String get playerScriptsDesc => 'Plugins Lua, JavaScript e nativos colocados aqui são carregados quando a reprodução começa.';
+
+  @override
+  String get playerScriptsNone => 'Nenhum script ainda';
+
+  @override
+  String get playerScriptsBadFile => 'Escolha um arquivo .lua, .js ou plugin nativo';
+
+  @override
+  String get playerTuning => 'Ajuste avançado de vídeo';
+
+  @override
+  String get playerTuningDesc => 'Sobrescreve sincronização, cache, escalonamento e tone mapping. Valores errados podem prejudicar a reprodução';
+
+  @override
+  String get playerVideoSync => 'Sincronização de vídeo';
+
+  @override
+  String get playerInterpolation => 'Interpolação de frames';
+
+  @override
+  String get playerInterpolationDesc => 'Movimento suave, precisa de sincronização display-resample';
+
+  @override
+  String get playerPitch => 'Correção de tom';
+
+  @override
+  String get playerPitchDesc => 'Mantém as vozes naturais em outras velocidades';
+
+  @override
+  String get playerCacheSeconds => 'Cache (segundos)';
+
+  @override
+  String get playerReadahead => 'Leitura antecipada (segundos)';
+
+  @override
+  String get playerThreads => 'Threads do decodificador';
+
+  @override
+  String get playerDeband => 'Deband';
+
+  @override
+  String get playerDebandDesc => 'Reduz as faixas de cor nos gradientes';
+
+  @override
+  String get playerDebandIterations => 'Iterações do deband';
+
+  @override
+  String get playerDebandThreshold => 'Limiar do deband';
+
+  @override
+  String get playerCorrectDownscaling => 'Redução correta';
+
+  @override
+  String get playerSigmoid => 'Escalonamento sigmoide';
+
+  @override
+  String get playerScale => 'Escalonador';
+
+  @override
+  String get playerCscale => 'Escalonador de croma';
+
+  @override
+  String get playerDscale => 'Redutor';
+
+  @override
+  String get playerToneMapping => 'Tone mapping';
+
+  @override
+  String get playerTargetPeak => 'Pico alvo';
+
+  @override
+  String get playerOpenFiles => 'Abrir arquivos de vídeo';
+
+  @override
+  String get playerOpenFilesDesc => 'Reproduz arquivos desse dispositivo';
+
+  @override
+  String get playerOpenFolder => 'Abrir uma pasta';
+
+  @override
+  String get playerOpenFolderDesc => 'Reproduz todos os vídeos de uma pasta como playlist';
+
+  @override
+  String get playerNetworkStream => 'Stream de rede';
+
+  @override
+  String get playerNetworkStreamDesc => 'Abre um link direto de vídeo ou HLS';
+
+  @override
+  String get playerStreamUrl => 'URL do stream';
+
+  @override
+  String get playerStreamReferer => 'Referer (opcional)';
+
+  @override
+  String get playerTorrent => 'Torrent';
+
+  @override
+  String get playerTorrentDesc => 'Faz stream de um link magnet ou arquivo .torrent';
+
+  @override
+  String get playerMagnetLink => 'Link magnet ou URL de torrent';
+
+  @override
+  String get playerPickTorrent => 'Escolher um arquivo .torrent';
+
+  @override
+  String get playerTorrentMissing => 'Instale primeiro o complemento de torrent em Configurações > Complementos';
+
+  @override
+  String get playerNoVideos => 'Nenhum vídeo reproduzível encontrado';
+
+  @override
+  String get playerReset => 'Redefinir configurações do player';
+
+  @override
+  String get playerResetDesc => 'Volta todas as opções do player pro padrão';
+
+  @override
+  String get playerResetConfirm => 'Redefinir todas as configurações do player?';
+
+  @override
+  String get playerResetDone => 'Configurações do player redefinidas';
+
+  @override
+  String get playerQuality => 'Qualidade';
+
+  @override
+  String get playerStreams => 'Streams';
+
+  @override
+  String get playerAutoSelect => 'Escolher stream automaticamente';
+
+  @override
+  String get playerAutoSelectDesc => 'Escolhe o stream mais parecido com sua última escolha pra esse título';
+
+  @override
+  String get playerLoadingStreams => 'Procurando streams…';
+
+  @override
+  String get playerNoStreams => 'Esse episódio não tem streams';
+
+  @override
+  String get playerNoStreamsTitle => 'Nenhum stream encontrado';
+
+  @override
+  String get playerFailed => 'A reprodução falhou';
+
+  @override
+  String get playerTorrentNeeded => 'Esse stream é um torrent';
+
+  @override
+  String get playerTorrentNeededDesc => 'Instale o complemento de torrent pra reproduzir links magnet e arquivos .torrent';
+
+  @override
+  String get playerOpenAddons => 'Abrir complementos';
+
+  @override
+  String get playerTryAnotherStream => 'Tentar outro stream';
+
+  @override
+  String get playerEpisodes => 'Episódios';
+
+  @override
+  String get playerLock => 'Travar controles';
+
+  @override
+  String get playerFullscreen => 'Tela cheia';
+
+  @override
+  String get settingsReader => 'Leitor';
+
+  @override
+  String get settingsReaderDesc => 'Leitura de mangá, manhwa e novels';
+
+  @override
+  String get readerChapters => 'Capítulos';
+
+  @override
+  String get readerSettingsTitle => 'Configurações do leitor';
+
+  @override
+  String get readerPreviousChapter => 'Capítulo anterior';
+
+  @override
+  String get readerNextChapter => 'Próximo capítulo';
+
+  @override
+  String get readerFirstChapter => 'Esse é o primeiro capítulo';
+
+  @override
+  String get readerLastChapter => 'Você está em dia';
+
+  @override
+  String get readerFailed => 'Não consegui abrir esse capítulo';
+
+  @override
+  String get readerNoText => 'Esse capítulo não tem texto';
+
+  @override
+  String get readerPerTitle => 'Só pra esse título';
+
+  @override
+  String get readerPerTitleDesc => 'Mantém essas configurações do leitor só pra esse título';
+
+  @override
+  String get readerSectionReading => 'Leitura';
+
+  @override
+  String get readerSectionControls => 'Controles';
+
+  @override
+  String get readerSectionDisplay => 'Tela';
+
+  @override
+  String get readerSectionNovel => 'Novel';
+
+  @override
+  String get readerSectionReset => 'Redefinir';
+
+  @override
+  String get readerMode => 'Modo de leitura';
+
+  @override
+  String get readerModeRtl => 'Da direita pra esquerda';
+
+  @override
+  String get readerModeLtr => 'Da esquerda pra direita';
+
+  @override
+  String get readerModeVertical => 'Páginas na vertical';
+
+  @override
+  String get readerModeWebtoon => 'Webtoon';
+
+  @override
+  String get readerModeContinuous => 'Rolagem contínua';
+
+  @override
+  String get readerScale => 'Escala da imagem';
+
+  @override
+  String get readerScaleFit => 'Ajustar à tela';
+
+  @override
+  String get readerScaleWidth => 'Ajustar à largura';
+
+  @override
+  String get readerScaleHeight => 'Ajustar à altura';
+
+  @override
+  String get readerScaleOriginal => 'Tamanho original';
+
+  @override
+  String get readerScaleSmart => 'Ajuste inteligente';
+
+  @override
+  String get readerDoublePage => 'Páginas duplas';
+
+  @override
+  String get readerDoublePageDesc => 'Mostra duas páginas lado a lado na paisagem';
+
+  @override
+  String get readerDoubleTapZoom => 'Toque duplo pra dar zoom';
+
+  @override
+  String get readerDoubleTapZoomDesc => 'Aumenta e diminui uma página com um toque duplo';
+
+  @override
+  String get readerAnimate => 'Animação de página';
+
+  @override
+  String get readerAnimateDesc => 'Animar a troca de páginas';
+
+  @override
+  String get readerSidePadding => 'Margem lateral';
+
+  @override
+  String get readerSidePaddingDesc => 'Espaço ao lado das páginas, em porcentagem';
+
+  @override
+  String get readerPageGap => 'Espaço entre páginas';
+
+  @override
+  String get readerPageGapDesc => 'Espaço entre as páginas';
+
+  @override
+  String get readerAutoNext => 'Continuar no próximo capítulo';
+
+  @override
+  String get readerAutoNextDesc => 'Carrega o próximo capítulo enquanto você lê o final desse';
+
+  @override
+  String get readerPreload => 'Pré-carregar páginas';
+
+  @override
+  String get readerPreloadDesc => 'Quantas páginas baixar com antecedência';
+
+  @override
+  String get readerTapZones => 'Zonas de toque';
+
+  @override
+  String get readerTapDefault => 'Padrão';
+
+  @override
+  String get readerTapLShaped => 'Em L';
+
+  @override
+  String get readerTapKindle => 'Estilo Kindle';
+
+  @override
+  String get readerTapEdge => 'Só as bordas';
+
+  @override
+  String get readerTapOff => 'Desativado';
+
+  @override
+  String get readerInvertTaps => 'Inverter zonas de toque';
+
+  @override
+  String get readerInvertTapsDesc => 'Troca as áreas de anterior e próximo';
+
+  @override
+  String get readerBackground => 'Fundo';
+
+  @override
+  String get readerBackgroundBlack => 'Preto';
+
+  @override
+  String get readerBackgroundGray => 'Cinza';
+
+  @override
+  String get readerBackgroundWhite => 'Branco';
+
+  @override
+  String get readerBackgroundTheme => 'Tema do app';
+
+  @override
+  String get readerFilter => 'Filtro de cor';
+
+  @override
+  String get readerFilterNone => 'Nenhum';
+
+  @override
+  String get readerFilterGrayscale => 'Tons de cinza';
+
+  @override
+  String get readerFilterInvert => 'Inverter';
+
+  @override
+  String get readerFilterSepia => 'Sépia';
+
+  @override
+  String get readerDim => 'Escurecer';
+
+  @override
+  String get readerDimDesc => 'Escurece as páginas';
+
+  @override
+  String get readerPageNumber => 'Número da página';
+
+  @override
+  String get readerPageNumberDesc => 'Mostra o número da página enquanto você lê';
+
+  @override
+  String get readerFullscreen => 'Tela cheia';
+
+  @override
+  String get readerFullscreenDesc => 'Esconde as barras do sistema';
+
+  @override
+  String get readerCropBorders => 'Cortar bordas';
+
+  @override
+  String get readerCropBordersDesc => 'Corta margens brancas ou pretas vazias das páginas';
+
+  @override
+  String get readerVolumeKeys => 'Teclas de volume viram a página';
+
+  @override
+  String get readerVolumeKeysDesc => 'Volume pra baixo avança, volume pra cima volta';
+
+  @override
+  String get readerBookmarks => 'Marcadores';
+
+  @override
+  String get readerBookmarkAdd => 'Adicionar marcador';
+
+  @override
+  String get readerBookmarkRemove => 'Remover marcador';
+
+  @override
+  String get readerBookmarksEmpty => 'Nenhum marcador ainda';
+
+  @override
+  String readerBookmarkPage(int page, int total) {
+    return 'Página $page de $total';
+  }
+
+  @override
+  String get readerAutoScroll => 'Rolagem automática';
+
+  @override
+  String get readerAutoScrollStop => 'Parar rolagem automática';
+
+  @override
+  String get readerAutoScrollSpeed => 'Velocidade da rolagem automática';
+
+  @override
+  String get readerAutoScrollSpeedDesc => 'Com que rapidez as páginas rolam ou viram sozinhas';
+
+  @override
+  String get readerKeepOn => 'Manter a tela ligada';
+
+  @override
+  String get readerKeepOnDesc => 'Impede a tela de apagar enquanto você lê';
+
+  @override
+  String get readerOrientation => 'Orientação';
+
+  @override
+  String get readerOrientationFree => 'Livre';
+
+  @override
+  String get readerOrientationPortrait => 'Retrato';
+
+  @override
+  String get readerOrientationLandscape => 'Paisagem';
+
+  @override
+  String get readerSaveProgress => 'Salvar progresso';
+
+  @override
+  String get readerSaveProgressDesc => 'Lembra da sua página e marca capítulos como lidos';
+
+  @override
+  String get readerReset => 'Redefinir configurações do leitor';
+
+  @override
+  String get readerResetDesc => 'Voltar pro padrão';
+
+  @override
+  String get novelSize => 'Tamanho do texto';
+
+  @override
+  String get novelFont => 'Fonte';
+
+  @override
+  String get novelLineHeight => 'Altura da linha';
+
+  @override
+  String get novelParagraph => 'Espaço entre parágrafos';
+
+  @override
+  String get novelMargin => 'Margens';
+
+  @override
+  String get novelTheme => 'Tema do leitor';
+
+  @override
+  String get novelThemeApp => 'Tema do app';
+
+  @override
+  String get novelThemeLight => 'Claro';
+
+  @override
+  String get novelThemeSepia => 'Sépia';
+
+  @override
+  String get novelThemeDark => 'Escuro';
+
+  @override
+  String get novelThemeBlack => 'Preto';
+
+  @override
+  String get novelJustify => 'Justificar texto';
+
+  @override
+  String get novelJustifyDesc => 'Alinha o texto nas duas bordas';
+
+  @override
+  String get trackProgressTitle => 'Salvar progresso?';
+
+  @override
+  String trackProgressAnime(String name) {
+    return 'Registrar $name na sua lista enquanto assiste? Escolha \"Só nesse dispositivo\" pra manter local, ou Não pra não salvar nada.';
+  }
+
+  @override
+  String trackProgressManga(String name) {
+    return 'Registrar $name na sua lista quando terminar um capítulo? Escolha \"Só nesse dispositivo\" pra manter local, ou Não pra não salvar nada.';
+  }
+
+  @override
+  String get trackProgressRemember => 'Lembrar da minha escolha';
+
+  @override
+  String get trackProgressYes => 'Salvar';
+
+  @override
+  String get trackProgressReset => 'Pergunta de salvar progresso redefinida pra esse tipo, vai perguntar de novo';
+
+  @override
+  String get trackProgressNo => 'Não';
+
+  @override
+  String get trackProgressOff => 'Desligado';
+
+  @override
+  String get trackProgressLocal => 'Só nesse dispositivo';
+
+  @override
+  String get trackProgressSettingAnime => 'Registrar progresso de anime';
+
+  @override
+  String get trackProgressSettingManga => 'Registrar progresso de mangá e novel';
+
+  @override
+  String get trackProgressSettingDesc => 'O que fazer quando você abre um episódio ou termina um capítulo';
+
+  @override
+  String get trackProgressAsk => 'Perguntar';
+
+  @override
+  String get trackProgressAlways => 'Sempre';
+
+  @override
+  String get trackProgressNever => 'Nunca';
+
+  @override
+  String get dantotsuImport => 'Importar do Dantotsu';
+
+  @override
+  String get dantotsuImportDesc => 'Lê um backup de configurações do Dantotsu (.ani, ou .sani criptografado)';
+
+  @override
+  String get dantotsuPick => 'Escolha um backup do Dantotsu';
+
+  @override
+  String get dantotsuNothing => 'Nada nesse arquivo pode ser importado';
+
+  @override
+  String get dantotsuApply => 'Importar selecionados';
+
+  @override
+  String dantotsuDone(int done, int total) {
+    return 'Importados $done de $total';
+  }
+
+  @override
+  String get dantotsuGroupAccounts => 'Contas';
+
+  @override
+  String get dantotsuGroupAppearance => 'Aparência';
+
+  @override
+  String get dantotsuGroupExtensions => 'Extensões';
+
+  @override
+  String get dantotsuGroupApp => 'App';
+
+  @override
+  String get dantotsuGroupPlayer => 'Player';
+
+  @override
+  String get dantotsuAnilist => 'Login do AniList';
+
+  @override
+  String get dantotsuMal => 'Login do MyAnimeList';
+
+  @override
+  String get dantotsuDiscord => 'Token do Discord Rich Presence';
+
+  @override
+  String get dantotsuTheme => 'Tema';
+
+  @override
+  String get dantotsuReposAnime => 'Repositórios de extensões de anime';
+
+  @override
+  String get dantotsuReposManga => 'Repositórios de extensões de mangá';
+
+  @override
+  String get dantotsuReposNovel => 'Repositórios de extensões de novel';
+
+  @override
+  String get dantotsuUpdates => 'Verificação de atualização';
+
+  @override
+  String get dantotsuComments => 'Comentários';
+
+  @override
+  String get dantotsuActivity => 'Verificação de notificações do AniList';
+
+  @override
+  String get dantotsuDns => 'Provedor de DNS';
+
+  @override
+  String get dantotsuPlayer => 'Velocidade do player e cores das legendas';
+
+  @override
+  String get dantotsuWarning => 'Esse arquivo contém tokens de login. Mantenha privado.';
+
+  @override
+  String get novelIndent => 'Recuar parágrafos';
+
+  @override
+  String get novelIndentDesc => 'Começa cada parágrafo com recuo na primeira linha';
+
+  @override
+  String get novelLetterSpacing => 'Espaçamento entre letras';
+
+  @override
+  String get novelSectionTranslate => 'Tradução';
+
+  @override
+  String get sectionExperimental => 'Experimental';
+
+  @override
+  String get kitsuGraphqlDetail => 'Páginas de detalhes mais rápidas (GraphQL)';
+
+  @override
+  String get kitsuGraphqlDetailDesc => 'Carrega um título com personagens, equipe e sua entrada numa requisição só';
+
+  @override
+  String get togetherTitle => 'Assistir junto';
+
+  @override
+  String get togetherIntro => 'Cole o link da sala que seu amigo mandou. Você entra na hora e o player abre quando ele começar a assistir.';
+
+  @override
+  String get togetherName => 'Seu nome';
+
+  @override
+  String get togetherRoom => 'Sala';
+
+  @override
+  String get togetherNewRoom => 'Nova sala aleatória';
+
+  @override
+  String get togetherServer => 'Servidor';
+
+  @override
+  String get togetherPort => 'Porta';
+
+  @override
+  String get togetherPassword => 'Senha do servidor (opcional)';
+
+  @override
+  String get togetherPublicNote => 'Servidores públicos não têm senha e as salas são abertas. Use um nome de sala comprido e compartilhe só com amigos.';
+
+  @override
+  String get togetherConnect => 'Conectar';
+
+  @override
+  String get togetherConnecting => 'Conectando…';
+
+  @override
+  String get togetherLeave => 'Sair da sala';
+
+  @override
+  String get togetherLeftRoom => 'Você saiu da sala';
+
+  @override
+  String get togetherReady => 'Pronto';
+
+  @override
+  String get togetherYou => 'Você';
+
+  @override
+  String get togetherNoChat => 'Nenhuma mensagem ainda';
+
+  @override
+  String get togetherChatHint => 'Mensagem';
+
+  @override
+  String get togetherCopyInvite => 'Copiar convite';
+
+  @override
+  String get togetherInviteCopied => 'Servidor e sala copiados';
+
+  @override
+  String get togetherFileMismatch => 'Arquivo ou duração diferente';
+
+  @override
+  String get togetherConnectionLost => 'Conexão perdida';
+
+  @override
+  String togetherConnectedTo(String room) {
+    return 'Conectado a $room';
+  }
+
+  @override
+  String togetherFailed(String error) {
+    return 'Não consegui conectar: $error';
+  }
+
+  @override
+  String togetherJoined(String name) {
+    return '$name entrou';
+  }
+
+  @override
+  String togetherLeft(String name) {
+    return '$name saiu';
+  }
+
+  @override
+  String togetherPaused(String name) {
+    return '$name pausou';
+  }
+
+  @override
+  String togetherResumed(String name) {
+    return '$name retomou';
+  }
+
+  @override
+  String togetherSeeked(String name, String time) {
+    return '$name pulou pra $time';
+  }
+
+  @override
+  String togetherOtherService(String service) {
+    return 'O host está no $service, a sincronização está desligada';
+  }
+
+  @override
+  String get togetherFollowFailed => 'Não consegui abrir o episódio do host. Abra você mesmo.';
+
+  @override
+  String get togetherHostRole => 'Criar uma sala';
+
+  @override
+  String get togetherJoinRole => 'Entrar numa sala';
+
+  @override
+  String get togetherFollow => 'Seguir o episódio do host';
+
+  @override
+  String get togetherFollowDesc => 'Abre e troca de episódio automaticamente quando você usa o mesmo serviço';
+
+  @override
+  String get togetherOpenHost => 'Abrir episódio do host';
+
+  @override
+  String togetherHostWatching(String title) {
+    return 'Host: $title';
+  }
+
+  @override
+  String get togetherLiveChat => 'Chat ao vivo';
+
+  @override
+  String get togetherShowChat => 'Mostrar chat ao vivo';
+
+  @override
+  String get togetherWaitingHost => 'Esperando o host iniciar um episódio';
+
+  @override
+  String get togetherDifferentService => 'O host está em outro serviço, a sincronização está desligada';
+
+  @override
+  String get togetherNoSource => 'Instale uma extensão de anime pra seguir o host';
+
+  @override
+  String togetherNoMatch(String source) {
+    return 'O $source não tem correspondência pro título do host';
+  }
+
+  @override
+  String togetherNoEpisode(String source) {
+    return 'O $source não tem o episódio do host';
+  }
+
+  @override
+  String get togetherRoomLink => 'Link da sala';
+
+  @override
+  String get togetherBadLink => 'Isso não é um link de sala';
+
+  @override
+  String get togetherHostClosed => 'O host fechou a sala';
+
+  @override
+  String get togetherHostBadge => 'Host';
+
+  @override
+  String get togetherNowPlaying => 'Reproduzindo agora';
+
+  @override
+  String togetherWatchingCount(int count) {
+    return '$count assistindo';
+  }
+
+  @override
+  String togetherWantsPause(String user) {
+    return '$user quer pausar';
+  }
+
+  @override
+  String togetherWantsResume(String user) {
+    return '$user quer retomar';
+  }
+
+  @override
+  String get togetherChip => 'Juntos';
+
+  @override
+  String get togetherSettingsDesc => 'Entre na sala de um amigo com um link';
+
+  @override
+  String get togetherNoPlayer => 'Abra um episódio e ele sincroniza com a sala automaticamente. O chat e a lista de membros já funcionam.';
+
+  @override
+  String togetherWatching(String name, String file) {
+    return '$name está assistindo $file';
+  }
+
+  @override
+  String get novelBilingual => 'Mostrar original e tradução';
+
+  @override
+  String get novelBilingualDesc => 'Cada parágrafo mostra o texto original com a tradução embaixo';
+
+  @override
+  String get novelTranslateTo => 'Traduzir pra';
+
+  @override
+  String get novelTranslateOff => 'Desligado';
+
+  @override
+  String get novelSectionSpeech => 'Texto pra fala';
+
+  @override
+  String get novelSpeechRate => 'Velocidade da fala';
+
+  @override
+  String get novelSpeechPitch => 'Tom da fala';
+
+  @override
+  String get novelSpeak => 'Ler em voz alta';
+
+  @override
+  String get novelSpeakStop => 'Parar leitura em voz alta';
+
+  @override
+  String get novelTranslate => 'Traduzir capítulo';
+
+  @override
+  String get novelTranslateShowOriginal => 'Mostrar original';
+
+  @override
+  String get novelTranslating => 'Traduzindo…';
+
+  @override
+  String novelTranslateFailed(String error) {
+    return 'A tradução falhou: $error';
+  }
+
+  @override
+  String get novelSpeechUnavailable => 'Texto pra fala não está disponível nesse dispositivo';
+
+  @override
+  String get novelSpeechVoice => 'Voz';
+
+  @override
+  String get novelSpeechVoiceDefault => 'Padrão do sistema';
+
+  @override
+  String get novelSpeakPrevious => 'Linha anterior';
+
+  @override
+  String get novelSpeakNext => 'Próxima linha';
+
+  @override
+  String get novelTapPaging => 'Toque nas bordas pra virar a página';
+
+  @override
+  String get novelTapPagingDesc => 'Toque no lado esquerdo ou direito pra rolar uma página, o meio mostra os controles';
+
+  @override
+  String novelMinutesLeft(int count) {
+    return 'faltam $count min';
+  }
+
+  @override
+  String get novelBold => 'Texto em negrito';
+
+  @override
+  String get novelBoldDesc => 'Usa uma espessura maior';
+
+  @override
+  String readerFinishedChapter(String chapter) {
+    return '$chapter finalizado';
+  }
+
+  @override
+  String readerNextUp(String chapter) {
+    return 'Próximo: $chapter';
+  }
+
+  @override
+  String readerPreviousUp(String chapter) {
+    return 'Anterior: $chapter';
+  }
+
+  @override
+  String get readerNoPages => 'Esse capítulo não tem páginas';
+
+  @override
+  String get readerLoadingPages => 'Carregando páginas…';
+
+  @override
+  String get readerSlowPage => 'Essa página ainda está carregando…';
+
+  @override
+  String get readerPageFailed => 'Não consegui carregar essa página';
+
+  @override
+  String get playerShowComments => 'Mostrar comentários';
+
+  @override
+  String get playerHideComments => 'Esconder comentários';
+
+  @override
+  String get playerSubtitles => 'Legendas';
+
+  @override
+  String get playerSubtitlesOff => 'Legendas desligadas';
+
+  @override
+  String get playerAudio => 'Áudio';
+
+  @override
+  String get playerAddSubtitle => 'Adicionar arquivo de legenda';
+
+  @override
+  String get playerAddAudio => 'Adicionar arquivo de áudio';
+
+  @override
+  String get playerChapters => 'Capítulos';
+
+  @override
+  String get playerNoChapters => 'Sem capítulos';
+
+  @override
+  String get playerTimestamp => 'Marcação de tempo';
+
+  @override
+  String get playerAutoPlayDelay => 'Contagem regressiva do próximo episódio';
+
+  @override
+  String get playerWatchedAt => 'Contar como assistido em';
+
+  @override
+  String playerNextIn(int seconds) {
+    return 'Próximo episódio em ${seconds}s';
+  }
+
+  @override
+  String get playerPlayNow => 'Reproduzir agora';
+
+  @override
+  String playerAutoSkipOn(String name) {
+    return '$name: vai pular automaticamente nesse título';
+  }
+
+  @override
+  String playerAutoSkipOff(String name) {
+    return '$name: não vai pular automaticamente nesse título';
+  }
+
+  @override
+  String get playerAudioLanguage => 'Idioma de áudio preferido';
+
+  @override
+  String get playerLanguageOrderHint => 'Separe os idiomas com vírgula. Vale o primeiro que for encontrado.';
+
+  @override
+  String get playerPip => 'Picture in picture';
+
+  @override
+  String get playerPipRestore => 'Voltar pro player';
+
+  @override
+  String get playerAutoPip => 'Picture in picture ao sair';
+
+  @override
+  String get playerAutoPipDesc => 'Continua reproduzindo numa janela pequena quando você sai do app';
+
+  @override
+  String playerAutoPlaying(String title) {
+    return 'Reproduzindo $title em seguida…';
+  }
+
+  @override
+  String playerShadersFailed(String error) {
+    return 'Não consegui instalar os shaders: $error';
+  }
+
+  @override
+  String playerChapter(int number) {
+    return 'Capítulo $number';
+  }
+
+  @override
+  String get playerPerTitle => 'Só pra esse título';
+
+  @override
+  String get playerPerTitleDesc => 'Mantém essas opções pra esse título e deixa seus padrões em paz';
+
+  @override
+  String get playerHoldSpeed => 'Velocidade ao segurar';
+
+  @override
+  String get playerAudioOutput => 'Saída de áudio';
+
+  @override
+  String get fontAppDefault => 'Fonte do app';
+
+  @override
+  String get fontImport => 'Importar fonte';
+
+  @override
+  String get fontSample => 'A rápida raposa marrom pula sobre o cachorro preguiçoso';
+
+  @override
+  String get playerSubtitleDelay => 'Atraso da legenda';
+
+  @override
+  String get playerAudioDelay => 'Atraso do áudio';
+
+  @override
+  String get playerDelayReset => 'Redefinir';
+
+  @override
+  String get playerOnlineSubtitles => 'Legendas online';
+
+  @override
+  String get playerOnlineSearchHint => 'Título e episódio';
+
+  @override
+  String get playerOnlineNone => 'Nenhuma legenda encontrada';
+
+  @override
+  String playerOnlineFailed(String error) {
+    return 'A busca de legendas falhou: $error';
+  }
+
+  @override
+  String playerOnlineDownloadFailed(String error) {
+    return 'Não consegui baixar essa legenda: $error';
+  }
+
+  @override
+  String get playerOnlineMatch => 'Combina com esse arquivo';
+
+  @override
+  String get playerOnlineEpisode => 'Combina com o episódio';
+
+  @override
+  String playerOnlineDownloads(int count) {
+    return '$count downloads';
+  }
+
+  @override
+  String get playerSeekPreview => 'Prévia ao avançar';
+
+  @override
+  String get playerSeekPreviewDesc => 'Mostra uma pequena prévia acima da barra enquanto você arrasta. Abre um segundo decodificador de baixa resolução, então gasta mais dados em streams.';
+
+  @override
+  String get playerSettingsChip => 'Configurações';
+
+  @override
+  String get playerAudioDevice => 'Dispositivo de áudio';
+
+  @override
+  String get settingsDownloads => 'Downloads';
+
+  @override
+  String get settingsDownloadsDesc => 'Episódios offline, fila e modo offline';
+
+  @override
+  String get downloadsTitle => 'Downloads';
+
+  @override
+  String get downloadsOpenDesc => 'Veja a fila e tudo que está salvo nesse dispositivo';
+
+  @override
+  String get downloadTitle => 'Baixar';
+
+  @override
+  String get downloadAlready => 'Já baixado ou na fila';
+
+  @override
+  String get downloadPickStream => 'Baixar qual stream?';
+
+  @override
+  String get downloadPickSubtitle => 'Baixar qual legenda?';
+
+  @override
+  String get downloadPickAudio => 'Baixar qual faixa de áudio?';
+
+  @override
+  String get downloadNoAudio => 'Sem áudio extra';
+
+  @override
+  String get downloadAudio => 'Áudio';
+
+  @override
+  String get downloadNoSubtitle => 'Sem legenda';
+
+  @override
+  String get downloadHlsNeedsFfmpeg => 'Esse stream é uma playlist HLS. Pra baixar, precisa do complemento FFmpeg.';
+
+  @override
+  String get downloadSourceMissing => 'A fonte desse episódio não está instalada';
+
+  @override
+  String get downloadWaitingConnection => 'Esperando conexão';
+
+  @override
+  String get downloadSubtitles => 'Legendas';
+
+  @override
+  String get downloadDownloaded => 'Baixado';
+
+  @override
+  String get downloadOffline => 'Offline';
+
+  @override
+  String get downloadDelete => 'Apagar download';
+
+  @override
+  String get downloadCancel => 'Cancelar';
+
+  @override
+  String get downloadPause => 'Pausar';
+
+  @override
+  String get downloadPaused => 'Pausado';
+
+  @override
+  String get downloadResume => 'Continuar';
+
+  @override
+  String get downloadPauseAll => 'Pausar tudo';
+
+  @override
+  String get downloadResumeAll => 'Continuar tudo';
+
+  @override
+  String get downloadQueuedState => 'Esperando na fila';
+
+  @override
+  String get downloadResolving => 'Pegando o stream…';
+
+  @override
+  String get downloadUsedFallback => 'Nenhum stream correspondente, usei o primeiro';
+
+  @override
+  String get downloadTabQueue => 'Fila';
+
+  @override
+  String get downloadTabDone => 'Concluído';
+
+  @override
+  String get downloadTabFailed => 'Falhou';
+
+  @override
+  String get downloadEmptyQueue => 'Nada sendo baixado';
+
+  @override
+  String get downloadEmptyDone => 'Nada baixado ainda';
+
+  @override
+  String get downloadEmptyFailed => 'Sem downloads com falha';
+
+  @override
+  String get downloadNext => 'Próximo episódio';
+
+  @override
+  String downloadNextN(int count) {
+    return 'Próximos $count episódios';
+  }
+
+  @override
+  String downloadUnwatched(int count) {
+    return 'Todos não assistidos ($count)';
+  }
+
+  @override
+  String downloadRange(int count) {
+    return 'Esse intervalo ($count)';
+  }
+
+  @override
+  String downloadAll(int count) {
+    return 'Todos os episódios ($count)';
+  }
+
+  @override
+  String downloadQueued(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count episódios na fila',
+      one: '1 episódio na fila',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String downloadFinished(String name) {
+    return '$name baixado';
+  }
+
+  @override
+  String downloadFailedBody(String name) {
+    return 'Falha ao baixar $name';
+  }
+
+  @override
+  String downloadStorage(String size) {
+    return '$size usados por downloads';
+  }
+
+  @override
+  String get downloadQueueHeader => 'Fila';
+
+  @override
+  String get downloadParallel => 'Downloads simultâneos';
+
+  @override
+  String get downloadParallelDesc => 'Baixe um por vez ou vários juntos';
+
+  @override
+  String get downloadOneByOne => 'Um por um';
+
+  @override
+  String get downloadNotifications => 'Notificações de download';
+
+  @override
+  String get downloadNotificationsDesc => 'Progresso ao vivo onde o sistema suporta, senão um aviso quando um download termina';
+
+  @override
+  String get downloadNotifyLive => 'Ao vivo';
+
+  @override
+  String get downloadNotifyDone => 'Ao terminar';
+
+  @override
+  String get downloadNotifyOff => 'Desligado';
+
+  @override
+  String get downloadInfoFile => 'Gravar um arquivo de info junto de cada download';
+
+  @override
+  String get downloadInfoFileDesc => 'Salva o stream, qualidade, legenda e tempos de pulo num pequeno arquivo .json';
+
+  @override
+  String get offlineHeader => 'Offline';
+
+  @override
+  String get offlineModeDesc => 'Auto só fica offline quando o app abre sem conexão. Sempre fica offline até você mudar.';
+
+  @override
+  String get offlineModeOff => 'Desligado';
+
+  @override
+  String get offlineModeAlways => 'Sempre';
+
+  @override
+  String get offlineModeOn => 'O modo offline está ligado. As mudanças ficam salvas aqui e são enviadas quando você voltar a ficar online.';
+
+  @override
+  String get offlineLost => 'Você está offline. As mudanças ficam salvas nesse dispositivo';
+
+  @override
+  String get offlineBack => 'De volta online. Sincronizando suas mudanças';
+
+  @override
+  String get offlineSaved => 'Salvo nesse dispositivo, vai sincronizar quando você estiver online';
+
+  @override
+  String offlineSynced(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count mudanças sincronizadas',
+      one: '1 mudança sincronizada',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String offlinePending(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count mudanças esperando sincronizar',
+      one: '1 mudança esperando sincronizar',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get offlinePendingTitle => 'Mudanças esperando sincronizar';
+
+  @override
+  String get offlinePendingNone => 'Nada esperando';
+
+  @override
+  String get offlineSyncNow => 'Sincronizar agora';
+
+  @override
+  String get offlineDiscard => 'Descartar';
+
+  @override
+  String get downloadNotOffline => 'Esse episódio não foi baixado, então não está disponível offline';
+
+  @override
+  String get offlineModeChip => 'Offline';
+
+  @override
+  String get downloadNextChapter => 'Próximo capítulo';
+
+  @override
+  String downloadNextChapters(int count) {
+    return 'Próximos $count capítulos';
+  }
+
+  @override
+  String downloadUnread(int count) {
+    return 'Todos não lidos ($count)';
+  }
+
+  @override
+  String downloadAllChapters(int count) {
+    return 'Todos os capítulos ($count)';
+  }
+
+  @override
+  String downloadPagesProgress(int done, int total) {
+    return '$done / $total páginas';
+  }
+
+  @override
+  String downloadPagesCount(int count) {
+    return '$count páginas';
+  }
+
+  @override
+  String get downloadFfmpegTitle => 'Complemento FFmpeg necessário';
+
+  @override
+  String get downloadFfmpegBody => 'Esse stream é uma playlist HLS. O complemento FFmpeg junta as partes num arquivo mp4 só. Sem ele, as partes ficam numa pasta do episódio e rodam de lá.';
+
+  @override
+  String get downloadFfmpegInstall => 'Instalar';
+
+  @override
+  String get downloadFfmpegInstalling => 'Instalando o FFmpeg, pode demorar um pouco…';
+
+  @override
+  String get downloadFinishing => 'Juntando as partes num arquivo só…';
+
+  @override
+  String downloadSegmentsProgress(int done, int total) {
+    return '$done / $total partes';
+  }
+
+  @override
+  String get downloadTorrentNoFile => 'O torrent não tem arquivo de vídeo pra baixar';
+
+  @override
+  String downloadServiceText(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Baixando $count itens',
+      one: 'Baixando 1 item',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get downloadAutoDelete => 'Apagar downloads assistidos';
+
+  @override
+  String get downloadAutoDeleteDesc => 'Remove um download quando seu progresso chega nesse episódio ou capítulo';
+
+  @override
+  String get downloadConnections => 'Conexões por download';
+
+  @override
+  String get downloadConnectionsDesc => 'Divide um arquivo grande em partes buscadas ao mesmo tempo. Alguns servidores limitam isso.';
+
+  @override
+  String get downloadPlayChoice => 'Reproduzir de';
+
+  @override
+  String get downloadPlayLocalDesc => 'O arquivo salvo nesse dispositivo';
+
+  @override
+  String get downloadPlayStream => 'Stream online';
+
+  @override
+  String get downloadPlayStreamDesc => 'Carrega o episódio da fonte';
+
+  @override
+  String get offlineFeedTitle => 'Baixado nesse dispositivo';
+
+  @override
+  String get offlineFeedEmpty => 'Baixe algo enquanto está online e aparece aqui';
+
+  @override
+  String get offlineEnabled => 'O modo offline está ligado';
+
+  @override
+  String get offlineDisabled => 'O modo offline está desligado';
+
+  @override
+  String get downloadReadChoice => 'Ler de';
+
+  @override
+  String get downloadReadLocalDesc => 'As páginas salvas nesse dispositivo';
+
+  @override
+  String get downloadReadOnline => 'Ler online';
+
+  @override
+  String get downloadReadOnlineDesc => 'Carrega o capítulo da fonte';
+
+  @override
+  String downloadDeleteConfirm(String name) {
+    return 'Apagar $name desse dispositivo?';
+  }
+
+  @override
+  String downloadCancelConfirm(String name) {
+    return 'Cancelar o download de $name? O que já foi baixado é apagado.';
+  }
+
+  @override
+  String get downloadFfmpegFolder => 'Manter como pasta';
+
+  @override
+  String offlineDiscardConfirm(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Descartar $count mudanças que nunca foram enviadas? Isso não dá pra desfazer.',
+      one: 'Descartar a mudança que nunca foi enviada? Isso não dá pra desfazer.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get downloadWaitingWifi => 'Esperando Wi-Fi';
+
+  @override
+  String get downloadWaitingMetered => 'Pausado numa conexão limitada';
+
+  @override
+  String get downloadWifiOnly => 'Só Wi-Fi';
+
+  @override
+  String get downloadWifiOnlyDesc => 'Os downloads esperam enquanto você está no 4G/5G';
+
+  @override
+  String get downloadMetered => 'Pausar em conexões limitadas';
+
+  @override
+  String get downloadMeteredDesc => 'Também espera em Wi-Fi que seu dispositivo marca como limitado';
+
+  @override
+  String get downloadSpeedLimit => 'Limite de velocidade';
+
+  @override
+  String get downloadSpeedLimitDesc => 'Limita a velocidade total de download';
+
+  @override
+  String get downloadUnlimited => 'Ilimitado';
+
+  @override
+  String get downloadMoveToTop => 'Mover pro topo';
+
+  @override
+  String downloadSwarm(int seeds, int peers) {
+    return '$seeds seeds · $peers peers';
+  }
+
+  @override
+  String get downloadTorrentFile => 'Qual arquivo?';
+
+  @override
+  String get downloadTorrentAuto => 'Associar o episódio automaticamente';
+
+  @override
+  String get downloadTorrentLoading => 'Lendo o torrent…';
+
+  @override
+  String get watchAutoSource => 'Trocar pra próxima fonte automaticamente';
+
+  @override
+  String get watchAutoSourceDesc => 'Se a fonte não achar o título ou falhar ao carregar, tenta a próxima instalada';
+
+  @override
+  String get extensionTest => 'Testar extensões';
+
+  @override
+  String get extensionTestCopy => 'Copia as falhas e os respectivos logs';
+
+  @override
+  String get extensionTestQuery => 'Termo de busca';
+
+  @override
+  String get extensionTestRun => 'Executar';
+
+  @override
+  String get extensionTestStop => 'Parar';
+
+  @override
+  String get extensionTestNone => 'Nenhuma extensão instalada desse tipo';
+
+  @override
+  String get extensionTestNotRun => 'Ainda não testado';
+
+  @override
+  String get extensionTestSearch => 'Busca';
+
+  @override
+  String get extensionTestDetail => 'Detalhes';
+
+  @override
+  String get extensionTestUnits => 'Episódios / capítulos';
+
+  @override
+  String get extensionTestLinks => 'Streams / páginas';
+
+  @override
+  String extensionTestFailedAt(String step) {
+    return 'Falhou em $step';
+  }
+
+  @override
+  String extensionTestSummary(int done, int total, int passed, int failed) {
+    return '$done de $total testadas · $passed passaram · $failed falharam';
+  }
+
+  @override
+  String get extensionTestCopyLogs => 'Copia tudo com os logs completos';
+
+  @override
+  String get onboardingFeaturesTitle => 'Tudo num lugar só';
+
+  @override
+  String get onboardingFeaturesBody => 'Tudo que você acompanha, assiste e lê, sem ficar pulando entre apps.';
+
+  @override
+  String get onboardingFeatureTrack => 'Acompanhe tudo';
+
+  @override
+  String get onboardingFeatureTrackDesc => 'Listas, progresso e notas no AniList, MyAnimeList, Simkl, Kitsu e MangaBaka.';
+
+  @override
+  String get onboardingFeatureWatch => 'Assista e leia';
+
+  @override
+  String get onboardingFeatureWatchDesc => 'Instale extensões e assista anime em streaming ou leia mangá e novels direto no app.';
+
+  @override
+  String get onboardingFeatureOffline => 'Leve pro offline';
+
+  @override
+  String get onboardingFeatureOfflineDesc => 'Baixe episódios e capítulos e continue sem conexão.';
+
+  @override
+  String get onboardingFeatureSync => 'Mantenha as listas sincronizadas';
+
+  @override
+  String get onboardingFeatureSyncDesc => 'Espelhe sua lista entre os serviços, ou deixe ganhar quem estiver na frente.';
+
+  @override
+  String get onboardingThemeShape => 'Cores';
+
+  @override
+  String get onboardingServices => 'Funciona com';
+}
+
+/// The translations for Portuguese, as used in Brazil (`pt_BR`).
+class AppLocalizationsPtBr extends AppLocalizationsPt {
+  AppLocalizationsPtBr(): super('pt_BR');
+
+  @override
+  String get appName => 'Dartotsu';
+
+  @override
+  String get appTagline => 'O NOVO melhor app pra\nacompanhar anime e mangá';
+
+  @override
+  String get anilist => 'AniList';
+
+  @override
+  String get mal => 'MyAnimeList';
+
+  @override
+  String get simkl => 'Simkl';
+
+  @override
+  String get kitsu => 'Kitsu';
+
+  @override
+  String get mangaBaka => 'MangaBaka';
+
+  @override
+  String get discord => 'Discord';
+
+  @override
+  String get loadMore => 'Carregar mais';
+
+  @override
+  String get login => 'Entrar';
+
+  @override
+  String get continueAsGuest => 'Continuar como visitante';
+
+  @override
+  String get getStarted => 'Começar';
+
+  @override
+  String get loginWithToken => 'Entrar com token';
+
+  @override
+  String get pasteTokenHint => 'Cole seu token de acesso';
+
+  @override
+  String loginTo(String service) {
+    return 'Entrar no $service';
+  }
+
+  @override
+  String get settings => 'Configurações';
+
+  @override
+  String get account => 'Conta';
+
+  @override
+  String get about => 'Sobre';
+
+  @override
+  String get language => 'Idioma';
+
+  @override
+  String get animationSpeed => 'Animações';
+
+  @override
+  String get animationSpeedDesc => 'Velocidade das transições e dos efeitos de entrada no app';
+
+  @override
+  String get animationSpeedOff => 'Desligado';
+
+  @override
+  String extension(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Extensões',
+      one: 'Extensão',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get unknownSource => 'Fonte desconhecida';
+
+  @override
+  String get install => 'Instalar';
+
+  @override
+  String get update => 'Atualizar';
+
+  @override
+  String get uninstall => 'Desinstalar';
+
+  @override
+  String get installFailed => 'Falha ao instalar';
+
+  @override
+  String get updateFailed => 'Falha ao atualizar';
+
+  @override
+  String get noSourceSettings => 'A fonte não tem configurações';
+
+  @override
+  String get addPluginRepository => 'Adicionar repositório de plugins';
+
+  @override
+  String get pluginIndexUrlHint => 'URL do índice de plugins';
+
+  @override
+  String get addRepository => 'Adicionar repositório';
+
+  @override
+  String get pluginRepoUpdated => 'Repositório de plugins atualizado';
+
+  @override
+  String get pluginRepoUpdateFailed => 'Falha ao atualizar o repositório de plugins';
+
+  @override
+  String get ok => 'OK';
+
+  @override
+  String get cancel => 'Cancelar';
+
+  @override
+  String get yes => 'Sim';
+
+  @override
+  String get no => 'Não';
+
+  @override
+  String get save => 'Salvar';
+
+  @override
+  String get reset => 'Redefinir';
+
+  @override
+  String get clear => 'Limpar';
+
+  @override
+  String get test => 'Testar';
+
+  @override
+  String get testing => 'Testando…';
+
+  @override
+  String get resolving => 'Resolvendo…';
+
+  @override
+  String get none => 'Nenhum';
+
+  @override
+  String get selectMediaService => 'Escolher serviço de mídia';
+
+  @override
+  String get pickColor => 'Escolha uma cor';
+
+  @override
+  String get colorPickerDefault => 'Padrão';
+
+  @override
+  String get colorPickerCustom => 'Personalizado';
+
+  @override
+  String get colorPickerTransparent => 'Transparente';
+
+  @override
+  String get ltr => 'Da esquerda pra direita';
+
+  @override
+  String get searchSettings => 'Buscar configurações';
+
+  @override
+  String nothingMatches(String query) {
+    return 'Nada encontrado pra \"$query\"';
+  }
+
+  @override
+  String searchCategory(String category) {
+    return 'Buscar em $category';
+  }
+
+  @override
+  String get settingsAppearance => 'Aparência';
+
+  @override
+  String get settingsAppearanceDesc => 'Tema, cores, modo vidro';
+
+  @override
+  String get settingsGeneral => 'Geral';
+
+  @override
+  String get settingsGeneralDesc => 'Idioma e comportamento';
+
+  @override
+  String get settingsAccountDesc => 'Serviço de acompanhamento e login';
+
+  @override
+  String get settingsUpdates => 'Atualizações';
+
+  @override
+  String get settingsUpdatesDesc => 'Canal de versões e verificações';
+
+  @override
+  String get settingsAboutDesc => 'Versão, links, suporte';
+
+  @override
+  String get amoledBlack => 'Preto AMOLED';
+
+  @override
+  String get amoledBlackDesc => 'Superfícies totalmente pretas no modo escuro';
+
+  @override
+  String get glassMode => 'Modo vidro';
+
+  @override
+  String get glassModeDesc => 'Superfícies foscas sobre as capas da sua biblioteca';
+
+  @override
+  String get shelfFrame => 'Moldura em volta das seções';
+
+  @override
+  String get shelfFrameDesc => 'Mostra um cartão atrás de cada prateleira, ou deixa as linhas direto na página';
+
+  @override
+  String get settingsExtensionsDesc => 'Gerenciadores de fontes, repositórios e opções das extensões';
+
+  @override
+  String get settingsAddons => 'Complementos';
+
+  @override
+  String get settingsAddonsDesc => 'Componentes opcionais, como o servidor de torrent';
+
+  @override
+  String get customPath => 'Caminho de armazenamento personalizado';
+
+  @override
+  String get customPathDesc => 'Onde ficam os dados do app. Segure pra redefinir';
+
+  @override
+  String get selectDirectory => 'Selecionar pasta';
+
+  @override
+  String get differentCacheManager => 'Cache de imagens alternativo';
+
+  @override
+  String get differentCacheManagerDesc => 'Usa outro gerenciador de cache pras imagens';
+
+  @override
+  String get backupAndRestore => 'Backup e restauração';
+
+  @override
+  String get backupAndRestoreDesc => 'Salve ou carregue suas preferências';
+
+  @override
+  String get backup => 'Backup';
+
+  @override
+  String get restore => 'Restaurar';
+
+  @override
+  String get loadExtensionsIcon => 'Carregar ícones das extensões';
+
+  @override
+  String get loadExtensionsIconDesc => 'Mostra os ícones das fontes nas listas de extensões';
+
+  @override
+  String get sectionStorage => 'Armazenamento';
+
+  @override
+  String get sectionBackup => 'Backup';
+
+  @override
+  String get sectionManagers => 'Gerenciadores';
+
+  @override
+  String get sectionOptions => 'Opções';
+
+  @override
+  String get backupTabBackup => 'Fazer backup';
+
+  @override
+  String get backupTabRestore => 'Restaurar';
+
+  @override
+  String backupSummary(Object keys, Object categories) {
+    return '$keys configurações em $categories categorias';
+  }
+
+  @override
+  String backupLastBackup(Object time) {
+    return 'Último backup $time';
+  }
+
+  @override
+  String get backupNever => 'Nenhum backup ainda';
+
+  @override
+  String get backupSelectAll => 'Selecionar tudo';
+
+  @override
+  String get backupClearAll => 'Limpar';
+
+  @override
+  String backupKeys(Object count) {
+    return '$count configurações';
+  }
+
+  @override
+  String get backupPassword => 'Senha (opcional)';
+
+  @override
+  String get backupPasswordHint => 'Deixe vazio pra usar a padrão';
+
+  @override
+  String get backupSensitive => 'Inclui tokens de login. Mantenha esse arquivo privado';
+
+  @override
+  String get backupCreate => 'Criar backup';
+
+  @override
+  String backupSaved(Object name) {
+    return 'Backup salvo em $name';
+  }
+
+  @override
+  String backupFailed(Object error) {
+    return 'Falha no backup: $error';
+  }
+
+  @override
+  String get backupPickFile => 'Escolha um arquivo de backup';
+
+  @override
+  String get backupPickFileDesc => 'Escolha um arquivo .json feito pelo Dartotsu';
+
+  @override
+  String get backupChooseAnother => 'Escolher outro arquivo';
+
+  @override
+  String get backupCreatedAt => 'Criado';
+
+  @override
+  String get backupAppVersion => 'Versão do app';
+
+  @override
+  String get backupDevice => 'Dispositivo';
+
+  @override
+  String get backupAccounts => 'Contas';
+
+  @override
+  String get backupSize => 'Tamanho';
+
+  @override
+  String get backupEncrypted => 'Protegido por senha';
+
+  @override
+  String get backupUnlock => 'Desbloquear';
+
+  @override
+  String get backupWrongPassword => 'Não consegui ler esse arquivo. Confira a senha';
+
+  @override
+  String get backupRestoreSelected => 'Restaurar selecionados';
+
+  @override
+  String backupRestoreConfirm(Object count) {
+    return 'Restaurar $count configurações? Os valores existentes nessas categorias serão sobrescritos.';
+  }
+
+  @override
+  String get backupRestored => 'Restaurado. Reinicie o app pra aplicar tudo';
+
+  @override
+  String backupRestoreFailed(Object error) {
+    return 'Falha na restauração: $error';
+  }
+
+  @override
+  String get backupSelectOne => 'Selecione pelo menos uma categoria';
+
+  @override
+  String get backupCatTheme => 'Aparência';
+
+  @override
+  String get backupCatThemeDesc => 'Tema, cores, vidro, fontes e estilo dos cartões';
+
+  @override
+  String get backupCatCommon => 'Geral';
+
+  @override
+  String get backupCatCommonDesc => 'Idioma, armazenamento, rede e opções das extensões';
+
+  @override
+  String get backupCatPlayer => 'Player';
+
+  @override
+  String get backupCatPlayerDesc => 'Preferências do player';
+
+  @override
+  String get backupCatReader => 'Leitor';
+
+  @override
+  String get backupCatReaderDesc => 'Preferências do leitor';
+
+  @override
+  String get backupCatProtected => 'Contas';
+
+  @override
+  String get backupCatProtectedDesc => 'Tokens de login e dados de sessão';
+
+  @override
+  String get backupCatOther => 'Serviços e feeds';
+
+  @override
+  String get backupCatOtherDesc => 'Layout dos feeds, listas e opções dos serviços';
+
+  @override
+  String get logFile => 'Arquivo de log';
+
+  @override
+  String get logFileDesc => 'Compartilhe o log do app ou copie o caminho no Linux';
+
+  @override
+  String get logFileCopied => 'Caminho do log copiado';
+
+  @override
+  String get donateSheetTitle => 'Curtindo o Dartotsu?';
+
+  @override
+  String get donateSheetMessage => 'O Dartotsu é feito e mantido por uma pessoa só. Se ele é útil pra você, pense em apoiar o desenvolvimento.';
+
+  @override
+  String get donateLater => 'Talvez depois';
+
+  @override
+  String get glassBackground => 'Fundo de vidro';
+
+  @override
+  String get glassBackgroundDesc => 'O banner do seu perfil, a menos que você defina um link de imagem';
+
+  @override
+  String get glassBackgroundHint => 'Link da imagem (deixe vazio pra usar seu banner)';
+
+  @override
+  String get followCover => 'Seguir a capa';
+
+  @override
+  String get followCoverDesc => 'As cores seguem o fundo e, nas páginas de detalhes, a capa';
+
+  @override
+  String get cardStyle => 'Estilo dos cartões';
+
+  @override
+  String get cardStyleDesc => 'Posição do título, tamanho, progresso e selos';
+
+  @override
+  String get customFont => 'Fonte';
+
+  @override
+  String get customFontDesc => 'Padrão, um arquivo do seu dispositivo ou Google Fonts';
+
+  @override
+  String get customFontError => 'Não consegui carregar esse arquivo de fonte';
+
+  @override
+  String get googleFontError => 'Não consegui baixar essa fonte';
+
+  @override
+  String get yourFonts => 'Suas fontes';
+
+  @override
+  String get addFontFile => 'Adicionar arquivo de fonte…';
+
+  @override
+  String get browseGoogleFonts => 'Explorar Google Fonts…';
+
+  @override
+  String get searchGoogleFonts => 'Buscar no Google Fonts';
+
+  @override
+  String get defaultFont => 'Padrão';
+
+  @override
+  String get materialYou => 'Material You';
+
+  @override
+  String get materialYouDesc => 'Cor dinâmica do sistema';
+
+  @override
+  String get jsonTheme => 'Arquivo de tema personalizado';
+
+  @override
+  String get jsonThemeDesc => 'Cores ao vivo de ~/.config/dartotsu/theme.json (um script seu ou edições manuais)';
+
+  @override
+  String get themeMode => 'Modo do tema';
+
+  @override
+  String get mode => 'Modo';
+
+  @override
+  String get trackingService => 'Serviço de acompanhamento';
+
+  @override
+  String get signOut => 'Sair';
+
+  @override
+  String get signIn => 'Entrar';
+
+  @override
+  String get notSignedIn => 'Sem login';
+
+  @override
+  String signOutOf(String service) {
+    return 'Sair do $service?';
+  }
+
+  @override
+  String get checkForUpdates => 'Buscar atualizações';
+
+  @override
+  String get checkForUpdatesDesc => 'Avisar quando sair uma nova versão no GitHub';
+
+  @override
+  String get updateChannel => 'Canal de atualização';
+
+  @override
+  String get channel => 'Canal';
+
+  @override
+  String get stable => 'Estável';
+
+  @override
+  String get preRelease => 'Pré-lançamento';
+
+  @override
+  String get alpha => 'Alfa';
+
+  @override
+  String get checkNow => 'Verificar agora';
+
+  @override
+  String get userAgent => 'User-Agent';
+
+  @override
+  String get settingDefault => 'Padrão';
+
+  @override
+  String currentlyUsing(String value) {
+    return 'Atual: $value';
+  }
+
+  @override
+  String get dnsOverHttps => 'DNS-over-HTTPS';
+
+  @override
+  String get dnsDefault => 'Padrão (Cloudflare)';
+
+  @override
+  String get proxy => 'Proxy';
+
+  @override
+  String get proxyProtocol => 'Tipo';
+
+  @override
+  String get proxyHost => 'Host';
+
+  @override
+  String get proxyPort => 'Porta';
+
+  @override
+  String get proxyUsername => 'Nome de usuário';
+
+  @override
+  String get proxyPassword => 'Senha';
+
+  @override
+  String get optional => 'Opcional';
+
+  @override
+  String get clearCookies => 'Limpar cookies';
+
+  @override
+  String get clearCookiesDesc => 'Remove todos os cookies salvos';
+
+  @override
+  String notImplementedArea(String area) {
+    return '$area — em breve';
+  }
+
+  @override
+  String notImplementedService(String service) {
+    return 'O $service ainda não suporta isso.';
+  }
+
+  @override
+  String get couldNotLoadResults => 'Não consegui carregar os resultados';
+
+  @override
+  String get updateCheckFailed => 'Não consegui verificar atualizações';
+
+  @override
+  String get highRefreshRate => 'Taxa de atualização alta';
+
+  @override
+  String get highRefreshRateDesc => 'Usa a maior taxa de atualização que a sua tela suporta';
+
+  @override
+  String get imageSave => 'Salvar imagem';
+
+  @override
+  String imageSavedTo(String path) {
+    return 'Salvo em $path';
+  }
+
+  @override
+  String get imageActionFailed => 'Não consegui baixar a imagem';
+
+  @override
+  String get imageTitleCover => 'Capa';
+
+  @override
+  String get imageTitleBanner => 'Banner';
+
+  @override
+  String get imageTitleAvatar => 'Foto de perfil';
+
+  @override
+  String get verifyTls => 'Verificar certificados';
+
+  @override
+  String get verifyTlsDesc => 'Rejeita servidores com certificado HTTPS inválido. Desligue só pra uma fonte que usa um autoassinado';
+
+  @override
+  String get clearCookiesConfirm => 'Remover todos os cookies salvos? Isso pode deslogar você de algumas fontes.';
+
+  @override
+  String get version => 'Versão';
+
+  @override
+  String get gitHub => 'GitHub';
+
+  @override
+  String get gitHubDesc => 'Código, issues e releases';
+
+  @override
+  String get discordDesc => 'Comunidade e suporte';
+
+  @override
+  String get donate => 'Me pague um café';
+
+  @override
+  String get donateDesc => 'Apoiar o desenvolvimento';
+
+  @override
+  String get contributors => 'Colaboradores';
+
+  @override
+  String get contributorsDesc => 'As pessoas que construíram o Dartotsu';
+
+  @override
+  String get contributorsLoadFailed => 'Não consegui carregar os colaboradores';
+
+  @override
+  String get forks => 'Forks';
+
+  @override
+  String get forksDesc => 'Projetos feitos em cima do Dartotsu';
+
+  @override
+  String get forksEmpty => 'Nenhum fork encontrado';
+
+  @override
+  String get sectionColors => 'Cores';
+
+  @override
+  String get sectionDisplay => 'Tela';
+
+  @override
+  String get sectionStyle => 'Estilo';
+
+  @override
+  String get sectionCommunity => 'Comunidade';
+
+  @override
+  String get sectionAppInfo => 'Info do app';
+
+  @override
+  String get sectionCache => 'Cache';
+
+  @override
+  String get sectionRequests => 'Requisições';
+
+  @override
+  String get sectionDnsProxy => 'DNS e proxy';
+
+  @override
+  String get onboardingBack => 'Voltar';
+
+  @override
+  String get onboardingNext => 'Próximo';
+
+  @override
+  String get onboardingSkip => 'Pular';
+
+  @override
+  String get onboardingPaletteTitle => 'Deixe com a sua cara';
+
+  @override
+  String get onboardingPaletteBody => 'Escolha uma paleta. Todos os destaques, dos cartões ao player, seguem ela.';
+
+  @override
+  String get themeModeAuto => 'Auto';
+
+  @override
+  String get themeModeLight => 'Claro';
+
+  @override
+  String get themeModeDark => 'Escuro';
+
+  @override
+  String get onboardingSyncTitle => 'Sincronize sua biblioteca';
+
+  @override
+  String get onboardingSyncBody => 'Entre com o AniList pra trazer suas listas, progresso e notas. Ou pule e explore como visitante.';
+
+  @override
+  String get onboardingOpenLinks => 'Abrir links do AniList e de repositórios no Dartotsu';
+
+  @override
+  String get onboardingPermsTitle => 'Permissões';
+
+  @override
+  String get onboardingPermsBody => 'Libere agora pra downloads, atualizações e alertas funcionarem sem interrupção. Você pode mudar depois nas configurações do sistema.';
+
+  @override
+  String get permNotifications => 'Notificações';
+
+  @override
+  String get permNotificationsDesc => 'Progresso dos downloads, novos episódios e respostas';
+
+  @override
+  String get permStorage => 'Acesso a todos os arquivos';
+
+  @override
+  String get permStorageDesc => 'Salvar downloads na pasta pública do Dartotsu';
+
+  @override
+  String get permInstall => 'Instalar atualizações';
+
+  @override
+  String get permInstallDesc => 'Deixa o Dartotsu instalar as próprias atualizações';
+
+  @override
+  String get permBattery => 'Bateria sem restrições';
+
+  @override
+  String get permBatteryDesc => 'Mantém downloads longos rodando em segundo plano';
+
+  @override
+  String get permGrant => 'Permitir';
+
+  @override
+  String get permGranted => 'Permitido';
+
+  @override
+  String get linkOpenInApp => 'Abrir links no Dartotsu';
+
+  @override
+  String get linkOpenInAppDesc => 'Deixa os links do AniList e de repositórios abrirem o app';
+
+  @override
+  String get reviewsTitle => 'Reviews';
+
+  @override
+  String get reviewsEmpty => 'Nenhum review ainda';
+
+  @override
+  String get reviewsFailed => 'Não consegui carregar os reviews';
+
+  @override
+  String get reviewHelpfulQuestion => 'Esse review foi útil?';
+
+  @override
+  String get reviewVoteFailed => 'Não consegui salvar seu voto';
+
+  @override
+  String reviewHelpful(int n, int total) {
+    return '$n de $total acharam isso útil';
+  }
+
+  @override
+  String get calendarTitle => 'Calendário de exibição';
+
+  @override
+  String get calendarToday => 'Hoje';
+
+  @override
+  String get calendarEmpty => 'Nada vai ao ar nesse dia';
+
+  @override
+  String get calendarFailed => 'Não consegui carregar o calendário';
+
+  @override
+  String calendarEpisode(int n) {
+    return 'Episódio $n';
+  }
+
+  @override
+  String get shareAnalytics => 'Compartilhar dados de uso anônimos';
+
+  @override
+  String get shareAnalyticsDesc => 'Contagem anônima de usuários e relatórios de falha. Sem conta nem dados pessoais';
+
+  @override
+  String get linkOpenAnilist => 'Abrir links do AniList no Dartotsu';
+
+  @override
+  String get linkOpenAnilistDesc => 'Ative o tratamento de links pra os links anilist.co abrirem o app';
+
+  @override
+  String get linkSettingsFailed => 'Não consegui abrir as configurações do sistema';
+
+  @override
+  String get discordRichPresence => 'Rich Presence';
+
+  @override
+  String get discordRichPresenceTokenDesc => 'Mostra o que você está fazendo no seu perfil do Discord. Precisa do seu token do Discord.';
+
+  @override
+  String get discordRichPresenceDesktopDesc => 'Mostra o que você está fazendo no seu perfil do Discord. Precisa do app de desktop do Discord aberto.';
+
+  @override
+  String get discordBrowsing => 'Mostrar atividade de navegação';
+
+  @override
+  String get discordBrowsingDesc => 'Mostra também a aba, página ou perfil que você está vendo, não só o que assiste ou lê.';
+
+  @override
+  String get discordLookHeader => 'Visual da presença';
+
+  @override
+  String get discordActivityType => 'Tipo de atividade';
+
+  @override
+  String get discordActivityTypeDesc => 'Como o Discord escreve: \"Assistindo …\" ou \"Jogando …\". Auto usa Assistindo pra anime e Jogando pro resto.';
+
+  @override
+  String get discordWatching => 'Assistindo';
+
+  @override
+  String get discordPlaying => 'Jogando';
+
+  @override
+  String get discordCovers => 'Mostrar capas';
+
+  @override
+  String get discordCoversDesc => 'Capa e ícone do Dartotsu no cartão.';
+
+  @override
+  String get discordTimer => 'Mostrar timer';
+
+  @override
+  String get discordTimerDesc => 'Tempo decorrido ou restante embaixo do título.';
+
+  @override
+  String get discordButtons => 'Mostrar botões';
+
+  @override
+  String get discordButtonsDesc => 'Botões \"Ver anime / mangá\" e \"Abrir Dartotsu\".';
+
+  @override
+  String get discordHideTitles => 'Esconder títulos';
+
+  @override
+  String get discordHideTitlesDesc => 'Troca os nomes de anime e mangá (e a capa e o link) por \"Algo privado\".';
+
+  @override
+  String get discordConnectionHeader => 'Conexão';
+
+  @override
+  String get listSearchHint => 'Buscar nessa lista';
+
+  @override
+  String get listSort => 'Ordenar';
+
+  @override
+  String get listFilter => 'Filtrar';
+
+  @override
+  String get listRandom => 'Título aleatório';
+
+  @override
+  String get listReverse => 'Inverter ordem';
+
+  @override
+  String get listSortDefault => 'Ordem da lista';
+
+  @override
+  String get listSortScore => 'Sua nota';
+
+  @override
+  String get listSortTitle => 'Título';
+
+  @override
+  String get listSortUpdated => 'Última atualização';
+
+  @override
+  String get listSortProgress => 'Progresso';
+
+  @override
+  String get listSortReleased => 'Data de lançamento';
+
+  @override
+  String get listSortAverage => 'Nota média';
+
+  @override
+  String get listFilterFormat => 'Formato';
+
+  @override
+  String get listFilterStatus => 'Status';
+
+  @override
+  String get listFilterGenres => 'Gêneros';
+
+  @override
+  String get listFilterClear => 'Limpar filtros';
+
+  @override
+  String get listNoMatches => 'Nada nessa lista corresponde';
+
+  @override
+  String get discordLogin => 'Entrar no Discord';
+
+  @override
+  String get discordToken => 'Token do Discord';
+
+  @override
+  String get discordTokenSaved => 'Salvo. Toque pra trocar, segure pra remover.';
+
+  @override
+  String get discordTokenNotSet => 'Não definido. Toque pra adicionar.';
+
+  @override
+  String get discordTokenPrompt => 'Cole o token da conta do Discord em que você quer mostrar a presença. Ele fica só nesse dispositivo.';
+
+  @override
+  String get discordTokenHint => 'Token';
+
+  @override
+  String get discordTokenSavedSnack => 'Token do Discord salvo';
+
+  @override
+  String get discordTokenRemovedSnack => 'Token do Discord removido';
+
+  @override
+  String get discordRichPresenceRow => 'Discord Rich Presence';
+
+  @override
+  String get discordRichPresenceRowOn => 'Ligado · toque pra mudar o visual';
+
+  @override
+  String get discordRichPresenceRowOff => 'Mostra o que você está fazendo no seu perfil do Discord';
+
+  @override
+  String get loginCancelled => 'Login cancelado';
+
+  @override
+  String get invalidToken => 'Token inválido';
+
+  @override
+  String loginFailed(String error) {
+    return 'Falha no login: $error';
+  }
+
+  @override
+  String get malLoginFailed => 'Falha no login do MyAnimeList';
+
+  @override
+  String get kitsuLoginFailed => 'Falha no login do Kitsu. Confira seu e-mail e senha.';
+
+  @override
+  String get kitsuLoginTitle => 'Entrar no Kitsu';
+
+  @override
+  String get emailOrUsername => 'E-mail ou nome de usuário';
+
+  @override
+  String get password => 'Senha';
+
+  @override
+  String get kitsuProfile => 'Perfil do Kitsu';
+
+  @override
+  String get mangaBakaLoginFailed => 'Falha no login do MangaBaka';
+
+  @override
+  String get mangaBakaProfile => 'Perfil do MangaBaka';
+
+  @override
+  String get refreshFromMangaBaka => 'Atualizar do MangaBaka';
+
+  @override
+  String get artistsLabel => 'Artistas';
+
+  @override
+  String get authorsLabel => 'Autores';
+
+  @override
+  String get publishersLabel => 'Editoras';
+
+  @override
+  String get licensedLabel => 'Licenciado';
+
+  @override
+  String get contentRatingLabel => 'Classificação indicativa';
+
+  @override
+  String get yesLabel => 'Sim';
+
+  @override
+  String get noLabel => 'Não';
+
+  @override
+  String get ratingSteps => 'Escala de notas';
+
+  @override
+  String get hideNsfw => 'Esconder NSFW';
+
+  @override
+  String get hideNsfwDesc => 'Tira títulos adultos dos feeds e da busca e lista suas entradas adultas em Mídia oculta.';
+
+  @override
+  String get kitsuAccountOptions => 'Opções da conta Kitsu';
+
+  @override
+  String get couldNotUpdateKitsuSettings => 'Não consegui atualizar suas configurações do Kitsu';
+
+  @override
+  String get titleCanonical => 'Canônico';
+
+  @override
+  String get titleRomanized => 'Romanizado';
+
+  @override
+  String get titleLocalized => 'Localizado';
+
+  @override
+  String get ratingSystem => 'Sistema de notas';
+
+  @override
+  String get ratingSimple => 'Simples (3 carinhas)';
+
+  @override
+  String get ratingRegular => 'Normal (5 estrelas)';
+
+  @override
+  String get ratingAdvanced => 'Avançado (10 pontos)';
+
+  @override
+  String get contentFilter => 'Filtro de conteúdo';
+
+  @override
+  String get contentSfw => 'Só conteúdo seguro';
+
+  @override
+  String get contentSometimes => 'Conteúdo adulto nas buscas';
+
+  @override
+  String get contentEverywhere => 'Conteúdo adulto em todo lugar';
+
+  @override
+  String get shareToGlobal => 'Compartilhar no feed global';
+
+  @override
+  String get shareToGlobalDesc => 'Deixa sua atividade aparecer no feed global do Kitsu.';
+
+  @override
+  String get memberSince => 'Membro desde';
+
+  @override
+  String get location => 'Localização';
+
+  @override
+  String get accountType => 'Tipo de conta';
+
+  @override
+  String get accountSupporter => 'Apoiador';
+
+  @override
+  String get accountFree => 'Grátis';
+
+  @override
+  String get accountDetails => 'Detalhes da conta';
+
+  @override
+  String get refreshFromKitsu => 'Atualizar do Kitsu';
+
+  @override
+  String get simklReadOnly => 'O Simkl deu acesso somente leitura';
+
+  @override
+  String get incognitoEditsBlocked => 'Anônimo: edições na lista bloqueadas';
+
+  @override
+  String serviceError(String service, String error) {
+    return '$service: $error';
+  }
+
+  @override
+  String get incognitoProgressNotSaved => 'Anônimo: progresso não salvo';
+
+  @override
+  String progressSet(int progress) {
+    return 'Progresso definido pra $progress';
+  }
+
+  @override
+  String removedFromList(String title) {
+    return '$title removido da sua lista';
+  }
+
+  @override
+  String get following => 'Seguindo';
+
+  @override
+  String get homeSections => 'Seções do início';
+
+  @override
+  String get homeSectionsHint => 'Arraste pra reordenar. Seções escondidas nunca são carregadas.';
+
+  @override
+  String get customListDeleteFailed => 'Falha ao apagar a lista personalizada';
+
+  @override
+  String get customListsSaveFailed => 'Falha ao salvar as listas personalizadas';
+
+  @override
+  String get customListsSaved => 'Listas personalizadas salvas';
+
+  @override
+  String get listName => 'Nome da lista';
+
+  @override
+  String get addList => 'Adicionar lista';
+
+  @override
+  String voiceActorsIn(String name) {
+    return 'Dubladores · $name';
+  }
+
+  @override
+  String get animeAppearances => 'Aparições em anime';
+
+  @override
+  String get mangaAppearances => 'Aparições em mangá';
+
+  @override
+  String get voicedCharacters => 'Personagens dubladas';
+
+  @override
+  String get animeCredits => 'Créditos em anime';
+
+  @override
+  String get mangaCredits => 'Créditos em mangá';
+
+  @override
+  String get mainProductions => 'Produções principais';
+
+  @override
+  String get otherWorks => 'Outros trabalhos';
+
+  @override
+  String get prequelSequel => 'Prequel e sequência';
+
+  @override
+  String get previousSeason => 'Temporada anterior';
+
+  @override
+  String get thisSeason => 'Essa temporada';
+
+  @override
+  String get nextSeason => 'Próxima temporada';
+
+  @override
+  String get voiceRoles => 'Papéis de dublagem';
+
+  @override
+  String get staffPositions => 'Cargos na equipe';
+
+  @override
+  String get mangaWorks => 'Obras de mangá';
+
+  @override
+  String get malProfile => 'Perfil do MyAnimeList';
+
+  @override
+  String get refreshFromMal => 'Atualizar do MyAnimeList';
+
+  @override
+  String get repullProfileCounts => 'Puxa de novo seu perfil e contagens';
+
+  @override
+  String get refreshed => 'Atualizado';
+
+  @override
+  String get simklProfile => 'Perfil do Simkl';
+
+  @override
+  String get refreshFromSimkl => 'Atualizar do Simkl';
+
+  @override
+  String get repullProfileLibrary => 'Puxa de novo seu perfil e biblioteca';
+
+  @override
+  String get simklSignInToSearch => 'Entre no Simkl pra buscar';
+
+  @override
+  String get dropRate => 'Taxa de abandono';
+
+  @override
+  String get simklAttribution => 'Dados e arte fornecidos pelo Simkl. Ver no Simkl';
+
+  @override
+  String get onHold => 'Em pausa';
+
+  @override
+  String get scoredBy => 'Avaliado por';
+
+  @override
+  String get planToWatch => 'Pretendo assistir';
+
+  @override
+  String get planToRead => 'Pretendo ler';
+
+  @override
+  String get timesRewatched => 'Vezes reassistido';
+
+  @override
+  String get timesReread => 'Vezes relido';
+
+  @override
+  String get comments => 'Comentários';
+
+  @override
+  String get moviesAndSeries => 'Filmes e séries';
+
+  @override
+  String get trackingOnly => 'Só acompanhamento';
+
+  @override
+  String get signedIn => 'Logado';
+
+  @override
+  String get searchLanguage => 'Idioma da busca';
+
+  @override
+  String get savedToList => 'Salvo na sua lista';
+
+  @override
+  String get removedFromYourList => 'Removido da sua lista';
+
+  @override
+  String get retry => 'Tentar de novo';
+
+  @override
+  String get synopsis => 'Sinopse';
+
+  @override
+  String get details => 'Detalhes';
+
+  @override
+  String get addToList => 'Adicionar à lista';
+
+  @override
+  String get trailer => 'Trailer';
+
+  @override
+  String get titleCopied => 'Título copiado';
+
+  @override
+  String get linkCopied => 'Link copiado';
+
+  @override
+  String get watchTrailer => 'Ver trailer';
+
+  @override
+  String get copyTitle => 'Copiar título';
+
+  @override
+  String get copyLink => 'Copiar link';
+
+  @override
+  String get openInBrowser => 'Abrir no navegador';
+
+  @override
+  String viewOnSource(String source) {
+    return 'Ver no $source';
+  }
+
+  @override
+  String episodeAirsIn(int ep, String time) {
+    return 'O episódio $ep sai em $time';
+  }
+
+  @override
+  String nextEpisodeIn(String time) {
+    return 'Próximo episódio em $time';
+  }
+
+  @override
+  String get logPathCopied => 'Caminho do arquivo de log copiado';
+
+  @override
+  String get animeSource => 'Fonte de anime';
+
+  @override
+  String get mangaSource => 'Fonte de mangá';
+
+  @override
+  String get popular => 'Populares';
+
+  @override
+  String get latest => 'Mais recentes';
+
+  @override
+  String get saved => 'Salvos';
+
+  @override
+  String get nothingMatched => 'Nada encontrado';
+
+  @override
+  String get nothingSavedFromSource => 'Nada salvo dessa fonte ainda';
+
+  @override
+  String get sourceReturnedNothing => 'Essa fonte não retornou nada';
+
+  @override
+  String get checkConnectionOrSource => 'Confira sua conexão ou tente outra fonte.';
+
+  @override
+  String get tryDifferentSearch => 'Tente outro termo de busca.';
+
+  @override
+  String get savedTitlesAppearHere => 'Os títulos que você adicionar à lista aparecem aqui.';
+
+  @override
+  String get tryOtherFeed => 'Tente o outro feed ou faça uma busca.';
+
+  @override
+  String searchSource(String source) {
+    return 'Buscar em $source';
+  }
+
+  @override
+  String get animeExtensions => 'Extensões de anime';
+
+  @override
+  String get mangaExtensions => 'Extensões de mangá';
+
+  @override
+  String get nothingHereYet => 'Nada aqui ainda';
+
+  @override
+  String get savedOnDeviceUntilLogin => 'Tudo abaixo fica salvo nesse dispositivo até você fazer isso.';
+
+  @override
+  String get yourProfile => 'Seu perfil';
+
+  @override
+  String get activity => 'Atividade';
+
+  @override
+  String get extensions => 'Extensões';
+
+  @override
+  String get logOut => 'Sair';
+
+  @override
+  String get logIn => 'Entrar';
+
+  @override
+  String get logOutConfirm => 'Tem certeza que quer sair?';
+
+  @override
+  String get incognitoMode => 'Modo anônimo';
+
+  @override
+  String get alsoBlockListEdits => 'Bloquear também edições na lista';
+
+  @override
+  String get offlineMode => 'Modo offline';
+
+  @override
+  String get switchService => 'Trocar de serviço';
+
+  @override
+  String logOutOf(String name) {
+    return 'Sair do $name';
+  }
+
+  @override
+  String get loggedIn => 'Logado';
+
+  @override
+  String get notifications => 'Notificações';
+
+  @override
+  String get nothingNew => 'Nada de novo';
+
+  @override
+  String get thisWeek => 'Essa semana';
+
+  @override
+  String get listOnly => 'Só da lista';
+
+  @override
+  String get filter => 'Filtrar';
+
+  @override
+  String get searchResults => 'Resultados da busca';
+
+  @override
+  String get recentSearches => 'Buscas recentes';
+
+  @override
+  String get searchOrSetFilter => 'Busque ou defina um filtro';
+
+  @override
+  String get filters => 'Filtros';
+
+  @override
+  String get showLess => 'Mostrar menos';
+
+  @override
+  String get showAll => 'Mostrar tudo';
+
+  @override
+  String get apply => 'Aplicar';
+
+  @override
+  String get preview => 'Prévia';
+
+  @override
+  String get preset => 'Predefinição';
+
+  @override
+  String get cardNormal => 'Normal';
+
+  @override
+  String get cardOnCard => 'No cartão';
+
+  @override
+  String get cardInCard => 'Dentro do cartão';
+
+  @override
+  String get size => 'Tamanho';
+
+  @override
+  String get cardWidth => 'Largura do cartão';
+
+  @override
+  String get compact => 'Compacto';
+
+  @override
+  String get coverAndTitleOnly => 'Só capa e título';
+
+  @override
+  String get titleLines => 'Linhas do título';
+
+  @override
+  String get shape => 'Formato';
+
+  @override
+  String get posterShape => 'Formato do pôster';
+
+  @override
+  String get cornerRadius => 'Raio dos cantos';
+
+  @override
+  String get off => 'Desligado';
+
+  @override
+  String get topLeft => 'Topo esquerdo';
+
+  @override
+  String get topRight => 'Topo direito';
+
+  @override
+  String get bottomLeft => 'Base esquerda';
+
+  @override
+  String get bottomRight => 'Base direita';
+
+  @override
+  String get overlays => 'Sobreposições';
+
+  @override
+  String get progressCount => 'Progresso / contagem';
+
+  @override
+  String get pill => 'Pílula';
+
+  @override
+  String get bar => 'Barra';
+
+  @override
+  String get outside => 'Fora';
+
+  @override
+  String get scoreBadge => 'Selo de nota';
+
+  @override
+  String get airingDot => 'Ponto de exibição';
+
+  @override
+  String get updateAvailable => 'Atualização disponível';
+
+  @override
+  String get notInstalled => 'Não instalado';
+
+  @override
+  String get done => 'Concluído';
+
+  @override
+  String get searchOrEnterUrl => 'Busque ou digite uma URL';
+
+  @override
+  String get refresh => 'Atualizar';
+
+  @override
+  String get share => 'Compartilhar';
+
+  @override
+  String get characters => 'Personagens';
+
+  @override
+  String get staff => 'Equipe';
+
+  @override
+  String get readMore => 'Ler mais';
+
+  @override
+  String get couldNotLoadList => 'Não consegui carregar a lista';
+
+  @override
+  String get logInToFavourite => 'Entre pra adicionar favoritos';
+
+  @override
+  String get alsoKnownAs => 'Também conhecido como';
+
+  @override
+  String get hideSpoilerNames => 'Esconder nomes com spoiler';
+
+  @override
+  String get showSpoilerNames => 'Mostrar nomes com spoiler';
+
+  @override
+  String get favourited => 'Nos favoritos';
+
+  @override
+  String get favourite => 'Favoritar';
+
+  @override
+  String get couldNotOpenTitle => 'Não consegui abrir esse título';
+
+  @override
+  String get nobodyHereYet => 'Ninguém aqui ainda';
+
+  @override
+  String get noMatches => 'Nada encontrado';
+
+  @override
+  String get gridView => 'Visualização em grade';
+
+  @override
+  String get fullWidth => 'Largura total';
+
+  @override
+  String get userNotFound => 'Usuário não encontrado';
+
+  @override
+  String get couldNotUpdateFollow => 'Não consegui atualizar o seguir';
+
+  @override
+  String followedUser(String name) {
+    return 'Você começou a seguir $name';
+  }
+
+  @override
+  String unfollowedUser(String name) {
+    return 'Você deixou de seguir $name';
+  }
+
+  @override
+  String get messages => 'Mensagens';
+
+  @override
+  String get logInToSeeMessages => 'Entre pra ver suas mensagens';
+
+  @override
+  String get editActivity => 'Editar atividade';
+
+  @override
+  String get newActivity => 'Nova atividade';
+
+  @override
+  String get editMessage => 'Editar mensagem';
+
+  @override
+  String get writeMessage => 'Escrever uma mensagem';
+
+  @override
+  String get editReply => 'Editar resposta';
+
+  @override
+  String get posted => 'Publicado';
+
+  @override
+  String get couldNotPost => 'Não consegui publicar';
+
+  @override
+  String get nothingToPreview => 'Nada pra visualizar';
+
+  @override
+  String get writeSomethingHint => 'Escreva algo… o markdown do AniList funciona aqui';
+
+  @override
+  String get privateMessage => 'Mensagem privada';
+
+  @override
+  String get post => 'Publicar';
+
+  @override
+  String get nothingHere => 'Nada aqui';
+
+  @override
+  String get noAnimeProgress => 'Sem progresso de anime';
+
+  @override
+  String get noMangaProgress => 'Sem progresso de mangá';
+
+  @override
+  String get noMessages => 'Sem mensagens';
+
+  @override
+  String get writeMessageHint => 'Escreva uma mensagem…';
+
+  @override
+  String get shareSomethingHint => 'Compartilhe algo…';
+
+  @override
+  String get all => 'Tudo';
+
+  @override
+  String get anime => 'Anime';
+
+  @override
+  String get manga => 'Mangá';
+
+  @override
+  String get count => 'Contagem';
+
+  @override
+  String get hoursWatched => 'Horas assistidas';
+
+  @override
+  String get chaptersRead => 'Capítulos lidos';
+
+  @override
+  String get meanScore => 'Nota média';
+
+  @override
+  String get noStatsYet => 'Sem estatísticas ainda';
+
+  @override
+  String get totalEntries => 'Total de entradas';
+
+  @override
+  String get episodesWatched => 'Episódios assistidos';
+
+  @override
+  String get daysWatched => 'Dias assistidos';
+
+  @override
+  String get volumesRead => 'Volumes lidos';
+
+  @override
+  String get standardDeviation => 'Desvio padrão';
+
+  @override
+  String get showMore => 'Mostrar mais';
+
+  @override
+  String get followsYou => 'Segue você';
+
+  @override
+  String get nobodyYet => 'Ninguém ainda';
+
+  @override
+  String get logInToLike => 'Entre pra curtir';
+
+  @override
+  String get failedToLikeActivity => 'Falha ao curtir a atividade';
+
+  @override
+  String get deleteActivityConfirm => 'Apagar atividade?';
+
+  @override
+  String get deletedActivity => 'Atividade apagada';
+
+  @override
+  String get failedToDeleteActivity => 'Falha ao apagar a atividade';
+
+  @override
+  String get subscribed => 'Inscrito';
+
+  @override
+  String get unsubscribed => 'Inscrição cancelada';
+
+  @override
+  String get failedToUpdateSubscription => 'Falha ao atualizar a inscrição';
+
+  @override
+  String get edit => 'Editar';
+
+  @override
+  String get delete => 'Apagar';
+
+  @override
+  String get likedBy => 'Curtido por';
+
+  @override
+  String get follow => 'Seguir';
+
+  @override
+  String get nameCopied => 'Nome copiado';
+
+  @override
+  String get followsEachOther => 'Se seguem';
+
+  @override
+  String get unfollow => 'Deixar de seguir';
+
+  @override
+  String get userIdCopied => 'ID de usuário copiado';
+
+  @override
+  String get shareProfile => 'Compartilhar perfil';
+
+  @override
+  String get copyUserId => 'Copiar ID de usuário';
+
+  @override
+  String get failedToDelete => 'Falha ao apagar';
+
+  @override
+  String get failedToLike => 'Falha ao curtir';
+
+  @override
+  String get replies => 'Respostas';
+
+  @override
+  String get reply => 'Responder';
+
+  @override
+  String get noRepliesYet => 'Nenhuma resposta ainda';
+
+  @override
+  String get favouriteAnime => 'Animes favoritos';
+
+  @override
+  String get favouriteManga => 'Mangás favoritos';
+
+  @override
+  String get favouriteCharacters => 'Personagens favoritas';
+
+  @override
+  String get favouriteStaff => 'Equipe favorita';
+
+  @override
+  String get favouriteStudios => 'Estúdios favoritos';
+
+  @override
+  String get noFavouritesYet => 'Nenhum favorito ainda';
+
+  @override
+  String get yourStory => 'Seu story';
+
+  @override
+  String get copiedToClipboard => 'Copiado pra área de transferência';
+
+  @override
+  String get justNow => 'Agora mesmo';
+
+  @override
+  String get openImage => 'Abrir imagem';
+
+  @override
+  String get hideSpoiler => 'Esconder spoiler';
+
+  @override
+  String get showSpoiler => 'Mostrar spoiler';
+
+  @override
+  String get status => 'Status';
+
+  @override
+  String get score => 'Nota';
+
+  @override
+  String get started => 'Início';
+
+  @override
+  String get completed => 'Concluído';
+
+  @override
+  String get private => 'Privado';
+
+  @override
+  String get hideFromStatusLists => 'Esconder das listas de status';
+
+  @override
+  String get totalRepeats => 'Total de repetições';
+
+  @override
+  String get other => 'Outro';
+
+  @override
+  String get customLists => 'Listas personalizadas';
+
+  @override
+  String get activeDays => 'Dias ativos';
+
+  @override
+  String get longestStreak => 'Maior sequência';
+
+  @override
+  String get currentStreak => 'Sequência atual';
+
+  @override
+  String get tapOrHoverDay => 'Toque ou passe o mouse num dia';
+
+  @override
+  String get less => 'Menos';
+
+  @override
+  String get more => 'Mais';
+
+  @override
+  String epIn(int ep, String time) {
+    return 'Ep. $ep em $time';
+  }
+
+  @override
+  String get sectionLoading => 'Carregando';
+
+  @override
+  String get querySize => 'Tamanho da consulta';
+
+  @override
+  String get querySizeDesc => 'Uma consulta grande carrega todas as linhas (e um perfil inteiro) numa requisição só. Consultas divididas mandam uma requisição pequena por linha ou parte do perfil: cada uma é rápida e as partes vão aparecendo.';
+
+  @override
+  String get oneBig => 'Uma grande';
+
+  @override
+  String get split => 'Dividida';
+
+  @override
+  String get sectionSocial => 'Social';
+
+  @override
+  String get systemNotifications => 'Notificações do sistema';
+
+  @override
+  String get feedLayout => 'Layout do feed';
+
+  @override
+  String sectionsShown(int shown, int total) {
+    return '$shown de $total visíveis — toque pra escolher e reordenar';
+  }
+
+  @override
+  String labelSections(String label) {
+    return 'Seções de $label';
+  }
+
+  @override
+  String get accountOptions => 'Opções da conta';
+
+  @override
+  String get accountOptionsDesc => 'Nomes, formato de nota, ordem das listas, notificações e mais';
+
+  @override
+  String get anilistAccountOptions => 'Opções da conta AniList';
+
+  @override
+  String get sectionPrivacy => 'Privacidade';
+
+  @override
+  String get hidePrivateEntries => 'Esconder entradas privadas';
+
+  @override
+  String get hidePrivateEntriesDesc => 'Mantém fora do feed as entradas marcadas como privadas no AniList';
+
+  @override
+  String get anilistProfile => 'Perfil do AniList';
+
+  @override
+  String get refreshFromAnilist => 'Atualizar do AniList';
+
+  @override
+  String get couldNotUpdateAnilistSettings => 'Não consegui atualizar as configurações do AniList';
+
+  @override
+  String get sectionNames => 'Nomes';
+
+  @override
+  String get titleLanguage => 'Idioma dos títulos';
+
+  @override
+  String get titleLanguageDesc => 'Como os títulos são escritos em todo lugar, ex.: Attack on Titan / Shingeki no Kyojin / 進撃の巨人.';
+
+  @override
+  String get staffCharacterNames => 'Nomes da equipe e dos personagens';
+
+  @override
+  String get sectionLists => 'Listas';
+
+  @override
+  String get scoreFormat => 'Formato da nota';
+
+  @override
+  String get sortListsBy => 'Ordenar listas por';
+
+  @override
+  String labelCustomLists(String label) {
+    return 'Listas personalizadas de $label';
+  }
+
+  @override
+  String customListsCount(int count) {
+    return '$count listas — toque pra adicionar ou remover';
+  }
+
+  @override
+  String get mergeActivities => 'Agrupar atividades';
+
+  @override
+  String minutesCount(int count) {
+    return '$count min';
+  }
+
+  @override
+  String get timezone => 'Fuso horário';
+
+  @override
+  String get notSet => 'Não definido';
+
+  @override
+  String get airingNotifications => 'Notificações de exibição';
+
+  @override
+  String get airingNotificationsDesc => 'Receba um aviso quando sair um episódio de uma série que você segue';
+
+  @override
+  String get displayAdultContent => 'Mostrar conteúdo adulto';
+
+  @override
+  String get displayAdultContentDesc => 'Inclui títulos 18+ na exploração, busca e feeds';
+
+  @override
+  String get restrictMessages => 'Limitar mensagens a quem eu sigo';
+
+  @override
+  String get restrictMessagesDesc => 'Só quem você segue pode te mandar mensagem';
+
+  @override
+  String get sectionServices => 'Serviços';
+
+  @override
+  String get novel => 'Novel';
+
+  @override
+  String labelService(String label) {
+    return 'Serviço de $label';
+  }
+
+  @override
+  String nameSettings(String name) {
+    return 'Configurações do $name';
+  }
+
+  @override
+  String extensionBridgeOptions(String name) {
+    return 'Opções da ponte de extensões do $name';
+  }
+
+  @override
+  String extensionServiceFailed(String name, String error) {
+    return 'O $name não conseguiu iniciar: $error';
+  }
+
+  @override
+  String get importLists => 'Importar listas';
+
+  @override
+  String get importListsDesc => 'De backups do Aniyomi, Mihon / Tachiyomi ou Kotatsu';
+
+  @override
+  String get exportLists => 'Exportar listas';
+
+  @override
+  String get exportListsDesc => 'Pra um backup do Aniyomi, Mihon ou Kotatsu';
+
+  @override
+  String get sectionBrowse => 'Explorar';
+
+  @override
+  String get readingTab => 'Aba de leitura';
+
+  @override
+  String get readingTabDesc => 'Quais extensões a terceira aba mostra';
+
+  @override
+  String get defaultFeed => 'Feed padrão';
+
+  @override
+  String get defaultFeedDesc => 'Com qual lista uma fonte abre';
+
+  @override
+  String noServiceSupports(String type) {
+    return 'Nenhum serviço suporta $type';
+  }
+
+  @override
+  String sourcesLoading(String name, int loaded, int installed) {
+    return '$name · $loaded de $installed fontes carregando';
+  }
+
+  @override
+  String noExtensionServiceSupportsHere(String type) {
+    return 'Nenhum serviço de extensões suporta $type aqui.';
+  }
+
+  @override
+  String get loadDataFrom => 'Carregar dados de';
+
+  @override
+  String noInstalledSourcesYet(String type) {
+    return 'Nenhuma fonte de $type instalada ainda.';
+  }
+
+  @override
+  String extensionNotInstalled(String name) {
+    return 'A extensão do $name não está instalada';
+  }
+
+  @override
+  String get thisSource => 'essa fonte';
+
+  @override
+  String failedToAddRepository(String error) {
+    return 'Falha ao adicionar o repositório: $error';
+  }
+
+  @override
+  String installedType(String type) {
+    return '$type instalados';
+  }
+
+  @override
+  String availableType(String type) {
+    return '$type disponíveis';
+  }
+
+  @override
+  String noInstalledExtensions(String type) {
+    return 'Nenhuma extensão de $type instalada';
+  }
+
+  @override
+  String noAvailableExtensions(String type) {
+    return 'Nenhuma extensão de $type disponível';
+  }
+
+  @override
+  String get nothingToShowYet => 'Nada pra mostrar ainda';
+
+  @override
+  String get addTitlesHint => 'Adicione alguns títulos à sua lista e eles aparecem aqui.';
+
+  @override
+  String get couldntLoad => 'Não consegui carregar';
+
+  @override
+  String get progressStyleHint => 'Pílula e barra ficam sobre o pôster; \"fora\" mostra a mesma contagem como texto simples — escolha um.';
+
+  @override
+  String get nixManagedUpdate => 'Essa build é gerenciada pelo Nix — rode \"nix flake update\" na sua flake e recompile em vez de atualizar por aqui';
+
+  @override
+  String autoUpdateFailed(String error) {
+    return 'A atualização automática falhou ($error) — abrindo a página de download';
+  }
+
+  @override
+  String get unknownPreference => 'Preferência desconhecida';
+
+  @override
+  String unsupportedPreferenceType(String type) {
+    return 'Tipo de preferência não suportado $type';
+  }
+
+  @override
+  String get notYetReleased => 'Ainda não lançado';
+
+  @override
+  String get notStarted => 'Não iniciado';
+
+  @override
+  String get country => 'País';
+
+  @override
+  String get sort => 'Ordenar';
+
+  @override
+  String get chooseBackupDialog => 'Escolha um backup do Aniyomi, Mihon ou Kotatsu';
+
+  @override
+  String get importListsHint => 'Traga uma biblioteca do Aniyomi, Mihon / Tachiyomi ou Kotatsu. Títulos, capas, progresso e categorias são mantidos.';
+
+  @override
+  String get chooseBackupFile => 'Escolher arquivo de backup';
+
+  @override
+  String importAnimeCount(int count) {
+    return 'Importar $count animes';
+  }
+
+  @override
+  String importMangaCount(int count) {
+    return 'Importar $count mangás';
+  }
+
+  @override
+  String get mergeWithExisting => 'Mesclar com as listas existentes';
+
+  @override
+  String get mergeWithExistingDesc => 'Mantém o que você já tem; desligado substitui títulos iguais';
+
+  @override
+  String get chooseAnother => 'Escolher outro';
+
+  @override
+  String get import => 'Importar';
+
+  @override
+  String animeCount(int count) {
+    return '$count animes';
+  }
+
+  @override
+  String mangaCount(int count) {
+    return '$count mangás';
+  }
+
+  @override
+  String get chooseSaveLocation => 'Escolha onde salvar o backup';
+
+  @override
+  String savedPath(String path) {
+    return 'Salvo em $path';
+  }
+
+  @override
+  String exportFailed(String error) {
+    return 'Falha ao exportar: $error';
+  }
+
+  @override
+  String get nothingInLocalLists => 'Nada nas suas listas locais ainda.';
+
+  @override
+  String exportsSummary(int anime, int manga) {
+    return 'Exporta $anime animes e $manga mangás das suas listas locais. O Kotatsu só suporta mangá.';
+  }
+
+  @override
+  String get saveToFolder => 'Salvar na pasta';
+
+  @override
+  String get formatAnimeManga => 'Anime e mangá · .tachibk';
+
+  @override
+  String get formatMangaTachibk => 'Só mangá · .tachibk';
+
+  @override
+  String get formatMangaZip => 'Só mangá · .zip';
+
+  @override
+  String get genres => 'Gêneros';
+
+  @override
+  String get relations => 'Relações';
+
+  @override
+  String get recommendations => 'Recomendações';
+
+  @override
+  String get openings => 'Aberturas';
+
+  @override
+  String get endings => 'Encerramentos';
+
+  @override
+  String get background => 'Contexto';
+
+  @override
+  String get links => 'Links';
+
+  @override
+  String get rank => 'Ranking';
+
+  @override
+  String get members => 'Membros';
+
+  @override
+  String get favorites => 'Favoritos';
+
+  @override
+  String get episodes => 'Episódios';
+
+  @override
+  String get chapters => 'Capítulos';
+
+  @override
+  String get volumes => 'Volumes';
+
+  @override
+  String get format => 'Formato';
+
+  @override
+  String get source => 'Fonte';
+
+  @override
+  String get duration => 'Duração';
+
+  @override
+  String minutesPerEpisode(int minutes) {
+    return '$minutes min por ep.';
+  }
+
+  @override
+  String get rating => 'Classificação';
+
+  @override
+  String get studio => 'Estúdio';
+
+  @override
+  String get serialization => 'Serialização';
+
+  @override
+  String get season => 'Temporada';
+
+  @override
+  String get broadcast => 'Transmissão';
+
+  @override
+  String get aired => 'Exibido';
+
+  @override
+  String get published => 'Publicado';
+
+  @override
+  String get popularity => 'Popularidade';
+
+  @override
+  String get community => 'Comunidade';
+
+  @override
+  String get watching => 'Assistindo';
+
+  @override
+  String get reading => 'Lendo';
+
+  @override
+  String get dropped => 'Abandonado';
+
+  @override
+  String get planned => 'Planejado';
+
+  @override
+  String get trailers => 'Trailers';
+
+  @override
+  String get ratings => 'Notas';
+
+  @override
+  String get originalTitle => 'Original';
+
+  @override
+  String get titleLabel => 'Título';
+
+  @override
+  String get votes => 'Votos';
+
+  @override
+  String get watchedStat => 'Assistido';
+
+  @override
+  String get runtime => 'Duração';
+
+  @override
+  String get director => 'Diretor';
+
+  @override
+  String get network => 'Emissora';
+
+  @override
+  String get certification => 'Certificação';
+
+  @override
+  String get airs => 'Exibição';
+
+  @override
+  String get budget => 'Orçamento';
+
+  @override
+  String get revenue => 'Receita';
+
+  @override
+  String get released => 'Lançado';
+
+  @override
+  String get tags => 'Tags';
+
+  @override
+  String get author => 'Autor';
+
+  @override
+  String get born => 'Nascimento';
+
+  @override
+  String get website => 'Site';
+
+  @override
+  String get established => 'Fundação';
+
+  @override
+  String get manhwa => 'Manhwa';
+
+  @override
+  String get manhua => 'Manhua';
+
+  @override
+  String get novels => 'Novels';
+
+  @override
+  String get thisMonth => 'Esse mês';
+
+  @override
+  String get movies => 'Filmes';
+
+  @override
+  String get shows => 'Séries';
+
+  @override
+  String get rewatching => 'Reassistindo';
+
+  @override
+  String get rereading => 'Relendo';
+
+  @override
+  String get watchedStatus => 'Assistido';
+
+  @override
+  String get planning => 'Planejando';
+
+  @override
+  String get paused => 'Pausado';
+
+  @override
+  String get watch => 'Assistir';
+
+  @override
+  String get read => 'Ler';
+
+  @override
+  String get finished => 'Finalizado';
+
+  @override
+  String get releasing => 'Em exibição';
+
+  @override
+  String get cancelled => 'Cancelado';
+
+  @override
+  String get hiatus => 'Hiato';
+
+  @override
+  String get remove => 'Remover';
+
+  @override
+  String syncToService(String service) {
+    return 'Sincronizar com o $service';
+  }
+
+  @override
+  String syncedToService(String service) {
+    return 'Sincronizado com o $service';
+  }
+
+  @override
+  String get latestReleases => 'Últimos lançamentos';
+
+  @override
+  String get topRated => 'Mais bem avaliados';
+
+  @override
+  String localSection(String title) {
+    return '$title · Local';
+  }
+
+  @override
+  String get localEntryNote => 'Esse título está só na sua lista local nesse dispositivo. A edição fica desligada aqui porque poderia conflitar com a lista da sua conta; você ainda pode removê-lo.';
+
+  @override
+  String get cardPresetPoster => 'Pôster';
+
+  @override
+  String get cardPresetCard => 'Cartão';
+
+  @override
+  String get cardPresetCozy => 'Aconchegante';
+
+  @override
+  String get sortTopRated => 'Mais bem avaliados';
+
+  @override
+  String get sortMostPopular => 'Mais populares';
+
+  @override
+  String get sortTrending => 'Em alta';
+
+  @override
+  String get sortNewest => 'Mais novos';
+
+  @override
+  String get sortAz => 'A–Z';
+
+  @override
+  String get sortMostFavourited => 'Mais favoritados';
+
+  @override
+  String get anyCountry => 'Qualquer país';
+
+  @override
+  String get orderScore => 'Nota';
+
+  @override
+  String get orderTitle => 'Título';
+
+  @override
+  String get orderLastUpdated => 'Última atualização';
+
+  @override
+  String get orderLastAdded => 'Último adicionado';
+
+  @override
+  String get never => 'Nunca';
+
+  @override
+  String get always => 'Sempre';
+
+  @override
+  String get scorePoint100 => '100 pontos';
+
+  @override
+  String get scorePoint10Decimal => '10 pontos decimal';
+
+  @override
+  String get scorePoint10 => '10 pontos';
+
+  @override
+  String get scorePoint5 => '5 estrelas';
+
+  @override
+  String get scorePoint3 => '3 carinhas';
+
+  @override
+  String hoursCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count horas',
+      one: '1 hora',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String daysCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count dias',
+      one: '1 dia',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String weeksCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count semanas',
+      one: '1 semana',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get resumeTitle => 'Continuar';
+
+  @override
+  String get resumeSourceMissing => 'Instale a fonte desse título pra continuar';
+
+  @override
+  String get resumeRemove => 'Remover de continuar';
+
+  @override
+  String resumeMissing(String title) {
+    return 'Não achei $title nessa fonte';
+  }
+
+  @override
+  String resumeAt(String time) {
+    return 'faltam $time';
+  }
+
+  @override
+  String resumePage(int page, int total) {
+    return 'Página $page de $total';
+  }
+
+  @override
+  String get continueWatching => 'Continuar assistindo';
+
+  @override
+  String get continueReading => 'Continuar lendo';
+
+  @override
+  String get favouriteAnimeSection => 'Animes favoritos';
+
+  @override
+  String get favouriteMangaSection => 'Mangás favoritos';
+
+  @override
+  String get plannedAnime => 'Animes planejados';
+
+  @override
+  String get plannedManga => 'Mangás planejados';
+
+  @override
+  String get completedAnime => 'Animes concluídos';
+
+  @override
+  String get completedManga => 'Mangás concluídos';
+
+  @override
+  String get hiddenMedia => 'Mídia oculta';
+
+  @override
+  String get recentUpdates => 'Atualizações recentes';
+
+  @override
+  String get trendingNow => 'Em alta agora';
+
+  @override
+  String get popularThisSeason => 'Populares dessa temporada';
+
+  @override
+  String get trendingMovies => 'Filmes em alta';
+
+  @override
+  String get topRatedSeries => 'Séries mais bem avaliadas';
+
+  @override
+  String get mostFavouriteSeries => 'Séries mais favoritadas';
+
+  @override
+  String get popularAnime => 'Animes populares';
+
+  @override
+  String get trendingManhwa => 'Manhwas em alta';
+
+  @override
+  String get trendingNovels => 'Novels em alta';
+
+  @override
+  String get topRatedManga => 'Mangás mais bem avaliados';
+
+  @override
+  String get mostFavouriteManga => 'Mangás mais favoritados';
+
+  @override
+  String get popularManga => 'Mangás populares';
+
+  @override
+  String get topMovies => 'Melhores filmes';
+
+  @override
+  String get topOna => 'Melhores ONA';
+
+  @override
+  String get topOva => 'Melhores OVA';
+
+  @override
+  String get mostPopular => 'Mais populares';
+
+  @override
+  String get mostFavourite => 'Mais favoritados';
+
+  @override
+  String get upcoming => 'Em breve';
+
+  @override
+  String get topManga => 'Melhores mangás';
+
+  @override
+  String get topManhwa => 'Melhores manhwas';
+
+  @override
+  String get topManhua => 'Melhores manhuas';
+
+  @override
+  String get topNovels => 'Melhores novels';
+
+  @override
+  String get topOneShots => 'Melhores one-shots';
+
+  @override
+  String get trendingMoviesToday => 'Filmes em alta hoje';
+
+  @override
+  String get trendingShowsToday => 'Séries em alta hoje';
+
+  @override
+  String get trendingMoviesWeek => 'Filmes em alta essa semana';
+
+  @override
+  String get trendingShowsWeek => 'Séries em alta essa semana';
+
+  @override
+  String get mostWatchedMoviesMonth => 'Filmes mais assistidos do mês';
+
+  @override
+  String get mostWatchedShowsMonth => 'Séries mais assistidas do mês';
+
+  @override
+  String get trendingThisWeek => 'Em alta essa semana';
+
+  @override
+  String get mostWatchedThisMonth => 'Mais assistidos do mês';
+
+  @override
+  String get repoLinksAdded => 'Links do repositório adicionados com sucesso!';
+
+  @override
+  String get errorGettingAnilistData => 'Erro ao buscar dados do AniList.';
+
+  @override
+  String get navInfo => 'INFO';
+
+  @override
+  String get navComments => 'COMENTÁRIOS';
+
+  @override
+  String get playerNotAvailable => 'O player ainda não está disponível';
+
+  @override
+  String deepLinkInitialError(String error) {
+    return 'Erro ao obter o deep link inicial: $error';
+  }
+
+  @override
+  String deepLinkOpenError(String error) {
+    return 'Erro ao abrir link: $error';
+  }
+
+  @override
+  String linkCantBeOpened(String link) {
+    return 'Não dá pra abrir esse link: $link';
+  }
+
+  @override
+  String linkOpenError(String error) {
+    return 'Erro ao abrir link: $error';
+  }
+
+  @override
+  String get forReleasingTitles => 'pra títulos ainda em exibição';
+
+  @override
+  String get progress => 'Progresso';
+
+  @override
+  String get notes => 'Notas';
+
+  @override
+  String serviceNotFound(String id) {
+    return 'Serviço \"$id\" não encontrado';
+  }
+
+  @override
+  String get glassEffectEnabled => 'Efeito vidro ligado';
+
+  @override
+  String get glassEffectDisabled => 'Efeito vidro desligado';
+
+  @override
+  String get materialYouEnabled => 'Material You ligado';
+
+  @override
+  String get materialYouDisabled => 'Material You desligado';
+
+  @override
+  String get darkModeEnabled => 'Modo escuro ligado';
+
+  @override
+  String get darkModeDisabled => 'Modo escuro desligado';
+
+  @override
+  String get animeList => 'Lista de animes';
+
+  @override
+  String get mangaList => 'Lista de mangás';
+
+  @override
+  String ownerAnimeList(String owner) {
+    return 'Lista de animes de $owner';
+  }
+
+  @override
+  String ownerMangaList(String owner) {
+    return 'Lista de mangás de $owner';
+  }
+
+  @override
+  String get loadingList => 'Carregando lista';
+
+  @override
+  String get earlier => 'Anteriores';
+
+  @override
+  String daysAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'há $count dias',
+      one: 'há 1 dia',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String hoursAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'há $count horas',
+      one: 'há 1 hora',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String minutesAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'há $count minutos',
+      one: 'há 1 minuto',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String minutesAgoShort(int count) {
+    return 'há $count min';
+  }
+
+  @override
+  String hoursAgoShort(int count) {
+    return 'há $count h';
+  }
+
+  @override
+  String daysAgoShort(int count) {
+    return 'há $count d';
+  }
+
+  @override
+  String weeksAgoShort(int count) {
+    return 'há $count sem.';
+  }
+
+  @override
+  String get couldntLoadSource => 'Não consegui carregar essa fonte';
+
+  @override
+  String get followers => 'Seguidores';
+
+  @override
+  String couldntLoadTitle(String title) {
+    return 'Não consegui carregar $title';
+  }
+
+  @override
+  String userTitle(String name, String title) {
+    return '$name · $title';
+  }
+
+  @override
+  String get couldntLoadProfile => 'Não consegui carregar esse perfil';
+
+  @override
+  String get profile => 'Perfil';
+
+  @override
+  String get feed => 'Feed';
+
+  @override
+  String get stats => 'Estatísticas';
+
+  @override
+  String get received => 'Recebidas';
+
+  @override
+  String get sent => 'Enviadas';
+
+  @override
+  String get global => 'Global';
+
+  @override
+  String get couldntLoadPage => 'Não consegui carregar essa página';
+
+  @override
+  String get couldntLoadAllDetails => 'Não consegui carregar todos os detalhes';
+
+  @override
+  String get series => 'Séries';
+
+  @override
+  String get studios => 'Estúdios';
+
+  @override
+  String get users => 'Usuários';
+
+  @override
+  String repositoriesTitle(String type) {
+    return 'Repositórios de $type';
+  }
+
+  @override
+  String get repositoryUrl => 'URL do repositório';
+
+  @override
+  String get downloadingRepository => 'Baixando repositório…';
+
+  @override
+  String get noRepositories => 'Nenhum repositório adicionado';
+
+  @override
+  String repoExtensionsCount(String count) {
+    return '$count extensões';
+  }
+
+  @override
+  String get searchExtensions => 'Buscar extensões...';
+
+  @override
+  String deletePluginTitle(String name) {
+    return 'Apagar $name?';
+  }
+
+  @override
+  String get deletePluginMessage => 'Tem certeza que quer apagar esse plugin?';
+
+  @override
+  String pluginDeleted(String name) {
+    return '$name apagado';
+  }
+
+  @override
+  String pluginNotInRepo(String name) {
+    return '$name não está disponível no repositório configurado';
+  }
+
+  @override
+  String get pluginFetchFailed => 'Falha ao buscar info do plugin';
+
+  @override
+  String installPluginTitle(String name) {
+    return 'Instalar $name';
+  }
+
+  @override
+  String sizeLabel(String size) {
+    return 'Tamanho: $size';
+  }
+
+  @override
+  String get installedState => 'Instalado';
+
+  @override
+  String get errorLabel => 'Erro:';
+
+  @override
+  String get stackTraceDetails => 'Detalhes (stack trace)';
+
+  @override
+  String get shareLogFile => 'Compartilhar arquivo de log';
+
+  @override
+  String get copyLogs => 'Copiar logs';
+
+  @override
+  String noListToEdit(String service) {
+    return 'O $service não tem lista pra editar';
+  }
+
+  @override
+  String get couldNotReadFile => 'Não consegui ler esse arquivo';
+
+  @override
+  String importedSummary(int anime, int manga) {
+    return 'Importados $anime animes e $manga mangás';
+  }
+
+  @override
+  String alreadyThere(int count) {
+    return ' · $count já estavam lá';
+  }
+
+  @override
+  String get airingNow => 'No ar agora';
+
+  @override
+  String get topRatedMovies => 'Filmes mais bem avaliados';
+
+  @override
+  String get topRatedShows => 'Séries mais bem avaliadas';
+
+  @override
+  String get recommendedSection => 'Recomendados';
+
+  @override
+  String get syncRow => 'Sincronizar listas';
+
+  @override
+  String get syncRowDesc => 'Espelha a lista de um serviço nas suas outras contas';
+
+  @override
+  String get syncTitle => 'Sincronizar';
+
+  @override
+  String get syncMainService => 'Serviço principal';
+
+  @override
+  String get syncMainServiceDesc => 'A lista dele é a fonte da verdade; todos os outros serviços logados são atualizados pra ficar iguais';
+
+  @override
+  String get syncAuto => 'Sincronização automática';
+
+  @override
+  String get syncAutoDesc => 'Busca e sincroniza em segundo plano quando o app abre e a cada 30 minutos';
+
+  @override
+  String get syncAddMissing => 'Adicionar entradas faltando';
+
+  @override
+  String get syncAddMissingDesc => 'Adiciona também entradas que o outro serviço ainda não tem';
+
+  @override
+  String get syncOnlyForward => 'Manter o progresso mais adiantado';
+
+  @override
+  String get syncOnlyForwardDesc => 'Não diminui o progresso de um serviço que já está na frente';
+
+  @override
+  String get syncFetch => 'Buscar';
+
+  @override
+  String get syncFetchAgain => 'Buscar de novo';
+
+  @override
+  String get syncAll => 'Sincronizar tudo';
+
+  @override
+  String get syncStop => 'Parar';
+
+  @override
+  String get syncResume => 'Continuar';
+
+  @override
+  String get syncNothingToSync => 'Esse serviço não pode ser sincronizado pra esse tipo';
+
+  @override
+  String get syncNoTargets => 'Entre em outro serviço pra sincronizar';
+
+  @override
+  String get syncLoadingMap => 'Carregando mapeamento de IDs';
+
+  @override
+  String get syncComparing => 'Comparando listas';
+
+  @override
+  String get syncIntro => 'Escolha um serviço principal e toque em Buscar. Cada serviço é consultado uma vez pela sua lista e depois comparado com o principal.';
+
+  @override
+  String get syncStateSynced => 'Sincronizado';
+
+  @override
+  String get syncStateOutdated => 'Fora de sincronia';
+
+  @override
+  String get syncStateMissing => 'Não está na lista';
+
+  @override
+  String get syncStateUnmapped => 'Sem correspondência';
+
+  @override
+  String syncPaused(String time) {
+    return 'Esperando o limite de requisições, volta em $time';
+  }
+
+  @override
+  String syncOnlyIn(int count, String name) {
+    return '$count só no $name, deixados como estão';
+  }
+
+  @override
+  String syncProgressOf(int done, int total) {
+    return '$done de $total';
+  }
+
+  @override
+  String get syncNothingHere => 'Nada pra mostrar';
+
+  @override
+  String syncLimits(int used, int max, String window) {
+    return '$used de $max requisições usadas nesse $window';
+  }
+
+  @override
+  String get syncMinute => 'minuto';
+
+  @override
+  String get syncDay => 'dia';
+
+  @override
+  String get syncNotInList => 'Ainda não está na lista';
+
+  @override
+  String get syncCleared => 'Plano limpo';
+
+  @override
+  String get syncClear => 'Limpar';
+
+  @override
+  String get syncOptions => 'Opções';
+
+  @override
+  String get syncShared => 'Divide a entrada com outro item';
+
+  @override
+  String syncNotFound(String service) {
+    return 'Não encontrado no $service';
+  }
+
+  @override
+  String syncService(String service, int count) {
+    return 'Sincronizar $service ($count)';
+  }
+
+  @override
+  String get syncOnEdit => 'Sincronizar na hora';
+
+  @override
+  String get syncOnEditDesc => 'Manda cada atualização de progresso e edição de lista pros seus outros serviços logados na hora';
+
+  @override
+  String syncPushed(String services) {
+    return 'Sincronizado com $services';
+  }
+
+  @override
+  String syncPushFailed(String service, String error) {
+    return '$service: $error';
+  }
+
+  @override
+  String get syncRateLimited => 'Limite de requisições atingido, tente de novo daqui a pouco';
+
+  @override
+  String get syncAhead => 'Quem estiver na frente';
+
+  @override
+  String get syncAheadDesc => 'Nos dois sentidos: pra cada título, vence a entrada mais adiantada e ela é copiada pros seus outros serviços';
+
+  @override
+  String syncAheadFrom(String service) {
+    return 'Do $service';
+  }
+
+  @override
+  String get syncConfirm => 'Revisar antes de sincronizar';
+
+  @override
+  String get syncConfirmDesc => 'Mostra o que o Sincronizar tudo vai mudar e quantas requisições precisa';
+
+  @override
+  String get syncPreviewTitle => 'Pronto pra sincronizar';
+
+  @override
+  String syncPreviewLine(int updates, int adds) {
+    return '$updates atualizações, $adds pra adicionar';
+  }
+
+  @override
+  String syncPreviewRequests(int count) {
+    return 'Cerca de $count requisições';
+  }
+
+  @override
+  String syncPreviewLookups(int count) {
+    return '$count IDs precisam de consulta antes';
+  }
+
+  @override
+  String get syncPreviewNothing => 'Nada pra mudar';
+
+  @override
+  String get syncStart => 'Iniciar';
+
+  @override
+  String get syncRetry => 'Tentar de novo';
+
+  @override
+  String get syncSkip => 'Pular esse item';
+
+  @override
+  String get syncInclude => 'Incluir esse item de novo';
+
+  @override
+  String get syncSkippedLabel => 'Pulado';
+
+  @override
+  String get syncChanges => 'Diferenças';
+
+  @override
+  String get syncChangeStatus => 'Status';
+
+  @override
+  String get syncChangeProgress => 'Progresso';
+
+  @override
+  String get syncChangeScore => 'Nota';
+
+  @override
+  String get syncChangeDates => 'Datas';
+
+  @override
+  String get syncChangeRepeat => 'Nº de reassistidas';
+
+  @override
+  String get syncFailedReason => 'Por que falhou';
+
+  @override
+  String get syncSkippedHint => 'Itens pulados ficam como estão, mesmo depois de buscar de novo';
+
+  @override
+  String get commentsRules => 'Regras dos comentários';
+
+  @override
+  String get commentsRulesBody => 'QUEBROU UMA REGRA = TÁ FORA\n\n1. Nada de racismo, discriminação ou discurso de ódio\n2. Nada de spam ou autopromoção\n3. Absolutamente nada de conteúdo NSFW\n4. Só em inglês, sem exceção\n5. Nada de se passar por outra pessoa, assédio ou abuso\n6. Nada de conteúdo ilegal nem desrespeito extremo a qualquer fandom\n7. Não peça nem compartilhe repositórios ou extensões\n8. Spoiler só com tag de spoiler e aviso\n9. Nada de sexualizar nem comentários impróprios sobre personagens menores de idade\n10. Se tá errado, não poste!';
+
+  @override
+  String get commentsRulesAccept => 'Entendi';
+
+  @override
+  String get commentsSortNewest => 'Mais recentes';
+
+  @override
+  String get commentsSortOldest => 'Mais antigos';
+
+  @override
+  String get commentsSortHighest => 'Mais bem avaliados';
+
+  @override
+  String get commentsSortLowest => 'Pior avaliados';
+
+  @override
+  String commentsEpisodeShort(int number) {
+    return 'Ep. $number';
+  }
+
+  @override
+  String commentsChapterShort(int number) {
+    return 'Cap. $number';
+  }
+
+  @override
+  String get commentsFilterEpisodeTitle => 'Filtrar por episódio';
+
+  @override
+  String get commentsFilterChapterTitle => 'Filtrar por capítulo';
+
+  @override
+  String get commentsFilterTagTitle => 'Digite um número de episódio ou capítulo';
+
+  @override
+  String get commentsFilterHint => 'Número';
+
+  @override
+  String get commentsFilterApply => 'Filtrar';
+
+  @override
+  String get commentsFilterClear => 'Mostrar tudo';
+
+  @override
+  String get commentsPlaceholder => 'Adicione um comentário…';
+
+  @override
+  String commentsReplyingTo(String name) {
+    return 'Respondendo a $name';
+  }
+
+  @override
+  String get commentsSend => 'Enviar';
+
+  @override
+  String get commentsTagButton => 'Tag';
+
+  @override
+  String commentsTagTitle(String label) {
+    return 'Tag $label (opcional)';
+  }
+
+  @override
+  String get commentsTagEpisode => 'episódio';
+
+  @override
+  String get commentsTagChapter => 'capítulo';
+
+  @override
+  String commentsTagRange(int total) {
+    return '1–$total';
+  }
+
+  @override
+  String commentsTagNumber(String label) {
+    return 'Número do $label';
+  }
+
+  @override
+  String commentsTagTooHigh(int total) {
+    return 'A tag não pode passar do total ($total)';
+  }
+
+  @override
+  String get commentsNoTag => 'Sem tag';
+
+  @override
+  String get commentsSpoiler => 'Spoiler';
+
+  @override
+  String get commentsGif => 'GIF';
+
+  @override
+  String get commentsGifSearch => 'Buscar GIFs';
+
+  @override
+  String get commentsGifEmpty => 'Nenhum GIF encontrado';
+
+  @override
+  String get commentsEmptyText => 'O comentário não pode ficar vazio';
+
+  @override
+  String get commentsBannedYou => 'Você está banido de comentar';
+
+  @override
+  String get commentsEdited => 'Comentário editado';
+
+  @override
+  String get commentsDeleted => 'Comentário apagado';
+
+  @override
+  String get commentsDeletedPlaceholder => '[apagado]';
+
+  @override
+  String get commentsReported => 'Comentário denunciado';
+
+  @override
+  String get commentsUserBanned => 'Usuário banido';
+
+  @override
+  String get commentsReport => 'Denunciar';
+
+  @override
+  String get commentsReportAsk => 'Denunciar esse comentário pros moderadores?';
+
+  @override
+  String get commentsDelete => 'Apagar';
+
+  @override
+  String get commentsDeleteAsk => 'Esse comentário vai ser removido pra todo mundo.';
+
+  @override
+  String get commentsBan => 'Banir';
+
+  @override
+  String get commentsBanAsk => 'Banir esse usuário de comentar?';
+
+  @override
+  String get commentsCopy => 'Copiar';
+
+  @override
+  String get commentsViewReply => 'Ver 1 resposta';
+
+  @override
+  String commentsViewReplies(int count) {
+    return 'Ver $count respostas';
+  }
+
+  @override
+  String get commentsHideReplies => 'Esconder respostas';
+
+  @override
+  String get commentsLoadMore => 'Carregar mais comentários';
+
+  @override
+  String get commentsEmpty => 'Nenhum comentário ainda. Seja o primeiro!';
+
+  @override
+  String get commentsEmptyFiltered => 'Nenhum comentário pra esse filtro';
+
+  @override
+  String get commentsSignIn => 'Entre no AniList pra ler e escrever comentários';
+
+  @override
+  String get commentsSignInMessage => 'Os comentários são compartilhados entre todos os serviços e usam sua conta do AniList.';
+
+  @override
+  String get commentsUnavailable => 'Comentários indisponíveis pra esse título';
+
+  @override
+  String get commentsUnavailableMessage => 'Não deu pra associar a uma entrada do AniList.';
+
+  @override
+  String get commentsDisabled => 'Os comentários estão desligados';
+
+  @override
+  String get commentsDisabledMessage => 'Você pode ligar de novo em Configurações › Geral.';
+
+  @override
+  String get commentsOffline => 'Não consegui carregar os comentários';
+
+  @override
+  String get commentsSingleTitle => 'Mostrando um comentário';
+
+  @override
+  String get commentsShowAll => 'Mostrar todos os comentários';
+
+  @override
+  String get commentsSettingsHeader => 'Comentários';
+
+  @override
+  String get commentsSettingEnabled => 'Comentários';
+
+  @override
+  String get commentsSettingEnabledDesc => 'Mostra a aba Comentários nos títulos e faz login no servidor de comentários com sua conta do AniList';
+
+  @override
+  String get commentsSettingAlerts => 'Notificações de respostas';
+
+  @override
+  String get commentsSettingAlertsDesc => 'Me avise quando alguém responder aos meus comentários';
+
+  @override
+  String get commentsNoticeReplyTitle => 'Nova resposta a comentário';
+
+  @override
+  String commentsNoticeReply(String name) {
+    return '$name respondeu ao seu comentário';
+  }
+
+  @override
+  String get commentsNoticeWarningTitle => 'Você recebeu um aviso';
+
+  @override
+  String get commentsNoticeWarning => 'Pense melhor nos seus comentários';
+
+  @override
+  String get commentsNoticeUpdateTitle => 'Atualização do Dantotsu';
+
+  @override
+  String get barcodeTitle => 'Escanear código de barras';
+
+  @override
+  String get barcodeTooltip => 'Ache um mangá ou novel pelo código de barras';
+
+  @override
+  String get barcodeIntro => 'Aponte a câmera pro código de barras na parte de trás de um volume, ou digite o ISBN.';
+
+  @override
+  String get barcodeIntroManual => 'Digite o ISBN impresso acima do código de barras na parte de trás de um volume.';
+
+  @override
+  String get barcodeIsbnHint => 'ISBN';
+
+  @override
+  String get barcodeInvalid => 'Esse ISBN não é válido';
+
+  @override
+  String barcodeNotFound(String isbn) {
+    return 'Nenhum livro encontrado pra $isbn';
+  }
+
+  @override
+  String get barcodeCameraDenied => 'A câmera não está disponível. Permita o acesso à câmera ou digite o ISBN.';
+
+  @override
+  String get themesTitle => 'Aberturas e encerramentos';
+
+  @override
+  String get themesOpening => 'Abertura';
+
+  @override
+  String get themesEnding => 'Encerramento';
+
+  @override
+  String get themesPlayVideo => 'Reproduzir vídeo';
+
+  @override
+  String get themesPlayAudio => 'Reproduzir só o áudio';
+
+  @override
+  String get themesOpenSite => 'Abrir no AnimeThemes';
+
+  @override
+  String get themesCredit => 'Temas do AnimeThemes';
+
+  @override
+  String get themesVersions => 'Versões';
+
+  @override
+  String get muTitle => 'MangaUpdates';
+
+  @override
+  String get muReleases => 'Lançamentos recentes';
+
+  @override
+  String get muNoReleases => 'Sem lançamentos recentes';
+
+  @override
+  String get muLicensed => 'Licenciado';
+
+  @override
+  String get muOpen => 'Ver no MangaUpdates';
+
+  @override
+  String get muCredit => 'Dados do MangaUpdates';
+
+  @override
+  String get muPublishers => 'Editoras';
+
+  @override
+  String get sauceTitle => 'Achar a origem';
+
+  @override
+  String get sauceIntro => 'Envie uma página de mangá ou uma arte, ou cole o link, pra descobrir de onde vem.';
+
+  @override
+  String get sauceKeyTitle => 'Chave de API do SauceNAO';
+
+  @override
+  String get sauceKeyHint => 'Opcional, aumenta o limite diário de buscas';
+
+  @override
+  String get sauceKeyDesc => 'Pegue uma chave grátis em saucenao.com/user.php';
+
+  @override
+  String get sauceSearchTitle => 'Buscar esse título';
+
+  @override
+  String get sauceOpen => 'Abrir origem';
+
+  @override
+  String get sauceCredit => 'Busca de imagem pelo SauceNAO';
+
+  @override
+  String get sauceEmpty => 'Nenhuma correspondência';
+
+  @override
+  String get sauceTooltip => 'Ache a origem de uma página de mangá ou arte';
+
+  @override
+  String get sauceLowMatch => 'Correspondência fraca';
+
+  @override
+  String get trendzTitle => 'Rankings de anime';
+
+  @override
+  String get trendzAnime => 'Anime';
+
+  @override
+  String get trendzFemale => 'Personagens femininas';
+
+  @override
+  String get trendzMale => 'Personagens masculinos';
+
+  @override
+  String get trendzCouple => 'Casais';
+
+  @override
+  String get trendzCredit => 'Rankings semanais do AniTrendz';
+
+  @override
+  String get trendzNew => 'NOVO';
+
+  @override
+  String get trendzSearch => 'Buscar esse título';
+
+  @override
+  String get trendzEmpty => 'O ranking está vazio';
+
+  @override
+  String get shareCard => 'Compartilhar cartão';
+
+  @override
+  String get shareCardList => 'Compartilhar cartão da lista';
+
+  @override
+  String get muNotFound => 'Sem correspondência no MangaUpdates pra esse título';
+
+  @override
+  String get shareCardWorking => 'Criando o cartão…';
+
+  @override
+  String get shareCardSaved => 'Cartão salvo';
+
+  @override
+  String get shareCardFailed => 'Não consegui criar o cartão';
+
+  @override
+  String get shareCardListEmpty => 'Sua lista ainda não tem nada pra compartilhar';
+
+  @override
+  String get shareCardTop => 'Minhas escolhas';
+
+  @override
+  String themesEpisodes(String eps) {
+    return 'Episódios $eps';
+  }
+
+  @override
+  String muLatest(String count) {
+    return 'Capítulo $count';
+  }
+
+  @override
+  String muRating(String rating, String votes) {
+    return '$rating de $votes votos';
+  }
+
+  @override
+  String sauceSimilarity(String percent) {
+    return '$percent% de correspondência';
+  }
+
+  @override
+  String trendzWeek(String week, String season) {
+    return 'Semana $week · $season';
+  }
+
+  @override
+  String trendzVotes(String count) {
+    return '$count votos';
+  }
+
+  @override
+  String trendzPeak(String rank) {
+    return 'Pico #$rank';
+  }
+
+  @override
+  String trendzWeeks(String count) {
+    return '$count semanas no top dez';
+  }
+
+  @override
+  String shareCardEntries(String count) {
+    return '$count títulos';
+  }
+
+  @override
+  String get imageSearchTitle => 'Buscar por imagem';
+
+  @override
+  String get imageSearchTooltip => 'Ache um anime a partir de um print';
+
+  @override
+  String get imageSearchIntro => 'Escolha um print ou cole o link de uma imagem e o trace.moe descobre o episódio e o momento de onde veio.';
+
+  @override
+  String get imageSearchPick => 'Escolher imagem';
+
+  @override
+  String get imageSearchLinkHint => 'Cole o link de uma imagem';
+
+  @override
+  String get imageSearchGo => 'Buscar';
+
+  @override
+  String get imageSearchEmpty => 'Nenhuma correspondência';
+
+  @override
+  String get imageSearchAdult => '18+';
+
+  @override
+  String imageSearchEpisode(String number) {
+    return 'Episódio $number';
+  }
+
+  @override
+  String imageSearchAt(String time) {
+    return 'aos $time';
+  }
+
+  @override
+  String get imageSearchPreview => 'Prévia do clipe';
+
+  @override
+  String imageSearchSimilarity(int percent) {
+    return '$percent% de correspondência';
+  }
+
+  @override
+  String get imageSearchCredit => 'Feito com trace.moe';
+
+  @override
+  String get imageSearchOpenFailed => 'Não consegui abrir esse título';
+
+  @override
+  String get groups => 'Grupos';
+
+  @override
+  String get groupsYours => 'Seus grupos';
+
+  @override
+  String get groupsPopular => 'Populares';
+
+  @override
+  String get groupsNew => 'Novos';
+
+  @override
+  String get groupsFeatured => 'Em destaque';
+
+  @override
+  String get groupsSearch => 'Buscar grupos';
+
+  @override
+  String get groupsAll => 'Todos';
+
+  @override
+  String get groupsEmpty => 'Nenhum grupo encontrado';
+
+  @override
+  String get groupsEmptyYours => 'Você ainda não entrou em nenhum grupo';
+
+  @override
+  String get groupsSignIn => 'Entre pra ver os grupos de que você participa';
+
+  @override
+  String groupsMembersCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count membros',
+      one: '1 membro',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get groupsJoin => 'Entrar';
+
+  @override
+  String get groupsJoined => 'Participando';
+
+  @override
+  String get groupsLeave => 'Sair do grupo';
+
+  @override
+  String get groupsLeaveAsk => 'Você vai parar de ver as postagens desse grupo no seu feed.';
+
+  @override
+  String get groupsJoinFailed => 'Não consegui entrar nesse grupo, pode ser só por convite';
+
+  @override
+  String get groupsLeaveFailed => 'Não consegui sair desse grupo';
+
+  @override
+  String get groupsPosts => 'Postagens';
+
+  @override
+  String get groupsMembersTab => 'Membros';
+
+  @override
+  String get groupsAbout => 'Sobre';
+
+  @override
+  String get groupsRules => 'Regras';
+
+  @override
+  String get groupsPrivacyOpen => 'Aberto';
+
+  @override
+  String get groupsPrivacyRestricted => 'Restrito';
+
+  @override
+  String get groupsPrivacyClosed => 'Fechado';
+
+  @override
+  String get groupsAdult => '18+';
+
+  @override
+  String get groupsRoleAdmin => 'Admin';
+
+  @override
+  String get groupsRoleMod => 'Mod';
+
+  @override
+  String get groupsCouldntLoad => 'Não consegui carregar esse grupo';
+
+  @override
+  String get groupsNewPost => 'Postar no grupo';
+
+  @override
+  String get groupsPostHint => 'Compartilhe algo com o grupo';
+
+  @override
+  String get groupsOpenInBrowser => 'Abrir no navegador';
+
+  @override
+  String get groupsCategory => 'Categoria';
+
+  @override
+  String get groupsLanguage => 'Idioma';
+
+  @override
+  String get groupsCreated => 'Criado';
+
+  @override
+  String groupsLeaders(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count líderes',
+      one: '1 líder',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get groupsPrivacy => 'Privacidade';
+
+  @override
+  String get notificationsAll => 'Tudo';
+
+  @override
+  String get notificationsAiring => 'No ar';
+
+  @override
+  String get notificationsMedia => 'Novos títulos';
+
+  @override
+  String get notificationsReplies => 'Respostas';
+
+  @override
+  String get notificationsMentions => 'Menções';
+
+  @override
+  String get notificationsMessages => 'Mensagens';
+
+  @override
+  String get notificationsLikes => 'Curtidas';
+
+  @override
+  String get notificationsFollows => 'Seguidores';
+
+  @override
+  String get notificationsNoServices => 'Nenhum serviço logado tem notificações';
+
+  @override
+  String get notificationsNoServicesMessage => 'Entre num serviço que envia notificações e elas aparecem aqui.';
+
+  @override
+  String get notificationsEmptyKind => 'Nada nessa categoria ainda';
+
+  @override
+  String get notificationsCommentsEmpty => 'Sem notificações de comentários';
+
+  @override
+  String get notificationsCommentsEmptyMessage => 'As respostas aos seus comentários e os avisos do Dantotsu aparecem aqui.';
+
+  @override
+  String get notificationsSettings => 'Configurações de notificações';
+
+  @override
+  String get notificationsPollTitle => 'Verificar novas notificações';
+
+  @override
+  String notificationsPollDesc(int minutes) {
+    return 'A cada $minutes minutos com o app aberto';
+  }
+
+  @override
+  String get notificationsNotifyAbout => 'Me avise sobre';
+
+  @override
+  String get notificationsCommentsHeader => 'Notificações de comentários';
+
+  @override
+  String systemNotificationsDescFor(String service) {
+    return 'Mostra uma notificação do sistema pra cada notificação não lida do $service enquanto o app está rodando.';
+  }
+
+  @override
+  String get notificationsTestSent => 'Notificação de teste enviada';
+
+  @override
+  String get notificationsTestDenied => 'As notificações não estão permitidas pro Dartotsu. Ligue nas configurações do sistema.';
+
+  @override
+  String get notificationsTestHint => 'Segure pra enviar uma notificação de teste';
+
+  @override
+  String get notificationsTestSample => 'Essa é uma notificação de teste';
+
+  @override
+  String commentsNoticeReplyIn(String name, String media) {
+    return '$name respondeu ao seu comentário em $media';
+  }
+
+  @override
+  String get imageSearchNotLink => 'Isso não parece um link';
+
+  @override
+  String get imageSearchQuota => 'Limite de buscas excedido';
+
+  @override
+  String get imageSearchBusy => 'Muitas requisições, tente de novo daqui a pouco';
+
+  @override
+  String imageSearchFailed(int code) {
+    return 'A busca falhou ($code)';
+  }
+
+  @override
+  String notificationsNewCount(int count) {
+    return '$count novas notificações';
+  }
+
+  @override
+  String get reactionsTitle => 'Reações';
+
+  @override
+  String get reactionsNeedEntry => 'Adicione esse título à sua lista antes de reagir';
+
+  @override
+  String get reactionsAdd => 'Adicionar uma reação';
+
+  @override
+  String get reactionsHint => 'O que achou? (curto e sem spoiler)';
+
+  @override
+  String get reactionsPost => 'Postar';
+
+  @override
+  String get reactionsFailed => 'Não consegui atualizar a reação';
+
+  @override
+  String get settingsWatch => 'Assistir e ler';
+
+  @override
+  String get settingsWatchDesc => 'Listas de episódios, associação de fontes e detalhes dos episódios';
+
+  @override
+  String get watchSettingsLayout => 'Lista de episódios';
+
+  @override
+  String get watchSettingsSources => 'Fontes';
+
+  @override
+  String get watchSettingsMetadata => 'Detalhes do episódio';
+
+  @override
+  String get watchLayout => 'Layout';
+
+  @override
+  String get watchListView => 'Lista';
+
+  @override
+  String get watchGridView => 'Grade';
+
+  @override
+  String get watchCompactView => 'Compacto';
+
+  @override
+  String get watchDefaultLayoutDesc => 'Como episódios e capítulos aparecem até você mudar num título';
+
+  @override
+  String get watchChunkSize => 'Tamanho do intervalo';
+
+  @override
+  String get watchChunkSizeDesc => 'Quantos episódios ou capítulos cada aba de intervalo tem';
+
+  @override
+  String get watchShowDescription => 'Mostrar descrições';
+
+  @override
+  String get watchShowDescriptionDesc => 'Mostra o resumo do episódio embaixo de cada título no layout em lista';
+
+  @override
+  String get watchShowFiller => 'Mostrar episódios filler';
+
+  @override
+  String get watchShowFillerDesc => 'Desligue pra esconder episódios marcados como filler';
+
+  @override
+  String get watchBlurUnwatched => 'Esconder miniaturas com spoiler';
+
+  @override
+  String get watchBlurUnwatchedDesc => 'Desfoca a miniatura dos episódios que você ainda não assistiu';
+
+  @override
+  String get watchResumeShelf => 'Prateleira de continuar';
+
+  @override
+  String get watchResumeShelfDesc => 'Mostra a linha Continuar no Início';
+
+  @override
+  String get watchMarkOnLongPress => 'Segurar marca o progresso';
+
+  @override
+  String get watchMarkOnLongPressDesc => 'Segure um episódio ou capítulo pra marcar como assistido ou não assistido';
+
+  @override
+  String get watchMatching => 'Associação de fontes';
+
+  @override
+  String get watchMatchingDesc => '\"Mais próxima\" pega o melhor resultado da busca. \"Só exata\" aceita apenas um título quase idêntico e deixa o resto pra você escolher.';
+
+  @override
+  String get watchMatchClosest => 'Correspondência mais próxima';
+
+  @override
+  String get watchMatchExact => 'Só correspondência exata';
+
+  @override
+  String get watchMetadataDesc => 'De onde vêm os títulos, resumos, miniaturas, datas de exibição e marcas de filler dos episódios. Arraste pra definir a prioridade; vale a primeira fonte com valor.';
+
+  @override
+  String get watchMetaAniZipDesc => 'Títulos, resumos, imagens e datas de exibição dos episódios';
+
+  @override
+  String get watchMetaKitsuDesc => 'Títulos, descrições e miniaturas dos episódios';
+
+  @override
+  String get watchMetaSimklDesc => 'Títulos, descrições, imagens e datas de exibição dos episódios';
+
+  @override
+  String get watchMetaAniListDesc => 'Títulos e miniaturas dos episódios em streaming e o calendário de exibição';
+
+  @override
+  String get watchMetaTenraiDesc => 'Títulos, datas de exibição, filler e recaps de episódios do MyAnimeList via Tenrai';
+
+  @override
+  String get watchClearMetadata => 'Atualizar detalhes dos episódios';
+
+  @override
+  String get watchClearMetadataDesc => 'Esquece os detalhes de episódios em cache pra buscar de novo';
+
+  @override
+  String get watchMetadataCleared => 'Os detalhes dos episódios vão ser buscados de novo';
+
+  @override
+  String watchEpisodeCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count episódios',
+      one: '1 episódio',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String watchChapterCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count capítulos',
+      one: '1 capítulo',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String watchEpisodeNumber(String number) {
+    return 'Episódio $number';
+  }
+
+  @override
+  String watchChapterNumber(String number) {
+    return 'Capítulo $number';
+  }
+
+  @override
+  String get watchSearching => 'Buscando…';
+
+  @override
+  String watchSearchingFor(String term) {
+    return 'Buscando: $term';
+  }
+
+  @override
+  String watchSelected(String title) {
+    return 'Selecionado: $title';
+  }
+
+  @override
+  String watchFound(String title) {
+    return 'Encontrado: $title';
+  }
+
+  @override
+  String get watchNothingFound => 'Nada encontrado nessa fonte';
+
+  @override
+  String get watchSearchFailed => 'A busca na fonte falhou';
+
+  @override
+  String get watchLoadFailed => 'Não consegui carregar a lista';
+
+  @override
+  String get watchSignInToTrack => 'Entre pra acompanhar seu progresso';
+
+  @override
+  String watchInstallSource(String action) {
+    return 'Instale uma extensão pra começar a $action';
+  }
+
+  @override
+  String get watchSourceMissing => 'Essa fonte não está instalada';
+
+  @override
+  String get watchWrongTitle => 'Título errado?';
+
+  @override
+  String get watchSearchAgain => 'Buscar de novo';
+
+  @override
+  String watchSearchSource(String source) {
+    return 'Buscar em $source';
+  }
+
+  @override
+  String get watchSource => 'Fonte';
+
+  @override
+  String get watchOptions => 'Opções';
+
+  @override
+  String get watchReverse => 'Inverter ordem';
+
+  @override
+  String get watchScanlators => 'Grupos';
+
+  @override
+  String get watchResetOptions => 'Redefinir essas opções';
+
+  @override
+  String get watchContinue => 'Continuar';
+
+  @override
+  String get watchStart => 'Iniciar';
+
+  @override
+  String get watchPlay => 'Reproduzir';
+
+  @override
+  String get watchRead => 'Ler';
+
+  @override
+  String get watchMarkWatched => 'Marcar como assistido';
+
+  @override
+  String get watchMarkUnwatched => 'Marcar como não assistido';
+
+  @override
+  String get watchMarkRead => 'Marcar como lido';
+
+  @override
+  String get watchMarkUnread => 'Marcar como não lido';
+
+  @override
+  String get watchFiller => 'Filler';
+
+  @override
+  String get watchRecap => 'Recap';
+
+  @override
+  String get watchNoEpisodes => 'Nenhum episódio encontrado';
+
+  @override
+  String get watchNoChapters => 'Nenhum capítulo encontrado';
+
+  @override
+  String get watchSourceTools => 'Ferramentas da fonte';
+
+  @override
+  String get watchSourceSettings => 'Configurações da fonte';
+
+  @override
+  String get watchOpenWebView => 'Abrir na webview';
+
+  @override
+  String get watchOpenWebViewDesc => 'Resolva uma verificação da Cloudflare ou faça login; os cookies são compartilhados com as requisições da fonte';
+
+  @override
+  String watchCookieCount(int count, String host) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count cookies salvos pra $host',
+      one: '1 cookie salvo pra $host',
+      zero: 'Nenhum cookie salvo pra $host',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String watchClearanceActive(String time) {
+    return 'Liberação da Cloudflare ativa, $time';
+  }
+
+  @override
+  String get watchClearanceMissing => 'Sem cookie de liberação da Cloudflare';
+
+  @override
+  String get watchClearanceSession => 'dura até o app fechar';
+
+  @override
+  String get watchAgentShared => 'As requisições usam o user agent da webview, que a Cloudflare confere';
+
+  @override
+  String get watchAgentCustom => 'Há um user agent personalizado, então a liberação da Cloudflare da webview pode ser rejeitada';
+
+  @override
+  String get watchTestConnection => 'Testar conexão';
+
+  @override
+  String get watchSolveChallenge => 'Resolver';
+
+  @override
+  String watchProbeOk(int code) {
+    return 'Acessível (HTTP $code)';
+  }
+
+  @override
+  String get watchProbeChallenge => 'A Cloudflare ainda pede uma verificação';
+
+  @override
+  String watchProbeBlocked(int code) {
+    return 'Bloqueado pelo site (HTTP $code)';
+  }
+
+  @override
+  String get watchProbeFailed => 'Não foi possível acessar o site';
+
+  @override
+  String get watchClearCookies => 'Limpar cookies desse site';
+
+  @override
+  String get watchCookiesCleared => 'Cookies limpos';
+
+  @override
+  String get watchResults => 'Resultados';
+
+  @override
+  String get watchMetaSource => 'Detalhes dos episódios de';
+
+  @override
+  String get watchMetaAuto => 'Automático';
+
+  @override
+  String get watchMetaOff => 'Desligado';
+
+  @override
+  String get settingsPlayer => 'Player';
+
+  @override
+  String get settingsPlayerDesc => 'Reprodução, legendas, shaders, mpv e abrir arquivos';
+
+  @override
+  String get playerSettingsTitle => 'Configurações do player';
+
+  @override
+  String get playerSectionPlayback => 'Reprodução';
+
+  @override
+  String get playerSectionSkip => 'Pular';
+
+  @override
+  String get playerSectionGestures => 'Controles';
+
+  @override
+  String get playerSectionSubtitles => 'Legendas';
+
+  @override
+  String get playerSectionShaders => 'Shaders';
+
+  @override
+  String get playerSectionEngine => 'Engine';
+
+  @override
+  String get playerSectionMpv => 'mpv';
+
+  @override
+  String get playerSectionOpen => 'Abrir mídia';
+
+  @override
+  String get playerSpeed => 'Velocidade de reprodução';
+
+  @override
+  String get playerCursedSpeed => 'Velocidades extras';
+
+  @override
+  String get playerCursedSpeedDesc => 'Adiciona velocidades de até 10x à lista';
+
+  @override
+  String get playerResize => 'Modo de redimensionamento';
+
+  @override
+  String get playerFitFit => 'Ajustar';
+
+  @override
+  String get playerFitCover => 'Cobrir';
+
+  @override
+  String get playerFitStretch => 'Esticar';
+
+  @override
+  String get playerSkipDuration => 'Duração do botão de pular';
+
+  @override
+  String get playerSkipDurationDesc => 'Segundos que o botão de pular avança fora das aberturas e encerramentos';
+
+  @override
+  String get playerSeekDuration => 'Toque duplo pra avançar';
+
+  @override
+  String get playerSeekDurationDesc => 'Segundos pra pular com um toque duplo ou tecla de seta';
+
+  @override
+  String get playerAutoPlay => 'Reproduzir o próximo automaticamente';
+
+  @override
+  String get playerAutoPlayDesc => 'Começa o próximo episódio quando esse acabar';
+
+  @override
+  String get playerResume => 'Continuar de onde parou';
+
+  @override
+  String get playerResumeDesc => 'Continua um episódio da última posição';
+
+  @override
+  String get playerOrientation => 'Orientação';
+
+  @override
+  String get playerOrientationAuto => 'Seguir o dispositivo';
+
+  @override
+  String get playerOrientationLandscape => 'Paisagem';
+
+  @override
+  String get playerOrientationPortrait => 'Retrato';
+
+  @override
+  String get playerAutoSkipOpening => 'Pular aberturas';
+
+  @override
+  String get playerAutoSkipEnding => 'Pular encerramentos';
+
+  @override
+  String get playerAutoSkipRecap => 'Pular recaps';
+
+  @override
+  String get playerAutoSkipDesc => 'Pula assim que começa, usando AniSkip e marcações de tempo do stream';
+
+  @override
+  String get playerSkipOnce => 'Pular só uma vez';
+
+  @override
+  String get playerSkipOnceDesc => 'Não pula a mesma parte de novo se você voltar nela';
+
+  @override
+  String get playerAdjustBrightness => 'Gesto de brilho';
+
+  @override
+  String get playerAdjustBrightnessDesc => 'Deslize pra cima e pra baixo na metade direita da tela';
+
+  @override
+  String get playerAdjustVolume => 'Gesto de volume';
+
+  @override
+  String get playerAdjustVolumeDesc => 'Deslize pra cima e pra baixo na metade esquerda da tela';
+
+  @override
+  String get playerHoldToSpeed => 'Segurar pra acelerar';
+
+  @override
+  String get playerHoldToSpeedDesc => 'Segure o vídeo pra reproduzir mais rápido, arraste pro lado pra mudar a velocidade';
+
+  @override
+  String get playerThumbless => 'Barra de progresso mais grossa';
+
+  @override
+  String get playerThumblessDesc => 'Uma barra grossa sem indicador';
+
+  @override
+  String get playerShowSubtitles => 'Mostrar legendas';
+
+  @override
+  String get playerShowSubtitlesDesc => 'Desligue pra esconder todas as faixas de legenda';
+
+  @override
+  String get playerSubtitleLanguage => 'Idioma preferido das legendas';
+
+  @override
+  String get playerSubtitleSize => 'Tamanho da legenda';
+
+  @override
+  String get playerSubtitleWeight => 'Espessura da legenda';
+
+  @override
+  String get playerSubtitleBottom => 'Margem inferior da legenda';
+
+  @override
+  String get playerSubtitleFont => 'Fonte da legenda';
+
+  @override
+  String get playerSubtitleColor => 'Cor da legenda';
+
+  @override
+  String get playerSubtitleBackground => 'Fundo da legenda';
+
+  @override
+  String get playerSubtitleOutline => 'Contorno da legenda';
+
+  @override
+  String get playerLibass => 'Usar libass';
+
+  @override
+  String get playerLibassDesc => 'Renderiza legendas .ass estilizadas. O tamanho, a cor e a fonte acima deixam de valer';
+
+  @override
+  String get playerShaders => 'Shaders';
+
+  @override
+  String get playerShadersEnable => 'Ativar shaders';
+
+  @override
+  String get playerShadersEnableDesc => 'Aumenta a resolução e limpa a imagem com shaders GLSL como o Anime4K';
+
+  @override
+  String get playerShadersOff => 'Shaders desligados';
+
+  @override
+  String get playerShadersMissing => 'O Anime4K não está instalado';
+
+  @override
+  String get playerShadersMissingDesc => 'Baixe o pacote de shaders do Anime4K (cerca de 0,8 MB) pra usar os modos integrados.';
+
+  @override
+  String get playerShadersDownload => 'Baixar Anime4K';
+
+  @override
+  String get playerShadersPreview => 'Prévia nesse frame';
+
+  @override
+  String get playerShadersUse => 'Usar esse';
+
+  @override
+  String get playerPicture => 'Imagem';
+
+  @override
+  String get playerColors => 'Cores';
+
+  @override
+  String get playerColorDefault => 'Padrão';
+
+  @override
+  String get playerColorVivid => 'Vívido';
+
+  @override
+  String get playerColorPop => 'Anime pop';
+
+  @override
+  String get playerColorSoft => 'Suave';
+
+  @override
+  String get playerColorCinematic => 'Cinematográfico';
+
+  @override
+  String get playerColorBright => 'Brilhante';
+
+  @override
+  String get playerColorNight => 'Noite';
+
+  @override
+  String get playerColorMono => 'Mono';
+
+  @override
+  String get playerColorCustom => 'Personalizado';
+
+  @override
+  String get playerColorBrightness => 'Brilho';
+
+  @override
+  String get playerColorContrast => 'Contraste';
+
+  @override
+  String get playerColorSaturation => 'Saturação';
+
+  @override
+  String get playerColorGamma => 'Gama';
+
+  @override
+  String get playerColorHue => 'Matiz';
+
+  @override
+  String get playerColorReset => 'Redefinir';
+
+  @override
+  String get playerColorAdjust => 'Ajustar';
+
+  @override
+  String get playerShadersOriginal => 'Original';
+
+  @override
+  String get playerShadersPreviewFailed => 'Não consegui pegar um frame pra prévia';
+
+  @override
+  String get playerShadersCustomFiles => 'Seus shaders';
+
+  @override
+  String get playerShadersCustom => 'Shaders personalizados';
+
+  @override
+  String get playerShadersImport => 'Importar .glsl';
+
+  @override
+  String get playerShadersNone => 'Importe seus próprios arquivos .glsl ou .hook e marque pra encadear';
+
+  @override
+  String get playerShadersBadFile => 'Escolha um arquivo de shader .glsl ou .hook';
+
+  @override
+  String get playerDecoder => 'Decodificador';
+
+  @override
+  String get playerDecoderAuto => 'Auto';
+
+  @override
+  String get playerDecoderAutoSafe => 'Auto (seguro)';
+
+  @override
+  String get playerDecoderSoftware => 'Software';
+
+  @override
+  String get playerDecoderHardware => 'Hardware';
+
+  @override
+  String get playerDecoderHardwarePlus => 'Hardware+';
+
+  @override
+  String get playerVideoOutput => 'Saída de vídeo';
+
+  @override
+  String get playerAudioChannels => 'Canais de áudio';
+
+  @override
+  String get playerBuffer => 'Tamanho do buffer (MB)';
+
+  @override
+  String get playerBufferDesc => 'Memória que o player pode usar pra fazer buffer de um stream';
+
+  @override
+  String get playerUseMpvConf => 'Usar mpv.conf';
+
+  @override
+  String get playerUseMpvConfDesc => 'Aplica as opções do seu mpv.conf quando a reprodução começa';
+
+  @override
+  String get playerMpvConf => 'mpv.conf';
+
+  @override
+  String get playerMpvConfEdit => 'Edite a configuração do mpv';
+
+  @override
+  String get playerMpvConfDesc => 'Uma opção por linha, como --hwdec=auto num mpv.conf normal. Perfis entre [colchetes] são ignorados.';
+
+  @override
+  String get playerMpvConfSaved => 'mpv.conf salvo';
+
+  @override
+  String get playerUseScripts => 'Usar scripts do mpv';
+
+  @override
+  String get playerUseScriptsDesc => 'Carrega os plugins da pasta de scripts. Precisam de uma build do libmpv com suporte a Lua ou JavaScript';
+
+  @override
+  String get playerScripts => 'Scripts do mpv';
+
+  @override
+  String get playerScriptsManage => 'Adicione, remova e alterne plugins';
+
+  @override
+  String get playerScriptsAdd => 'Adicionar script';
+
+  @override
+  String get playerScriptsDesc => 'Plugins Lua, JavaScript e nativos colocados aqui são carregados quando a reprodução começa.';
+
+  @override
+  String get playerScriptsNone => 'Nenhum script ainda';
+
+  @override
+  String get playerScriptsBadFile => 'Escolha um arquivo .lua, .js ou plugin nativo';
+
+  @override
+  String get playerTuning => 'Ajuste avançado de vídeo';
+
+  @override
+  String get playerTuningDesc => 'Sobrescreve sincronização, cache, escalonamento e tone mapping. Valores errados podem prejudicar a reprodução';
+
+  @override
+  String get playerVideoSync => 'Sincronização de vídeo';
+
+  @override
+  String get playerInterpolation => 'Interpolação de frames';
+
+  @override
+  String get playerInterpolationDesc => 'Movimento suave, precisa de sincronização display-resample';
+
+  @override
+  String get playerPitch => 'Correção de tom';
+
+  @override
+  String get playerPitchDesc => 'Mantém as vozes naturais em outras velocidades';
+
+  @override
+  String get playerCacheSeconds => 'Cache (segundos)';
+
+  @override
+  String get playerReadahead => 'Leitura antecipada (segundos)';
+
+  @override
+  String get playerThreads => 'Threads do decodificador';
+
+  @override
+  String get playerDeband => 'Deband';
+
+  @override
+  String get playerDebandDesc => 'Reduz as faixas de cor nos gradientes';
+
+  @override
+  String get playerDebandIterations => 'Iterações do deband';
+
+  @override
+  String get playerDebandThreshold => 'Limiar do deband';
+
+  @override
+  String get playerCorrectDownscaling => 'Redução correta';
+
+  @override
+  String get playerSigmoid => 'Escalonamento sigmoide';
+
+  @override
+  String get playerScale => 'Escalonador';
+
+  @override
+  String get playerCscale => 'Escalonador de croma';
+
+  @override
+  String get playerDscale => 'Redutor';
+
+  @override
+  String get playerToneMapping => 'Tone mapping';
+
+  @override
+  String get playerTargetPeak => 'Pico alvo';
+
+  @override
+  String get playerOpenFiles => 'Abrir arquivos de vídeo';
+
+  @override
+  String get playerOpenFilesDesc => 'Reproduz arquivos desse dispositivo';
+
+  @override
+  String get playerOpenFolder => 'Abrir uma pasta';
+
+  @override
+  String get playerOpenFolderDesc => 'Reproduz todos os vídeos de uma pasta como playlist';
+
+  @override
+  String get playerNetworkStream => 'Stream de rede';
+
+  @override
+  String get playerNetworkStreamDesc => 'Abre um link direto de vídeo ou HLS';
+
+  @override
+  String get playerStreamUrl => 'URL do stream';
+
+  @override
+  String get playerStreamReferer => 'Referer (opcional)';
+
+  @override
+  String get playerTorrent => 'Torrent';
+
+  @override
+  String get playerTorrentDesc => 'Faz stream de um link magnet ou arquivo .torrent';
+
+  @override
+  String get playerMagnetLink => 'Link magnet ou URL de torrent';
+
+  @override
+  String get playerPickTorrent => 'Escolher um arquivo .torrent';
+
+  @override
+  String get playerTorrentMissing => 'Instale primeiro o complemento de torrent em Configurações > Complementos';
+
+  @override
+  String get playerNoVideos => 'Nenhum vídeo reproduzível encontrado';
+
+  @override
+  String get playerReset => 'Redefinir configurações do player';
+
+  @override
+  String get playerResetDesc => 'Volta todas as opções do player pro padrão';
+
+  @override
+  String get playerResetConfirm => 'Redefinir todas as configurações do player?';
+
+  @override
+  String get playerResetDone => 'Configurações do player redefinidas';
+
+  @override
+  String get playerQuality => 'Qualidade';
+
+  @override
+  String get playerStreams => 'Streams';
+
+  @override
+  String get playerAutoSelect => 'Escolher stream automaticamente';
+
+  @override
+  String get playerAutoSelectDesc => 'Escolhe o stream mais parecido com sua última escolha pra esse título';
+
+  @override
+  String get playerLoadingStreams => 'Procurando streams…';
+
+  @override
+  String get playerNoStreams => 'Esse episódio não tem streams';
+
+  @override
+  String get playerNoStreamsTitle => 'Nenhum stream encontrado';
+
+  @override
+  String get playerFailed => 'A reprodução falhou';
+
+  @override
+  String get playerTorrentNeeded => 'Esse stream é um torrent';
+
+  @override
+  String get playerTorrentNeededDesc => 'Instale o complemento de torrent pra reproduzir links magnet e arquivos .torrent';
+
+  @override
+  String get playerOpenAddons => 'Abrir complementos';
+
+  @override
+  String get playerTryAnotherStream => 'Tentar outro stream';
+
+  @override
+  String get playerEpisodes => 'Episódios';
+
+  @override
+  String get playerLock => 'Travar controles';
+
+  @override
+  String get playerFullscreen => 'Tela cheia';
+
+  @override
+  String get settingsReader => 'Leitor';
+
+  @override
+  String get settingsReaderDesc => 'Leitura de mangá, manhwa e novels';
+
+  @override
+  String get readerChapters => 'Capítulos';
+
+  @override
+  String get readerSettingsTitle => 'Configurações do leitor';
+
+  @override
+  String get readerPreviousChapter => 'Capítulo anterior';
+
+  @override
+  String get readerNextChapter => 'Próximo capítulo';
+
+  @override
+  String get readerFirstChapter => 'Esse é o primeiro capítulo';
+
+  @override
+  String get readerLastChapter => 'Você está em dia';
+
+  @override
+  String get readerFailed => 'Não consegui abrir esse capítulo';
+
+  @override
+  String get readerNoText => 'Esse capítulo não tem texto';
+
+  @override
+  String get readerPerTitle => 'Só pra esse título';
+
+  @override
+  String get readerPerTitleDesc => 'Mantém essas configurações do leitor só pra esse título';
+
+  @override
+  String get readerSectionReading => 'Leitura';
+
+  @override
+  String get readerSectionControls => 'Controles';
+
+  @override
+  String get readerSectionDisplay => 'Tela';
+
+  @override
+  String get readerSectionNovel => 'Novel';
+
+  @override
+  String get readerSectionReset => 'Redefinir';
+
+  @override
+  String get readerMode => 'Modo de leitura';
+
+  @override
+  String get readerModeRtl => 'Da direita pra esquerda';
+
+  @override
+  String get readerModeLtr => 'Da esquerda pra direita';
+
+  @override
+  String get readerModeVertical => 'Páginas na vertical';
+
+  @override
+  String get readerModeWebtoon => 'Webtoon';
+
+  @override
+  String get readerModeContinuous => 'Rolagem contínua';
+
+  @override
+  String get readerScale => 'Escala da imagem';
+
+  @override
+  String get readerScaleFit => 'Ajustar à tela';
+
+  @override
+  String get readerScaleWidth => 'Ajustar à largura';
+
+  @override
+  String get readerScaleHeight => 'Ajustar à altura';
+
+  @override
+  String get readerScaleOriginal => 'Tamanho original';
+
+  @override
+  String get readerScaleSmart => 'Ajuste inteligente';
+
+  @override
+  String get readerDoublePage => 'Páginas duplas';
+
+  @override
+  String get readerDoublePageDesc => 'Mostra duas páginas lado a lado na paisagem';
+
+  @override
+  String get readerDoubleTapZoom => 'Toque duplo pra dar zoom';
+
+  @override
+  String get readerDoubleTapZoomDesc => 'Aumenta e diminui uma página com um toque duplo';
+
+  @override
+  String get readerAnimate => 'Animação de página';
+
+  @override
+  String get readerAnimateDesc => 'Animar a troca de páginas';
+
+  @override
+  String get readerSidePadding => 'Margem lateral';
+
+  @override
+  String get readerSidePaddingDesc => 'Espaço ao lado das páginas, em porcentagem';
+
+  @override
+  String get readerPageGap => 'Espaço entre páginas';
+
+  @override
+  String get readerPageGapDesc => 'Espaço entre as páginas';
+
+  @override
+  String get readerAutoNext => 'Continuar no próximo capítulo';
+
+  @override
+  String get readerAutoNextDesc => 'Carrega o próximo capítulo enquanto você lê o final desse';
+
+  @override
+  String get readerPreload => 'Pré-carregar páginas';
+
+  @override
+  String get readerPreloadDesc => 'Quantas páginas baixar com antecedência';
+
+  @override
+  String get readerTapZones => 'Zonas de toque';
+
+  @override
+  String get readerTapDefault => 'Padrão';
+
+  @override
+  String get readerTapLShaped => 'Em L';
+
+  @override
+  String get readerTapKindle => 'Estilo Kindle';
+
+  @override
+  String get readerTapEdge => 'Só as bordas';
+
+  @override
+  String get readerTapOff => 'Desativado';
+
+  @override
+  String get readerInvertTaps => 'Inverter zonas de toque';
+
+  @override
+  String get readerInvertTapsDesc => 'Troca as áreas de anterior e próximo';
+
+  @override
+  String get readerBackground => 'Fundo';
+
+  @override
+  String get readerBackgroundBlack => 'Preto';
+
+  @override
+  String get readerBackgroundGray => 'Cinza';
+
+  @override
+  String get readerBackgroundWhite => 'Branco';
+
+  @override
+  String get readerBackgroundTheme => 'Tema do app';
+
+  @override
+  String get readerFilter => 'Filtro de cor';
+
+  @override
+  String get readerFilterNone => 'Nenhum';
+
+  @override
+  String get readerFilterGrayscale => 'Tons de cinza';
+
+  @override
+  String get readerFilterInvert => 'Inverter';
+
+  @override
+  String get readerFilterSepia => 'Sépia';
+
+  @override
+  String get readerDim => 'Escurecer';
+
+  @override
+  String get readerDimDesc => 'Escurece as páginas';
+
+  @override
+  String get readerPageNumber => 'Número da página';
+
+  @override
+  String get readerPageNumberDesc => 'Mostra o número da página enquanto você lê';
+
+  @override
+  String get readerFullscreen => 'Tela cheia';
+
+  @override
+  String get readerFullscreenDesc => 'Esconde as barras do sistema';
+
+  @override
+  String get readerCropBorders => 'Cortar bordas';
+
+  @override
+  String get readerCropBordersDesc => 'Corta margens brancas ou pretas vazias das páginas';
+
+  @override
+  String get readerVolumeKeys => 'Teclas de volume viram a página';
+
+  @override
+  String get readerVolumeKeysDesc => 'Volume pra baixo avança, volume pra cima volta';
+
+  @override
+  String get readerBookmarks => 'Marcadores';
+
+  @override
+  String get readerBookmarkAdd => 'Adicionar marcador';
+
+  @override
+  String get readerBookmarkRemove => 'Remover marcador';
+
+  @override
+  String get readerBookmarksEmpty => 'Nenhum marcador ainda';
+
+  @override
+  String readerBookmarkPage(int page, int total) {
+    return 'Página $page de $total';
+  }
+
+  @override
+  String get readerAutoScroll => 'Rolagem automática';
+
+  @override
+  String get readerAutoScrollStop => 'Parar rolagem automática';
+
+  @override
+  String get readerAutoScrollSpeed => 'Velocidade da rolagem automática';
+
+  @override
+  String get readerAutoScrollSpeedDesc => 'Com que rapidez as páginas rolam ou viram sozinhas';
+
+  @override
+  String get readerKeepOn => 'Manter a tela ligada';
+
+  @override
+  String get readerKeepOnDesc => 'Impede a tela de apagar enquanto você lê';
+
+  @override
+  String get readerOrientation => 'Orientação';
+
+  @override
+  String get readerOrientationFree => 'Livre';
+
+  @override
+  String get readerOrientationPortrait => 'Retrato';
+
+  @override
+  String get readerOrientationLandscape => 'Paisagem';
+
+  @override
+  String get readerSaveProgress => 'Salvar progresso';
+
+  @override
+  String get readerSaveProgressDesc => 'Lembra da sua página e marca capítulos como lidos';
+
+  @override
+  String get readerReset => 'Redefinir configurações do leitor';
+
+  @override
+  String get readerResetDesc => 'Voltar pro padrão';
+
+  @override
+  String get novelSize => 'Tamanho do texto';
+
+  @override
+  String get novelFont => 'Fonte';
+
+  @override
+  String get novelLineHeight => 'Altura da linha';
+
+  @override
+  String get novelParagraph => 'Espaço entre parágrafos';
+
+  @override
+  String get novelMargin => 'Margens';
+
+  @override
+  String get novelTheme => 'Tema do leitor';
+
+  @override
+  String get novelThemeApp => 'Tema do app';
+
+  @override
+  String get novelThemeLight => 'Claro';
+
+  @override
+  String get novelThemeSepia => 'Sépia';
+
+  @override
+  String get novelThemeDark => 'Escuro';
+
+  @override
+  String get novelThemeBlack => 'Preto';
+
+  @override
+  String get novelJustify => 'Justificar texto';
+
+  @override
+  String get novelJustifyDesc => 'Alinha o texto nas duas bordas';
+
+  @override
+  String get trackProgressTitle => 'Salvar progresso?';
+
+  @override
+  String trackProgressAnime(String name) {
+    return 'Registrar $name na sua lista enquanto assiste? Escolha \"Só nesse dispositivo\" pra manter local, ou Não pra não salvar nada.';
+  }
+
+  @override
+  String trackProgressManga(String name) {
+    return 'Registrar $name na sua lista quando terminar um capítulo? Escolha \"Só nesse dispositivo\" pra manter local, ou Não pra não salvar nada.';
+  }
+
+  @override
+  String get trackProgressRemember => 'Lembrar da minha escolha';
+
+  @override
+  String get trackProgressYes => 'Salvar';
+
+  @override
+  String get trackProgressReset => 'Pergunta de salvar progresso redefinida pra esse tipo, vai perguntar de novo';
+
+  @override
+  String get trackProgressNo => 'Não';
+
+  @override
+  String get trackProgressOff => 'Desligado';
+
+  @override
+  String get trackProgressLocal => 'Só nesse dispositivo';
+
+  @override
+  String get trackProgressSettingAnime => 'Registrar progresso de anime';
+
+  @override
+  String get trackProgressSettingManga => 'Registrar progresso de mangá e novel';
+
+  @override
+  String get trackProgressSettingDesc => 'O que fazer quando você abre um episódio ou termina um capítulo';
+
+  @override
+  String get trackProgressAsk => 'Perguntar';
+
+  @override
+  String get trackProgressAlways => 'Sempre';
+
+  @override
+  String get trackProgressNever => 'Nunca';
+
+  @override
+  String get dantotsuImport => 'Importar do Dantotsu';
+
+  @override
+  String get dantotsuImportDesc => 'Lê um backup de configurações do Dantotsu (.ani, ou .sani criptografado)';
+
+  @override
+  String get dantotsuPick => 'Escolha um backup do Dantotsu';
+
+  @override
+  String get dantotsuNothing => 'Nada nesse arquivo pode ser importado';
+
+  @override
+  String get dantotsuApply => 'Importar selecionados';
+
+  @override
+  String dantotsuDone(int done, int total) {
+    return 'Importados $done de $total';
+  }
+
+  @override
+  String get dantotsuGroupAccounts => 'Contas';
+
+  @override
+  String get dantotsuGroupAppearance => 'Aparência';
+
+  @override
+  String get dantotsuGroupExtensions => 'Extensões';
+
+  @override
+  String get dantotsuGroupApp => 'App';
+
+  @override
+  String get dantotsuGroupPlayer => 'Player';
+
+  @override
+  String get dantotsuAnilist => 'Login do AniList';
+
+  @override
+  String get dantotsuMal => 'Login do MyAnimeList';
+
+  @override
+  String get dantotsuDiscord => 'Token do Discord Rich Presence';
+
+  @override
+  String get dantotsuTheme => 'Tema';
+
+  @override
+  String get dantotsuReposAnime => 'Repositórios de extensões de anime';
+
+  @override
+  String get dantotsuReposManga => 'Repositórios de extensões de mangá';
+
+  @override
+  String get dantotsuReposNovel => 'Repositórios de extensões de novel';
+
+  @override
+  String get dantotsuUpdates => 'Verificação de atualização';
+
+  @override
+  String get dantotsuComments => 'Comentários';
+
+  @override
+  String get dantotsuActivity => 'Verificação de notificações do AniList';
+
+  @override
+  String get dantotsuDns => 'Provedor de DNS';
+
+  @override
+  String get dantotsuPlayer => 'Velocidade do player e cores das legendas';
+
+  @override
+  String get dantotsuWarning => 'Esse arquivo contém tokens de login. Mantenha privado.';
+
+  @override
+  String get novelIndent => 'Recuar parágrafos';
+
+  @override
+  String get novelIndentDesc => 'Começa cada parágrafo com recuo na primeira linha';
+
+  @override
+  String get novelLetterSpacing => 'Espaçamento entre letras';
+
+  @override
+  String get novelSectionTranslate => 'Tradução';
+
+  @override
+  String get sectionExperimental => 'Experimental';
+
+  @override
+  String get kitsuGraphqlDetail => 'Páginas de detalhes mais rápidas (GraphQL)';
+
+  @override
+  String get kitsuGraphqlDetailDesc => 'Carrega um título com personagens, equipe e sua entrada numa requisição só';
+
+  @override
+  String get togetherTitle => 'Assistir junto';
+
+  @override
+  String get togetherIntro => 'Cole o link da sala que seu amigo mandou. Você entra na hora e o player abre quando ele começar a assistir.';
+
+  @override
+  String get togetherName => 'Seu nome';
+
+  @override
+  String get togetherRoom => 'Sala';
+
+  @override
+  String get togetherNewRoom => 'Nova sala aleatória';
+
+  @override
+  String get togetherServer => 'Servidor';
+
+  @override
+  String get togetherPort => 'Porta';
+
+  @override
+  String get togetherPassword => 'Senha do servidor (opcional)';
+
+  @override
+  String get togetherPublicNote => 'Servidores públicos não têm senha e as salas são abertas. Use um nome de sala comprido e compartilhe só com amigos.';
+
+  @override
+  String get togetherConnect => 'Conectar';
+
+  @override
+  String get togetherConnecting => 'Conectando…';
+
+  @override
+  String get togetherLeave => 'Sair da sala';
+
+  @override
+  String get togetherLeftRoom => 'Você saiu da sala';
+
+  @override
+  String get togetherReady => 'Pronto';
+
+  @override
+  String get togetherYou => 'Você';
+
+  @override
+  String get togetherNoChat => 'Nenhuma mensagem ainda';
+
+  @override
+  String get togetherChatHint => 'Mensagem';
+
+  @override
+  String get togetherCopyInvite => 'Copiar convite';
+
+  @override
+  String get togetherInviteCopied => 'Servidor e sala copiados';
+
+  @override
+  String get togetherFileMismatch => 'Arquivo ou duração diferente';
+
+  @override
+  String get togetherConnectionLost => 'Conexão perdida';
+
+  @override
+  String togetherConnectedTo(String room) {
+    return 'Conectado a $room';
+  }
+
+  @override
+  String togetherFailed(String error) {
+    return 'Não consegui conectar: $error';
+  }
+
+  @override
+  String togetherJoined(String name) {
+    return '$name entrou';
+  }
+
+  @override
+  String togetherLeft(String name) {
+    return '$name saiu';
+  }
+
+  @override
+  String togetherPaused(String name) {
+    return '$name pausou';
+  }
+
+  @override
+  String togetherResumed(String name) {
+    return '$name retomou';
+  }
+
+  @override
+  String togetherSeeked(String name, String time) {
+    return '$name pulou pra $time';
+  }
+
+  @override
+  String togetherOtherService(String service) {
+    return 'O host está no $service, a sincronização está desligada';
+  }
+
+  @override
+  String get togetherFollowFailed => 'Não consegui abrir o episódio do host. Abra você mesmo.';
+
+  @override
+  String get togetherHostRole => 'Criar uma sala';
+
+  @override
+  String get togetherJoinRole => 'Entrar numa sala';
+
+  @override
+  String get togetherFollow => 'Seguir o episódio do host';
+
+  @override
+  String get togetherFollowDesc => 'Abre e troca de episódio automaticamente quando você usa o mesmo serviço';
+
+  @override
+  String get togetherOpenHost => 'Abrir episódio do host';
+
+  @override
+  String togetherHostWatching(String title) {
+    return 'Host: $title';
+  }
+
+  @override
+  String get togetherLiveChat => 'Chat ao vivo';
+
+  @override
+  String get togetherShowChat => 'Mostrar chat ao vivo';
+
+  @override
+  String get togetherWaitingHost => 'Esperando o host iniciar um episódio';
+
+  @override
+  String get togetherDifferentService => 'O host está em outro serviço, a sincronização está desligada';
+
+  @override
+  String get togetherNoSource => 'Instale uma extensão de anime pra seguir o host';
+
+  @override
+  String togetherNoMatch(String source) {
+    return 'O $source não tem correspondência pro título do host';
+  }
+
+  @override
+  String togetherNoEpisode(String source) {
+    return 'O $source não tem o episódio do host';
+  }
+
+  @override
+  String get togetherRoomLink => 'Link da sala';
+
+  @override
+  String get togetherBadLink => 'Isso não é um link de sala';
+
+  @override
+  String get togetherHostClosed => 'O host fechou a sala';
+
+  @override
+  String get togetherHostBadge => 'Host';
+
+  @override
+  String get togetherNowPlaying => 'Reproduzindo agora';
+
+  @override
+  String togetherWatchingCount(int count) {
+    return '$count assistindo';
+  }
+
+  @override
+  String togetherWantsPause(String user) {
+    return '$user quer pausar';
+  }
+
+  @override
+  String togetherWantsResume(String user) {
+    return '$user quer retomar';
+  }
+
+  @override
+  String get togetherChip => 'Juntos';
+
+  @override
+  String get togetherSettingsDesc => 'Entre na sala de um amigo com um link';
+
+  @override
+  String get togetherNoPlayer => 'Abra um episódio e ele sincroniza com a sala automaticamente. O chat e a lista de membros já funcionam.';
+
+  @override
+  String togetherWatching(String name, String file) {
+    return '$name está assistindo $file';
+  }
+
+  @override
+  String get novelBilingual => 'Mostrar original e tradução';
+
+  @override
+  String get novelBilingualDesc => 'Cada parágrafo mostra o texto original com a tradução embaixo';
+
+  @override
+  String get novelTranslateTo => 'Traduzir pra';
+
+  @override
+  String get novelTranslateOff => 'Desligado';
+
+  @override
+  String get novelSectionSpeech => 'Texto pra fala';
+
+  @override
+  String get novelSpeechRate => 'Velocidade da fala';
+
+  @override
+  String get novelSpeechPitch => 'Tom da fala';
+
+  @override
+  String get novelSpeak => 'Ler em voz alta';
+
+  @override
+  String get novelSpeakStop => 'Parar leitura em voz alta';
+
+  @override
+  String get novelTranslate => 'Traduzir capítulo';
+
+  @override
+  String get novelTranslateShowOriginal => 'Mostrar original';
+
+  @override
+  String get novelTranslating => 'Traduzindo…';
+
+  @override
+  String novelTranslateFailed(String error) {
+    return 'A tradução falhou: $error';
+  }
+
+  @override
+  String get novelSpeechUnavailable => 'Texto pra fala não está disponível nesse dispositivo';
+
+  @override
+  String get novelSpeechVoice => 'Voz';
+
+  @override
+  String get novelSpeechVoiceDefault => 'Padrão do sistema';
+
+  @override
+  String get novelSpeakPrevious => 'Linha anterior';
+
+  @override
+  String get novelSpeakNext => 'Próxima linha';
+
+  @override
+  String get novelTapPaging => 'Toque nas bordas pra virar a página';
+
+  @override
+  String get novelTapPagingDesc => 'Toque no lado esquerdo ou direito pra rolar uma página, o meio mostra os controles';
+
+  @override
+  String novelMinutesLeft(int count) {
+    return 'faltam $count min';
+  }
+
+  @override
+  String get novelBold => 'Texto em negrito';
+
+  @override
+  String get novelBoldDesc => 'Usa uma espessura maior';
+
+  @override
+  String readerFinishedChapter(String chapter) {
+    return '$chapter finalizado';
+  }
+
+  @override
+  String readerNextUp(String chapter) {
+    return 'Próximo: $chapter';
+  }
+
+  @override
+  String readerPreviousUp(String chapter) {
+    return 'Anterior: $chapter';
+  }
+
+  @override
+  String get readerNoPages => 'Esse capítulo não tem páginas';
+
+  @override
+  String get readerLoadingPages => 'Carregando páginas…';
+
+  @override
+  String get readerSlowPage => 'Essa página ainda está carregando…';
+
+  @override
+  String get readerPageFailed => 'Não consegui carregar essa página';
+
+  @override
+  String get playerShowComments => 'Mostrar comentários';
+
+  @override
+  String get playerHideComments => 'Esconder comentários';
+
+  @override
+  String get playerSubtitles => 'Legendas';
+
+  @override
+  String get playerSubtitlesOff => 'Legendas desligadas';
+
+  @override
+  String get playerAudio => 'Áudio';
+
+  @override
+  String get playerAddSubtitle => 'Adicionar arquivo de legenda';
+
+  @override
+  String get playerAddAudio => 'Adicionar arquivo de áudio';
+
+  @override
+  String get playerChapters => 'Capítulos';
+
+  @override
+  String get playerNoChapters => 'Sem capítulos';
+
+  @override
+  String get playerTimestamp => 'Marcação de tempo';
+
+  @override
+  String get playerAutoPlayDelay => 'Contagem regressiva do próximo episódio';
+
+  @override
+  String get playerWatchedAt => 'Contar como assistido em';
+
+  @override
+  String playerNextIn(int seconds) {
+    return 'Próximo episódio em ${seconds}s';
+  }
+
+  @override
+  String get playerPlayNow => 'Reproduzir agora';
+
+  @override
+  String playerAutoSkipOn(String name) {
+    return '$name: vai pular automaticamente nesse título';
+  }
+
+  @override
+  String playerAutoSkipOff(String name) {
+    return '$name: não vai pular automaticamente nesse título';
+  }
+
+  @override
+  String get playerAudioLanguage => 'Idioma de áudio preferido';
+
+  @override
+  String get playerLanguageOrderHint => 'Separe os idiomas com vírgula. Vale o primeiro que for encontrado.';
+
+  @override
+  String get playerPip => 'Picture in picture';
+
+  @override
+  String get playerPipRestore => 'Voltar pro player';
+
+  @override
+  String get playerAutoPip => 'Picture in picture ao sair';
+
+  @override
+  String get playerAutoPipDesc => 'Continua reproduzindo numa janela pequena quando você sai do app';
+
+  @override
+  String playerAutoPlaying(String title) {
+    return 'Reproduzindo $title em seguida…';
+  }
+
+  @override
+  String playerShadersFailed(String error) {
+    return 'Não consegui instalar os shaders: $error';
+  }
+
+  @override
+  String playerChapter(int number) {
+    return 'Capítulo $number';
+  }
+
+  @override
+  String get playerPerTitle => 'Só pra esse título';
+
+  @override
+  String get playerPerTitleDesc => 'Mantém essas opções pra esse título e deixa seus padrões em paz';
+
+  @override
+  String get playerHoldSpeed => 'Velocidade ao segurar';
+
+  @override
+  String get playerAudioOutput => 'Saída de áudio';
+
+  @override
+  String get fontAppDefault => 'Fonte do app';
+
+  @override
+  String get fontImport => 'Importar fonte';
+
+  @override
+  String get fontSample => 'A rápida raposa marrom pula sobre o cachorro preguiçoso';
+
+  @override
+  String get playerSubtitleDelay => 'Atraso da legenda';
+
+  @override
+  String get playerAudioDelay => 'Atraso do áudio';
+
+  @override
+  String get playerDelayReset => 'Redefinir';
+
+  @override
+  String get playerOnlineSubtitles => 'Legendas online';
+
+  @override
+  String get playerOnlineSearchHint => 'Título e episódio';
+
+  @override
+  String get playerOnlineNone => 'Nenhuma legenda encontrada';
+
+  @override
+  String playerOnlineFailed(String error) {
+    return 'A busca de legendas falhou: $error';
+  }
+
+  @override
+  String playerOnlineDownloadFailed(String error) {
+    return 'Não consegui baixar essa legenda: $error';
+  }
+
+  @override
+  String get playerOnlineMatch => 'Combina com esse arquivo';
+
+  @override
+  String get playerOnlineEpisode => 'Combina com o episódio';
+
+  @override
+  String playerOnlineDownloads(int count) {
+    return '$count downloads';
+  }
+
+  @override
+  String get playerSeekPreview => 'Prévia ao avançar';
+
+  @override
+  String get playerSeekPreviewDesc => 'Mostra uma pequena prévia acima da barra enquanto você arrasta. Abre um segundo decodificador de baixa resolução, então gasta mais dados em streams.';
+
+  @override
+  String get playerSettingsChip => 'Configurações';
+
+  @override
+  String get playerAudioDevice => 'Dispositivo de áudio';
+
+  @override
+  String get settingsDownloads => 'Downloads';
+
+  @override
+  String get settingsDownloadsDesc => 'Episódios offline, fila e modo offline';
+
+  @override
+  String get downloadsTitle => 'Downloads';
+
+  @override
+  String get downloadsOpenDesc => 'Veja a fila e tudo que está salvo nesse dispositivo';
+
+  @override
+  String get downloadTitle => 'Baixar';
+
+  @override
+  String get downloadAlready => 'Já baixado ou na fila';
+
+  @override
+  String get downloadPickStream => 'Baixar qual stream?';
+
+  @override
+  String get downloadPickSubtitle => 'Baixar qual legenda?';
+
+  @override
+  String get downloadPickAudio => 'Baixar qual faixa de áudio?';
+
+  @override
+  String get downloadNoAudio => 'Sem áudio extra';
+
+  @override
+  String get downloadAudio => 'Áudio';
+
+  @override
+  String get downloadNoSubtitle => 'Sem legenda';
+
+  @override
+  String get downloadHlsNeedsFfmpeg => 'Esse stream é uma playlist HLS. Pra baixar, precisa do complemento FFmpeg.';
+
+  @override
+  String get downloadSourceMissing => 'A fonte desse episódio não está instalada';
+
+  @override
+  String get downloadWaitingConnection => 'Esperando conexão';
+
+  @override
+  String get downloadSubtitles => 'Legendas';
+
+  @override
+  String get downloadDownloaded => 'Baixado';
+
+  @override
+  String get downloadOffline => 'Offline';
+
+  @override
+  String get downloadDelete => 'Apagar download';
+
+  @override
+  String get downloadCancel => 'Cancelar';
+
+  @override
+  String get downloadPause => 'Pausar';
+
+  @override
+  String get downloadPaused => 'Pausado';
+
+  @override
+  String get downloadResume => 'Continuar';
+
+  @override
+  String get downloadPauseAll => 'Pausar tudo';
+
+  @override
+  String get downloadResumeAll => 'Continuar tudo';
+
+  @override
+  String get downloadQueuedState => 'Esperando na fila';
+
+  @override
+  String get downloadResolving => 'Pegando o stream…';
+
+  @override
+  String get downloadUsedFallback => 'Nenhum stream correspondente, usei o primeiro';
+
+  @override
+  String get downloadTabQueue => 'Fila';
+
+  @override
+  String get downloadTabDone => 'Concluído';
+
+  @override
+  String get downloadTabFailed => 'Falhou';
+
+  @override
+  String get downloadEmptyQueue => 'Nada sendo baixado';
+
+  @override
+  String get downloadEmptyDone => 'Nada baixado ainda';
+
+  @override
+  String get downloadEmptyFailed => 'Sem downloads com falha';
+
+  @override
+  String get downloadNext => 'Próximo episódio';
+
+  @override
+  String downloadNextN(int count) {
+    return 'Próximos $count episódios';
+  }
+
+  @override
+  String downloadUnwatched(int count) {
+    return 'Todos não assistidos ($count)';
+  }
+
+  @override
+  String downloadRange(int count) {
+    return 'Esse intervalo ($count)';
+  }
+
+  @override
+  String downloadAll(int count) {
+    return 'Todos os episódios ($count)';
+  }
+
+  @override
+  String downloadQueued(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count episódios na fila',
+      one: '1 episódio na fila',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String downloadFinished(String name) {
+    return '$name baixado';
+  }
+
+  @override
+  String downloadFailedBody(String name) {
+    return 'Falha ao baixar $name';
+  }
+
+  @override
+  String downloadStorage(String size) {
+    return '$size usados por downloads';
+  }
+
+  @override
+  String get downloadQueueHeader => 'Fila';
+
+  @override
+  String get downloadParallel => 'Downloads simultâneos';
+
+  @override
+  String get downloadParallelDesc => 'Baixe um por vez ou vários juntos';
+
+  @override
+  String get downloadOneByOne => 'Um por um';
+
+  @override
+  String get downloadNotifications => 'Notificações de download';
+
+  @override
+  String get downloadNotificationsDesc => 'Progresso ao vivo onde o sistema suporta, senão um aviso quando um download termina';
+
+  @override
+  String get downloadNotifyLive => 'Ao vivo';
+
+  @override
+  String get downloadNotifyDone => 'Ao terminar';
+
+  @override
+  String get downloadNotifyOff => 'Desligado';
+
+  @override
+  String get downloadInfoFile => 'Gravar um arquivo de info junto de cada download';
+
+  @override
+  String get downloadInfoFileDesc => 'Salva o stream, qualidade, legenda e tempos de pulo num pequeno arquivo .json';
+
+  @override
+  String get offlineHeader => 'Offline';
+
+  @override
+  String get offlineModeDesc => 'Auto só fica offline quando o app abre sem conexão. Sempre fica offline até você mudar.';
+
+  @override
+  String get offlineModeOff => 'Desligado';
+
+  @override
+  String get offlineModeAlways => 'Sempre';
+
+  @override
+  String get offlineModeOn => 'O modo offline está ligado. As mudanças ficam salvas aqui e são enviadas quando você voltar a ficar online.';
+
+  @override
+  String get offlineLost => 'Você está offline. As mudanças ficam salvas nesse dispositivo';
+
+  @override
+  String get offlineBack => 'De volta online. Sincronizando suas mudanças';
+
+  @override
+  String get offlineSaved => 'Salvo nesse dispositivo, vai sincronizar quando você estiver online';
+
+  @override
+  String offlineSynced(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count mudanças sincronizadas',
+      one: '1 mudança sincronizada',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String offlinePending(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count mudanças esperando sincronizar',
+      one: '1 mudança esperando sincronizar',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get offlinePendingTitle => 'Mudanças esperando sincronizar';
+
+  @override
+  String get offlinePendingNone => 'Nada esperando';
+
+  @override
+  String get offlineSyncNow => 'Sincronizar agora';
+
+  @override
+  String get offlineDiscard => 'Descartar';
+
+  @override
+  String get downloadNotOffline => 'Esse episódio não foi baixado, então não está disponível offline';
+
+  @override
+  String get offlineModeChip => 'Offline';
+
+  @override
+  String get downloadNextChapter => 'Próximo capítulo';
+
+  @override
+  String downloadNextChapters(int count) {
+    return 'Próximos $count capítulos';
+  }
+
+  @override
+  String downloadUnread(int count) {
+    return 'Todos não lidos ($count)';
+  }
+
+  @override
+  String downloadAllChapters(int count) {
+    return 'Todos os capítulos ($count)';
+  }
+
+  @override
+  String downloadPagesProgress(int done, int total) {
+    return '$done / $total páginas';
+  }
+
+  @override
+  String downloadPagesCount(int count) {
+    return '$count páginas';
+  }
+
+  @override
+  String get downloadFfmpegTitle => 'Complemento FFmpeg necessário';
+
+  @override
+  String get downloadFfmpegBody => 'Esse stream é uma playlist HLS. O complemento FFmpeg junta as partes num arquivo mp4 só. Sem ele, as partes ficam numa pasta do episódio e rodam de lá.';
+
+  @override
+  String get downloadFfmpegInstall => 'Instalar';
+
+  @override
+  String get downloadFfmpegInstalling => 'Instalando o FFmpeg, pode demorar um pouco…';
+
+  @override
+  String get downloadFinishing => 'Juntando as partes num arquivo só…';
+
+  @override
+  String downloadSegmentsProgress(int done, int total) {
+    return '$done / $total partes';
+  }
+
+  @override
+  String get downloadTorrentNoFile => 'O torrent não tem arquivo de vídeo pra baixar';
+
+  @override
+  String downloadServiceText(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Baixando $count itens',
+      one: 'Baixando 1 item',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get downloadAutoDelete => 'Apagar downloads assistidos';
+
+  @override
+  String get downloadAutoDeleteDesc => 'Remove um download quando seu progresso chega nesse episódio ou capítulo';
+
+  @override
+  String get downloadConnections => 'Conexões por download';
+
+  @override
+  String get downloadConnectionsDesc => 'Divide um arquivo grande em partes buscadas ao mesmo tempo. Alguns servidores limitam isso.';
+
+  @override
+  String get downloadPlayChoice => 'Reproduzir de';
+
+  @override
+  String get downloadPlayLocalDesc => 'O arquivo salvo nesse dispositivo';
+
+  @override
+  String get downloadPlayStream => 'Stream online';
+
+  @override
+  String get downloadPlayStreamDesc => 'Carrega o episódio da fonte';
+
+  @override
+  String get offlineFeedTitle => 'Baixado nesse dispositivo';
+
+  @override
+  String get offlineFeedEmpty => 'Baixe algo enquanto está online e aparece aqui';
+
+  @override
+  String get offlineEnabled => 'O modo offline está ligado';
+
+  @override
+  String get offlineDisabled => 'O modo offline está desligado';
+
+  @override
+  String get downloadReadChoice => 'Ler de';
+
+  @override
+  String get downloadReadLocalDesc => 'As páginas salvas nesse dispositivo';
+
+  @override
+  String get downloadReadOnline => 'Ler online';
+
+  @override
+  String get downloadReadOnlineDesc => 'Carrega o capítulo da fonte';
+
+  @override
+  String downloadDeleteConfirm(String name) {
+    return 'Apagar $name desse dispositivo?';
+  }
+
+  @override
+  String downloadCancelConfirm(String name) {
+    return 'Cancelar o download de $name? O que já foi baixado é apagado.';
+  }
+
+  @override
+  String get downloadFfmpegFolder => 'Manter como pasta';
+
+  @override
+  String offlineDiscardConfirm(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Descartar $count mudanças que nunca foram enviadas? Isso não dá pra desfazer.',
+      one: 'Descartar a mudança que nunca foi enviada? Isso não dá pra desfazer.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get downloadWaitingWifi => 'Esperando Wi-Fi';
+
+  @override
+  String get downloadWaitingMetered => 'Pausado numa conexão limitada';
+
+  @override
+  String get downloadWifiOnly => 'Só Wi-Fi';
+
+  @override
+  String get downloadWifiOnlyDesc => 'Os downloads esperam enquanto você está no 4G/5G';
+
+  @override
+  String get downloadMetered => 'Pausar em conexões limitadas';
+
+  @override
+  String get downloadMeteredDesc => 'Também espera em Wi-Fi que seu dispositivo marca como limitado';
+
+  @override
+  String get downloadSpeedLimit => 'Limite de velocidade';
+
+  @override
+  String get downloadSpeedLimitDesc => 'Limita a velocidade total de download';
+
+  @override
+  String get downloadUnlimited => 'Ilimitado';
+
+  @override
+  String get downloadMoveToTop => 'Mover pro topo';
+
+  @override
+  String downloadSwarm(int seeds, int peers) {
+    return '$seeds seeds · $peers peers';
+  }
+
+  @override
+  String get downloadTorrentFile => 'Qual arquivo?';
+
+  @override
+  String get downloadTorrentAuto => 'Associar o episódio automaticamente';
+
+  @override
+  String get downloadTorrentLoading => 'Lendo o torrent…';
+
+  @override
+  String get watchAutoSource => 'Trocar pra próxima fonte automaticamente';
+
+  @override
+  String get watchAutoSourceDesc => 'Se a fonte não achar o título ou falhar ao carregar, tenta a próxima instalada';
+
+  @override
+  String get extensionTest => 'Testar extensões';
+
+  @override
+  String get extensionTestCopy => 'Copia as falhas e os respectivos logs';
+
+  @override
+  String get extensionTestQuery => 'Termo de busca';
+
+  @override
+  String get extensionTestRun => 'Executar';
+
+  @override
+  String get extensionTestStop => 'Parar';
+
+  @override
+  String get extensionTestNone => 'Nenhuma extensão instalada desse tipo';
+
+  @override
+  String get extensionTestNotRun => 'Ainda não testado';
+
+  @override
+  String get extensionTestSearch => 'Busca';
+
+  @override
+  String get extensionTestDetail => 'Detalhes';
+
+  @override
+  String get extensionTestUnits => 'Episódios / capítulos';
+
+  @override
+  String get extensionTestLinks => 'Streams / páginas';
+
+  @override
+  String extensionTestFailedAt(String step) {
+    return 'Falhou em $step';
+  }
+
+  @override
+  String extensionTestSummary(int done, int total, int passed, int failed) {
+    return '$done de $total testadas · $passed passaram · $failed falharam';
+  }
+
+  @override
+  String get extensionTestCopyLogs => 'Copia tudo com os logs completos';
+
+  @override
+  String get onboardingFeaturesTitle => 'Tudo num lugar só';
+
+  @override
+  String get onboardingFeaturesBody => 'Tudo que você acompanha, assiste e lê, sem ficar pulando entre apps.';
+
+  @override
+  String get onboardingFeatureTrack => 'Acompanhe tudo';
+
+  @override
+  String get onboardingFeatureTrackDesc => 'Listas, progresso e notas no AniList, MyAnimeList, Simkl, Kitsu e MangaBaka.';
+
+  @override
+  String get onboardingFeatureWatch => 'Assista e leia';
+
+  @override
+  String get onboardingFeatureWatchDesc => 'Instale extensões e assista anime em streaming ou leia mangá e novels direto no app.';
+
+  @override
+  String get onboardingFeatureOffline => 'Leve pro offline';
+
+  @override
+  String get onboardingFeatureOfflineDesc => 'Baixe episódios e capítulos e continue sem conexão.';
+
+  @override
+  String get onboardingFeatureSync => 'Mantenha as listas sincronizadas';
+
+  @override
+  String get onboardingFeatureSyncDesc => 'Espelhe sua lista entre os serviços, ou deixe ganhar quem estiver na frente.';
+
+  @override
+  String get onboardingThemeShape => 'Cores';
+
+  @override
+  String get onboardingServices => 'Funciona com';
 }

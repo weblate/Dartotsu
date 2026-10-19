@@ -12,8 +12,7 @@ class AppLocalizationsEl extends AppLocalizations {
   String get appName => 'Dartotsu';
 
   @override
-  String get appTagline =>
-      'Η ΝΕΑ Καλύτερη Εφαρμογή Για\nΠαρακολούθηση Άνιμε & Μάνγκα';
+  String get appTagline => 'Η ΝΕΑ καλύτερη εφαρμογή για\nπαρακολούθηση anime & manga';
 
   @override
   String get anilist => 'AniList';
@@ -34,22 +33,22 @@ class AppLocalizationsEl extends AppLocalizations {
   String get discord => 'Discord';
 
   @override
-  String get loadMore => 'Load more';
+  String get loadMore => 'Φόρτωση περισσότερων';
 
   @override
   String get login => 'Σύνδεση';
 
   @override
-  String get continueAsGuest => 'Continue as guest';
+  String get continueAsGuest => 'Συνέχεια ως επισκέπτης';
 
   @override
-  String get getStarted => 'Get Started';
+  String get getStarted => 'Ας ξεκινήσουμε';
 
   @override
-  String get loginWithToken => 'Login with token';
+  String get loginWithToken => 'Σύνδεση με token';
 
   @override
-  String get pasteTokenHint => 'Paste your access token';
+  String get pasteTokenHint => 'Επικόλλησε το token πρόσβασης';
 
   @override
   String loginTo(String service) {
@@ -69,14 +68,13 @@ class AppLocalizationsEl extends AppLocalizations {
   String get language => 'Γλώσσα';
 
   @override
-  String get animationSpeed => 'Animations';
+  String get animationSpeed => 'Κινούμενα εφέ';
 
   @override
-  String get animationSpeedDesc =>
-      'Speed of transitions and entrance effects across the app';
+  String get animationSpeedDesc => 'Ταχύτητα μεταβάσεων και εφέ εισόδου σε όλη την εφαρμογή';
 
   @override
-  String get animationSpeedOff => 'Off';
+  String get animationSpeedOff => 'Ανενεργό';
 
   @override
   String extension(int count) {
@@ -90,43 +88,43 @@ class AppLocalizationsEl extends AppLocalizations {
   }
 
   @override
-  String get unknownSource => 'Unknown Source';
+  String get unknownSource => 'Άγνωστη πηγή';
 
   @override
-  String get install => 'Install';
+  String get install => 'Εγκατάσταση';
 
   @override
-  String get update => 'Update';
+  String get update => 'Ενημέρωση';
 
   @override
-  String get uninstall => 'Uninstall';
+  String get uninstall => 'Απεγκατάσταση';
 
   @override
-  String get installFailed => 'Install failed';
+  String get installFailed => 'Η εγκατάσταση απέτυχε';
 
   @override
-  String get updateFailed => 'Update failed';
+  String get updateFailed => 'Η ενημέρωση απέτυχε';
 
   @override
-  String get noSourceSettings => 'Source doesn\'t have any settings';
+  String get noSourceSettings => 'Η πηγή δεν έχει ρυθμίσεις';
 
   @override
-  String get addPluginRepository => 'Add Plugin Repository';
+  String get addPluginRepository => 'Προσθήκη αποθετηρίου plugin';
 
   @override
-  String get pluginIndexUrlHint => 'Plugin index URL';
+  String get pluginIndexUrlHint => 'URL ευρετηρίου plugin';
 
   @override
-  String get addRepository => 'Add Repository';
+  String get addRepository => 'Προσθήκη αποθετηρίου';
 
   @override
-  String get pluginRepoUpdated => 'Plugin repository updated';
+  String get pluginRepoUpdated => 'Το αποθετήριο plugin ενημερώθηκε';
 
   @override
-  String get pluginRepoUpdateFailed => 'Failed to refresh plugin repository';
+  String get pluginRepoUpdateFailed => 'Αποτυχία ανανέωσης του αποθετηρίου plugin';
 
   @override
-  String get ok => 'Εντάξει';
+  String get ok => 'OK';
 
   @override
   String get cancel => 'Ακύρωση';
@@ -138,1014 +136,986 @@ class AppLocalizationsEl extends AppLocalizations {
   String get no => 'Όχι';
 
   @override
-  String get save => 'Save';
+  String get save => 'Αποθήκευση';
 
   @override
-  String get reset => 'Reset';
+  String get reset => 'Επαναφορά';
 
   @override
-  String get clear => 'Clear';
+  String get clear => 'Καθαρισμός';
 
   @override
-  String get test => 'Test';
+  String get test => 'Δοκιμή';
 
   @override
-  String get testing => 'Testing…';
+  String get testing => 'Δοκιμή…';
 
   @override
-  String get resolving => 'Resolving…';
+  String get resolving => 'Επίλυση…';
 
   @override
-  String get none => 'None';
+  String get none => 'Κανένα';
 
   @override
-  String get selectMediaService => 'Επιλέξτε Media Service';
+  String get selectMediaService => 'Επιλογή υπηρεσίας μέσων';
 
   @override
-  String get pickColor => 'Επιλέξτε χρώμα';
+  String get pickColor => 'Διάλεξε χρώμα';
 
   @override
-  String get colorPickerDefault => 'Default';
+  String get colorPickerDefault => 'Προεπιλογή';
 
   @override
-  String get colorPickerCustom => 'Εθιμο';
+  String get colorPickerCustom => 'Προσαρμοσμένο';
 
   @override
-  String get colorPickerTransparent => 'Transparent';
+  String get colorPickerTransparent => 'Διαφανές';
 
   @override
-  String get ltr => 'Αριστερά δεξιά';
+  String get ltr => 'Αριστερά προς δεξιά';
 
   @override
-  String get searchSettings => 'Search settings';
+  String get searchSettings => 'Αναζήτηση ρυθμίσεων';
 
   @override
   String nothingMatches(String query) {
-    return 'Nothing matches \"$query\"';
+    return 'Τίποτα δεν ταιριάζει με \"$query\"';
   }
 
   @override
   String searchCategory(String category) {
-    return 'Search $category';
+    return 'Αναζήτηση σε $category';
   }
 
   @override
-  String get settingsAppearance => 'Appearance';
+  String get settingsAppearance => 'Εμφάνιση';
 
   @override
-  String get settingsAppearanceDesc => 'Theme, colours, glass mode';
+  String get settingsAppearanceDesc => 'Θέμα, χρώματα, λειτουργία γυαλιού';
 
   @override
-  String get settingsGeneral => 'General';
+  String get settingsGeneral => 'Γενικά';
 
   @override
-  String get settingsGeneralDesc => 'Language and behaviour';
+  String get settingsGeneralDesc => 'Γλώσσα και συμπεριφορά';
 
   @override
-  String get settingsAccountDesc => 'Tracking service and sign-in';
+  String get settingsNetwork => 'Network';
 
   @override
-  String get settingsUpdates => 'Updates';
+  String get settingsNetworkDesc => 'User agent, certificates, DNS and proxy';
 
   @override
-  String get settingsUpdatesDesc => 'Release channel and checks';
+  String get settingsAccountDesc => 'Υπηρεσία παρακολούθησης και σύνδεση';
 
   @override
-  String get settingsAboutDesc => 'Version, links, support';
+  String get settingsUpdates => 'Ενημερώσεις';
 
   @override
-  String get amoledBlack => 'AMOLED black';
+  String get settingsUpdatesDesc => 'Κανάλι εκδόσεων και έλεγχοι';
 
   @override
-  String get amoledBlackDesc => 'Pure black surfaces on dark mode';
+  String get settingsAboutDesc => 'Έκδοση, συνδέσμοι, υποστήριξη';
 
   @override
-  String get glassMode => 'Glass mode';
+  String get amoledBlack => 'Μαύρο AMOLED';
 
   @override
-  String get glassModeDesc => 'Frosted surfaces over your library art';
+  String get amoledBlackDesc => 'Καθαρά μαύρες επιφάνειες στη σκοτεινή λειτουργία';
 
   @override
-  String get shelfFrame => 'Frame around sections';
+  String get glassMode => 'Λειτουργία γυαλιού';
 
   @override
-  String get shelfFrameDesc =>
-      'Show a card behind each shelf, or let the rows sit directly on the page';
+  String get glassModeDesc => 'Παγωμένες επιφάνειες πάνω από τα εξώφυλλά σου';
 
   @override
-  String get settingsExtensionsDesc =>
-      'Source managers, repositories and extension options';
+  String get shelfFrame => 'Πλαίσιο γύρω από τις ενότητες';
 
   @override
-  String get settingsAddons => 'Addons';
+  String get shelfFrameDesc => 'Εμφάνιση κάρτας πίσω από κάθε ράφι ή οι σειρές να κάθονται απευθείας στη σελίδα';
 
   @override
-  String get settingsAddonsDesc =>
-      'Optional components such as the torrent server';
+  String get settingsExtensionsDesc => 'Διαχειριστές πηγών, αποθετήρια και επιλογές επεκτάσεων';
 
   @override
-  String get customPath => 'Προσαρμοσμένη διαδρομή';
+  String get settingsAddons => 'Πρόσθετα';
 
   @override
-  String get customPathDesc => 'Where app data is kept. Long-press to reset';
+  String get settingsAddonsDesc => 'Προαιρετικά στοιχεία, όπως ο διακομιστής torrent';
 
   @override
-  String get selectDirectory => 'Επιλέξτε έναν κατάλογο';
+  String get customPath => 'Προσαρμοσμένη διαδρομή αποθήκευσης';
 
   @override
-  String get differentCacheManager => 'Διαφορετική Cache Manager';
+  String get customPathDesc => 'Πού αποθηκεύονται τα δεδομένα της εφαρμογής. Πάτα παρατεταμένα για επαναφορά';
 
   @override
-  String get differentCacheManagerDesc =>
-      'Χρησιμοποιήστε διαφορετικό διαχειριστή μνήμης εικόνας';
+  String get selectDirectory => 'Επιλογή φακέλου';
 
   @override
-  String get backupAndRestore => 'Backup and restore';
+  String get differentCacheManager => 'Εναλλακτική κρυφή μνήμη εικόνων';
 
   @override
-  String get backupAndRestoreDesc => 'Save or load your preferences';
+  String get differentCacheManagerDesc => 'Χρήση διαφορετικού διαχειριστή κρυφής μνήμης για τις εικόνες';
 
   @override
-  String get backup => 'Backup';
+  String get backupAndRestore => 'Αντίγραφο ασφαλείας και επαναφορά';
 
   @override
-  String get restore => 'Restore';
+  String get backupAndRestoreDesc => 'Αποθήκευσε ή φόρτωσε τις προτιμήσεις σου';
 
   @override
-  String get loadExtensionsIcon => 'Φόρες επεκτάσεις εικόνων';
+  String get backup => 'Αντίγραφο ασφαλείας';
 
   @override
-  String get loadExtensionsIconDesc => 'Αποδεικνύεται αν η σελίδα lags';
+  String get restore => 'Επαναφορά';
 
   @override
-  String get sectionStorage => 'Storage';
+  String get loadExtensionsIcon => 'Φόρτωση εικονιδίων επεκτάσεων';
 
   @override
-  String get sectionBackup => 'Backup';
+  String get loadExtensionsIconDesc => 'Εμφάνιση εικονιδίων πηγών στις λίστες επεκτάσεων';
 
   @override
-  String get sectionManagers => 'Managers';
+  String get sectionStorage => 'Αποθήκευση';
 
   @override
-  String get sectionOptions => 'Options';
+  String get sectionBackup => 'Αντίγραφο ασφαλείας';
 
   @override
-  String get backupTabBackup => 'Back up';
+  String get sectionManagers => 'Διαχειριστές';
 
   @override
-  String get backupTabRestore => 'Restore';
+  String get sectionOptions => 'Επιλογές';
+
+  @override
+  String get backupTabBackup => 'Δημιουργία αντιγράφου';
+
+  @override
+  String get backupTabRestore => 'Επαναφορά';
 
   @override
   String backupSummary(Object keys, Object categories) {
-    return '$keys settings in $categories categories';
+    return '$keys ρυθμίσεις σε $categories κατηγορίες';
   }
 
   @override
   String backupLastBackup(Object time) {
-    return 'Last backup $time';
+    return 'Τελευταίο αντίγραφο $time';
   }
 
   @override
-  String get backupNever => 'No backup yet';
+  String get backupNever => 'Κανένα αντίγραφο ακόμα';
 
   @override
-  String get backupSelectAll => 'Select all';
+  String get backupSelectAll => 'Επιλογή όλων';
 
   @override
-  String get backupClearAll => 'Clear';
+  String get backupClearAll => 'Καθαρισμός';
 
   @override
   String backupKeys(Object count) {
-    return '$count settings';
+    return '$count ρυθμίσεις';
   }
 
   @override
-  String get backupPassword => 'Password (optional)';
+  String get backupPassword => 'Κωδικός (προαιρετικά)';
 
   @override
-  String get backupPasswordHint => 'Leave empty to use the default';
+  String get backupPasswordHint => 'Άφησέ το κενό για τον προεπιλεγμένο';
 
   @override
-  String get backupSensitive => 'Includes login tokens. Keep this file private';
+  String get backupSensitive => 'Περιλαμβάνει tokens σύνδεσης. Κράτα το αρχείο ιδιωτικό';
 
   @override
-  String get backupCreate => 'Create backup';
+  String get backupCreate => 'Δημιουργία αντιγράφου';
 
   @override
   String backupSaved(Object name) {
-    return 'Backup saved to $name';
+    return 'Το αντίγραφο αποθηκεύτηκε ως $name';
   }
 
   @override
   String backupFailed(Object error) {
-    return 'Backup failed: $error';
+    return 'Το αντίγραφο απέτυχε: $error';
   }
 
   @override
-  String get backupPickFile => 'Choose a backup file';
+  String get backupPickFile => 'Επίλεξε αρχείο αντιγράφου';
 
   @override
-  String get backupPickFileDesc => 'Pick a .json file made by Dartotsu';
+  String get backupPickFileDesc => 'Διάλεξε ένα αρχείο .json που δημιουργήθηκε από το Dartotsu';
 
   @override
-  String get backupChooseAnother => 'Choose another file';
+  String get backupChooseAnother => 'Επιλογή άλλου αρχείου';
 
   @override
-  String get backupCreatedAt => 'Created';
+  String get backupCreatedAt => 'Δημιουργήθηκε';
 
   @override
-  String get backupAppVersion => 'App version';
+  String get backupAppVersion => 'Έκδοση εφαρμογής';
 
   @override
-  String get backupDevice => 'Device';
+  String get backupDevice => 'Συσκευή';
 
   @override
-  String get backupAccounts => 'Accounts';
+  String get backupAccounts => 'Λογαριασμοί';
 
   @override
-  String get backupSize => 'Size';
+  String get backupSize => 'Μέγεθος';
 
   @override
-  String get backupEncrypted => 'Password protected';
+  String get backupEncrypted => 'Προστατευμένο με κωδικό';
 
   @override
-  String get backupUnlock => 'Unlock';
+  String get backupUnlock => 'Ξεκλείδωμα';
 
   @override
-  String get backupWrongPassword =>
-      'Could not read this file. Check the password';
+  String get backupWrongPassword => 'Το αρχείο δεν μπόρεσε να διαβαστεί. Έλεγξε τον κωδικό';
 
   @override
-  String get backupRestoreSelected => 'Restore selected';
+  String get backupRestoreSelected => 'Επαναφορά επιλεγμένων';
 
   @override
   String backupRestoreConfirm(Object count) {
-    return 'Restore $count settings? Existing values in these categories are overwritten.';
+    return 'Επαναφορά $count ρυθμίσεων; Οι υπάρχουσες τιμές σε αυτές τις κατηγορίες θα αντικατασταθούν.';
   }
 
   @override
-  String get backupRestored => 'Restored. Restart the app to apply everything';
+  String get backupRestored => 'Έγινε επαναφορά. Επανεκκίνησε την εφαρμογή για να εφαρμοστούν όλα';
 
   @override
   String backupRestoreFailed(Object error) {
-    return 'Restore failed: $error';
+    return 'Η επαναφορά απέτυχε: $error';
   }
 
   @override
-  String get backupSelectOne => 'Select at least one category';
+  String get backupSelectOne => 'Επίλεξε τουλάχιστον μία κατηγορία';
 
   @override
-  String get backupCatTheme => 'Appearance';
+  String get backupCatTheme => 'Εμφάνιση';
 
   @override
-  String get backupCatThemeDesc => 'Theme, colors, glass, fonts and card style';
+  String get backupCatThemeDesc => 'Θέμα, χρώματα, γυαλί, γραμματοσειρές και στυλ καρτών';
 
   @override
-  String get backupCatCommon => 'General';
+  String get backupCatCommon => 'Γενικά';
 
   @override
-  String get backupCatCommonDesc =>
-      'Language, storage, network and extension options';
+  String get backupCatCommonDesc => 'Γλώσσα, αποθήκευση, δίκτυο και επιλογές επεκτάσεων';
 
   @override
-  String get backupCatPlayer => 'Player';
+  String get backupCatPlayer => 'Πρόγραμμα αναπαραγωγής';
 
   @override
-  String get backupCatPlayerDesc => 'Player preferences';
+  String get backupCatPlayerDesc => 'Προτιμήσεις αναπαραγωγής';
 
   @override
-  String get backupCatReader => 'Reader';
+  String get backupCatReader => 'Αναγνώστης';
 
   @override
-  String get backupCatReaderDesc => 'Reader preferences';
+  String get backupCatReaderDesc => 'Προτιμήσεις αναγνώστη';
 
   @override
-  String get backupCatProtected => 'Accounts';
+  String get backupCatProtected => 'Λογαριασμοί';
 
   @override
-  String get backupCatProtectedDesc => 'Login tokens and sign-in data';
+  String get backupCatProtectedDesc => 'Tokens σύνδεσης και δεδομένα εισόδου';
 
   @override
-  String get backupCatOther => 'Services and feeds';
+  String get backupCatOther => 'Υπηρεσίες και ροές';
 
   @override
-  String get backupCatOtherDesc => 'Feed layouts, lists and service options';
+  String get backupCatOtherDesc => 'Διατάξεις ροών, λίστες και επιλογές υπηρεσιών';
 
   @override
-  String get logFile => 'Log File';
+  String get logFile => 'Αρχείο καταγραφής';
 
   @override
-  String get logFileDesc => 'Share the app log, or copy its path on Linux';
+  String get logFileDesc => 'Μοιράσου το log της εφαρμογής ή αντίγραψε τη διαδρομή του στο Linux';
 
   @override
-  String get logFileCopied => 'Log path copied';
+  String get logFileCopied => 'Η διαδρομή του log αντιγράφηκε';
 
   @override
-  String get donateSheetTitle => 'Enjoying Dartotsu?';
+  String get donateSheetTitle => 'Σου αρέσει το Dartotsu;';
 
   @override
-  String get donateSheetMessage =>
-      'Dartotsu is built and maintained by one person. If it is useful to you, consider supporting development.';
+  String get donateSheetMessage => 'Το Dartotsu φτιάχνεται και συντηρείται από ένα άτομο. Αν σου είναι χρήσιμο, σκέψου να στηρίξεις την ανάπτυξη.';
 
   @override
-  String get donateLater => 'Maybe later';
+  String get donateLater => 'Ίσως αργότερα';
 
   @override
-  String get glassBackground => 'Glass background';
+  String get glassBackground => 'Φόντο γυαλιού';
 
   @override
-  String get glassBackgroundDesc =>
-      'Your profile banner unless you set an image link';
+  String get glassBackgroundDesc => 'Το banner του προφίλ σου, εκτός αν βάλεις σύνδεσμο εικόνας';
 
   @override
-  String get glassBackgroundHint => 'Image link (leave empty for your banner)';
+  String get glassBackgroundHint => 'Σύνδεσμος εικόνας (άφησέ τον κενό για το banner σου)';
 
   @override
-  String get followCover => 'Follow cover';
+  String get followCover => 'Ακολούθηση εξωφύλλου';
 
   @override
-  String get followCoverDesc =>
-      'Colors follow the background, and the cover on detail pages';
+  String get followCoverDesc => 'Τα χρώματα ακολουθούν το φόντο και, στις σελίδες λεπτομερειών, το εξώφυλλο';
 
   @override
-  String get cardStyle => 'Card style';
+  String get cardStyle => 'Στυλ κάρτας';
 
   @override
-  String get cardStyleDesc => 'Title placement, size, progress and badges';
+  String get cardStyleDesc => 'Θέση τίτλου, μέγεθος, πρόοδος και σήματα';
 
   @override
-  String get customFont => 'Font';
+  String get customFont => 'Γραμματοσειρά';
 
   @override
-  String get customFontDesc =>
-      'Default, a file from your device, or Google Fonts';
+  String get customFontDesc => 'Προεπιλογή, αρχείο από τη συσκευή σου ή Google Fonts';
 
   @override
-  String get customFontError => 'Couldn\'t load that font file';
+  String get customFontError => 'Δεν φορτώθηκε το αρχείο γραμματοσειράς';
 
   @override
-  String get googleFontError => 'Couldn\'t download that font';
+  String get googleFontError => 'Δεν κατέβηκε η γραμματοσειρά';
 
   @override
-  String get yourFonts => 'Your fonts';
+  String get yourFonts => 'Οι γραμματοσειρές σου';
 
   @override
-  String get addFontFile => 'Add font file…';
+  String get addFontFile => 'Προσθήκη αρχείου γραμματοσειράς…';
 
   @override
-  String get browseGoogleFonts => 'Browse Google Fonts…';
+  String get browseGoogleFonts => 'Περιήγηση στα Google Fonts…';
 
   @override
-  String get searchGoogleFonts => 'Search Google Fonts';
+  String get searchGoogleFonts => 'Αναζήτηση στα Google Fonts';
 
   @override
-  String get defaultFont => 'Default';
+  String get defaultFont => 'Προεπιλογή';
 
   @override
   String get materialYou => 'Material You';
 
   @override
-  String get materialYouDesc => 'Dynamic colour from the system';
+  String get materialYouDesc => 'Δυναμικό χρώμα από το σύστημα';
 
   @override
-  String get jsonTheme => 'Custom theme file';
+  String get jsonTheme => 'Προσαρμοσμένο αρχείο θέματος';
 
   @override
-  String get jsonThemeDesc =>
-      'Live colours from ~/.config/dartotsu/theme.json (a custom script, or your own edits)';
+  String get jsonThemeDesc => 'Ζωντανά χρώματα από το ~/.config/dartotsu/theme.json (δικό σου script ή δικές σου αλλαγές)';
 
   @override
-  String get themeMode => 'Theme mode';
+  String get themeMode => 'Λειτουργία θέματος';
 
   @override
-  String get mode => 'Mode';
+  String get mode => 'Λειτουργία';
 
   @override
-  String get trackingService => 'Tracking service';
+  String get trackingService => 'Υπηρεσία παρακολούθησης';
 
   @override
-  String get signOut => 'Sign out';
+  String get signOut => 'Αποσύνδεση';
 
   @override
-  String get signIn => 'Sign in';
+  String get signIn => 'Σύνδεση';
 
   @override
-  String get notSignedIn => 'Not signed in';
+  String get notSignedIn => 'Δεν έχεις συνδεθεί';
 
   @override
   String signOutOf(String service) {
-    return 'Sign out of $service?';
+    return 'Αποσύνδεση από το $service;';
   }
 
   @override
-  String get checkForUpdates => 'Check for updates';
+  String get checkForUpdates => 'Έλεγχος για ενημερώσεις';
 
   @override
-  String get checkForUpdatesDesc => 'Notify on a new GitHub release';
+  String get checkForUpdatesDesc => 'Ειδοποίηση για νέα έκδοση στο GitHub';
 
   @override
-  String get updateChannel => 'Update channel';
+  String get updateChannel => 'Κανάλι ενημερώσεων';
 
   @override
-  String get channel => 'Channel';
+  String get channel => 'Κανάλι';
 
   @override
-  String get stable => 'Stable';
+  String get stable => 'Σταθερό';
 
   @override
-  String get preRelease => 'Pre-release';
+  String get preRelease => 'Προέκδοση';
 
   @override
   String get alpha => 'Alpha';
 
   @override
-  String get checkNow => 'Check now';
+  String get checkNow => 'Έλεγχος τώρα';
 
   @override
   String get userAgent => 'User-Agent';
 
   @override
-  String get settingDefault => 'Default';
+  String get settingDefault => 'Προεπιλογή';
 
   @override
   String currentlyUsing(String value) {
-    return 'Currently: $value';
+    return 'Τώρα: $value';
   }
 
   @override
   String get dnsOverHttps => 'DNS-over-HTTPS';
 
   @override
-  String get dnsDefault => 'Default (Cloudflare)';
+  String get dnsDefault => 'Προεπιλογή (Cloudflare)';
 
   @override
   String get proxy => 'Proxy';
 
   @override
-  String get proxyProtocol => 'Type';
+  String get proxyProtocol => 'Τύπος';
 
   @override
   String get proxyHost => 'Host';
 
   @override
-  String get proxyPort => 'Port';
+  String get proxyPort => 'Θύρα';
 
   @override
-  String get proxyUsername => 'Username';
+  String get proxyUsername => 'Όνομα χρήστη';
 
   @override
-  String get proxyPassword => 'Password';
+  String get proxyPassword => 'Κωδικός';
 
   @override
-  String get optional => 'Optional';
+  String get optional => 'Προαιρετικό';
 
   @override
-  String get clearCookies => 'Clear cookies';
+  String get clearCookies => 'Εκκαθάριση cookies';
 
   @override
-  String get clearCookiesDesc => 'Remove every stored cookie';
+  String get clearCookiesDesc => 'Αφαίρεση όλων των αποθηκευμένων cookies';
 
   @override
   String notImplementedArea(String area) {
-    return '$area — coming soon';
+    return '$area — έρχεται σύντομα';
   }
 
   @override
   String notImplementedService(String service) {
-    return '$service doesn\'t support this yet.';
+    return 'Το $service δεν το υποστηρίζει ακόμα.';
   }
 
   @override
-  String get couldNotLoadResults => 'Couldn\'t load results';
+  String get couldNotLoadResults => 'Δεν φορτώθηκαν τα αποτελέσματα';
 
   @override
-  String get updateCheckFailed => 'Couldn\'t check for updates';
+  String get updateCheckFailed => 'Δεν έγινε έλεγχος για ενημερώσεις';
 
   @override
-  String get highRefreshRate => 'High refresh rate';
+  String get highRefreshRate => 'Υψηλός ρυθμός ανανέωσης';
 
   @override
-  String get highRefreshRateDesc =>
-      'Use the highest refresh rate your screen supports';
+  String get highRefreshRateDesc => 'Χρήση του υψηλότερου ρυθμού ανανέωσης που υποστηρίζει η οθόνη σου';
 
   @override
-  String get imageSave => 'Save image';
+  String get imageSave => 'Αποθήκευση εικόνας';
 
   @override
   String imageSavedTo(String path) {
-    return 'Saved to $path';
+    return 'Αποθηκεύτηκε στο $path';
   }
 
   @override
-  String get imageActionFailed => 'Couldn\'t download the image';
+  String get imageActionFailed => 'Δεν κατέβηκε η εικόνα';
 
   @override
-  String get imageTitleCover => 'Cover';
+  String get imageTitleCover => 'Εξώφυλλο';
 
   @override
   String get imageTitleBanner => 'Banner';
 
   @override
-  String get imageTitleAvatar => 'Profile picture';
+  String get imageTitleAvatar => 'Εικόνα προφίλ';
 
   @override
-  String get verifyTls => 'Verify certificates';
+  String get verifyTls => 'Επαλήθευση πιστοποιητικών';
 
   @override
-  String get verifyTlsDesc =>
-      'Reject servers with invalid HTTPS certificates. Turn off only for a source that uses a self-signed one';
+  String get verifyTlsDesc => 'Απόρριψη διακομιστών με μη έγκυρα πιστοποιητικά HTTPS. Απενεργοποίησέ το μόνο για πηγή που χρησιμοποιεί αυτο-υπογεγραμμένο';
 
   @override
-  String get clearCookiesConfirm =>
-      'Remove all stored cookies? This may sign you out of some sources.';
+  String get clearCookiesConfirm => 'Να αφαιρεθούν όλα τα αποθηκευμένα cookies; Ίσως αποσυνδεθείς από κάποιες πηγές.';
 
   @override
-  String get version => 'Version';
+  String get version => 'Έκδοση';
 
   @override
   String get gitHub => 'GitHub';
 
   @override
-  String get gitHubDesc => 'Source, issues and releases';
+  String get gitHubDesc => 'Πηγαίος κώδικας, issues και εκδόσεις';
 
   @override
-  String get discordDesc => 'Community and support';
+  String get discordDesc => 'Κοινότητα και υποστήριξη';
 
   @override
-  String get donate => 'Buy me a coffee';
+  String get donate => 'Κέρασέ με έναν καφέ';
 
   @override
-  String get donateDesc => 'Support development';
+  String get donateDesc => 'Στήριξη της ανάπτυξης';
 
   @override
-  String get contributors => 'Contributors';
+  String get contributors => 'Συνεισφέροντες';
 
   @override
-  String get contributorsDesc => 'The people who built Dartotsu';
+  String get contributorsDesc => 'Οι άνθρωποι που έφτιαξαν το Dartotsu';
 
   @override
-  String get contributorsLoadFailed => 'Couldn\'t load contributors';
+  String get contributorsLoadFailed => 'Δεν φορτώθηκαν οι συνεισφέροντες';
 
   @override
   String get forks => 'Forks';
 
   @override
-  String get forksDesc => 'Projects built on top of Dartotsu';
+  String get forksDesc => 'Έργα που βασίζονται στο Dartotsu';
 
   @override
-  String get forksEmpty => 'No forks found';
+  String get forksEmpty => 'Δεν βρέθηκαν forks';
 
   @override
-  String get sectionColors => 'Colors';
+  String get sectionColors => 'Χρώματα';
 
   @override
-  String get sectionDisplay => 'Display';
+  String get sectionDisplay => 'Οθόνη';
 
   @override
-  String get sectionStyle => 'Style';
+  String get sectionStyle => 'Στυλ';
 
   @override
-  String get sectionCommunity => 'Community';
+  String get sectionCommunity => 'Κοινότητα';
 
   @override
-  String get sectionAppInfo => 'App Info';
+  String get sectionAppInfo => 'Πληροφορίες εφαρμογής';
 
   @override
   String get sectionCache => 'Cache';
 
   @override
-  String get sectionRequests => 'Requests';
+  String get sectionRequests => 'Αιτήματα';
 
   @override
   String get sectionDnsProxy => 'DNS & Proxy';
 
   @override
-  String get onboardingBack => 'Back';
+  String get onboardingBack => 'Πίσω';
 
   @override
-  String get onboardingNext => 'Next';
+  String get onboardingNext => 'Επόμενο';
 
   @override
-  String get onboardingSkip => 'Skip';
+  String get onboardingSkip => 'Παράλειψη';
 
   @override
-  String get onboardingPaletteTitle => 'Make it yours';
+  String get onboardingPaletteTitle => 'Κάν\' το δικό σου';
 
   @override
-  String get onboardingPaletteBody =>
-      'Pick a palette. Every accent, from cards to the player, follows it.';
+  String get onboardingPaletteBody => 'Διάλεξε παλέτα. Όλα τα χρώματα έμφασης, από τις κάρτες ως το πρόγραμμα αναπαραγωγής, την ακολουθούν.';
 
   @override
-  String get themeModeAuto => 'Auto';
+  String get themeModeAuto => 'Αυτόματο';
 
   @override
-  String get themeModeLight => 'Light';
+  String get themeModeLight => 'Φωτεινό';
 
   @override
-  String get themeModeDark => 'Dark';
+  String get themeModeDark => 'Σκοτεινό';
 
   @override
-  String get onboardingSyncTitle => 'Sync your library';
+  String get onboardingSyncTitle => 'Συγχρόνισε τη βιβλιοθήκη σου';
 
   @override
-  String get onboardingSyncBody =>
-      'Sign in with AniList to bring your lists, progress and scores with you. Or skip and browse as a guest.';
+  String get onboardingSyncBody => 'Συνδέσου με το AniList για να φέρεις τις λίστες, την πρόοδο και τις βαθμολογίες σου. Ή παράλειψέ το και περιηγήσου ως επισκέπτης.';
 
   @override
-  String get onboardingOpenLinks => 'Open AniList and repo links in Dartotsu';
+  String get onboardingOpenLinks => 'Άνοιγμα συνδέσμων AniList και αποθετηρίων στο Dartotsu';
 
   @override
-  String get onboardingPermsTitle => 'Permissions';
+  String get onboardingPermsTitle => 'Άδειες';
 
   @override
-  String get onboardingPermsBody =>
-      'Allow these now so downloads, updates and alerts work without interruptions. You can change them later in system settings.';
+  String get onboardingPermsBody => 'Δώσε τες τώρα για να δουλεύουν χωρίς διακοπές οι λήψεις, οι ενημερώσεις και οι ειδοποιήσεις. Μπορείς να τις αλλάξεις αργότερα στις ρυθμίσεις συστήματος.';
 
   @override
-  String get permNotifications => 'Notifications';
+  String get permNotifications => 'Ειδοποιήσεις';
 
   @override
-  String get permNotificationsDesc =>
-      'Download progress, new episodes and replies';
+  String get permNotificationsDesc => 'Πρόοδος λήψεων, νέα επεισόδια και απαντήσεις';
 
   @override
-  String get permStorage => 'All files access';
+  String get permStorage => 'Πρόσβαση σε όλα τα αρχεία';
 
   @override
-  String get permStorageDesc => 'Save downloads to the public Dartotsu folder';
+  String get permStorageDesc => 'Αποθήκευση λήψεων στον δημόσιο φάκελο Dartotsu';
 
   @override
-  String get permInstall => 'Install updates';
+  String get permInstall => 'Εγκατάσταση ενημερώσεων';
 
   @override
-  String get permInstallDesc => 'Let Dartotsu install its own app updates';
+  String get permInstallDesc => 'Άσε το Dartotsu να εγκαθιστά τις δικές του ενημερώσεις';
 
   @override
-  String get permBattery => 'Unrestricted battery';
+  String get permBattery => 'Χωρίς περιορισμό μπαταρίας';
 
   @override
-  String get permBatteryDesc => 'Keep long downloads running in the background';
+  String get permBatteryDesc => 'Οι μεγάλες λήψεις συνεχίζονται στο παρασκήνιο';
 
   @override
-  String get permGrant => 'Allow';
+  String get permGrant => 'Να επιτρέπεται';
 
   @override
-  String get permGranted => 'Allowed';
+  String get permGranted => 'Επιτρέπεται';
 
   @override
-  String get linkOpenInApp => 'Open links in Dartotsu';
+  String get linkOpenInApp => 'Άνοιγμα συνδέσμων στο Dartotsu';
 
   @override
-  String get linkOpenInAppDesc => 'Let AniList and repo links open the app';
+  String get linkOpenInAppDesc => 'Οι σύνδεσμοι AniList και αποθετηρίων ανοίγουν την εφαρμογή';
 
   @override
-  String get reviewsTitle => 'Reviews';
+  String get reviewsTitle => 'Κριτικές';
 
   @override
-  String get reviewsEmpty => 'No reviews yet';
+  String get reviewsEmpty => 'Καμία κριτική ακόμα';
 
   @override
-  String get reviewsFailed => 'Couldn\'t load reviews';
+  String get reviewsFailed => 'Δεν φορτώθηκαν οι κριτικές';
 
   @override
-  String get reviewHelpfulQuestion => 'Was this review helpful?';
+  String get reviewHelpfulQuestion => 'Σου φάνηκε χρήσιμη η κριτική;';
 
   @override
-  String get reviewVoteFailed => 'Couldn\'t save your vote';
+  String get reviewVoteFailed => 'Δεν αποθηκεύτηκε η ψήφος σου';
 
   @override
   String reviewHelpful(int n, int total) {
-    return '$n of $total found this helpful';
+    return '$n από $total τη βρήκαν χρήσιμη';
   }
 
   @override
-  String get calendarTitle => 'Airing schedule';
+  String get calendarTitle => 'Πρόγραμμα προβολής';
 
   @override
-  String get calendarToday => 'Today';
+  String get calendarToday => 'Σήμερα';
 
   @override
-  String get calendarEmpty => 'Nothing airs this day';
+  String get calendarEmpty => 'Τίποτα δεν προβάλλεται αυτή τη μέρα';
 
   @override
-  String get calendarFailed => 'Couldn\'t load the schedule';
+  String get calendarFailed => 'Δεν φορτώθηκε το πρόγραμμα';
 
   @override
   String calendarEpisode(int n) {
-    return 'Episode $n';
+    return 'Επεισόδιο $n';
   }
 
   @override
-  String get shareAnalytics => 'Share anonymous usage data';
+  String get shareAnalytics => 'Κοινοποίηση ανώνυμων δεδομένων χρήσης';
 
   @override
-  String get shareAnalyticsDesc =>
-      'Anonymous user counts and crash reports. No account or personal data';
+  String get shareAnalyticsDesc => 'Ανώνυμοι αριθμοί χρηστών και αναφορές κρασαρισμάτων. Χωρίς λογαριασμό ή προσωπικά δεδομένα';
 
   @override
-  String get linkOpenAnilist => 'Open AniList links in Dartotsu';
+  String get linkOpenAnilist => 'Άνοιγμα συνδέσμων AniList στο Dartotsu';
 
   @override
-  String get linkOpenAnilistDesc =>
-      'Turn on link handling so anilist.co links open the app';
+  String get linkOpenAnilistDesc => 'Ενεργοποίησε τη διαχείριση συνδέσμων ώστε οι σύνδεσμοι anilist.co να ανοίγουν την εφαρμογή';
 
   @override
-  String get linkSettingsFailed => 'Could not open the system settings';
+  String get linkSettingsFailed => 'Δεν άνοιξαν οι ρυθμίσεις συστήματος';
 
   @override
   String get discordRichPresence => 'Rich Presence';
 
   @override
-  String get discordRichPresenceTokenDesc =>
-      'Show what you are doing on your Discord profile. Needs your Discord token.';
+  String get discordRichPresenceTokenDesc => 'Δείξε στο προφίλ σου στο Discord τι κάνεις. Χρειάζεται το token του Discord.';
 
   @override
-  String get discordRichPresenceDesktopDesc =>
-      'Show what you are doing on your Discord profile. Needs the Discord desktop app running.';
+  String get discordRichPresenceDesktopDesc => 'Δείξε στο προφίλ σου στο Discord τι κάνεις. Χρειάζεται να τρέχει η εφαρμογή Discord για υπολογιστή.';
 
   @override
-  String get discordBrowsing => 'Show browsing activity';
+  String get discordBrowsing => 'Εμφάνιση δραστηριότητας περιήγησης';
 
   @override
-  String get discordBrowsingDesc =>
-      'Also show the tab, page or profile you are looking at, not only what you watch or read.';
+  String get discordBrowsingDesc => 'Δείξε και την καρτέλα, τη σελίδα ή το προφίλ που βλέπεις, όχι μόνο ό,τι παρακολουθείς ή διαβάζεις.';
 
   @override
-  String get discordLookHeader => 'Presence look';
+  String get discordLookHeader => 'Εμφάνιση του presence';
 
   @override
-  String get discordActivityType => 'Activity type';
+  String get discordActivityType => 'Τύπος δραστηριότητας';
 
   @override
-  String get discordActivityTypeDesc =>
-      'How Discord words it: \"Watching …\" or \"Playing …\". Auto uses Watching for anime and Playing for everything else.';
+  String get discordActivityTypeDesc => 'Πώς το διατυπώνει το Discord: \"Παρακολουθεί …\" ή \"Παίζει …\". Το Αυτόματο χρησιμοποιεί Παρακολουθεί για anime και Παίζει για όλα τα υπόλοιπα.';
 
   @override
-  String get discordWatching => 'Watching';
+  String get discordWatching => 'Παρακολουθεί';
 
   @override
-  String get discordPlaying => 'Playing';
+  String get discordPlaying => 'Παίζει';
 
   @override
-  String get discordCovers => 'Show covers';
+  String get discordCovers => 'Εμφάνιση εξωφύλλων';
 
   @override
-  String get discordCoversDesc =>
-      'Cover art and the Dartotsu icon on the card.';
+  String get discordCoversDesc => 'Εξώφυλλο και εικονίδιο Dartotsu στην κάρτα.';
 
   @override
-  String get discordTimer => 'Show timer';
+  String get discordTimer => 'Εμφάνιση χρονομέτρου';
 
   @override
-  String get discordTimerDesc => 'Elapsed or remaining time under the title.';
+  String get discordTimerDesc => 'Χρόνος που πέρασε ή απομένει κάτω από τον τίτλο.';
 
   @override
-  String get discordButtons => 'Show buttons';
+  String get discordButtons => 'Εμφάνιση κουμπιών';
 
   @override
-  String get discordButtonsDesc =>
-      '\"View anime / manga\" and \"Open Dartotsu\" buttons.';
+  String get discordButtonsDesc => 'Κουμπιά \"Προβολή anime / manga\" και \"Άνοιγμα Dartotsu\".';
 
   @override
-  String get discordHideTitles => 'Hide titles';
+  String get discordHideTitles => 'Απόκρυψη τίτλων';
 
   @override
-  String get discordHideTitlesDesc =>
-      'Replace anime and manga names (and their cover and link) with \"Something private\".';
+  String get discordHideTitlesDesc => 'Αντικατάσταση ονομάτων anime και manga (και του εξωφύλλου και συνδέσμου τους) με \"Κάτι ιδιωτικό\".';
 
   @override
-  String get discordConnectionHeader => 'Connection';
+  String get discordConnectionHeader => 'Σύνδεση';
 
   @override
-  String get listSearchHint => 'Search this list';
+  String get listSearchHint => 'Αναζήτηση σε αυτή τη λίστα';
 
   @override
-  String get listSort => 'Sort';
+  String get listSort => 'Ταξινόμηση';
 
   @override
-  String get listFilter => 'Filter';
+  String get listFilter => 'Φίλτρο';
 
   @override
-  String get listRandom => 'Random title';
+  String get listRandom => 'Τυχαίος τίτλος';
 
   @override
-  String get listReverse => 'Reverse order';
+  String get listReverse => 'Αντίστροφη σειρά';
 
   @override
-  String get listSortDefault => 'List order';
+  String get listSortDefault => 'Σειρά λίστας';
 
   @override
-  String get listSortScore => 'Your score';
+  String get listSortScore => 'Η βαθμολογία σου';
 
   @override
-  String get listSortTitle => 'Title';
+  String get listSortTitle => 'Τίτλος';
 
   @override
-  String get listSortUpdated => 'Last updated';
+  String get listSortUpdated => 'Τελευταία ενημέρωση';
 
   @override
-  String get listSortProgress => 'Progress';
+  String get listSortProgress => 'Πρόοδος';
 
   @override
-  String get listSortReleased => 'Release date';
+  String get listSortReleased => 'Ημερομηνία κυκλοφορίας';
 
   @override
-  String get listSortAverage => 'Average score';
+  String get listSortAverage => 'Μέση βαθμολογία';
 
   @override
-  String get listFilterFormat => 'Format';
+  String get listFilterFormat => 'Μορφή';
 
   @override
-  String get listFilterStatus => 'Status';
+  String get listFilterStatus => 'Κατάσταση';
 
   @override
-  String get listFilterGenres => 'Genres';
+  String get listFilterGenres => 'Είδη';
 
   @override
-  String get listFilterClear => 'Clear filters';
+  String get listFilterClear => 'Καθαρισμός φίλτρων';
 
   @override
-  String get listNoMatches => 'Nothing in this list matches';
+  String get listNoMatches => 'Τίποτα σε αυτή τη λίστα δεν ταιριάζει';
 
   @override
-  String get discordLogin => 'Log in to Discord';
+  String get discordLogin => 'Σύνδεση στο Discord';
 
   @override
-  String get discordToken => 'Discord token';
+  String get discordToken => 'Token Discord';
 
   @override
-  String get discordTokenSaved =>
-      'Saved. Tap to replace, long press to remove.';
+  String get discordTokenSaved => 'Αποθηκεύτηκε. Πάτα για αντικατάσταση, παρατεταμένα για αφαίρεση.';
 
   @override
-  String get discordTokenNotSet => 'Not set. Tap to add.';
+  String get discordTokenNotSet => 'Δεν έχει οριστεί. Πάτα για προσθήκη.';
 
   @override
-  String get discordTokenPrompt =>
-      'Paste the token of the Discord account to show the presence on. It stays on this device.';
+  String get discordTokenPrompt => 'Επικόλλησε το token του λογαριασμού Discord στον οποίο θα φαίνεται το presence. Μένει σε αυτή τη συσκευή.';
 
   @override
   String get discordTokenHint => 'Token';
 
   @override
-  String get discordTokenSavedSnack => 'Discord token saved';
+  String get discordTokenSavedSnack => 'Το token Discord αποθηκεύτηκε';
 
   @override
-  String get discordTokenRemovedSnack => 'Discord token removed';
+  String get discordTokenRemovedSnack => 'Το token Discord αφαιρέθηκε';
 
   @override
   String get discordRichPresenceRow => 'Discord Rich Presence';
 
   @override
-  String get discordRichPresenceRowOn => 'On · tap to change how it looks';
+  String get discordRichPresenceRowOn => 'Ενεργό · πάτα για να αλλάξεις την εμφάνιση';
 
   @override
-  String get discordRichPresenceRowOff =>
-      'Show what you are doing on your Discord profile';
+  String get discordRichPresenceRowOff => 'Δείξε στο προφίλ σου στο Discord τι κάνεις';
 
   @override
-  String get loginCancelled => 'Login cancelled';
+  String get loginCancelled => 'Η σύνδεση ακυρώθηκε';
 
   @override
-  String get invalidToken => 'Invalid token';
+  String get invalidToken => 'Μη έγκυρο token';
 
   @override
   String loginFailed(String error) {
-    return 'Login failed: $error';
+    return 'Η σύνδεση απέτυχε: $error';
   }
 
   @override
-  String get malLoginFailed => 'MyAnimeList login failed';
+  String get malLoginFailed => 'Η σύνδεση στο MyAnimeList απέτυχε';
 
   @override
-  String get kitsuLoginFailed =>
-      'Kitsu login failed. Check your email and password.';
+  String get kitsuLoginFailed => 'Η σύνδεση στο Kitsu απέτυχε. Έλεγξε το email και τον κωδικό σου.';
 
   @override
-  String get kitsuLoginTitle => 'Sign in to Kitsu';
+  String get kitsuLoginTitle => 'Σύνδεση στο Kitsu';
 
   @override
-  String get emailOrUsername => 'Email or username';
+  String get emailOrUsername => 'Email ή όνομα χρήστη';
 
   @override
-  String get password => 'Password';
+  String get password => 'Κωδικός';
 
   @override
-  String get kitsuProfile => 'Kitsu profile';
+  String get kitsuProfile => 'Προφίλ Kitsu';
 
   @override
-  String get mangaBakaLoginFailed => 'MangaBaka login failed';
+  String get mangaBakaLoginFailed => 'Η σύνδεση στο MangaBaka απέτυχε';
 
   @override
-  String get mangaBakaProfile => 'MangaBaka profile';
+  String get mangaBakaProfile => 'Προφίλ MangaBaka';
 
   @override
-  String get refreshFromMangaBaka => 'Refresh from MangaBaka';
+  String get refreshFromMangaBaka => 'Ανανέωση από το MangaBaka';
 
   @override
-  String get artistsLabel => 'Artists';
+  String get artistsLabel => 'Σχεδιαστές';
 
   @override
-  String get authorsLabel => 'Authors';
+  String get authorsLabel => 'Συγγραφείς';
 
   @override
-  String get publishersLabel => 'Publishers';
+  String get publishersLabel => 'Εκδότες';
 
   @override
-  String get licensedLabel => 'Licensed';
+  String get licensedLabel => 'Με άδεια';
 
   @override
-  String get contentRatingLabel => 'Content rating';
+  String get contentRatingLabel => 'Ηλικιακή διαβάθμιση';
 
   @override
-  String get yesLabel => 'Yes';
+  String get yesLabel => 'Ναι';
 
   @override
-  String get noLabel => 'No';
+  String get noLabel => 'Όχι';
 
   @override
-  String get ratingSteps => 'Rating steps';
+  String get ratingSteps => 'Βήματα βαθμολογίας';
 
   @override
-  String get hideNsfw => 'Hide NSFW';
+  String get hideNsfw => 'Απόκρυψη NSFW';
 
   @override
-  String get hideNsfwDesc =>
-      'Keep adult titles out of feeds and search, and list your own adult entries under Hidden Media.';
+  String get hideNsfwDesc => 'Κράτα τους τίτλους ενηλίκων εκτός ροών και αναζήτησης και δες τις δικές σου εγγραφές ενηλίκων στα Κρυμμένα μέσα.';
 
   @override
-  String get kitsuAccountOptions => 'Kitsu account options';
+  String get kitsuAccountOptions => 'Επιλογές λογαριασμού Kitsu';
 
   @override
-  String get couldNotUpdateKitsuSettings =>
-      'Could not update your Kitsu settings';
+  String get couldNotUpdateKitsuSettings => 'Δεν ενημερώθηκαν οι ρυθμίσεις σου στο Kitsu';
 
   @override
-  String get titleCanonical => 'Canonical';
+  String get titleCanonical => 'Κανονικό';
 
   @override
-  String get titleRomanized => 'Romanized';
+  String get titleRomanized => 'Λατινικοποιημένο';
 
   @override
-  String get titleLocalized => 'Localized';
+  String get titleLocalized => 'Τοπικοποιημένο';
 
   @override
-  String get ratingSystem => 'Rating system';
+  String get ratingSystem => 'Σύστημα βαθμολόγησης';
 
   @override
-  String get ratingSimple => 'Simple (3 faces)';
+  String get ratingSimple => 'Απλό (3 πρόσωπα)';
 
   @override
-  String get ratingRegular => 'Regular (5 stars)';
+  String get ratingRegular => 'Κανονικό (5 αστέρια)';
 
   @override
-  String get ratingAdvanced => 'Advanced (10 points)';
+  String get ratingAdvanced => 'Προχωρημένο (10 πόντοι)';
 
   @override
-  String get contentFilter => 'Content filter';
+  String get contentFilter => 'Φίλτρο περιεχομένου';
 
   @override
-  String get contentSfw => 'Safe for work only';
+  String get contentSfw => 'Μόνο ασφαλές για δουλειά';
 
   @override
-  String get contentSometimes => 'Mature content in searches';
+  String get contentSometimes => 'Περιεχόμενο ενηλίκων στις αναζητήσεις';
 
   @override
-  String get contentEverywhere => 'Mature content everywhere';
+  String get contentEverywhere => 'Περιεχόμενο ενηλίκων παντού';
 
   @override
-  String get shareToGlobal => 'Share to global feed';
+  String get shareToGlobal => 'Κοινοποίηση στην καθολική ροή';
 
   @override
-  String get shareToGlobalDesc =>
-      'Let your activity appear in Kitsu\'s global feed.';
+  String get shareToGlobalDesc => 'Άσε τη δραστηριότητά σου να εμφανίζεται στην καθολική ροή του Kitsu.';
 
   @override
-  String get memberSince => 'Member since';
+  String get memberSince => 'Μέλος από';
 
   @override
-  String get location => 'Location';
+  String get location => 'Τοποθεσία';
 
   @override
-  String get accountType => 'Account type';
+  String get accountType => 'Τύπος λογαριασμού';
 
   @override
-  String get accountSupporter => 'Supporter';
+  String get accountSupporter => 'Υποστηρικτής';
 
   @override
-  String get accountFree => 'Free';
+  String get accountFree => 'Δωρεάν';
 
   @override
-  String get accountDetails => 'Account details';
+  String get accountDetails => 'Στοιχεία λογαριασμού';
 
   @override
-  String get refreshFromKitsu => 'Refresh from Kitsu';
+  String get refreshFromKitsu => 'Ανανέωση από το Kitsu';
 
   @override
-  String get simklReadOnly => 'Simkl granted read-only access';
+  String get simklReadOnly => 'Το Simkl έδωσε πρόσβαση μόνο για ανάγνωση';
 
   @override
-  String get incognitoEditsBlocked => 'Incognito: list edits are blocked';
+  String get incognitoEditsBlocked => 'Ινκόγκνιτο: οι αλλαγές στις λίστες είναι μπλοκαρισμένες';
 
   @override
   String serviceError(String service, String error) {
@@ -1153,433 +1123,433 @@ class AppLocalizationsEl extends AppLocalizations {
   }
 
   @override
-  String get incognitoProgressNotSaved => 'Incognito: progress not saved';
+  String get incognitoProgressNotSaved => 'Ινκόγκνιτο: η πρόοδος δεν αποθηκεύτηκε';
 
   @override
   String progressSet(int progress) {
-    return 'Progress set to $progress';
+    return 'Η πρόοδος ορίστηκε σε $progress';
   }
 
   @override
   String removedFromList(String title) {
-    return 'Removed $title from your list';
+    return 'Το $title αφαιρέθηκε από τη λίστα σου';
   }
 
   @override
-  String get following => 'Following';
+  String get following => 'Ακολουθείς';
 
   @override
-  String get homeSections => 'Home sections';
+  String get homeSections => 'Ενότητες αρχικής';
 
   @override
-  String get homeSectionsHint =>
-      'Drag to reorder. Hidden sections are never fetched.';
+  String get homeSectionsHint => 'Σύρε για αλλαγή σειράς. Οι κρυμμένες ενότητες δεν φορτώνονται ποτέ.';
 
   @override
-  String get customListDeleteFailed => 'Failed to delete custom list';
+  String get customListDeleteFailed => 'Αποτυχία διαγραφής προσαρμοσμένης λίστας';
 
   @override
-  String get customListsSaveFailed => 'Failed to save custom lists';
+  String get customListsSaveFailed => 'Αποτυχία αποθήκευσης προσαρμοσμένων λιστών';
 
   @override
-  String get customListsSaved => 'Custom lists saved';
+  String get customListsSaved => 'Οι προσαρμοσμένες λίστες αποθηκεύτηκαν';
 
   @override
-  String get listName => 'List name';
+  String get listName => 'Όνομα λίστας';
 
   @override
-  String get addList => 'Add list';
+  String get addList => 'Προσθήκη λίστας';
 
   @override
   String voiceActorsIn(String name) {
-    return 'Voice actors · $name';
+    return 'Ηθοποιοί φωνής · $name';
   }
 
   @override
-  String get animeAppearances => 'Anime appearances';
+  String get animeAppearances => 'Εμφανίσεις σε anime';
 
   @override
-  String get mangaAppearances => 'Manga appearances';
+  String get mangaAppearances => 'Εμφανίσεις σε manga';
 
   @override
-  String get voicedCharacters => 'Voiced characters';
+  String get voicedCharacters => 'Χαρακτήρες που δάνεισε τη φωνή του';
 
   @override
-  String get animeCredits => 'Anime credits';
+  String get animeCredits => 'Συμμετοχές σε anime';
 
   @override
-  String get mangaCredits => 'Manga credits';
+  String get mangaCredits => 'Συμμετοχές σε manga';
 
   @override
-  String get mainProductions => 'Main productions';
+  String get mainProductions => 'Βασικές παραγωγές';
 
   @override
-  String get otherWorks => 'Other works';
+  String get otherWorks => 'Άλλα έργα';
 
   @override
   String get prequelSequel => 'Prequel & Sequel';
 
   @override
-  String get previousSeason => 'Προηγούμενη Σεζόν';
+  String get previousSeason => 'Προηγούμενη σεζόν';
 
   @override
-  String get thisSeason => 'Αυτή η Σεζόν';
+  String get thisSeason => 'Αυτή η σεζόν';
 
   @override
-  String get nextSeason => 'Επόμενη Σεζόν';
+  String get nextSeason => 'Επόμενη σεζόν';
 
   @override
-  String get voiceRoles => 'Voice roles';
+  String get voiceRoles => 'Φωνητικοί ρόλοι';
 
   @override
-  String get staffPositions => 'Staff positions';
+  String get staffPositions => 'Θέσεις προσωπικού';
 
   @override
-  String get mangaWorks => 'Manga works';
+  String get mangaWorks => 'Έργα manga';
 
   @override
-  String get malProfile => 'MyAnimeList profile';
+  String get malProfile => 'Προφίλ MyAnimeList';
 
   @override
-  String get refreshFromMal => 'Refresh from MyAnimeList';
+  String get refreshFromMal => 'Ανανέωση από το MyAnimeList';
 
   @override
-  String get repullProfileCounts => 'Re-pull your profile and counts';
+  String get repullProfileCounts => 'Ξαναφόρτωση του προφίλ και των αριθμών σου';
 
   @override
-  String get refreshed => 'Refreshed';
+  String get refreshed => 'Ανανεώθηκε';
 
   @override
-  String get simklProfile => 'Simkl profile';
+  String get simklProfile => 'Προφίλ Simkl';
 
   @override
-  String get refreshFromSimkl => 'Refresh from Simkl';
+  String get refreshFromSimkl => 'Ανανέωση από το Simkl';
 
   @override
-  String get repullProfileLibrary => 'Re-pull your profile and library';
+  String get repullProfileLibrary => 'Ξαναφόρτωση του προφίλ και της βιβλιοθήκης σου';
 
   @override
-  String get simklSignInToSearch => 'Sign in to Simkl to search';
+  String get simklSignInToSearch => 'Συνδέσου στο Simkl για αναζήτηση';
 
   @override
-  String get dropRate => 'Drop rate';
+  String get dropRate => 'Ποσοστό εγκατάλειψης';
 
   @override
-  String get simklAttribution =>
-      'Data and artwork provided by Simkl. View on Simkl';
+  String get simklAttribution => 'Δεδομένα και εικόνες από το Simkl. Προβολή στο Simkl';
 
   @override
-  String get onHold => 'Σε Αναμονή null';
+  String get onHold => 'Σε αναμονή';
 
   @override
-  String get scoredBy => 'Scored by';
+  String get scoredBy => 'Βαθμολογήθηκε από';
 
   @override
-  String get planToWatch => 'Plan to watch';
+  String get planToWatch => 'Θα το δω';
 
   @override
-  String get planToRead => 'Plan to read';
+  String get planToRead => 'Θα το διαβάσω';
 
   @override
-  String get timesRewatched => 'Times rewatched';
+  String get timesRewatched => 'Φορές που ξαναείδα';
 
   @override
-  String get timesReread => 'Times reread';
+  String get timesReread => 'Φορές που ξαναδιάβασα';
 
   @override
   String get comments => 'Σχόλια';
 
   @override
-  String get moviesAndSeries => 'Movies & Series';
+  String get moviesAndSeries => 'Ταινίες & σειρές';
 
   @override
-  String get trackingOnly => 'Tracking only';
+  String get trackingOnly => 'Μόνο παρακολούθηση';
 
   @override
-  String get signedIn => 'Signed in';
+  String get signedIn => 'Συνδεδεμένος';
 
   @override
-  String get searchLanguage => 'Search language';
+  String get searchLanguage => 'Γλώσσα αναζήτησης';
 
   @override
-  String get savedToList => 'Saved to your list';
+  String get savedToList => 'Αποθηκεύτηκε στη λίστα σου';
 
   @override
-  String get removedFromYourList => 'Removed from your list';
+  String get removedFromYourList => 'Αφαιρέθηκε από τη λίστα σου';
 
   @override
-  String get retry => 'Retry';
+  String get retry => 'Επανάληψη';
 
   @override
-  String get synopsis => 'Περίληψη';
+  String get synopsis => 'Σύνοψη';
 
   @override
-  String get details => 'Details';
+  String get details => 'Λεπτομέρειες';
 
   @override
-  String get addToList => 'Προσθήκη στη Λίστα';
+  String get addToList => 'Προσθήκη στη λίστα';
 
   @override
   String get trailer => 'Trailer';
 
   @override
-  String get titleCopied => 'Title copied';
+  String get titleCopied => 'Ο τίτλος αντιγράφηκε';
 
   @override
-  String get linkCopied => 'Link copied';
+  String get linkCopied => 'Ο σύνδεσμος αντιγράφηκε';
 
   @override
-  String get watchTrailer => 'Watch trailer';
+  String get watchTrailer => 'Προβολή trailer';
 
   @override
-  String get copyTitle => 'Copy title';
+  String get copyTitle => 'Αντιγραφή τίτλου';
 
   @override
-  String get copyLink => 'Copy link';
+  String get copyLink => 'Αντιγραφή συνδέσμου';
 
   @override
-  String get openInBrowser => 'Open in browser';
+  String get openInBrowser => 'Άνοιγμα στο πρόγραμμα περιήγησης';
 
   @override
   String viewOnSource(String source) {
-    return 'View on $source';
+    return 'Προβολή στο $source';
   }
 
   @override
   String episodeAirsIn(int ep, String time) {
-    return 'Episode $ep airs in $time';
+    return 'Το επεισόδιο $ep προβάλλεται σε $time';
   }
 
   @override
   String nextEpisodeIn(String time) {
-    return 'Next episode in $time';
+    return 'Επόμενο επεισόδιο σε $time';
   }
 
   @override
-  String get logPathCopied => 'Log file path copied to clipboard';
+  String chapterExpectedIn(int chapter, String time) {
+    return 'Chapter $chapter expected in about $time';
+  }
 
   @override
-  String get animeSource => 'Anime source';
+  String get logPathCopied => 'Η διαδρομή του αρχείου log αντιγράφηκε στο πρόχειρο';
 
   @override
-  String get mangaSource => 'Manga source';
+  String get animeSource => 'Πηγή anime';
 
   @override
-  String get popular => 'Δημοφιλές null';
+  String get mangaSource => 'Πηγή manga';
 
   @override
-  String get latest => 'Latest';
+  String get popular => 'Δημοφιλή';
 
   @override
-  String get saved => 'Saved';
+  String get latest => 'Τελευταία';
 
   @override
-  String get nothingMatched => 'Nothing matched';
+  String get saved => 'Αποθηκευμένα';
 
   @override
-  String get nothingSavedFromSource => 'Nothing saved from this source yet';
+  String get nothingMatched => 'Δεν βρέθηκε τίποτα';
 
   @override
-  String get sourceReturnedNothing => 'This source returned nothing';
+  String get nothingSavedFromSource => 'Τίποτα αποθηκευμένο από αυτή την πηγή ακόμα';
 
   @override
-  String get checkConnectionOrSource =>
-      'Check your connection or try another source.';
+  String get sourceReturnedNothing => 'Αυτή η πηγή δεν επέστρεψε τίποτα';
 
   @override
-  String get tryDifferentSearch => 'Try a different search term.';
+  String get checkConnectionOrSource => 'Έλεγξε τη σύνδεσή σου ή δοκίμασε άλλη πηγή.';
 
   @override
-  String get savedTitlesAppearHere =>
-      'Titles you add to your list appear here.';
+  String get tryDifferentSearch => 'Δοκίμασε διαφορετικό όρο αναζήτησης.';
 
   @override
-  String get tryOtherFeed => 'Try the other feed or search instead.';
+  String get savedTitlesAppearHere => 'Οι τίτλοι που προσθέτεις στη λίστα σου εμφανίζονται εδώ.';
+
+  @override
+  String get tryOtherFeed => 'Δοκίμασε την άλλη ροή ή την αναζήτηση.';
 
   @override
   String searchSource(String source) {
-    return 'Search $source';
+    return 'Αναζήτηση στο $source';
   }
 
   @override
-  String get animeExtensions => 'Anime Extensions';
+  String get animeExtensions => 'Επεκτάσεις anime';
 
   @override
-  String get mangaExtensions => 'Manga Extensions';
+  String get mangaExtensions => 'Επεκτάσεις manga';
 
   @override
-  String get nothingHereYet => 'Nothing here yet';
+  String get nothingHereYet => 'Τίποτα εδώ ακόμα';
 
   @override
-  String get savedOnDeviceUntilLogin =>
-      'Everything below is saved on this device until you do.';
+  String get savedOnDeviceUntilLogin => 'Ό,τι βλέπεις παρακάτω είναι αποθηκευμένο σε αυτή τη συσκευή μέχρι να κάνεις κάτι άλλο.';
 
   @override
-  String get yourProfile => 'Your profile';
+  String get yourProfile => 'Το προφίλ σου';
 
   @override
-  String get activity => 'null';
+  String get activity => 'Δραστηριότητα';
 
   @override
-  String get extensions => 'Extensions';
+  String get extensions => 'Επεκτάσεις';
 
   @override
-  String get logOut => 'Log out';
+  String get logOut => 'Αποσύνδεση';
 
   @override
-  String get logIn => 'Log in';
+  String get logIn => 'Σύνδεση';
 
   @override
-  String get logOutConfirm => 'Are you sure you want to log out?';
+  String get logOutConfirm => 'Σίγουρα θες να αποσυνδεθείς;';
 
   @override
-  String get incognitoMode => 'Λειτουργία Ανώνυμης Περιήγησης';
+  String get incognitoMode => 'Λειτουργία ινκόγκνιτο';
 
   @override
-  String get alsoBlockListEdits => 'Also block list edits';
+  String get alsoBlockListEdits => 'Μπλόκαρε και τις αλλαγές στις λίστες';
 
   @override
-  String get offlineMode => 'Λειτουργία Εκτός Σύνδεσης';
+  String get offlineMode => 'Λειτουργία εκτός σύνδεσης';
 
   @override
-  String get switchService => 'Switch service';
+  String get switchService => 'Αλλαγή υπηρεσίας';
 
   @override
   String logOutOf(String name) {
-    return 'Log out of $name';
+    return 'Αποσύνδεση από το $name';
   }
 
   @override
-  String get loggedIn => 'Logged in';
+  String get loggedIn => 'Συνδεδεμένος';
 
   @override
   String get notifications => 'Ειδοποιήσεις';
 
   @override
-  String get nothingNew => 'Nothing new';
+  String get nothingNew => 'Τίποτα καινούργιο';
 
   @override
-  String get thisWeek => 'This week';
+  String get thisWeek => 'Αυτή την εβδομάδα';
 
   @override
-  String get listOnly => 'List Only';
+  String get listOnly => 'Μόνο η λίστα';
 
   @override
-  String get filter => 'Filter';
+  String get filter => 'Φίλτρο';
 
   @override
-  String get searchResults => 'Search Results';
+  String get searchResults => 'Αποτελέσματα αναζήτησης';
 
   @override
-  String get recentSearches => 'Recent searches';
+  String get recentSearches => 'Πρόσφατες αναζητήσεις';
 
   @override
-  String get searchOrSetFilter => 'Search or set a filter';
+  String get searchOrSetFilter => 'Αναζήτηση ή ορισμός φίλτρου';
 
   @override
-  String get filters => 'Filters';
+  String get filters => 'Φίλτρα';
 
   @override
-  String get showLess => 'Show less';
+  String get showLess => 'Λιγότερα';
 
   @override
-  String get showAll => 'Show all';
+  String get showAll => 'Εμφάνιση όλων';
 
   @override
-  String get apply => 'Apply';
+  String get apply => 'Εφαρμογή';
 
   @override
-  String get preview => 'Preview';
+  String get preview => 'Προεπισκόπηση';
 
   @override
-  String get preset => 'Preset';
+  String get preset => 'Προεπιλογή';
 
   @override
-  String get cardNormal => 'Normal';
+  String get cardNormal => 'Κανονικό';
 
   @override
-  String get cardOnCard => 'On card';
+  String get cardOnCard => 'Πάνω στην κάρτα';
 
   @override
-  String get cardInCard => 'In card';
+  String get cardInCard => 'Μέσα στην κάρτα';
 
   @override
-  String get size => 'Size';
+  String get size => 'Μέγεθος';
 
   @override
-  String get cardWidth => 'Card width';
+  String get cardWidth => 'Πλάτος κάρτας';
 
   @override
-  String get compact => 'Compact';
+  String get compact => 'Συμπαγές';
 
   @override
-  String get coverAndTitleOnly => 'Cover and title only';
+  String get coverAndTitleOnly => 'Μόνο εξώφυλλο και τίτλος';
 
   @override
-  String get titleLines => 'Title lines';
+  String get titleLines => 'Γραμμές τίτλου';
 
   @override
-  String get shape => 'Shape';
+  String get shape => 'Σχήμα';
 
   @override
-  String get posterShape => 'Poster shape';
+  String get posterShape => 'Σχήμα αφίσας';
 
   @override
-  String get cornerRadius => 'Corner radius';
+  String get cornerRadius => 'Ακτίνα γωνιών';
 
   @override
-  String get off => 'Off';
+  String get off => 'Ανενεργό';
 
   @override
-  String get topLeft => 'Top left';
+  String get topLeft => 'Πάνω αριστερά';
 
   @override
-  String get topRight => 'Top right';
+  String get topRight => 'Πάνω δεξιά';
 
   @override
-  String get bottomLeft => 'Bottom left';
+  String get bottomLeft => 'Κάτω αριστερά';
 
   @override
-  String get bottomRight => 'Bottom right';
+  String get bottomRight => 'Κάτω δεξιά';
 
   @override
-  String get overlays => 'Overlays';
+  String get overlays => 'Επικαλύψεις';
 
   @override
-  String get progressCount => 'Progress / count';
+  String get progressCount => 'Πρόοδος / πλήθος';
 
   @override
-  String get pill => 'Pill';
+  String get pill => 'Κάψουλα';
 
   @override
-  String get bar => 'Bar';
+  String get bar => 'Μπάρα';
 
   @override
-  String get outside => 'Outside';
+  String get outside => 'Εξωτερικά';
 
   @override
-  String get scoreBadge => 'Score badge';
+  String get scoreBadge => 'Σήμα βαθμολογίας';
 
   @override
-  String get airingDot => 'Airing dot';
+  String get airingDot => 'Τελεία προβολής';
 
   @override
-  String get updateAvailable => 'Update available';
+  String get updateAvailable => 'Διαθέσιμη ενημέρωση';
 
   @override
-  String get notInstalled => 'Not installed';
+  String get notInstalled => 'Δεν είναι εγκατεστημένο';
 
   @override
-  String get done => 'Done';
+  String get done => 'Τέλος';
 
   @override
-  String get searchOrEnterUrl => 'Search or enter URL';
+  String get searchOrEnterUrl => 'Αναζήτηση ή εισαγωγή URL';
 
   @override
-  String get refresh => 'Refresh';
+  String get refresh => 'Ανανέωση';
 
   @override
-  String get share => 'Share';
+  String get share => 'Κοινοποίηση';
 
   @override
   String get characters => 'Χαρακτήρες';
@@ -1588,637 +1558,629 @@ class AppLocalizationsEl extends AppLocalizations {
   String get staff => 'Προσωπικό';
 
   @override
-  String get readMore => 'Read more';
+  String get readMore => 'Διάβασε περισσότερα';
 
   @override
-  String get couldNotLoadList => 'Could not load the list';
+  String get couldNotLoadList => 'Δεν φορτώθηκε η λίστα';
 
   @override
-  String get logInToFavourite => 'Log in to add favourites';
+  String get logInToFavourite => 'Συνδέσου για να προσθέσεις αγαπημένα';
 
   @override
-  String get alsoKnownAs => 'Also known as';
+  String get alsoKnownAs => 'Επίσης γνωστό ως';
 
   @override
-  String get hideSpoilerNames => 'Hide spoiler names';
+  String get hideSpoilerNames => 'Απόκρυψη ονομάτων με spoilers';
 
   @override
-  String get showSpoilerNames => 'Show spoiler names';
+  String get showSpoilerNames => 'Εμφάνιση ονομάτων με spoilers';
 
   @override
-  String get favourited => 'Favourited';
+  String get favourited => 'Στα αγαπημένα';
 
   @override
-  String get favourite => 'Favourite';
+  String get favourite => 'Αγαπημένο';
 
   @override
-  String get couldNotOpenTitle => 'Could not open this title';
+  String get couldNotOpenTitle => 'Δεν άνοιξε αυτός ο τίτλος';
 
   @override
-  String get nobodyHereYet => 'Nobody here yet';
+  String get nobodyHereYet => 'Κανείς ακόμα';
 
   @override
-  String get noMatches => 'No matches';
+  String get noMatches => 'Δεν υπάρχουν αποτελέσματα';
 
   @override
-  String get gridView => 'Προβολή Πλέγματος';
+  String get gridView => 'Προβολή πλέγματος';
 
   @override
-  String get fullWidth => 'Full width';
+  String get fullWidth => 'Πλήρες πλάτος';
 
   @override
-  String get userNotFound => 'User not found';
+  String get userNotFound => 'Ο χρήστης δεν βρέθηκε';
 
   @override
-  String get couldNotUpdateFollow => 'Could not update follow';
+  String get couldNotUpdateFollow => 'Δεν ενημερώθηκε η ακολούθηση';
 
   @override
   String followedUser(String name) {
-    return 'Followed $name';
+    return 'Ακολουθείς τον/την $name';
   }
 
   @override
   String unfollowedUser(String name) {
-    return 'Unfollowed $name';
+    return 'Σταμάτησες να ακολουθείς τον/την $name';
   }
 
   @override
-  String get messages => 'Messages';
+  String get messages => 'Μηνύματα';
 
   @override
-  String get logInToSeeMessages => 'Log in to see your messages';
+  String get logInToSeeMessages => 'Συνδέσου για να δεις τα μηνύματά σου';
 
   @override
-  String get editActivity => 'Edit activity';
+  String get editActivity => 'Επεξεργασία δραστηριότητας';
 
   @override
-  String get newActivity => 'New activity';
+  String get newActivity => 'Νέα δραστηριότητα';
 
   @override
-  String get editMessage => 'Edit message';
+  String get editMessage => 'Επεξεργασία μηνύματος';
 
   @override
-  String get writeMessage => 'Write a message';
+  String get writeMessage => 'Γράψε ένα μήνυμα';
 
   @override
-  String get editReply => 'Edit reply';
+  String get editReply => 'Επεξεργασία απάντησης';
 
   @override
-  String get posted => 'Posted';
+  String get posted => 'Δημοσιεύτηκε';
 
   @override
-  String get couldNotPost => 'Could not post';
+  String get couldNotPost => 'Δεν έγινε η δημοσίευση';
 
   @override
-  String get nothingToPreview => 'Nothing to preview';
+  String get nothingToPreview => 'Δεν υπάρχει τίποτα για προεπισκόπηση';
 
   @override
-  String get writeSomethingHint =>
-      'Write something… AniList markdown works here';
+  String get writeSomethingHint => 'Γράψε κάτι… Το markdown του AniList δουλεύει εδώ';
 
   @override
-  String get privateMessage => 'Private message';
+  String get privateMessage => 'Ιδιωτικό μήνυμα';
 
   @override
-  String get post => 'Post';
+  String get post => 'Δημοσίευση';
 
   @override
-  String get nothingHere => 'Nothing here';
+  String get nothingHere => 'Τίποτα εδώ';
 
   @override
-  String get noAnimeProgress => 'No anime progress';
+  String get noAnimeProgress => 'Καμία πρόοδος anime';
 
   @override
-  String get noMangaProgress => 'No manga progress';
+  String get noMangaProgress => 'Καμία πρόοδος manga';
 
   @override
-  String get noMessages => 'No messages';
+  String get noMessages => 'Κανένα μήνυμα';
 
   @override
-  String get writeMessageHint => 'Write a message…';
+  String get writeMessageHint => 'Γράψε ένα μήνυμα…';
 
   @override
-  String get shareSomethingHint => 'Share something…';
+  String get shareSomethingHint => 'Μοιράσου κάτι…';
 
   @override
-  String get all => 'All';
+  String get all => 'Όλα';
 
   @override
-  String get anime => 'Άνιμε';
+  String get anime => 'Anime';
 
   @override
   String get manga => 'Manga';
 
   @override
-  String get count => 'Count';
+  String get count => 'Πλήθος';
 
   @override
-  String get hoursWatched => 'Hours watched';
+  String get hoursWatched => 'Ώρες παρακολούθησης';
 
   @override
-  String get chaptersRead => 'Chapters read';
+  String get chaptersRead => 'Κεφάλαια που διάβασες';
 
   @override
-  String get meanScore => 'Μέση Βαθμολογία';
+  String get meanScore => 'Μέση βαθμολογία';
 
   @override
-  String get noStatsYet => 'No stats yet';
+  String get noStatsYet => 'Δεν υπάρχουν στατιστικά ακόμα';
 
   @override
-  String get totalEntries => 'Total entries';
+  String get totalEntries => 'Σύνολο εγγραφών';
 
   @override
-  String get episodesWatched => 'Episodes watched';
+  String get episodesWatched => 'Επεισόδια που είδες';
 
   @override
-  String get daysWatched => 'Days watched';
+  String get daysWatched => 'Ημέρες παρακολούθησης';
 
   @override
-  String get volumesRead => 'Volumes read';
+  String get volumesRead => 'Τόμοι που διάβασες';
 
   @override
-  String get standardDeviation => 'Standard deviation';
+  String get standardDeviation => 'Τυπική απόκλιση';
 
   @override
-  String get showMore => 'Show more';
+  String get showMore => 'Εμφάνιση περισσότερων';
 
   @override
-  String get followsYou => 'Follows you';
+  String get followsYou => 'Σε ακολουθεί';
 
   @override
-  String get nobodyYet => 'Nobody yet';
+  String get nobodyYet => 'Κανείς ακόμα';
 
   @override
-  String get logInToLike => 'Log in to like';
+  String get logInToLike => 'Συνδέσου για να κάνεις like';
 
   @override
-  String get failedToLikeActivity => 'Failed to like activity';
+  String get failedToLikeActivity => 'Το like στη δραστηριότητα απέτυχε';
 
   @override
-  String get deleteActivityConfirm => 'Delete activity?';
+  String get deleteActivityConfirm => 'Διαγραφή δραστηριότητας;';
 
   @override
-  String get deletedActivity => 'Deleted activity';
+  String get deletedActivity => 'Η δραστηριότητα διαγράφηκε';
 
   @override
-  String get failedToDeleteActivity => 'Failed to delete activity';
+  String get failedToDeleteActivity => 'Η διαγραφή της δραστηριότητας απέτυχε';
 
   @override
-  String get subscribed => 'Subscribed';
+  String get subscribed => 'Έγινε εγγραφή';
 
   @override
-  String get unsubscribed => 'Unsubscribed';
+  String get unsubscribed => 'Έγινε διαγραφή εγγραφής';
 
   @override
-  String get failedToUpdateSubscription => 'Failed to update subscription';
+  String get failedToUpdateSubscription => 'Αποτυχία ενημέρωσης συνδρομής';
 
   @override
-  String get edit => 'Edit';
+  String get edit => 'Επεξεργασία';
 
   @override
-  String get delete => 'Delete';
+  String get delete => 'Διαγραφή';
 
   @override
-  String get likedBy => 'Liked by';
+  String get likedBy => 'Like από';
 
   @override
-  String get follow => 'Follow';
+  String get follow => 'Ακολούθηση';
 
   @override
-  String get nameCopied => 'Name copied';
+  String get nameCopied => 'Το όνομα αντιγράφηκε';
 
   @override
-  String get followsEachOther => 'Follows each other';
+  String get followsEachOther => 'Ακολουθείτε ο ένας τον άλλον';
 
   @override
-  String get unfollow => 'Unfollow';
+  String get unfollow => 'Διακοπή ακολούθησης';
 
   @override
-  String get userIdCopied => 'User id copied';
+  String get userIdCopied => 'Το id χρήστη αντιγράφηκε';
 
   @override
-  String get shareProfile => 'Share profile';
+  String get shareProfile => 'Κοινοποίηση προφίλ';
 
   @override
-  String get copyUserId => 'Copy user id';
+  String get copyUserId => 'Αντιγραφή id χρήστη';
 
   @override
-  String get failedToDelete => 'Failed to delete';
+  String get failedToDelete => 'Η διαγραφή απέτυχε';
 
   @override
-  String get failedToLike => 'Failed to like';
+  String get failedToLike => 'Το like απέτυχε';
 
   @override
-  String get replies => 'Replies';
+  String get replies => 'Απαντήσεις';
 
   @override
-  String get reply => 'Reply';
+  String get reply => 'Απάντηση';
 
   @override
-  String get noRepliesYet => 'No replies yet';
+  String get noRepliesYet => 'Καμία απάντηση ακόμα';
 
   @override
-  String get favouriteAnime => 'Favourite anime';
+  String get favouriteAnime => 'Αγαπημένα anime';
 
   @override
-  String get favouriteManga => 'Favourite manga';
+  String get favouriteManga => 'Αγαπημένα manga';
 
   @override
-  String get favouriteCharacters => 'Favourite characters';
+  String get favouriteCharacters => 'Αγαπημένοι χαρακτήρες';
 
   @override
-  String get favouriteStaff => 'Favourite staff';
+  String get favouriteStaff => 'Αγαπημένο προσωπικό';
 
   @override
-  String get favouriteStudios => 'Favourite studios';
+  String get favouriteStudios => 'Αγαπημένα στούντιο';
 
   @override
-  String get noFavouritesYet => 'No favourites yet';
+  String get noFavouritesYet => 'Κανένα αγαπημένο ακόμα';
 
   @override
-  String get yourStory => 'Your story';
+  String get yourStory => 'Η ιστορία σου';
 
   @override
-  String get copiedToClipboard => 'Copied to clipboard';
+  String get copiedToClipboard => 'Αντιγράφηκε στο πρόχειρο';
 
   @override
-  String get justNow => 'Just now';
+  String get justNow => 'Μόλις τώρα';
 
   @override
-  String get openImage => 'Open image';
+  String get openImage => 'Άνοιγμα εικόνας';
 
   @override
-  String get hideSpoiler => 'Hide spoiler';
+  String get hideSpoiler => 'Απόκρυψη spoiler';
 
   @override
-  String get showSpoiler => 'Show spoiler';
+  String get showSpoiler => 'Εμφάνιση spoiler';
 
   @override
   String get status => 'Κατάσταση';
 
   @override
-  String get score => 'Score';
+  String get score => 'Βαθμολογία';
 
   @override
-  String get started => 'Started';
+  String get started => 'Ξεκίνησε';
 
   @override
-  String get completed => 'Completed';
+  String get completed => 'Ολοκληρώθηκε';
 
   @override
-  String get private => 'Private';
+  String get private => 'Ιδιωτικό';
 
   @override
-  String get hideFromStatusLists => 'Hide from status lists';
+  String get hideFromStatusLists => 'Απόκρυψη από τις λίστες κατάστασης';
 
   @override
-  String get totalRepeats => 'Total repeats';
+  String get totalRepeats => 'Σύνολο επαναλήψεων';
 
   @override
-  String get other => 'Other';
+  String get other => 'Άλλο';
 
   @override
-  String get customLists => 'Custom lists';
+  String get customLists => 'Προσαρμοσμένες λίστες';
 
   @override
-  String get activeDays => 'Active days';
+  String get activeDays => 'Ενεργές μέρες';
 
   @override
-  String get longestStreak => 'Longest streak';
+  String get longestStreak => 'Μεγαλύτερο σερί';
 
   @override
-  String get currentStreak => 'Current streak';
+  String get currentStreak => 'Τρέχον σερί';
 
   @override
-  String get tapOrHoverDay => 'Tap or hover a day';
+  String get tapOrHoverDay => 'Πάτα ή πέρασε το ποντίκι πάνω από μια μέρα';
 
   @override
-  String get less => 'Less';
+  String get less => 'Λιγότερο';
 
   @override
-  String get more => 'More';
+  String get more => 'Περισσότερο';
 
   @override
   String epIn(int ep, String time) {
-    return 'Ep $ep in $time';
+    return 'Επ. $ep σε $time';
   }
 
   @override
-  String get sectionLoading => 'Loading';
+  String get sectionLoading => 'Φόρτωση';
 
   @override
-  String get querySize => 'Query size';
+  String get querySize => 'Μέγεθος ερωτήματος';
 
   @override
-  String get querySizeDesc =>
-      'One big query loads every row (and a whole profile) in a single request. Split queries send a small request per row or per profile part: each is quick and parts appear as they arrive.';
+  String get querySizeDesc => 'Ένα μεγάλο ερώτημα φορτώνει όλες τις σειρές (και ολόκληρο προφίλ) με ένα αίτημα. Τα χωρισμένα ερωτήματα στέλνουν ένα μικρό αίτημα ανά σειρά ή τμήμα προφίλ: το καθένα είναι γρήγορο και τα τμήματα εμφανίζονται όπως φτάνουν.';
 
   @override
-  String get oneBig => 'One big';
+  String get oneBig => 'Ένα μεγάλο';
 
   @override
-  String get split => 'Split';
+  String get split => 'Χωρισμένα';
 
   @override
-  String get sectionSocial => 'Social';
+  String get sectionSocial => 'Κοινωνικά';
 
   @override
-  String get systemNotifications => 'System notifications';
+  String get systemNotifications => 'Ειδοποιήσεις συστήματος';
 
   @override
-  String get feedLayout => 'Feed layout';
+  String get feedLayout => 'Διάταξη ροής';
 
   @override
   String sectionsShown(int shown, int total) {
-    return '$shown of $total shown — tap to pick and reorder';
+    return '$shown από $total εμφανίζονται — πάτα για επιλογή και αναδιάταξη';
   }
 
   @override
   String labelSections(String label) {
-    return '$label sections';
+    return 'Ενότητες $label';
   }
 
   @override
-  String get accountOptions => 'Account options';
+  String get accountOptions => 'Επιλογές λογαριασμού';
 
   @override
-  String get accountOptionsDesc =>
-      'Names, score format, list order, notifications and more';
+  String get accountOptionsDesc => 'Ονόματα, μορφή βαθμολογίας, σειρά λιστών, ειδοποιήσεις και άλλα';
 
   @override
-  String get anilistAccountOptions => 'AniList account options';
+  String get anilistAccountOptions => 'Επιλογές λογαριασμού AniList';
 
   @override
-  String get sectionPrivacy => 'Privacy';
+  String get sectionPrivacy => 'Απόρρητο';
 
   @override
-  String get hidePrivateEntries => 'Hide private entries';
+  String get hidePrivateEntries => 'Απόκρυψη ιδιωτικών εγγραφών';
 
   @override
-  String get hidePrivateEntriesDesc =>
-      'Keep entries marked private on AniList out of the feed';
+  String get hidePrivateEntriesDesc => 'Κράτα εκτός ροής τις εγγραφές που είναι ιδιωτικές στο AniList';
 
   @override
-  String get anilistProfile => 'AniList profile';
+  String get anilistExcludeList => 'Exclude your list';
 
   @override
-  String get refreshFromAnilist => 'Refresh from AniList';
+  String get anilistExcludeListDesc => 'Keep titles already on your AniList out of the anime and manga pages';
 
   @override
-  String get couldNotUpdateAnilistSettings =>
-      'Could not update AniList settings';
+  String get anilistProfile => 'Προφίλ AniList';
 
   @override
-  String get sectionNames => 'Names';
+  String get refreshFromAnilist => 'Ανανέωση από το AniList';
 
   @override
-  String get titleLanguage => 'Title language';
+  String get couldNotUpdateAnilistSettings => 'Δεν ενημερώθηκαν οι ρυθμίσεις του AniList';
 
   @override
-  String get titleLanguageDesc =>
-      'How titles are written everywhere, e.g. Attack on Titan / Shingeki no Kyojin / 進撃の巨人.';
+  String get sectionNames => 'Ονόματα';
 
   @override
-  String get staffCharacterNames => 'Staff and character names';
+  String get titleLanguage => 'Γλώσσα τίτλων';
 
   @override
-  String get sectionLists => 'Lists';
+  String get titleLanguageDesc => 'Πώς γράφονται οι τίτλοι παντού, π.χ. Attack on Titan / Shingeki no Kyojin / 進撃の巨人.';
 
   @override
-  String get scoreFormat => 'Score format';
+  String get staffCharacterNames => 'Ονόματα προσωπικού και χαρακτήρων';
 
   @override
-  String get sortListsBy => 'Sort lists by';
+  String get sectionLists => 'Λίστες';
+
+  @override
+  String get scoreFormat => 'Μορφή βαθμολογίας';
+
+  @override
+  String get sortListsBy => 'Ταξινόμηση λιστών κατά';
 
   @override
   String labelCustomLists(String label) {
-    return '$label custom lists';
+    return 'Προσαρμοσμένες λίστες $label';
   }
 
   @override
   String customListsCount(int count) {
-    return '$count lists — tap to add or remove';
+    return '$count λίστες — πάτα για προσθήκη ή αφαίρεση';
   }
 
   @override
-  String get mergeActivities => 'Merge activities';
+  String get mergeActivities => 'Συγχώνευση δραστηριοτήτων';
 
   @override
   String minutesCount(int count) {
-    return '$count mins';
+    return '$count λεπτά';
   }
 
   @override
-  String get timezone => 'Timezone';
+  String get timezone => 'Ζώνη ώρας';
 
   @override
-  String get notSet => 'Not set';
+  String get notSet => 'Δεν έχει οριστεί';
 
   @override
-  String get airingNotifications => 'Airing notifications';
+  String get airingNotifications => 'Ειδοποιήσεις προβολής';
 
   @override
-  String get airingNotificationsDesc =>
-      'Get notified when an episode of a followed show airs';
+  String get airingNotificationsDesc => 'Ειδοποίηση όταν προβάλλεται επεισόδιο σειράς που ακολουθείς';
 
   @override
-  String get displayAdultContent => 'Display adult content';
+  String get displayAdultContent => 'Εμφάνιση περιεχομένου ενηλίκων';
 
   @override
-  String get displayAdultContentDesc =>
-      'Include 18+ titles in browse, search and feeds';
+  String get displayAdultContentDesc => 'Συμπερίληψη τίτλων 18+ στην περιήγηση, την αναζήτηση και τις ροές';
 
   @override
-  String get restrictMessages => 'Restrict messages to following';
+  String get restrictMessages => 'Μηνύματα μόνο από όσους ακολουθείς';
 
   @override
-  String get restrictMessagesDesc => 'Only people you follow can message you';
+  String get restrictMessagesDesc => 'Μόνο όσους ακολουθείς μπορούν να σου στείλουν μήνυμα';
 
   @override
-  String get sectionServices => 'Services';
+  String get sectionServices => 'Υπηρεσίες';
 
   @override
-  String get novel => 'Μυθιστόρημα';
+  String get novel => 'Novel';
 
   @override
   String labelService(String label) {
-    return '$label service';
+    return 'Υπηρεσία $label';
   }
 
   @override
   String nameSettings(String name) {
-    return '$name settings';
+    return 'Ρυθμίσεις $name';
   }
 
   @override
   String extensionBridgeOptions(String name) {
-    return 'Options from the $name extension bridge';
+    return 'Επιλογές από τη γέφυρα επεκτάσεων $name';
   }
 
   @override
   String extensionServiceFailed(String name, String error) {
-    return '$name could not start: $error';
+    return 'Το $name δεν μπόρεσε να ξεκινήσει: $error';
   }
 
   @override
-  String get importLists => 'Import lists';
+  String get importLists => 'Εισαγωγή λιστών';
 
   @override
-  String get importListsDesc =>
-      'From Aniyomi, Mihon / Tachiyomi or Kotatsu backups';
+  String get importListsDesc => 'Από αντίγραφα Aniyomi, Mihon / Tachiyomi ή Kotatsu';
 
   @override
-  String get exportLists => 'Export lists';
+  String get exportLists => 'Εξαγωγή λιστών';
 
   @override
-  String get exportListsDesc => 'To an Aniyomi, Mihon or Kotatsu backup';
+  String get exportListsDesc => 'Σε αντίγραφο Aniyomi, Mihon ή Kotatsu';
 
   @override
-  String get sectionBrowse => 'Browse';
+  String get sectionBrowse => 'Περιήγηση';
 
   @override
-  String get readingTab => 'Reading tab';
+  String get readingTab => 'Καρτέλα ανάγνωσης';
 
   @override
-  String get readingTabDesc => 'Which extensions the third tab shows';
+  String get readingTabDesc => 'Ποιες επεκτάσεις δείχνει η τρίτη καρτέλα';
 
   @override
-  String get defaultFeed => 'Default feed';
+  String get defaultFeed => 'Προεπιλεγμένη ροή';
 
   @override
-  String get defaultFeedDesc => 'Which list a source opens with';
+  String get defaultFeedDesc => 'Με ποια λίστα ανοίγει μια πηγή';
 
   @override
   String noServiceSupports(String type) {
-    return 'No service supports $type';
+    return 'Καμία υπηρεσία δεν υποστηρίζει $type';
   }
 
   @override
   String sourcesLoading(String name, int loaded, int installed) {
-    return '$name · $loaded of $installed sources loading';
+    return '$name · φορτώνονται $loaded από $installed πηγές';
   }
 
   @override
   String noExtensionServiceSupportsHere(String type) {
-    return 'No extension service supports $type here.';
+    return 'Καμία υπηρεσία επεκτάσεων δεν υποστηρίζει εδώ $type.';
   }
 
   @override
-  String get loadDataFrom => 'Load data from';
+  String get loadDataFrom => 'Φόρτωση δεδομένων από';
 
   @override
   String noInstalledSourcesYet(String type) {
-    return 'No installed $type sources yet.';
+    return 'Δεν υπάρχουν εγκατεστημένες πηγές $type ακόμα.';
   }
 
   @override
   String extensionNotInstalled(String name) {
-    return 'The extension for $name is not installed';
+    return 'Η επέκταση για το $name δεν είναι εγκατεστημένη';
   }
 
   @override
-  String get thisSource => 'this source';
+  String get thisSource => 'αυτή η πηγή';
 
   @override
   String failedToAddRepository(String error) {
-    return 'Failed to add repository: $error';
+    return 'Αποτυχία προσθήκης αποθετηρίου: $error';
   }
 
   @override
   String installedType(String type) {
-    return 'Installed $type';
+    return 'Εγκατεστημένα $type';
   }
 
   @override
   String availableType(String type) {
-    return 'Available $type';
+    return 'Διαθέσιμα $type';
   }
 
   @override
   String noInstalledExtensions(String type) {
-    return 'No installed $type extensions';
+    return 'Δεν υπάρχουν εγκατεστημένες επεκτάσεις $type';
   }
 
   @override
   String noAvailableExtensions(String type) {
-    return 'No available $type extensions';
+    return 'Δεν υπάρχουν διαθέσιμες επεκτάσεις $type';
   }
 
   @override
-  String get nothingToShowYet => 'Nothing to show yet';
+  String get nothingToShowYet => 'Δεν υπάρχει τίποτα να δείξουμε ακόμα';
 
   @override
-  String get addTitlesHint =>
-      'Add some titles to your list and they\'ll appear here.';
+  String get addTitlesHint => 'Πρόσθεσε μερικούς τίτλους στη λίστα σου και θα εμφανιστούν εδώ.';
 
   @override
-  String get couldntLoad => 'Couldn\'t load';
+  String get couldntLoad => 'Δεν φορτώθηκε';
 
   @override
-  String get progressStyleHint =>
-      'Pill and bar overlay the poster; outside shows the same count as plain text instead — pick one.';
+  String get progressStyleHint => 'Η κάψουλα και η μπάρα μπαίνουν πάνω στην αφίσα· το εξωτερικό δείχνει τον ίδιο αριθμό ως απλό κείμενο — διάλεξε ένα.';
 
   @override
-  String get nixManagedUpdate =>
-      'This build is managed by Nix — run \"nix flake update\" on your flake and rebuild instead of updating from here';
+  String get nixManagedUpdate => 'Αυτή η έκδοση διαχειρίζεται από το Nix — τρέξε \"nix flake update\" στο flake σου και κάνε νέο build αντί να ενημερώνεις από εδώ';
 
   @override
   String autoUpdateFailed(String error) {
-    return 'Automatic update failed ($error) — opening the download page instead';
+    return 'Η αυτόματη ενημέρωση απέτυχε ($error) — ανοίγει η σελίδα λήψης';
   }
 
   @override
-  String get unknownPreference => 'Unknown preference';
+  String get unknownPreference => 'Άγνωστη προτίμηση';
 
   @override
   String unsupportedPreferenceType(String type) {
-    return 'Unsupported preference type $type';
+    return 'Μη υποστηριζόμενος τύπος προτίμησης $type';
   }
 
   @override
-  String get notYetReleased => 'Not Yet Released';
+  String get notYetReleased => 'Δεν έχει κυκλοφορήσει ακόμα';
 
   @override
-  String get notStarted => 'Not Started';
+  String get notStarted => 'Δεν έχει ξεκινήσει';
 
   @override
-  String get country => 'Country';
+  String get country => 'Χώρα';
 
   @override
   String get sort => 'Ταξινόμηση';
 
   @override
-  String get chooseBackupDialog => 'Choose an Aniyomi, Mihon or Kotatsu backup';
+  String get chooseBackupDialog => 'Επίλεξε αντίγραφο Aniyomi, Mihon ή Kotatsu';
 
   @override
-  String get importListsHint =>
-      'Bring a library over from Aniyomi, Mihon / Tachiyomi or Kotatsu. Titles, covers, progress and categories are kept.';
+  String get importListsHint => 'Φέρε μια βιβλιοθήκη από Aniyomi, Mihon / Tachiyomi ή Kotatsu. Οι τίτλοι, τα εξώφυλλα, η πρόοδος και οι κατηγορίες διατηρούνται.';
 
   @override
-  String get chooseBackupFile => 'Choose backup file';
+  String get chooseBackupFile => 'Επιλογή αρχείου αντιγράφου';
 
   @override
   String importAnimeCount(int count) {
-    return 'Import $count anime';
+    return 'Εισαγωγή $count anime';
   }
 
   @override
   String importMangaCount(int count) {
-    return 'Import $count manga';
+    return 'Εισαγωγή $count manga';
   }
 
   @override
-  String get mergeWithExisting => 'Merge with existing lists';
+  String get mergeWithExisting => 'Συγχώνευση με τις υπάρχουσες λίστες';
 
   @override
-  String get mergeWithExistingDesc =>
-      'Keeps what you already have; off replaces matching titles';
+  String get mergeWithExistingDesc => 'Κρατά ό,τι έχεις ήδη· αν είναι κλειστό, αντικαθιστά τους τίτλους που ταιριάζουν';
 
   @override
-  String get chooseAnother => 'Choose another';
+  String get chooseAnother => 'Επιλογή άλλου';
 
   @override
-  String get import => 'Import';
+  String get import => 'Εισαγωγή';
 
   @override
   String animeCount(int count) {
@@ -2231,46 +2193,46 @@ class AppLocalizationsEl extends AppLocalizations {
   }
 
   @override
-  String get chooseSaveLocation => 'Choose where to save the backup';
+  String get chooseSaveLocation => 'Διάλεξε πού θα αποθηκευτεί το αντίγραφο';
 
   @override
   String savedPath(String path) {
-    return 'Saved $path';
+    return 'Αποθηκεύτηκε $path';
   }
 
   @override
   String exportFailed(String error) {
-    return 'Export failed: $error';
+    return 'Η εξαγωγή απέτυχε: $error';
   }
 
   @override
-  String get nothingInLocalLists => 'Nothing in your local lists yet.';
+  String get nothingInLocalLists => 'Δεν υπάρχει τίποτα στις τοπικές λίστες σου ακόμα.';
 
   @override
   String exportsSummary(int anime, int manga) {
-    return 'Exports $anime anime and $manga manga from your local lists. Kotatsu only supports manga.';
+    return 'Εξάγει $anime anime και $manga manga από τις τοπικές λίστες σου. Το Kotatsu υποστηρίζει μόνο manga.';
   }
 
   @override
-  String get saveToFolder => 'Save to folder';
+  String get saveToFolder => 'Αποθήκευση στον φάκελο';
 
   @override
-  String get formatAnimeManga => 'Anime and manga · .tachibk';
+  String get formatAnimeManga => 'Anime και manga · .tachibk';
 
   @override
-  String get formatMangaTachibk => 'Manga only · .tachibk';
+  String get formatMangaTachibk => 'Μόνο manga · .tachibk';
 
   @override
-  String get formatMangaZip => 'Manga only · .zip';
+  String get formatMangaZip => 'Μόνο manga · .zip';
 
   @override
   String get genres => 'Είδη';
 
   @override
-  String get relations => 'Σχέσεις';
+  String get relations => 'Σχετικά';
 
   @override
-  String get recommendations => 'Recommendations';
+  String get recommendations => 'Προτάσεις';
 
   @override
   String get openings => 'Openings';
@@ -2279,28 +2241,28 @@ class AppLocalizationsEl extends AppLocalizations {
   String get endings => 'Endings';
 
   @override
-  String get background => 'Background';
+  String get background => 'Υπόβαθρο';
 
   @override
-  String get links => 'Links';
+  String get links => 'Σύνδεσμοι';
 
   @override
-  String get rank => 'Rank';
+  String get rank => 'Κατάταξη';
 
   @override
-  String get members => 'Members';
+  String get members => 'Μέλη';
 
   @override
   String get favorites => 'Αγαπημένα';
 
   @override
-  String get episodes => 'Episodes';
+  String get episodes => 'Επεισόδια';
 
   @override
-  String get chapters => 'Chapters';
+  String get chapters => 'Κεφάλαια';
 
   @override
-  String get volumes => 'Volumes';
+  String get volumes => 'Τόμοι';
 
   @override
   String get format => 'Μορφή';
@@ -2309,111 +2271,111 @@ class AppLocalizationsEl extends AppLocalizations {
   String get source => 'Πηγή';
 
   @override
-  String get duration => 'Duration';
+  String get duration => 'Διάρκεια';
 
   @override
   String minutesPerEpisode(int minutes) {
-    return '$minutes min per ep';
+    return '$minutes λ. ανά επεισόδιο';
   }
 
   @override
-  String get rating => 'Rating';
+  String get rating => 'Διαβάθμιση';
 
   @override
   String get studio => 'Στούντιο';
 
   @override
-  String get serialization => 'Serialization';
+  String get serialization => 'Σειριακή δημοσίευση';
 
   @override
   String get season => 'Σεζόν';
 
   @override
-  String get broadcast => 'Broadcast';
+  String get broadcast => 'Μετάδοση';
 
   @override
-  String get aired => 'Aired';
+  String get aired => 'Προβλήθηκε';
 
   @override
-  String get published => 'Published';
+  String get published => 'Δημοσιεύτηκε';
 
   @override
-  String get popularity => 'Δημοτικότητα';
+  String get popularity => 'Δημοφιλία';
 
   @override
-  String get community => 'Community';
+  String get community => 'Κοινότητα';
 
   @override
-  String get watching => 'Παρακολουθώντας';
+  String get watching => 'Παρακολουθώ';
 
   @override
-  String get reading => 'Διαβάζοντας ανάγνωση';
+  String get reading => 'Διαβάζω';
 
   @override
-  String get dropped => 'Dropped';
+  String get dropped => 'Εγκαταλείφθηκε';
 
   @override
-  String get planned => 'Σχεδιασμένο null';
+  String get planned => 'Σχεδιασμένο';
 
   @override
   String get trailers => 'Trailers';
 
   @override
-  String get ratings => 'Ratings';
+  String get ratings => 'Βαθμολογίες';
 
   @override
-  String get originalTitle => 'Original';
+  String get originalTitle => 'Πρωτότυπο';
 
   @override
-  String get titleLabel => 'Title';
+  String get titleLabel => 'Τίτλος';
 
   @override
-  String get votes => 'Votes';
+  String get votes => 'Ψήφοι';
 
   @override
-  String get watchedStat => 'Watched';
+  String get watchedStat => 'Το είδα';
 
   @override
-  String get runtime => 'Runtime';
+  String get runtime => 'Διάρκεια';
 
   @override
-  String get director => 'Director';
+  String get director => 'Σκηνοθέτης';
 
   @override
-  String get network => 'Network';
+  String get network => 'Δίκτυο';
 
   @override
-  String get certification => 'Certification';
+  String get certification => 'Πιστοποίηση';
 
   @override
-  String get airs => 'Airs';
+  String get airs => 'Προβάλλεται';
 
   @override
-  String get budget => 'Budget';
+  String get budget => 'Προϋπολογισμός';
 
   @override
-  String get revenue => 'Revenue';
+  String get revenue => 'Έσοδα';
 
   @override
-  String get released => 'Released';
+  String get released => 'Κυκλοφόρησε';
 
   @override
-  String get tags => 'Ετικέτες';
+  String get tags => 'Tags';
 
   @override
   String get author => 'Συγγραφέας';
 
   @override
-  String get born => 'Born';
+  String get born => 'Γεννήθηκε';
 
   @override
-  String get website => 'Website';
+  String get website => 'Ιστότοπος';
 
   @override
-  String get established => 'Established';
+  String get established => 'Ιδρύθηκε';
 
   @override
-  String get manhwa => 'Μανχούα';
+  String get manhwa => 'Manhwa';
 
   @override
   String get manhua => 'Manhua';
@@ -2422,28 +2384,28 @@ class AppLocalizationsEl extends AppLocalizations {
   String get novels => 'Novels';
 
   @override
-  String get thisMonth => 'This month';
+  String get thisMonth => 'Αυτόν τον μήνα';
 
   @override
-  String get movies => 'Movies';
+  String get movies => 'Ταινίες';
 
   @override
-  String get shows => 'Shows';
+  String get shows => 'Σειρές';
 
   @override
-  String get rewatching => 'Rewatching';
+  String get rewatching => 'Το ξαναβλέπω';
 
   @override
-  String get rereading => 'Rereading';
+  String get rereading => 'Το ξαναδιαβάζω';
 
   @override
-  String get watchedStatus => 'Watched';
+  String get watchedStatus => 'Το είδα';
 
   @override
-  String get planning => 'Planning';
+  String get planning => 'Σχεδιάζω';
 
   @override
-  String get paused => 'Paused';
+  String get paused => 'Σε παύση';
 
   @override
   String get watch => 'Παρακολούθηση';
@@ -2452,115 +2414,114 @@ class AppLocalizationsEl extends AppLocalizations {
   String get read => 'Ανάγνωση';
 
   @override
-  String get finished => 'Finished';
+  String get finished => 'Ολοκληρώθηκε';
 
   @override
-  String get releasing => 'Releasing';
+  String get releasing => 'Σε προβολή';
 
   @override
-  String get cancelled => 'Cancelled';
+  String get cancelled => 'Ακυρώθηκε';
 
   @override
-  String get hiatus => 'Hiatus';
+  String get hiatus => 'Διακοπή';
 
   @override
-  String get remove => 'Remove';
+  String get remove => 'Αφαίρεση';
 
   @override
   String syncToService(String service) {
-    return 'Sync to $service';
+    return 'Συγχρονισμός με $service';
   }
 
   @override
   String syncedToService(String service) {
-    return 'Synced to $service';
+    return 'Συγχρονίστηκε με $service';
   }
 
   @override
-  String get latestReleases => 'Latest Releases';
+  String get latestReleases => 'Τελευταίες κυκλοφορίες';
 
   @override
-  String get topRated => 'Κορυφαία Βαθμολογία null';
+  String get topRated => 'Κορυφαία βαθμολογία';
 
   @override
   String localSection(String title) {
-    return '$title · Local';
+    return '$title · Τοπικό';
   }
 
   @override
-  String get localEntryNote =>
-      'This title is only in your local list on this device. Editing is turned off here because it could clash with your account list; you can still remove it.';
+  String get localEntryNote => 'Αυτός ο τίτλος υπάρχει μόνο στην τοπική λίστα αυτής της συσκευής. Η επεξεργασία είναι απενεργοποιημένη εδώ γιατί μπορεί να συγκρουστεί με τη λίστα του λογαριασμού σου· μπορείς πάντως να τον αφαιρέσεις.';
 
   @override
-  String get cardPresetPoster => 'Poster';
+  String get cardPresetPoster => 'Αφίσα';
 
   @override
-  String get cardPresetCard => 'Card';
+  String get cardPresetCard => 'Κάρτα';
 
   @override
-  String get cardPresetCozy => 'Cozy';
+  String get cardPresetCozy => 'Άνετο';
 
   @override
-  String get sortTopRated => 'Top rated';
+  String get sortTopRated => 'Κορυφαία βαθμολογία';
 
   @override
-  String get sortMostPopular => 'Most popular';
+  String get sortMostPopular => 'Πιο δημοφιλή';
 
   @override
-  String get sortTrending => 'Trending';
+  String get sortTrending => 'Τάσεις';
 
   @override
-  String get sortNewest => 'Newest';
+  String get sortNewest => 'Νεότερα';
 
   @override
-  String get sortAz => 'A–Z';
+  String get sortAz => 'Α–Ω';
 
   @override
-  String get sortMostFavourited => 'Most favourited';
+  String get sortMostFavourited => 'Πιο αγαπημένα';
 
   @override
-  String get anyCountry => 'Any country';
+  String get anyCountry => 'Οποιαδήποτε χώρα';
 
   @override
-  String get orderScore => 'Score';
+  String get orderScore => 'Βαθμολογία';
 
   @override
-  String get orderTitle => 'Title';
+  String get orderTitle => 'Τίτλος';
 
   @override
-  String get orderLastUpdated => 'Last Updated';
+  String get orderLastUpdated => 'Τελευταία ενημέρωση';
 
   @override
-  String get orderLastAdded => 'Last Added';
+  String get orderLastAdded => 'Τελευταία προσθήκη';
 
   @override
-  String get never => 'Never';
+  String get never => 'Ποτέ';
 
   @override
-  String get always => 'Always';
+  String get always => 'Πάντα';
 
   @override
-  String get scorePoint100 => '100 Point';
+  String get scorePoint100 => '100 βαθμοί';
 
   @override
-  String get scorePoint10Decimal => '10 Point Decimal';
+  String get scorePoint10Decimal => '10 βαθμοί με δεκαδικό';
 
   @override
-  String get scorePoint10 => '10 Point';
+  String get scorePoint10 => '10 βαθμοί';
 
   @override
-  String get scorePoint5 => '5 Star';
+  String get scorePoint5 => '5 αστέρια';
 
   @override
-  String get scorePoint3 => '3 Point Smiley';
+  String get scorePoint3 => '3 φατσούλες';
 
   @override
   String hoursCount(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count hours',
-      one: '1 hour',
+      other: '$count ώρες',
+      one: '1 ώρα',
     );
     return '$_temp0';
   }
@@ -2570,8 +2531,8 @@ class AppLocalizationsEl extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count days',
-      one: '1 day',
+      other: '$count ημέρες',
+      one: '1 ημέρα',
     );
     return '$_temp0';
   }
@@ -2581,252 +2542,252 @@ class AppLocalizationsEl extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count weeks',
-      one: '1 week',
+      other: '$count εβδομάδες',
+      one: '1 εβδομάδα',
     );
     return '$_temp0';
   }
 
   @override
-  String get resumeTitle => 'Resume';
+  String get resumeTitle => 'Συνέχεια';
 
   @override
-  String get resumeSourceMissing => 'Install this title\'s source to resume';
+  String get resumeSourceMissing => 'Εγκατάστησε την πηγή αυτού του τίτλου για να συνεχίσεις';
 
   @override
-  String get resumeRemove => 'Remove from resume';
+  String get resumeRemove => 'Αφαίρεση από τη συνέχεια';
 
   @override
   String resumeMissing(String title) {
-    return 'Couldn\'t find $title in this source';
+    return 'Το $title δεν βρέθηκε σε αυτή την πηγή';
   }
 
   @override
   String resumeAt(String time) {
-    return '$time left';
+    return 'απομένουν $time';
   }
 
   @override
   String resumePage(int page, int total) {
-    return 'Page $page of $total';
+    return 'Σελίδα $page από $total';
   }
 
   @override
-  String get continueWatching => 'Συνέχεια Παρακολούθησης';
+  String get continueWatching => 'Συνέχισε να βλέπεις';
 
   @override
-  String get continueReading => 'Συνέχεια Ανάγνωσης';
+  String get continueReading => 'Συνέχισε να διαβάζεις';
 
   @override
-  String get favouriteAnimeSection => 'Favourite Anime';
+  String get favouriteAnimeSection => 'Αγαπημένα anime';
 
   @override
-  String get favouriteMangaSection => 'Favourite Manga';
+  String get favouriteMangaSection => 'Αγαπημένα manga';
 
   @override
-  String get plannedAnime => 'Planned Anime';
+  String get plannedAnime => 'Anime που σχεδιάζεις';
 
   @override
-  String get plannedManga => 'Planned Manga';
+  String get plannedManga => 'Manga που σχεδιάζεις';
 
   @override
-  String get completedAnime => 'Completed Anime';
+  String get completedAnime => 'Ολοκληρωμένα anime';
 
   @override
-  String get completedManga => 'Completed Manga';
+  String get completedManga => 'Ολοκληρωμένα manga';
 
   @override
-  String get hiddenMedia => 'Κρυφό Υλικό';
+  String get hiddenMedia => 'Κρυμμένα μέσα';
 
   @override
-  String get recentUpdates => 'Πρόσφατες Ενημερώσεις';
+  String get recentUpdates => 'Πρόσφατες ενημερώσεις';
 
   @override
-  String get trendingNow => 'Trending Now';
+  String get trendingNow => 'Τάσεις τώρα';
 
   @override
-  String get popularThisSeason => 'Popular This Season';
+  String get popularThisSeason => 'Δημοφιλή αυτή τη σεζόν';
 
   @override
-  String get trendingMovies => 'Trending Movies';
+  String get trendingMovies => 'Ταινίες σε τάση';
 
   @override
-  String get topRatedSeries => 'Top Rated Series';
+  String get topRatedSeries => 'Σειρές με κορυφαία βαθμολογία';
 
   @override
-  String get mostFavouriteSeries => 'Most Favourite Series';
+  String get mostFavouriteSeries => 'Πιο αγαπημένες σειρές';
 
   @override
-  String get popularAnime => 'Popular Anime';
+  String get popularAnime => 'Δημοφιλή anime';
 
   @override
-  String get trendingManhwa => 'Trending Manhwa';
+  String get trendingManhwa => 'Manhwa σε τάση';
 
   @override
-  String get trendingNovels => 'Trending Novels';
+  String get trendingNovels => 'Novels σε τάση';
 
   @override
-  String get topRatedManga => 'Top Rated Manga';
+  String get topRatedManga => 'Manga με κορυφαία βαθμολογία';
 
   @override
-  String get mostFavouriteManga => 'Most Favourite Manga';
+  String get mostFavouriteManga => 'Πιο αγαπημένα manga';
 
   @override
-  String get popularManga => 'Popular Manga';
+  String get popularManga => 'Δημοφιλή manga';
 
   @override
-  String get topMovies => 'Top Movies';
+  String get topMovies => 'Κορυφαίες ταινίες';
 
   @override
-  String get topOna => 'Top ONA';
+  String get topOna => 'Κορυφαία ONA';
 
   @override
-  String get topOva => 'Top OVA';
+  String get topOva => 'Κορυφαία OVA';
 
   @override
-  String get mostPopular => 'Most Popular';
+  String get mostPopular => 'Πιο δημοφιλή';
 
   @override
-  String get mostFavourite => 'Πιο Δημοφιλές null';
+  String get mostFavourite => 'Πιο αγαπημένα';
 
   @override
-  String get upcoming => 'Upcoming';
+  String get upcoming => 'Προσεχώς';
 
   @override
-  String get topManga => 'Top Manga';
+  String get topManga => 'Κορυφαία manga';
 
   @override
-  String get topManhwa => 'Top Manhwa';
+  String get topManhwa => 'Κορυφαία manhwa';
 
   @override
-  String get topManhua => 'Top Manhua';
+  String get topManhua => 'Κορυφαία manhua';
 
   @override
-  String get topNovels => 'Top Novels';
+  String get topNovels => 'Κορυφαία novels';
 
   @override
-  String get topOneShots => 'Top One-shots';
+  String get topOneShots => 'Κορυφαία one-shots';
 
   @override
-  String get trendingMoviesToday => 'Trending Movies Today';
+  String get trendingMoviesToday => 'Ταινίες σε τάση σήμερα';
 
   @override
-  String get trendingShowsToday => 'Trending Shows Today';
+  String get trendingShowsToday => 'Σειρές σε τάση σήμερα';
 
   @override
-  String get trendingMoviesWeek => 'Trending Movies This Week';
+  String get trendingMoviesWeek => 'Ταινίες σε τάση αυτή την εβδομάδα';
 
   @override
-  String get trendingShowsWeek => 'Trending Shows This Week';
+  String get trendingShowsWeek => 'Σειρές σε τάση αυτή την εβδομάδα';
 
   @override
-  String get mostWatchedMoviesMonth => 'Most Watched Movies This Month';
+  String get mostWatchedMoviesMonth => 'Οι πιο πολυπαρακολουθημένες ταινίες του μήνα';
 
   @override
-  String get mostWatchedShowsMonth => 'Most Watched Shows This Month';
+  String get mostWatchedShowsMonth => 'Οι πιο πολυπαρακολουθημένες σειρές του μήνα';
 
   @override
-  String get trendingThisWeek => 'Trending This Week';
+  String get trendingThisWeek => 'Τάσεις αυτής της εβδομάδας';
 
   @override
-  String get mostWatchedThisMonth => 'Most Watched This Month';
+  String get mostWatchedThisMonth => 'Τα πιο πολυπαρακολουθημένα του μήνα';
 
   @override
-  String get repoLinksAdded => 'Added Repo Links Successfully!';
+  String get repoLinksAdded => 'Οι σύνδεσμοι αποθετηρίου προστέθηκαν!';
 
   @override
-  String get errorGettingAnilistData => 'Error getting data from AniList.';
+  String get errorGettingAnilistData => 'Σφάλμα λήψης δεδομένων από το AniList.';
 
   @override
-  String get navInfo => 'INFO';
+  String get navInfo => 'ΠΛΗΡΟΦΟΡΙΕΣ';
 
   @override
-  String get navComments => 'COMMENTS';
+  String get navComments => 'ΣΧΟΛΙΑ';
 
   @override
-  String get playerNotAvailable => 'The player is not available yet';
+  String get playerNotAvailable => 'Το πρόγραμμα αναπαραγωγής δεν είναι διαθέσιμο ακόμα';
 
   @override
   String deepLinkInitialError(String error) {
-    return 'Error getting initial deep link: $error';
+    return 'Σφάλμα λήψης του αρχικού deep link: $error';
   }
 
   @override
   String deepLinkOpenError(String error) {
-    return 'Error Opening link: $error';
+    return 'Σφάλμα ανοίγματος συνδέσμου: $error';
   }
 
   @override
   String linkCantBeOpened(String link) {
-    return 'This link can\'t be opened: $link';
+    return 'Αυτός ο σύνδεσμος δεν ανοίγει: $link';
   }
 
   @override
   String linkOpenError(String error) {
-    return 'Error opening link: $error';
+    return 'Σφάλμα ανοίγματος συνδέσμου: $error';
   }
 
   @override
-  String get forReleasingTitles => 'for currently releasing titles';
+  String get forReleasingTitles => 'για τίτλους που προβάλλονται τώρα';
 
   @override
-  String get progress => 'Progress';
+  String get progress => 'Πρόοδος';
 
   @override
-  String get notes => 'Notes';
+  String get notes => 'Σημειώσεις';
 
   @override
   String serviceNotFound(String id) {
-    return 'Service \"$id\" not found';
+    return 'Η υπηρεσία \"$id\" δεν βρέθηκε';
   }
 
   @override
-  String get glassEffectEnabled => 'Glass effect enabled';
+  String get glassEffectEnabled => 'Το εφέ γυαλιού ενεργοποιήθηκε';
 
   @override
-  String get glassEffectDisabled => 'Glass effect disabled';
+  String get glassEffectDisabled => 'Το εφέ γυαλιού απενεργοποιήθηκε';
 
   @override
-  String get materialYouEnabled => 'Material You enabled';
+  String get materialYouEnabled => 'Το Material You ενεργοποιήθηκε';
 
   @override
-  String get materialYouDisabled => 'Material You disabled';
+  String get materialYouDisabled => 'Το Material You απενεργοποιήθηκε';
 
   @override
-  String get darkModeEnabled => 'Dark mode enabled';
+  String get darkModeEnabled => 'Η σκοτεινή λειτουργία ενεργοποιήθηκε';
 
   @override
-  String get darkModeDisabled => 'Dark mode disabled';
+  String get darkModeDisabled => 'Η σκοτεινή λειτουργία απενεργοποιήθηκε';
 
   @override
-  String get animeList => 'Anime list';
+  String get animeList => 'Λίστα anime';
 
   @override
-  String get mangaList => 'Manga list';
+  String get mangaList => 'Λίστα manga';
 
   @override
   String ownerAnimeList(String owner) {
-    return '$owner\'s anime list';
+    return 'Λίστα anime του/της $owner';
   }
 
   @override
   String ownerMangaList(String owner) {
-    return '$owner\'s manga list';
+    return 'Λίστα manga του/της $owner';
   }
 
   @override
-  String get loadingList => 'Loading list';
+  String get loadingList => 'Φόρτωση λίστας';
 
   @override
-  String get earlier => 'Earlier';
+  String get earlier => 'Νωρίτερα';
 
   @override
   String daysAgo(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count days ago',
-      one: '1 day ago',
+      other: 'πριν από $count ημέρες',
+      one: 'πριν από 1 ημέρα',
     );
     return '$_temp0';
   }
@@ -2836,8 +2797,8 @@ class AppLocalizationsEl extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count hours ago',
-      one: '1 hour ago',
+      other: 'πριν από $count ώρες',
+      one: 'πριν από 1 ώρα',
     );
     return '$_temp0';
   }
@@ -2847,41 +2808,41 @@ class AppLocalizationsEl extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count minutes ago',
-      one: '1 minute ago',
+      other: 'πριν από $count λεπτά',
+      one: 'πριν από 1 λεπτό',
     );
     return '$_temp0';
   }
 
   @override
   String minutesAgoShort(int count) {
-    return '${count}m ago';
+    return 'πριν $count λ.';
   }
 
   @override
   String hoursAgoShort(int count) {
-    return '${count}h ago';
+    return 'πριν $count ω.';
   }
 
   @override
   String daysAgoShort(int count) {
-    return '${count}d ago';
+    return 'πριν $count ημ.';
   }
 
   @override
   String weeksAgoShort(int count) {
-    return '${count}w ago';
+    return 'πριν $count εβδ.';
   }
 
   @override
-  String get couldntLoadSource => 'Couldn\'t load this source';
+  String get couldntLoadSource => 'Δεν φορτώθηκε αυτή η πηγή';
 
   @override
-  String get followers => 'Followers';
+  String get followers => 'Ακόλουθοι';
 
   @override
   String couldntLoadTitle(String title) {
-    return 'Couldn\'t load $title';
+    return 'Δεν φορτώθηκε το $title';
   }
 
   @override
@@ -2890,285 +2851,277 @@ class AppLocalizationsEl extends AppLocalizations {
   }
 
   @override
-  String get couldntLoadProfile => 'Couldn\'t load this profile';
+  String get couldntLoadProfile => 'Δεν φορτώθηκε αυτό το προφίλ';
 
   @override
-  String get profile => 'Profile';
+  String get profile => 'Προφίλ';
 
   @override
-  String get feed => 'Feed';
+  String get feed => 'Ροή';
 
   @override
-  String get stats => 'Stats';
+  String get stats => 'Στατιστικά';
 
   @override
-  String get received => 'Received';
+  String get received => 'Ληφθέντα';
 
   @override
-  String get sent => 'Sent';
+  String get sent => 'Απεσταλμένα';
 
   @override
-  String get global => 'Global';
+  String get global => 'Καθολικά';
 
   @override
-  String get couldntLoadPage => 'Couldn\'t load this page';
+  String get couldntLoadPage => 'Δεν φορτώθηκε αυτή η σελίδα';
 
   @override
-  String get couldntLoadAllDetails => 'Couldn\'t load all details';
+  String get couldntLoadAllDetails => 'Δεν φορτώθηκαν όλες οι λεπτομέρειες';
 
   @override
   String get series => 'Σειρές';
 
   @override
-  String get studios => 'Studios';
+  String get studios => 'Στούντιο';
 
   @override
-  String get users => 'Users';
+  String get users => 'Χρήστες';
 
   @override
   String repositoriesTitle(String type) {
-    return '$type Repositories';
+    return 'Αποθετήρια $type';
   }
 
   @override
-  String get repositoryUrl => 'Repository URL';
+  String get repositoryUrl => 'URL αποθετηρίου';
 
   @override
-  String get downloadingRepository => 'Downloading repository…';
+  String get downloadingRepository => 'Λήψη αποθετηρίου…';
 
   @override
-  String get noRepositories => 'No repositories added';
+  String get noRepositories => 'Δεν έχουν προστεθεί αποθετήρια';
 
   @override
   String repoExtensionsCount(String count) {
-    return '$count extensions';
+    return '$count επεκτάσεις';
   }
 
   @override
-  String get searchExtensions => 'Search extensions...';
+  String get searchExtensions => 'Αναζήτηση επεκτάσεων...';
 
   @override
   String deletePluginTitle(String name) {
-    return 'Delete $name?';
+    return 'Διαγραφή του $name;';
   }
 
   @override
-  String get deletePluginMessage =>
-      'Are you sure you want to delete this plugin?';
+  String get deletePluginMessage => 'Σίγουρα θες να διαγράψεις αυτό το plugin;';
 
   @override
   String pluginDeleted(String name) {
-    return '$name deleted';
+    return 'Το $name διαγράφηκε';
   }
 
   @override
   String pluginNotInRepo(String name) {
-    return '$name is not available in the configured repo';
+    return 'Το $name δεν είναι διαθέσιμο στο ρυθμισμένο αποθετήριο';
   }
 
   @override
-  String get pluginFetchFailed => 'Failed to fetch plugin info';
+  String get pluginFetchFailed => 'Αποτυχία λήψης πληροφοριών plugin';
 
   @override
   String installPluginTitle(String name) {
-    return 'Install $name';
+    return 'Εγκατάσταση $name';
   }
 
   @override
   String sizeLabel(String size) {
-    return 'Size: $size';
+    return 'Μέγεθος: $size';
   }
 
   @override
-  String get installedState => 'Installed';
+  String get installedState => 'Εγκατεστημένο';
 
   @override
-  String get errorLabel => 'Error:';
+  String get errorLabel => 'Σφάλμα:';
 
   @override
-  String get stackTraceDetails => 'Details (Stack Trace)';
+  String get stackTraceDetails => 'Λεπτομέρειες (Stack Trace)';
 
   @override
-  String get shareLogFile => 'Share log file';
+  String get shareLogFile => 'Κοινοποίηση αρχείου log';
 
   @override
-  String get copyLogs => 'Copy Logs';
+  String get copyLogs => 'Αντιγραφή logs';
 
   @override
   String noListToEdit(String service) {
-    return '$service has no list to edit';
+    return 'Το $service δεν έχει λίστα για επεξεργασία';
   }
 
   @override
-  String get couldNotReadFile => 'Could not read that file';
+  String get couldNotReadFile => 'Δεν διαβάστηκε αυτό το αρχείο';
 
   @override
   String importedSummary(int anime, int manga) {
-    return 'Imported $anime anime and $manga manga';
+    return 'Εισήχθησαν $anime anime και $manga manga';
   }
 
   @override
   String alreadyThere(int count) {
-    return ' · $count already there';
+    return ' · $count υπήρχαν ήδη';
   }
 
   @override
-  String get airingNow => 'Airing now';
+  String get airingNow => 'Σε προβολή τώρα';
 
   @override
-  String get topRatedMovies => 'Top rated movies';
+  String get topRatedMovies => 'Ταινίες με κορυφαία βαθμολογία';
 
   @override
-  String get topRatedShows => 'Top rated shows';
+  String get topRatedShows => 'Σειρές με κορυφαία βαθμολογία';
 
   @override
-  String get recommendedSection => 'Recommended';
+  String get recommendedSection => 'Προτεινόμενα';
 
   @override
-  String get syncRow => 'Sync lists';
+  String get syncRow => 'Συγχρονισμός λιστών';
 
   @override
-  String get syncRowDesc =>
-      'Mirror one service\'s list onto your other accounts';
+  String get syncRowDesc => 'Αντέγραψε τη λίστα μιας υπηρεσίας στους άλλους λογαριασμούς σου';
 
   @override
-  String get syncTitle => 'Sync';
+  String get syncTitle => 'Συγχρονισμός';
 
   @override
-  String get syncMainService => 'Main service';
+  String get syncMainService => 'Κύρια υπηρεσία';
 
   @override
-  String get syncMainServiceDesc =>
-      'Its list is the source of truth; every other signed-in service is updated to match';
+  String get syncMainServiceDesc => 'Η λίστα της είναι η πηγή αλήθειας· όλες οι άλλες συνδεδεμένες υπηρεσίες ενημερώνονται ώστε να ταιριάζουν';
 
   @override
-  String get syncAuto => 'Auto sync';
+  String get syncAuto => 'Αυτόματος συγχρονισμός';
 
   @override
-  String get syncAutoDesc =>
-      'Fetch and sync in the background when the app opens and every 30 minutes';
+  String get syncAutoDesc => 'Λήψη και συγχρονισμός στο παρασκήνιο όταν ανοίγει η εφαρμογή και κάθε 30 λεπτά';
 
   @override
-  String get syncAddMissing => 'Add missing entries';
+  String get syncAddMissing => 'Προσθήκη εγγραφών που λείπουν';
 
   @override
-  String get syncAddMissingDesc =>
-      'Also add entries the other service doesn\'t have yet';
+  String get syncAddMissingDesc => 'Πρόσθεσε και εγγραφές που η άλλη υπηρεσία δεν έχει ακόμα';
 
   @override
-  String get syncOnlyForward => 'Keep further progress';
+  String get syncOnlyForward => 'Διατήρηση μεγαλύτερης προόδου';
 
   @override
-  String get syncOnlyForwardDesc =>
-      'Don\'t lower the progress of a service that is already ahead';
+  String get syncOnlyForwardDesc => 'Μην μειώνεις την πρόοδο υπηρεσίας που είναι ήδη μπροστά';
 
   @override
-  String get syncFetch => 'Fetch';
+  String get syncFetch => 'Λήψη';
 
   @override
-  String get syncFetchAgain => 'Fetch again';
+  String get syncFetchAgain => 'Νέα λήψη';
 
   @override
-  String get syncAll => 'Sync all';
+  String get syncAll => 'Συγχρονισμός όλων';
 
   @override
-  String get syncStop => 'Stop';
+  String get syncStop => 'Διακοπή';
 
   @override
-  String get syncResume => 'Resume';
+  String get syncResume => 'Συνέχεια';
 
   @override
-  String get syncNothingToSync => 'This service can\'t be synced for this type';
+  String get syncNothingToSync => 'Αυτή η υπηρεσία δεν μπορεί να συγχρονιστεί για αυτόν τον τύπο';
 
   @override
-  String get syncNoTargets => 'Sign in to another service to sync with';
+  String get syncNoTargets => 'Συνδέσου σε άλλη υπηρεσία για να συγχρονίσεις';
 
   @override
-  String get syncLoadingMap => 'Loading ID mapping';
+  String get syncLoadingMap => 'Φόρτωση αντιστοίχισης ID';
 
   @override
-  String get syncComparing => 'Comparing lists';
+  String get syncComparing => 'Σύγκριση λιστών';
 
   @override
-  String get syncIntro =>
-      'Pick a main service and press Fetch. Each service is queried once for your list, then compared with the main one.';
+  String get syncIntro => 'Διάλεξε μια κύρια υπηρεσία και πάτα Λήψη. Κάθε υπηρεσία ερωτάται μία φορά για τη λίστα σου και μετά συγκρίνεται με την κύρια.';
 
   @override
-  String get syncStateSynced => 'Synced';
+  String get syncStateSynced => 'Συγχρονισμένο';
 
   @override
-  String get syncStateOutdated => 'Out of sync';
+  String get syncStateOutdated => 'Μη συγχρονισμένο';
 
   @override
-  String get syncStateMissing => 'Not in list';
+  String get syncStateMissing => 'Δεν είναι στη λίστα';
 
   @override
-  String get syncStateUnmapped => 'No match';
+  String get syncStateUnmapped => 'Καμία αντιστοιχία';
 
   @override
   String syncPaused(String time) {
-    return 'Waiting for the rate limit, resumes in $time';
+    return 'Αναμονή για το όριο αιτημάτων, συνεχίζει σε $time';
   }
 
   @override
   String syncOnlyIn(int count, String name) {
-    return '$count only on $name, left untouched';
+    return '$count μόνο στο $name, δεν θίγονται';
   }
 
   @override
   String syncProgressOf(int done, int total) {
-    return '$done of $total';
+    return '$done από $total';
   }
 
   @override
-  String get syncNothingHere => 'Nothing to show';
+  String get syncNothingHere => 'Δεν υπάρχει τίποτα να δείξουμε';
 
   @override
   String syncLimits(int used, int max, String window) {
-    return '$used of $max requests used this $window';
+    return '$used από $max αιτήματα χρησιμοποιήθηκαν ανά $window';
   }
 
   @override
-  String get syncMinute => 'minute';
+  String get syncMinute => 'λεπτό';
 
   @override
-  String get syncDay => 'day';
+  String get syncDay => 'ημέρα';
 
   @override
-  String get syncNotInList => 'Not in list yet';
+  String get syncNotInList => 'Δεν είναι ακόμα στη λίστα';
 
   @override
-  String get syncCleared => 'Plan cleared';
+  String get syncCleared => 'Το πλάνο καθαρίστηκε';
 
   @override
-  String get syncClear => 'Clear';
+  String get syncClear => 'Καθαρισμός';
 
   @override
-  String get syncOptions => 'Options';
+  String get syncOptions => 'Επιλογές';
 
   @override
-  String get syncShared => 'Shares its entry with another item';
+  String get syncShared => 'Μοιράζεται την εγγραφή του με άλλο στοιχείο';
 
   @override
   String syncNotFound(String service) {
-    return 'Not found on $service';
+    return 'Δεν βρέθηκε στο $service';
   }
 
   @override
   String syncService(String service, int count) {
-    return 'Sync $service ($count)';
+    return 'Συγχρονισμός $service ($count)';
   }
 
   @override
-  String get syncOnEdit => 'Sync changes instantly';
+  String get syncOnEdit => 'Άμεσος συγχρονισμός αλλαγών';
 
   @override
-  String get syncOnEditDesc =>
-      'Push every progress update and list edit to your other signed-in services right away';
+  String get syncOnEditDesc => 'Στείλε κάθε ενημέρωση προόδου και αλλαγή λίστας στις άλλες συνδεδεμένες υπηρεσίες αμέσως';
 
   @override
   String syncPushed(String services) {
-    return 'Synced to $services';
+    return 'Συγχρονίστηκε με $services';
   }
 
   @override
@@ -3177,162 +3130,158 @@ class AppLocalizationsEl extends AppLocalizations {
   }
 
   @override
-  String get syncRateLimited => 'Rate limited, try again in a moment';
+  String get syncRateLimited => 'Όριο αιτημάτων, δοκίμασε ξανά σε λίγο';
 
   @override
-  String get syncAhead => 'Whichever is ahead';
+  String get syncAhead => 'Όποιο είναι μπροστά';
 
   @override
-  String get syncAheadDesc =>
-      'Two-way: for every title the entry that is furthest along wins and is copied to all your other services';
+  String get syncAheadDesc => 'Αμφίδρομα: για κάθε τίτλο κερδίζει η εγγραφή που έχει προχωρήσει περισσότερο και αντιγράφεται σε όλες τις άλλες υπηρεσίες σου';
 
   @override
   String syncAheadFrom(String service) {
-    return 'From $service';
+    return 'Από το $service';
   }
 
   @override
-  String get syncConfirm => 'Review before syncing';
+  String get syncConfirm => 'Έλεγχος πριν τον συγχρονισμό';
 
   @override
-  String get syncConfirmDesc =>
-      'Show what Sync all will change and how many requests it needs';
+  String get syncConfirmDesc => 'Δείξε τι θα αλλάξει ο Συγχρονισμός όλων και πόσα αιτήματα χρειάζεται';
 
   @override
-  String get syncPreviewTitle => 'Ready to sync';
+  String get syncPreviewTitle => 'Έτοιμο για συγχρονισμό';
 
   @override
   String syncPreviewLine(int updates, int adds) {
-    return '$updates updates, $adds to add';
+    return '$updates ενημερώσεις, $adds προς προσθήκη';
   }
 
   @override
   String syncPreviewRequests(int count) {
-    return 'About $count requests';
+    return 'Περίπου $count αιτήματα';
   }
 
   @override
   String syncPreviewLookups(int count) {
-    return '$count ids need a lookup first';
+    return '$count id χρειάζονται πρώτα αναζήτηση';
   }
 
   @override
-  String get syncPreviewNothing => 'Nothing to change';
+  String get syncPreviewNothing => 'Δεν υπάρχει τίποτα προς αλλαγή';
 
   @override
-  String get syncStart => 'Start';
+  String get syncStart => 'Έναρξη';
 
   @override
-  String get syncRetry => 'Retry';
+  String get syncRetry => 'Επανάληψη';
 
   @override
-  String get syncSkip => 'Skip this item';
+  String get syncSkip => 'Παράλειψη αυτού του στοιχείου';
 
   @override
-  String get syncInclude => 'Include this item again';
+  String get syncInclude => 'Συμπερίληψη ξανά αυτού του στοιχείου';
 
   @override
-  String get syncSkippedLabel => 'Skipped';
+  String get syncSkippedLabel => 'Παραλείφθηκε';
 
   @override
-  String get syncChanges => 'Differences';
+  String get syncChanges => 'Διαφορές';
 
   @override
-  String get syncChangeStatus => 'Status';
+  String get syncChangeStatus => 'Κατάσταση';
 
   @override
-  String get syncChangeProgress => 'Progress';
+  String get syncChangeProgress => 'Πρόοδος';
 
   @override
-  String get syncChangeScore => 'Score';
+  String get syncChangeScore => 'Βαθμολογία';
 
   @override
-  String get syncChangeDates => 'Dates';
+  String get syncChangeDates => 'Ημερομηνίες';
 
   @override
-  String get syncChangeRepeat => 'Rewatch count';
+  String get syncChangeRepeat => 'Πλήθος επαναλήψεων';
 
   @override
-  String get syncFailedReason => 'Why it failed';
+  String get syncFailedReason => 'Γιατί απέτυχε';
 
   @override
-  String get syncSkippedHint =>
-      'Skipped items are left alone, even after fetching again';
+  String get syncSkippedHint => 'Τα στοιχεία που παραλείπονται μένουν ανέγγιχτα, ακόμα και μετά από νέα λήψη';
 
   @override
-  String get commentsRules => 'Commenting rules';
+  String get commentsRules => 'Κανόνες σχολίων';
 
   @override
-  String get commentsRulesBody =>
-      'BREAK ANY RULE = YOU\'RE GONE\n\n1. No racism, discrimination or hate speech\n2. No spamming or self-promotion\n3. Absolutely no NSFW content\n4. English only, no exceptions\n5. No impersonation, harassment or abuse\n6. No illegal content or extreme disrespect towards any fandom\n7. Do not request or share repositories or extensions\n8. Spoilers only with spoiler tags and a warning\n9. No sexualising or inappropriate comments about minor characters\n10. If it\'s wrong, don\'t post it!';
+  String get commentsRulesBody => 'ΠΑΡΑΒΙΑΣΗ ΚΑΝΟΝΑ = ΕΞΟΔΟΣ\n\n1. Όχι ρατσισμός, διακρίσεις ή ρητορική μίσους\n2. Όχι spam ή αυτοδιαφήμιση\n3. Απολύτως κανένα περιεχόμενο NSFW\n4. Μόνο αγγλικά, χωρίς εξαιρέσεις\n5. Όχι πλαστοπροσωπία, παρενόχληση ή κακοποίηση\n6. Όχι παράνομο περιεχόμενο ή ακραία έλλειψη σεβασμού προς οποιοδήποτε fandom\n7. Μη ζητάς και μη μοιράζεσαι αποθετήρια ή επεκτάσεις\n8. Spoilers μόνο με spoiler tags και προειδοποίηση\n9. Όχι σεξουαλικοποίηση ή ακατάλληλα σχόλια για ανήλικους χαρακτήρες\n10. Αν είναι λάθος, μην το δημοσιεύεις!';
 
   @override
-  String get commentsRulesAccept => 'I understand';
+  String get commentsRulesAccept => 'Κατάλαβα';
 
   @override
-  String get commentsSortNewest => 'Newest';
+  String get commentsSortNewest => 'Νεότερα';
 
   @override
-  String get commentsSortOldest => 'Oldest';
+  String get commentsSortOldest => 'Παλαιότερα';
 
   @override
-  String get commentsSortHighest => 'Highest rated';
+  String get commentsSortHighest => 'Υψηλότερη βαθμολογία';
 
   @override
-  String get commentsSortLowest => 'Lowest rated';
+  String get commentsSortLowest => 'Χαμηλότερη βαθμολογία';
 
   @override
   String commentsEpisodeShort(int number) {
-    return 'Ep $number';
+    return 'Επ. $number';
   }
 
   @override
   String commentsChapterShort(int number) {
-    return 'Ch $number';
+    return 'Κεφ. $number';
   }
 
   @override
-  String get commentsFilterEpisodeTitle => 'Filter by episode';
+  String get commentsFilterEpisodeTitle => 'Φιλτράρισμα ανά επεισόδιο';
 
   @override
-  String get commentsFilterChapterTitle => 'Filter by chapter';
+  String get commentsFilterChapterTitle => 'Φιλτράρισμα ανά κεφάλαιο';
 
   @override
-  String get commentsFilterTagTitle => 'Enter an episode or chapter number';
+  String get commentsFilterTagTitle => 'Γράψε αριθμό επεισοδίου ή κεφαλαίου';
 
   @override
-  String get commentsFilterHint => 'Number';
+  String get commentsFilterHint => 'Αριθμός';
 
   @override
-  String get commentsFilterApply => 'Filter';
+  String get commentsFilterApply => 'Φίλτρο';
 
   @override
-  String get commentsFilterClear => 'Show all';
+  String get commentsFilterClear => 'Εμφάνιση όλων';
 
   @override
-  String get commentsPlaceholder => 'Add a comment…';
+  String get commentsPlaceholder => 'Πρόσθεσε ένα σχόλιο…';
 
   @override
   String commentsReplyingTo(String name) {
-    return 'Replying to $name';
+    return 'Απάντηση στον/στην $name';
   }
 
   @override
-  String get commentsSend => 'Send';
+  String get commentsSend => 'Αποστολή';
 
   @override
   String get commentsTagButton => 'Tag';
 
   @override
   String commentsTagTitle(String label) {
-    return 'Tag $label (optional)';
+    return 'Tag $label (προαιρετικό)';
   }
 
   @override
-  String get commentsTagEpisode => 'episode';
+  String get commentsTagEpisode => 'επεισόδιο';
 
   @override
-  String get commentsTagChapter => 'chapter';
+  String get commentsTagChapter => 'κεφάλαιο';
 
   @override
   String commentsTagRange(int total) {
@@ -3341,16 +3290,16 @@ class AppLocalizationsEl extends AppLocalizations {
 
   @override
   String commentsTagNumber(String label) {
-    return '$label number';
+    return 'Αριθμός ($label)';
   }
 
   @override
   String commentsTagTooHigh(int total) {
-    return 'Tag cannot exceed the total ($total)';
+    return 'Το tag δεν μπορεί να ξεπερνά το σύνολο ($total)';
   }
 
   @override
-  String get commentsNoTag => 'No tag';
+  String get commentsNoTag => 'Χωρίς tag';
 
   @override
   String get commentsSpoiler => 'Spoiler';
@@ -3359,165 +3308,157 @@ class AppLocalizationsEl extends AppLocalizations {
   String get commentsGif => 'GIF';
 
   @override
-  String get commentsGifSearch => 'Search GIFs';
+  String get commentsGifSearch => 'Αναζήτηση GIF';
 
   @override
-  String get commentsGifEmpty => 'No GIFs found';
+  String get commentsGifEmpty => 'Δεν βρέθηκαν GIF';
 
   @override
-  String get commentsEmptyText => 'Comment cannot be empty';
+  String get commentsEmptyText => 'Το σχόλιο δεν μπορεί να είναι κενό';
 
   @override
-  String get commentsBannedYou => 'You are banned from commenting';
+  String get commentsBannedYou => 'Έχεις αποκλειστεί από τα σχόλια';
 
   @override
-  String get commentsEdited => 'Comment edited';
+  String get commentsEdited => 'Το σχόλιο επεξεργάστηκε';
 
   @override
-  String get commentsDeleted => 'Comment deleted';
+  String get commentsDeleted => 'Το σχόλιο διαγράφηκε';
 
   @override
-  String get commentsDeletedPlaceholder => '[deleted]';
+  String get commentsDeletedPlaceholder => '[διαγράφηκε]';
 
   @override
-  String get commentsReported => 'Comment reported';
+  String get commentsReported => 'Το σχόλιο αναφέρθηκε';
 
   @override
-  String get commentsUserBanned => 'User banned';
+  String get commentsUserBanned => 'Ο χρήστης αποκλείστηκε';
 
   @override
-  String get commentsReport => 'Report';
+  String get commentsReport => 'Αναφορά';
 
   @override
-  String get commentsReportAsk => 'Report this comment to the moderators?';
+  String get commentsReportAsk => 'Να αναφερθεί αυτό το σχόλιο στους συντονιστές;';
 
   @override
-  String get commentsDelete => 'Delete';
+  String get commentsDelete => 'Διαγραφή';
 
   @override
-  String get commentsDeleteAsk => 'This comment will be removed for everyone.';
+  String get commentsDeleteAsk => 'Αυτό το σχόλιο θα αφαιρεθεί για όλους.';
 
   @override
-  String get commentsBan => 'Ban';
+  String get commentsBan => 'Αποκλεισμός';
 
   @override
-  String get commentsBanAsk => 'Ban this user from commenting?';
+  String get commentsBanAsk => 'Να αποκλειστεί αυτός ο χρήστης από τα σχόλια;';
 
   @override
-  String get commentsCopy => 'Copy';
+  String get commentsCopy => 'Αντιγραφή';
 
   @override
-  String get commentsViewReply => 'View 1 reply';
+  String get commentsViewReply => 'Προβολή 1 απάντησης';
 
   @override
   String commentsViewReplies(int count) {
-    return 'View $count replies';
+    return 'Προβολή $count απαντήσεων';
   }
 
   @override
-  String get commentsHideReplies => 'Hide replies';
+  String get commentsHideReplies => 'Απόκρυψη απαντήσεων';
 
   @override
-  String get commentsLoadMore => 'Load more comments';
+  String get commentsLoadMore => 'Φόρτωση περισσότερων σχολίων';
 
   @override
-  String get commentsEmpty => 'No comments yet. Be the first!';
+  String get commentsEmpty => 'Κανένα σχόλιο ακόμα. Γίνε ο πρώτος!';
 
   @override
-  String get commentsEmptyFiltered => 'No comments for this filter';
+  String get commentsEmptyFiltered => 'Κανένα σχόλιο για αυτό το φίλτρο';
 
   @override
-  String get commentsSignIn => 'Sign in to AniList to read and write comments';
+  String get commentsSignIn => 'Συνδέσου στο AniList για να διαβάσεις και να γράψεις σχόλια';
 
   @override
-  String get commentsSignInMessage =>
-      'Comments are shared between every service and use your AniList account.';
+  String get commentsSignInMessage => 'Τα σχόλια μοιράζονται σε όλες τις υπηρεσίες και χρησιμοποιούν τον λογαριασμό σου στο AniList.';
 
   @override
-  String get commentsUnavailable => 'Comments aren\'t available for this title';
+  String get commentsUnavailable => 'Τα σχόλια δεν είναι διαθέσιμα για αυτόν τον τίτλο';
 
   @override
-  String get commentsUnavailableMessage =>
-      'It couldn\'t be matched to an AniList entry.';
+  String get commentsUnavailableMessage => 'Δεν αντιστοιχίστηκε με εγγραφή του AniList.';
 
   @override
-  String get commentsDisabled => 'Comments are turned off';
+  String get commentsDisabled => 'Τα σχόλια είναι απενεργοποιημένα';
 
   @override
-  String get commentsDisabledMessage =>
-      'You can turn them back on in Settings › General.';
+  String get commentsDisabledMessage => 'Μπορείς να τα ενεργοποιήσεις ξανά στις Ρυθμίσεις › Γενικά.';
 
   @override
-  String get commentsOffline => 'Couldn\'t load comments';
+  String get commentsOffline => 'Δεν φορτώθηκαν τα σχόλια';
 
   @override
-  String get commentsSingleTitle => 'Showing one comment';
+  String get commentsSingleTitle => 'Εμφανίζεται ένα σχόλιο';
 
   @override
-  String get commentsShowAll => 'Show all comments';
+  String get commentsShowAll => 'Εμφάνιση όλων των σχολίων';
 
   @override
-  String get commentsSettingsHeader => 'Comments';
+  String get commentsSettingsHeader => 'Σχόλια';
 
   @override
-  String get commentsSettingEnabled => 'Comments';
+  String get commentsSettingEnabled => 'Σχόλια';
 
   @override
-  String get commentsSettingEnabledDesc =>
-      'Show the Comments tab on titles and sign in to the comment server with your AniList account';
+  String get commentsSettingEnabledDesc => 'Εμφάνιση της καρτέλας Σχόλια στους τίτλους και σύνδεση στον διακομιστή σχολίων με τον λογαριασμό σου στο AniList';
 
   @override
-  String get commentsSettingAlerts => 'Reply notifications';
+  String get commentsSettingAlerts => 'Ειδοποιήσεις απαντήσεων';
 
   @override
-  String get commentsSettingAlertsDesc =>
-      'Notify me when someone replies to my comments';
+  String get commentsSettingAlertsDesc => 'Ειδοποίησέ με όταν κάποιος απαντά στα σχόλιά μου';
 
   @override
-  String get commentsNoticeReplyTitle => 'New comment reply';
+  String get commentsNoticeReplyTitle => 'Νέα απάντηση σε σχόλιο';
 
   @override
   String commentsNoticeReply(String name) {
-    return '$name replied to your comment';
+    return 'Ο/Η $name απάντησε στο σχόλιό σου';
   }
 
   @override
-  String get commentsNoticeWarningTitle => 'You received a warning';
+  String get commentsNoticeWarningTitle => 'Έλαβες προειδοποίηση';
 
   @override
-  String get commentsNoticeWarning => 'Be more thoughtful with your comments';
+  String get commentsNoticeWarning => 'Να είσαι πιο προσεκτικός με τα σχόλιά σου';
 
   @override
-  String get commentsNoticeUpdateTitle => 'Update from Dantotsu';
+  String get commentsNoticeUpdateTitle => 'Ενημέρωση από το Dantotsu';
 
   @override
-  String get barcodeTitle => 'Scan a barcode';
+  String get barcodeTitle => 'Σάρωση barcode';
 
   @override
-  String get barcodeTooltip => 'Find a manga or novel from its barcode';
+  String get barcodeTooltip => 'Βρες ένα manga ή novel από το barcode του';
 
   @override
-  String get barcodeIntro =>
-      'Point the camera at the barcode on the back of a volume, or type its ISBN.';
+  String get barcodeIntro => 'Στόχευσε την κάμερα στο barcode στο πίσω μέρος ενός τόμου ή γράψε το ISBN.';
 
   @override
-  String get barcodeIntroManual =>
-      'Type the ISBN printed above the barcode on the back of a volume.';
+  String get barcodeIntroManual => 'Γράψε το ISBN που είναι τυπωμένο πάνω από το barcode στο πίσω μέρος ενός τόμου.';
 
   @override
   String get barcodeIsbnHint => 'ISBN';
 
   @override
-  String get barcodeInvalid => 'That is not a valid ISBN';
+  String get barcodeInvalid => 'Αυτό δεν είναι έγκυρο ISBN';
 
   @override
   String barcodeNotFound(String isbn) {
-    return 'No book found for $isbn';
+    return 'Δεν βρέθηκε βιβλίο για το $isbn';
   }
 
   @override
-  String get barcodeCameraDenied =>
-      'The camera is not available. Allow camera access or type the ISBN instead.';
+  String get barcodeCameraDenied => 'Η κάμερα δεν είναι διαθέσιμη. Επίτρεψε την πρόσβαση στην κάμερα ή γράψε το ISBN.';
 
   @override
   String get themesTitle => 'Openings & endings';
@@ -3529,301 +3470,297 @@ class AppLocalizationsEl extends AppLocalizations {
   String get themesEnding => 'Ending';
 
   @override
-  String get themesPlayVideo => 'Play video';
+  String get themesPlayVideo => 'Αναπαραγωγή βίντεο';
 
   @override
-  String get themesPlayAudio => 'Play audio only';
+  String get themesPlayAudio => 'Αναπαραγωγή μόνο ήχου';
 
   @override
-  String get themesOpenSite => 'Open on AnimeThemes';
+  String get themesOpenSite => 'Άνοιγμα στο AnimeThemes';
 
   @override
-  String get themesCredit => 'Themes from AnimeThemes';
+  String get themesCredit => 'Θέματα από το AnimeThemes';
 
   @override
-  String get themesVersions => 'Versions';
+  String get themesVersions => 'Εκδόσεις';
 
   @override
   String get muTitle => 'MangaUpdates';
 
   @override
-  String get muReleases => 'Recent releases';
+  String get muReleases => 'Πρόσφατες κυκλοφορίες';
 
   @override
-  String get muNoReleases => 'No recent releases';
+  String get muNoReleases => 'Καμία πρόσφατη κυκλοφορία';
 
   @override
-  String get muLicensed => 'Licensed';
+  String get muLicensed => 'Με άδεια';
 
   @override
-  String get muOpen => 'View on MangaUpdates';
+  String get muOpen => 'Προβολή στο MangaUpdates';
 
   @override
-  String get muCredit => 'Data from MangaUpdates';
+  String get muCredit => 'Δεδομένα από το MangaUpdates';
 
   @override
-  String get muPublishers => 'Publishers';
+  String get muPublishers => 'Εκδότες';
 
   @override
-  String get sauceTitle => 'Find the source';
+  String get sauceTitle => 'Βρες την πηγή';
 
   @override
-  String get sauceIntro =>
-      'Upload a manga page or an artwork, or paste its link, to find where it comes from.';
+  String get sauceIntro => 'Ανέβασε μια σελίδα manga ή ένα έργο τέχνης, ή επικόλλησε τον σύνδεσμό του, για να βρεις από πού προέρχεται.';
 
   @override
-  String get sauceKeyTitle => 'SauceNAO API key';
+  String get sauceKeyTitle => 'Κλειδί API SauceNAO';
 
   @override
-  String get sauceKeyHint => 'Optional, raises the daily search limit';
+  String get sauceKeyHint => 'Προαιρετικό, αυξάνει το ημερήσιο όριο αναζητήσεων';
 
   @override
-  String get sauceKeyDesc => 'Get a free key at saucenao.com/user.php';
+  String get sauceKeyDesc => 'Πάρε δωρεάν κλειδί στο saucenao.com/user.php';
 
   @override
-  String get sauceSearchTitle => 'Search this title';
+  String get sauceSearchTitle => 'Αναζήτηση αυτού του τίτλου';
 
   @override
-  String get sauceOpen => 'Open source';
+  String get sauceOpen => 'Άνοιγμα πηγής';
 
   @override
-  String get sauceCredit => 'Image search by SauceNAO';
+  String get sauceCredit => 'Αναζήτηση εικόνας από το SauceNAO';
 
   @override
-  String get sauceEmpty => 'No match found';
+  String get sauceEmpty => 'Δεν βρέθηκε αντιστοιχία';
 
   @override
-  String get sauceTooltip => 'Find the source of a manga page or artwork';
+  String get sauceTooltip => 'Βρες την πηγή μιας σελίδας manga ή ενός έργου τέχνης';
 
   @override
-  String get sauceLowMatch => 'Low match';
+  String get sauceLowMatch => 'Χαμηλή αντιστοιχία';
 
   @override
-  String get trendzTitle => 'Anime charts';
+  String get trendzTitle => 'Charts anime';
 
   @override
   String get trendzAnime => 'Anime';
 
   @override
-  String get trendzFemale => 'Female characters';
+  String get trendzFemale => 'Γυναικείοι χαρακτήρες';
 
   @override
-  String get trendzMale => 'Male characters';
+  String get trendzMale => 'Ανδρικοί χαρακτήρες';
 
   @override
-  String get trendzCouple => 'Couples';
+  String get trendzCouple => 'Ζευγάρια';
 
   @override
-  String get trendzCredit => 'Weekly charts by AniTrendz';
+  String get trendzCredit => 'Εβδομαδιαία charts από το AniTrendz';
 
   @override
-  String get trendzNew => 'NEW';
+  String get trendzNew => 'ΝΕΟ';
 
   @override
-  String get trendzSearch => 'Search this title';
+  String get trendzSearch => 'Αναζήτηση αυτού του τίτλου';
 
   @override
-  String get trendzEmpty => 'The chart is empty';
+  String get trendzEmpty => 'Το chart είναι άδειο';
 
   @override
-  String get shareCard => 'Share card';
+  String get shareCard => 'Κοινοποίηση κάρτας';
 
   @override
-  String get shareCardList => 'Share list card';
+  String get shareCardList => 'Κοινοποίηση κάρτας λίστας';
 
   @override
-  String get muNotFound => 'No MangaUpdates match for this title';
+  String get muNotFound => 'Δεν υπάρχει αντιστοιχία στο MangaUpdates για αυτόν τον τίτλο';
 
   @override
-  String get shareCardWorking => 'Making the card…';
+  String get shareCardWorking => 'Δημιουργία κάρτας…';
 
   @override
-  String get shareCardSaved => 'Card saved';
+  String get shareCardSaved => 'Η κάρτα αποθηκεύτηκε';
 
   @override
-  String get shareCardFailed => 'Could not make the card';
+  String get shareCardFailed => 'Δεν δημιουργήθηκε η κάρτα';
 
   @override
-  String get shareCardListEmpty => 'Your list has nothing to share yet';
+  String get shareCardListEmpty => 'Η λίστα σου δεν έχει ακόμα κάτι για κοινοποίηση';
 
   @override
-  String get shareCardTop => 'My top picks';
+  String get shareCardTop => 'Οι αγαπημένες μου επιλογές';
 
   @override
   String themesEpisodes(String eps) {
-    return 'Episodes $eps';
+    return 'Επεισόδια $eps';
   }
 
   @override
   String muLatest(String count) {
-    return 'Chapter $count';
+    return 'Κεφάλαιο $count';
   }
 
   @override
   String muRating(String rating, String votes) {
-    return '$rating from $votes votes';
+    return '$rating από $votes ψήφους';
   }
 
   @override
   String sauceSimilarity(String percent) {
-    return '$percent% match';
+    return '$percent% αντιστοιχία';
   }
 
   @override
   String trendzWeek(String week, String season) {
-    return 'Week $week · $season';
+    return 'Εβδομάδα $week · $season';
   }
 
   @override
   String trendzVotes(String count) {
-    return '$count votes';
+    return '$count ψήφοι';
   }
 
   @override
   String trendzPeak(String rank) {
-    return 'Peak #$rank';
+    return 'Κορυφή #$rank';
   }
 
   @override
   String trendzWeeks(String count) {
-    return '$count weeks in the top ten';
+    return '$count εβδομάδες στο top ten';
   }
 
   @override
   String shareCardEntries(String count) {
-    return '$count titles';
+    return '$count τίτλοι';
   }
 
   @override
-  String get imageSearchTitle => 'Search by image';
+  String get imageSearchTitle => 'Αναζήτηση με εικόνα';
 
   @override
-  String get imageSearchTooltip => 'Find an anime from a screenshot';
+  String get imageSearchTooltip => 'Βρες ένα anime από στιγμιότυπο';
 
   @override
-  String get imageSearchIntro =>
-      'Pick a screenshot or paste an image link and trace.moe will find the episode and the moment it comes from.';
+  String get imageSearchIntro => 'Διάλεξε ένα στιγμιότυπο ή επικόλλησε σύνδεσμο εικόνας και το trace.moe θα βρει το επεισόδιο και τη στιγμή από την οποία προέρχεται.';
 
   @override
-  String get imageSearchPick => 'Choose image';
+  String get imageSearchPick => 'Επιλογή εικόνας';
 
   @override
-  String get imageSearchLinkHint => 'Paste an image link';
+  String get imageSearchLinkHint => 'Επικόλληση συνδέσμου εικόνας';
 
   @override
-  String get imageSearchGo => 'Search';
+  String get imageSearchGo => 'Αναζήτηση';
 
   @override
-  String get imageSearchEmpty => 'No match found';
+  String get imageSearchEmpty => 'Δεν βρέθηκε αντιστοιχία';
 
   @override
   String get imageSearchAdult => '18+';
 
   @override
   String imageSearchEpisode(String number) {
-    return 'Episode $number';
+    return 'Επεισόδιο $number';
   }
 
   @override
   String imageSearchAt(String time) {
-    return 'at $time';
+    return 'στο $time';
   }
 
   @override
-  String get imageSearchPreview => 'Preview clip';
+  String get imageSearchPreview => 'Προεπισκόπηση κλιπ';
 
   @override
   String imageSearchSimilarity(int percent) {
-    return '$percent% match';
+    return '$percent% αντιστοιχία';
   }
 
   @override
-  String get imageSearchCredit => 'Powered by trace.moe';
+  String get imageSearchCredit => 'Με τη δύναμη του trace.moe';
 
   @override
-  String get imageSearchOpenFailed => 'Couldn\'t open this title';
+  String get imageSearchOpenFailed => 'Δεν άνοιξε αυτός ο τίτλος';
 
   @override
-  String get groups => 'Groups';
+  String get groups => 'Ομάδες';
 
   @override
-  String get groupsYours => 'Your groups';
+  String get groupsYours => 'Οι ομάδες σου';
 
   @override
-  String get groupsPopular => 'Popular';
+  String get groupsPopular => 'Δημοφιλείς';
 
   @override
-  String get groupsNew => 'New';
+  String get groupsNew => 'Νέες';
 
   @override
-  String get groupsFeatured => 'Featured';
+  String get groupsFeatured => 'Προτεινόμενες';
 
   @override
-  String get groupsSearch => 'Search groups';
+  String get groupsSearch => 'Αναζήτηση ομάδων';
 
   @override
-  String get groupsAll => 'All';
+  String get groupsAll => 'Όλες';
 
   @override
-  String get groupsEmpty => 'No groups found';
+  String get groupsEmpty => 'Δεν βρέθηκαν ομάδες';
 
   @override
-  String get groupsEmptyYours => 'You haven\'t joined any groups yet';
+  String get groupsEmptyYours => 'Δεν έχεις μπει ακόμα σε καμία ομάδα';
 
   @override
-  String get groupsSignIn => 'Sign in to see the groups you joined';
+  String get groupsSignIn => 'Συνδέσου για να δεις τις ομάδες που έχεις μπει';
 
   @override
   String groupsMembersCount(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count members',
-      one: '1 member',
+      other: '$count μέλη',
+      one: '1 μέλος',
     );
     return '$_temp0';
   }
 
   @override
-  String get groupsJoin => 'Join';
+  String get groupsJoin => 'Συμμετοχή';
 
   @override
-  String get groupsJoined => 'Joined';
+  String get groupsJoined => 'Μέλος';
 
   @override
-  String get groupsLeave => 'Leave group';
+  String get groupsLeave => 'Αποχώρηση από την ομάδα';
 
   @override
-  String get groupsLeaveAsk =>
-      'You\'ll stop seeing this group\'s posts in your feed.';
+  String get groupsLeaveAsk => 'Δεν θα βλέπεις πια τις αναρτήσεις αυτής της ομάδας στη ροή σου.';
 
   @override
-  String get groupsJoinFailed =>
-      'Couldn\'t join this group, it may be invite only';
+  String get groupsJoinFailed => 'Δεν έγινε η συμμετοχή στην ομάδα, ίσως είναι μόνο με πρόσκληση';
 
   @override
-  String get groupsLeaveFailed => 'Couldn\'t leave this group';
+  String get groupsLeaveFailed => 'Δεν έγινε η αποχώρηση από την ομάδα';
 
   @override
-  String get groupsPosts => 'Posts';
+  String get groupsPosts => 'Αναρτήσεις';
 
   @override
-  String get groupsMembersTab => 'Members';
+  String get groupsMembersTab => 'Μέλη';
 
   @override
-  String get groupsAbout => 'About';
+  String get groupsAbout => 'Σχετικά';
 
   @override
-  String get groupsRules => 'Rules';
+  String get groupsRules => 'Κανόνες';
 
   @override
-  String get groupsPrivacyOpen => 'Open';
+  String get groupsPrivacyOpen => 'Ανοιχτή';
 
   @override
-  String get groupsPrivacyRestricted => 'Restricted';
+  String get groupsPrivacyRestricted => 'Περιορισμένη';
 
   @override
-  String get groupsPrivacyClosed => 'Closed';
+  String get groupsPrivacyClosed => 'Κλειστή';
 
   @override
   String get groupsAdult => '18+';
@@ -3835,287 +3772,267 @@ class AppLocalizationsEl extends AppLocalizations {
   String get groupsRoleMod => 'Mod';
 
   @override
-  String get groupsCouldntLoad => 'Couldn\'t load this group';
+  String get groupsCouldntLoad => 'Δεν φορτώθηκε αυτή η ομάδα';
 
   @override
-  String get groupsNewPost => 'Post to group';
+  String get groupsNewPost => 'Ανάρτηση στην ομάδα';
 
   @override
-  String get groupsPostHint => 'Share something with the group';
+  String get groupsPostHint => 'Μοιράσου κάτι με την ομάδα';
 
   @override
-  String get groupsOpenInBrowser => 'Open in browser';
+  String get groupsOpenInBrowser => 'Άνοιγμα στο πρόγραμμα περιήγησης';
 
   @override
-  String get groupsCategory => 'Category';
+  String get groupsCategory => 'Κατηγορία';
 
   @override
-  String get groupsLanguage => 'Language';
+  String get groupsLanguage => 'Γλώσσα';
 
   @override
-  String get groupsCreated => 'Created';
+  String get groupsCreated => 'Δημιουργήθηκε';
 
   @override
   String groupsLeaders(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count leaders',
-      one: '1 leader',
+      other: '$count υπεύθυνοι',
+      one: '1 υπεύθυνος',
     );
     return '$_temp0';
   }
 
   @override
-  String get groupsPrivacy => 'Privacy';
+  String get groupsPrivacy => 'Απόρρητο';
 
   @override
-  String get notificationsAll => 'All';
+  String get notificationsAll => 'Όλα';
 
   @override
-  String get notificationsAiring => 'Airing';
+  String get notificationsAiring => 'Σε προβολή';
 
   @override
-  String get notificationsMedia => 'New titles';
+  String get notificationsMedia => 'Νέοι τίτλοι';
 
   @override
-  String get notificationsReplies => 'Replies';
+  String get notificationsReplies => 'Απαντήσεις';
 
   @override
-  String get notificationsMentions => 'Mentions';
+  String get notificationsMentions => 'Αναφορές';
 
   @override
-  String get notificationsMessages => 'Messages';
+  String get notificationsMessages => 'Μηνύματα';
 
   @override
   String get notificationsLikes => 'Likes';
 
   @override
-  String get notificationsFollows => 'Follows';
+  String get notificationsFollows => 'Ακολουθήσεις';
 
   @override
-  String get notificationsNoServices =>
-      'No signed-in service has notifications';
+  String get notificationsNoServices => 'Καμία συνδεδεμένη υπηρεσία δεν έχει ειδοποιήσεις';
 
   @override
-  String get notificationsNoServicesMessage =>
-      'Sign in to a service that sends notifications and they will show up here.';
+  String get notificationsNoServicesMessage => 'Συνδέσου σε μια υπηρεσία που στέλνει ειδοποιήσεις και θα εμφανίζονται εδώ.';
 
   @override
-  String get notificationsEmptyKind => 'Nothing in this category yet';
+  String get notificationsEmptyKind => 'Τίποτα σε αυτή την κατηγορία ακόμα';
 
   @override
-  String get notificationsCommentsEmpty => 'No comment notifications';
+  String get notificationsCommentsEmpty => 'Καμία ειδοποίηση σχολίων';
 
   @override
-  String get notificationsCommentsEmptyMessage =>
-      'Replies to your comments and announcements from Dantotsu show up here.';
+  String get notificationsCommentsEmptyMessage => 'Οι απαντήσεις στα σχόλιά σου και οι ανακοινώσεις του Dantotsu εμφανίζονται εδώ.';
 
   @override
-  String get notificationsSettings => 'Notification settings';
+  String get notificationsSettings => 'Ρυθμίσεις ειδοποιήσεων';
 
   @override
-  String get notificationsPollTitle => 'Check for new notifications';
+  String get notificationsPollTitle => 'Έλεγχος για νέες ειδοποιήσεις';
 
   @override
   String notificationsPollDesc(int minutes) {
-    return 'Every $minutes minutes while the app is open';
+    return 'Κάθε $minutes λεπτά όσο είναι ανοιχτή η εφαρμογή';
   }
 
   @override
-  String get notificationsNotifyAbout => 'Notify me about';
+  String get notificationsNotifyAbout => 'Ειδοποίησέ με για';
 
   @override
-  String get notificationsCommentsHeader => 'Comment notifications';
+  String get notificationsCommentsHeader => 'Ειδοποιήσεις σχολίων';
 
   @override
   String systemNotificationsDescFor(String service) {
-    return 'Show a system notification for each unread $service notification while the app is running.';
+    return 'Εμφάνιση ειδοποίησης συστήματος για κάθε μη αναγνωσμένη ειδοποίηση του $service όσο τρέχει η εφαρμογή.';
   }
 
   @override
-  String get notificationsTestSent => 'Test notification sent';
+  String get notificationsTestSent => 'Η δοκιμαστική ειδοποίηση στάλθηκε';
 
   @override
-  String get notificationsTestDenied =>
-      'Notifications are not allowed for Dartotsu. Turn them on in system settings.';
+  String get notificationsTestDenied => 'Οι ειδοποιήσεις δεν επιτρέπονται για το Dartotsu. Ενεργοποίησέ τες στις ρυθμίσεις συστήματος.';
 
   @override
-  String get notificationsTestHint => 'Long press to send a test notification';
+  String get notificationsTestHint => 'Πάτα παρατεταμένα για δοκιμαστική ειδοποίηση';
 
   @override
-  String get notificationsTestSample => 'This is a test notification';
+  String get notificationsTestSample => 'Αυτή είναι μια δοκιμαστική ειδοποίηση';
 
   @override
   String commentsNoticeReplyIn(String name, String media) {
-    return '$name replied to your comment in $media';
+    return 'Ο/Η $name απάντησε στο σχόλιό σου στο $media';
   }
 
   @override
-  String get imageSearchNotLink => 'That doesn\'t look like a link';
+  String get imageSearchNotLink => 'Αυτό δεν μοιάζει με σύνδεσμο';
 
   @override
-  String get imageSearchQuota => 'Search quota exceeded';
+  String get imageSearchQuota => 'Το όριο αναζητήσεων ξεπεράστηκε';
 
   @override
-  String get imageSearchBusy => 'Too many requests, try again in a moment';
+  String get imageSearchBusy => 'Πολλά αιτήματα, δοκίμασε ξανά σε λίγο';
 
   @override
   String imageSearchFailed(int code) {
-    return 'Search failed ($code)';
+    return 'Η αναζήτηση απέτυχε ($code)';
   }
 
   @override
   String notificationsNewCount(int count) {
-    return '$count new notifications';
+    return '$count νέες ειδοποιήσεις';
   }
 
   @override
-  String get reactionsTitle => 'Reactions';
+  String get reactionsTitle => 'Αντιδράσεις';
 
   @override
-  String get reactionsNeedEntry =>
-      'Add this title to your list before reacting';
+  String get reactionsNeedEntry => 'Πρόσθεσε αυτόν τον τίτλο στη λίστα σου πριν αντιδράσεις';
 
   @override
-  String get reactionsAdd => 'Add a reaction';
+  String get reactionsAdd => 'Προσθήκη αντίδρασης';
 
   @override
-  String get reactionsHint => 'What did you think? (short and spoiler-free)';
+  String get reactionsHint => 'Τι σου φάνηκε; (σύντομα και χωρίς spoilers)';
 
   @override
-  String get reactionsPost => 'Post';
+  String get reactionsPost => 'Δημοσίευση';
 
   @override
-  String get reactionsFailed => 'Couldn\'t update the reaction';
+  String get reactionsFailed => 'Δεν ενημερώθηκε η αντίδραση';
 
   @override
-  String get settingsWatch => 'Watch & read';
+  String get settingsWatch => 'Παρακολούθηση & ανάγνωση';
 
   @override
-  String get settingsWatchDesc =>
-      'Episode lists, source matching and episode details';
+  String get settingsWatchDesc => 'Λίστες επεισοδίων, αντιστοίχιση πηγών και λεπτομέρειες επεισοδίων';
 
   @override
-  String get watchSettingsLayout => 'Episode list';
+  String get watchSettingsLayout => 'Λίστα επεισοδίων';
 
   @override
-  String get watchSettingsSources => 'Sources';
+  String get watchSettingsSources => 'Πηγές';
 
   @override
-  String get watchSettingsMetadata => 'Episode details';
+  String get watchSettingsMetadata => 'Λεπτομέρειες επεισοδίων';
 
   @override
-  String get watchLayout => 'Layout';
+  String get watchLayout => 'Διάταξη';
 
   @override
-  String get watchListView => 'List';
+  String get watchListView => 'Λίστα';
 
   @override
-  String get watchGridView => 'Grid';
+  String get watchGridView => 'Πλέγμα';
 
   @override
-  String get watchCompactView => 'Compact';
+  String get watchCompactView => 'Συμπαγές';
 
   @override
-  String get watchDefaultLayoutDesc =>
-      'How episodes and chapters are laid out until you change it for a title';
+  String get watchDefaultLayoutDesc => 'Πώς εμφανίζονται τα επεισόδια και τα κεφάλαια μέχρι να το αλλάξεις για κάποιον τίτλο';
 
   @override
-  String get watchChunkSize => 'Range size';
+  String get watchChunkSize => 'Μέγεθος εύρους';
 
   @override
-  String get watchChunkSizeDesc =>
-      'How many episodes or chapters each range tab holds';
+  String get watchChunkSizeDesc => 'Πόσα επεισόδια ή κεφάλαια χωράει κάθε καρτέλα εύρους';
 
   @override
-  String get watchShowDescription => 'Show descriptions';
+  String get watchShowDescription => 'Εμφάνιση περιγραφών';
 
   @override
-  String get watchShowDescriptionDesc =>
-      'Show the episode summary under each title in the list layout';
+  String get watchShowDescriptionDesc => 'Εμφάνιση της σύνοψης επεισοδίου κάτω από κάθε τίτλο στη διάταξη λίστας';
 
   @override
-  String get watchShowFiller => 'Show filler episodes';
+  String get watchShowFiller => 'Εμφάνιση filler επεισοδίων';
 
   @override
-  String get watchShowFillerDesc =>
-      'Turn off to hide episodes marked as filler';
+  String get watchShowFillerDesc => 'Απενεργοποίησέ το για να κρύψεις τα επεισόδια που είναι filler';
 
   @override
-  String get watchBlurUnwatched => 'Hide spoiler thumbnails';
+  String get watchBlurUnwatched => 'Απόκρυψη μικρογραφιών με spoilers';
 
   @override
-  String get watchBlurUnwatchedDesc =>
-      'Blur the thumbnail of episodes you have not watched yet';
+  String get watchBlurUnwatchedDesc => 'Θόλωμα της μικρογραφίας των επεισοδίων που δεν έχεις δει ακόμα';
 
   @override
-  String get watchResumeShelf => 'Resume shelf';
+  String get watchResumeShelf => 'Ράφι συνέχειας';
 
   @override
-  String get watchResumeShelfDesc => 'Show the Resume row on Home';
+  String get watchResumeShelfDesc => 'Εμφάνιση της σειράς Συνέχεια στην Αρχική';
 
   @override
-  String get watchMarkOnLongPress => 'Long press marks progress';
+  String get watchMarkOnLongPress => 'Παρατεταμένο πάτημα για σήμανση προόδου';
 
   @override
-  String get watchMarkOnLongPressDesc =>
-      'Long press an episode or chapter to mark it watched or unwatched';
+  String get watchMarkOnLongPressDesc => 'Πάτα παρατεταμένα ένα επεισόδιο ή κεφάλαιο για να το σημειώσεις ως δει/μη δει';
 
   @override
-  String get watchMatching => 'Source matching';
+  String get watchMatching => 'Αντιστοίχιση πηγών';
 
   @override
-  String get watchMatchingDesc =>
-      'Closest takes the best search result. Exact only accepts a near-identical title and leaves the rest for you to pick.';
+  String get watchMatchingDesc => 'Το «Πλησιέστερο» παίρνει το καλύτερο αποτέλεσμα αναζήτησης. Το «Μόνο ακριβές» δέχεται μόνο σχεδόν πανομοιότυπο τίτλο και αφήνει τα υπόλοιπα σε σένα.';
 
   @override
-  String get watchMatchClosest => 'Closest match';
+  String get watchMatchClosest => 'Πλησιέστερη αντιστοιχία';
 
   @override
-  String get watchMatchExact => 'Exact match only';
+  String get watchMatchExact => 'Μόνο ακριβής αντιστοιχία';
 
   @override
-  String get watchMetadataDesc =>
-      'Where episode titles, summaries, thumbnails, air dates and filler flags come from. Drag to set priority; the first source with a value wins.';
+  String get watchMetadataDesc => 'Από πού έρχονται οι τίτλοι επεισοδίων, οι συνόψεις, οι μικρογραφίες, οι ημερομηνίες προβολής και οι σημάνσεις filler. Σύρε για να ορίσεις προτεραιότητα· κερδίζει η πρώτη πηγή με τιμή.';
 
   @override
-  String get watchMetaAniZipDesc =>
-      'Episode titles, summaries, stills and air dates';
+  String get watchMetaAniZipDesc => 'Τίτλοι επεισοδίων, συνόψεις, στιγμιότυπα και ημερομηνίες προβολής';
 
   @override
-  String get watchMetaKitsuDesc =>
-      'Episode titles, descriptions and thumbnails';
+  String get watchMetaKitsuDesc => 'Τίτλοι επεισοδίων, περιγραφές και μικρογραφίες';
 
   @override
-  String get watchMetaSimklDesc =>
-      'Episode titles, descriptions, stills and air dates';
+  String get watchMetaSimklDesc => 'Τίτλοι επεισοδίων, περιγραφές, στιγμιότυπα και ημερομηνίες προβολής';
 
   @override
-  String get watchMetaAniListDesc =>
-      'Streaming episode titles, thumbnails and the airing schedule';
+  String get watchMetaAniListDesc => 'Τίτλοι επεισοδίων streaming, μικρογραφίες και πρόγραμμα προβολής';
 
   @override
-  String get watchMetaTenraiDesc =>
-      'MyAnimeList episode titles, air dates, filler and recap flags through Tenrai';
+  String get watchMetaTenraiDesc => 'Τίτλοι επεισοδίων του MyAnimeList, ημερομηνίες προβολής, σημάνσεις filler και recap μέσω Tenrai';
 
   @override
-  String get watchClearMetadata => 'Refresh episode details';
+  String get watchClearMetadata => 'Ανανέωση λεπτομερειών επεισοδίων';
 
   @override
-  String get watchClearMetadataDesc =>
-      'Forget the cached episode details so they are fetched again';
+  String get watchClearMetadataDesc => 'Διαγραφή των αποθηκευμένων λεπτομερειών επεισοδίων ώστε να ξαναφορτωθούν';
 
   @override
-  String get watchMetadataCleared => 'Episode details will be fetched again';
+  String get watchMetadataCleared => 'Οι λεπτομέρειες επεισοδίων θα ξαναφορτωθούν';
 
   @override
   String watchEpisodeCount(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count Episodes',
-      one: '1 Episode',
+      other: '$count επεισόδια',
+      one: '1 επεισόδιο',
     );
     return '$_temp0';
   }
@@ -4125,109 +4042,109 @@ class AppLocalizationsEl extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count Chapters',
-      one: '1 Chapter',
+      other: '$count κεφάλαια',
+      one: '1 κεφάλαιο',
     );
     return '$_temp0';
   }
 
   @override
   String watchEpisodeNumber(String number) {
-    return 'Episode $number';
+    return 'Επεισόδιο $number';
   }
 
   @override
   String watchChapterNumber(String number) {
-    return 'Chapter $number';
+    return 'Κεφάλαιο $number';
   }
 
   @override
-  String get watchSearching => 'Searching…';
+  String get watchSearching => 'Αναζήτηση…';
 
   @override
   String watchSearchingFor(String term) {
-    return 'Searching: $term';
+    return 'Αναζήτηση: $term';
   }
 
   @override
   String watchSelected(String title) {
-    return 'Selected: $title';
+    return 'Επιλέχθηκε: $title';
   }
 
   @override
   String watchFound(String title) {
-    return 'Found: $title';
+    return 'Βρέθηκε: $title';
   }
 
   @override
-  String get watchNothingFound => 'Nothing found on this source';
+  String get watchNothingFound => 'Δεν βρέθηκε τίποτα σε αυτή την πηγή';
 
   @override
-  String get watchSearchFailed => 'The source search failed';
+  String get watchSearchFailed => 'Η αναζήτηση στην πηγή απέτυχε';
 
   @override
-  String get watchLoadFailed => 'Couldn\'t load the list';
+  String get watchLoadFailed => 'Δεν φορτώθηκε η λίστα';
 
   @override
-  String get watchSignInToTrack => 'Sign in to track your progress';
+  String get watchSignInToTrack => 'Συνδέσου για να παρακολουθείς την πρόοδό σου';
 
   @override
   String watchInstallSource(String action) {
-    return 'Install an extension to start $action';
+    return 'Εγκατάστησε μια επέκταση για να ξεκινήσεις $action';
   }
 
   @override
-  String get watchSourceMissing => 'This source isn\'t installed';
+  String get watchSourceMissing => 'Αυτή η πηγή δεν είναι εγκατεστημένη';
 
   @override
-  String get watchWrongTitle => 'Wrong title?';
+  String get watchWrongTitle => 'Λάθος τίτλος;';
 
   @override
-  String get watchSearchAgain => 'Search again';
+  String get watchSearchAgain => 'Νέα αναζήτηση';
 
   @override
   String watchSearchSource(String source) {
-    return 'Search $source';
+    return 'Αναζήτηση στο $source';
   }
 
   @override
-  String get watchSource => 'Source';
+  String get watchSource => 'Πηγή';
 
   @override
-  String get watchOptions => 'Options';
+  String get watchOptions => 'Επιλογές';
 
   @override
-  String get watchReverse => 'Reverse order';
+  String get watchReverse => 'Αντίστροφη σειρά';
 
   @override
-  String get watchScanlators => 'Groups';
+  String get watchScanlators => 'Ομάδες';
 
   @override
-  String get watchResetOptions => 'Reset these options';
+  String get watchResetOptions => 'Επαναφορά αυτών των επιλογών';
 
   @override
-  String get watchContinue => 'Continue';
+  String get watchContinue => 'Συνέχεια';
 
   @override
-  String get watchStart => 'Start';
+  String get watchStart => 'Έναρξη';
 
   @override
-  String get watchPlay => 'Play';
+  String get watchPlay => 'Αναπαραγωγή';
 
   @override
-  String get watchRead => 'Read';
+  String get watchRead => 'Ανάγνωση';
 
   @override
-  String get watchMarkWatched => 'Mark watched';
+  String get watchMarkWatched => 'Σήμανση ως είδα';
 
   @override
-  String get watchMarkUnwatched => 'Mark unwatched';
+  String get watchMarkUnwatched => 'Σήμανση ως μη είδα';
 
   @override
-  String get watchMarkRead => 'Mark read';
+  String get watchMarkRead => 'Σήμανση ως διάβασα';
 
   @override
-  String get watchMarkUnread => 'Mark unread';
+  String get watchMarkUnread => 'Σήμανση ως μη διάβασα';
 
   @override
   String get watchFiller => 'Filler';
@@ -4236,502 +4153,481 @@ class AppLocalizationsEl extends AppLocalizations {
   String get watchRecap => 'Recap';
 
   @override
-  String get watchNoEpisodes => 'No episodes found';
+  String get watchNoEpisodes => 'Δεν βρέθηκαν επεισόδια';
 
   @override
-  String get watchNoChapters => 'No chapters found';
+  String get watchNoChapters => 'Δεν βρέθηκαν κεφάλαια';
 
   @override
-  String get watchSourceTools => 'Source tools';
+  String get watchSourceTools => 'Εργαλεία πηγής';
 
   @override
-  String get watchSourceSettings => 'Source settings';
+  String get watchSourceSettings => 'Ρυθμίσεις πηγής';
 
   @override
-  String get watchOpenWebView => 'Open in web view';
+  String get watchOpenWebView => 'Άνοιγμα σε web view';
 
   @override
-  String get watchOpenWebViewDesc =>
-      'Solve a Cloudflare check or log in; the cookies are shared with the source requests';
+  String get watchOpenWebViewDesc => 'Λύσε έναν έλεγχο Cloudflare ή συνδέσου· τα cookies μοιράζονται με τα αιτήματα της πηγής';
 
   @override
   String watchCookieCount(int count, String host) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count cookies saved for $host',
-      one: '1 cookie saved for $host',
-      zero: 'No cookies saved for $host',
+      other: '$count cookies αποθηκευμένα για το $host',
+      one: '1 cookie αποθηκευμένο για το $host',
+      zero: 'Δεν υπάρχουν αποθηκευμένα cookies για το $host',
     );
     return '$_temp0';
   }
 
   @override
   String watchClearanceActive(String time) {
-    return 'Cloudflare clearance active, $time';
+    return 'Ενεργή έγκριση Cloudflare, $time';
   }
 
   @override
-  String get watchClearanceMissing => 'No Cloudflare clearance cookie';
+  String get watchClearanceMissing => 'Δεν υπάρχει cookie έγκρισης Cloudflare';
 
   @override
-  String get watchClearanceSession => 'lasts until the app closes';
+  String get watchClearanceSession => 'διαρκεί μέχρι να κλείσει η εφαρμογή';
 
   @override
-  String get watchAgentShared =>
-      'Requests use the web view\'s user agent, which Cloudflare checks';
+  String get watchAgentShared => 'Τα αιτήματα χρησιμοποιούν το user agent του web view, το οποίο ελέγχει το Cloudflare';
 
   @override
-  String get watchAgentCustom =>
-      'A custom user agent is set, so a Cloudflare clearance from the web view may be rejected';
+  String get watchAgentCustom => 'Έχει οριστεί προσαρμοσμένο user agent, οπότε η έγκριση Cloudflare από το web view μπορεί να απορριφθεί';
 
   @override
-  String get watchTestConnection => 'Test connection';
+  String get watchTestConnection => 'Δοκιμή σύνδεσης';
 
   @override
-  String get watchSolveChallenge => 'Solve it';
+  String get watchSolveChallenge => 'Λύση';
 
   @override
   String watchProbeOk(int code) {
-    return 'Reachable (HTTP $code)';
+    return 'Προσβάσιμο (HTTP $code)';
   }
 
   @override
-  String get watchProbeChallenge => 'Cloudflare is still asking for a check';
+  String get watchProbeChallenge => 'Το Cloudflare ζητά ακόμα έλεγχο';
 
   @override
   String watchProbeBlocked(int code) {
-    return 'Blocked by the site (HTTP $code)';
+    return 'Αποκλείστηκε από τον ιστότοπο (HTTP $code)';
   }
 
   @override
-  String get watchProbeFailed => 'The site could not be reached';
+  String get watchProbeFailed => 'Ο ιστότοπος δεν ήταν προσβάσιμος';
 
   @override
-  String get watchClearCookies => 'Clear cookies for this site';
+  String get watchClearCookies => 'Εκκαθάριση cookies για αυτόν τον ιστότοπο';
 
   @override
-  String get watchCookiesCleared => 'Cookies cleared';
+  String get watchCookiesCleared => 'Τα cookies καθαρίστηκαν';
 
   @override
-  String get watchResults => 'Results';
+  String get watchResults => 'Αποτελέσματα';
 
   @override
-  String get watchMetaSource => 'Episode details from';
+  String get watchMetaSource => 'Λεπτομέρειες επεισοδίων από';
 
   @override
-  String get watchMetaAuto => 'Automatic';
+  String get watchMetaAuto => 'Αυτόματα';
 
   @override
-  String get watchMetaOff => 'Off';
+  String get watchMetaOff => 'Ανενεργό';
 
   @override
-  String get settingsPlayer => 'Player';
+  String get settingsPlayer => 'Πρόγραμμα αναπαραγωγής';
 
   @override
-  String get settingsPlayerDesc =>
-      'Playback, subtitles, shaders, mpv and opening files';
+  String get settingsPlayerDesc => 'Αναπαραγωγή, υπότιτλοι, shaders, mpv και άνοιγμα αρχείων';
 
   @override
-  String get playerSettingsTitle => 'Ρυθμίσεις Αναπαραγωγέα';
+  String get playerSettingsTitle => 'Ρυθμίσεις προγράμματος αναπαραγωγής';
 
   @override
-  String get playerSectionPlayback => 'Playback';
+  String get playerSectionPlayback => 'Αναπαραγωγή';
 
   @override
-  String get playerSectionSkip => 'Skipping';
+  String get playerSectionSkip => 'Παράλειψη';
 
   @override
-  String get playerSectionGestures => 'Controls';
+  String get playerSectionGestures => 'Χειριστήρια';
 
   @override
-  String get playerSectionSubtitles => 'Subtitles';
+  String get playerSectionSubtitles => 'Υπότιτλοι';
 
   @override
   String get playerSectionShaders => 'Shaders';
 
   @override
-  String get playerSectionEngine => 'Engine';
+  String get playerSectionEngine => 'Μηχανή';
 
   @override
   String get playerSectionMpv => 'mpv';
 
   @override
-  String get playerSectionOpen => 'Open media';
+  String get playerSectionOpen => 'Άνοιγμα μέσου';
 
   @override
-  String get playerSpeed => 'Playback speed';
+  String get playerSpeed => 'Ταχύτητα αναπαραγωγής';
 
   @override
-  String get playerCursedSpeed => 'Extra speeds';
+  String get playerCursedSpeed => 'Επιπλέον ταχύτητες';
 
   @override
-  String get playerCursedSpeedDesc => 'Add speeds up to 10x to the list';
+  String get playerCursedSpeedDesc => 'Προσθήκη ταχυτήτων έως 10x στη λίστα';
 
   @override
-  String get playerResize => 'Resize mode';
+  String get playerResize => 'Λειτουργία αλλαγής μεγέθους';
 
   @override
-  String get playerFitFit => 'Fit';
+  String get playerFitFit => 'Προσαρμογή';
 
   @override
-  String get playerFitCover => 'Cover';
+  String get playerFitCover => 'Κάλυψη';
 
   @override
-  String get playerFitStretch => 'Stretch';
+  String get playerFitStretch => 'Έκταση';
 
   @override
-  String get playerSkipDuration => 'Skip button length';
+  String get playerSkipDuration => 'Διάρκεια κουμπιού παράλειψης';
 
   @override
-  String get playerSkipDurationDesc =>
-      'Seconds the skip button jumps outside openings and endings';
+  String get playerSkipDurationDesc => 'Δευτερόλεπτα που πηδά το κουμπί παράλειψης εκτός openings και endings';
 
   @override
-  String get playerSeekDuration => 'Double tap seek';
+  String get playerSeekDuration => 'Διπλό πάτημα για μετακίνηση';
 
   @override
-  String get playerSeekDurationDesc =>
-      'Seconds to jump on a double tap or arrow key';
+  String get playerSeekDurationDesc => 'Δευτερόλεπτα μετακίνησης με διπλό πάτημα ή πλήκτρο βέλους';
 
   @override
-  String get playerAutoPlay => 'Play next automatically';
+  String get playerAutoPlay => 'Αυτόματη αναπαραγωγή επόμενου';
 
   @override
-  String get playerAutoPlayDesc => 'Start the next episode when this one ends';
+  String get playerAutoPlayDesc => 'Έναρξη του επόμενου επεισοδίου όταν τελειώσει αυτό';
 
   @override
-  String get playerResume => 'Resume where you left off';
+  String get playerResume => 'Συνέχεια από εκεί που έμεινες';
 
   @override
-  String get playerResumeDesc => 'Continue an episode from its last position';
+  String get playerResumeDesc => 'Συνέχιση ενός επεισοδίου από την τελευταία θέση';
 
   @override
-  String get playerOrientation => 'Orientation';
+  String get playerOrientation => 'Προσανατολισμός';
 
   @override
-  String get playerOrientationAuto => 'Follow the device';
+  String get playerOrientationAuto => 'Ακολουθεί τη συσκευή';
 
   @override
-  String get playerOrientationLandscape => 'Landscape';
+  String get playerOrientationLandscape => 'Οριζόντια';
 
   @override
-  String get playerOrientationPortrait => 'Portrait';
+  String get playerOrientationPortrait => 'Κάθετα';
 
   @override
-  String get playerAutoSkipOpening => 'Skip openings';
+  String get playerAutoSkipOpening => 'Παράλειψη openings';
 
   @override
-  String get playerAutoSkipEnding => 'Skip endings';
+  String get playerAutoSkipEnding => 'Παράλειψη endings';
 
   @override
-  String get playerAutoSkipRecap => 'Skip recaps';
+  String get playerAutoSkipRecap => 'Παράλειψη recaps';
 
   @override
-  String get playerAutoSkipDesc =>
-      'Jump past it as soon as it starts, using AniSkip and stream timestamps';
+  String get playerAutoSkipDesc => 'Παράλειψη μόλις ξεκινήσει, με χρήση του AniSkip και των χρονοσημάνσεων του stream';
 
   @override
-  String get playerSkipOnce => 'Skip once only';
+  String get playerSkipOnce => 'Παράλειψη μόνο μία φορά';
 
   @override
-  String get playerSkipOnceDesc =>
-      'Don\'t skip the same part again if you seek back into it';
+  String get playerSkipOnceDesc => 'Μην παραλείπεις ξανά το ίδιο κομμάτι αν γυρίσεις πίσω σε αυτό';
 
   @override
-  String get playerAdjustBrightness => 'Brightness gesture';
+  String get playerAdjustBrightness => 'Χειρονομία φωτεινότητας';
 
   @override
-  String get playerAdjustBrightnessDesc =>
-      'Swipe up and down on the left half of the screen';
+  String get playerAdjustBrightnessDesc => 'Σύρε πάνω και κάτω στο δεξί μισό της οθόνης';
 
   @override
-  String get playerAdjustVolume => 'Volume gesture';
+  String get playerAdjustVolume => 'Χειρονομία έντασης';
 
   @override
-  String get playerAdjustVolumeDesc =>
-      'Swipe up and down on the right half of the screen';
+  String get playerAdjustVolumeDesc => 'Σύρε πάνω και κάτω στο αριστερό μισό της οθόνης';
 
   @override
-  String get playerHoldToSpeed => 'Hold to speed up';
+  String get playerHoldToSpeed => 'Κράτα για επιτάχυνση';
 
   @override
-  String get playerHoldToSpeedDesc =>
-      'Press and hold the video to play faster, drag sideways to change the speed';
+  String get playerHoldToSpeedDesc => 'Κράτα πατημένο το βίντεο για πιο γρήγορη αναπαραγωγή, σύρε στο πλάι για να αλλάξεις ταχύτητα';
 
   @override
-  String get playerThumbless => 'Thicker seek bar';
+  String get playerThumbless => 'Παχύτερη μπάρα αναζήτησης';
 
   @override
-  String get playerThumblessDesc => 'A thick bar without a thumb';
+  String get playerThumblessDesc => 'Παχιά μπάρα χωρίς δείκτη';
 
   @override
-  String get playerShowSubtitles => 'Show subtitles';
+  String get playerShowSubtitles => 'Εμφάνιση υποτίτλων';
 
   @override
-  String get playerShowSubtitlesDesc => 'Turn off to hide every subtitle track';
+  String get playerShowSubtitlesDesc => 'Απενεργοποίησέ το για να κρύψεις όλα τα κομμάτια υποτίτλων';
 
   @override
-  String get playerSubtitleLanguage => 'Preferred subtitle language';
+  String get playerSubtitleLanguage => 'Προτιμώμενη γλώσσα υποτίτλων';
 
   @override
-  String get playerSubtitleSize => 'Subtitle size';
+  String get playerSubtitleSize => 'Μέγεθος υποτίτλων';
 
   @override
-  String get playerSubtitleWeight => 'Subtitle weight';
+  String get playerSubtitleWeight => 'Πάχος υποτίτλων';
 
   @override
-  String get playerSubtitleBottom => 'Subtitle bottom padding';
+  String get playerSubtitleBottom => 'Κάτω περιθώριο υποτίτλων';
 
   @override
-  String get playerSubtitleFont => 'Subtitle font';
+  String get playerSubtitleFont => 'Γραμματοσειρά υποτίτλων';
 
   @override
-  String get playerSubtitleColor => 'Subtitle colour';
+  String get playerSubtitleColor => 'Χρώμα υποτίτλων';
 
   @override
-  String get playerSubtitleBackground => 'Subtitle background';
+  String get playerSubtitleBackground => 'Φόντο υποτίτλων';
 
   @override
-  String get playerSubtitleOutline => 'Subtitle outline';
+  String get playerSubtitleOutline => 'Περίγραμμα υποτίτλων';
 
   @override
-  String get playerLibass => 'Use libass';
+  String get playerLibass => 'Χρήση libass';
 
   @override
-  String get playerLibassDesc =>
-      'Render styled .ass subtitles. The size, colour and font above then no longer apply';
+  String get playerLibassDesc => 'Απόδοση υποτίτλων .ass με στυλ. Το μέγεθος, το χρώμα και η γραμματοσειρά παραπάνω δεν ισχύουν τότε';
 
   @override
   String get playerShaders => 'Shaders';
 
   @override
-  String get playerShadersEnable => 'Enable shaders';
+  String get playerShadersEnable => 'Ενεργοποίηση shaders';
 
   @override
-  String get playerShadersEnableDesc =>
-      'Upscale and clean the picture with GLSL shaders such as Anime4K';
+  String get playerShadersEnableDesc => 'Μεγέθυνση και καθαρισμός της εικόνας με GLSL shaders όπως το Anime4K';
 
   @override
-  String get playerShadersOff => 'Shaders off';
+  String get playerShadersOff => 'Shaders ανενεργά';
 
   @override
-  String get playerShadersMissing => 'Anime4K is not installed';
+  String get playerShadersMissing => 'Το Anime4K δεν είναι εγκατεστημένο';
 
   @override
-  String get playerShadersMissingDesc =>
-      'Download the Anime4K shader pack (about 0.8 MB) to use the built-in modes.';
+  String get playerShadersMissingDesc => 'Κατέβασε το πακέτο shaders Anime4K (περίπου 0,8 MB) για να χρησιμοποιήσεις τις ενσωματωμένες λειτουργίες.';
 
   @override
-  String get playerShadersDownload => 'Download Anime4K';
+  String get playerShadersDownload => 'Λήψη Anime4K';
 
   @override
-  String get playerShadersPreview => 'Preview on this frame';
+  String get playerShadersPreview => 'Προεπισκόπηση σε αυτό το καρέ';
 
   @override
-  String get playerShadersUse => 'Use this';
+  String get playerShadersUse => 'Χρήση αυτού';
 
   @override
-  String get playerPicture => 'Picture';
+  String get playerPicture => 'Εικόνα';
 
   @override
-  String get playerColors => 'Colors';
+  String get playerColors => 'Χρώματα';
 
   @override
-  String get playerColorDefault => 'Default';
+  String get playerColorDefault => 'Προεπιλογή';
 
   @override
-  String get playerColorVivid => 'Vivid';
+  String get playerColorVivid => 'Ζωντανό';
 
   @override
   String get playerColorPop => 'Anime pop';
 
   @override
-  String get playerColorSoft => 'Soft';
+  String get playerColorSoft => 'Απαλό';
 
   @override
-  String get playerColorCinematic => 'Cinematic';
+  String get playerColorCinematic => 'Κινηματογραφικό';
 
   @override
-  String get playerColorBright => 'Bright';
+  String get playerColorBright => 'Φωτεινό';
 
   @override
-  String get playerColorNight => 'Night';
+  String get playerColorNight => 'Νύχτα';
 
   @override
-  String get playerColorMono => 'Mono';
+  String get playerColorMono => 'Μονόχρωμο';
 
   @override
-  String get playerColorCustom => 'Custom';
+  String get playerColorCustom => 'Προσαρμοσμένο';
 
   @override
-  String get playerColorBrightness => 'Brightness';
+  String get playerColorBrightness => 'Φωτεινότητα';
 
   @override
-  String get playerColorContrast => 'Contrast';
+  String get playerColorContrast => 'Αντίθεση';
 
   @override
-  String get playerColorSaturation => 'Saturation';
+  String get playerColorSaturation => 'Κορεσμός';
 
   @override
   String get playerColorGamma => 'Gamma';
 
   @override
-  String get playerColorHue => 'Hue';
+  String get playerColorHue => 'Απόχρωση';
 
   @override
-  String get playerColorReset => 'Reset';
+  String get playerColorReset => 'Επαναφορά';
 
   @override
-  String get playerColorAdjust => 'Adjust';
+  String get playerColorAdjust => 'Προσαρμογή';
 
   @override
-  String get playerShadersOriginal => 'Original';
+  String get playerShadersOriginal => 'Πρωτότυπο';
 
   @override
-  String get playerShadersPreviewFailed => 'Couldn\'t grab a frame to preview';
+  String get playerShadersPreviewFailed => 'Δεν πάρθηκε καρέ για προεπισκόπηση';
 
   @override
-  String get playerShadersCustomFiles => 'Your shaders';
+  String get playerShadersCustomFiles => 'Τα shaders σου';
 
   @override
-  String get playerShadersCustom => 'Custom shaders';
+  String get playerShadersCustom => 'Προσαρμοσμένα shaders';
 
   @override
-  String get playerShadersImport => 'Import .glsl';
+  String get playerShadersImport => 'Εισαγωγή .glsl';
 
   @override
-  String get playerShadersNone =>
-      'Import your own .glsl or .hook files and tick them to chain them';
+  String get playerShadersNone => 'Εισήγαγε τα δικά σου αρχεία .glsl ή .hook και τσέκαρέ τα για να τα αλυσοδέσεις';
 
   @override
-  String get playerShadersBadFile => 'Choose a .glsl or .hook shader file';
+  String get playerShadersBadFile => 'Επίλεξε αρχείο shader .glsl ή .hook';
 
   @override
-  String get playerDecoder => 'Decoder';
+  String get playerDecoder => 'Αποκωδικοποιητής';
 
   @override
-  String get playerDecoderAuto => 'Auto';
+  String get playerDecoderAuto => 'Αυτόματο';
 
   @override
-  String get playerDecoderAutoSafe => 'Auto (safe)';
+  String get playerDecoderAutoSafe => 'Αυτόματο (ασφαλές)';
 
   @override
-  String get playerDecoderSoftware => 'Software';
+  String get playerDecoderSoftware => 'Λογισμικό';
 
   @override
-  String get playerDecoderHardware => 'Hardware';
+  String get playerDecoderHardware => 'Υλικό';
 
   @override
-  String get playerDecoderHardwarePlus => 'Hardware+';
+  String get playerDecoderHardwarePlus => 'Υλικό+';
 
   @override
-  String get playerVideoOutput => 'Video output';
+  String get playerVideoOutput => 'Έξοδος βίντεο';
 
   @override
-  String get playerAudioChannels => 'Audio channels';
+  String get playerAudioChannels => 'Κανάλια ήχου';
 
   @override
-  String get playerBuffer => 'Buffer size (MB)';
+  String get playerBuffer => 'Μέγεθος buffer (MB)';
 
   @override
-  String get playerBufferDesc => 'Memory the player may use to buffer a stream';
+  String get playerBufferDesc => 'Μνήμη που μπορεί να χρησιμοποιήσει το πρόγραμμα για buffering ενός stream';
 
   @override
-  String get playerUseMpvConf => 'Use mpv.conf';
+  String get playerUseMpvConf => 'Χρήση mpv.conf';
 
   @override
-  String get playerUseMpvConfDesc =>
-      'Apply the options in your mpv.conf when playback starts';
+  String get playerUseMpvConfDesc => 'Εφαρμογή των επιλογών του mpv.conf όταν ξεκινά η αναπαραγωγή';
 
   @override
   String get playerMpvConf => 'mpv.conf';
 
   @override
-  String get playerMpvConfEdit => 'Edit the mpv configuration';
+  String get playerMpvConfEdit => 'Επεξεργασία της ρύθμισης mpv';
 
   @override
-  String get playerMpvConfDesc =>
-      'One option per line, like --hwdec=auto in a normal mpv.conf. Profiles in [brackets] are ignored.';
+  String get playerMpvConfDesc => 'Μία επιλογή ανά γραμμή, όπως --hwdec=auto σε ένα κανονικό mpv.conf. Τα προφίλ σε [αγκύλες] αγνοούνται.';
 
   @override
-  String get playerMpvConfSaved => 'mpv.conf saved';
+  String get playerMpvConfSaved => 'Το mpv.conf αποθηκεύτηκε';
 
   @override
-  String get playerUseScripts => 'Use mpv scripts';
+  String get playerUseScripts => 'Χρήση scripts mpv';
 
   @override
-  String get playerUseScriptsDesc =>
-      'Load the plugins from the scripts folder. They need a libmpv build with Lua or JavaScript support';
+  String get playerUseScriptsDesc => 'Φόρτωση των plugins από τον φάκελο scripts. Χρειάζονται build libmpv με υποστήριξη Lua ή JavaScript';
 
   @override
-  String get playerScripts => 'mpv scripts';
+  String get playerScripts => 'Scripts mpv';
 
   @override
-  String get playerScriptsManage => 'Add, remove and switch plugins';
+  String get playerScriptsManage => 'Προσθήκη, αφαίρεση και εναλλαγή plugins';
 
   @override
-  String get playerScriptsAdd => 'Add script';
+  String get playerScriptsAdd => 'Προσθήκη script';
 
   @override
-  String get playerScriptsDesc =>
-      'Lua, JavaScript and native plugins placed here are loaded when playback starts.';
+  String get playerScriptsDesc => 'Plugins Lua, JavaScript και native που μπαίνουν εδώ φορτώνονται όταν ξεκινά η αναπαραγωγή.';
 
   @override
-  String get playerScriptsNone => 'No scripts yet';
+  String get playerScriptsNone => 'Κανένα script ακόμα';
 
   @override
-  String get playerScriptsBadFile => 'Choose a .lua, .js or native plugin file';
+  String get playerScriptsBadFile => 'Επίλεξε αρχείο .lua, .js ή native plugin';
 
   @override
-  String get playerTuning => 'Advanced video tuning';
+  String get playerTuning => 'Προηγμένη ρύθμιση βίντεο';
 
   @override
-  String get playerTuningDesc =>
-      'Override sync, caching, scaling and tone mapping. Wrong values can hurt playback';
+  String get playerTuningDesc => 'Παράκαμψη συγχρονισμού, caching, κλιμάκωσης και tone mapping. Λάθος τιμές μπορεί να χαλάσουν την αναπαραγωγή';
 
   @override
-  String get playerVideoSync => 'Video sync';
+  String get playerVideoSync => 'Συγχρονισμός βίντεο';
 
   @override
-  String get playerInterpolation => 'Frame interpolation';
+  String get playerInterpolation => 'Παρεμβολή καρέ';
 
   @override
-  String get playerInterpolationDesc =>
-      'Smooth motion, needs display-resample sync';
+  String get playerInterpolationDesc => 'Ομαλή κίνηση, χρειάζεται συγχρονισμό display-resample';
 
   @override
-  String get playerPitch => 'Pitch correction';
+  String get playerPitch => 'Διόρθωση τόνου';
 
   @override
-  String get playerPitchDesc => 'Keep voices natural at other speeds';
+  String get playerPitchDesc => 'Οι φωνές ακούγονται φυσικές σε άλλες ταχύτητες';
 
   @override
-  String get playerCacheSeconds => 'Cache (seconds)';
+  String get playerCacheSeconds => 'Cache (δευτερόλεπτα)';
 
   @override
-  String get playerReadahead => 'Read ahead (seconds)';
+  String get playerReadahead => 'Προανάγνωση (δευτερόλεπτα)';
 
   @override
-  String get playerThreads => 'Decoder threads';
+  String get playerThreads => 'Νήματα αποκωδικοποιητή';
 
   @override
   String get playerDeband => 'Deband';
 
   @override
-  String get playerDebandDesc => 'Reduce colour banding in gradients';
+  String get playerDebandDesc => 'Μείωση των χρωματικών ζωνών στις διαβαθμίσεις';
 
   @override
-  String get playerDebandIterations => 'Deband iterations';
+  String get playerDebandIterations => 'Επαναλήψεις deband';
 
   @override
-  String get playerDebandThreshold => 'Deband threshold';
+  String get playerDebandThreshold => 'Κατώφλι deband';
 
   @override
-  String get playerCorrectDownscaling => 'Correct downscaling';
+  String get playerCorrectDownscaling => 'Σωστή σμίκρυνση';
 
   @override
-  String get playerSigmoid => 'Sigmoid upscaling';
+  String get playerSigmoid => 'Μεγέθυνση sigmoid';
 
   @override
   String get playerScale => 'Upscaler';
@@ -4746,1174 +4642,1139 @@ class AppLocalizationsEl extends AppLocalizations {
   String get playerToneMapping => 'Tone mapping';
 
   @override
-  String get playerTargetPeak => 'Target peak';
+  String get playerTargetPeak => 'Στόχος κορυφής';
 
   @override
-  String get playerOpenFiles => 'Open video files';
+  String get playerOpenFiles => 'Άνοιγμα αρχείων βίντεο';
 
   @override
-  String get playerOpenFilesDesc => 'Play files from this device';
+  String get playerOpenFilesDesc => 'Αναπαραγωγή αρχείων από αυτή τη συσκευή';
 
   @override
-  String get playerOpenFolder => 'Open a folder';
+  String get playerOpenFolder => 'Άνοιγμα φακέλου';
 
   @override
-  String get playerOpenFolderDesc =>
-      'Play every video in a folder as a playlist';
+  String get playerOpenFolderDesc => 'Αναπαραγωγή όλων των βίντεο ενός φακέλου ως playlist';
 
   @override
-  String get playerNetworkStream => 'Network stream';
+  String get playerNetworkStream => 'Stream δικτύου';
 
   @override
-  String get playerNetworkStreamDesc => 'Open a direct video or HLS link';
+  String get playerNetworkStreamDesc => 'Άνοιγμα απευθείας συνδέσμου βίντεο ή HLS';
 
   @override
-  String get playerStreamUrl => 'Stream URL';
+  String get playerStreamUrl => 'URL stream';
 
   @override
-  String get playerStreamReferer => 'Referer (optional)';
+  String get playerStreamReferer => 'Referer (προαιρετικό)';
 
   @override
   String get playerTorrent => 'Torrent';
 
   @override
-  String get playerTorrentDesc => 'Stream a magnet link or .torrent file';
+  String get playerTorrentDesc => 'Stream συνδέσμου magnet ή αρχείου .torrent';
 
   @override
-  String get playerMagnetLink => 'Magnet link or torrent URL';
+  String get playerMagnetLink => 'Σύνδεσμος magnet ή URL torrent';
 
   @override
-  String get playerPickTorrent => 'Choose a .torrent file';
+  String get playerPickTorrent => 'Επίλεξε αρχείο .torrent';
 
   @override
-  String get playerTorrentMissing =>
-      'Install the torrent addon from Settings > Addons first';
+  String get playerTorrentMissing => 'Εγκατάστησε πρώτα το πρόσθετο torrent από τις Ρυθμίσεις > Πρόσθετα';
 
   @override
-  String get playerNoVideos => 'No playable videos found';
+  String get playerNoVideos => 'Δεν βρέθηκαν βίντεο προς αναπαραγωγή';
 
   @override
-  String get playerReset => 'Reset player settings';
+  String get playerReset => 'Επαναφορά ρυθμίσεων προγράμματος αναπαραγωγής';
 
   @override
-  String get playerResetDesc => 'Restore every player option to its default';
+  String get playerResetDesc => 'Επαναφορά όλων των επιλογών του προγράμματος στις προεπιλογές';
 
   @override
-  String get playerResetConfirm => 'Reset all player settings?';
+  String get playerResetConfirm => 'Επαναφορά όλων των ρυθμίσεων του προγράμματος αναπαραγωγής;';
 
   @override
-  String get playerResetDone => 'Player settings reset';
+  String get playerResetDone => 'Οι ρυθμίσεις του προγράμματος επαναφέρθηκαν';
 
   @override
-  String get playerQuality => 'Quality';
+  String get playerQuality => 'Ποιότητα';
 
   @override
   String get playerStreams => 'Streams';
 
   @override
-  String get playerAutoSelect => 'Auto select stream';
+  String get playerAutoSelect => 'Αυτόματη επιλογή stream';
 
   @override
-  String get playerAutoSelectDesc =>
-      'Pick the stream most like your last choice for this title';
+  String get playerAutoSelectDesc => 'Επιλογή του stream που μοιάζει περισσότερο με την τελευταία σου επιλογή για αυτόν τον τίτλο';
 
   @override
-  String get playerLoadingStreams => 'Looking for streams…';
+  String get playerLoadingStreams => 'Αναζήτηση streams…';
 
   @override
-  String get playerNoStreams => 'This episode has no streams';
+  String get playerNoStreams => 'Αυτό το επεισόδιο δεν έχει streams';
 
   @override
-  String get playerNoStreamsTitle => 'No streams found';
+  String get playerNoStreamsTitle => 'Δεν βρέθηκαν streams';
 
   @override
-  String get playerFailed => 'Playback failed';
+  String get playerFailed => 'Η αναπαραγωγή απέτυχε';
 
   @override
-  String get playerTorrentNeeded => 'This stream is a torrent';
+  String get playerTorrentNeeded => 'Αυτό το stream είναι torrent';
 
   @override
-  String get playerTorrentNeededDesc =>
-      'Install the torrent addon to play magnet links and .torrent files';
+  String get playerTorrentNeededDesc => 'Εγκατάστησε το πρόσθετο torrent για να παίξεις συνδέσμους magnet και αρχεία .torrent';
 
   @override
-  String get playerOpenAddons => 'Open addons';
+  String get playerOpenAddons => 'Άνοιγμα προσθέτων';
 
   @override
-  String get playerTryAnotherStream => 'Try another stream';
+  String get playerTryAnotherStream => 'Δοκίμασε άλλο stream';
 
   @override
-  String get playerEpisodes => 'Episodes';
+  String get playerEpisodes => 'Επεισόδια';
 
   @override
-  String get playerLock => 'Lock controls';
+  String get playerLock => 'Κλείδωμα χειριστηρίων';
 
   @override
-  String get playerFullscreen => 'Fullscreen';
+  String get playerFullscreen => 'Πλήρης οθόνη';
 
   @override
-  String get settingsReader => 'Reader';
+  String get settingsReader => 'Αναγνώστης';
 
   @override
-  String get settingsReaderDesc => 'Manga, manhwa and novel reading';
+  String get settingsReaderDesc => 'Ανάγνωση manga, manhwa και novels';
 
   @override
-  String get readerChapters => 'Chapters';
+  String get readerChapters => 'Κεφάλαια';
 
   @override
-  String get readerSettingsTitle => 'Reader settings';
+  String get readerSettingsTitle => 'Ρυθμίσεις αναγνώστη';
 
   @override
-  String get readerPreviousChapter => 'Previous chapter';
+  String get readerPreviousChapter => 'Προηγούμενο κεφάλαιο';
 
   @override
-  String get readerNextChapter => 'Next chapter';
+  String get readerNextChapter => 'Επόμενο κεφάλαιο';
 
   @override
-  String get readerFirstChapter => 'This is the first chapter';
+  String get readerFirstChapter => 'Αυτό είναι το πρώτο κεφάλαιο';
 
   @override
-  String get readerLastChapter => 'You\'re all caught up';
+  String get readerLastChapter => 'Είσαι ενημερωμένος';
 
   @override
-  String get readerFailed => 'Couldn\'t open this chapter';
+  String get readerFailed => 'Δεν άνοιξε αυτό το κεφάλαιο';
 
   @override
-  String get readerNoText => 'This chapter has no text';
+  String get readerNoText => 'Αυτό το κεφάλαιο δεν έχει κείμενο';
 
   @override
-  String get readerPerTitle => 'Only for this title';
+  String get readerPerTitle => 'Μόνο για αυτόν τον τίτλο';
 
   @override
-  String get readerPerTitleDesc =>
-      'Keep these reader settings for this title only';
+  String get readerPerTitleDesc => 'Κράτα αυτές τις ρυθμίσεις αναγνώστη μόνο για αυτόν τον τίτλο';
 
   @override
-  String get readerSectionReading => 'Reading';
+  String get readerSectionReading => 'Ανάγνωση';
 
   @override
-  String get readerSectionControls => 'Controls';
+  String get readerSectionControls => 'Χειριστήρια';
 
   @override
-  String get readerSectionDisplay => 'Display';
+  String get readerSectionDisplay => 'Οθόνη';
 
   @override
   String get readerSectionNovel => 'Novel';
 
   @override
-  String get readerSectionReset => 'Reset';
+  String get readerSectionReset => 'Επαναφορά';
 
   @override
-  String get readerMode => 'Reading mode';
+  String get readerMode => 'Λειτουργία ανάγνωσης';
 
   @override
-  String get readerModeRtl => 'Right to left';
+  String get readerModeRtl => 'Δεξιά προς αριστερά';
 
   @override
-  String get readerModeLtr => 'Left to right';
+  String get readerModeLtr => 'Αριστερά προς δεξιά';
 
   @override
-  String get readerModeVertical => 'Vertical pages';
+  String get readerModeVertical => 'Κάθετες σελίδες';
 
   @override
   String get readerModeWebtoon => 'Webtoon';
 
   @override
-  String get readerModeContinuous => 'Continuous scroll';
+  String get readerModeContinuous => 'Συνεχής κύλιση';
 
   @override
-  String get readerScale => 'Image scale';
+  String get readerScale => 'Κλίμακα εικόνας';
 
   @override
-  String get readerScaleFit => 'Fit screen';
+  String get readerScaleFit => 'Προσαρμογή στην οθόνη';
 
   @override
-  String get readerScaleWidth => 'Fit width';
+  String get readerScaleWidth => 'Προσαρμογή στο πλάτος';
 
   @override
-  String get readerScaleHeight => 'Fit height';
+  String get readerScaleHeight => 'Προσαρμογή στο ύψος';
 
   @override
-  String get readerScaleOriginal => 'Original size';
+  String get readerScaleOriginal => 'Αρχικό μέγεθος';
 
   @override
-  String get readerScaleSmart => 'Smart fit';
+  String get readerScaleSmart => 'Έξυπνη προσαρμογή';
 
   @override
-  String get readerDoublePage => 'Double pages';
+  String get readerDoublePage => 'Διπλές σελίδες';
 
   @override
-  String get readerDoublePageDesc => 'Show two pages side by side in landscape';
+  String get readerDoublePageDesc => 'Εμφάνιση δύο σελίδων δίπλα δίπλα σε οριζόντια λειτουργία';
 
   @override
-  String get readerDoubleTapZoom => 'Double tap to zoom';
+  String get readerDoubleTapZoom => 'Διπλό πάτημα για ζουμ';
 
   @override
-  String get readerDoubleTapZoomDesc =>
-      'Zoom a page in and out with a double tap';
+  String get readerDoubleTapZoomDesc => 'Ζουμ μέσα και έξω σε μια σελίδα με διπλό πάτημα';
 
   @override
-  String get readerAnimate => 'Page animation';
+  String get readerAnimate => 'Κινούμενο εφέ σελίδας';
 
   @override
-  String get readerAnimateDesc => 'Animate page turns';
+  String get readerAnimateDesc => 'Κινούμενο εφέ στο γύρισμα σελίδας';
 
   @override
-  String get readerSidePadding => 'Side padding';
+  String get readerSidePadding => 'Πλευρικό περιθώριο';
 
   @override
-  String get readerSidePaddingDesc => 'Space beside the pages in percent';
+  String get readerSidePaddingDesc => 'Χώρος δίπλα στις σελίδες σε ποσοστό';
 
   @override
-  String get readerPageGap => 'Page gap';
+  String get readerPageGap => 'Κενό σελίδων';
 
   @override
-  String get readerPageGapDesc => 'Space between pages';
+  String get readerPageGapDesc => 'Χώρος ανάμεσα στις σελίδες';
 
   @override
-  String get readerAutoNext => 'Continue into the next chapter';
+  String get readerAutoNext => 'Συνέχεια στο επόμενο κεφάλαιο';
 
   @override
-  String get readerAutoNextDesc =>
-      'Load the next chapter while you read the end of this one';
+  String get readerAutoNextDesc => 'Φόρτωση του επόμενου κεφαλαίου όσο διαβάζεις το τέλος αυτού';
 
   @override
-  String get readerPreload => 'Preload pages';
+  String get readerPreload => 'Προφόρτωση σελίδων';
 
   @override
-  String get readerPreloadDesc => 'How many pages to download ahead';
+  String get readerPreloadDesc => 'Πόσες σελίδες θα κατεβαίνουν εκ των προτέρων';
 
   @override
-  String get readerTapZones => 'Tap zones';
+  String get readerTapZones => 'Ζώνες αφής';
 
   @override
-  String get readerTapDefault => 'Default';
+  String get readerTapDefault => 'Προεπιλογή';
 
   @override
-  String get readerTapLShaped => 'L-shaped';
+  String get readerTapLShaped => 'Σχήμα L';
 
   @override
-  String get readerTapKindle => 'Kindle-like';
+  String get readerTapKindle => 'Τύπου Kindle';
 
   @override
-  String get readerTapEdge => 'Edges only';
+  String get readerTapEdge => 'Μόνο άκρες';
 
   @override
-  String get readerTapOff => 'Disabled';
+  String get readerTapOff => 'Απενεργοποιημένο';
 
   @override
-  String get readerInvertTaps => 'Invert tap zones';
+  String get readerInvertTaps => 'Αντιστροφή ζωνών αφής';
 
   @override
-  String get readerInvertTapsDesc => 'Swap the previous and next areas';
+  String get readerInvertTapsDesc => 'Εναλλαγή των περιοχών προηγούμενου και επόμενου';
 
   @override
-  String get readerBackground => 'Background';
+  String get readerBackground => 'Φόντο';
 
   @override
-  String get readerBackgroundBlack => 'Black';
+  String get readerBackgroundBlack => 'Μαύρο';
 
   @override
-  String get readerBackgroundGray => 'Gray';
+  String get readerBackgroundGray => 'Γκρι';
 
   @override
-  String get readerBackgroundWhite => 'White';
+  String get readerBackgroundWhite => 'Λευκό';
 
   @override
-  String get readerBackgroundTheme => 'App theme';
+  String get readerBackgroundTheme => 'Θέμα εφαρμογής';
 
   @override
-  String get readerFilter => 'Color filter';
+  String get readerFilter => 'Φίλτρο χρώματος';
 
   @override
-  String get readerFilterNone => 'None';
+  String get readerFilterNone => 'Κανένα';
 
   @override
-  String get readerFilterGrayscale => 'Grayscale';
+  String get readerFilterGrayscale => 'Κλίμακα του γκρι';
 
   @override
-  String get readerFilterInvert => 'Invert';
+  String get readerFilterInvert => 'Αντιστροφή';
 
   @override
-  String get readerFilterSepia => 'Sepia';
+  String get readerFilterSepia => 'Σέπια';
 
   @override
-  String get readerDim => 'Dim';
+  String get readerDim => 'Σκούρο';
 
   @override
-  String get readerDimDesc => 'Darken the pages';
+  String get readerDimDesc => 'Σκουραίνει τις σελίδες';
 
   @override
-  String get readerPageNumber => 'Page number';
+  String get readerPageNumber => 'Αριθμός σελίδας';
 
   @override
-  String get readerPageNumberDesc => 'Show the page number while reading';
+  String get readerPageNumberDesc => 'Εμφάνιση του αριθμού σελίδας όσο διαβάζεις';
 
   @override
-  String get readerFullscreen => 'Fullscreen';
+  String get readerFullscreen => 'Πλήρης οθόνη';
 
   @override
-  String get readerFullscreenDesc => 'Hide the system bars';
+  String get readerFullscreenDesc => 'Απόκρυψη των γραμμών συστήματος';
 
   @override
-  String get readerCropBorders => 'Crop borders';
+  String get readerCropBorders => 'Περικοπή περιθωρίων';
 
   @override
-  String get readerCropBordersDesc =>
-      'Trim blank white or black margins from pages';
+  String get readerCropBordersDesc => 'Αφαίρεση κενών λευκών ή μαύρων περιθωρίων από τις σελίδες';
 
   @override
-  String get readerVolumeKeys => 'Volume keys turn pages';
+  String get readerVolumeKeys => 'Τα πλήκτρα έντασης γυρίζουν σελίδες';
 
   @override
-  String get readerVolumeKeysDesc =>
-      'Volume down goes forward, volume up goes back';
+  String get readerVolumeKeysDesc => 'Μείωση έντασης για μπροστά, αύξηση για πίσω';
 
   @override
-  String get readerBookmarks => 'Bookmarks';
+  String get readerBookmarks => 'Σελιδοδείκτες';
 
   @override
-  String get readerBookmarkAdd => 'Add bookmark';
+  String get readerBookmarkAdd => 'Προσθήκη σελιδοδείκτη';
 
   @override
-  String get readerBookmarkRemove => 'Remove bookmark';
+  String get readerBookmarkRemove => 'Αφαίρεση σελιδοδείκτη';
 
   @override
-  String get readerBookmarksEmpty => 'No bookmarks yet';
+  String get readerBookmarksEmpty => 'Κανένας σελιδοδείκτης ακόμα';
 
   @override
   String readerBookmarkPage(int page, int total) {
-    return 'Page $page of $total';
+    return 'Σελίδα $page από $total';
   }
 
   @override
-  String get readerAutoScroll => 'Auto scroll';
+  String get readerAutoScroll => 'Αυτόματη κύλιση';
 
   @override
-  String get readerAutoScrollStop => 'Stop auto scroll';
+  String get readerAutoScrollStop => 'Διακοπή αυτόματης κύλισης';
 
   @override
-  String get readerAutoScrollSpeed => 'Auto scroll speed';
+  String get readerAutoScrollSpeed => 'Ταχύτητα αυτόματης κύλισης';
 
   @override
-  String get readerAutoScrollSpeedDesc =>
-      'How fast pages scroll or turn on their own';
+  String get readerAutoScrollSpeedDesc => 'Πόσο γρήγορα κυλούν ή γυρίζουν μόνες τους οι σελίδες';
 
   @override
-  String get readerKeepOn => 'Keep screen on';
+  String get readerKeepOn => 'Οθόνη πάντα αναμμένη';
 
   @override
-  String get readerKeepOnDesc =>
-      'Stop the screen from turning off while reading';
+  String get readerKeepOnDesc => 'Η οθόνη δεν σβήνει όσο διαβάζεις';
 
   @override
-  String get readerOrientation => 'Orientation';
+  String get readerOrientation => 'Προσανατολισμός';
 
   @override
-  String get readerOrientationFree => 'Free';
+  String get readerOrientationFree => 'Ελεύθερος';
 
   @override
-  String get readerOrientationPortrait => 'Portrait';
+  String get readerOrientationPortrait => 'Κάθετα';
 
   @override
-  String get readerOrientationLandscape => 'Landscape';
+  String get readerOrientationLandscape => 'Οριζόντια';
 
   @override
-  String get readerSaveProgress => 'Save progress';
+  String get readerSaveProgress => 'Αποθήκευση προόδου';
 
   @override
-  String get readerSaveProgressDesc =>
-      'Remember your page and mark chapters as read';
+  String get readerSaveProgressDesc => 'Θυμάται τη σελίδα σου και σημειώνει τα κεφάλαια ως διαβασμένα';
 
   @override
-  String get readerReset => 'Reset reader settings';
+  String get readerReset => 'Επαναφορά ρυθμίσεων αναγνώστη';
 
   @override
-  String get readerResetDesc => 'Back to the defaults';
+  String get readerResetDesc => 'Πίσω στις προεπιλογές';
 
   @override
-  String get novelSize => 'Text size';
+  String get novelSize => 'Μέγεθος κειμένου';
 
   @override
-  String get novelFont => 'Font';
+  String get novelFont => 'Γραμματοσειρά';
 
   @override
-  String get novelLineHeight => 'Line height';
+  String get novelLineHeight => 'Ύψος γραμμής';
 
   @override
-  String get novelParagraph => 'Paragraph spacing';
+  String get novelParagraph => 'Απόσταση παραγράφων';
 
   @override
-  String get novelMargin => 'Margins';
+  String get novelMargin => 'Περιθώρια';
 
   @override
-  String get novelTheme => 'Reader theme';
+  String get novelTheme => 'Θέμα αναγνώστη';
 
   @override
-  String get novelThemeApp => 'App theme';
+  String get novelThemeApp => 'Θέμα εφαρμογής';
 
   @override
-  String get novelThemeLight => 'Light';
+  String get novelThemeLight => 'Φωτεινό';
 
   @override
-  String get novelThemeSepia => 'Sepia';
+  String get novelThemeSepia => 'Σέπια';
 
   @override
-  String get novelThemeDark => 'Dark';
+  String get novelThemeDark => 'Σκοτεινό';
 
   @override
-  String get novelThemeBlack => 'Black';
+  String get novelThemeBlack => 'Μαύρο';
 
   @override
-  String get novelJustify => 'Justify text';
+  String get novelJustify => 'Πλήρης στοίχιση κειμένου';
 
   @override
-  String get novelJustifyDesc => 'Align text to both edges';
+  String get novelJustifyDesc => 'Στοίχιση κειμένου και στις δύο άκρες';
 
   @override
-  String get trackProgressTitle => 'Save progress?';
+  String get trackProgressTitle => 'Αποθήκευση προόδου;';
 
   @override
   String trackProgressAnime(String name) {
-    return 'Track $name on your list as you watch? Choose \"This device only\" to keep it local, or No to save nothing.';
+    return 'Να καταγράφεται το $name στη λίστα σου καθώς βλέπεις; Διάλεξε «Μόνο αυτή η συσκευή» για να μείνει τοπικά, ή Όχι για να μη σωθεί τίποτα.';
   }
 
   @override
   String trackProgressManga(String name) {
-    return 'Track $name on your list when you finish a chapter? Choose \"This device only\" to keep it local, or No to save nothing.';
+    return 'Να καταγράφεται το $name στη λίστα σου όταν τελειώνεις ένα κεφάλαιο; Διάλεξε «Μόνο αυτή η συσκευή» για να μείνει τοπικά, ή Όχι για να μη σωθεί τίποτα.';
   }
 
   @override
-  String get trackProgressRemember => 'Remember my choice';
+  String get trackProgressRemember => 'Να θυμάσαι την επιλογή μου';
 
   @override
-  String get trackProgressYes => 'Save';
+  String get trackProgressYes => 'Αποθήκευση';
 
   @override
-  String get trackProgressReset =>
-      'Save progress prompt reset for this type, it will ask again';
+  String get trackProgressReset => 'Η ερώτηση αποθήκευσης προόδου επαναφέρθηκε για αυτόν τον τύπο, θα ρωτήσει ξανά';
 
   @override
-  String get trackProgressNo => 'No';
+  String get trackProgressNo => 'Όχι';
 
   @override
-  String get trackProgressOff => 'Off';
+  String get trackProgressOff => 'Ανενεργό';
 
   @override
-  String get trackProgressLocal => 'This device only';
+  String get trackProgressLocal => 'Μόνο αυτή η συσκευή';
 
   @override
-  String get trackProgressSettingAnime => 'Track anime progress';
+  String get trackProgressSettingAnime => 'Καταγραφή προόδου anime';
 
   @override
-  String get trackProgressSettingManga => 'Track manga and novel progress';
+  String get trackProgressSettingManga => 'Καταγραφή προόδου manga και novel';
 
   @override
-  String get trackProgressSettingDesc =>
-      'What to do when you open an episode or finish a chapter';
+  String get trackProgressSettingDesc => 'Τι να γίνεται όταν ανοίγεις επεισόδιο ή τελειώνεις κεφάλαιο';
 
   @override
-  String get trackProgressAsk => 'Ask';
+  String get trackProgressAsk => 'Ερώτηση';
 
   @override
-  String get trackProgressAlways => 'Always';
+  String get trackProgressAlways => 'Πάντα';
 
   @override
-  String get trackProgressNever => 'Never';
+  String get trackProgressNever => 'Ποτέ';
 
   @override
-  String get dantotsuImport => 'Import from Dantotsu';
+  String get dantotsuImport => 'Εισαγωγή από το Dantotsu';
 
   @override
-  String get dantotsuImportDesc =>
-      'Read a Dantotsu settings backup (.ani, or encrypted .sani)';
+  String get dantotsuImportDesc => 'Ανάγνωση αντιγράφου ρυθμίσεων Dantotsu (.ani ή κρυπτογραφημένο .sani)';
 
   @override
-  String get dantotsuPick => 'Choose a Dantotsu backup';
+  String get dantotsuPick => 'Επίλεξε αντίγραφο Dantotsu';
 
   @override
-  String get dantotsuNothing => 'Nothing in this file can be imported';
+  String get dantotsuNothing => 'Τίποτα σε αυτό το αρχείο δεν μπορεί να εισαχθεί';
 
   @override
-  String get dantotsuApply => 'Import selected';
+  String get dantotsuApply => 'Εισαγωγή επιλεγμένων';
 
   @override
   String dantotsuDone(int done, int total) {
-    return 'Imported $done of $total';
+    return 'Εισήχθησαν $done από $total';
   }
 
   @override
-  String get dantotsuGroupAccounts => 'Accounts';
+  String get dantotsuGroupAccounts => 'Λογαριασμοί';
 
   @override
-  String get dantotsuGroupAppearance => 'Appearance';
+  String get dantotsuGroupAppearance => 'Εμφάνιση';
 
   @override
-  String get dantotsuGroupExtensions => 'Extensions';
+  String get dantotsuGroupExtensions => 'Επεκτάσεις';
 
   @override
-  String get dantotsuGroupApp => 'App';
+  String get dantotsuGroupApp => 'Εφαρμογή';
 
   @override
-  String get dantotsuGroupPlayer => 'Player';
+  String get dantotsuGroupPlayer => 'Πρόγραμμα αναπαραγωγής';
 
   @override
-  String get dantotsuAnilist => 'AniList login';
+  String get dantotsuAnilist => 'Σύνδεση AniList';
 
   @override
-  String get dantotsuMal => 'MyAnimeList login';
+  String get dantotsuMal => 'Σύνδεση MyAnimeList';
 
   @override
-  String get dantotsuDiscord => 'Discord Rich Presence token';
+  String get dantotsuDiscord => 'Token Discord Rich Presence';
 
   @override
-  String get dantotsuTheme => 'Theme';
+  String get dantotsuTheme => 'Θέμα';
 
   @override
-  String get dantotsuReposAnime => 'Anime extension repositories';
+  String get dantotsuReposAnime => 'Αποθετήρια επεκτάσεων anime';
 
   @override
-  String get dantotsuReposManga => 'Manga extension repositories';
+  String get dantotsuReposManga => 'Αποθετήρια επεκτάσεων manga';
 
   @override
-  String get dantotsuReposNovel => 'Novel extension repositories';
+  String get dantotsuReposNovel => 'Αποθετήρια επεκτάσεων novel';
 
   @override
-  String get dantotsuUpdates => 'Update check';
+  String get dantotsuUpdates => 'Έλεγχος ενημερώσεων';
 
   @override
-  String get dantotsuComments => 'Comments';
+  String get dantotsuComments => 'Σχόλια';
 
   @override
-  String get dantotsuActivity => 'AniList notification polling';
+  String get dantotsuActivity => 'Polling ειδοποιήσεων AniList';
 
   @override
-  String get dantotsuDns => 'DNS provider';
+  String get dantotsuDns => 'Πάροχος DNS';
 
   @override
-  String get dantotsuPlayer => 'Player speed and subtitle colours';
+  String get dantotsuPlayer => 'Ταχύτητα προγράμματος και χρώματα υποτίτλων';
 
   @override
-  String get dantotsuWarning =>
-      'This file holds login tokens. Keep it private.';
+  String get dantotsuWarning => 'Αυτό το αρχείο περιέχει tokens σύνδεσης. Κράτα το ιδιωτικό.';
 
   @override
-  String get novelIndent => 'Indent paragraphs';
+  String get novelIndent => 'Εσοχή παραγράφων';
 
   @override
-  String get novelIndentDesc => 'Start each paragraph with a first-line indent';
+  String get novelIndentDesc => 'Κάθε παράγραφος ξεκινά με εσοχή στην πρώτη γραμμή';
 
   @override
-  String get novelLetterSpacing => 'Letter spacing';
+  String get novelLetterSpacing => 'Απόσταση γραμμάτων';
 
   @override
-  String get novelSectionTranslate => 'Translation';
+  String get novelSectionTranslate => 'Μετάφραση';
 
   @override
-  String get sectionExperimental => 'Experimental';
+  String get sectionExperimental => 'Πειραματικό';
 
   @override
-  String get kitsuGraphqlDetail => 'Faster detail pages (GraphQL)';
+  String get kitsuGraphqlDetail => 'Ταχύτερες σελίδες λεπτομερειών (GraphQL)';
 
   @override
-  String get kitsuGraphqlDetailDesc =>
-      'Load a title with its characters, staff and your entry in one request';
+  String get kitsuGraphqlDetailDesc => 'Φόρτωση τίτλου με τους χαρακτήρες, το προσωπικό και την εγγραφή σου με ένα αίτημα';
 
   @override
-  String get togetherTitle => 'Watch together';
+  String get togetherTitle => 'Παρακολούθηση μαζί';
 
   @override
-  String get togetherIntro =>
-      'Paste the room link your friend sent you. You join straight away and the player opens when they start watching.';
+  String get togetherIntro => 'Επικόλλησε τον σύνδεσμο δωματίου που σου έστειλε ο φίλος σου. Μπαίνεις αμέσως και το πρόγραμμα ανοίγει όταν αρχίσουν να βλέπουν.';
 
   @override
-  String get togetherName => 'Your name';
+  String get togetherName => 'Το όνομά σου';
 
   @override
-  String get togetherRoom => 'Room';
+  String get togetherRoom => 'Δωμάτιο';
 
   @override
-  String get togetherNewRoom => 'New random room';
+  String get togetherNewRoom => 'Νέο τυχαίο δωμάτιο';
 
   @override
-  String get togetherServer => 'Server';
+  String get togetherServer => 'Διακομιστής';
 
   @override
-  String get togetherPort => 'Port';
+  String get togetherPort => 'Θύρα';
 
   @override
-  String get togetherPassword => 'Server password (optional)';
+  String get togetherPassword => 'Κωδικός διακομιστή (προαιρετικό)';
 
   @override
-  String get togetherPublicNote =>
-      'Public servers have no password and rooms are open. Use a long room name and share it only with friends.';
+  String get togetherPublicNote => 'Οι δημόσιοι διακομιστές δεν έχουν κωδικό και τα δωμάτια είναι ανοιχτά. Χρησιμοποίησε μεγάλο όνομα δωματίου και μοιράσου το μόνο με φίλους.';
 
   @override
-  String get togetherConnect => 'Connect';
+  String get togetherConnect => 'Σύνδεση';
 
   @override
-  String get togetherConnecting => 'Connecting…';
+  String get togetherConnecting => 'Σύνδεση…';
 
   @override
-  String get togetherLeave => 'Leave room';
+  String get togetherLeave => 'Αποχώρηση από το δωμάτιο';
 
   @override
-  String get togetherLeftRoom => 'You left the room';
+  String get togetherLeftRoom => 'Αποχώρησες από το δωμάτιο';
 
   @override
-  String get togetherReady => 'Ready';
+  String get togetherReady => 'Έτοιμος';
 
   @override
-  String get togetherYou => 'You';
+  String get togetherYou => 'Εσύ';
 
   @override
-  String get togetherNoChat => 'No messages yet';
+  String get togetherNoChat => 'Κανένα μήνυμα ακόμα';
 
   @override
-  String get togetherChatHint => 'Message';
+  String get togetherChatHint => 'Μήνυμα';
 
   @override
-  String get togetherCopyInvite => 'Copy invite';
+  String get togetherCopyInvite => 'Αντιγραφή πρόσκλησης';
 
   @override
-  String get togetherInviteCopied => 'Server and room copied';
+  String get togetherInviteCopied => 'Ο διακομιστής και το δωμάτιο αντιγράφηκαν';
 
   @override
-  String get togetherFileMismatch => 'Different file or length';
+  String get togetherFileMismatch => 'Διαφορετικό αρχείο ή διάρκεια';
 
   @override
-  String get togetherConnectionLost => 'Connection lost';
+  String get togetherConnectionLost => 'Η σύνδεση χάθηκε';
 
   @override
   String togetherConnectedTo(String room) {
-    return 'Connected to $room';
+    return 'Συνδέθηκες στο $room';
   }
 
   @override
   String togetherFailed(String error) {
-    return 'Couldn\'t connect: $error';
+    return 'Δεν έγινε σύνδεση: $error';
   }
 
   @override
   String togetherJoined(String name) {
-    return '$name joined';
+    return 'Ο/Η $name μπήκε';
   }
 
   @override
   String togetherLeft(String name) {
-    return '$name left';
+    return 'Ο/Η $name έφυγε';
   }
 
   @override
   String togetherPaused(String name) {
-    return '$name paused';
+    return 'Ο/Η $name έκανε παύση';
   }
 
   @override
   String togetherResumed(String name) {
-    return '$name resumed';
+    return 'Ο/Η $name συνέχισε';
   }
 
   @override
   String togetherSeeked(String name, String time) {
-    return '$name jumped to $time';
+    return 'Ο/Η $name πήγε στο $time';
   }
 
   @override
   String togetherOtherService(String service) {
-    return 'The host is on $service, syncing is off';
+    return 'Ο οικοδεσπότης είναι στο $service, ο συγχρονισμός είναι κλειστός';
   }
 
   @override
-  String get togetherFollowFailed =>
-      'Couldn\'t open the host\'s episode. Open it yourself.';
+  String get togetherFollowFailed => 'Δεν άνοιξε το επεισόδιο του οικοδεσπότη. Άνοιξέ το μόνος σου.';
 
   @override
-  String get togetherHostRole => 'Host a room';
+  String get togetherHostRole => 'Δημιουργία δωματίου';
 
   @override
-  String get togetherJoinRole => 'Join a room';
+  String get togetherJoinRole => 'Συμμετοχή σε δωμάτιο';
 
   @override
-  String get togetherFollow => 'Follow the host\'s episode';
+  String get togetherFollow => 'Ακολούθηση επεισοδίου οικοδεσπότη';
 
   @override
-  String get togetherFollowDesc =>
-      'Opens and switches episodes automatically when you use the same service';
+  String get togetherFollowDesc => 'Ανοίγει και αλλάζει επεισόδια αυτόματα όταν χρησιμοποιείτε την ίδια υπηρεσία';
 
   @override
-  String get togetherOpenHost => 'Open host\'s episode';
+  String get togetherOpenHost => 'Άνοιγμα επεισοδίου οικοδεσπότη';
 
   @override
   String togetherHostWatching(String title) {
-    return 'Host: $title';
+    return 'Οικοδεσπότης: $title';
   }
 
   @override
-  String get togetherLiveChat => 'Live chat';
+  String get togetherLiveChat => 'Ζωντανή συνομιλία';
 
   @override
-  String get togetherShowChat => 'Show live chat';
+  String get togetherShowChat => 'Εμφάνιση ζωντανής συνομιλίας';
 
   @override
-  String get togetherWaitingHost => 'Waiting for the host to start an episode';
+  String get togetherWaitingHost => 'Αναμονή να ξεκινήσει ο οικοδεσπότης ένα επεισόδιο';
 
   @override
-  String get togetherDifferentService =>
-      'The host is on another service, syncing is off';
+  String get togetherDifferentService => 'Ο οικοδεσπότης είναι σε άλλη υπηρεσία, ο συγχρονισμός είναι κλειστός';
 
   @override
-  String get togetherNoSource =>
-      'Install an anime extension to follow the host';
+  String get togetherNoSource => 'Εγκατάστησε μια επέκταση anime για να ακολουθείς τον οικοδεσπότη';
 
   @override
   String togetherNoMatch(String source) {
-    return '$source has no match for the host\'s title';
+    return 'Το $source δεν έχει αντιστοιχία για τον τίτλο του οικοδεσπότη';
   }
 
   @override
   String togetherNoEpisode(String source) {
-    return '$source doesn\'t have the host\'s episode';
+    return 'Το $source δεν έχει το επεισόδιο του οικοδεσπότη';
   }
 
   @override
-  String get togetherRoomLink => 'Room link';
+  String get togetherRoomLink => 'Σύνδεσμος δωματίου';
 
   @override
-  String get togetherBadLink => 'That isn\'t a room link';
+  String get togetherBadLink => 'Αυτός δεν είναι σύνδεσμος δωματίου';
 
   @override
-  String get togetherHostClosed => 'The host closed the room';
+  String get togetherHostClosed => 'Ο οικοδεσπότης έκλεισε το δωμάτιο';
 
   @override
-  String get togetherHostBadge => 'Host';
+  String get togetherHostBadge => 'Οικοδεσπότης';
 
   @override
-  String get togetherNowPlaying => 'Now playing';
+  String get togetherNowPlaying => 'Παίζει τώρα';
 
   @override
   String togetherWatchingCount(int count) {
-    return '$count watching';
+    return '$count παρακολουθούν';
   }
 
   @override
   String togetherWantsPause(String user) {
-    return '$user wants to pause';
+    return 'Ο/Η $user θέλει παύση';
   }
 
   @override
   String togetherWantsResume(String user) {
-    return '$user wants to resume';
+    return 'Ο/Η $user θέλει συνέχεια';
   }
 
   @override
-  String get togetherChip => 'Together';
+  String get togetherChip => 'Μαζί';
 
   @override
-  String get togetherSettingsDesc => 'Join a friend\'s room with a link';
+  String get togetherSettingsDesc => 'Μπες στο δωμάτιο ενός φίλου με σύνδεσμο';
 
   @override
-  String get togetherNoPlayer =>
-      'Open an episode and it syncs with the room automatically. Chat and the member list work right now.';
+  String get togetherNoPlayer => 'Άνοιξε ένα επεισόδιο και συγχρονίζεται αυτόματα με το δωμάτιο. Η συνομιλία και η λίστα μελών δουλεύουν ήδη.';
 
   @override
   String togetherWatching(String name, String file) {
-    return '$name is watching $file';
+    return 'Ο/Η $name βλέπει $file';
   }
 
   @override
-  String get novelBilingual => 'Show original and translation';
+  String get novelBilingual => 'Εμφάνιση πρωτοτύπου και μετάφρασης';
 
   @override
-  String get novelBilingualDesc =>
-      'Each paragraph shows the original text with its translation below it';
+  String get novelBilingualDesc => 'Κάθε παράγραφος δείχνει το αρχικό κείμενο με τη μετάφραση από κάτω';
 
   @override
-  String get novelTranslateTo => 'Translate to';
+  String get novelTranslateTo => 'Μετάφραση σε';
 
   @override
-  String get novelTranslateOff => 'Off';
+  String get novelTranslateOff => 'Ανενεργό';
 
   @override
-  String get novelSectionSpeech => 'Text to speech';
+  String get novelSectionSpeech => 'Κείμενο σε ομιλία';
 
   @override
-  String get novelSpeechRate => 'Speech speed';
+  String get novelSpeechRate => 'Ταχύτητα ομιλίας';
 
   @override
-  String get novelSpeechPitch => 'Speech pitch';
+  String get novelSpeechPitch => 'Τόνος ομιλίας';
 
   @override
-  String get novelSpeak => 'Read aloud';
+  String get novelSpeak => 'Ανάγνωση φωναχτά';
 
   @override
-  String get novelSpeakStop => 'Stop reading aloud';
+  String get novelSpeakStop => 'Διακοπή ανάγνωσης φωναχτά';
 
   @override
-  String get novelTranslate => 'Translate chapter';
+  String get novelTranslate => 'Μετάφραση κεφαλαίου';
 
   @override
-  String get novelTranslateShowOriginal => 'Show original';
+  String get novelTranslateShowOriginal => 'Εμφάνιση πρωτοτύπου';
 
   @override
-  String get novelTranslating => 'Translating…';
+  String get novelTranslating => 'Μετάφραση…';
 
   @override
   String novelTranslateFailed(String error) {
-    return 'Translation failed: $error';
+    return 'Η μετάφραση απέτυχε: $error';
   }
 
   @override
-  String get novelSpeechUnavailable =>
-      'Text to speech is not available on this device';
+  String get novelSpeechUnavailable => 'Το κείμενο σε ομιλία δεν είναι διαθέσιμο σε αυτή τη συσκευή';
 
   @override
-  String get novelSpeechVoice => 'Voice';
+  String get novelSpeechVoice => 'Φωνή';
 
   @override
-  String get novelSpeechVoiceDefault => 'System default';
+  String get novelSpeechVoiceDefault => 'Προεπιλογή συστήματος';
 
   @override
-  String get novelSpeakPrevious => 'Previous line';
+  String get novelSpeakPrevious => 'Προηγούμενη γραμμή';
 
   @override
-  String get novelSpeakNext => 'Next line';
+  String get novelSpeakNext => 'Επόμενη γραμμή';
 
   @override
-  String get novelTapPaging => 'Tap edges to turn page';
+  String get novelTapPaging => 'Πάτα στις άκρες για αλλαγή σελίδας';
 
   @override
-  String get novelTapPagingDesc =>
-      'Tap the left or right side to scroll a page, the middle shows the controls';
+  String get novelTapPagingDesc => 'Πάτα αριστερά ή δεξιά για κύλιση σελίδας, η μέση δείχνει τα χειριστήρια';
 
   @override
   String novelMinutesLeft(int count) {
-    return '$count min left';
+    return 'απομένουν $count λ.';
   }
 
   @override
-  String get novelBold => 'Bold text';
+  String get novelBold => 'Έντονο κείμενο';
 
   @override
-  String get novelBoldDesc => 'Use a heavier weight';
+  String get novelBoldDesc => 'Χρήση πιο βαριάς γραμματοσειράς';
 
   @override
   String readerFinishedChapter(String chapter) {
-    return 'Finished $chapter';
+    return 'Τελείωσε το $chapter';
   }
 
   @override
   String readerNextUp(String chapter) {
-    return 'Next: $chapter';
+    return 'Επόμενο: $chapter';
   }
 
   @override
   String readerPreviousUp(String chapter) {
-    return 'Previous: $chapter';
+    return 'Προηγούμενο: $chapter';
   }
 
   @override
-  String get readerNoPages => 'This chapter has no pages';
+  String get readerNoPages => 'Αυτό το κεφάλαιο δεν έχει σελίδες';
 
   @override
-  String get readerLoadingPages => 'Loading pages…';
+  String get readerLoadingPages => 'Φόρτωση σελίδων…';
 
   @override
-  String get readerSlowPage => 'Still loading this page…';
+  String get readerSlowPage => 'Η σελίδα φορτώνει ακόμα…';
 
   @override
-  String get readerPageFailed => 'Couldn\'t load this page';
+  String get readerPageFailed => 'Δεν φορτώθηκε αυτή η σελίδα';
 
   @override
-  String get playerShowComments => 'Show comments';
+  String get playerShowComments => 'Εμφάνιση σχολίων';
 
   @override
-  String get playerHideComments => 'Hide comments';
+  String get playerHideComments => 'Απόκρυψη σχολίων';
 
   @override
-  String get playerSubtitles => 'Subtitles';
+  String get playerSubtitles => 'Υπότιτλοι';
 
   @override
-  String get playerSubtitlesOff => 'Subtitles off';
+  String get playerSubtitlesOff => 'Υπότιτλοι ανενεργοί';
 
   @override
-  String get playerAudio => 'Audio';
+  String get playerAudio => 'Ήχος';
 
   @override
-  String get playerAddSubtitle => 'Add subtitle file';
+  String get playerAddSubtitle => 'Προσθήκη αρχείου υποτίτλων';
 
   @override
-  String get playerAddAudio => 'Add audio file';
+  String get playerAddAudio => 'Προσθήκη αρχείου ήχου';
 
   @override
-  String get playerChapters => 'Chapters';
+  String get playerChapters => 'Κεφάλαια';
 
   @override
-  String get playerNoChapters => 'No chapters';
+  String get playerNoChapters => 'Κανένα κεφάλαιο';
 
   @override
-  String get playerTimestamp => 'Timestamp';
+  String get playerTimestamp => 'Χρονοσήμανση';
 
   @override
-  String get playerAutoPlayDelay => 'Next episode countdown';
+  String get playerAutoPlayDelay => 'Αντίστροφη μέτρηση επόμενου επεισοδίου';
 
   @override
-  String get playerWatchedAt => 'Count as watched at';
+  String get playerWatchedAt => 'Μέτρηση ως είδα στο';
 
   @override
   String playerNextIn(int seconds) {
-    return 'Next episode in ${seconds}s';
+    return 'Επόμενο επεισόδιο σε $secondsδ';
   }
 
   @override
-  String get playerPlayNow => 'Play now';
+  String get playerPlayNow => 'Αναπαραγωγή τώρα';
 
   @override
   String playerAutoSkipOn(String name) {
-    return '$name: will skip automatically for this title';
+    return '$name: θα παραλείπεται αυτόματα για αυτόν τον τίτλο';
   }
 
   @override
   String playerAutoSkipOff(String name) {
-    return '$name: will not skip automatically for this title';
+    return '$name: δεν θα παραλείπεται αυτόματα για αυτόν τον τίτλο';
   }
 
   @override
-  String get playerAudioLanguage => 'Preferred audio language';
+  String get playerAudioLanguage => 'Προτιμώμενη γλώσσα ήχου';
 
   @override
-  String get playerLanguageOrderHint =>
-      'Separate languages with commas. The first one found is used.';
+  String get playerLanguageOrderHint => 'Χώρισε τις γλώσσες με κόμματα. Χρησιμοποιείται η πρώτη που βρεθεί.';
 
   @override
   String get playerPip => 'Picture in picture';
 
   @override
-  String get playerPipRestore => 'Back to the player';
+  String get playerPipRestore => 'Πίσω στο πρόγραμμα αναπαραγωγής';
 
   @override
-  String get playerAutoPip => 'Picture in picture on leave';
+  String get playerAutoPip => 'Picture in picture κατά την έξοδο';
 
   @override
-  String get playerAutoPipDesc =>
-      'Keep playing in a small window when you leave the app';
+  String get playerAutoPipDesc => 'Συνέχιση αναπαραγωγής σε μικρό παράθυρο όταν βγαίνεις από την εφαρμογή';
 
   @override
   String playerAutoPlaying(String title) {
-    return 'Playing $title next…';
+    return 'Επόμενο: $title…';
   }
 
   @override
   String playerShadersFailed(String error) {
-    return 'Couldn\'t install the shaders: $error';
+    return 'Δεν εγκαταστάθηκαν τα shaders: $error';
   }
 
   @override
   String playerChapter(int number) {
-    return 'Chapter $number';
+    return 'Κεφάλαιο $number';
   }
 
   @override
-  String get playerPerTitle => 'Only for this title';
+  String get playerPerTitle => 'Μόνο για αυτόν τον τίτλο';
 
   @override
-  String get playerPerTitleDesc =>
-      'Keep these options for this title and leave your defaults alone';
+  String get playerPerTitleDesc => 'Κράτα αυτές τις επιλογές για αυτόν τον τίτλο και άφησε τις προεπιλογές σου ήσυχες';
 
   @override
-  String get playerHoldSpeed => 'Hold speed';
+  String get playerHoldSpeed => 'Ταχύτητα κρατήματος';
 
   @override
-  String get playerAudioOutput => 'Audio output';
+  String get playerAudioOutput => 'Έξοδος ήχου';
 
   @override
-  String get fontAppDefault => 'App font';
+  String get fontAppDefault => 'Γραμματοσειρά εφαρμογής';
 
   @override
-  String get fontImport => 'Import font';
+  String get fontImport => 'Εισαγωγή γραμματοσειράς';
 
   @override
-  String get fontSample => 'The quick brown fox jumps over the lazy dog';
+  String get fontSample => 'Ξεσκεπάζω τη ψυχοφθόρα βδελυγμία';
 
   @override
-  String get playerSubtitleDelay => 'Subtitle delay';
+  String get playerSubtitleDelay => 'Καθυστέρηση υποτίτλων';
 
   @override
-  String get playerAudioDelay => 'Audio delay';
+  String get playerAudioDelay => 'Καθυστέρηση ήχου';
 
   @override
-  String get playerDelayReset => 'Reset';
+  String get playerDelayReset => 'Επαναφορά';
 
   @override
-  String get playerOnlineSubtitles => 'Online subtitles';
+  String get playerOnlineSubtitles => 'Υπότιτλοι online';
 
   @override
-  String get playerOnlineSearchHint => 'Title and episode';
+  String get playerOnlineSearchHint => 'Τίτλος και επεισόδιο';
 
   @override
-  String get playerOnlineNone => 'No subtitles found';
+  String get playerOnlineNone => 'Δεν βρέθηκαν υπότιτλοι';
 
   @override
   String playerOnlineFailed(String error) {
-    return 'Subtitle search failed: $error';
+    return 'Η αναζήτηση υποτίτλων απέτυχε: $error';
   }
 
   @override
   String playerOnlineDownloadFailed(String error) {
-    return 'Could not download this subtitle: $error';
+    return 'Δεν κατέβηκε αυτός ο υπότιτλος: $error';
   }
 
   @override
-  String get playerOnlineMatch => 'Matches this file';
+  String get playerOnlineMatch => 'Ταιριάζει με αυτό το αρχείο';
 
   @override
-  String get playerOnlineEpisode => 'Episode match';
+  String get playerOnlineEpisode => 'Αντιστοίχιση επεισοδίου';
 
   @override
   String playerOnlineDownloads(int count) {
-    return '$count downloads';
+    return '$count λήψεις';
   }
 
   @override
-  String get playerSeekPreview => 'Seek preview';
+  String get playerSeekPreview => 'Προεπισκόπηση μετακίνησης';
 
   @override
-  String get playerSeekPreviewDesc =>
-      'Show a small frame preview above the seek bar while scrubbing. Opens a second low resolution decoder, so it uses extra data on streams.';
+  String get playerSeekPreviewDesc => 'Εμφάνιση μικρής προεπισκόπησης καρέ πάνω από τη μπάρα κατά τη μετακίνηση. Ανοίγει δεύτερο αποκωδικοποιητή χαμηλής ανάλυσης, οπότε χρησιμοποιεί επιπλέον δεδομένα στα streams.';
 
   @override
-  String get playerSettingsChip => 'Settings';
+  String get playerSettingsChip => 'Ρυθμίσεις';
 
   @override
-  String get playerAudioDevice => 'Audio device';
+  String get playerAudioDevice => 'Συσκευή ήχου';
 
   @override
-  String get settingsDownloads => 'Downloads';
+  String get settingsDownloads => 'Λήψεις';
 
   @override
-  String get settingsDownloadsDesc =>
-      'Offline episodes, queue and offline mode';
+  String get settingsDownloadsDesc => 'Επεισόδια εκτός σύνδεσης, ουρά και λειτουργία εκτός σύνδεσης';
 
   @override
-  String get downloadsTitle => 'Downloads';
+  String get downloadsTitle => 'Λήψεις';
 
   @override
-  String get downloadsOpenDesc =>
-      'See the queue and everything saved on this device';
+  String get downloadsOpenDesc => 'Δες την ουρά και ό,τι είναι αποθηκευμένο σε αυτή τη συσκευή';
 
   @override
-  String get downloadTitle => 'Download';
+  String get downloadTitle => 'Λήψη';
 
   @override
-  String get downloadAlready => 'Already downloaded or in the queue';
+  String get downloadAlready => 'Έχει ήδη κατέβει ή είναι στην ουρά';
 
   @override
-  String get downloadPickStream => 'Download which stream?';
+  String get downloadPickStream => 'Ποιο stream να κατέβει;';
 
   @override
-  String get downloadPickSubtitle => 'Download which subtitle?';
+  String get downloadPickSubtitle => 'Ποιος υπότιτλος να κατέβει;';
 
   @override
-  String get downloadPickAudio => 'Download which audio track?';
+  String get downloadPickAudio => 'Ποιο κομμάτι ήχου να κατέβει;';
 
   @override
-  String get downloadNoAudio => 'No extra audio';
+  String get downloadNoAudio => 'Χωρίς επιπλέον ήχο';
 
   @override
-  String get downloadAudio => 'Audio';
+  String get downloadAudio => 'Ήχος';
 
   @override
-  String get downloadNoSubtitle => 'No subtitle';
+  String get downloadNoSubtitle => 'Χωρίς υπότιτλο';
 
   @override
-  String get downloadHlsNeedsFfmpeg =>
-      'This stream is an HLS playlist. Downloading it needs the FFmpeg addon.';
+  String get downloadHlsNeedsFfmpeg => 'Αυτό το stream είναι playlist HLS. Για τη λήψη χρειάζεται το πρόσθετο FFmpeg.';
 
   @override
-  String get downloadSourceMissing =>
-      'The source for this episode is not installed';
+  String get downloadSourceMissing => 'Η πηγή για αυτό το επεισόδιο δεν είναι εγκατεστημένη';
 
   @override
-  String get downloadWaitingConnection => 'Waiting for a connection';
+  String get downloadWaitingConnection => 'Αναμονή για σύνδεση';
 
   @override
-  String get downloadSubtitles => 'Subtitles';
+  String get downloadSubtitles => 'Υπότιτλοι';
 
   @override
-  String get downloadDownloaded => 'Downloaded';
+  String get downloadDownloaded => 'Κατέβηκε';
 
   @override
-  String get downloadOffline => 'Offline';
+  String get downloadOffline => 'Εκτός σύνδεσης';
 
   @override
-  String get downloadDelete => 'Delete download';
+  String get downloadDelete => 'Διαγραφή λήψης';
 
   @override
-  String get downloadCancel => 'Cancel';
+  String get downloadCancel => 'Ακύρωση';
 
   @override
-  String get downloadPause => 'Pause';
+  String get downloadPause => 'Παύση';
 
   @override
-  String get downloadPaused => 'Paused';
+  String get downloadPaused => 'Σε παύση';
 
   @override
-  String get downloadResume => 'Resume';
+  String get downloadResume => 'Συνέχεια';
 
   @override
-  String get downloadPauseAll => 'Pause all';
+  String get downloadPauseAll => 'Παύση όλων';
 
   @override
-  String get downloadResumeAll => 'Resume all';
+  String get downloadResumeAll => 'Συνέχεια όλων';
 
   @override
-  String get downloadQueuedState => 'Waiting in the queue';
+  String get downloadQueuedState => 'Αναμονή στην ουρά';
 
   @override
-  String get downloadResolving => 'Getting the stream…';
+  String get downloadResolving => 'Λήψη του stream…';
 
   @override
-  String get downloadUsedFallback => 'No matching stream, used the first one';
+  String get downloadUsedFallback => 'Κανένα ταιριαστό stream, χρησιμοποιήθηκε το πρώτο';
 
   @override
-  String get downloadTabQueue => 'Queue';
+  String get downloadTabQueue => 'Ουρά';
 
   @override
-  String get downloadTabDone => 'Done';
+  String get downloadTabDone => 'Έτοιμο';
 
   @override
-  String get downloadTabFailed => 'Failed';
+  String get downloadTabFailed => 'Απέτυχε';
 
   @override
-  String get downloadEmptyQueue => 'Nothing is downloading';
+  String get downloadEmptyQueue => 'Δεν κατεβαίνει τίποτα';
 
   @override
-  String get downloadEmptyDone => 'Nothing downloaded yet';
+  String get downloadEmptyDone => 'Τίποτα δεν έχει κατέβει ακόμα';
 
   @override
-  String get downloadEmptyFailed => 'No failed downloads';
+  String get downloadEmptyFailed => 'Καμία αποτυχημένη λήψη';
 
   @override
-  String get downloadNext => 'Next episode';
+  String get downloadNext => 'Επόμενο επεισόδιο';
 
   @override
   String downloadNextN(int count) {
-    return 'Next $count episodes';
+    return 'Επόμενα $count επεισόδια';
   }
 
   @override
   String downloadUnwatched(int count) {
-    return 'All unwatched ($count)';
+    return 'Όλα όσα δεν είδες ($count)';
   }
 
   @override
   String downloadRange(int count) {
-    return 'This range ($count)';
+    return 'Αυτό το εύρος ($count)';
   }
 
   @override
   String downloadAll(int count) {
-    return 'All episodes ($count)';
+    return 'Όλα τα επεισόδια ($count)';
   }
 
   @override
@@ -5921,97 +5782,91 @@ class AppLocalizationsEl extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count episodes queued',
-      one: '1 episode queued',
+      other: '$count επεισόδια στην ουρά',
+      one: '1 επεισόδιο στην ουρά',
     );
     return '$_temp0';
   }
 
   @override
   String downloadFinished(String name) {
-    return '$name downloaded';
+    return 'Το $name κατέβηκε';
   }
 
   @override
   String downloadFailedBody(String name) {
-    return '$name failed to download';
+    return 'Το $name απέτυχε να κατέβει';
   }
 
   @override
   String downloadStorage(String size) {
-    return '$size used by downloads';
+    return '$size σε χρήση από λήψεις';
   }
 
   @override
-  String get downloadQueueHeader => 'Queue';
+  String get downloadQueueHeader => 'Ουρά';
 
   @override
-  String get downloadParallel => 'Downloads at once';
+  String get downloadParallel => 'Ταυτόχρονες λήψεις';
 
   @override
-  String get downloadParallelDesc =>
-      'Run one download at a time or several together';
+  String get downloadParallelDesc => 'Μία λήψη τη φορά ή πολλές μαζί';
 
   @override
-  String get downloadOneByOne => 'One by one';
+  String get downloadOneByOne => 'Μία-μία';
 
   @override
-  String get downloadNotifications => 'Download notifications';
+  String get downloadNotifications => 'Ειδοποιήσεις λήψεων';
 
   @override
-  String get downloadNotificationsDesc =>
-      'Live progress where the system supports it, otherwise a note when a download finishes';
+  String get downloadNotificationsDesc => 'Ζωντανή πρόοδος όπου το υποστηρίζει το σύστημα, αλλιώς μια ειδοποίηση όταν τελειώνει η λήψη';
 
   @override
-  String get downloadNotifyLive => 'Live';
+  String get downloadNotifyLive => 'Ζωντανά';
 
   @override
-  String get downloadNotifyDone => 'When done';
+  String get downloadNotifyDone => 'Όταν τελειώσει';
 
   @override
-  String get downloadNotifyOff => 'Off';
+  String get downloadNotifyOff => 'Ανενεργό';
 
   @override
-  String get downloadInfoFile => 'Write an info file next to each download';
+  String get downloadInfoFile => 'Εγγραφή αρχείου πληροφοριών δίπλα σε κάθε λήψη';
 
   @override
-  String get downloadInfoFileDesc =>
-      'Saves the stream, quality, subtitle and skip times as a small .json file';
+  String get downloadInfoFileDesc => 'Αποθηκεύει stream, ποιότητα, υπότιτλο και χρόνους παράλειψης σε ένα μικρό αρχείο .json';
 
   @override
-  String get offlineHeader => 'Offline';
+  String get offlineHeader => 'Εκτός σύνδεσης';
 
   @override
-  String get offlineModeDesc =>
-      'Auto goes offline only when the app starts without a connection. Always stays offline until you change it.';
+  String get offlineModeDesc => 'Το Αυτόματο πηγαίνει εκτός σύνδεσης μόνο όταν η εφαρμογή ξεκινά χωρίς σύνδεση. Το Πάντα μένει εκτός σύνδεσης μέχρι να το αλλάξεις.';
 
   @override
-  String get offlineModeOff => 'Off';
+  String get offlineModeOff => 'Ανενεργό';
 
   @override
-  String get offlineModeAlways => 'Always';
+  String get offlineModeAlways => 'Πάντα';
 
   @override
-  String get offlineModeOn =>
-      'Offline mode is on. Changes are saved here and sent when you are back online.';
+  String get offlineModeOn => 'Η λειτουργία εκτός σύνδεσης είναι ενεργή. Οι αλλαγές αποθηκεύονται εδώ και στέλνονται όταν επανέλθεις online.';
 
   @override
-  String get offlineLost => 'You\'re offline. Changes are saved on this device';
+  String get offlineLost => 'Είσαι εκτός σύνδεσης. Οι αλλαγές αποθηκεύονται σε αυτή τη συσκευή';
 
   @override
-  String get offlineBack => 'Back online. Syncing your changes';
+  String get offlineBack => 'Ξανά online. Συγχρονίζονται οι αλλαγές σου';
 
   @override
-  String get offlineSaved =>
-      'Saved on this device, it will sync when you are online';
+  String get offlineSaved => 'Αποθηκεύτηκε σε αυτή τη συσκευή, θα συγχρονιστεί όταν είσαι online';
 
   @override
   String offlineSynced(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count changes synced',
-      one: '1 change synced',
+      other: '$count αλλαγές συγχρονίστηκαν',
+      one: '1 αλλαγή συγχρονίστηκε',
     );
     return '$_temp0';
   }
@@ -6021,203 +5876,193 @@ class AppLocalizationsEl extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count changes waiting to sync',
-      one: '1 change waiting to sync',
+      other: '$count αλλαγές περιμένουν συγχρονισμό',
+      one: '1 αλλαγή περιμένει συγχρονισμό',
     );
     return '$_temp0';
   }
 
   @override
-  String get offlinePendingTitle => 'Changes waiting to sync';
+  String get offlinePendingTitle => 'Αλλαγές που περιμένουν συγχρονισμό';
 
   @override
-  String get offlinePendingNone => 'Nothing waiting';
+  String get offlinePendingNone => 'Δεν περιμένει τίποτα';
 
   @override
-  String get offlineSyncNow => 'Sync now';
+  String get offlineSyncNow => 'Συγχρονισμός τώρα';
 
   @override
-  String get offlineDiscard => 'Discard';
+  String get offlineDiscard => 'Απόρριψη';
 
   @override
-  String get downloadNotOffline =>
-      'This episode is not downloaded, so it is not available offline';
+  String get downloadNotOffline => 'Αυτό το επεισόδιο δεν έχει κατέβει, οπότε δεν είναι διαθέσιμο εκτός σύνδεσης';
 
   @override
-  String get offlineModeChip => 'Offline';
+  String get offlineModeChip => 'Εκτός σύνδεσης';
 
   @override
-  String get downloadNextChapter => 'Next chapter';
+  String get downloadNextChapter => 'Επόμενο κεφάλαιο';
 
   @override
   String downloadNextChapters(int count) {
-    return 'Next $count chapters';
+    return 'Επόμενα $count κεφάλαια';
   }
 
   @override
   String downloadUnread(int count) {
-    return 'All unread ($count)';
+    return 'Όλα όσα δεν διάβασες ($count)';
   }
 
   @override
   String downloadAllChapters(int count) {
-    return 'All chapters ($count)';
+    return 'Όλα τα κεφάλαια ($count)';
   }
 
   @override
   String downloadPagesProgress(int done, int total) {
-    return '$done / $total pages';
+    return '$done / $total σελίδες';
   }
 
   @override
   String downloadPagesCount(int count) {
-    return '$count pages';
+    return '$count σελίδες';
   }
 
   @override
-  String get downloadFfmpegTitle => 'FFmpeg addon needed';
+  String get downloadFfmpegTitle => 'Χρειάζεται το πρόσθετο FFmpeg';
 
   @override
-  String get downloadFfmpegBody =>
-      'This stream is an HLS playlist. The FFmpeg addon joins its pieces into one mp4 file. Without it the pieces are kept in an episode folder and play from there.';
+  String get downloadFfmpegBody => 'Αυτό το stream είναι playlist HLS. Το πρόσθετο FFmpeg ενώνει τα κομμάτια σε ένα αρχείο mp4. Χωρίς αυτό, τα κομμάτια μένουν σε φάκελο επεισοδίου και παίζουν από εκεί.';
 
   @override
-  String get downloadFfmpegInstall => 'Install';
+  String get downloadFfmpegInstall => 'Εγκατάσταση';
 
   @override
-  String get downloadFfmpegInstalling =>
-      'Installing FFmpeg, this can take a while…';
+  String get downloadFfmpegInstalling => 'Εγκατάσταση FFmpeg, μπορεί να πάρει λίγο…';
 
   @override
-  String get downloadFinishing => 'Joining the pieces into one file…';
+  String get downloadFinishing => 'Ένωση των κομματιών σε ένα αρχείο…';
 
   @override
   String downloadSegmentsProgress(int done, int total) {
-    return '$done / $total parts';
+    return '$done / $total μέρη';
   }
 
   @override
-  String get downloadTorrentNoFile =>
-      'The torrent has no video file to download';
+  String get downloadTorrentNoFile => 'Το torrent δεν έχει αρχείο βίντεο για λήψη';
 
   @override
   String downloadServiceText(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'Downloading $count items',
-      one: 'Downloading 1 item',
+      other: 'Λήψη $count στοιχείων',
+      one: 'Λήψη 1 στοιχείου',
     );
     return '$_temp0';
   }
 
   @override
-  String get downloadAutoDelete => 'Delete watched downloads';
+  String get downloadAutoDelete => 'Διαγραφή λήψεων που είδες';
 
   @override
-  String get downloadAutoDeleteDesc =>
-      'Removes a download once your progress reaches that episode or chapter';
+  String get downloadAutoDeleteDesc => 'Αφαιρεί μια λήψη όταν η πρόοδός σου φτάσει σε εκείνο το επεισόδιο ή κεφάλαιο';
 
   @override
-  String get downloadConnections => 'Connections per download';
+  String get downloadConnections => 'Συνδέσεις ανά λήψη';
 
   @override
-  String get downloadConnectionsDesc =>
-      'Splits a big file into parts fetched at the same time. Some servers limit this.';
+  String get downloadConnectionsDesc => 'Χωρίζει ένα μεγάλο αρχείο σε μέρη που κατεβαίνουν ταυτόχρονα. Κάποιοι διακομιστές το περιορίζουν.';
 
   @override
-  String get downloadPlayChoice => 'Play from';
+  String get downloadPlayChoice => 'Αναπαραγωγή από';
 
   @override
-  String get downloadPlayLocalDesc => 'The file saved on this device';
+  String get downloadPlayLocalDesc => 'Το αρχείο που είναι αποθηκευμένο σε αυτή τη συσκευή';
 
   @override
   String get downloadPlayStream => 'Stream online';
 
   @override
-  String get downloadPlayStreamDesc => 'Load the episode from the source';
+  String get downloadPlayStreamDesc => 'Φόρτωση του επεισοδίου από την πηγή';
 
   @override
-  String get offlineFeedTitle => 'Downloaded on this device';
+  String get offlineFeedTitle => 'Κατέβηκε σε αυτή τη συσκευή';
 
   @override
-  String get offlineFeedEmpty =>
-      'Download something while you are online and it shows up here';
+  String get offlineFeedEmpty => 'Κατέβασε κάτι όσο είσαι online και θα εμφανιστεί εδώ';
 
   @override
-  String get offlineEnabled => 'Offline mode is on';
+  String get offlineEnabled => 'Η λειτουργία εκτός σύνδεσης είναι ενεργή';
 
   @override
-  String get offlineDisabled => 'Offline mode is off';
+  String get offlineDisabled => 'Η λειτουργία εκτός σύνδεσης είναι ανενεργή';
 
   @override
-  String get downloadReadChoice => 'Read from';
+  String get downloadReadChoice => 'Ανάγνωση από';
 
   @override
-  String get downloadReadLocalDesc => 'The pages saved on this device';
+  String get downloadReadLocalDesc => 'Οι σελίδες που είναι αποθηκευμένες σε αυτή τη συσκευή';
 
   @override
-  String get downloadReadOnline => 'Read online';
+  String get downloadReadOnline => 'Ανάγνωση online';
 
   @override
-  String get downloadReadOnlineDesc => 'Load the chapter from the source';
+  String get downloadReadOnlineDesc => 'Φόρτωση του κεφαλαίου από την πηγή';
 
   @override
   String downloadDeleteConfirm(String name) {
-    return 'Delete $name from this device?';
+    return 'Διαγραφή του $name από αυτή τη συσκευή;';
   }
 
   @override
   String downloadCancelConfirm(String name) {
-    return 'Cancel the download of $name? What was already downloaded is deleted.';
+    return 'Ακύρωση της λήψης του $name; Ό,τι έχει ήδη κατέβει διαγράφεται.';
   }
 
   @override
-  String get downloadFfmpegFolder => 'Keep as folder';
+  String get downloadFfmpegFolder => 'Διατήρηση ως φάκελος';
 
   @override
   String offlineDiscardConfirm(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other:
-          'Throw away $count changes that were never sent? This can\'t be undone.',
-      one: 'Throw away the change that was never sent? This can\'t be undone.',
+      other: 'Να πεταχτούν $count αλλαγές που δεν στάλθηκαν ποτέ; Δεν αναιρείται.',
+      one: 'Να πεταχτεί η αλλαγή που δεν στάλθηκε ποτέ; Δεν αναιρείται.',
     );
     return '$_temp0';
   }
 
   @override
-  String get downloadWaitingWifi => 'Waiting for Wi-Fi';
+  String get downloadWaitingWifi => 'Αναμονή για Wi-Fi';
 
   @override
-  String get downloadWaitingMetered => 'Paused on a metered connection';
+  String get downloadWaitingMetered => 'Σε παύση σε σύνδεση με όριο δεδομένων';
 
   @override
-  String get downloadWifiOnly => 'Wi-Fi only';
+  String get downloadWifiOnly => 'Μόνο Wi-Fi';
 
   @override
-  String get downloadWifiOnlyDesc =>
-      'Downloads wait while you are on mobile data';
+  String get downloadWifiOnlyDesc => 'Οι λήψεις περιμένουν όσο είσαι σε δεδομένα κινητής';
 
   @override
-  String get downloadMetered => 'Pause on metered connections';
+  String get downloadMetered => 'Παύση σε συνδέσεις με όριο δεδομένων';
 
   @override
-  String get downloadMeteredDesc =>
-      'Also waits on Wi-Fi that your device marks as metered';
+  String get downloadMeteredDesc => 'Περιμένει και σε Wi-Fi που η συσκευή σου σημαίνει ως με όριο δεδομένων';
 
   @override
-  String get downloadSpeedLimit => 'Speed limit';
+  String get downloadSpeedLimit => 'Όριο ταχύτητας';
 
   @override
-  String get downloadSpeedLimitDesc => 'Caps the total download speed';
+  String get downloadSpeedLimitDesc => 'Περιορίζει τη συνολική ταχύτητα λήψης';
 
   @override
-  String get downloadUnlimited => 'Unlimited';
+  String get downloadUnlimited => 'Απεριόριστο';
 
   @override
-  String get downloadMoveToTop => 'Move to top';
+  String get downloadMoveToTop => 'Μετακίνηση στην κορυφή';
 
   @override
   String downloadSwarm(int seeds, int peers) {
@@ -6225,105 +6070,99 @@ class AppLocalizationsEl extends AppLocalizations {
   }
 
   @override
-  String get downloadTorrentFile => 'Which file?';
+  String get downloadTorrentFile => 'Ποιο αρχείο;';
 
   @override
-  String get downloadTorrentAuto => 'Match the episode automatically';
+  String get downloadTorrentAuto => 'Αυτόματη αντιστοίχιση επεισοδίου';
 
   @override
-  String get downloadTorrentLoading => 'Reading the torrent…';
+  String get downloadTorrentLoading => 'Ανάγνωση του torrent…';
 
   @override
-  String get watchAutoSource => 'Switch to the next source automatically';
+  String get watchAutoSource => 'Αυτόματη αλλαγή στην επόμενη πηγή';
 
   @override
-  String get watchAutoSourceDesc =>
-      'If the source can\'t find the title or fails to load, try the next installed source';
+  String get watchAutoSourceDesc => 'Αν η πηγή δεν βρίσκει τον τίτλο ή αποτύχει να φορτώσει, δοκιμάζεται η επόμενη εγκατεστημένη πηγή';
 
   @override
-  String get extensionTest => 'Test extensions';
+  String get extensionTest => 'Δοκιμή επεκτάσεων';
 
   @override
-  String get extensionTestCopy => 'Copy the failures and their logs';
+  String get extensionTestCopy => 'Αντιγραφή των αποτυχιών και των logs τους';
 
   @override
-  String get extensionTestQuery => 'Search term';
+  String get extensionTestQuery => 'Όρος αναζήτησης';
 
   @override
-  String get extensionTestRun => 'Run';
+  String get extensionTestRun => 'Εκτέλεση';
 
   @override
-  String get extensionTestStop => 'Stop';
+  String get extensionTestStop => 'Διακοπή';
 
   @override
-  String get extensionTestNone => 'No installed extensions of this type';
+  String get extensionTestNone => 'Δεν υπάρχουν εγκατεστημένες επεκτάσεις αυτού του τύπου';
 
   @override
-  String get extensionTestNotRun => 'Not tested yet';
+  String get extensionTestNotRun => 'Δεν έχει δοκιμαστεί ακόμα';
 
   @override
-  String get extensionTestSearch => 'Search';
+  String get extensionTestSearch => 'Αναζήτηση';
 
   @override
-  String get extensionTestDetail => 'Details';
+  String get extensionTestDetail => 'Λεπτομέρειες';
 
   @override
-  String get extensionTestUnits => 'Episodes / chapters';
+  String get extensionTestUnits => 'Επεισόδια / κεφάλαια';
 
   @override
-  String get extensionTestLinks => 'Streams / pages';
+  String get extensionTestLinks => 'Streams / σελίδες';
 
   @override
   String extensionTestFailedAt(String step) {
-    return 'Failed at $step';
+    return 'Απέτυχε στο $step';
   }
 
   @override
   String extensionTestSummary(int done, int total, int passed, int failed) {
-    return '$done of $total tested · $passed passed · $failed failed';
+    return '$done από $total δοκιμάστηκαν · $passed πέρασαν · $failed απέτυχαν';
   }
 
   @override
-  String get extensionTestCopyLogs => 'Copy everything with the full logs';
+  String get extensionTestCopyLogs => 'Αντιγραφή όλων με τα πλήρη logs';
 
   @override
-  String get onboardingFeaturesTitle => 'All of it in one place';
+  String get onboardingFeaturesTitle => 'Όλα σε ένα μέρος';
 
   @override
-  String get onboardingFeaturesBody =>
-      'Everything you track, watch and read, without juggling apps.';
+  String get onboardingFeaturesBody => 'Ό,τι παρακολουθείς, βλέπεις και διαβάζεις, χωρίς να παλεύεις με πολλές εφαρμογές.';
 
   @override
-  String get onboardingFeatureTrack => 'Track everything';
+  String get onboardingFeatureTrack => 'Παρακολούθησε τα πάντα';
 
   @override
-  String get onboardingFeatureTrackDesc =>
-      'Lists, progress and scores on AniList, MyAnimeList, Simkl, Kitsu and MangaBaka.';
+  String get onboardingFeatureTrackDesc => 'Λίστες, πρόοδος και βαθμολογίες σε AniList, MyAnimeList, Simkl, Kitsu και MangaBaka.';
 
   @override
-  String get onboardingFeatureWatch => 'Watch and read';
+  String get onboardingFeatureWatch => 'Δες και διάβασε';
 
   @override
-  String get onboardingFeatureWatchDesc =>
-      'Install extensions and stream anime or read manga and novels right in the app.';
+  String get onboardingFeatureWatchDesc => 'Εγκατάστησε επεκτάσεις και δες anime ή διάβασε manga και novels απευθείας στην εφαρμογή.';
 
   @override
-  String get onboardingFeatureOffline => 'Take it offline';
+  String get onboardingFeatureOffline => 'Πάρ\' το εκτός σύνδεσης';
 
   @override
-  String get onboardingFeatureOfflineDesc =>
-      'Download episodes and chapters, and keep going without a connection.';
+  String get onboardingFeatureOfflineDesc => 'Κατέβασε επεισόδια και κεφάλαια και συνέχισε χωρίς σύνδεση.';
 
   @override
-  String get onboardingFeatureSync => 'Keep lists in sync';
+  String get onboardingFeatureSync => 'Κράτα τις λίστες συγχρονισμένες';
 
   @override
-  String get onboardingFeatureSyncDesc =>
-      'Mirror your list across services, or let whichever is ahead win.';
+  String get onboardingFeatureSyncDesc => 'Αντέγραψε τη λίστα σου ανάμεσα σε υπηρεσίες ή άσε να κερδίζει όποια είναι μπροστά.';
 
   @override
-  String get onboardingThemeShape => 'Colours';
+  String get onboardingThemeShape => 'Χρώματα';
 
   @override
-  String get onboardingServices => 'Works with';
+  String get onboardingServices => 'Δουλεύει με';
 }
