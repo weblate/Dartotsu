@@ -5,11 +5,30 @@ set -euo pipefail
 
 fetch_user_details() {
   local login=$1
-  user_details=$(curl -s "https://api.github.com/users/$login")
-  name=$(echo "$user_details" | jq -r '.name // .login')
-  login=$(echo "$user_details" | jq -r '.login')
-  avatar_url=$(echo "$user_details" | jq -r '.avatar_url')
-  echo "$name|$login|$avatar_url"
+  local url name api_login avatar_url
+  # curl globs [] in URLs, so logins like github-actions[bot] need --globoff
+  # and percent-encoding or the body comes back empty.
+  url="https://api.github.com/users/$(jq -rn --arg login "$login" '$login | @uri')"
+  if ! user_details=$(curl -fsS --globoff "$url"); then
+    echo "${login}|${login}|"
+    return 0
+  fi
+  name=$(echo "$user_details" | jq -r '.name // .login // empty' 2>/dev/null || true)
+  api_login=$(echo "$user_details" | jq -r '.login // empty' 2>/dev/null || true)
+  avatar_url=$(echo "$user_details" | jq -r '.avatar_url // empty' 2>/dev/null || true)
+  [[ -z $name ]] && name=$login
+  [[ -z $api_login ]] && api_login=$login
+  echo "$name|$api_login|$avatar_url"
+}
+
+# Empty keys are a bad subscript under set -u. Missing keys are zero.
+recent_count() {
+  local key=$1
+  if [[ -z $key ]]; then
+    echo 0
+    return
+  fi
+  echo "${recent_commit_counts["$key"]:-0}"
 }
 
 declare -A additional_info
@@ -27,6 +46,7 @@ hex_to_decimal() { printf '%d' "0x${1#"#"}"; }
 
 declare -A recent_commit_counts
 while read -r count name; do
+  [[ -z $name ]] && continue
   recent_commit_counts["$name"]=$count
 done < <(echo "$COMMIT_LOG" | sed 's/%0A/\n/g' | grep -oP '(?<=~)[^[]*' | sort | uniq -c | sort -rn || true)
 
@@ -38,7 +58,7 @@ contributors=$(curl -L \
 sorted_contributors=$(for login in $(echo "$contributors" | jq -r '.[].login'); do
   user_info=$(fetch_user_details "$login")
   name=$(echo "$user_info" | cut -d'|' -f1)
-  count=${recent_commit_counts["$name"]:-0}
+  count=$(recent_count "$name")
   echo "$count|$login"
 done | sort -rn | cut -d'|' -f2)
 
@@ -55,7 +75,7 @@ while read -r login; do
   login=$(echo "$user_info" | cut -d'|' -f2)
   avatar_url=$(echo "$user_info" | cut -d'|' -f3)
 
-  commit_count=${recent_commit_counts["$name"]:-0}
+  commit_count=$(recent_count "$name")
   if [ "$commit_count" -gt 0 ]; then
     if [ "$commit_count" -gt "$max_commits" ]; then
       max_commits=$commit_count
