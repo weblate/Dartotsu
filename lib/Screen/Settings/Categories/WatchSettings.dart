@@ -11,6 +11,7 @@ import '../../../Utils/Functions/SnackBar.dart';
 import '../../../Widgets/Components/AppControls.dart';
 import '../../../Utils/Functions/NavigateToScreen.dart';
 import '../SubSettingsScreen.dart';
+import '../Widgets/SettingSections.dart';
 import '../Widgets/SegmentedSetting.dart';
 import '../../Together/TogetherSheet.dart';
 import 'PlayerSettings.dart';
@@ -26,7 +27,13 @@ String metaProviderDescription(EpisodeMetaProvider provider) =>
       _ => '',
     };
 
-List<Setting> watchSettings(BuildContext context) => [
+List<Setting> watchSettings(BuildContext context) => foldSections(
+  context,
+  watchRows,
+  [SettingSection(getString.watchSettingsLayout, Icons.view_list_rounded)],
+);
+
+List<Setting> watchRows(BuildContext context) => [
   Setting.normal(
     name: getString.settingsPlayer,
     description: getString.settingsPlayerDesc,

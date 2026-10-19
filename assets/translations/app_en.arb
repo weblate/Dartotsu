@@ -135,6 +135,10 @@
   "@settingsGeneral": {},
   "settingsGeneralDesc": "Language and behaviour",
   "@settingsGeneralDesc": {},
+  "settingsNetwork": "Network",
+  "@settingsNetwork": {},
+  "settingsNetworkDesc": "User agent, certificates, DNS and proxy",
+  "@settingsNetworkDesc": {},
   "settingsAccountDesc": "Tracking service and sign-in",
   "@settingsAccountDesc": {},
   "settingsUpdates": "Updates",
@@ -800,6 +804,10 @@
   "@nextEpisodeIn": {
     "placeholders": { "time": {"type": "String"} }
   },
+  "chapterExpectedIn": "Chapter {chapter} expected in about {time}",
+  "@chapterExpectedIn": {
+    "placeholders": { "chapter": {"type": "int"}, "time": {"type": "String"} }
+  },
   "logPathCopied": "Log file path copied to clipboard",
   "animeSource": "Anime source",
   "mangaSource": "Manga source",
@@ -1015,6 +1023,8 @@
   "sectionPrivacy": "Privacy",
   "hidePrivateEntries": "Hide private entries",
   "hidePrivateEntriesDesc": "Keep entries marked private on AniList out of the feed",
+  "anilistExcludeList": "Exclude your list",
+  "anilistExcludeListDesc": "Keep titles already on your AniList out of the anime and manga pages",
   "anilistProfile": "AniList profile",
   "refreshFromAnilist": "Refresh from AniList",
   "couldNotUpdateAnilistSettings": "Could not update AniList settings",

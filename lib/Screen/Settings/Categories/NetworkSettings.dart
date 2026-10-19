@@ -16,15 +16,8 @@ import '../../../Widgets/Components/AlertDialogBuilder.dart';
 import '../../../Widgets/Components/AppControls.dart';
 import '../../../Widgets/Components/CustomBottomDialog.dart';
 import '../../../Core/State/State.dart';
-import '../Widgets/SettingSections.dart';
 
-List<Setting> networkSettings(BuildContext context) =>
-    foldSections(context, _networkRows, [
-      SettingSection(getString.sectionDnsProxy, Icons.dns_rounded),
-      SettingSection(getString.sectionCache, Icons.storage_rounded),
-    ]);
-
-List<Setting> _networkRows(BuildContext context) {
+List<Setting> networkSettings(BuildContext context) {
   final network = find<NetworkManager>();
   return [
     Setting.header(getString.sectionRequests),
@@ -47,6 +40,20 @@ List<Setting> _networkRows(BuildContext context) {
         network.reinitialize();
       },
     ),
+    Setting.normal(
+      name: getString.clearCookies,
+      description: getString.clearCookiesDesc,
+      icon: Icons.cookie_outlined,
+      onClick: () => AlertDialogBuilder(context)
+          .setTitle(getString.clearCookies)
+          .setMessage(getString.clearCookiesConfirm)
+          .setNegativeButton(getString.cancel, null)
+          .setPositiveButton(
+            getString.clear,
+            () => network.cookieManager.clear(),
+          )
+          .show(),
+    ),
     Setting.header(getString.sectionDnsProxy),
     Setting.normal(
       name: getString.dnsOverHttps,
@@ -65,21 +72,6 @@ List<Setting> _networkRows(BuildContext context) {
       icon: Icons.vpn_lock_outlined,
       isActivity: true,
       onClick: () => _showProxySheet(context, network),
-    ),
-    Setting.header(getString.sectionCache),
-    Setting.normal(
-      name: getString.clearCookies,
-      description: getString.clearCookiesDesc,
-      icon: Icons.cookie_outlined,
-      onClick: () => AlertDialogBuilder(context)
-          .setTitle(getString.clearCookies)
-          .setMessage(getString.clearCookiesConfirm)
-          .setNegativeButton(getString.cancel, null)
-          .setPositiveButton(
-            getString.clear,
-            () => network.cookieManager.clear(),
-          )
-          .show(),
     ),
   ];
 }

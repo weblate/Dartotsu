@@ -92,4 +92,13 @@ class AnilistPref {
     false,
     PrefLocation.OTHER,
   );
+
+  static const excludeList = Pref(
+    'anilistExcludeList',
+    false,
+    PrefLocation.OTHER,
+  );
+
+  static bool get excludeListActive =>
+      excludeList.value && token.value.isNotEmpty;
 }

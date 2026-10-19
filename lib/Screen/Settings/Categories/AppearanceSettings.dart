@@ -17,10 +17,17 @@ import '../CardStyleScreen.dart';
 import '../Widgets/FontPickerSheet.dart';
 import '../Widgets/GlassBackgroundSheet.dart';
 import '../Widgets/SegmentedSetting.dart';
+import '../Widgets/SettingSections.dart';
 import '../Widgets/ThemeDropdown.dart';
 import '../../../Core/State/State.dart';
 
-List<Setting> appearanceSettings(BuildContext context) {
+List<Setting> appearanceSettings(BuildContext context) =>
+    foldSections(context, appearanceRows, [
+      SettingSection(getString.sectionColors, Icons.palette_outlined),
+      SettingSection(getString.sectionDisplay, Icons.tv_rounded),
+    ]);
+
+List<Setting> appearanceRows(BuildContext context) {
   final t = find<ThemeController>();
   return [
     Setting.header(getString.sectionColors),

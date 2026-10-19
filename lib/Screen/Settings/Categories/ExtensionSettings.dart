@@ -6,6 +6,7 @@ import '../../../Core/ThemeManager/LanguageSwitcher.dart';
 import '../../../Model/Setting.dart';
 import '../../Extension/Widgets/ExtensionManagerSheet.dart';
 import '../ExtensionSourceSettingsScreen.dart';
+import 'AddonSettings.dart';
 import '../../../Core/State/State.dart';
 import '../../../Utils/Extensions/StringExtensions.dart';
 
@@ -42,5 +43,6 @@ List<Setting> extensionSettings(BuildContext context) {
       isChecked: PrefName.loadExtensionIcon.rx.value,
       onSwitchChange: (v) => PrefName.loadExtensionIcon.rx.value = v,
     ),
+    ...addonSettings(context),
   ];
 }

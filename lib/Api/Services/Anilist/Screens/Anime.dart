@@ -3,6 +3,7 @@ import '../../../../Core/Services/Model/Media.dart';
 import '../../../../Model/SearchResults.dart';
 import '../Auth.dart';
 import '../Data/Mapper.dart';
+import '../Prefs.dart';
 import 'Feed.dart';
 import '../../../../Core/ThemeManager/LanguageSwitcher.dart';
 
@@ -31,6 +32,7 @@ class AnilistAnimeFeed extends AnilistTypeFeed {
         sort: 'TRENDING_DESC',
         season: season,
         seasonYear: year,
+        onList: AnilistPref.excludeListActive ? false : null,
       ),
     );
     return results?.results;

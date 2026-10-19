@@ -68,6 +68,7 @@ class AnilistFeedView extends FeedScreenView {
       type: feed.type.searchType,
       page: page,
       perPage: 30,
+      onList: AnilistPref.excludeListActive ? false : null,
     );
     final query = feed.sectionQuery(base, title);
     if (query == null) return Future.value(null);

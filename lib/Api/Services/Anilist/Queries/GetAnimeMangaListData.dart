@@ -191,6 +191,7 @@ String _browseQuery(
     'sort: $sort',
     'type: $type',
     if (!AnilistPref.displayAdult.value) 'isAdult: false',
+    if (AnilistPref.excludeListActive) 'onList: false',
     if (format != null) 'format: $format',
     if (country != null) 'countryOfOrigin: $country',
     if (season != null) 'season: $season',

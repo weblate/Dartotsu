@@ -22,7 +22,6 @@ import '../../Core/ThemeManager/ThemeController.dart';
 import '../Widgets/Components/DataSection.dart';
 import '../Share/ShareCardSheet.dart';
 import 'Comments/CommentsSection.dart';
-import 'Components/MangaUpdatesSection.dart';
 import 'Components/ThemesSection.dart';
 import 'Watch/WatchSection.dart';
 import 'Components/DetailHeader.dart';
@@ -271,11 +270,7 @@ class _DetailScreenState extends BaseScreen<DetailScreen>
             service: state.view.service,
             media: media,
           )
-        : MangaUpdatesSection(
-            key: ValueKey('mu-${media.id}'),
-            service: state.view.service,
-            media: media,
-          );
+        : const SizedBox.shrink();
   }
 
   Widget _errorCard() => Padding(

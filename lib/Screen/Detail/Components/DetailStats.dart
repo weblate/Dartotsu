@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../Widgets/Components/ThemedContainer.dart';
 
+import '../../../Core/Services/Api/MuForecast.dart';
 import '../../../Core/Services/Model/Media.dart';
 import '../../../Core/Services/Screens/DetailHost.dart';
 import '../../../Utils/Extensions/ContextExtensions.dart';
@@ -8,6 +9,7 @@ import '../../../Utils/Extensions/IntExtensions.dart';
 import '../../../Utils/Extensions/Responsive.dart';
 import '../../../Core/State/State.dart';
 import '../../../Core/ThemeManager/LanguageSwitcher.dart';
+import 'MangaForecast.dart';
 
 class DetailStats extends StatelessWidget {
   final DetailHost host;
@@ -50,7 +52,10 @@ class DetailStats extends StatelessWidget {
     final m = host.media.value;
     final items = this.items?.call(m) ?? _items(m);
     final airing = _airingIn(m);
-    if (items.isEmpty && airing == null) return const SizedBox.shrink();
+    final forecast = MangaForecasts.of(m)?.value;
+    if (items.isEmpty && airing == null && forecast == null) {
+      return const SizedBox.shrink();
+    }
     final scheme = context.colorScheme;
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: Dimens.pagePad),
@@ -75,6 +80,9 @@ class DetailStats extends StatelessWidget {
             if (airing != null) ...[
               if (items.isNotEmpty) SizedBox(height: Dimens.gapLg - 2),
               _airing(context, m, airing),
+            ] else if (forecast != null) ...[
+              if (items.isNotEmpty) SizedBox(height: Dimens.gapLg - 2),
+              _forecast(context, forecast),
             ],
           ],
         ),
@@ -103,6 +111,30 @@ class DetailStats extends StatelessWidget {
           overflow: TextOverflow.ellipsis,
           style: context.textTheme.labelMedium?.copyWith(
             color: scheme.onSurfaceVariant,
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _forecast(BuildContext context, MuForecast forecast) {
+    final scheme = context.colorScheme;
+    final left = forecast.expected.difference(DateTime.now());
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Icon(Icons.schedule_rounded, size: 18, color: scheme.primary),
+        SizedBox(width: Dimens.gapSm),
+        Flexible(
+          child: Text(
+            getString.chapterExpectedIn(
+              forecast.nextChapter,
+              _countdown(left.isNegative ? Duration.zero : left),
+            ),
+            textAlign: TextAlign.center,
+            style: context.textTheme.bodyMedium?.copyWith(
+              color: scheme.onSurface,
+            ),
           ),
         ),
       ],

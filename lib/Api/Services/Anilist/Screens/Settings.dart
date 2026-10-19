@@ -18,6 +18,8 @@ import '../Prefs.dart';
 import '../Widgets/CustomListsSheet.dart';
 import '../../../../Widgets/Components/HomeLayoutSheet.dart';
 import '../Auth.dart';
+import '../../../../Core/State/State.dart';
+import '../../../../Utils/Functions/RefreshController.dart';
 
 class AnilistSettingsView extends SettingsScreenView {
   @override
@@ -78,6 +80,17 @@ class AnilistSettingsView extends SettingsScreenView {
             pref: pref,
           ),
         ),
+      Setting.switchType(
+        name: getString.anilistExcludeList,
+        description: getString.anilistExcludeListDesc,
+        icon: Icons.playlist_remove_rounded,
+        isVisible: auth.isLoggedIn,
+        isChecked: AnilistPref.excludeList.rx.value,
+        onSwitchChange: (v) {
+          AnilistPref.excludeList.rx.value = v;
+          tryFind<RefreshController>()?.all();
+        },
+      ),
       Setting.normal(
         name: getString.accountOptions,
         description: getString.accountOptionsDesc,

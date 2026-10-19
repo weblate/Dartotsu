@@ -26,7 +26,8 @@ class _SettingsCategoryScreenState extends BaseScreen<SettingsCategoryScreen>
       backgroundColor: Colors.transparent,
       body: SettingsListView(
         title: state.title,
-        searchable: widget.category.build,
+        searchable: widget.category.search ?? widget.category.build,
+        menu: widget.category.build,
         hint: state.hint,
       ),
     );

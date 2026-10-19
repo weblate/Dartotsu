@@ -12,7 +12,6 @@ import '../../../Utils/Extensions/ContextExtensions.dart';
 import '../../../Utils/Functions/LinkSettings.dart';
 import '../../../Widgets/Components/CustomBottomDialog.dart';
 import '../Widgets/Backup/BackupSheet.dart';
-import 'NetworkSettings.dart';
 import '../../../Core/State/State.dart';
 
 List<Setting> generalSettings(BuildContext context) => [
@@ -98,7 +97,6 @@ List<Setting> generalSettings(BuildContext context) => [
     isChecked: PrefName.useDifferentCacheManager.rx.value,
     onSwitchChange: (v) => PrefName.useDifferentCacheManager.rx.value = v,
   ),
-  Setting.header(getString.sectionBackup),
   Setting.normal(
     name: getString.backupAndRestore,
     description: getString.backupAndRestoreDesc,
@@ -106,5 +104,4 @@ List<Setting> generalSettings(BuildContext context) => [
     isActivity: true,
     onClick: () => showBackupSheet(context),
   ),
-  ...networkSettings(context),
 ];

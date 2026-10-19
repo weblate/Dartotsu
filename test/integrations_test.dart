@@ -1,6 +1,7 @@
 import 'package:dartotsu/Core/Services/Api/AniTrendz.dart';
 import 'package:dartotsu/Core/Services/Api/AnimeThemes.dart';
 import 'package:dartotsu/Core/Services/Api/MangaUpdates.dart';
+import 'package:dartotsu/Core/Services/Api/MuForecast.dart';
 import 'package:dartotsu/Core/Services/Api/SauceNao.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -156,5 +157,55 @@ void main() {
     expect(hit.link, 'https://mangadex.org/chapter/1');
     expect(hit.low, isFalse);
     expect(parseSauceHit({'header': {}, 'data': {}}), isNull);
+  });
+
+  test(
+    'predictNextChapter projects the next chapter from the release pace',
+    () {
+      final start = DateTime(2026, 1, 1);
+      MuRelease release(int chapter, int day) => MuRelease(
+        title: 'Series',
+        chapter: '$chapter',
+        date: start.add(Duration(days: day)),
+      );
+      final releases = [
+        release(5, 28),
+        release(4, 21),
+        release(3, 14),
+        release(2, 7),
+        release(1, 0),
+        MuRelease(
+          title: 'Series',
+          chapter: '5',
+          date: start.add(const Duration(days: 29)),
+        ),
+      ];
+      final now = start.add(const Duration(days: 30));
+      final forecast = predictNextChapter(releases, now: now);
+      expect(forecast, isNotNull);
+      expect(forecast!.nextChapter, 6);
+      expect(forecast.interval, const Duration(days: 7));
+      expect(forecast.expected, start.add(const Duration(days: 35)));
+    },
+  );
+
+  test('predictNextChapter skips finished, stalled and sparse series', () {
+    final start = DateTime(2026, 1, 1);
+    final releases = [
+      for (var i = 0; i < 5; i++)
+        MuRelease(
+          title: 'Series',
+          chapter: '${i + 1}',
+          date: start.add(Duration(days: i * 7)),
+        ),
+    ];
+    expect(predictNextChapter(releases, completed: true, now: start), isNull);
+    expect(
+      predictNextChapter(releases, now: start.add(const Duration(days: 200))),
+      isNull,
+    );
+    expect(predictNextChapter(releases.take(2).toList(), now: start), isNull);
+    expect(muChapterNumber('Ch 10-11'), 11);
+    expect(muChapterNumber('Extra'), isNull);
   });
 }

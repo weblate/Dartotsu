@@ -209,7 +209,7 @@ class MangaUpdates {
       data: jsonEncode({
         'search': '$id',
         'search_type': 'series',
-        'perpage': 12,
+        'perpage': 50,
       }),
       headers: _headers,
       decodeJson: false,
