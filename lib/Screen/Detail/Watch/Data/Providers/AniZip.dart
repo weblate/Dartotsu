@@ -15,7 +15,7 @@ class AniZipProvider extends EpisodeMetaProvider {
 
   static final _memo = Lru<String, Future<Map<String, dynamic>?>>(24);
 
-  Future<Map<String, dynamic>?> _load(MetaIds ids) {
+  static Future<Map<String, dynamic>?> load(MetaIds ids) {
     final query = ids.anilist != null
         ? {'anilist_id': '${ids.anilist}'}
         : {'mal_id': '${ids.mal}'};
@@ -35,7 +35,7 @@ class AniZipProvider extends EpisodeMetaProvider {
 
   @override
   Future<Map<String, EpisodeMeta>> fetch(MetaIds ids) async {
-    final body = await _load(ids);
+    final body = await load(ids);
     return parseAniZipEpisodes(body?['episodes']);
   }
 }
@@ -70,4 +70,15 @@ Map<String, EpisodeMeta> parseAniZipEpisodes(Object? episodes) {
     );
   }
   return out;
+}
+
+({int? tvdb, int? tmdb, String? imdb}) parseAniZipIds(Object? body) {
+  final map = body is Map && body['mappings'] is Map
+      ? body['mappings'] as Map
+      : const {};
+  return (
+    tvdb: int.tryParse('${map['thetvdb_id'] ?? ''}'),
+    tmdb: int.tryParse('${map['themoviedb_id'] ?? ''}'),
+    imdb: nonBlank(map['imdb_id']),
+  );
 }
