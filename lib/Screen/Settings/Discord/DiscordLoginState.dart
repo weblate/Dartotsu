@@ -20,6 +20,8 @@ class DiscordLoginState extends ScreenState {
 
   bool _done = false;
   bool _checking = false;
+  Timer? _poll;
+  String _url = '';
 
   @override
   void onInit() {
@@ -36,12 +38,7 @@ class DiscordLoginState extends ScreenState {
     } catch (e, st) {
       logError('DiscordLogin', e, st);
     }
-    await c.addUserScript(
-      const WebViewUserScript(
-        source:
-            'try { window.__dartotsuStorage = window.localStorage; } catch (e) {}',
-      ),
-    );
+    await c.addUserScript(const WebViewUserScript(source: _guardScript));
     await c.setNavigationDelegate(
       NavigationDelegate(
         onProgress: (percent) => progress.value = percent / 100,
@@ -58,7 +55,17 @@ class DiscordLoginState extends ScreenState {
     await c.loadRequest(Uri.parse(loginUrl));
   }
 
+  @override
+  void onClose() {
+    _poll?.cancel();
+    super.onClose();
+  }
+
   Future<void> _check(String url) async {
+    _url = url;
+    _poll ??= Timer.periodic(const Duration(seconds: 3), (_) {
+      if (_url.isNotEmpty) unawaited(_check(_url));
+    });
     if (_done || _checking || !mounted) return;
     final uri = Uri.tryParse(url);
     if (uri == null || uri.host != 'discord.com') return;
@@ -67,7 +74,6 @@ class DiscordLoginState extends ScreenState {
     }
     _checking = true;
     try {
-      await Future<void>.delayed(const Duration(seconds: 2));
       final token = await _readToken();
       if (token == null || token.isEmpty) return;
       _done = true;
@@ -84,20 +90,42 @@ class DiscordLoginState extends ScreenState {
   }
 
   Future<String?> _readToken() async {
-    const sources = [
-      "window.__dartotsuStorage ? window.__dartotsuStorage.getItem('token') : null",
-      "(function(){var f=document.createElement('iframe');document.body.appendChild(f);"
-          "var v=f.contentWindow.localStorage.getItem('token');f.remove();return v;})()",
-    ];
-    for (final source in sources) {
+    for (final source in _readScripts) {
       try {
         final result = await controller.runJavaScriptReturningResult(source);
-        final token = '$result'.trim().replaceAll('"', '');
-        if (token.isNotEmpty && token != 'null' && token != 'undefined') {
-          return token;
-        }
+        final token = _clean('$result');
+        if (token.isNotEmpty) return token;
       } catch (_) {}
     }
     return null;
   }
+
+  static String _clean(String raw) {
+    var t = raw.trim();
+    while (t.length >= 2 && (t.startsWith('"') || t.startsWith("'"))) {
+      t = t.substring(1, t.length - 1).trim();
+    }
+    t = t.replaceAll(r'\"', '');
+    if (t == 'null' || t == 'undefined' || t == 'false' || t == 'true') {
+      return '';
+    }
+    return t;
+  }
+
+  static const _guardScript = '''
+try {
+  window.__dartotsuStorage = window.localStorage;
+  var remove = Storage.prototype.removeItem;
+  Storage.prototype.removeItem = function (k) {
+    if (k === 'token') return;
+    return remove.apply(this, arguments);
+  };
+} catch (e) {}
+''';
+
+  static const _readScripts = [
+    "(function(){try{var t=window.__dartotsuStorage&&window.__dartotsuStorage.getItem('token');return t?String(t):'';}catch(e){return '';}})()",
+    "(function(){try{var f=document.createElement('iframe');document.body.appendChild(f);var v=f.contentWindow.localStorage.getItem('token');f.remove();return v?String(v):'';}catch(e){return '';}})()",
+    "(function(){try{var r;window.webpackChunkdiscord_app.push([[Symbol()],{},function(q){r=q;}]);var t='';for(var k in r.c){var m=r.c[k].exports;if(m&&m.default&&typeof m.default.getToken==='function'){t=m.default.getToken();if(t)break;}if(m&&typeof m.getToken==='function'){t=m.getToken();if(t)break;}}return t?String(t):'';}catch(e){return '';}})()",
+  ];
 }
