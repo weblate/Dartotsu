@@ -233,7 +233,8 @@ class AppLocalizationsAm extends AppLocalizations {
   String get shelfFrame => 'በክፍሎች ዙሪያ ፍሬም';
 
   @override
-  String get shelfFrameDesc => 'ከእያንዳንዱ ረድፍ ጀርባ ካርድ አሳይ ወይም ረድፎቹ በገጹ ላይ በቀጥታ ይቀመጡ';
+  String get shelfFrameDesc =>
+      'ከእያንዳንዱ ረድፍ ጀርባ ካርድ አሳይ ወይም ረድፎቹ በገጹ ላይ በቀጥታ ይቀመጡ';
 
   @override
   String get settingsExtensionsDesc => 'የምንጭ አስተዳዳሪዎች፣ ማከማቻዎችና የኤክስቴንሽን አማራጮች';
@@ -442,7 +443,8 @@ class AppLocalizationsAm extends AppLocalizations {
   String get donateSheetTitle => 'Dartotsu ያስደስትሃል?';
 
   @override
-  String get donateSheetMessage => 'Dartotsu የሚሠራውና የሚንከባከበው በአንድ ሰው ነው። ጠቃሚ ሆኖ ካገኘኸው ልማቱን ለመደገፍ አስብበት።';
+  String get donateSheetMessage =>
+      'Dartotsu የሚሠራውና የሚንከባከበው በአንድ ሰው ነው። ጠቃሚ ሆኖ ካገኘኸው ልማቱን ለመደገፍ አስብበት።';
 
   @override
   String get donateLater => 'ቆይቶ';
@@ -505,7 +507,8 @@ class AppLocalizationsAm extends AppLocalizations {
   String get jsonTheme => 'ብጁ የጭብጥ ፋይል';
 
   @override
-  String get jsonThemeDesc => 'ከ~/.config/dartotsu/theme.json ቀጥታ ቀለሞች (ብጁ ስክሪፕት ወይም የራስህ አርትዖት)';
+  String get jsonThemeDesc =>
+      'ከ~/.config/dartotsu/theme.json ቀጥታ ቀለሞች (ብጁ ስክሪፕት ወይም የራስህ አርትዖት)';
 
   @override
   String get themeMode => 'የጭብጥ ሁነታ';
@@ -644,10 +647,12 @@ class AppLocalizationsAm extends AppLocalizations {
   String get verifyTls => 'ሰርቲፊኬቶችን አረጋግጥ';
 
   @override
-  String get verifyTlsDesc => 'ልክ ያልሆነ HTTPS ሰርቲፊኬት ያላቸውን ሰርቨሮች ውድቅ አድርግ። በራሱ የተፈረመ ሰርቲፊኬት ለሚጠቀም ምንጭ ብቻ አጥፋው';
+  String get verifyTlsDesc =>
+      'ልክ ያልሆነ HTTPS ሰርቲፊኬት ያላቸውን ሰርቨሮች ውድቅ አድርግ። በራሱ የተፈረመ ሰርቲፊኬት ለሚጠቀም ምንጭ ብቻ አጥፋው';
 
   @override
-  String get clearCookiesConfirm => 'የተቀመጡ ኩኪዎች ሁሉ ይወገዱ? ከአንዳንድ ምንጮች ሊያስወጣህ ይችላል።';
+  String get clearCookiesConfirm =>
+      'የተቀመጡ ኩኪዎች ሁሉ ይወገዱ? ከአንዳንድ ምንጮች ሊያስወጣህ ይችላል።';
 
   @override
   String get version => 'ስሪት';
@@ -722,7 +727,8 @@ class AppLocalizationsAm extends AppLocalizations {
   String get onboardingPaletteTitle => 'የራስህ አድርገው';
 
   @override
-  String get onboardingPaletteBody => 'ቤተ-ቀለም ምረጥ። ከካርዶች እስከ ማጫወቻው ድረስ ያሉ ቀለሞች ሁሉ ይከተሉታል።';
+  String get onboardingPaletteBody =>
+      'ቤተ-ቀለም ምረጥ። ከካርዶች እስከ ማጫወቻው ድረስ ያሉ ቀለሞች ሁሉ ይከተሉታል።';
 
   @override
   String get themeModeAuto => 'ራስ-ሰር';
@@ -737,7 +743,8 @@ class AppLocalizationsAm extends AppLocalizations {
   String get onboardingSyncTitle => 'ቤተ-መጻሕፍትህን አመሳስል';
 
   @override
-  String get onboardingSyncBody => 'ዝርዝሮችህን፣ እድገትህንና ውጤቶችህን ለማምጣት በAniList ግባ። ወይም እለፍና እንደ እንግዳ አስስ።';
+  String get onboardingSyncBody =>
+      'ዝርዝሮችህን፣ እድገትህንና ውጤቶችህን ለማምጣት በAniList ግባ። ወይም እለፍና እንደ እንግዳ አስስ።';
 
   @override
   String get onboardingOpenLinks => 'AniList እና የማከማቻ ሊንኮችን በDartotsu ክፈት';
@@ -746,7 +753,8 @@ class AppLocalizationsAm extends AppLocalizations {
   String get onboardingPermsTitle => 'ፈቃዶች';
 
   @override
-  String get onboardingPermsBody => 'ውርዶች፣ ዝማኔዎችና ማሳወቂያዎች ሳይቋረጡ እንዲሠሩ አሁን ፍቀድ። በኋላ በሲስተም ቅንብሮች መቀየር ትችላለህ።';
+  String get onboardingPermsBody =>
+      'ውርዶች፣ ዝማኔዎችና ማሳወቂያዎች ሳይቋረጡ እንዲሠሩ አሁን ፍቀድ። በኋላ በሲስተም ቅንብሮች መቀየር ትችላለህ።';
 
   @override
   String get permNotifications => 'ማሳወቂያዎች';
@@ -825,13 +833,15 @@ class AppLocalizationsAm extends AppLocalizations {
   String get shareAnalytics => 'ስም-አልባ የአጠቃቀም ዳታ አጋራ';
 
   @override
-  String get shareAnalyticsDesc => 'ስም-አልባ የተጠቃሚ ቆጠራና የብልሽት ሪፖርቶች። ምንም መለያ ወይም የግል ዳታ የለም';
+  String get shareAnalyticsDesc =>
+      'ስም-አልባ የተጠቃሚ ቆጠራና የብልሽት ሪፖርቶች። ምንም መለያ ወይም የግል ዳታ የለም';
 
   @override
   String get linkOpenAnilist => 'AniList ሊንኮችን በDartotsu ክፈት';
 
   @override
-  String get linkOpenAnilistDesc => 'anilist.co ሊንኮች መተግበሪያውን እንዲከፍቱ የሊንክ አያያዝን አብራ';
+  String get linkOpenAnilistDesc =>
+      'anilist.co ሊንኮች መተግበሪያውን እንዲከፍቱ የሊንክ አያያዝን አብራ';
 
   @override
   String get linkSettingsFailed => 'የሲስተም ቅንብሮችን መክፈት አልተቻለም';
@@ -840,16 +850,19 @@ class AppLocalizationsAm extends AppLocalizations {
   String get discordRichPresence => 'Rich Presence';
 
   @override
-  String get discordRichPresenceTokenDesc => 'የምታደርገውን በDiscord መገለጫህ ላይ አሳይ። የDiscord ቶከንህ ያስፈልጋል።';
+  String get discordRichPresenceTokenDesc =>
+      'የምታደርገውን በDiscord መገለጫህ ላይ አሳይ። የDiscord ቶከንህ ያስፈልጋል።';
 
   @override
-  String get discordRichPresenceDesktopDesc => 'የምታደርገውን በDiscord መገለጫህ ላይ አሳይ። የDiscord ዴስክቶፕ መተግበሪያ እየሰራ መሆን አለበት።';
+  String get discordRichPresenceDesktopDesc =>
+      'የምታደርገውን በDiscord መገለጫህ ላይ አሳይ። የDiscord ዴስክቶፕ መተግበሪያ እየሰራ መሆን አለበት።';
 
   @override
   String get discordBrowsing => 'የማሰስ እንቅስቃሴ አሳይ';
 
   @override
-  String get discordBrowsingDesc => 'ከምትመለከተው ወይም ከምታነበው በተጨማሪ የምትመለከተውን ታብ፣ ገጽ ወይም መገለጫም አሳይ።';
+  String get discordBrowsingDesc =>
+      'ከምትመለከተው ወይም ከምታነበው በተጨማሪ የምትመለከተውን ታብ፣ ገጽ ወይም መገለጫም አሳይ።';
 
   @override
   String get discordLookHeader => 'የፕረዘንስ ገጽታ';
@@ -858,7 +871,8 @@ class AppLocalizationsAm extends AppLocalizations {
   String get discordActivityType => 'የእንቅስቃሴ ዓይነት';
 
   @override
-  String get discordActivityTypeDesc => 'Discord እንዴት እንደሚገልጸው፦ \"እየተመለከተ …\" ወይም \"እየተጫወተ …\"። ራስ-ሰር ለአኒሜ \"እየተመለከተ\"ን ለቀሪው ሁሉ \"እየተጫወተ\"ን ይጠቀማል።';
+  String get discordActivityTypeDesc =>
+      'Discord እንዴት እንደሚገልጸው፦ \"እየተመለከተ …\" ወይም \"እየተጫወተ …\"። ራስ-ሰር ለአኒሜ \"እየተመለከተ\"ን ለቀሪው ሁሉ \"እየተጫወተ\"ን ይጠቀማል።';
 
   @override
   String get discordWatching => 'እየተመለከተ';
@@ -882,13 +896,15 @@ class AppLocalizationsAm extends AppLocalizations {
   String get discordButtons => 'አዝራሮችን አሳይ';
 
   @override
-  String get discordButtonsDesc => '\"አኒሜ / ማንጋ ተመልከት\" እና \"Dartotsu ክፈት\" አዝራሮች።';
+  String get discordButtonsDesc =>
+      '\"አኒሜ / ማንጋ ተመልከት\" እና \"Dartotsu ክፈት\" አዝራሮች።';
 
   @override
   String get discordHideTitles => 'ርዕሶችን ደብቅ';
 
   @override
-  String get discordHideTitlesDesc => 'የአኒሜና ማንጋ ስሞችን (ከሽፋናቸውና ሊንካቸው ጋር) በ\"የግል ነገር\" ተካ።';
+  String get discordHideTitlesDesc =>
+      'የአኒሜና ማንጋ ስሞችን (ከሽፋናቸውና ሊንካቸው ጋር) በ\"የግል ነገር\" ተካ።';
 
   @override
   String get discordConnectionHeader => 'ግንኙነት';
@@ -957,7 +973,8 @@ class AppLocalizationsAm extends AppLocalizations {
   String get discordTokenNotSet => 'አልተቀመጠም። ለመጨመር ንካ።';
 
   @override
-  String get discordTokenPrompt => 'ፕረዘንሱ የሚታይበትን የDiscord መለያ ቶከን ለጥፍ። በዚህ መሣሪያ ላይ ብቻ ይቆያል።';
+  String get discordTokenPrompt =>
+      'ፕረዘንሱ የሚታይበትን የDiscord መለያ ቶከን ለጥፍ። በዚህ መሣሪያ ላይ ብቻ ይቆያል።';
 
   @override
   String get discordTokenHint => 'ቶከን';
@@ -1043,7 +1060,8 @@ class AppLocalizationsAm extends AppLocalizations {
   String get hideNsfw => 'NSFW ደብቅ';
 
   @override
-  String get hideNsfwDesc => 'የአዋቂ ርዕሶችን ከፊዶችና ፍለጋ ውጭ አድርግ፣ የራስህን የአዋቂ ግቤቶች ደግሞ በ\"የተደበቁ ሚዲያዎች\" ስር ዘርዝር።';
+  String get hideNsfwDesc =>
+      'የአዋቂ ርዕሶችን ከፊዶችና ፍለጋ ውጭ አድርግ፣ የራስህን የአዋቂ ግቤቶች ደግሞ በ\"የተደበቁ ሚዲያዎች\" ስር ዘርዝር።';
 
   @override
   String get kitsuAccountOptions => 'የKitsu መለያ አማራጮች';
@@ -1382,7 +1400,8 @@ class AppLocalizationsAm extends AppLocalizations {
   String get nothingHereYet => 'እስካሁን እዚህ ምንም የለም';
 
   @override
-  String get savedOnDeviceUntilLogin => 'ከታች ያለው ሁሉ እስክትቀይር ድረስ በዚህ መሣሪያ ላይ ተቀምጧል።';
+  String get savedOnDeviceUntilLogin =>
+      'ከታች ያለው ሁሉ እስክትቀይር ድረስ በዚህ መሣሪያ ላይ ተቀምጧል።';
 
   @override
   String get yourProfile => 'መገለጫህ';
@@ -1879,7 +1898,8 @@ class AppLocalizationsAm extends AppLocalizations {
   String get querySize => 'የጥያቄ መጠን';
 
   @override
-  String get querySizeDesc => 'አንድ ትልቅ ጥያቄ ሁሉንም ረድፎች (እና ሙሉ መገለጫን) በአንድ ጊዜ ይጭናል። የተከፈሉ ጥያቄዎች ለእያንዳንዱ ረድፍ ወይም የመገለጫ ክፍል ትንሽ ጥያቄ ይልካሉ፦ እያንዳንዳቸው ፈጣን ናቸው፣ ክፍሎቹም እየደረሱ ይታያሉ።';
+  String get querySizeDesc =>
+      'አንድ ትልቅ ጥያቄ ሁሉንም ረድፎች (እና ሙሉ መገለጫን) በአንድ ጊዜ ይጭናል። የተከፈሉ ጥያቄዎች ለእያንዳንዱ ረድፍ ወይም የመገለጫ ክፍል ትንሽ ጥያቄ ይልካሉ፦ እያንዳንዳቸው ፈጣን ናቸው፣ ክፍሎቹም እየደረሱ ይታያሉ።';
 
   @override
   String get oneBig => 'አንድ ትልቅ';
@@ -1910,7 +1930,8 @@ class AppLocalizationsAm extends AppLocalizations {
   String get accountOptions => 'የመለያ አማራጮች';
 
   @override
-  String get accountOptionsDesc => 'ስሞች፣ የውጤት ቅርጸት፣ የዝርዝር ቅደም ተከተል፣ ማሳወቂያዎችና ሌሎችም';
+  String get accountOptionsDesc =>
+      'ስሞች፣ የውጤት ቅርጸት፣ የዝርዝር ቅደም ተከተል፣ ማሳወቂያዎችና ሌሎችም';
 
   @override
   String get anilistAccountOptions => 'የAniList መለያ አማራጮች';
@@ -1922,13 +1943,15 @@ class AppLocalizationsAm extends AppLocalizations {
   String get hidePrivateEntries => 'የግል ግቤቶችን ደብቅ';
 
   @override
-  String get hidePrivateEntriesDesc => 'በAniList ላይ የግል ተብለው የተሰየሙ ግቤቶችን ከፊድ ውጭ አድርግ';
+  String get hidePrivateEntriesDesc =>
+      'በAniList ላይ የግል ተብለው የተሰየሙ ግቤቶችን ከፊድ ውጭ አድርግ';
 
   @override
   String get anilistExcludeList => 'Exclude your list';
 
   @override
-  String get anilistExcludeListDesc => 'Keep titles already on your AniList out of the anime and manga pages';
+  String get anilistExcludeListDesc =>
+      'Keep titles already on your AniList out of the anime and manga pages';
 
   @override
   String get anilistProfile => 'የAniList መገለጫ';
@@ -1946,7 +1969,8 @@ class AppLocalizationsAm extends AppLocalizations {
   String get titleLanguage => 'የርዕስ ቋንቋ';
 
   @override
-  String get titleLanguageDesc => 'ርዕሶች በየትኛውም ቦታ የሚጻፉበት መንገድ፣ ለምሳሌ Attack on Titan / Shingeki no Kyojin / 進撃の巨人።';
+  String get titleLanguageDesc =>
+      'ርዕሶች በየትኛውም ቦታ የሚጻፉበት መንገድ፣ ለምሳሌ Attack on Titan / Shingeki no Kyojin / 進撃の巨人።';
 
   @override
   String get staffCharacterNames => 'የሠራተኞችና ገጸ ባህሪያት ስሞች';
@@ -2121,10 +2145,12 @@ class AppLocalizationsAm extends AppLocalizations {
   String get couldntLoad => 'መጫን አልተቻለም';
 
   @override
-  String get progressStyleHint => 'እንክብሉና አሞሌው በፖስተሩ ላይ ይደራረባሉ፤ \"ውጭ\" ደግሞ ተመሳሳዩን ቆጠራ እንደ ተራ ጽሑፍ ያሳያል — አንዱን ምረጥ።';
+  String get progressStyleHint =>
+      'እንክብሉና አሞሌው በፖስተሩ ላይ ይደራረባሉ፤ \"ውጭ\" ደግሞ ተመሳሳዩን ቆጠራ እንደ ተራ ጽሑፍ ያሳያል — አንዱን ምረጥ።';
 
   @override
-  String get nixManagedUpdate => 'ይህ ግንባታ በNix የሚተዳደር ነው — ከዚህ ከማዘመን ይልቅ በflake ላይ \"nix flake update\" አሂድና እንደገና ገንባ';
+  String get nixManagedUpdate =>
+      'ይህ ግንባታ በNix የሚተዳደር ነው — ከዚህ ከማዘመን ይልቅ በflake ላይ \"nix flake update\" አሂድና እንደገና ገንባ';
 
   @override
   String autoUpdateFailed(String error) {
@@ -2155,7 +2181,8 @@ class AppLocalizationsAm extends AppLocalizations {
   String get chooseBackupDialog => 'የAniyomi፣ Mihon ወይም Kotatsu ምትኬ ምረጥ';
 
   @override
-  String get importListsHint => 'ቤተ-መጻሕፍትን ከAniyomi፣ Mihon / Tachiyomi ወይም Kotatsu አምጣ። ርዕሶች፣ ሽፋኖች፣ እድገትና ምድቦች ይቀመጣሉ።';
+  String get importListsHint =>
+      'ቤተ-መጻሕፍትን ከAniyomi፣ Mihon / Tachiyomi ወይም Kotatsu አምጣ። ርዕሶች፣ ሽፋኖች፣ እድገትና ምድቦች ይቀመጣሉ።';
 
   @override
   String get chooseBackupFile => 'የምትኬ ፋይል ምረጥ';
@@ -2450,7 +2477,8 @@ class AppLocalizationsAm extends AppLocalizations {
   }
 
   @override
-  String get localEntryNote => 'ይህ ርዕስ በዚህ መሣሪያ ላይ ባለው የአካባቢ ዝርዝርህ ውስጥ ብቻ ነው። ከመለያ ዝርዝርህ ጋር ሊጋጭ ስለሚችል እዚህ አርትዖት ጠፍቷል፤ ግን አሁንም ማስወገድ ትችላለህ።';
+  String get localEntryNote =>
+      'ይህ ርዕስ በዚህ መሣሪያ ላይ ባለው የአካባቢ ዝርዝርህ ውስጥ ብቻ ነው። ከመለያ ዝርዝርህ ጋር ሊጋጭ ስለሚችል እዚህ አርትዖት ጠፍቷል፤ ግን አሁንም ማስወገድ ትችላለህ።';
 
   @override
   String get cardPresetPoster => 'ፖስተር';
@@ -2997,7 +3025,8 @@ class AppLocalizationsAm extends AppLocalizations {
   String get syncMainService => 'ዋና አገልግሎት';
 
   @override
-  String get syncMainServiceDesc => 'ዝርዝሩ የእውነት ምንጭ ነው፤ ሌሎች የገቡባቸው አገልግሎቶች ሁሉ እንዲመሳሰሉ ይዘመናሉ';
+  String get syncMainServiceDesc =>
+      'ዝርዝሩ የእውነት ምንጭ ነው፤ ሌሎች የገቡባቸው አገልግሎቶች ሁሉ እንዲመሳሰሉ ይዘመናሉ';
 
   @override
   String get syncAuto => 'ራስ-ሰር ማመሳሰል';
@@ -3045,7 +3074,8 @@ class AppLocalizationsAm extends AppLocalizations {
   String get syncComparing => 'ዝርዝሮችን በማወዳደር ላይ';
 
   @override
-  String get syncIntro => 'ዋና አገልግሎት ምረጥና አምጣን ተጫን። እያንዳንዱ አገልግሎት ለዝርዝርህ አንድ ጊዜ ይጠየቃል፣ ከዚያ ከዋናው ጋር ይወዳደራል።';
+  String get syncIntro =>
+      'ዋና አገልግሎት ምረጥና አምጣን ተጫን። እያንዳንዱ አገልግሎት ለዝርዝርህ አንድ ጊዜ ይጠየቃል፣ ከዚያ ከዋናው ጋር ይወዳደራል።';
 
   @override
   String get syncStateSynced => 'ተመሳስሏል';
@@ -3117,7 +3147,8 @@ class AppLocalizationsAm extends AppLocalizations {
   String get syncOnEdit => 'ለውጦችን ወዲያውኑ አመሳስል';
 
   @override
-  String get syncOnEditDesc => 'እያንዳንዱን የእድገት ዝማኔና የዝርዝር አርትዖት ወዲያውኑ ወደ ሌሎች የገባህባቸው አገልግሎቶች ላክ';
+  String get syncOnEditDesc =>
+      'እያንዳንዱን የእድገት ዝማኔና የዝርዝር አርትዖት ወዲያውኑ ወደ ሌሎች የገባህባቸው አገልግሎቶች ላክ';
 
   @override
   String syncPushed(String services) {
@@ -3136,7 +3167,8 @@ class AppLocalizationsAm extends AppLocalizations {
   String get syncAhead => 'ወደፊት ያለው';
 
   @override
-  String get syncAheadDesc => 'ሁለት መንገድ፦ ለእያንዳንዱ ርዕስ ከፍተኛ እድገት ያለው ግቤት ያሸንፋል እና ወደ ሌሎች አገልግሎቶችህ ሁሉ ይገለበጣል';
+  String get syncAheadDesc =>
+      'ሁለት መንገድ፦ ለእያንዳንዱ ርዕስ ከፍተኛ እድገት ያለው ግቤት ያሸንፋል እና ወደ ሌሎች አገልግሎቶችህ ሁሉ ይገለበጣል';
 
   @override
   String syncAheadFrom(String service) {
@@ -3147,7 +3179,8 @@ class AppLocalizationsAm extends AppLocalizations {
   String get syncConfirm => 'ከማመሳሰል በፊት ገምግም';
 
   @override
-  String get syncConfirmDesc => 'ሁሉንም አመሳስል የሚቀይረውንና ምን ያህል ጥያቄዎች እንደሚያስፈልግ አሳይ';
+  String get syncConfirmDesc =>
+      'ሁሉንም አመሳስል የሚቀይረውንና ምን ያህል ጥያቄዎች እንደሚያስፈልግ አሳይ';
 
   @override
   String get syncPreviewTitle => 'ለማመሳሰል ዝግጁ';
@@ -3213,7 +3246,8 @@ class AppLocalizationsAm extends AppLocalizations {
   String get commentsRules => 'የአስተያየት ደንቦች';
 
   @override
-  String get commentsRulesBody => 'ማንኛውንም ደንብ ከጣስክ = ትባረራለህ\n\n1. ዘረኝነት፣ መድልኦ ወይም የጥላቻ ንግግር የለም\n2. ስፓም ወይም ራስን ማስተዋወቅ የለም\n3. NSFW ይዘት በፍጹም የለም\n4. እንግሊዝኛ ብቻ፣ ያለ ልዩነት\n5. ሌላ ሰውን መምሰል፣ ትንኮሳ ወይም ስድብ የለም\n6. ሕገ ወጥ ይዘትም ሆነ ለየትኛውም ደጋፊ ማኅበረሰብ ከፍተኛ ንቀት የለም\n7. ማከማቻዎችን ወይም ኤክስቴንሽኖችን አትጠይቅ ወይም አታጋራ\n8. አጥፊ በአጥፊ መለያና ማስጠንቀቂያ ብቻ\n9. በታዳጊ ገጸ ባህሪያት ላይ ወሲባዊ ወይም ተገቢ ያልሆነ አስተያየት የለም\n10. ስህተት ከሆነ አትለጥፈው!';
+  String get commentsRulesBody =>
+      'ማንኛውንም ደንብ ከጣስክ = ትባረራለህ\n\n1. ዘረኝነት፣ መድልኦ ወይም የጥላቻ ንግግር የለም\n2. ስፓም ወይም ራስን ማስተዋወቅ የለም\n3. NSFW ይዘት በፍጹም የለም\n4. እንግሊዝኛ ብቻ፣ ያለ ልዩነት\n5. ሌላ ሰውን መምሰል፣ ትንኮሳ ወይም ስድብ የለም\n6. ሕገ ወጥ ይዘትም ሆነ ለየትኛውም ደጋፊ ማኅበረሰብ ከፍተኛ ንቀት የለም\n7. ማከማቻዎችን ወይም ኤክስቴንሽኖችን አትጠይቅ ወይም አታጋራ\n8. አጥፊ በአጥፊ መለያና ማስጠንቀቂያ ብቻ\n9. በታዳጊ ገጸ ባህሪያት ላይ ወሲባዊ ወይም ተገቢ ያልሆነ አስተያየት የለም\n10. ስህተት ከሆነ አትለጥፈው!';
 
   @override
   String get commentsRulesAccept => 'ገባኝ';
@@ -3379,7 +3413,8 @@ class AppLocalizationsAm extends AppLocalizations {
   String get commentsSignIn => 'አስተያየቶችን ለማንበብና ለመጻፍ በAniList ግባ';
 
   @override
-  String get commentsSignInMessage => 'አስተያየቶች በሁሉም አገልግሎቶች መካከል የጋራ ናቸው እና የAniList መለያህን ይጠቀማሉ።';
+  String get commentsSignInMessage =>
+      'አስተያየቶች በሁሉም አገልግሎቶች መካከል የጋራ ናቸው እና የAniList መለያህን ይጠቀማሉ።';
 
   @override
   String get commentsUnavailable => 'ለዚህ ርዕስ አስተያየቶች አይገኙም';
@@ -3409,7 +3444,8 @@ class AppLocalizationsAm extends AppLocalizations {
   String get commentsSettingEnabled => 'አስተያየቶች';
 
   @override
-  String get commentsSettingEnabledDesc => 'በርዕሶች ላይ የአስተያየቶች ታብ አሳይና በAniList መለያህ ወደ አስተያየት ሰርቨሩ ግባ';
+  String get commentsSettingEnabledDesc =>
+      'በርዕሶች ላይ የአስተያየቶች ታብ አሳይና በAniList መለያህ ወደ አስተያየት ሰርቨሩ ግባ';
 
   @override
   String get commentsSettingAlerts => 'የምላሽ ማሳወቂያዎች';
@@ -3458,7 +3494,8 @@ class AppLocalizationsAm extends AppLocalizations {
   }
 
   @override
-  String get barcodeCameraDenied => 'ካሜራው አይገኝም። የካሜራ መዳረሻ ፍቀድ ወይም በምትኩ ISBN ተይብ።';
+  String get barcodeCameraDenied =>
+      'ካሜራው አይገኝም። የካሜራ መዳረሻ ፍቀድ ወይም በምትኩ ISBN ተይብ።';
 
   @override
   String get themesTitle => 'መክፈቻዎችና መዝጊያዎች';
@@ -3641,7 +3678,8 @@ class AppLocalizationsAm extends AppLocalizations {
   String get imageSearchTooltip => 'አኒሜን በስክሪንሾት ፈልግ';
 
   @override
-  String get imageSearchIntro => 'ስክሪንሾት ምረጥ ወይም የምስል ሊንክ ለጥፍ፣ trace.moe ክፍሉንና ቅጽበቱን ያገኝልሃል።';
+  String get imageSearchIntro =>
+      'ስክሪንሾት ምረጥ ወይም የምስል ሊንክ ለጥፍ፣ trace.moe ክፍሉንና ቅጽበቱን ያገኝልሃል።';
 
   @override
   String get imageSearchPick => 'ምስል ምረጥ';
@@ -3834,7 +3872,8 @@ class AppLocalizationsAm extends AppLocalizations {
   String get notificationsNoServices => 'ማሳወቂያ ያለው የገባህበት አገልግሎት የለም';
 
   @override
-  String get notificationsNoServicesMessage => 'ማሳወቂያ ወደሚልክ አገልግሎት ግባና እዚህ ይታያሉ።';
+  String get notificationsNoServicesMessage =>
+      'ማሳወቂያ ወደሚልክ አገልግሎት ግባና እዚህ ይታያሉ።';
 
   @override
   String get notificationsEmptyKind => 'በዚህ ምድብ ውስጥ እስካሁን ምንም የለም';
@@ -3843,7 +3882,8 @@ class AppLocalizationsAm extends AppLocalizations {
   String get notificationsCommentsEmpty => 'የአስተያየት ማሳወቂያዎች የሉም';
 
   @override
-  String get notificationsCommentsEmptyMessage => 'ለአስተያየቶችህ የሚሰጡ ምላሾችና ከDantotsu የሚመጡ ማስታወቂያዎች እዚህ ይታያሉ።';
+  String get notificationsCommentsEmptyMessage =>
+      'ለአስተያየቶችህ የሚሰጡ ምላሾችና ከDantotsu የሚመጡ ማስታወቂያዎች እዚህ ይታያሉ።';
 
   @override
   String get notificationsSettings => 'የማሳወቂያ ቅንብሮች';
@@ -3871,7 +3911,8 @@ class AppLocalizationsAm extends AppLocalizations {
   String get notificationsTestSent => 'የሙከራ ማሳወቂያ ተልኳል';
 
   @override
-  String get notificationsTestDenied => 'ለDartotsu ማሳወቂያዎች አልተፈቀዱም። በሲስተም ቅንብሮች ውስጥ አብራቸው።';
+  String get notificationsTestDenied =>
+      'ለDartotsu ማሳወቂያዎች አልተፈቀዱም። በሲስተም ቅንብሮች ውስጥ አብራቸው።';
 
   @override
   String get notificationsTestHint => 'የሙከራ ማሳወቂያ ለመላክ ተጭነህ ያዝ';
@@ -3949,7 +3990,8 @@ class AppLocalizationsAm extends AppLocalizations {
   String get watchCompactView => 'ጥቅጥቅ';
 
   @override
-  String get watchDefaultLayoutDesc => 'ለርዕስ እስክትቀይር ድረስ ክፍሎችና ምዕራፎች እንዴት እንደሚደረደሩ';
+  String get watchDefaultLayoutDesc =>
+      'ለርዕስ እስክትቀይር ድረስ ክፍሎችና ምዕራፎች እንዴት እንደሚደረደሩ';
 
   @override
   String get watchChunkSize => 'የክልል መጠን';
@@ -3961,7 +4003,8 @@ class AppLocalizationsAm extends AppLocalizations {
   String get watchShowDescription => 'መግለጫዎችን አሳይ';
 
   @override
-  String get watchShowDescriptionDesc => 'በዝርዝር አቀማመጥ ውስጥ የክፍሉን ማጠቃለያ ከእያንዳንዱ ርዕስ በታች አሳይ';
+  String get watchShowDescriptionDesc =>
+      'በዝርዝር አቀማመጥ ውስጥ የክፍሉን ማጠቃለያ ከእያንዳንዱ ርዕስ በታች አሳይ';
 
   @override
   String get watchShowFiller => 'ፊለር ክፍሎችን አሳይ';
@@ -3985,13 +4028,15 @@ class AppLocalizationsAm extends AppLocalizations {
   String get watchMarkOnLongPress => 'ተጭኖ መያዝ እድገት ያመለክታል';
 
   @override
-  String get watchMarkOnLongPressDesc => 'ክፍል ወይም ምዕራፍ ተጭነህ ያዝና እንደታየ ወይም እንዳልታየ ምልክት አድርግ';
+  String get watchMarkOnLongPressDesc =>
+      'ክፍል ወይም ምዕራፍ ተጭነህ ያዝና እንደታየ ወይም እንዳልታየ ምልክት አድርግ';
 
   @override
   String get watchMatching => 'የምንጭ ማዛመድ';
 
   @override
-  String get watchMatchingDesc => '\"በጣም የቀረበ\" ምርጡን የፍለጋ ውጤት ይወስዳል። \"ትክክለኛ ብቻ\" ተቀራራቢ ተመሳሳይ ርዕስ ብቻ ይቀበላል፣ የቀረውን ለአንተ ይተዋል።';
+  String get watchMatchingDesc =>
+      '\"በጣም የቀረበ\" ምርጡን የፍለጋ ውጤት ይወስዳል። \"ትክክለኛ ብቻ\" ተቀራራቢ ተመሳሳይ ርዕስ ብቻ ይቀበላል፣ የቀረውን ለአንተ ይተዋል።';
 
   @override
   String get watchMatchClosest => 'በጣም የቀረበ ተዛማጅ';
@@ -4000,7 +4045,8 @@ class AppLocalizationsAm extends AppLocalizations {
   String get watchMatchExact => 'ትክክለኛ ተዛማጅ ብቻ';
 
   @override
-  String get watchMetadataDesc => 'የክፍል ርዕሶች፣ ማጠቃለያዎች፣ ድንክዬዎች፣ የስርጭት ቀኖችና የፊለር ምልክቶች ከየት እንደሚመጡ። ቅድሚያ ለማስቀመጥ ጎትት፤ እሴት ያለው የመጀመሪያው ምንጭ ያሸንፋል።';
+  String get watchMetadataDesc =>
+      'የክፍል ርዕሶች፣ ማጠቃለያዎች፣ ድንክዬዎች፣ የስርጭት ቀኖችና የፊለር ምልክቶች ከየት እንደሚመጡ። ቅድሚያ ለማስቀመጥ ጎትት፤ እሴት ያለው የመጀመሪያው ምንጭ ያሸንፋል።';
 
   @override
   String get watchMetaAniZipDesc => 'የክፍል ርዕሶች፣ ማጠቃለያዎች፣ ምስሎችና የስርጭት ቀኖች';
@@ -4015,7 +4061,8 @@ class AppLocalizationsAm extends AppLocalizations {
   String get watchMetaAniListDesc => 'የስትሪሚንግ ክፍል ርዕሶች፣ ድንክዬዎችና የስርጭት መርሐ ግብር';
 
   @override
-  String get watchMetaTenraiDesc => 'የMyAnimeList ክፍል ርዕሶች፣ የስርጭት ቀኖች፣ ፊለርና ሪካፕ ምልክቶች በTenrai በኩል';
+  String get watchMetaTenraiDesc =>
+      'የMyAnimeList ክፍል ርዕሶች፣ የስርጭት ቀኖች፣ ፊለርና ሪካፕ ምልክቶች በTenrai በኩል';
 
   @override
   String get watchClearMetadata => 'የክፍል ዝርዝሮችን አድስ';
@@ -4168,7 +4215,8 @@ class AppLocalizationsAm extends AppLocalizations {
   String get watchOpenWebView => 'በዌብ ቪው ክፈት';
 
   @override
-  String get watchOpenWebViewDesc => 'የCloudflare ፍተሻ ፍታ ወይም ግባ፤ ኩኪዎቹ ከምንጭ ጥያቄዎች ጋር ይጋራሉ';
+  String get watchOpenWebViewDesc =>
+      'የCloudflare ፍተሻ ፍታ ወይም ግባ፤ ኩኪዎቹ ከምንጭ ጥያቄዎች ጋር ይጋራሉ';
 
   @override
   String watchCookieCount(int count, String host) {
@@ -4194,10 +4242,12 @@ class AppLocalizationsAm extends AppLocalizations {
   String get watchClearanceSession => 'መተግበሪያው እስኪዘጋ ድረስ ይቆያል';
 
   @override
-  String get watchAgentShared => 'ጥያቄዎች Cloudflare የሚፈትሸውን የዌብ ቪው user agent ይጠቀማሉ';
+  String get watchAgentShared =>
+      'ጥያቄዎች Cloudflare የሚፈትሸውን የዌብ ቪው user agent ይጠቀማሉ';
 
   @override
-  String get watchAgentCustom => 'ብጁ user agent ተቀናብሯል፣ ስለዚህ ከዌብ ቪው የመጣ የCloudflare ማረጋገጫ ውድቅ ሊሆን ይችላል';
+  String get watchAgentCustom =>
+      'ብጁ user agent ተቀናብሯል፣ ስለዚህ ከዌብ ቪው የመጣ የCloudflare ማረጋገጫ ውድቅ ሊሆን ይችላል';
 
   @override
   String get watchTestConnection => 'ግንኙነት ሞክር';
@@ -4243,7 +4293,8 @@ class AppLocalizationsAm extends AppLocalizations {
   String get settingsPlayer => 'ማጫወቻ';
 
   @override
-  String get settingsPlayerDesc => 'መልሶ ማጫወት፣ ንዑስ ርዕሶች፣ ሼደሮች፣ mpv እና ፋይሎችን መክፈት';
+  String get settingsPlayerDesc =>
+      'መልሶ ማጫወት፣ ንዑስ ርዕሶች፣ ሼደሮች፣ mpv እና ፋይሎችን መክፈት';
 
   @override
   String get playerSettingsTitle => 'የማጫወቻ ቅንብሮች';
@@ -4339,7 +4390,8 @@ class AppLocalizationsAm extends AppLocalizations {
   String get playerAutoSkipRecap => 'ሪካፖችን እለፍ';
 
   @override
-  String get playerAutoSkipDesc => 'እንደጀመረ ወዲያውኑ እለፍ፣ AniSkip እና የስትሪም የጊዜ ማህተሞችን በመጠቀም';
+  String get playerAutoSkipDesc =>
+      'እንደጀመረ ወዲያውኑ እለፍ፣ AniSkip እና የስትሪም የጊዜ ማህተሞችን በመጠቀም';
 
   @override
   String get playerSkipOnce => 'አንድ ጊዜ ብቻ እለፍ';
@@ -4363,7 +4415,8 @@ class AppLocalizationsAm extends AppLocalizations {
   String get playerHoldToSpeed => 'ለማፍጠን ተጭነህ ያዝ';
 
   @override
-  String get playerHoldToSpeedDesc => 'ቪዲዮውን ተጭነህ ያዝና በፍጥነት አጫውት፣ ፍጥነቱን ለመቀየር ወደ ጎን ጎትት';
+  String get playerHoldToSpeedDesc =>
+      'ቪዲዮውን ተጭነህ ያዝና በፍጥነት አጫውት፣ ፍጥነቱን ለመቀየር ወደ ጎን ጎትት';
 
   @override
   String get playerThumbless => 'ወፍራም የመፈለጊያ አሞሌ';
@@ -4405,7 +4458,8 @@ class AppLocalizationsAm extends AppLocalizations {
   String get playerLibass => 'libass ተጠቀም';
 
   @override
-  String get playerLibassDesc => 'የተቀረጹ .ass ንዑስ ርዕሶችን አሳይ። ከላይ ያሉት መጠን፣ ቀለምና ፊደል ከዚያ በኋላ አይተገበሩም';
+  String get playerLibassDesc =>
+      'የተቀረጹ .ass ንዑስ ርዕሶችን አሳይ። ከላይ ያሉት መጠን፣ ቀለምና ፊደል ከዚያ በኋላ አይተገበሩም';
 
   @override
   String get playerShaders => 'ሼደሮች';
@@ -4414,7 +4468,8 @@ class AppLocalizationsAm extends AppLocalizations {
   String get playerShadersEnable => 'ሼደሮችን አብራ';
 
   @override
-  String get playerShadersEnableDesc => 'ምስሉን እንደ Anime4K ባሉ GLSL ሼደሮች አሳድግና አጽዳ';
+  String get playerShadersEnableDesc =>
+      'ምስሉን እንደ Anime4K ባሉ GLSL ሼደሮች አሳድግና አጽዳ';
 
   @override
   String get playerShadersOff => 'ሼደሮች ጠፍተዋል';
@@ -4423,7 +4478,8 @@ class AppLocalizationsAm extends AppLocalizations {
   String get playerShadersMissing => 'Anime4K አልተጫነም';
 
   @override
-  String get playerShadersMissingDesc => 'አብሮ የተሰሩ ሁነታዎችን ለመጠቀም የAnime4K ሼደር ጥቅል (ወደ 0.8 MB) አውርድ።';
+  String get playerShadersMissingDesc =>
+      'አብሮ የተሰሩ ሁነታዎችን ለመጠቀም የAnime4K ሼደር ጥቅል (ወደ 0.8 MB) አውርድ።';
 
   @override
   String get playerShadersDownload => 'Anime4K አውርድ';
@@ -4504,7 +4560,8 @@ class AppLocalizationsAm extends AppLocalizations {
   String get playerShadersImport => '.glsl አስገባ';
 
   @override
-  String get playerShadersNone => 'የራስህን .glsl ወይም .hook ፋይሎች አስገባና ለማያያዝ ምልክት አድርግባቸው';
+  String get playerShadersNone =>
+      'የራስህን .glsl ወይም .hook ፋይሎች አስገባና ለማያያዝ ምልክት አድርግባቸው';
 
   @override
   String get playerShadersBadFile => '.glsl ወይም .hook ሼደር ፋይል ምረጥ';
@@ -4543,7 +4600,8 @@ class AppLocalizationsAm extends AppLocalizations {
   String get playerUseMpvConf => 'mpv.conf ተጠቀም';
 
   @override
-  String get playerUseMpvConfDesc => 'መልሶ ማጫወት ሲጀምር በmpv.conf ውስጥ ያሉትን አማራጮች ተግብር';
+  String get playerUseMpvConfDesc =>
+      'መልሶ ማጫወት ሲጀምር በmpv.conf ውስጥ ያሉትን አማራጮች ተግብር';
 
   @override
   String get playerMpvConf => 'mpv.conf';
@@ -4552,7 +4610,8 @@ class AppLocalizationsAm extends AppLocalizations {
   String get playerMpvConfEdit => 'የmpv ውቅረትን አርም';
 
   @override
-  String get playerMpvConfDesc => 'በአንድ መስመር አንድ አማራጭ፣ በመደበኛ mpv.conf ውስጥ እንዳለ --hwdec=auto። በ[ቅንፍ] ውስጥ ያሉ ፕሮፋይሎች ችላ ይባላሉ።';
+  String get playerMpvConfDesc =>
+      'በአንድ መስመር አንድ አማራጭ፣ በመደበኛ mpv.conf ውስጥ እንዳለ --hwdec=auto። በ[ቅንፍ] ውስጥ ያሉ ፕሮፋይሎች ችላ ይባላሉ።';
 
   @override
   String get playerMpvConfSaved => 'mpv.conf ተቀምጧል';
@@ -4561,7 +4620,8 @@ class AppLocalizationsAm extends AppLocalizations {
   String get playerUseScripts => 'የmpv ስክሪፕቶችን ተጠቀም';
 
   @override
-  String get playerUseScriptsDesc => 'ከscripts አቃፊ ፕለጊኖችን ጫን። Lua ወይም JavaScript ድጋፍ ያለው libmpv ግንባታ ያስፈልጋቸዋል';
+  String get playerUseScriptsDesc =>
+      'ከscripts አቃፊ ፕለጊኖችን ጫን። Lua ወይም JavaScript ድጋፍ ያለው libmpv ግንባታ ያስፈልጋቸዋል';
 
   @override
   String get playerScripts => 'የmpv ስክሪፕቶች';
@@ -4573,7 +4633,8 @@ class AppLocalizationsAm extends AppLocalizations {
   String get playerScriptsAdd => 'ስክሪፕት ጨምር';
 
   @override
-  String get playerScriptsDesc => 'እዚህ የተቀመጡ Lua፣ JavaScript እና ቤተኛ ፕለጊኖች መልሶ ማጫወት ሲጀምር ይጫናሉ።';
+  String get playerScriptsDesc =>
+      'እዚህ የተቀመጡ Lua፣ JavaScript እና ቤተኛ ፕለጊኖች መልሶ ማጫወት ሲጀምር ይጫናሉ።';
 
   @override
   String get playerScriptsNone => 'እስካሁን ስክሪፕት የለም';
@@ -4585,7 +4646,8 @@ class AppLocalizationsAm extends AppLocalizations {
   String get playerTuning => 'የላቀ የቪዲዮ ማስተካከያ';
 
   @override
-  String get playerTuningDesc => 'ማመሳሰልን፣ ካሺንግን፣ ማስፋትንና ቶን ማፒንግን ተካ። የተሳሳቱ እሴቶች መልሶ ማጫወትን ሊጎዱ ይችላሉ';
+  String get playerTuningDesc =>
+      'ማመሳሰልን፣ ካሺንግን፣ ማስፋትንና ቶን ማፒንግን ተካ። የተሳሳቱ እሴቶች መልሶ ማጫወትን ሊጎዱ ይችላሉ';
 
   @override
   String get playerVideoSync => 'የቪዲዮ ማመሳሰል';
@@ -4594,7 +4656,8 @@ class AppLocalizationsAm extends AppLocalizations {
   String get playerInterpolation => 'የፍሬም ኢንተርፖሌሽን';
 
   @override
-  String get playerInterpolationDesc => 'ለስላሳ እንቅስቃሴ፣ display-resample ማመሳሰል ያስፈልገዋል';
+  String get playerInterpolationDesc =>
+      'ለስላሳ እንቅስቃሴ፣ display-resample ማመሳሰል ያስፈልገዋል';
 
   @override
   String get playerPitch => 'የድምጽ ቃና ማስተካከያ';
@@ -4726,7 +4789,8 @@ class AppLocalizationsAm extends AppLocalizations {
   String get playerTorrentNeeded => 'ይህ ስትሪም ቶረንት ነው';
 
   @override
-  String get playerTorrentNeededDesc => 'የማግኔት ሊንኮችንና .torrent ፋይሎችን ለማጫወት የቶረንት ተጨማሪውን ጫን';
+  String get playerTorrentNeededDesc =>
+      'የማግኔት ሊንኮችንና .torrent ፋይሎችን ለማጫወት የቶረንት ተጨማሪውን ጫን';
 
   @override
   String get playerOpenAddons => 'ተጨማሪዎችን ክፈት';
@@ -4983,7 +5047,8 @@ class AppLocalizationsAm extends AppLocalizations {
   String get readerAutoScrollSpeed => 'የራስ-ሰር ማሸብለል ፍጥነት';
 
   @override
-  String get readerAutoScrollSpeedDesc => 'ገጾች በራሳቸው የሚሸበለሉበት ወይም የሚገለበጡበት ፍጥነት';
+  String get readerAutoScrollSpeedDesc =>
+      'ገጾች በራሳቸው የሚሸበለሉበት ወይም የሚገለበጡበት ፍጥነት';
 
   @override
   String get readerKeepOn => 'ስክሪኑን አብርቶ አቆይ';
@@ -5074,7 +5139,8 @@ class AppLocalizationsAm extends AppLocalizations {
   String get trackProgressYes => 'አስቀምጥ';
 
   @override
-  String get trackProgressReset => 'የእድገት ማስቀመጥ ጥያቄ ለዚህ ዓይነት ዳግም ተጀምሯል፣ እንደገና ይጠይቃል';
+  String get trackProgressReset =>
+      'የእድገት ማስቀመጥ ጥያቄ ለዚህ ዓይነት ዳግም ተጀምሯል፣ እንደገና ይጠይቃል';
 
   @override
   String get trackProgressNo => 'አይ';
@@ -5107,7 +5173,8 @@ class AppLocalizationsAm extends AppLocalizations {
   String get dantotsuImport => 'ከDantotsu አስገባ';
 
   @override
-  String get dantotsuImportDesc => 'የDantotsu የቅንብሮች ምትኬ አንብብ (.ani፣ ወይም የተመሰጠረ .sani)';
+  String get dantotsuImportDesc =>
+      'የDantotsu የቅንብሮች ምትኬ አንብብ (.ani፣ ወይም የተመሰጠረ .sani)';
 
   @override
   String get dantotsuPick => 'የDantotsu ምትኬ ምረጥ';
@@ -5196,13 +5263,15 @@ class AppLocalizationsAm extends AppLocalizations {
   String get kitsuGraphqlDetail => 'ፈጣን የዝርዝር ገጾች (GraphQL)';
 
   @override
-  String get kitsuGraphqlDetailDesc => 'ርዕስን ከገጸ ባህሪያቱ፣ ሠራተኞቹና ከግቤትህ ጋር በአንድ ጥያቄ ጫን';
+  String get kitsuGraphqlDetailDesc =>
+      'ርዕስን ከገጸ ባህሪያቱ፣ ሠራተኞቹና ከግቤትህ ጋር በአንድ ጥያቄ ጫን';
 
   @override
   String get togetherTitle => 'አብሮ መመልከት';
 
   @override
-  String get togetherIntro => 'ጓደኛህ የላከልህን የክፍል ሊንክ ለጥፍ። ወዲያውኑ ትቀላቀላለህ እና እነሱ መመልከት ሲጀምሩ ማጫወቻው ይከፈታል።';
+  String get togetherIntro =>
+      'ጓደኛህ የላከልህን የክፍል ሊንክ ለጥፍ። ወዲያውኑ ትቀላቀላለህ እና እነሱ መመልከት ሲጀምሩ ማጫወቻው ይከፈታል።';
 
   @override
   String get togetherName => 'ስምህ';
@@ -5223,7 +5292,8 @@ class AppLocalizationsAm extends AppLocalizations {
   String get togetherPassword => 'የሰርቨር የይለፍ ቃል (አማራጭ)';
 
   @override
-  String get togetherPublicNote => 'የሕዝብ ሰርቨሮች የይለፍ ቃል የላቸውም እና ክፍሎቹ ክፍት ናቸው። ረጅም የክፍል ስም ተጠቀምና ከጓደኞችህ ጋር ብቻ አጋራ።';
+  String get togetherPublicNote =>
+      'የሕዝብ ሰርቨሮች የይለፍ ቃል የላቸውም እና ክፍሎቹ ክፍት ናቸው። ረጅም የክፍል ስም ተጠቀምና ከጓደኞችህ ጋር ብቻ አጋራ።';
 
   @override
   String get togetherConnect => 'ተገናኝ';
@@ -5314,7 +5384,8 @@ class AppLocalizationsAm extends AppLocalizations {
   String get togetherFollow => 'የአስተናጋጁን ክፍል ተከተል';
 
   @override
-  String get togetherFollowDesc => 'ተመሳሳይ አገልግሎት ስትጠቀም ክፍሎችን በራስ-ሰር ይከፍታል እና ይቀይራል';
+  String get togetherFollowDesc =>
+      'ተመሳሳይ አገልግሎት ስትጠቀም ክፍሎችን በራስ-ሰር ይከፍታል እና ይቀይራል';
 
   @override
   String get togetherOpenHost => 'የአስተናጋጁን ክፍል ክፈት';
@@ -5386,7 +5457,8 @@ class AppLocalizationsAm extends AppLocalizations {
   String get togetherSettingsDesc => 'በሊንክ የጓደኛህን ክፍል ተቀላቀል';
 
   @override
-  String get togetherNoPlayer => 'ክፍል ክፈትና ከክፍሉ ጋር በራስ-ሰር ይመሳሰላል። ቻትና የአባላት ዝርዝር አሁን ይሠራሉ።';
+  String get togetherNoPlayer =>
+      'ክፍል ክፈትና ከክፍሉ ጋር በራስ-ሰር ይመሳሰላል። ቻትና የአባላት ዝርዝር አሁን ይሠራሉ።';
 
   @override
   String togetherWatching(String name, String file) {
@@ -5453,7 +5525,8 @@ class AppLocalizationsAm extends AppLocalizations {
   String get novelTapPaging => 'ገጽ ለመገልበጥ ጠርዞችን ንካ';
 
   @override
-  String get novelTapPagingDesc => 'ገጽ ለማሸብለል የግራ ወይም የቀኝ ጎን ንካ፣ መሃሉ መቆጣጠሪያዎቹን ያሳያል';
+  String get novelTapPagingDesc =>
+      'ገጽ ለማሸብለል የግራ ወይም የቀኝ ጎን ንካ፣ መሃሉ መቆጣጠሪያዎቹን ያሳያል';
 
   @override
   String novelMinutesLeft(int count) {
@@ -5551,7 +5624,8 @@ class AppLocalizationsAm extends AppLocalizations {
   String get playerAudioLanguage => 'የተመረጠ የድምጽ ቋንቋ';
 
   @override
-  String get playerLanguageOrderHint => 'ቋንቋዎችን በነጠላ ሰረዝ ለይ። መጀመሪያ የተገኘው ይጠቀማል።';
+  String get playerLanguageOrderHint =>
+      'ቋንቋዎችን በነጠላ ሰረዝ ለይ። መጀመሪያ የተገኘው ይጠቀማል።';
 
   @override
   String get playerPip => 'ስዕል-በ-ስዕል';
@@ -5644,7 +5718,8 @@ class AppLocalizationsAm extends AppLocalizations {
   String get playerSeekPreview => 'የመፈለጊያ ቅድመ እይታ';
 
   @override
-  String get playerSeekPreviewDesc => 'በሚፈልግበት ጊዜ ከመፈለጊያ አሞሌው በላይ ትንሽ የፍሬም ቅድመ እይታ አሳይ። ሁለተኛ ዝቅተኛ ጥራት ዲኮደር ይከፍታል፣ ስለዚህ በስትሪሞች ላይ ተጨማሪ ዳታ ይጠቀማል።';
+  String get playerSeekPreviewDesc =>
+      'በሚፈልግበት ጊዜ ከመፈለጊያ አሞሌው በላይ ትንሽ የፍሬም ቅድመ እይታ አሳይ። ሁለተኛ ዝቅተኛ ጥራት ዲኮደር ይከፍታል፣ ስለዚህ በስትሪሞች ላይ ተጨማሪ ዳታ ይጠቀማል።';
 
   @override
   String get playerSettingsChip => 'ቅንብሮች';
@@ -5689,7 +5764,8 @@ class AppLocalizationsAm extends AppLocalizations {
   String get downloadNoSubtitle => 'ንዑስ ርዕስ የለም';
 
   @override
-  String get downloadHlsNeedsFfmpeg => 'ይህ ስትሪም የHLS ፕሌይሊስት ነው። ለማውረድ የFFmpeg ተጨማሪ ያስፈልጋል።';
+  String get downloadHlsNeedsFfmpeg =>
+      'ይህ ስትሪም የHLS ፕሌይሊስት ነው። ለማውረድ የFFmpeg ተጨማሪ ያስፈልጋል።';
 
   @override
   String get downloadSourceMissing => 'የዚህ ክፍል ምንጭ አልተጫነም';
@@ -5819,7 +5895,8 @@ class AppLocalizationsAm extends AppLocalizations {
   String get downloadNotifications => 'የውርድ ማሳወቂያዎች';
 
   @override
-  String get downloadNotificationsDesc => 'ሲስተሙ በሚደግፍበት ቀጥታ እድገት፣ ካልሆነ ውርድ ሲያልቅ ማስታወሻ';
+  String get downloadNotificationsDesc =>
+      'ሲስተሙ በሚደግፍበት ቀጥታ እድገት፣ ካልሆነ ውርድ ሲያልቅ ማስታወሻ';
 
   @override
   String get downloadNotifyLive => 'ቀጥታ';
@@ -5834,13 +5911,15 @@ class AppLocalizationsAm extends AppLocalizations {
   String get downloadInfoFile => 'ከእያንዳንዱ ውርድ ቀጥሎ የመረጃ ፋይል ጻፍ';
 
   @override
-  String get downloadInfoFileDesc => 'ስትሪሙን፣ ጥራቱን፣ ንዑስ ርዕሱንና የመዝለያ ጊዜዎችን እንደ ትንሽ .json ፋይል ያስቀምጣል';
+  String get downloadInfoFileDesc =>
+      'ስትሪሙን፣ ጥራቱን፣ ንዑስ ርዕሱንና የመዝለያ ጊዜዎችን እንደ ትንሽ .json ፋይል ያስቀምጣል';
 
   @override
   String get offlineHeader => 'ከመስመር ውጭ';
 
   @override
-  String get offlineModeDesc => '\"ራስ-ሰር\" ከመስመር ውጭ የሚሆነው መተግበሪያው ያለ ግንኙነት ሲጀምር ብቻ ነው። \"ሁልጊዜ\" እስክትቀይር ድረስ ከመስመር ውጭ ይቆያል።';
+  String get offlineModeDesc =>
+      '\"ራስ-ሰር\" ከመስመር ውጭ የሚሆነው መተግበሪያው ያለ ግንኙነት ሲጀምር ብቻ ነው። \"ሁልጊዜ\" እስክትቀይር ድረስ ከመስመር ውጭ ይቆያል።';
 
   @override
   String get offlineModeOff => 'ጠፍቷል';
@@ -5849,7 +5928,8 @@ class AppLocalizationsAm extends AppLocalizations {
   String get offlineModeAlways => 'ሁልጊዜ';
 
   @override
-  String get offlineModeOn => 'ከመስመር ውጭ ሁነታ በርቷል። ለውጦች እዚህ ይቀመጣሉ እና ወደ መስመር ላይ ስትመለስ ይላካሉ።';
+  String get offlineModeOn =>
+      'ከመስመር ውጭ ሁነታ በርቷል። ለውጦች እዚህ ይቀመጣሉ እና ወደ መስመር ላይ ስትመለስ ይላካሉ።';
 
   @override
   String get offlineLost => 'ከመስመር ውጭ ነህ። ለውጦች በዚህ መሣሪያ ላይ ይቀመጣሉ';
@@ -5932,7 +6012,8 @@ class AppLocalizationsAm extends AppLocalizations {
   String get downloadFfmpegTitle => 'የFFmpeg ተጨማሪ ያስፈልጋል';
 
   @override
-  String get downloadFfmpegBody => 'ይህ ስትሪም የHLS ፕሌይሊስት ነው። የFFmpeg ተጨማሪ ቁርጥራጮቹን ወደ አንድ mp4 ፋይል ያጣምራል። ያለሱ ቁርጥራጮቹ በክፍል አቃፊ ውስጥ ይቆያሉ እና ከዚያ ይጫወታሉ።';
+  String get downloadFfmpegBody =>
+      'ይህ ስትሪም የHLS ፕሌይሊስት ነው። የFFmpeg ተጨማሪ ቁርጥራጮቹን ወደ አንድ mp4 ፋይል ያጣምራል። ያለሱ ቁርጥራጮቹ በክፍል አቃፊ ውስጥ ይቆያሉ እና ከዚያ ይጫወታሉ።';
 
   @override
   String get downloadFfmpegInstall => 'ጫን';
@@ -5966,13 +6047,15 @@ class AppLocalizationsAm extends AppLocalizations {
   String get downloadAutoDelete => 'የታዩ ውርዶችን ሰርዝ';
 
   @override
-  String get downloadAutoDeleteDesc => 'እድገትህ ወደዚያ ክፍል ወይም ምዕራፍ ሲደርስ ውርዱን ያስወግዳል';
+  String get downloadAutoDeleteDesc =>
+      'እድገትህ ወደዚያ ክፍል ወይም ምዕራፍ ሲደርስ ውርዱን ያስወግዳል';
 
   @override
   String get downloadConnections => 'በውርድ ግንኙነቶች';
 
   @override
-  String get downloadConnectionsDesc => 'ትልቅ ፋይልን በአንድ ጊዜ በሚመጡ ክፍሎች ይከፍላል። አንዳንድ ሰርቨሮች ይህን ይገድባሉ።';
+  String get downloadConnectionsDesc =>
+      'ትልቅ ፋይልን በአንድ ጊዜ በሚመጡ ክፍሎች ይከፍላል። አንዳንድ ሰርቨሮች ይህን ይገድባሉ።';
 
   @override
   String get downloadPlayChoice => 'ከዚህ አጫውት';
@@ -6082,7 +6165,8 @@ class AppLocalizationsAm extends AppLocalizations {
   String get watchAutoSource => 'በራስ-ሰር ወደ ቀጣዩ ምንጭ ቀይር';
 
   @override
-  String get watchAutoSourceDesc => 'ምንጩ ርዕሱን ካላገኘ ወይም መጫን ካልቻለ ቀጣዩን የተጫነ ምንጭ ሞክር';
+  String get watchAutoSourceDesc =>
+      'ምንጩ ርዕሱን ካላገኘ ወይም መጫን ካልቻለ ቀጣዩን የተጫነ ምንጭ ሞክር';
 
   @override
   String get extensionTest => 'ኤክስቴንሽኖችን ሞክር';
@@ -6134,31 +6218,36 @@ class AppLocalizationsAm extends AppLocalizations {
   String get onboardingFeaturesTitle => 'ሁሉም በአንድ ቦታ';
 
   @override
-  String get onboardingFeaturesBody => 'የምትከታተለው፣ የምትመለከተውና የምታነበው ሁሉ፣ መተግበሪያዎችን ሳትቀያይር።';
+  String get onboardingFeaturesBody =>
+      'የምትከታተለው፣ የምትመለከተውና የምታነበው ሁሉ፣ መተግበሪያዎችን ሳትቀያይር።';
 
   @override
   String get onboardingFeatureTrack => 'ሁሉንም ተከታተል';
 
   @override
-  String get onboardingFeatureTrackDesc => 'በAniList፣ MyAnimeList፣ Simkl፣ Kitsu እና MangaBaka ላይ ዝርዝሮች፣ እድገትና ውጤቶች።';
+  String get onboardingFeatureTrackDesc =>
+      'በAniList፣ MyAnimeList፣ Simkl፣ Kitsu እና MangaBaka ላይ ዝርዝሮች፣ እድገትና ውጤቶች።';
 
   @override
   String get onboardingFeatureWatch => 'ተመልከትና አንብብ';
 
   @override
-  String get onboardingFeatureWatchDesc => 'ኤክስቴንሽኖችን ጫንና አኒሜን ስትሪም አድርግ ወይም ማንጋና ኖቭሎችን በመተግበሪያው ውስጥ አንብብ።';
+  String get onboardingFeatureWatchDesc =>
+      'ኤክስቴንሽኖችን ጫንና አኒሜን ስትሪም አድርግ ወይም ማንጋና ኖቭሎችን በመተግበሪያው ውስጥ አንብብ።';
 
   @override
   String get onboardingFeatureOffline => 'ከመስመር ውጭም ተጠቀም';
 
   @override
-  String get onboardingFeatureOfflineDesc => 'ክፍሎችንና ምዕራፎችን አውርድ እና ያለ ግንኙነት ቀጥል።';
+  String get onboardingFeatureOfflineDesc =>
+      'ክፍሎችንና ምዕራፎችን አውርድ እና ያለ ግንኙነት ቀጥል።';
 
   @override
   String get onboardingFeatureSync => 'ዝርዝሮችን አመሳስል';
 
   @override
-  String get onboardingFeatureSyncDesc => 'ዝርዝርህን በአገልግሎቶች መካከል አንጸባርቅ፣ ወይም ወደፊት ያለው ያሸንፍ።';
+  String get onboardingFeatureSyncDesc =>
+      'ዝርዝርህን በአገልግሎቶች መካከል አንጸባርቅ፣ ወይም ወደፊት ያለው ያሸንፍ።';
 
   @override
   String get onboardingThemeShape => 'ቀለሞች';

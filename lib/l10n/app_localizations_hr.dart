@@ -12,7 +12,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get appName => 'Dartotsu';
 
   @override
-  String get appTagline => 'NOVA najbolja aplikacija za\npraćenje animea i mange';
+  String get appTagline =>
+      'NOVA najbolja aplikacija za\npraćenje animea i mange';
 
   @override
   String get anilist => 'AniList';
@@ -71,7 +72,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get animationSpeed => 'Animacije';
 
   @override
-  String get animationSpeedDesc => 'Brzina prijelaza i ulaznih efekata u cijeloj aplikaciji';
+  String get animationSpeedDesc =>
+      'Brzina prijelaza i ulaznih efekata u cijeloj aplikaciji';
 
   @override
   String get animationSpeedOff => 'Isključeno';
@@ -122,7 +124,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get pluginRepoUpdated => 'Repozitorij dodataka je ažuriran';
 
   @override
-  String get pluginRepoUpdateFailed => 'Osvježavanje repozitorija dodataka nije uspjelo';
+  String get pluginRepoUpdateFailed =>
+      'Osvježavanje repozitorija dodataka nije uspjelo';
 
   @override
   String get ok => 'U redu';
@@ -228,28 +231,33 @@ class AppLocalizationsHr extends AppLocalizations {
   String get glassMode => 'Stakleni način';
 
   @override
-  String get glassModeDesc => 'Zamućene površine preko slika iz tvoje biblioteke';
+  String get glassModeDesc =>
+      'Zamućene površine preko slika iz tvoje biblioteke';
 
   @override
   String get shelfFrame => 'Okvir oko sekcija';
 
   @override
-  String get shelfFrameDesc => 'Prikaži karticu iza svake police ili pusti da redovi stoje izravno na stranici';
+  String get shelfFrameDesc =>
+      'Prikaži karticu iza svake police ili pusti da redovi stoje izravno na stranici';
 
   @override
-  String get settingsExtensionsDesc => 'Upravitelji izvora, repozitoriji i opcije ekstenzija';
+  String get settingsExtensionsDesc =>
+      'Upravitelji izvora, repozitoriji i opcije ekstenzija';
 
   @override
   String get settingsAddons => 'Dodaci';
 
   @override
-  String get settingsAddonsDesc => 'Neobavezne komponente poput torrent poslužitelja';
+  String get settingsAddonsDesc =>
+      'Neobavezne komponente poput torrent poslužitelja';
 
   @override
   String get customPath => 'Prilagođena putanja pohrane';
 
   @override
-  String get customPathDesc => 'Gdje se čuvaju podaci aplikacije. Dugo pritisni za reset';
+  String get customPathDesc =>
+      'Gdje se čuvaju podaci aplikacije. Dugo pritisni za reset';
 
   @override
   String get selectDirectory => 'Odaberi mapu';
@@ -258,7 +266,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get differentCacheManager => 'Alternativna predmemorija slika';
 
   @override
-  String get differentCacheManagerDesc => 'Koristi drugi upravitelj predmemorije za slike';
+  String get differentCacheManagerDesc =>
+      'Koristi drugi upravitelj predmemorije za slike';
 
   @override
   String get backupAndRestore => 'Sigurnosna kopija i vraćanje';
@@ -276,7 +285,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get loadExtensionsIcon => 'Učitaj ikone ekstenzija';
 
   @override
-  String get loadExtensionsIconDesc => 'Prikaži ikone izvora na popisima ekstenzija';
+  String get loadExtensionsIconDesc =>
+      'Prikaži ikone izvora na popisima ekstenzija';
 
   @override
   String get sectionStorage => 'Pohrana';
@@ -327,7 +337,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get backupPasswordHint => 'Ostavi prazno za zadanu';
 
   @override
-  String get backupSensitive => 'Uključuje tokene za prijavu. Čuvaj ovu datoteku privatnom';
+  String get backupSensitive =>
+      'Uključuje tokene za prijavu. Čuvaj ovu datoteku privatnom';
 
   @override
   String get backupCreate => 'Napravi kopiju';
@@ -346,7 +357,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get backupPickFile => 'Odaberi datoteku kopije';
 
   @override
-  String get backupPickFileDesc => 'Odaberi .json datoteku koju je napravio Dartotsu';
+  String get backupPickFileDesc =>
+      'Odaberi .json datoteku koju je napravio Dartotsu';
 
   @override
   String get backupChooseAnother => 'Odaberi drugu datoteku';
@@ -373,7 +385,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get backupUnlock => 'Otključaj';
 
   @override
-  String get backupWrongPassword => 'Ne mogu pročitati ovu datoteku. Provjeri lozinku';
+  String get backupWrongPassword =>
+      'Ne mogu pročitati ovu datoteku. Provjeri lozinku';
 
   @override
   String get backupRestoreSelected => 'Vrati odabrano';
@@ -384,7 +397,8 @@ class AppLocalizationsHr extends AppLocalizations {
   }
 
   @override
-  String get backupRestored => 'Vraćeno. Ponovno pokreni aplikaciju da se sve primijeni';
+  String get backupRestored =>
+      'Vraćeno. Ponovno pokreni aplikaciju da se sve primijeni';
 
   @override
   String backupRestoreFailed(Object error) {
@@ -434,7 +448,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get logFile => 'Datoteka dnevnika';
 
   @override
-  String get logFileDesc => 'Podijeli dnevnik aplikacije ili kopiraj njegovu putanju na Linuxu';
+  String get logFileDesc =>
+      'Podijeli dnevnik aplikacije ili kopiraj njegovu putanju na Linuxu';
 
   @override
   String get logFileCopied => 'Putanja dnevnika kopirana';
@@ -443,7 +458,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get donateSheetTitle => 'Sviđa ti se Dartotsu?';
 
   @override
-  String get donateSheetMessage => 'Dartotsu gradi i održava jedna osoba. Ako ti je koristan, razmisli o podršci razvoju.';
+  String get donateSheetMessage =>
+      'Dartotsu gradi i održava jedna osoba. Ako ti je koristan, razmisli o podršci razvoju.';
 
   @override
   String get donateLater => 'Možda kasnije';
@@ -452,16 +468,19 @@ class AppLocalizationsHr extends AppLocalizations {
   String get glassBackground => 'Staklena pozadina';
 
   @override
-  String get glassBackgroundDesc => 'Tvoj profilni banner, osim ako postaviš poveznicu na sliku';
+  String get glassBackgroundDesc =>
+      'Tvoj profilni banner, osim ako postaviš poveznicu na sliku';
 
   @override
-  String get glassBackgroundHint => 'Poveznica na sliku (ostavi prazno za svoj banner)';
+  String get glassBackgroundHint =>
+      'Poveznica na sliku (ostavi prazno za svoj banner)';
 
   @override
   String get followCover => 'Prati naslovnicu';
 
   @override
-  String get followCoverDesc => 'Boje prate pozadinu, a na stranicama s detaljima naslovnicu';
+  String get followCoverDesc =>
+      'Boje prate pozadinu, a na stranicama s detaljima naslovnicu';
 
   @override
   String get cardStyle => 'Stil kartice';
@@ -506,7 +525,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get jsonTheme => 'Prilagođena datoteka teme';
 
   @override
-  String get jsonThemeDesc => 'Žive boje iz ~/.config/dartotsu/theme.json (vlastita skripta ili tvoje ručne izmjene)';
+  String get jsonThemeDesc =>
+      'Žive boje iz ~/.config/dartotsu/theme.json (vlastita skripta ili tvoje ručne izmjene)';
 
   @override
   String get themeMode => 'Način teme';
@@ -619,7 +639,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get highRefreshRate => 'Visoka frekvencija osvježavanja';
 
   @override
-  String get highRefreshRateDesc => 'Koristi najvišu frekvenciju osvježavanja koju tvoj zaslon podržava';
+  String get highRefreshRateDesc =>
+      'Koristi najvišu frekvenciju osvježavanja koju tvoj zaslon podržava';
 
   @override
   String get imageSave => 'Spremi sliku';
@@ -645,10 +666,12 @@ class AppLocalizationsHr extends AppLocalizations {
   String get verifyTls => 'Provjeri certifikate';
 
   @override
-  String get verifyTlsDesc => 'Odbij poslužitelje s neispravnim HTTPS certifikatima. Isključi samo za izvor koji koristi samopotpisani certifikat';
+  String get verifyTlsDesc =>
+      'Odbij poslužitelje s neispravnim HTTPS certifikatima. Isključi samo za izvor koji koristi samopotpisani certifikat';
 
   @override
-  String get clearCookiesConfirm => 'Ukloniti sve spremljene kolačiće? To bi te moglo odjaviti s nekih izvora.';
+  String get clearCookiesConfirm =>
+      'Ukloniti sve spremljene kolačiće? To bi te moglo odjaviti s nekih izvora.';
 
   @override
   String get version => 'Verzija';
@@ -723,7 +746,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get onboardingPaletteTitle => 'Prilagodi po svom';
 
   @override
-  String get onboardingPaletteBody => 'Odaberi paletu. Svi naglasci, od kartica do playera, slijede je.';
+  String get onboardingPaletteBody =>
+      'Odaberi paletu. Svi naglasci, od kartica do playera, slijede je.';
 
   @override
   String get themeModeAuto => 'Auto';
@@ -738,22 +762,26 @@ class AppLocalizationsHr extends AppLocalizations {
   String get onboardingSyncTitle => 'Sinkroniziraj svoju biblioteku';
 
   @override
-  String get onboardingSyncBody => 'Prijavi se na AniList da povučeš svoje popise, napredak i ocjene. Ili preskoči i razgledaj kao gost.';
+  String get onboardingSyncBody =>
+      'Prijavi se na AniList da povučeš svoje popise, napredak i ocjene. Ili preskoči i razgledaj kao gost.';
 
   @override
-  String get onboardingOpenLinks => 'Otvaraj AniList i repo poveznice u Dartotsuu';
+  String get onboardingOpenLinks =>
+      'Otvaraj AniList i repo poveznice u Dartotsuu';
 
   @override
   String get onboardingPermsTitle => 'Dozvole';
 
   @override
-  String get onboardingPermsBody => 'Dopusti ovo sada da preuzimanja, ažuriranja i obavijesti rade bez prekida. Kasnije ih možeš promijeniti u postavkama sustava.';
+  String get onboardingPermsBody =>
+      'Dopusti ovo sada da preuzimanja, ažuriranja i obavijesti rade bez prekida. Kasnije ih možeš promijeniti u postavkama sustava.';
 
   @override
   String get permNotifications => 'Obavijesti';
 
   @override
-  String get permNotificationsDesc => 'Napredak preuzimanja, nove epizode i odgovori';
+  String get permNotificationsDesc =>
+      'Napredak preuzimanja, nove epizode i odgovori';
 
   @override
   String get permStorage => 'Pristup svim datotekama';
@@ -765,7 +793,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get permInstall => 'Instaliraj ažuriranja';
 
   @override
-  String get permInstallDesc => 'Dopusti Dartotsuu da sam instalira vlastita ažuriranja';
+  String get permInstallDesc =>
+      'Dopusti Dartotsuu da sam instalira vlastita ažuriranja';
 
   @override
   String get permBattery => 'Baterija bez ograničenja';
@@ -783,7 +812,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get linkOpenInApp => 'Otvaraj poveznice u Dartotsuu';
 
   @override
-  String get linkOpenInAppDesc => 'Neka AniList i repo poveznice otvaraju aplikaciju';
+  String get linkOpenInAppDesc =>
+      'Neka AniList i repo poveznice otvaraju aplikaciju';
 
   @override
   String get reviewsTitle => 'Recenzije';
@@ -826,13 +856,15 @@ class AppLocalizationsHr extends AppLocalizations {
   String get shareAnalytics => 'Dijeli anonimne podatke o korištenju';
 
   @override
-  String get shareAnalyticsDesc => 'Anonimni brojevi korisnika i izvješća o rušenju. Bez računa i osobnih podataka';
+  String get shareAnalyticsDesc =>
+      'Anonimni brojevi korisnika i izvješća o rušenju. Bez računa i osobnih podataka';
 
   @override
   String get linkOpenAnilist => 'Otvaraj AniList poveznice u Dartotsuu';
 
   @override
-  String get linkOpenAnilistDesc => 'Uključi obradu poveznica da se anilist.co poveznice otvaraju u aplikaciji';
+  String get linkOpenAnilistDesc =>
+      'Uključi obradu poveznica da se anilist.co poveznice otvaraju u aplikaciji';
 
   @override
   String get linkSettingsFailed => 'Ne mogu otvoriti postavke sustava';
@@ -841,16 +873,19 @@ class AppLocalizationsHr extends AppLocalizations {
   String get discordRichPresence => 'Rich Presence';
 
   @override
-  String get discordRichPresenceTokenDesc => 'Prikaži na svom Discord profilu što radiš. Treba ti Discord token.';
+  String get discordRichPresenceTokenDesc =>
+      'Prikaži na svom Discord profilu što radiš. Treba ti Discord token.';
 
   @override
-  String get discordRichPresenceDesktopDesc => 'Prikaži na svom Discord profilu što radiš. Discord desktop aplikacija mora biti pokrenuta.';
+  String get discordRichPresenceDesktopDesc =>
+      'Prikaži na svom Discord profilu što radiš. Discord desktop aplikacija mora biti pokrenuta.';
 
   @override
   String get discordBrowsing => 'Prikaži aktivnost pregledavanja';
 
   @override
-  String get discordBrowsingDesc => 'Prikaži i karticu, stranicu ili profil koji gledaš, a ne samo što gledaš ili čitaš.';
+  String get discordBrowsingDesc =>
+      'Prikaži i karticu, stranicu ili profil koji gledaš, a ne samo što gledaš ili čitaš.';
 
   @override
   String get discordLookHeader => 'Izgled prisutnosti';
@@ -859,7 +894,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get discordActivityType => 'Vrsta aktivnosti';
 
   @override
-  String get discordActivityTypeDesc => 'Kako Discord to formulira: \"Watching …\" ili \"Playing …\". Auto koristi Watching za anime, a Playing za sve ostalo.';
+  String get discordActivityTypeDesc =>
+      'Kako Discord to formulira: \"Watching …\" ili \"Playing …\". Auto koristi Watching za anime, a Playing za sve ostalo.';
 
   @override
   String get discordWatching => 'Watching';
@@ -877,19 +913,22 @@ class AppLocalizationsHr extends AppLocalizations {
   String get discordTimer => 'Prikaži mjerač vremena';
 
   @override
-  String get discordTimerDesc => 'Proteklo ili preostalo vrijeme ispod naslova.';
+  String get discordTimerDesc =>
+      'Proteklo ili preostalo vrijeme ispod naslova.';
 
   @override
   String get discordButtons => 'Prikaži gumbe';
 
   @override
-  String get discordButtonsDesc => 'Gumbi \"View anime / manga\" i \"Open Dartotsu\".';
+  String get discordButtonsDesc =>
+      'Gumbi \"View anime / manga\" i \"Open Dartotsu\".';
 
   @override
   String get discordHideTitles => 'Sakrij naslove';
 
   @override
-  String get discordHideTitlesDesc => 'Zamijeni nazive animea i mange (te njihovu naslovnicu i poveznicu) s \"Something private\".';
+  String get discordHideTitlesDesc =>
+      'Zamijeni nazive animea i mange (te njihovu naslovnicu i poveznicu) s \"Something private\".';
 
   @override
   String get discordConnectionHeader => 'Veza';
@@ -952,13 +991,15 @@ class AppLocalizationsHr extends AppLocalizations {
   String get discordToken => 'Discord token';
 
   @override
-  String get discordTokenSaved => 'Spremljeno. Dodirni za zamjenu, dugo pritisni za uklanjanje.';
+  String get discordTokenSaved =>
+      'Spremljeno. Dodirni za zamjenu, dugo pritisni za uklanjanje.';
 
   @override
   String get discordTokenNotSet => 'Nije postavljen. Dodirni za dodavanje.';
 
   @override
-  String get discordTokenPrompt => 'Zalijepi token Discord računa na kojem želiš prikazati prisutnost. Ostaje na ovom uređaju.';
+  String get discordTokenPrompt =>
+      'Zalijepi token Discord računa na kojem želiš prikazati prisutnost. Ostaje na ovom uređaju.';
 
   @override
   String get discordTokenHint => 'Token';
@@ -973,10 +1014,12 @@ class AppLocalizationsHr extends AppLocalizations {
   String get discordRichPresenceRow => 'Discord Rich Presence';
 
   @override
-  String get discordRichPresenceRowOn => 'Uključeno · dodirni za promjenu izgleda';
+  String get discordRichPresenceRowOn =>
+      'Uključeno · dodirni za promjenu izgleda';
 
   @override
-  String get discordRichPresenceRowOff => 'Prikaži na svom Discord profilu što radiš';
+  String get discordRichPresenceRowOff =>
+      'Prikaži na svom Discord profilu što radiš';
 
   @override
   String get loginCancelled => 'Prijava otkazana';
@@ -993,7 +1036,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get malLoginFailed => 'Prijava na MyAnimeList nije uspjela';
 
   @override
-  String get kitsuLoginFailed => 'Prijava na Kitsu nije uspjela. Provjeri e-poštu i lozinku.';
+  String get kitsuLoginFailed =>
+      'Prijava na Kitsu nije uspjela. Provjeri e-poštu i lozinku.';
 
   @override
   String get kitsuLoginTitle => 'Prijavi se na Kitsu';
@@ -1044,13 +1088,15 @@ class AppLocalizationsHr extends AppLocalizations {
   String get hideNsfw => 'Sakrij NSFW';
 
   @override
-  String get hideNsfwDesc => 'Drži naslove za odrasle izvan feedova i pretrage, a svoje unose za odrasle prikaži pod Skriveni mediji.';
+  String get hideNsfwDesc =>
+      'Drži naslove za odrasle izvan feedova i pretrage, a svoje unose za odrasle prikaži pod Skriveni mediji.';
 
   @override
   String get kitsuAccountOptions => 'Opcije Kitsu računa';
 
   @override
-  String get couldNotUpdateKitsuSettings => 'Ne mogu ažurirati tvoje Kitsu postavke';
+  String get couldNotUpdateKitsuSettings =>
+      'Ne mogu ažurirati tvoje Kitsu postavke';
 
   @override
   String get titleCanonical => 'Kanonski';
@@ -1089,7 +1135,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get shareToGlobal => 'Dijeli u globalni feed';
 
   @override
-  String get shareToGlobalDesc => 'Neka se tvoja aktivnost pojavi u Kitsuovu globalnom feedu.';
+  String get shareToGlobalDesc =>
+      'Neka se tvoja aktivnost pojavi u Kitsuovu globalnom feedu.';
 
   @override
   String get memberSince => 'Član od';
@@ -1143,13 +1190,16 @@ class AppLocalizationsHr extends AppLocalizations {
   String get homeSections => 'Sekcije početne';
 
   @override
-  String get homeSectionsHint => 'Povuci za promjenu redoslijeda. Skrivene sekcije se nikad ne dohvaćaju.';
+  String get homeSectionsHint =>
+      'Povuci za promjenu redoslijeda. Skrivene sekcije se nikad ne dohvaćaju.';
 
   @override
-  String get customListDeleteFailed => 'Brisanje prilagođenog popisa nije uspjelo';
+  String get customListDeleteFailed =>
+      'Brisanje prilagođenog popisa nije uspjelo';
 
   @override
-  String get customListsSaveFailed => 'Spremanje prilagođenih popisa nije uspjelo';
+  String get customListsSaveFailed =>
+      'Spremanje prilagođenih popisa nije uspjelo';
 
   @override
   String get customListsSaved => 'Prilagođeni popisi spremljeni';
@@ -1235,7 +1285,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get dropRate => 'Stopa odustajanja';
 
   @override
-  String get simklAttribution => 'Podatke i grafike pruža Simkl. Pogledaj na Simklu';
+  String get simklAttribution =>
+      'Podatke i grafike pruža Simkl. Pogledaj na Simklu';
 
   @override
   String get onHold => 'Na čekanju';
@@ -1330,7 +1381,8 @@ class AppLocalizationsHr extends AppLocalizations {
   }
 
   @override
-  String get logPathCopied => 'Putanja datoteke dnevnika kopirana u međuspremnik';
+  String get logPathCopied =>
+      'Putanja datoteke dnevnika kopirana u međuspremnik';
 
   @override
   String get animeSource => 'Anime izvor';
@@ -1351,7 +1403,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get nothingMatched => 'Ništa nije pronađeno';
 
   @override
-  String get nothingSavedFromSource => 'S ovog izvora još ništa nije spremljeno';
+  String get nothingSavedFromSource =>
+      'S ovog izvora još ništa nije spremljeno';
 
   @override
   String get sourceReturnedNothing => 'Ovaj izvor nije vratio ništa';
@@ -1363,7 +1416,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get tryDifferentSearch => 'Probaj drugi pojam za pretragu.';
 
   @override
-  String get savedTitlesAppearHere => 'Naslovi koje dodaš na popis pojavit će se ovdje.';
+  String get savedTitlesAppearHere =>
+      'Naslovi koje dodaš na popis pojavit će se ovdje.';
 
   @override
   String get tryOtherFeed => 'Probaj drugi feed ili pretraži.';
@@ -1383,7 +1437,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get nothingHereYet => 'Ovdje još nema ničega';
 
   @override
-  String get savedOnDeviceUntilLogin => 'Sve ispod je spremljeno na ovom uređaju dok ne napraviš nešto drugo.';
+  String get savedOnDeviceUntilLogin =>
+      'Sve ispod je spremljeno na ovom uređaju dok ne napraviš nešto drugo.';
 
   @override
   String get yourProfile => 'Tvoj profil';
@@ -1880,7 +1935,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get querySize => 'Veličina upita';
 
   @override
-  String get querySizeDesc => 'Jedan veliki upit učitava sve redove (i cijeli profil) u jednom zahtjevu. Podijeljeni upiti šalju mali zahtjev za svaki red ili dio profila: svaki je brz, a dijelovi se pojavljuju kako stižu.';
+  String get querySizeDesc =>
+      'Jedan veliki upit učitava sve redove (i cijeli profil) u jednom zahtjevu. Podijeljeni upiti šalju mali zahtjev za svaki red ili dio profila: svaki je brz, a dijelovi se pojavljuju kako stižu.';
 
   @override
   String get oneBig => 'Jedan veliki';
@@ -1911,7 +1967,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get accountOptions => 'Opcije računa';
 
   @override
-  String get accountOptionsDesc => 'Imena, format ocjena, redoslijed popisa, obavijesti i više';
+  String get accountOptionsDesc =>
+      'Imena, format ocjena, redoslijed popisa, obavijesti i više';
 
   @override
   String get anilistAccountOptions => 'Opcije AniList računa';
@@ -1923,13 +1980,15 @@ class AppLocalizationsHr extends AppLocalizations {
   String get hidePrivateEntries => 'Sakrij privatne unose';
 
   @override
-  String get hidePrivateEntriesDesc => 'Drži unose označene kao privatne na AniListu izvan feeda';
+  String get hidePrivateEntriesDesc =>
+      'Drži unose označene kao privatne na AniListu izvan feeda';
 
   @override
   String get anilistExcludeList => 'Exclude your list';
 
   @override
-  String get anilistExcludeListDesc => 'Keep titles already on your AniList out of the anime and manga pages';
+  String get anilistExcludeListDesc =>
+      'Keep titles already on your AniList out of the anime and manga pages';
 
   @override
   String get anilistProfile => 'AniList profil';
@@ -1938,7 +1997,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get refreshFromAnilist => 'Osvježi s AniLista';
 
   @override
-  String get couldNotUpdateAnilistSettings => 'Ne mogu ažurirati AniList postavke';
+  String get couldNotUpdateAnilistSettings =>
+      'Ne mogu ažurirati AniList postavke';
 
   @override
   String get sectionNames => 'Imena';
@@ -1947,7 +2007,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get titleLanguage => 'Jezik naslova';
 
   @override
-  String get titleLanguageDesc => 'Kako se naslovi pišu posvuda, npr. Attack on Titan / Shingeki no Kyojin / 進撃の巨人.';
+  String get titleLanguageDesc =>
+      'Kako se naslovi pišu posvuda, npr. Attack on Titan / Shingeki no Kyojin / 進撃の巨人.';
 
   @override
   String get staffCharacterNames => 'Imena ekipe i likova';
@@ -1989,19 +2050,22 @@ class AppLocalizationsHr extends AppLocalizations {
   String get airingNotifications => 'Obavijesti o emitiranju';
 
   @override
-  String get airingNotificationsDesc => 'Obavijesti me kad se emitira epizoda serije koju pratim';
+  String get airingNotificationsDesc =>
+      'Obavijesti me kad se emitira epizoda serije koju pratim';
 
   @override
   String get displayAdultContent => 'Prikaži sadržaj za odrasle';
 
   @override
-  String get displayAdultContentDesc => 'Uključi naslove 18+ u pregled, pretragu i feedove';
+  String get displayAdultContentDesc =>
+      'Uključi naslove 18+ u pregled, pretragu i feedove';
 
   @override
   String get restrictMessages => 'Ograniči poruke na one koje pratim';
 
   @override
-  String get restrictMessagesDesc => 'Samo ljudi koje pratiš mogu ti slati poruke';
+  String get restrictMessagesDesc =>
+      'Samo ljudi koje pratiš mogu ti slati poruke';
 
   @override
   String get sectionServices => 'Servisi';
@@ -2033,7 +2097,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get importLists => 'Uvezi popise';
 
   @override
-  String get importListsDesc => 'Iz Aniyomi, Mihon / Tachiyomi ili Kotatsu kopija';
+  String get importListsDesc =>
+      'Iz Aniyomi, Mihon / Tachiyomi ili Kotatsu kopija';
 
   @override
   String get exportLists => 'Izvezi popise';
@@ -2116,16 +2181,19 @@ class AppLocalizationsHr extends AppLocalizations {
   String get nothingToShowYet => 'Još nema što prikazati';
 
   @override
-  String get addTitlesHint => 'Dodaj naslove na svoj popis i pojavit će se ovdje.';
+  String get addTitlesHint =>
+      'Dodaj naslove na svoj popis i pojavit će se ovdje.';
 
   @override
   String get couldntLoad => 'Ne mogu učitati';
 
   @override
-  String get progressStyleHint => 'Pilula i traka su preko postera; \"Izvana\" prikazuje isti broj kao običan tekst — odaberi jedno.';
+  String get progressStyleHint =>
+      'Pilula i traka su preko postera; \"Izvana\" prikazuje isti broj kao običan tekst — odaberi jedno.';
 
   @override
-  String get nixManagedUpdate => 'Ovu verziju održava Nix — pokreni \"nix flake update\" na svom flakeu i ponovno izgradi umjesto ažuriranja odavde';
+  String get nixManagedUpdate =>
+      'Ovu verziju održava Nix — pokreni \"nix flake update\" na svom flakeu i ponovno izgradi umjesto ažuriranja odavde';
 
   @override
   String autoUpdateFailed(String error) {
@@ -2156,7 +2224,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get chooseBackupDialog => 'Odaberi Aniyomi, Mihon ili Kotatsu kopiju';
 
   @override
-  String get importListsHint => 'Prenesi biblioteku iz Aniyomija, Mihona / Tachiyomija ili Kotatsua. Naslovi, naslovnice, napredak i kategorije ostaju.';
+  String get importListsHint =>
+      'Prenesi biblioteku iz Aniyomija, Mihona / Tachiyomija ili Kotatsua. Naslovi, naslovnice, napredak i kategorije ostaju.';
 
   @override
   String get chooseBackupFile => 'Odaberi datoteku kopije';
@@ -2175,7 +2244,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get mergeWithExisting => 'Spoji s postojećim popisima';
 
   @override
-  String get mergeWithExistingDesc => 'Zadržava što već imaš; isključeno zamjenjuje naslove koji se podudaraju';
+  String get mergeWithExistingDesc =>
+      'Zadržava što već imaš; isključeno zamjenjuje naslove koji se podudaraju';
 
   @override
   String get chooseAnother => 'Odaberi drugu';
@@ -2207,7 +2277,8 @@ class AppLocalizationsHr extends AppLocalizations {
   }
 
   @override
-  String get nothingInLocalLists => 'Na tvojim lokalnim popisima još nema ničega.';
+  String get nothingInLocalLists =>
+      'Na tvojim lokalnim popisima još nema ničega.';
 
   @override
   String exportsSummary(int anime, int manga) {
@@ -2451,7 +2522,8 @@ class AppLocalizationsHr extends AppLocalizations {
   }
 
   @override
-  String get localEntryNote => 'Ovaj naslov je samo na tvom lokalnom popisu na ovom uređaju. Uređivanje je ovdje isključeno jer bi se moglo sukobiti s popisom na tvom računu; još uvijek ga možeš ukloniti.';
+  String get localEntryNote =>
+      'Ovaj naslov je samo na tvom lokalnom popisu na ovom uređaju. Uređivanje je ovdje isključeno jer bi se moglo sukobiti s popisom na tvom računu; još uvijek ga možeš ukloniti.';
 
   @override
   String get cardPresetPoster => 'Poster';
@@ -2700,7 +2772,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get repoLinksAdded => 'Poveznice repozitorija uspješno dodane!';
 
   @override
-  String get errorGettingAnilistData => 'Greška pri dohvaćanju podataka s AniLista.';
+  String get errorGettingAnilistData =>
+      'Greška pri dohvaćanju podataka s AniLista.';
 
   @override
   String get navInfo => 'INFO';
@@ -2921,7 +2994,8 @@ class AppLocalizationsHr extends AppLocalizations {
   }
 
   @override
-  String get deletePluginMessage => 'Jesi li siguran da želiš obrisati ovaj dodatak?';
+  String get deletePluginMessage =>
+      'Jesi li siguran da želiš obrisati ovaj dodatak?';
 
   @override
   String pluginDeleted(String name) {
@@ -2995,7 +3069,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get syncRow => 'Sinkronizacija popisa';
 
   @override
-  String get syncRowDesc => 'Preslikaj popis jednog servisa na ostale svoje račune';
+  String get syncRowDesc =>
+      'Preslikaj popis jednog servisa na ostale svoje račune';
 
   @override
   String get syncTitle => 'Sinkroniziraj';
@@ -3004,13 +3079,15 @@ class AppLocalizationsHr extends AppLocalizations {
   String get syncMainService => 'Glavni servis';
 
   @override
-  String get syncMainServiceDesc => 'Njegov popis je izvor istine; svaki drugi prijavljeni servis ažurira se da se podudara';
+  String get syncMainServiceDesc =>
+      'Njegov popis je izvor istine; svaki drugi prijavljeni servis ažurira se da se podudara';
 
   @override
   String get syncAuto => 'Automatska sinkronizacija';
 
   @override
-  String get syncAutoDesc => 'Dohvaćaj i sinkroniziraj u pozadini kad se aplikacija otvori i svakih 30 minuta';
+  String get syncAutoDesc =>
+      'Dohvaćaj i sinkroniziraj u pozadini kad se aplikacija otvori i svakih 30 minuta';
 
   @override
   String get syncAddMissing => 'Dodaj unose koji nedostaju';
@@ -3022,7 +3099,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get syncOnlyForward => 'Zadrži veći napredak';
 
   @override
-  String get syncOnlyForwardDesc => 'Ne smanjuj napredak servisa koji je već ispred';
+  String get syncOnlyForwardDesc =>
+      'Ne smanjuj napredak servisa koji je već ispred';
 
   @override
   String get syncFetch => 'Dohvati';
@@ -3040,7 +3118,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get syncResume => 'Nastavi';
 
   @override
-  String get syncNothingToSync => 'Ovaj servis se ne može sinkronizirati za ovu vrstu';
+  String get syncNothingToSync =>
+      'Ovaj servis se ne može sinkronizirati za ovu vrstu';
 
   @override
   String get syncNoTargets => 'Prijavi se na drugi servis da bi sinkronizirao';
@@ -3052,7 +3131,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get syncComparing => 'Uspoređujem popise';
 
   @override
-  String get syncIntro => 'Odaberi glavni servis i pritisni Dohvati. Svaki servis se jednom upita za tvoj popis, a zatim se uspoređuje s glavnim.';
+  String get syncIntro =>
+      'Odaberi glavni servis i pritisni Dohvati. Svaki servis se jednom upita za tvoj popis, a zatim se uspoređuje s glavnim.';
 
   @override
   String get syncStateSynced => 'Sinkronizirano';
@@ -3124,7 +3204,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get syncOnEdit => 'Sinkroniziraj promjene odmah';
 
   @override
-  String get syncOnEditDesc => 'Odmah šalji svako ažuriranje napretka i izmjenu popisa na ostale prijavljene servise';
+  String get syncOnEditDesc =>
+      'Odmah šalji svako ažuriranje napretka i izmjenu popisa na ostale prijavljene servise';
 
   @override
   String syncPushed(String services) {
@@ -3137,13 +3218,15 @@ class AppLocalizationsHr extends AppLocalizations {
   }
 
   @override
-  String get syncRateLimited => 'Ograničenje zahtjeva, pokušaj ponovno za trenutak';
+  String get syncRateLimited =>
+      'Ograničenje zahtjeva, pokušaj ponovno za trenutak';
 
   @override
   String get syncAhead => 'Što god je ispred';
 
   @override
-  String get syncAheadDesc => 'Dvosmjerno: za svaki naslov pobjeđuje unos koji je najdalje otišao i kopira se na sve tvoje ostale servise';
+  String get syncAheadDesc =>
+      'Dvosmjerno: za svaki naslov pobjeđuje unos koji je najdalje otišao i kopira se na sve tvoje ostale servise';
 
   @override
   String syncAheadFrom(String service) {
@@ -3154,7 +3237,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get syncConfirm => 'Pregledaj prije sinkronizacije';
 
   @override
-  String get syncConfirmDesc => 'Prikaži što će Sinkroniziraj sve promijeniti i koliko zahtjeva treba';
+  String get syncConfirmDesc =>
+      'Prikaži što će Sinkroniziraj sve promijeniti i koliko zahtjeva treba';
 
   @override
   String get syncPreviewTitle => 'Spremno za sinkronizaciju';
@@ -3214,13 +3298,15 @@ class AppLocalizationsHr extends AppLocalizations {
   String get syncFailedReason => 'Zašto nije uspjelo';
 
   @override
-  String get syncSkippedHint => 'Preskočene stavke ostaju netaknute, čak i nakon ponovnog dohvata';
+  String get syncSkippedHint =>
+      'Preskočene stavke ostaju netaknute, čak i nakon ponovnog dohvata';
 
   @override
   String get commentsRules => 'Pravila komentiranja';
 
   @override
-  String get commentsRulesBody => 'KRŠIŠ LI PRAVILO = LETIŠ\n\n1. Bez rasizma, diskriminacije i govora mržnje\n2. Bez spama i samopromocije\n3. Apsolutno bez NSFW sadržaja\n4. Samo engleski, bez iznimki\n5. Bez lažnog predstavljanja, uznemiravanja i vrijeđanja\n6. Bez nezakonitog sadržaja i ekstremnog nepoštovanja prema bilo kojem fandomu\n7. Ne traži i ne dijeli repozitorije ni ekstenzije\n8. Spojleri samo sa spojler oznakom i upozorenjem\n9. Bez seksualiziranja i neprimjerenih komentara o maloljetnim likovima\n10. Ako nije u redu, nemoj to objaviti!';
+  String get commentsRulesBody =>
+      'KRŠIŠ LI PRAVILO = LETIŠ\n\n1. Bez rasizma, diskriminacije i govora mržnje\n2. Bez spama i samopromocije\n3. Apsolutno bez NSFW sadržaja\n4. Samo engleski, bez iznimki\n5. Bez lažnog predstavljanja, uznemiravanja i vrijeđanja\n6. Bez nezakonitog sadržaja i ekstremnog nepoštovanja prema bilo kojem fandomu\n7. Ne traži i ne dijeli repozitorije ni ekstenzije\n8. Spojleri samo sa spojler oznakom i upozorenjem\n9. Bez seksualiziranja i neprimjerenih komentara o maloljetnim likovima\n10. Ako nije u redu, nemoj to objaviti!';
 
   @override
   String get commentsRulesAccept => 'Razumijem';
@@ -3383,22 +3469,26 @@ class AppLocalizationsHr extends AppLocalizations {
   String get commentsEmptyFiltered => 'Nema komentara za ovaj filtar';
 
   @override
-  String get commentsSignIn => 'Prijavi se na AniList da čitaš i pišeš komentare';
+  String get commentsSignIn =>
+      'Prijavi se na AniList da čitaš i pišeš komentare';
 
   @override
-  String get commentsSignInMessage => 'Komentari se dijele između svih servisa i koriste tvoj AniList račun.';
+  String get commentsSignInMessage =>
+      'Komentari se dijele između svih servisa i koriste tvoj AniList račun.';
 
   @override
   String get commentsUnavailable => 'Komentari nisu dostupni za ovaj naslov';
 
   @override
-  String get commentsUnavailableMessage => 'Nije se mogao povezati s AniList unosom.';
+  String get commentsUnavailableMessage =>
+      'Nije se mogao povezati s AniList unosom.';
 
   @override
   String get commentsDisabled => 'Komentari su isključeni';
 
   @override
-  String get commentsDisabledMessage => 'Možeš ih ponovno uključiti u Postavke › Općenito.';
+  String get commentsDisabledMessage =>
+      'Možeš ih ponovno uključiti u Postavke › Općenito.';
 
   @override
   String get commentsOffline => 'Ne mogu učitati komentare';
@@ -3416,13 +3506,15 @@ class AppLocalizationsHr extends AppLocalizations {
   String get commentsSettingEnabled => 'Komentari';
 
   @override
-  String get commentsSettingEnabledDesc => 'Prikaži karticu Komentari na naslovima i prijavi se na poslužitelj komentara svojim AniList računom';
+  String get commentsSettingEnabledDesc =>
+      'Prikaži karticu Komentari na naslovima i prijavi se na poslužitelj komentara svojim AniList računom';
 
   @override
   String get commentsSettingAlerts => 'Obavijesti o odgovorima';
 
   @override
-  String get commentsSettingAlertsDesc => 'Obavijesti me kad netko odgovori na moje komentare';
+  String get commentsSettingAlertsDesc =>
+      'Obavijesti me kad netko odgovori na moje komentare';
 
   @override
   String get commentsNoticeReplyTitle => 'Novi odgovor na komentar';
@@ -3448,10 +3540,12 @@ class AppLocalizationsHr extends AppLocalizations {
   String get barcodeTooltip => 'Pronađi mangu ili novelu preko barkoda';
 
   @override
-  String get barcodeIntro => 'Usmjeri kameru na barkod na poleđini sveska ili upiši njegov ISBN.';
+  String get barcodeIntro =>
+      'Usmjeri kameru na barkod na poleđini sveska ili upiši njegov ISBN.';
 
   @override
-  String get barcodeIntroManual => 'Upiši ISBN otisnut iznad barkoda na poleđini sveska.';
+  String get barcodeIntroManual =>
+      'Upiši ISBN otisnut iznad barkoda na poleđini sveska.';
 
   @override
   String get barcodeIsbnHint => 'ISBN';
@@ -3465,7 +3559,8 @@ class AppLocalizationsHr extends AppLocalizations {
   }
 
   @override
-  String get barcodeCameraDenied => 'Kamera nije dostupna. Dopusti pristup kameri ili umjesto toga upiši ISBN.';
+  String get barcodeCameraDenied =>
+      'Kamera nije dostupna. Dopusti pristup kameri ili umjesto toga upiši ISBN.';
 
   @override
   String get themesTitle => 'Openinzi i endinzi';
@@ -3516,7 +3611,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get sauceTitle => 'Pronađi izvor';
 
   @override
-  String get sauceIntro => 'Učitaj stranicu mange ili umjetničko djelo, ili zalijepi njegovu poveznicu, da saznaš odakle je.';
+  String get sauceIntro =>
+      'Učitaj stranicu mange ili umjetničko djelo, ili zalijepi njegovu poveznicu, da saznaš odakle je.';
 
   @override
   String get sauceKeyTitle => 'SauceNAO API ključ';
@@ -3540,7 +3636,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get sauceEmpty => 'Nije pronađeno podudaranje';
 
   @override
-  String get sauceTooltip => 'Pronađi izvor stranice mange ili umjetničkog djela';
+  String get sauceTooltip =>
+      'Pronađi izvor stranice mange ili umjetničkog djela';
 
   @override
   String get sauceLowMatch => 'Slabo podudaranje';
@@ -3648,7 +3745,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get imageSearchTooltip => 'Pronađi anime iz screenshota';
 
   @override
-  String get imageSearchIntro => 'Odaberi screenshot ili zalijepi poveznicu na sliku i trace.moe će pronaći epizodu i trenutak iz kojeg je.';
+  String get imageSearchIntro =>
+      'Odaberi screenshot ili zalijepi poveznicu na sliku i trace.moe će pronaći epizodu i trenutak iz kojeg je.';
 
   @override
   String get imageSearchPick => 'Odaberi sliku';
@@ -3741,10 +3839,12 @@ class AppLocalizationsHr extends AppLocalizations {
   String get groupsLeave => 'Napusti grupu';
 
   @override
-  String get groupsLeaveAsk => 'Nećeš više vidjeti objave ove grupe u svom feedu.';
+  String get groupsLeaveAsk =>
+      'Nećeš više vidjeti objave ove grupe u svom feedu.';
 
   @override
-  String get groupsJoinFailed => 'Ne mogu se pridružiti ovoj grupi, možda je samo na poziv';
+  String get groupsJoinFailed =>
+      'Ne mogu se pridružiti ovoj grupi, možda je samo na poziv';
 
   @override
   String get groupsLeaveFailed => 'Ne mogu napustiti ovu grupu';
@@ -3840,10 +3940,12 @@ class AppLocalizationsHr extends AppLocalizations {
   String get notificationsFollows => 'Praćenja';
 
   @override
-  String get notificationsNoServices => 'Nijedan prijavljeni servis nema obavijesti';
+  String get notificationsNoServices =>
+      'Nijedan prijavljeni servis nema obavijesti';
 
   @override
-  String get notificationsNoServicesMessage => 'Prijavi se na servis koji šalje obavijesti i pojavit će se ovdje.';
+  String get notificationsNoServicesMessage =>
+      'Prijavi se na servis koji šalje obavijesti i pojavit će se ovdje.';
 
   @override
   String get notificationsEmptyKind => 'U ovoj kategoriji još nema ničega';
@@ -3852,7 +3954,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get notificationsCommentsEmpty => 'Nema obavijesti o komentarima';
 
   @override
-  String get notificationsCommentsEmptyMessage => 'Odgovori na tvoje komentare i najave iz Dantotsua pojavljuju se ovdje.';
+  String get notificationsCommentsEmptyMessage =>
+      'Odgovori na tvoje komentare i najave iz Dantotsua pojavljuju se ovdje.';
 
   @override
   String get notificationsSettings => 'Postavke obavijesti';
@@ -3880,10 +3983,12 @@ class AppLocalizationsHr extends AppLocalizations {
   String get notificationsTestSent => 'Probna obavijest poslana';
 
   @override
-  String get notificationsTestDenied => 'Obavijesti nisu dopuštene za Dartotsu. Uključi ih u postavkama sustava.';
+  String get notificationsTestDenied =>
+      'Obavijesti nisu dopuštene za Dartotsu. Uključi ih u postavkama sustava.';
 
   @override
-  String get notificationsTestHint => 'Dugo pritisni za slanje probne obavijesti';
+  String get notificationsTestHint =>
+      'Dugo pritisni za slanje probne obavijesti';
 
   @override
   String get notificationsTestSample => 'Ovo je probna obavijest';
@@ -3916,7 +4021,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get reactionsTitle => 'Reakcije';
 
   @override
-  String get reactionsNeedEntry => 'Dodaj ovaj naslov na svoj popis prije reagiranja';
+  String get reactionsNeedEntry =>
+      'Dodaj ovaj naslov na svoj popis prije reagiranja';
 
   @override
   String get reactionsAdd => 'Dodaj reakciju';
@@ -3934,7 +4040,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get settingsWatch => 'Gledaj i čitaj';
 
   @override
-  String get settingsWatchDesc => 'Popisi epizoda, povezivanje izvora i detalji epizoda';
+  String get settingsWatchDesc =>
+      'Popisi epizoda, povezivanje izvora i detalji epizoda';
 
   @override
   String get watchSettingsLayout => 'Popis epizoda';
@@ -3958,31 +4065,36 @@ class AppLocalizationsHr extends AppLocalizations {
   String get watchCompactView => 'Kompaktno';
 
   @override
-  String get watchDefaultLayoutDesc => 'Kako su epizode i poglavlja složene dok to ne promijeniš za neki naslov';
+  String get watchDefaultLayoutDesc =>
+      'Kako su epizode i poglavlja složene dok to ne promijeniš za neki naslov';
 
   @override
   String get watchChunkSize => 'Veličina raspona';
 
   @override
-  String get watchChunkSizeDesc => 'Koliko epizoda ili poglavlja sadrži svaka kartica raspona';
+  String get watchChunkSizeDesc =>
+      'Koliko epizoda ili poglavlja sadrži svaka kartica raspona';
 
   @override
   String get watchShowDescription => 'Prikaži opise';
 
   @override
-  String get watchShowDescriptionDesc => 'Prikaži sažetak epizode ispod svakog naslova u popisnom rasporedu';
+  String get watchShowDescriptionDesc =>
+      'Prikaži sažetak epizode ispod svakog naslova u popisnom rasporedu';
 
   @override
   String get watchShowFiller => 'Prikaži filler epizode';
 
   @override
-  String get watchShowFillerDesc => 'Isključi da sakriješ epizode označene kao filler';
+  String get watchShowFillerDesc =>
+      'Isključi da sakriješ epizode označene kao filler';
 
   @override
   String get watchBlurUnwatched => 'Sakrij sličice sa spojlerima';
 
   @override
-  String get watchBlurUnwatchedDesc => 'Zamuti sličicu epizoda koje još nisi pogledao';
+  String get watchBlurUnwatchedDesc =>
+      'Zamuti sličicu epizoda koje još nisi pogledao';
 
   @override
   String get watchResumeShelf => 'Polica Nastavi';
@@ -3994,13 +4106,15 @@ class AppLocalizationsHr extends AppLocalizations {
   String get watchMarkOnLongPress => 'Dugi pritisak označava napredak';
 
   @override
-  String get watchMarkOnLongPressDesc => 'Dugo pritisni epizodu ili poglavlje da ga označiš kao pogledano ili nepogledano';
+  String get watchMarkOnLongPressDesc =>
+      'Dugo pritisni epizodu ili poglavlje da ga označiš kao pogledano ili nepogledano';
 
   @override
   String get watchMatching => 'Povezivanje izvora';
 
   @override
-  String get watchMatchingDesc => '\"Najbliže podudaranje\" uzima najbolji rezultat pretrage. \"Samo točno podudaranje\" prihvaća samo gotovo identičan naslov, a ostalo prepušta tebi.';
+  String get watchMatchingDesc =>
+      '\"Najbliže podudaranje\" uzima najbolji rezultat pretrage. \"Samo točno podudaranje\" prihvaća samo gotovo identičan naslov, a ostalo prepušta tebi.';
 
   @override
   String get watchMatchClosest => 'Najbliže podudaranje';
@@ -4009,28 +4123,34 @@ class AppLocalizationsHr extends AppLocalizations {
   String get watchMatchExact => 'Samo točno podudaranje';
 
   @override
-  String get watchMetadataDesc => 'Odakle dolaze naslovi epizoda, sažeci, sličice, datumi emitiranja i filler oznake. Povuci za postavljanje prioriteta; pobjeđuje prvi izvor koji ima vrijednost.';
+  String get watchMetadataDesc =>
+      'Odakle dolaze naslovi epizoda, sažeci, sličice, datumi emitiranja i filler oznake. Povuci za postavljanje prioriteta; pobjeđuje prvi izvor koji ima vrijednost.';
 
   @override
-  String get watchMetaAniZipDesc => 'Naslovi epizoda, sažeci, kadrovi i datumi emitiranja';
+  String get watchMetaAniZipDesc =>
+      'Naslovi epizoda, sažeci, kadrovi i datumi emitiranja';
 
   @override
   String get watchMetaKitsuDesc => 'Naslovi epizoda, opisi i sličice';
 
   @override
-  String get watchMetaSimklDesc => 'Naslovi epizoda, opisi, kadrovi i datumi emitiranja';
+  String get watchMetaSimklDesc =>
+      'Naslovi epizoda, opisi, kadrovi i datumi emitiranja';
 
   @override
-  String get watchMetaAniListDesc => 'Naslovi streaming epizoda, sličice i raspored emitiranja';
+  String get watchMetaAniListDesc =>
+      'Naslovi streaming epizoda, sličice i raspored emitiranja';
 
   @override
-  String get watchMetaTenraiDesc => 'MyAnimeList naslovi epizoda, datumi emitiranja, filler i recap oznake preko Tenraija';
+  String get watchMetaTenraiDesc =>
+      'MyAnimeList naslovi epizoda, datumi emitiranja, filler i recap oznake preko Tenraija';
 
   @override
   String get watchClearMetadata => 'Osvježi detalje epizoda';
 
   @override
-  String get watchClearMetadataDesc => 'Zaboravi spremljene detalje epizoda da se dohvate ponovno';
+  String get watchClearMetadataDesc =>
+      'Zaboravi spremljene detalje epizoda da se dohvate ponovno';
 
   @override
   String get watchMetadataCleared => 'Detalji epizoda dohvatit će se ponovno';
@@ -4179,7 +4299,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get watchOpenWebView => 'Otvori u web prikazu';
 
   @override
-  String get watchOpenWebViewDesc => 'Riješi Cloudflare provjeru ili se prijavi; kolačići se dijele sa zahtjevima izvora';
+  String get watchOpenWebViewDesc =>
+      'Riješi Cloudflare provjeru ili se prijavi; kolačići se dijele sa zahtjevima izvora';
 
   @override
   String watchCookieCount(int count, String host) {
@@ -4206,10 +4327,12 @@ class AppLocalizationsHr extends AppLocalizations {
   String get watchClearanceSession => 'traje dok se aplikacija ne zatvori';
 
   @override
-  String get watchAgentShared => 'Zahtjevi koriste user agent web prikaza, što Cloudflare provjerava';
+  String get watchAgentShared =>
+      'Zahtjevi koriste user agent web prikaza, što Cloudflare provjerava';
 
   @override
-  String get watchAgentCustom => 'Postavljen je prilagođeni user agent pa bi Cloudflare odobrenje iz web prikaza moglo biti odbijeno';
+  String get watchAgentCustom =>
+      'Postavljen je prilagođeni user agent pa bi Cloudflare odobrenje iz web prikaza moglo biti odbijeno';
 
   @override
   String get watchTestConnection => 'Testiraj vezu';
@@ -4255,7 +4378,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get settingsPlayer => 'Player';
 
   @override
-  String get settingsPlayerDesc => 'Reprodukcija, titlovi, shaderi, mpv i otvaranje datoteka';
+  String get settingsPlayerDesc =>
+      'Reprodukcija, titlovi, shaderi, mpv i otvaranje datoteka';
 
   @override
   String get playerSettingsTitle => 'Postavke playera';
@@ -4309,13 +4433,15 @@ class AppLocalizationsHr extends AppLocalizations {
   String get playerSkipDuration => 'Duljina gumba za preskakanje';
 
   @override
-  String get playerSkipDurationDesc => 'Sekunde za koje gumb za preskakanje skače izvan openinga i endinga';
+  String get playerSkipDurationDesc =>
+      'Sekunde za koje gumb za preskakanje skače izvan openinga i endinga';
 
   @override
   String get playerSeekDuration => 'Dvostruki dodir za premotavanje';
 
   @override
-  String get playerSeekDurationDesc => 'Sekunde skoka na dvostruki dodir ili tipku sa strelicom';
+  String get playerSeekDurationDesc =>
+      'Sekunde skoka na dvostruki dodir ili tipku sa strelicom';
 
   @override
   String get playerAutoPlay => 'Automatski pusti sljedeću';
@@ -4351,31 +4477,36 @@ class AppLocalizationsHr extends AppLocalizations {
   String get playerAutoSkipRecap => 'Preskoči recapove';
 
   @override
-  String get playerAutoSkipDesc => 'Preskoči čim počne, koristeći AniSkip i vremenske oznake streama';
+  String get playerAutoSkipDesc =>
+      'Preskoči čim počne, koristeći AniSkip i vremenske oznake streama';
 
   @override
   String get playerSkipOnce => 'Preskoči samo jednom';
 
   @override
-  String get playerSkipOnceDesc => 'Ne preskači isti dio ponovno ako se vratiš u njega';
+  String get playerSkipOnceDesc =>
+      'Ne preskači isti dio ponovno ako se vratiš u njega';
 
   @override
   String get playerAdjustBrightness => 'Gesta svjetline';
 
   @override
-  String get playerAdjustBrightnessDesc => 'Prijeđi prstom gore-dolje po desnoj polovici zaslona';
+  String get playerAdjustBrightnessDesc =>
+      'Prijeđi prstom gore-dolje po desnoj polovici zaslona';
 
   @override
   String get playerAdjustVolume => 'Gesta glasnoće';
 
   @override
-  String get playerAdjustVolumeDesc => 'Prijeđi prstom gore-dolje po lijevoj polovici zaslona';
+  String get playerAdjustVolumeDesc =>
+      'Prijeđi prstom gore-dolje po lijevoj polovici zaslona';
 
   @override
   String get playerHoldToSpeed => 'Drži za ubrzanje';
 
   @override
-  String get playerHoldToSpeedDesc => 'Pritisni i drži video za bržu reprodukciju, povuci u stranu za promjenu brzine';
+  String get playerHoldToSpeedDesc =>
+      'Pritisni i drži video za bržu reprodukciju, povuci u stranu za promjenu brzine';
 
   @override
   String get playerThumbless => 'Deblja traka za premotavanje';
@@ -4387,7 +4518,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get playerShowSubtitles => 'Prikaži titlove';
 
   @override
-  String get playerShowSubtitlesDesc => 'Isključi da sakriješ sve trake titlova';
+  String get playerShowSubtitlesDesc =>
+      'Isključi da sakriješ sve trake titlova';
 
   @override
   String get playerSubtitleLanguage => 'Željeni jezik titlova';
@@ -4417,7 +4549,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get playerLibass => 'Koristi libass';
 
   @override
-  String get playerLibassDesc => 'Prikaži stilizirane .ass titlove. Veličina, boja i font gore tada više ne vrijede';
+  String get playerLibassDesc =>
+      'Prikaži stilizirane .ass titlove. Veličina, boja i font gore tada više ne vrijede';
 
   @override
   String get playerShaders => 'Shaderi';
@@ -4426,7 +4559,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get playerShadersEnable => 'Uključi shadere';
 
   @override
-  String get playerShadersEnableDesc => 'Povećaj i očisti sliku GLSL shaderima poput Anime4K';
+  String get playerShadersEnableDesc =>
+      'Povećaj i očisti sliku GLSL shaderima poput Anime4K';
 
   @override
   String get playerShadersOff => 'Shaderi isključeni';
@@ -4435,7 +4569,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get playerShadersMissing => 'Anime4K nije instaliran';
 
   @override
-  String get playerShadersMissingDesc => 'Preuzmi Anime4K paket shadera (oko 0,8 MB) da koristiš ugrađene načine.';
+  String get playerShadersMissingDesc =>
+      'Preuzmi Anime4K paket shadera (oko 0,8 MB) da koristiš ugrađene načine.';
 
   @override
   String get playerShadersDownload => 'Preuzmi Anime4K';
@@ -4516,7 +4651,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get playerShadersImport => 'Uvezi .glsl';
 
   @override
-  String get playerShadersNone => 'Uvezi vlastite .glsl ili .hook datoteke i označi ih da ih povežeš u lanac';
+  String get playerShadersNone =>
+      'Uvezi vlastite .glsl ili .hook datoteke i označi ih da ih povežeš u lanac';
 
   @override
   String get playerShadersBadFile => 'Odaberi .glsl ili .hook datoteku shadera';
@@ -4549,13 +4685,15 @@ class AppLocalizationsHr extends AppLocalizations {
   String get playerBuffer => 'Veličina međuspremnika (MB)';
 
   @override
-  String get playerBufferDesc => 'Memorija koju player smije koristiti za baferiranje streama';
+  String get playerBufferDesc =>
+      'Memorija koju player smije koristiti za baferiranje streama';
 
   @override
   String get playerUseMpvConf => 'Koristi mpv.conf';
 
   @override
-  String get playerUseMpvConfDesc => 'Primijeni opcije iz svog mpv.conf kad reprodukcija počne';
+  String get playerUseMpvConfDesc =>
+      'Primijeni opcije iz svog mpv.conf kad reprodukcija počne';
 
   @override
   String get playerMpvConf => 'mpv.conf';
@@ -4564,7 +4702,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get playerMpvConfEdit => 'Uredi mpv konfiguraciju';
 
   @override
-  String get playerMpvConfDesc => 'Jedna opcija po retku, kao --hwdec=auto u običnom mpv.conf. Profili u [zagradama] se ignoriraju.';
+  String get playerMpvConfDesc =>
+      'Jedna opcija po retku, kao --hwdec=auto u običnom mpv.conf. Profili u [zagradama] se ignoriraju.';
 
   @override
   String get playerMpvConfSaved => 'mpv.conf spremljen';
@@ -4573,7 +4712,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get playerUseScripts => 'Koristi mpv skripte';
 
   @override
-  String get playerUseScriptsDesc => 'Učitaj dodatke iz mape sa skriptama. Treba libmpv build s Lua ili JavaScript podrškom';
+  String get playerUseScriptsDesc =>
+      'Učitaj dodatke iz mape sa skriptama. Treba libmpv build s Lua ili JavaScript podrškom';
 
   @override
   String get playerScripts => 'mpv skripte';
@@ -4585,19 +4725,22 @@ class AppLocalizationsHr extends AppLocalizations {
   String get playerScriptsAdd => 'Dodaj skriptu';
 
   @override
-  String get playerScriptsDesc => 'Lua, JavaScript i nativni dodaci stavljeni ovdje učitavaju se kad reprodukcija počne.';
+  String get playerScriptsDesc =>
+      'Lua, JavaScript i nativni dodaci stavljeni ovdje učitavaju se kad reprodukcija počne.';
 
   @override
   String get playerScriptsNone => 'Još nema skripti';
 
   @override
-  String get playerScriptsBadFile => 'Odaberi .lua, .js ili nativnu datoteku dodatka';
+  String get playerScriptsBadFile =>
+      'Odaberi .lua, .js ili nativnu datoteku dodatka';
 
   @override
   String get playerTuning => 'Napredno podešavanje videa';
 
   @override
-  String get playerTuningDesc => 'Nadjačaj sinkronizaciju, cachiranje, skaliranje i tone mapping. Pogrešne vrijednosti mogu pokvariti reprodukciju';
+  String get playerTuningDesc =>
+      'Nadjačaj sinkronizaciju, cachiranje, skaliranje i tone mapping. Pogrešne vrijednosti mogu pokvariti reprodukciju';
 
   @override
   String get playerVideoSync => 'Video sinkronizacija';
@@ -4606,7 +4749,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get playerInterpolation => 'Interpolacija kadrova';
 
   @override
-  String get playerInterpolationDesc => 'Glatko kretanje, treba display-resample sinkronizaciju';
+  String get playerInterpolationDesc =>
+      'Glatko kretanje, treba display-resample sinkronizaciju';
 
   @override
   String get playerPitch => 'Korekcija visine tona';
@@ -4666,13 +4810,15 @@ class AppLocalizationsHr extends AppLocalizations {
   String get playerOpenFolder => 'Otvori mapu';
 
   @override
-  String get playerOpenFolderDesc => 'Pusti svaki video u mapi kao popis za reprodukciju';
+  String get playerOpenFolderDesc =>
+      'Pusti svaki video u mapi kao popis za reprodukciju';
 
   @override
   String get playerNetworkStream => 'Mrežni stream';
 
   @override
-  String get playerNetworkStreamDesc => 'Otvori izravnu video ili HLS poveznicu';
+  String get playerNetworkStreamDesc =>
+      'Otvori izravnu video ili HLS poveznicu';
 
   @override
   String get playerStreamUrl => 'URL streama';
@@ -4684,7 +4830,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get playerTorrent => 'Torrent';
 
   @override
-  String get playerTorrentDesc => 'Streamaj magnet poveznicu ili .torrent datoteku';
+  String get playerTorrentDesc =>
+      'Streamaj magnet poveznicu ili .torrent datoteku';
 
   @override
   String get playerMagnetLink => 'Magnet poveznica ili URL torrenta';
@@ -4693,7 +4840,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get playerPickTorrent => 'Odaberi .torrent datoteku';
 
   @override
-  String get playerTorrentMissing => 'Prvo instaliraj torrent dodatak iz Postavke > Dodaci';
+  String get playerTorrentMissing =>
+      'Prvo instaliraj torrent dodatak iz Postavke > Dodaci';
 
   @override
   String get playerNoVideos => 'Nema pronađenih videa za reprodukciju';
@@ -4720,7 +4868,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get playerAutoSelect => 'Automatski odaberi stream';
 
   @override
-  String get playerAutoSelectDesc => 'Odaberi stream najsličniji tvom zadnjem izboru za ovaj naslov';
+  String get playerAutoSelectDesc =>
+      'Odaberi stream najsličniji tvom zadnjem izboru za ovaj naslov';
 
   @override
   String get playerLoadingStreams => 'Tražim streamove…';
@@ -4738,7 +4887,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get playerTorrentNeeded => 'Ovaj stream je torrent';
 
   @override
-  String get playerTorrentNeededDesc => 'Instaliraj torrent dodatak za reprodukciju magnet poveznica i .torrent datoteka';
+  String get playerTorrentNeededDesc =>
+      'Instaliraj torrent dodatak za reprodukciju magnet poveznica i .torrent datoteka';
 
   @override
   String get playerOpenAddons => 'Otvori dodatke';
@@ -4789,7 +4939,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get readerPerTitle => 'Samo za ovaj naslov';
 
   @override
-  String get readerPerTitleDesc => 'Zadrži ove postavke čitača samo za ovaj naslov';
+  String get readerPerTitleDesc =>
+      'Zadrži ove postavke čitača samo za ovaj naslov';
 
   @override
   String get readerSectionReading => 'Čitanje';
@@ -4846,7 +4997,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get readerDoublePage => 'Dvostruke stranice';
 
   @override
-  String get readerDoublePageDesc => 'Prikaži dvije stranice jednu pored druge u vodoravnom načinu';
+  String get readerDoublePageDesc =>
+      'Prikaži dvije stranice jednu pored druge u vodoravnom načinu';
 
   @override
   String get readerDoubleTapZoom => 'Dvostruki dodir za zumiranje';
@@ -4876,7 +5028,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get readerAutoNext => 'Nastavi u sljedeće poglavlje';
 
   @override
-  String get readerAutoNextDesc => 'Učitaj sljedeće poglavlje dok čitaš kraj ovog';
+  String get readerAutoNextDesc =>
+      'Učitaj sljedeće poglavlje dok čitaš kraj ovog';
 
   @override
   String get readerPreload => 'Prethodno učitaj stranice';
@@ -4906,7 +5059,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get readerInvertTaps => 'Zamijeni zone dodira';
 
   @override
-  String get readerInvertTapsDesc => 'Zamijeni područja za prethodnu i sljedeću';
+  String get readerInvertTapsDesc =>
+      'Zamijeni područja za prethodnu i sljedeću';
 
   @override
   String get readerBackground => 'Pozadina';
@@ -4960,13 +5114,15 @@ class AppLocalizationsHr extends AppLocalizations {
   String get readerCropBorders => 'Obreži rubove';
 
   @override
-  String get readerCropBordersDesc => 'Odreži prazne bijele ili crne rubove sa stranica';
+  String get readerCropBordersDesc =>
+      'Odreži prazne bijele ili crne rubove sa stranica';
 
   @override
   String get readerVolumeKeys => 'Tipke za glasnoću okreću stranice';
 
   @override
-  String get readerVolumeKeysDesc => 'Glasnoća dolje ide naprijed, glasnoća gore ide natrag';
+  String get readerVolumeKeysDesc =>
+      'Glasnoća dolje ide naprijed, glasnoća gore ide natrag';
 
   @override
   String get readerBookmarks => 'Knjižne oznake';
@@ -4995,7 +5151,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get readerAutoScrollSpeed => 'Brzina automatskog pomicanja';
 
   @override
-  String get readerAutoScrollSpeedDesc => 'Koliko brzo se stranice same pomiču ili okreću';
+  String get readerAutoScrollSpeedDesc =>
+      'Koliko brzo se stranice same pomiču ili okreću';
 
   @override
   String get readerKeepOn => 'Drži zaslon uključenim';
@@ -5019,7 +5176,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get readerSaveProgress => 'Spremi napredak';
 
   @override
-  String get readerSaveProgressDesc => 'Pamti stranicu i označava poglavlja kao pročitana';
+  String get readerSaveProgressDesc =>
+      'Pamti stranicu i označava poglavlja kao pročitana';
 
   @override
   String get readerReset => 'Resetiraj postavke čitača';
@@ -5086,7 +5244,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get trackProgressYes => 'Spremi';
 
   @override
-  String get trackProgressReset => 'Upit o spremanju napretka resetiran za ovu vrstu, pitat će ponovno';
+  String get trackProgressReset =>
+      'Upit o spremanju napretka resetiran za ovu vrstu, pitat će ponovno';
 
   @override
   String get trackProgressNo => 'Ne';
@@ -5104,7 +5263,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get trackProgressSettingManga => 'Prati napredak mange i novela';
 
   @override
-  String get trackProgressSettingDesc => 'Što napraviti kad otvoriš epizodu ili završiš poglavlje';
+  String get trackProgressSettingDesc =>
+      'Što napraviti kad otvoriš epizodu ili završiš poglavlje';
 
   @override
   String get trackProgressAsk => 'Pitaj';
@@ -5119,7 +5279,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get dantotsuImport => 'Uvezi iz Dantotsua';
 
   @override
-  String get dantotsuImportDesc => 'Pročitaj kopiju postavki iz Dantotsua (.ani ili šifrirani .sani)';
+  String get dantotsuImportDesc =>
+      'Pročitaj kopiju postavki iz Dantotsua (.ani ili šifrirani .sani)';
 
   @override
   String get dantotsuPick => 'Odaberi Dantotsu kopiju';
@@ -5187,7 +5348,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get dantotsuPlayer => 'Brzina playera i boje titlova';
 
   @override
-  String get dantotsuWarning => 'Ova datoteka sadrži tokene za prijavu. Čuvaj je privatnom.';
+  String get dantotsuWarning =>
+      'Ova datoteka sadrži tokene za prijavu. Čuvaj je privatnom.';
 
   @override
   String get novelIndent => 'Uvuci odlomke';
@@ -5208,13 +5370,15 @@ class AppLocalizationsHr extends AppLocalizations {
   String get kitsuGraphqlDetail => 'Brže stranice s detaljima (GraphQL)';
 
   @override
-  String get kitsuGraphqlDetailDesc => 'Učitaj naslov s likovima, ekipom i tvojim unosom u jednom zahtjevu';
+  String get kitsuGraphqlDetailDesc =>
+      'Učitaj naslov s likovima, ekipom i tvojim unosom u jednom zahtjevu';
 
   @override
   String get togetherTitle => 'Gledajmo zajedno';
 
   @override
-  String get togetherIntro => 'Zalijepi poveznicu sobe koju ti je prijatelj poslao. Odmah se pridružiš, a player se otvara kad oni počnu gledati.';
+  String get togetherIntro =>
+      'Zalijepi poveznicu sobe koju ti je prijatelj poslao. Odmah se pridružiš, a player se otvara kad oni počnu gledati.';
 
   @override
   String get togetherName => 'Tvoje ime';
@@ -5235,7 +5399,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get togetherPassword => 'Lozinka poslužitelja (neobavezno)';
 
   @override
-  String get togetherPublicNote => 'Javni poslužitelji nemaju lozinku, a sobe su otvorene. Koristi dugo ime sobe i dijeli ga samo s prijateljima.';
+  String get togetherPublicNote =>
+      'Javni poslužitelji nemaju lozinku, a sobe su otvorene. Koristi dugo ime sobe i dijeli ga samo s prijateljima.';
 
   @override
   String get togetherConnect => 'Poveži se';
@@ -5314,7 +5479,8 @@ class AppLocalizationsHr extends AppLocalizations {
   }
 
   @override
-  String get togetherFollowFailed => 'Ne mogu otvoriti domaćinovu epizodu. Otvori je sam.';
+  String get togetherFollowFailed =>
+      'Ne mogu otvoriti domaćinovu epizodu. Otvori je sam.';
 
   @override
   String get togetherHostRole => 'Budi domaćin sobe';
@@ -5326,7 +5492,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get togetherFollow => 'Prati domaćinovu epizodu';
 
   @override
-  String get togetherFollowDesc => 'Automatski otvara i mijenja epizode kad koristiš isti servis';
+  String get togetherFollowDesc =>
+      'Automatski otvara i mijenja epizode kad koristiš isti servis';
 
   @override
   String get togetherOpenHost => 'Otvori domaćinovu epizodu';
@@ -5346,10 +5513,12 @@ class AppLocalizationsHr extends AppLocalizations {
   String get togetherWaitingHost => 'Čekam da domaćin pokrene epizodu';
 
   @override
-  String get togetherDifferentService => 'Domaćin je na drugom servisu, sinkronizacija je isključena';
+  String get togetherDifferentService =>
+      'Domaćin je na drugom servisu, sinkronizacija je isključena';
 
   @override
-  String get togetherNoSource => 'Instaliraj anime ekstenziju da pratiš domaćina';
+  String get togetherNoSource =>
+      'Instaliraj anime ekstenziju da pratiš domaćina';
 
   @override
   String togetherNoMatch(String source) {
@@ -5395,10 +5564,12 @@ class AppLocalizationsHr extends AppLocalizations {
   String get togetherChip => 'Zajedno';
 
   @override
-  String get togetherSettingsDesc => 'Pridruži se prijateljevoj sobi preko poveznice';
+  String get togetherSettingsDesc =>
+      'Pridruži se prijateljevoj sobi preko poveznice';
 
   @override
-  String get togetherNoPlayer => 'Otvori epizodu i ona se automatski sinkronizira sa sobom. Chat i popis članova rade već sada.';
+  String get togetherNoPlayer =>
+      'Otvori epizodu i ona se automatski sinkronizira sa sobom. Chat i popis članova rade već sada.';
 
   @override
   String togetherWatching(String name, String file) {
@@ -5409,7 +5580,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get novelBilingual => 'Prikaži original i prijevod';
 
   @override
-  String get novelBilingualDesc => 'Svaki odlomak prikazuje izvorni tekst s prijevodom ispod njega';
+  String get novelBilingualDesc =>
+      'Svaki odlomak prikazuje izvorni tekst s prijevodom ispod njega';
 
   @override
   String get novelTranslateTo => 'Prevedi na';
@@ -5447,7 +5619,8 @@ class AppLocalizationsHr extends AppLocalizations {
   }
 
   @override
-  String get novelSpeechUnavailable => 'Tekst u govor nije dostupan na ovom uređaju';
+  String get novelSpeechUnavailable =>
+      'Tekst u govor nije dostupan na ovom uređaju';
 
   @override
   String get novelSpeechVoice => 'Glas';
@@ -5465,7 +5638,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get novelTapPaging => 'Dodirni rubove za okretanje stranice';
 
   @override
-  String get novelTapPagingDesc => 'Dodirni lijevu ili desnu stranu za pomicanje stranice, sredina prikazuje kontrole';
+  String get novelTapPagingDesc =>
+      'Dodirni lijevu ili desnu stranu za pomicanje stranice, sredina prikazuje kontrole';
 
   @override
   String novelMinutesLeft(int count) {
@@ -5563,7 +5737,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get playerAudioLanguage => 'Željeni jezik zvuka';
 
   @override
-  String get playerLanguageOrderHint => 'Odvoji jezike zarezima. Koristi se prvi pronađeni.';
+  String get playerLanguageOrderHint =>
+      'Odvoji jezike zarezima. Koristi se prvi pronađeni.';
 
   @override
   String get playerPip => 'Slika u slici';
@@ -5575,7 +5750,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get playerAutoPip => 'Slika u slici pri izlasku';
 
   @override
-  String get playerAutoPipDesc => 'Nastavi reprodukciju u malom prozoru kad napustiš aplikaciju';
+  String get playerAutoPipDesc =>
+      'Nastavi reprodukciju u malom prozoru kad napustiš aplikaciju';
 
   @override
   String playerAutoPlaying(String title) {
@@ -5596,7 +5772,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get playerPerTitle => 'Samo za ovaj naslov';
 
   @override
-  String get playerPerTitleDesc => 'Zadrži ove opcije za ovaj naslov i ostavi svoje zadane na miru';
+  String get playerPerTitleDesc =>
+      'Zadrži ove opcije za ovaj naslov i ostavi svoje zadane na miru';
 
   @override
   String get playerHoldSpeed => 'Brzina držanja';
@@ -5656,7 +5833,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get playerSeekPreview => 'Pregled premotavanja';
 
   @override
-  String get playerSeekPreviewDesc => 'Prikaži mali pregled kadra iznad trake dok premotavaš. Otvara drugi dekoder niske razlučivosti pa troši dodatne podatke na streamovima.';
+  String get playerSeekPreviewDesc =>
+      'Prikaži mali pregled kadra iznad trake dok premotavaš. Otvara drugi dekoder niske razlučivosti pa troši dodatne podatke na streamovima.';
 
   @override
   String get playerSettingsChip => 'Postavke';
@@ -5674,7 +5852,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get downloadsTitle => 'Preuzimanja';
 
   @override
-  String get downloadsOpenDesc => 'Pogledaj red i sve spremljeno na ovom uređaju';
+  String get downloadsOpenDesc =>
+      'Pogledaj red i sve spremljeno na ovom uređaju';
 
   @override
   String get downloadTitle => 'Preuzmi';
@@ -5701,7 +5880,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get downloadNoSubtitle => 'Bez titlova';
 
   @override
-  String get downloadHlsNeedsFfmpeg => 'Ovaj stream je HLS popis za reprodukciju. Za preuzimanje treba FFmpeg dodatak.';
+  String get downloadHlsNeedsFfmpeg =>
+      'Ovaj stream je HLS popis za reprodukciju. Za preuzimanje treba FFmpeg dodatak.';
 
   @override
   String get downloadSourceMissing => 'Izvor za ovu epizodu nije instaliran';
@@ -5746,7 +5926,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get downloadResolving => 'Dohvaćam stream…';
 
   @override
-  String get downloadUsedFallback => 'Nema odgovarajućeg streama, korišten je prvi';
+  String get downloadUsedFallback =>
+      'Nema odgovarajućeg streama, korišten je prvi';
 
   @override
   String get downloadTabQueue => 'Red';
@@ -5823,7 +6004,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get downloadParallel => 'Istovremena preuzimanja';
 
   @override
-  String get downloadParallelDesc => 'Pokreni jedno po jedno preuzimanje ili više odjednom';
+  String get downloadParallelDesc =>
+      'Pokreni jedno po jedno preuzimanje ili više odjednom';
 
   @override
   String get downloadOneByOne => 'Jedno po jedno';
@@ -5832,7 +6014,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get downloadNotifications => 'Obavijesti o preuzimanju';
 
   @override
-  String get downloadNotificationsDesc => 'Napredak uživo gdje sustav to podržava, inače obavijest kad preuzimanje završi';
+  String get downloadNotificationsDesc =>
+      'Napredak uživo gdje sustav to podržava, inače obavijest kad preuzimanje završi';
 
   @override
   String get downloadNotifyLive => 'Uživo';
@@ -5847,13 +6030,15 @@ class AppLocalizationsHr extends AppLocalizations {
   String get downloadInfoFile => 'Zapiši info datoteku uz svako preuzimanje';
 
   @override
-  String get downloadInfoFileDesc => 'Sprema stream, kvalitetu, titl i vremena preskakanja u malu .json datoteku';
+  String get downloadInfoFileDesc =>
+      'Sprema stream, kvalitetu, titl i vremena preskakanja u malu .json datoteku';
 
   @override
   String get offlineHeader => 'Offline';
 
   @override
-  String get offlineModeDesc => 'Auto ide offline samo kad se aplikacija pokrene bez veze. Uvijek ostaje offline dok ne promijeniš.';
+  String get offlineModeDesc =>
+      'Auto ide offline samo kad se aplikacija pokrene bez veze. Uvijek ostaje offline dok ne promijeniš.';
 
   @override
   String get offlineModeOff => 'Isključeno';
@@ -5862,7 +6047,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get offlineModeAlways => 'Uvijek';
 
   @override
-  String get offlineModeOn => 'Offline način je uključen. Promjene se spremaju ovdje i šalju kad se vratiš online.';
+  String get offlineModeOn =>
+      'Offline način je uključen. Promjene se spremaju ovdje i šalju kad se vratiš online.';
 
   @override
   String get offlineLost => 'Offline si. Promjene se spremaju na ovom uređaju';
@@ -5871,7 +6057,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get offlineBack => 'Opet si online. Sinkroniziram tvoje promjene';
 
   @override
-  String get offlineSaved => 'Spremljeno na ovom uređaju, sinkronizirat će se kad budeš online';
+  String get offlineSaved =>
+      'Spremljeno na ovom uređaju, sinkronizirat će se kad budeš online';
 
   @override
   String offlineSynced(int count) {
@@ -5910,7 +6097,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get offlineDiscard => 'Odbaci';
 
   @override
-  String get downloadNotOffline => 'Ova epizoda nije preuzeta pa nije dostupna offline';
+  String get downloadNotOffline =>
+      'Ova epizoda nije preuzeta pa nije dostupna offline';
 
   @override
   String get offlineModeChip => 'Offline';
@@ -5947,13 +6135,15 @@ class AppLocalizationsHr extends AppLocalizations {
   String get downloadFfmpegTitle => 'Treba FFmpeg dodatak';
 
   @override
-  String get downloadFfmpegBody => 'Ovaj stream je HLS popis za reprodukciju. FFmpeg dodatak spaja njegove dijelove u jednu mp4 datoteku. Bez njega dijelovi ostaju u mapi epizode i reproduciraju se odatle.';
+  String get downloadFfmpegBody =>
+      'Ovaj stream je HLS popis za reprodukciju. FFmpeg dodatak spaja njegove dijelove u jednu mp4 datoteku. Bez njega dijelovi ostaju u mapi epizode i reproduciraju se odatle.';
 
   @override
   String get downloadFfmpegInstall => 'Instaliraj';
 
   @override
-  String get downloadFfmpegInstalling => 'Instaliram FFmpeg, ovo može potrajati…';
+  String get downloadFfmpegInstalling =>
+      'Instaliram FFmpeg, ovo može potrajati…';
 
   @override
   String get downloadFinishing => 'Spajam dijelove u jednu datoteku…';
@@ -5964,7 +6154,8 @@ class AppLocalizationsHr extends AppLocalizations {
   }
 
   @override
-  String get downloadTorrentNoFile => 'Torrent nema video datoteku za preuzimanje';
+  String get downloadTorrentNoFile =>
+      'Torrent nema video datoteku za preuzimanje';
 
   @override
   String downloadServiceText(int count) {
@@ -5982,13 +6173,15 @@ class AppLocalizationsHr extends AppLocalizations {
   String get downloadAutoDelete => 'Obriši pogledana preuzimanja';
 
   @override
-  String get downloadAutoDeleteDesc => 'Uklanja preuzimanje čim tvoj napredak dosegne tu epizodu ili poglavlje';
+  String get downloadAutoDeleteDesc =>
+      'Uklanja preuzimanje čim tvoj napredak dosegne tu epizodu ili poglavlje';
 
   @override
   String get downloadConnections => 'Veze po preuzimanju';
 
   @override
-  String get downloadConnectionsDesc => 'Dijeli veliku datoteku na dijelove koji se dohvaćaju istovremeno. Neki poslužitelji to ograničavaju.';
+  String get downloadConnectionsDesc =>
+      'Dijeli veliku datoteku na dijelove koji se dohvaćaju istovremeno. Neki poslužitelji to ograničavaju.';
 
   @override
   String get downloadPlayChoice => 'Pusti iz';
@@ -6006,7 +6199,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get offlineFeedTitle => 'Preuzeto na ovom uređaju';
 
   @override
-  String get offlineFeedEmpty => 'Preuzmi nešto dok si online i pojavit će se ovdje';
+  String get offlineFeedEmpty =>
+      'Preuzmi nešto dok si online i pojavit će se ovdje';
 
   @override
   String get offlineEnabled => 'Offline način je uključen';
@@ -6044,9 +6238,12 @@ class AppLocalizationsHr extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'Odbaciti $count promjena koje nikad nisu poslane? Ovo se ne može poništiti.',
-      few: 'Odbaciti $count promjene koje nikad nisu poslane? Ovo se ne može poništiti.',
-      one: 'Odbaciti $count promjenu koja nikad nije poslana? Ovo se ne može poništiti.',
+      other:
+          'Odbaciti $count promjena koje nikad nisu poslane? Ovo se ne može poništiti.',
+      few:
+          'Odbaciti $count promjene koje nikad nisu poslane? Ovo se ne može poništiti.',
+      one:
+          'Odbaciti $count promjenu koja nikad nije poslana? Ovo se ne može poništiti.',
     );
     return '$_temp0';
   }
@@ -6055,19 +6252,22 @@ class AppLocalizationsHr extends AppLocalizations {
   String get downloadWaitingWifi => 'Čekam Wi-Fi';
 
   @override
-  String get downloadWaitingMetered => 'Pauzirano na mreži s ograničenim prometom';
+  String get downloadWaitingMetered =>
+      'Pauzirano na mreži s ograničenim prometom';
 
   @override
   String get downloadWifiOnly => 'Samo Wi-Fi';
 
   @override
-  String get downloadWifiOnlyDesc => 'Preuzimanja čekaju dok si na mobilnim podacima';
+  String get downloadWifiOnlyDesc =>
+      'Preuzimanja čekaju dok si na mobilnim podacima';
 
   @override
   String get downloadMetered => 'Pauziraj na mrežama s ograničenim prometom';
 
   @override
-  String get downloadMeteredDesc => 'Čeka i na Wi-Fi mreži koju tvoj uređaj označi kao ograničenu';
+  String get downloadMeteredDesc =>
+      'Čeka i na Wi-Fi mreži koju tvoj uređaj označi kao ograničenu';
 
   @override
   String get downloadSpeedLimit => 'Ograničenje brzine';
@@ -6099,7 +6299,8 @@ class AppLocalizationsHr extends AppLocalizations {
   String get watchAutoSource => 'Automatski prijeđi na sljedeći izvor';
 
   @override
-  String get watchAutoSourceDesc => 'Ako izvor ne može pronaći naslov ili se ne učita, probaj sljedeći instalirani izvor';
+  String get watchAutoSourceDesc =>
+      'Ako izvor ne može pronaći naslov ili se ne učita, probaj sljedeći instalirani izvor';
 
   @override
   String get extensionTest => 'Testiraj ekstenzije';
@@ -6151,31 +6352,36 @@ class AppLocalizationsHr extends AppLocalizations {
   String get onboardingFeaturesTitle => 'Sve na jednom mjestu';
 
   @override
-  String get onboardingFeaturesBody => 'Sve što pratiš, gledaš i čitaš, bez žongliranja aplikacijama.';
+  String get onboardingFeaturesBody =>
+      'Sve što pratiš, gledaš i čitaš, bez žongliranja aplikacijama.';
 
   @override
   String get onboardingFeatureTrack => 'Prati sve';
 
   @override
-  String get onboardingFeatureTrackDesc => 'Popisi, napredak i ocjene na AniListu, MyAnimeListu, Simklu, Kitsuu i MangaBaki.';
+  String get onboardingFeatureTrackDesc =>
+      'Popisi, napredak i ocjene na AniListu, MyAnimeListu, Simklu, Kitsuu i MangaBaki.';
 
   @override
   String get onboardingFeatureWatch => 'Gledaj i čitaj';
 
   @override
-  String get onboardingFeatureWatchDesc => 'Instaliraj ekstenzije i streamaj anime ili čitaj mangu i novele izravno u aplikaciji.';
+  String get onboardingFeatureWatchDesc =>
+      'Instaliraj ekstenzije i streamaj anime ili čitaj mangu i novele izravno u aplikaciji.';
 
   @override
   String get onboardingFeatureOffline => 'Ponesi offline';
 
   @override
-  String get onboardingFeatureOfflineDesc => 'Preuzmi epizode i poglavlja i nastavi bez veze.';
+  String get onboardingFeatureOfflineDesc =>
+      'Preuzmi epizode i poglavlja i nastavi bez veze.';
 
   @override
   String get onboardingFeatureSync => 'Drži popise sinkroniziranima';
 
   @override
-  String get onboardingFeatureSyncDesc => 'Preslikaj svoj popis kroz servise ili pusti da pobijedi onaj koji je ispred.';
+  String get onboardingFeatureSyncDesc =>
+      'Preslikaj svoj popis kroz servise ili pusti da pobijedi onaj koji je ispred.';
 
   @override
   String get onboardingThemeShape => 'Boje';

@@ -71,7 +71,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get animationSpeed => 'ඇනිමේෂන්';
 
   @override
-  String get animationSpeedDesc => 'ඇප් එකේ ට්‍රාන්සිෂන් සහ එන්ට්‍රි ඉෆෙක්ට්ස් වල වේගය';
+  String get animationSpeedDesc =>
+      'ඇප් එකේ ට්‍රාන්සිෂන් සහ එන්ට්‍රි ඉෆෙක්ට්ස් වල වේගය';
 
   @override
   String get animationSpeedOff => 'ඕෆ්';
@@ -121,7 +122,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get pluginRepoUpdated => 'ප්ලගින් රෙපෝ එක අප්ඩේට් වුණා';
 
   @override
-  String get pluginRepoUpdateFailed => 'ප්ලගින් රෙපෝ එක රිෆ්‍රෙෂ් කරන්න බැරි වුණා';
+  String get pluginRepoUpdateFailed =>
+      'ප්ලගින් රෙපෝ එක රිෆ්‍රෙෂ් කරන්න බැරි වුණා';
 
   @override
   String get ok => 'හරි';
@@ -233,10 +235,12 @@ class AppLocalizationsSi extends AppLocalizations {
   String get shelfFrame => 'සෙක්ෂන් වටේ ෆ්‍රේම් එක';
 
   @override
-  String get shelfFrameDesc => 'හැම ෂෙල්ෆ් එකක් පිටිපස්සෙම කාඩ් එකක් පෙන්වන්න, නැත්නම් පේළි කෙලින්ම පේජ් එක උඩ තියන්න';
+  String get shelfFrameDesc =>
+      'හැම ෂෙල්ෆ් එකක් පිටිපස්සෙම කාඩ් එකක් පෙන්වන්න, නැත්නම් පේළි කෙලින්ම පේජ් එක උඩ තියන්න';
 
   @override
-  String get settingsExtensionsDesc => 'සෝස් මැනේජර්ස්, රෙපෝස් සහ එක්ස්ටෙන්ෂන් විකල්ප';
+  String get settingsExtensionsDesc =>
+      'සෝස් මැනේජර්ස්, රෙපෝස් සහ එක්ස්ටෙන්ෂන් විකල්ප';
 
   @override
   String get settingsAddons => 'ඇඩ්-ඔන්ස්';
@@ -248,7 +252,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get customPath => 'කස්ටම් ස්ටෝරේජ් පාත් එක';
 
   @override
-  String get customPathDesc => 'ඇප් දත්ත තියෙන තැන. රීසෙට් කරන්න ලොංග් ප්‍රෙස් කරන්න';
+  String get customPathDesc =>
+      'ඇප් දත්ත තියෙන තැන. රීසෙට් කරන්න ලොංග් ප්‍රෙස් කරන්න';
 
   @override
   String get selectDirectory => 'ඩිරෙක්ටරි එක තෝරන්න';
@@ -257,7 +262,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get differentCacheManager => 'විකල්ප ඉමේජ් කෑෂ් එක';
 
   @override
-  String get differentCacheManagerDesc => 'ඉමේජ් වලට වෙනස් කෑෂ් මැනේජර් කෙනෙක් පාවිච්චි කරන්න';
+  String get differentCacheManagerDesc =>
+      'ඉමේජ් වලට වෙනස් කෑෂ් මැනේජර් කෙනෙක් පාවිච්චි කරන්න';
 
   @override
   String get backupAndRestore => 'බැකප් සහ රිස්ටෝර්';
@@ -275,7 +281,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get loadExtensionsIcon => 'එක්ස්ටෙන්ෂන් අයිකන් ලෝඩ් කරන්න';
 
   @override
-  String get loadExtensionsIconDesc => 'එක්ස්ටෙන්ෂන් ලිස්ට් වල සෝස් අයිකන් පෙන්වන්න';
+  String get loadExtensionsIconDesc =>
+      'එක්ස්ටෙන්ෂන් ලිස්ට් වල සෝස් අයිකන් පෙන්වන්න';
 
   @override
   String get sectionStorage => 'ස්ටෝරේජ්';
@@ -326,7 +333,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get backupPasswordHint => 'ඩිෆෝල්ට් එක පාවිච්චි කරන්න හිස්ව තියන්න';
 
   @override
-  String get backupSensitive => 'ලොගින් ටෝකන්ස් ඇතුළත්. මේ ෆයිල් එක රහසිගතව තියාගන්න';
+  String get backupSensitive =>
+      'ලොගින් ටෝකන්ස් ඇතුළත්. මේ ෆයිල් එක රහසිගතව තියාගන්න';
 
   @override
   String get backupCreate => 'බැකප් එකක් හදන්න';
@@ -372,7 +380,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get backupUnlock => 'අන්ලොක් කරන්න';
 
   @override
-  String get backupWrongPassword => 'මේ ෆයිල් එක කියවන්න බැරි වුණා. මුරපදය චෙක් කරන්න';
+  String get backupWrongPassword =>
+      'මේ ෆයිල් එක කියවන්න බැරි වුණා. මුරපදය චෙක් කරන්න';
 
   @override
   String get backupRestoreSelected => 'තෝරපු ඒවා රිස්ටෝර් කරන්න';
@@ -383,7 +392,8 @@ class AppLocalizationsSi extends AppLocalizations {
   }
 
   @override
-  String get backupRestored => 'රිස්ටෝර් වුණා. හැමදේම ඇප්ලයි වෙන්න ඇප් එක රීස්ටාර්ට් කරන්න';
+  String get backupRestored =>
+      'රිස්ටෝර් වුණා. හැමදේම ඇප්ලයි වෙන්න ඇප් එක රීස්ටාර්ට් කරන්න';
 
   @override
   String backupRestoreFailed(Object error) {
@@ -397,13 +407,15 @@ class AppLocalizationsSi extends AppLocalizations {
   String get backupCatTheme => 'පෙනුම';
 
   @override
-  String get backupCatThemeDesc => 'තීම්, පාට, ග්ලාස්, ෆොන්ට්ස් සහ කාඩ් ස්ටයිල්';
+  String get backupCatThemeDesc =>
+      'තීම්, පාට, ග්ලාස්, ෆොන්ට්ස් සහ කාඩ් ස්ටයිල්';
 
   @override
   String get backupCatCommon => 'සාමාන්‍ය';
 
   @override
-  String get backupCatCommonDesc => 'භාෂාව, ස්ටෝරේජ්, නෙට්වර්ක් සහ එක්ස්ටෙන්ෂන් විකල්ප';
+  String get backupCatCommonDesc =>
+      'භාෂාව, ස්ටෝරේජ්, නෙට්වර්ක් සහ එක්ස්ටෙන්ෂන් විකල්ප';
 
   @override
   String get backupCatPlayer => 'ප්ලේයර්';
@@ -433,7 +445,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get logFile => 'ලොග් ෆයිල් එක';
 
   @override
-  String get logFileDesc => 'ඇප් ලොග් එක ෂෙයාර් කරන්න, නැත්නම් Linux වල ඒකේ පාත් එක කොපි කරන්න';
+  String get logFileDesc =>
+      'ඇප් ලොග් එක ෂෙයාර් කරන්න, නැත්නම් Linux වල ඒකේ පාත් එක කොපි කරන්න';
 
   @override
   String get logFileCopied => 'ලොග් පාත් එක කොපි වුණා';
@@ -442,7 +455,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get donateSheetTitle => 'Dartotsu කැමතිද?';
 
   @override
-  String get donateSheetMessage => 'Dartotsu හදලා බලාගන්නේ එක කෙනෙක් විතරයි. ඔයාට ප්‍රයෝජනවත් නම්, ඩෙවලොප්මන්ට් එකට සහාය වෙන්න.';
+  String get donateSheetMessage =>
+      'Dartotsu හදලා බලාගන්නේ එක කෙනෙක් විතරයි. ඔයාට ප්‍රයෝජනවත් නම්, ඩෙවලොප්මන්ට් එකට සහාය වෙන්න.';
 
   @override
   String get donateLater => 'පස්සේ බලමු';
@@ -451,16 +465,19 @@ class AppLocalizationsSi extends AppLocalizations {
   String get glassBackground => 'ග්ලාස් බැක්ග්‍රවුන්ඩ් එක';
 
   @override
-  String get glassBackgroundDesc => 'ඔයා ඉමේජ් ලින්ක් එකක් දැම්මේ නැත්නම් ඔයාගේ ප්‍රොෆයිල් බැනර් එක';
+  String get glassBackgroundDesc =>
+      'ඔයා ඉමේජ් ලින්ක් එකක් දැම්මේ නැත්නම් ඔයාගේ ප්‍රොෆයිල් බැනර් එක';
 
   @override
-  String get glassBackgroundHint => 'ඉමේජ් ලින්ක් එක (ඔයාගේ බැනර් එකට හිස්ව තියන්න)';
+  String get glassBackgroundHint =>
+      'ඉමේජ් ලින්ක් එක (ඔයාගේ බැනර් එකට හිස්ව තියන්න)';
 
   @override
   String get followCover => 'කවර් එක අනුගමනය කරන්න';
 
   @override
-  String get followCoverDesc => 'පාට බැක්ග්‍රවුන්ඩ් එකත්, ඩිටේල් පේජ් වල කවර් එකත් අනුගමනය කරනවා';
+  String get followCoverDesc =>
+      'පාට බැක්ග්‍රවුන්ඩ් එකත්, ඩිටේල් පේජ් වල කවර් එකත් අනුගමනය කරනවා';
 
   @override
   String get cardStyle => 'කාඩ් ස්ටයිල්';
@@ -472,7 +489,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get customFont => 'ෆොන්ට්';
 
   @override
-  String get customFontDesc => 'ඩිෆෝල්ට්, ඔයාගේ ඩිවයිස් එකේ ෆයිල් එකක්, නැත්නම් Google Fonts';
+  String get customFontDesc =>
+      'ඩිෆෝල්ට්, ඔයාගේ ඩිවයිස් එකේ ෆයිල් එකක්, නැත්නම් Google Fonts';
 
   @override
   String get customFontError => 'ඒ ෆොන්ට් ෆයිල් එක ලෝඩ් කරන්න බැරි වුණා';
@@ -505,7 +523,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get jsonTheme => 'කස්ටම් තීම් ෆයිල් එක';
 
   @override
-  String get jsonThemeDesc => '~/.config/dartotsu/theme.json එකෙන් ලයිව් පාට (කස්ටම් ස්ක්‍රිප්ට් එකක්, නැත්නම් ඔයාගේම වෙනස්කම්)';
+  String get jsonThemeDesc =>
+      '~/.config/dartotsu/theme.json එකෙන් ලයිව් පාට (කස්ටම් ස්ක්‍රිප්ට් එකක්, නැත්නම් ඔයාගේම වෙනස්කම්)';
 
   @override
   String get themeMode => 'තීම් මෝඩ්';
@@ -534,7 +553,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get checkForUpdates => 'අප්ඩේට්ස් චෙක් කරන්න';
 
   @override
-  String get checkForUpdatesDesc => 'අලුත් GitHub රිලීස් එකක් ආවොත් දැනුම් දෙන්න';
+  String get checkForUpdatesDesc =>
+      'අලුත් GitHub රිලීස් එකක් ආවොත් දැනුම් දෙන්න';
 
   @override
   String get updateChannel => 'අප්ඩේට් චැනල් එක';
@@ -618,7 +638,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get highRefreshRate => 'ඉහළ රිෆ්‍රෙෂ් රේට් එක';
 
   @override
-  String get highRefreshRateDesc => 'ඔයාගේ ස්ක්‍රීන් එකට පුළුවන් ඉහළම රිෆ්‍රෙෂ් රේට් එක පාවිච්චි කරන්න';
+  String get highRefreshRateDesc =>
+      'ඔයාගේ ස්ක්‍රීන් එකට පුළුවන් ඉහළම රිෆ්‍රෙෂ් රේට් එක පාවිච්චි කරන්න';
 
   @override
   String get imageSave => 'ඉමේජ් එක සේව් කරන්න';
@@ -644,10 +665,12 @@ class AppLocalizationsSi extends AppLocalizations {
   String get verifyTls => 'සහතික තහවුරු කරන්න';
 
   @override
-  String get verifyTlsDesc => 'වලංගු නොවන HTTPS සහතික තියෙන සර්වර්ස් ප්‍රතික්ෂේප කරන්න. self-signed එකක් පාවිච්චි කරන සෝස් එකකට විතරක් ඕෆ් කරන්න';
+  String get verifyTlsDesc =>
+      'වලංගු නොවන HTTPS සහතික තියෙන සර්වර්ස් ප්‍රතික්ෂේප කරන්න. self-signed එකක් පාවිච්චි කරන සෝස් එකකට විතරක් ඕෆ් කරන්න';
 
   @override
-  String get clearCookiesConfirm => 'සේව් කරලා තියෙන හැම කුකී එකක්ම අයින් කරනවද? මේකෙන් සමහර සෝස් වලින් ඔයා සයින් අවුට් වෙන්න පුළුවන්.';
+  String get clearCookiesConfirm =>
+      'සේව් කරලා තියෙන හැම කුකී එකක්ම අයින් කරනවද? මේකෙන් සමහර සෝස් වලින් ඔයා සයින් අවුට් වෙන්න පුළුවන්.';
 
   @override
   String get version => 'වර්ෂන් එක';
@@ -674,7 +697,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get contributorsDesc => 'Dartotsu හදපු අය';
 
   @override
-  String get contributorsLoadFailed => 'කොන්ට්‍රිබියුටර්ස්ව ලෝඩ් කරන්න බැරි වුණා';
+  String get contributorsLoadFailed =>
+      'කොන්ට්‍රිබියුටර්ස්ව ලෝඩ් කරන්න බැරි වුණා';
 
   @override
   String get forks => 'Forks';
@@ -722,7 +746,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get onboardingPaletteTitle => 'ඔයාගේම කරගන්න';
 
   @override
-  String get onboardingPaletteBody => 'පැලට් එකක් තෝරන්න. කාඩ් වල ඉඳන් ප්ලේයර් එක දක්වා හැම ඇක්සන්ට් එකක්ම ඒක අනුගමනය කරනවා.';
+  String get onboardingPaletteBody =>
+      'පැලට් එකක් තෝරන්න. කාඩ් වල ඉඳන් ප්ලේයර් එක දක්වා හැම ඇක්සන්ට් එකක්ම ඒක අනුගමනය කරනවා.';
 
   @override
   String get themeModeAuto => 'ඔටෝ';
@@ -737,40 +762,47 @@ class AppLocalizationsSi extends AppLocalizations {
   String get onboardingSyncTitle => 'ඔයාගේ ලයිබ්‍රරිය සින්ක් කරන්න';
 
   @override
-  String get onboardingSyncBody => 'ඔයාගේ ලිස්ට්, ප්‍රගතිය සහ ස්කෝර් ගේන්න AniList එකට සයින් ඉන් වෙන්න. නැත්නම් ස්කිප් කරලා ගෙස්ට් විදියට බලන්න.';
+  String get onboardingSyncBody =>
+      'ඔයාගේ ලිස්ට්, ප්‍රගතිය සහ ස්කෝර් ගේන්න AniList එකට සයින් ඉන් වෙන්න. නැත්නම් ස්කිප් කරලා ගෙස්ට් විදියට බලන්න.';
 
   @override
-  String get onboardingOpenLinks => 'AniList සහ රෙපෝ ලින්ක්ස් Dartotsu එකේ විවෘත කරන්න';
+  String get onboardingOpenLinks =>
+      'AniList සහ රෙපෝ ලින්ක්ස් Dartotsu එකේ විවෘත කරන්න';
 
   @override
   String get onboardingPermsTitle => 'අවසර';
 
   @override
-  String get onboardingPermsBody => 'ඩවුන්ලෝඩ්ස්, අප්ඩේට්ස් සහ අලර්ට්ස් කිසිම බාධාවක් නැතුව වැඩ කරන්න දැන්ම මේවාට ඉඩ දෙන්න. පස්සේ සිස්ටම් සැකසුම් වලින් වෙනස් කරන්න පුළුවන්.';
+  String get onboardingPermsBody =>
+      'ඩවුන්ලෝඩ්ස්, අප්ඩේට්ස් සහ අලර්ට්ස් කිසිම බාධාවක් නැතුව වැඩ කරන්න දැන්ම මේවාට ඉඩ දෙන්න. පස්සේ සිස්ටම් සැකසුම් වලින් වෙනස් කරන්න පුළුවන්.';
 
   @override
   String get permNotifications => 'නොටිෆිකේෂන්ස්';
 
   @override
-  String get permNotificationsDesc => 'ඩවුන්ලෝඩ් ප්‍රගතිය, අලුත් එපිසෝඩ්ස් සහ රිප්ලයි';
+  String get permNotificationsDesc =>
+      'ඩවුන්ලෝඩ් ප්‍රගතිය, අලුත් එපිසෝඩ්ස් සහ රිප්ලයි';
 
   @override
   String get permStorage => 'සියලු ෆයිල්ස් වලට ඇක්සස්';
 
   @override
-  String get permStorageDesc => 'ඩවුන්ලෝඩ්ස් පබ්ලික් Dartotsu ෆෝල්ඩර් එකේ සේව් කරන්න';
+  String get permStorageDesc =>
+      'ඩවුන්ලෝඩ්ස් පබ්ලික් Dartotsu ෆෝල්ඩර් එකේ සේව් කරන්න';
 
   @override
   String get permInstall => 'අප්ඩේට්ස් ඉන්ස්ටෝල් කරන්න';
 
   @override
-  String get permInstallDesc => 'Dartotsu එකට තමන්ගේම අප්ඩේට්ස් ඉන්ස්ටෝල් කරගන්න දෙන්න';
+  String get permInstallDesc =>
+      'Dartotsu එකට තමන්ගේම අප්ඩේට්ස් ඉන්ස්ටෝල් කරගන්න දෙන්න';
 
   @override
   String get permBattery => 'සීමා නැති බැටරි';
 
   @override
-  String get permBatteryDesc => 'දිගු ඩවුන්ලෝඩ්ස් බැක්ග්‍රවුන්ඩ් එකේ දිගටම යන්න දෙන්න';
+  String get permBatteryDesc =>
+      'දිගු ඩවුන්ලෝඩ්ස් බැක්ග්‍රවුන්ඩ් එකේ දිගටම යන්න දෙන්න';
 
   @override
   String get permGrant => 'ඉඩ දෙන්න';
@@ -782,7 +814,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get linkOpenInApp => 'ලින්ක්ස් Dartotsu එකේ විවෘත කරන්න';
 
   @override
-  String get linkOpenInAppDesc => 'AniList සහ රෙපෝ ලින්ක්ස් වලින් ඇප් එක ඕපන් වෙන්න දෙන්න';
+  String get linkOpenInAppDesc =>
+      'AniList සහ රෙපෝ ලින්ක්ස් වලින් ඇප් එක ඕපන් වෙන්න දෙන්න';
 
   @override
   String get reviewsTitle => 'රිව්යූස්';
@@ -825,13 +858,15 @@ class AppLocalizationsSi extends AppLocalizations {
   String get shareAnalytics => 'නිර්නාමික භාවිත දත්ත ෂෙයාර් කරන්න';
 
   @override
-  String get shareAnalyticsDesc => 'නිර්නාමික යූසර් ගණන් සහ ක්‍රෑෂ් රිපෝර්ට්ස්. ගිණුමක් හෝ පෞද්ගලික දත්ත නෑ';
+  String get shareAnalyticsDesc =>
+      'නිර්නාමික යූසර් ගණන් සහ ක්‍රෑෂ් රිපෝර්ට්ස්. ගිණුමක් හෝ පෞද්ගලික දත්ත නෑ';
 
   @override
   String get linkOpenAnilist => 'AniList ලින්ක්ස් Dartotsu එකේ විවෘත කරන්න';
 
   @override
-  String get linkOpenAnilistDesc => 'anilist.co ලින්ක්ස් වලින් ඇප් එක ඕපන් වෙන්න ලින්ක් හැන්ඩ්ලින් ඔන් කරන්න';
+  String get linkOpenAnilistDesc =>
+      'anilist.co ලින්ක්ස් වලින් ඇප් එක ඕපන් වෙන්න ලින්ක් හැන්ඩ්ලින් ඔන් කරන්න';
 
   @override
   String get linkSettingsFailed => 'සිස්ටම් සැකසුම් විවෘත කරන්න බැරි වුණා';
@@ -840,16 +875,19 @@ class AppLocalizationsSi extends AppLocalizations {
   String get discordRichPresence => 'Rich Presence';
 
   @override
-  String get discordRichPresenceTokenDesc => 'ඔයා කරමින් ඉන්න දේ ඔයාගේ Discord ප්‍රොෆයිල් එකේ පෙන්වන්න. ඔයාගේ Discord ටෝකන් එක ඕනේ.';
+  String get discordRichPresenceTokenDesc =>
+      'ඔයා කරමින් ඉන්න දේ ඔයාගේ Discord ප්‍රොෆයිල් එකේ පෙන්වන්න. ඔයාගේ Discord ටෝකන් එක ඕනේ.';
 
   @override
-  String get discordRichPresenceDesktopDesc => 'ඔයා කරමින් ඉන්න දේ ඔයාගේ Discord ප්‍රොෆයිල් එකේ පෙන්වන්න. Discord ඩෙස්ක්ටොප් ඇප් එක දුවමින් තියෙන්න ඕනේ.';
+  String get discordRichPresenceDesktopDesc =>
+      'ඔයා කරමින් ඉන්න දේ ඔයාගේ Discord ප්‍රොෆයිල් එකේ පෙන්වන්න. Discord ඩෙස්ක්ටොප් ඇප් එක දුවමින් තියෙන්න ඕනේ.';
 
   @override
   String get discordBrowsing => 'බ්‍රවුසින් ඇක්ටිවිටි පෙන්වන්න';
 
   @override
-  String get discordBrowsingDesc => 'ඔයා බලන/කියවන දේ විතරක් නෙවෙයි, ඔයා බලන ටැබ් එක, පේජ් එක හෝ ප්‍රොෆයිල් එකත් පෙන්වන්න.';
+  String get discordBrowsingDesc =>
+      'ඔයා බලන/කියවන දේ විතරක් නෙවෙයි, ඔයා බලන ටැබ් එක, පේජ් එක හෝ ප්‍රොෆයිල් එකත් පෙන්වන්න.';
 
   @override
   String get discordLookHeader => 'ප්‍රෙසන්ස් පෙනුම';
@@ -858,7 +896,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get discordActivityType => 'ඇක්ටිවිටි වර්ගය';
 
   @override
-  String get discordActivityTypeDesc => 'Discord එක ලියන විදිය: \"Watching …\" හෝ \"Playing …\". ඔටෝ කියන්නේ anime වලට Watching, අනිත් හැමදේටම Playing.';
+  String get discordActivityTypeDesc =>
+      'Discord එක ලියන විදිය: \"Watching …\" හෝ \"Playing …\". ඔටෝ කියන්නේ anime වලට Watching, අනිත් හැමදේටම Playing.';
 
   @override
   String get discordWatching => 'Watching';
@@ -870,7 +909,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get discordCovers => 'කවර්ස් පෙන්වන්න';
 
   @override
-  String get discordCoversDesc => 'කාඩ් එකේ කවර් ආට් එකයි Dartotsu අයිකන් එකයි.';
+  String get discordCoversDesc =>
+      'කාඩ් එකේ කවර් ආට් එකයි Dartotsu අයිකන් එකයි.';
 
   @override
   String get discordTimer => 'ටයිමර් එක පෙන්වන්න';
@@ -882,13 +922,15 @@ class AppLocalizationsSi extends AppLocalizations {
   String get discordButtons => 'බට්න්ස් පෙන්වන්න';
 
   @override
-  String get discordButtonsDesc => '\"View anime / manga\" සහ \"Open Dartotsu\" බට්න්ස්.';
+  String get discordButtonsDesc =>
+      '\"View anime / manga\" සහ \"Open Dartotsu\" බට්න්ස්.';
 
   @override
   String get discordHideTitles => 'ටයිටල්ස් හංගන්න';
 
   @override
-  String get discordHideTitlesDesc => 'anime සහ manga නම් (ඒවායේ කවර් සහ ලින්ක් එකත් එක්ක) \"Something private\" එකකින් මාරු කරන්න.';
+  String get discordHideTitlesDesc =>
+      'anime සහ manga නම් (ඒවායේ කවර් සහ ලින්ක් එකත් එක්ක) \"Something private\" එකකින් මාරු කරන්න.';
 
   @override
   String get discordConnectionHeader => 'සම්බන්ධතාව';
@@ -951,13 +993,15 @@ class AppLocalizationsSi extends AppLocalizations {
   String get discordToken => 'Discord ටෝකන් එක';
 
   @override
-  String get discordTokenSaved => 'සේව් වුණා. මාරු කරන්න ටැප් කරන්න, අයින් කරන්න ලොංග් ප්‍රෙස් කරන්න.';
+  String get discordTokenSaved =>
+      'සේව් වුණා. මාරු කරන්න ටැප් කරන්න, අයින් කරන්න ලොංග් ප්‍රෙස් කරන්න.';
 
   @override
   String get discordTokenNotSet => 'සෙට් කරලා නෑ. එකතු කරන්න ටැප් කරන්න.';
 
   @override
-  String get discordTokenPrompt => 'ප්‍රෙසන්ස් එක පෙන්වන්න ඕන Discord ගිණුමේ ටෝකන් එක පේස්ට් කරන්න. ඒක මේ ඩිවයිස් එකේම තියෙනවා.';
+  String get discordTokenPrompt =>
+      'ප්‍රෙසන්ස් එක පෙන්වන්න ඕන Discord ගිණුමේ ටෝකන් එක පේස්ට් කරන්න. ඒක මේ ඩිවයිස් එකේම තියෙනවා.';
 
   @override
   String get discordTokenHint => 'ටෝකන්';
@@ -975,7 +1019,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get discordRichPresenceRowOn => 'ඔන් · පෙනුම මාරු කරන්න ටැප් කරන්න';
 
   @override
-  String get discordRichPresenceRowOff => 'ඔයා කරමින් ඉන්න දේ ඔයාගේ Discord ප්‍රොෆයිල් එකේ පෙන්වන්න';
+  String get discordRichPresenceRowOff =>
+      'ඔයා කරමින් ඉන්න දේ ඔයාගේ Discord ප්‍රොෆයිල් එකේ පෙන්වන්න';
 
   @override
   String get loginCancelled => 'ලොගින් එක අවලංගු වුණා';
@@ -992,7 +1037,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get malLoginFailed => 'MyAnimeList ලොගින් එක අසාර්ථකයි';
 
   @override
-  String get kitsuLoginFailed => 'Kitsu ලොගින් එක අසාර්ථකයි. ඔයාගේ ඊමේල් එකයි මුරපදයයි චෙක් කරන්න.';
+  String get kitsuLoginFailed =>
+      'Kitsu ලොගින් එක අසාර්ථකයි. ඔයාගේ ඊමේල් එකයි මුරපදයයි චෙක් කරන්න.';
 
   @override
   String get kitsuLoginTitle => 'Kitsu එකට සයින් ඉන් වෙන්න';
@@ -1043,13 +1089,15 @@ class AppLocalizationsSi extends AppLocalizations {
   String get hideNsfw => 'NSFW හංගන්න';
 
   @override
-  String get hideNsfwDesc => 'වැඩිහිටි ටයිටල්ස් ෆීඩ් සහ සර්ච් වලින් අයින් කරලා, ඔයාගේම වැඩිහිටි එන්ට්‍රීස් Hidden Media යට ලිස්ට් කරන්න.';
+  String get hideNsfwDesc =>
+      'වැඩිහිටි ටයිටල්ස් ෆීඩ් සහ සර්ච් වලින් අයින් කරලා, ඔයාගේම වැඩිහිටි එන්ට්‍රීස් Hidden Media යට ලිස්ට් කරන්න.';
 
   @override
   String get kitsuAccountOptions => 'Kitsu ගිණුම් විකල්ප';
 
   @override
-  String get couldNotUpdateKitsuSettings => 'ඔයාගේ Kitsu සැකසුම් අප්ඩේට් කරන්න බැරි වුණා';
+  String get couldNotUpdateKitsuSettings =>
+      'ඔයාගේ Kitsu සැකසුම් අප්ඩේට් කරන්න බැරි වුණා';
 
   @override
   String get titleCanonical => 'කැනොනිකල්';
@@ -1088,7 +1136,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get shareToGlobal => 'ග්ලෝබල් ෆීඩ් එකට ෂෙයාර් කරන්න';
 
   @override
-  String get shareToGlobalDesc => 'ඔයාගේ ඇක්ටිවිටි Kitsu වල ග්ලෝබල් ෆීඩ් එකේ පේන්න දෙන්න.';
+  String get shareToGlobalDesc =>
+      'ඔයාගේ ඇක්ටිවිටි Kitsu වල ග්ලෝබල් ෆීඩ් එකේ පේන්න දෙන්න.';
 
   @override
   String get memberSince => 'සාමාජිකයෙක් වුණු දා සිට';
@@ -1142,7 +1191,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get homeSections => 'හෝම් සෙක්ෂන්ස්';
 
   @override
-  String get homeSectionsHint => 'අනුපිළිවෙල වෙනස් කරන්න ඇදලා දාන්න. හංගපු සෙක්ෂන්ස් කවදාවත් ෆෙච් වෙන්නේ නෑ.';
+  String get homeSectionsHint =>
+      'අනුපිළිවෙල වෙනස් කරන්න ඇදලා දාන්න. හංගපු සෙක්ෂන්ස් කවදාවත් ෆෙච් වෙන්නේ නෑ.';
 
   @override
   String get customListDeleteFailed => 'කස්ටම් ලිස්ට් එක මකන්න බැරි වුණා';
@@ -1225,7 +1275,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get refreshFromSimkl => 'Simkl එකෙන් රිෆ්‍රෙෂ් කරන්න';
 
   @override
-  String get repullProfileLibrary => 'ඔයාගේ ප්‍රොෆයිල් එකයි ලයිබ්‍රරියයි ආයෙත් අදින්න';
+  String get repullProfileLibrary =>
+      'ඔයාගේ ප්‍රොෆයිල් එකයි ලයිබ්‍රරියයි ආයෙත් අදින්න';
 
   @override
   String get simklSignInToSearch => 'හොයන්න Simkl එකට සයින් ඉන් වෙන්න';
@@ -1234,7 +1285,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get dropRate => 'ඩ්‍රොප් රේට් එක';
 
   @override
-  String get simklAttribution => 'දත්ත සහ ආට්වර්ක් Simkl එකෙන්. Simkl එකේ බලන්න';
+  String get simklAttribution =>
+      'දත්ත සහ ආට්වර්ක් Simkl එකෙන්. Simkl එකේ බලන්න';
 
   @override
   String get onHold => 'හෝල්ඩ් එකේ';
@@ -1356,13 +1408,15 @@ class AppLocalizationsSi extends AppLocalizations {
   String get sourceReturnedNothing => 'මේ සෝස් එකෙන් කිසිවක් ආවේ නෑ';
 
   @override
-  String get checkConnectionOrSource => 'ඔයාගේ කනෙක්ෂන් එක චෙක් කරන්න නැත්නම් වෙන සෝස් එකක් බලන්න.';
+  String get checkConnectionOrSource =>
+      'ඔයාගේ කනෙක්ෂන් එක චෙක් කරන්න නැත්නම් වෙන සෝස් එකක් බලන්න.';
 
   @override
   String get tryDifferentSearch => 'වෙනත් සර්ච් වචනයක් උත්සාහ කරන්න.';
 
   @override
-  String get savedTitlesAppearHere => 'ඔයා ලිස්ට් එකට එකතු කරන ටයිටල්ස් මෙතන පේනවා.';
+  String get savedTitlesAppearHere =>
+      'ඔයා ලිස්ට් එකට එකතු කරන ටයිටල්ස් මෙතන පේනවා.';
 
   @override
   String get tryOtherFeed => 'වෙන ෆීඩ් එකක් බලන්න නැත්නම් හොයන්න.';
@@ -1382,7 +1436,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get nothingHereYet => 'මෙතන තාම කිසිවක් නෑ';
 
   @override
-  String get savedOnDeviceUntilLogin => 'පහළ තියෙන හැමදේම ඔයා කරන තුරු මේ ඩිවයිස් එකේ සේව් වෙලා තියෙනවා.';
+  String get savedOnDeviceUntilLogin =>
+      'පහළ තියෙන හැමදේම ඔයා කරන තුරු මේ ඩිවයිස් එකේ සේව් වෙලා තියෙනවා.';
 
   @override
   String get yourProfile => 'ඔයාගේ ප්‍රොෆයිල් එක';
@@ -1643,7 +1698,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get nothingToPreview => 'ප්‍රිවිව් කරන්න කිසිවක් නෑ';
 
   @override
-  String get writeSomethingHint => 'යමක් ලියන්න… මෙතන AniList මාර්ක්ඩවුන් වැඩ කරනවා';
+  String get writeSomethingHint =>
+      'යමක් ලියන්න… මෙතන AniList මාර්ක්ඩවුන් වැඩ කරනවා';
 
   @override
   String get privateMessage => 'පුද්ගලික මැසේජ් එකක්';
@@ -1739,7 +1795,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get unsubscribed => 'අන්සබ්ස්ක්‍රයිබ් වුණා';
 
   @override
-  String get failedToUpdateSubscription => 'සබ්ස්ක්‍රිප්ෂන් එක අප්ඩේට් කරන්න බැරි වුණා';
+  String get failedToUpdateSubscription =>
+      'සබ්ස්ක්‍රිප්ෂන් එක අප්ඩේට් කරන්න බැරි වුණා';
 
   @override
   String get edit => 'එඩිට්';
@@ -1879,7 +1936,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get querySize => 'ක්වෙරි ප්‍රමාණය';
 
   @override
-  String get querySizeDesc => 'එක ලොකු ක්වෙරි එකක් එක රික්වෙස්ට් එකකින් හැම පේළියක්ම (සම්පූර්ණ ප්‍රොෆයිල් එකත්) ලෝඩ් කරනවා. ස්ප්ලිට් ක්වෙරීස් හැම පේළියකටම හෝ ප්‍රොෆයිල් කොටසකටම පොඩි රික්වෙස්ට් එකක් යවනවා: හැම එකක්ම ඉක්මන්, කොටස් එන එන විදියට පේනවා.';
+  String get querySizeDesc =>
+      'එක ලොකු ක්වෙරි එකක් එක රික්වෙස්ට් එකකින් හැම පේළියක්ම (සම්පූර්ණ ප්‍රොෆයිල් එකත්) ලෝඩ් කරනවා. ස්ප්ලිට් ක්වෙරීස් හැම පේළියකටම හෝ ප්‍රොෆයිල් කොටසකටම පොඩි රික්වෙස්ට් එකක් යවනවා: හැම එකක්ම ඉක්මන්, කොටස් එන එන විදියට පේනවා.';
 
   @override
   String get oneBig => 'එක ලොකුවට';
@@ -1910,7 +1968,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get accountOptions => 'ගිණුම් විකල්ප';
 
   @override
-  String get accountOptionsDesc => 'නම්, ස්කෝර් ෆෝමැට් එක, ලිස්ට් අනුපිළිවෙල, නොටිෆිකේෂන්ස් සහ තවත්';
+  String get accountOptionsDesc =>
+      'නම්, ස්කෝර් ෆෝමැට් එක, ලිස්ට් අනුපිළිවෙල, නොටිෆිකේෂන්ස් සහ තවත්';
 
   @override
   String get anilistAccountOptions => 'AniList ගිණුම් විකල්ප';
@@ -1922,13 +1981,15 @@ class AppLocalizationsSi extends AppLocalizations {
   String get hidePrivateEntries => 'පෞද්ගලික එන්ට්‍රීස් හංගන්න';
 
   @override
-  String get hidePrivateEntriesDesc => 'AniList එකේ පෞද්ගලික කියලා සලකුණු කරපු එන්ට්‍රීස් ෆීඩ් එකෙන් ඈත් කරන්න';
+  String get hidePrivateEntriesDesc =>
+      'AniList එකේ පෞද්ගලික කියලා සලකුණු කරපු එන්ට්‍රීස් ෆීඩ් එකෙන් ඈත් කරන්න';
 
   @override
   String get anilistExcludeList => 'Exclude your list';
 
   @override
-  String get anilistExcludeListDesc => 'Keep titles already on your AniList out of the anime and manga pages';
+  String get anilistExcludeListDesc =>
+      'Keep titles already on your AniList out of the anime and manga pages';
 
   @override
   String get anilistProfile => 'AniList ප්‍රොෆයිල් එක';
@@ -1937,7 +1998,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get refreshFromAnilist => 'AniList එකෙන් රිෆ්‍රෙෂ් කරන්න';
 
   @override
-  String get couldNotUpdateAnilistSettings => 'AniList සැකසුම් අප්ඩේට් කරන්න බැරි වුණා';
+  String get couldNotUpdateAnilistSettings =>
+      'AniList සැකසුම් අප්ඩේට් කරන්න බැරි වුණා';
 
   @override
   String get sectionNames => 'නම්';
@@ -1946,7 +2008,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get titleLanguage => 'ටයිටල් භාෂාව';
 
   @override
-  String get titleLanguageDesc => 'හැම තැනම ටයිටල්ස් ලියන විදිය, උදා: Attack on Titan / Shingeki no Kyojin / 進撃の巨人.';
+  String get titleLanguageDesc =>
+      'හැම තැනම ටයිටල්ස් ලියන විදිය, උදා: Attack on Titan / Shingeki no Kyojin / 進撃の巨人.';
 
   @override
   String get staffCharacterNames => 'ස්ටාෆ් සහ චරිත නම්';
@@ -1988,19 +2051,22 @@ class AppLocalizationsSi extends AppLocalizations {
   String get airingNotifications => 'ප්‍රචාරණ නොටිෆිකේෂන්ස්';
 
   @override
-  String get airingNotificationsDesc => 'ඔයා ෆොලෝ කරන ෂෝ එකක එපිසෝඩ් එකක් ප්‍රචාරය වුණාම දැනුම් දෙන්න';
+  String get airingNotificationsDesc =>
+      'ඔයා ෆොලෝ කරන ෂෝ එකක එපිසෝඩ් එකක් ප්‍රචාරය වුණාම දැනුම් දෙන්න';
 
   @override
   String get displayAdultContent => 'වැඩිහිටි කන්ටෙන්ට් පෙන්වන්න';
 
   @override
-  String get displayAdultContentDesc => 'බ්‍රවුස්, සර්ච් සහ ෆීඩ්ස් වල 18+ ටයිටල්ස් ඇතුළත් කරන්න';
+  String get displayAdultContentDesc =>
+      'බ්‍රවුස්, සර්ච් සහ ෆීඩ්ස් වල 18+ ටයිටල්ස් ඇතුළත් කරන්න';
 
   @override
   String get restrictMessages => 'මැසේජස් ෆොලෝ කරන අයට විතරක් සීමා කරන්න';
 
   @override
-  String get restrictMessagesDesc => 'ඔයා ෆොලෝ කරන අයට විතරයි ඔයාට මැසේජ් කරන්න පුළුවන්';
+  String get restrictMessagesDesc =>
+      'ඔයා ෆොලෝ කරන අයට විතරයි ඔයාට මැසේජ් කරන්න පුළුවන්';
 
   @override
   String get sectionServices => 'සර්විසස්';
@@ -2032,7 +2098,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get importLists => 'ලිස්ට්ස් ඉම්පෝර්ට් කරන්න';
 
   @override
-  String get importListsDesc => 'Aniyomi, Mihon / Tachiyomi හෝ Kotatsu බැකප්ස් වලින්';
+  String get importListsDesc =>
+      'Aniyomi, Mihon / Tachiyomi හෝ Kotatsu බැකප්ස් වලින්';
 
   @override
   String get exportLists => 'ලිස්ට්ස් එක්ස්පෝර්ට් කරන්න';
@@ -2047,7 +2114,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get readingTab => 'රීඩින් ටැබ් එක';
 
   @override
-  String get readingTabDesc => 'තුන්වෙනි ටැබ් එකේ පෙන්වන්නේ මොන එක්ස්ටෙන්ෂන්ස්ද';
+  String get readingTabDesc =>
+      'තුන්වෙනි ටැබ් එකේ පෙන්වන්නේ මොන එක්ස්ටෙන්ෂන්ස්ද';
 
   @override
   String get defaultFeed => 'ඩිෆෝල්ට් ෆීඩ් එක';
@@ -2115,16 +2183,19 @@ class AppLocalizationsSi extends AppLocalizations {
   String get nothingToShowYet => 'පෙන්වන්න තාම කිසිවක් නෑ';
 
   @override
-  String get addTitlesHint => 'ඔයාගේ ලිස්ට් එකට ටයිටල්ස් එකතු කරන්න, ඒවා මෙතන පේනවා.';
+  String get addTitlesHint =>
+      'ඔයාගේ ලිස්ට් එකට ටයිටල්ස් එකතු කරන්න, ඒවා මෙතන පේනවා.';
 
   @override
   String get couldntLoad => 'ලෝඩ් කරන්න බැරි වුණා';
 
   @override
-  String get progressStyleHint => 'පිල් සහ බාර් පෝස්ටර් එක උඩින් යනවා; පිටතින් කියන්නේ ඒ ගණනම සාමාන්‍ය අකුරින් පෙන්වනවා — එකක් තෝරන්න.';
+  String get progressStyleHint =>
+      'පිල් සහ බාර් පෝස්ටර් එක උඩින් යනවා; පිටතින් කියන්නේ ඒ ගණනම සාමාන්‍ය අකුරින් පෙන්වනවා — එකක් තෝරන්න.';
 
   @override
-  String get nixManagedUpdate => 'මේ බිල්ඩ් එක Nix මගින් මැනේජ් කරන්නේ — මෙතනින් අප්ඩේට් නොකර, ඔයාගේ ෆ්ලේක් එකේ \"nix flake update\" රන් කරලා ආයෙත් බිල්ඩ් කරන්න';
+  String get nixManagedUpdate =>
+      'මේ බිල්ඩ් එක Nix මගින් මැනේජ් කරන්නේ — මෙතනින් අප්ඩේට් නොකර, ඔයාගේ ෆ්ලේක් එකේ \"nix flake update\" රන් කරලා ආයෙත් බිල්ඩ් කරන්න';
 
   @override
   String autoUpdateFailed(String error) {
@@ -2152,10 +2223,12 @@ class AppLocalizationsSi extends AppLocalizations {
   String get sort => 'සෝට් කරන්න';
 
   @override
-  String get chooseBackupDialog => 'Aniyomi, Mihon හෝ Kotatsu බැකප් එකක් තෝරන්න';
+  String get chooseBackupDialog =>
+      'Aniyomi, Mihon හෝ Kotatsu බැකප් එකක් තෝරන්න';
 
   @override
-  String get importListsHint => 'Aniyomi, Mihon / Tachiyomi හෝ Kotatsu වලින් ලයිබ්‍රරියක් ගේන්න. ටයිටල්ස්, කවර්ස්, ප්‍රගතිය සහ කාණ්ඩ ඒ විදියටම තියෙනවා.';
+  String get importListsHint =>
+      'Aniyomi, Mihon / Tachiyomi හෝ Kotatsu වලින් ලයිබ්‍රරියක් ගේන්න. ටයිටල්ස්, කවර්ස්, ප්‍රගතිය සහ කාණ්ඩ ඒ විදියටම තියෙනවා.';
 
   @override
   String get chooseBackupFile => 'බැකප් ෆයිල් එක තෝරන්න';
@@ -2174,7 +2247,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get mergeWithExisting => 'දැනට තියෙන ලිස්ට්ස් එක්ක මර්ජ් කරන්න';
 
   @override
-  String get mergeWithExistingDesc => 'දැනට තියෙන ඒවා තියාගන්නවා; ඕෆ් කළොත් ගැලපෙන ටයිටල්ස් ප්‍රතිස්ථාපනය වෙනවා';
+  String get mergeWithExistingDesc =>
+      'දැනට තියෙන ඒවා තියාගන්නවා; ඕෆ් කළොත් ගැලපෙන ටයිටල්ස් ප්‍රතිස්ථාපනය වෙනවා';
 
   @override
   String get chooseAnother => 'වෙන එකක් තෝරන්න';
@@ -2450,7 +2524,8 @@ class AppLocalizationsSi extends AppLocalizations {
   }
 
   @override
-  String get localEntryNote => 'මේ ටයිටල් එක තියෙන්නේ මේ ඩිවයිස් එකේ ඔයාගේ ලෝකල් ලිස්ට් එකේ විතරයි. ඔයාගේ ගිණුමේ ලිස්ට් එකත් එක්ක ගැටෙන්න පුළුවන් නිසා මෙතන එඩිට් කරන්න බෑ; ඒත් අයින් කරන්න පුළුවන්.';
+  String get localEntryNote =>
+      'මේ ටයිටල් එක තියෙන්නේ මේ ඩිවයිස් එකේ ඔයාගේ ලෝකල් ලිස්ට් එකේ විතරයි. ඔයාගේ ගිණුමේ ලිස්ට් එකත් එක්ක ගැටෙන්න පුළුවන් නිසා මෙතන එඩිට් කරන්න බෑ; ඒත් අයින් කරන්න පුළුවන්.';
 
   @override
   String get cardPresetPoster => 'පෝස්ටර්';
@@ -2552,7 +2627,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get resumeTitle => 'රිස්යූම්';
 
   @override
-  String get resumeSourceMissing => 'රිස්යූම් කරන්න මේ ටයිටල් එකේ සෝස් එක ඉන්ස්ටෝල් කරන්න';
+  String get resumeSourceMissing =>
+      'රිස්යූම් කරන්න මේ ටයිටල් එකේ සෝස් එක ඉන්ස්ටෝල් කරන්න';
 
   @override
   String get resumeRemove => 'රිස්යූම් එකෙන් අයින් කරන්න';
@@ -2988,7 +3064,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get syncRow => 'ලිස්ට්ස් සින්ක් කරන්න';
 
   @override
-  String get syncRowDesc => 'එක සර්විස් එකක ලිස්ට් එක ඔයාගේ අනිත් ගිණුම් වලට කොපි කරන්න';
+  String get syncRowDesc =>
+      'එක සර්විස් එකක ලිස්ට් එක ඔයාගේ අනිත් ගිණුම් වලට කොපි කරන්න';
 
   @override
   String get syncTitle => 'සින්ක්';
@@ -2997,25 +3074,29 @@ class AppLocalizationsSi extends AppLocalizations {
   String get syncMainService => 'ප්‍රධාන සර්විස් එක';
 
   @override
-  String get syncMainServiceDesc => 'ඒකේ ලිස්ට් එක තමයි ඇත්ත; සයින් ඉන් වෙලා තියෙන අනිත් හැම සර්විස් එකක්ම ඒකට ගැලපෙන්න අප්ඩේට් වෙනවා';
+  String get syncMainServiceDesc =>
+      'ඒකේ ලිස්ට් එක තමයි ඇත්ත; සයින් ඉන් වෙලා තියෙන අනිත් හැම සර්විස් එකක්ම ඒකට ගැලපෙන්න අප්ඩේට් වෙනවා';
 
   @override
   String get syncAuto => 'ඔටෝ සින්ක්';
 
   @override
-  String get syncAutoDesc => 'ඇප් එක ඕපන් වෙද්දීත් හැම විනාඩි 30කටම වරක් බැක්ග්‍රවුන්ඩ් එකේ ෆෙච් කරලා සින්ක් කරන්න';
+  String get syncAutoDesc =>
+      'ඇප් එක ඕපන් වෙද්දීත් හැම විනාඩි 30කටම වරක් බැක්ග්‍රවුන්ඩ් එකේ ෆෙච් කරලා සින්ක් කරන්න';
 
   @override
   String get syncAddMissing => 'නැති එන්ට්‍රීස් එකතු කරන්න';
 
   @override
-  String get syncAddMissingDesc => 'අනිත් සර්විස් එකේ තාම නැති එන්ට්‍රීස් වුනත් එකතු කරන්න';
+  String get syncAddMissingDesc =>
+      'අනිත් සර්විස් එකේ තාම නැති එන්ට්‍රීස් වුනත් එකතු කරන්න';
 
   @override
   String get syncOnlyForward => 'ඉදිරියෙන් ඉන්න ප්‍රගතිය තියාගන්න';
 
   @override
-  String get syncOnlyForwardDesc => 'දැනටමත් ඉදිරියෙන් ඉන්න සර්විස් එකක ප්‍රගතිය අඩු කරන්න එපා';
+  String get syncOnlyForwardDesc =>
+      'දැනටමත් ඉදිරියෙන් ඉන්න සර්විස් එකක ප්‍රගතිය අඩු කරන්න එපා';
 
   @override
   String get syncFetch => 'ෆෙච්';
@@ -3045,7 +3126,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get syncComparing => 'ලිස්ට්ස් සසඳනවා';
 
   @override
-  String get syncIntro => 'ප්‍රධාන සර්විස් එකක් තෝරලා ෆෙච් එබුවම හැම සර්විස් එකකින්ම ඔයාගේ ලිස්ට් එක එක පාර අහලා, ප්‍රධාන එක එක්ක සසඳනවා.';
+  String get syncIntro =>
+      'ප්‍රධාන සර්විස් එකක් තෝරලා ෆෙච් එබුවම හැම සර්විස් එකකින්ම ඔයාගේ ලිස්ට් එක එක පාර අහලා, ප්‍රධාන එක එක්ක සසඳනවා.';
 
   @override
   String get syncStateSynced => 'සින්ක් වුණා';
@@ -3117,7 +3199,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get syncOnEdit => 'වෙනස්කම් එක පාරම සින්ක් කරන්න';
 
   @override
-  String get syncOnEditDesc => 'හැම ප්‍රගති අප්ඩේට් එකක්ම සහ ලිස්ට් එඩිට් එකක්ම ඔයා සයින් ඉන් වෙලා ඉන්න අනිත් සර්විසස් වලට එක පාරම යවන්න';
+  String get syncOnEditDesc =>
+      'හැම ප්‍රගති අප්ඩේට් එකක්ම සහ ලිස්ට් එඩිට් එකක්ම ඔයා සයින් ඉන් වෙලා ඉන්න අනිත් සර්විසස් වලට එක පාරම යවන්න';
 
   @override
   String syncPushed(String services) {
@@ -3136,7 +3219,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get syncAhead => 'ඉදිරියෙන් ඉන්න එක';
 
   @override
-  String get syncAheadDesc => 'දෙපැත්තටම: හැම ටයිටල් එකකටම වැඩියෙන්ම ඉදිරියට ගිය එන්ට්‍රි එක දිනලා ඔයාගේ අනිත් හැම සර්විස් එකකටම කොපි වෙනවා';
+  String get syncAheadDesc =>
+      'දෙපැත්තටම: හැම ටයිටල් එකකටම වැඩියෙන්ම ඉදිරියට ගිය එන්ට්‍රි එක දිනලා ඔයාගේ අනිත් හැම සර්විස් එකකටම කොපි වෙනවා';
 
   @override
   String syncAheadFrom(String service) {
@@ -3147,7 +3231,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get syncConfirm => 'සින්ක් කරන්න කලින් රිවිව් කරන්න';
 
   @override
-  String get syncConfirmDesc => 'සියල්ල සින්ක් කළාම මොනවද වෙනස් වෙන්නේ, රික්වෙස්ට් කීයක්ද ඕන කියලා පෙන්වන්න';
+  String get syncConfirmDesc =>
+      'සියල්ල සින්ක් කළාම මොනවද වෙනස් වෙන්නේ, රික්වෙස්ට් කීයක්ද ඕන කියලා පෙන්වන්න';
 
   @override
   String get syncPreviewTitle => 'සින්ක් කරන්න සූදානම්';
@@ -3207,13 +3292,15 @@ class AppLocalizationsSi extends AppLocalizations {
   String get syncFailedReason => 'අසාර්ථක වුණේ ඇයි';
 
   @override
-  String get syncSkippedHint => 'ස්කිප් කරපු අයිතම ආයෙත් ෆෙච් කළත් ඒ විදියටම තියෙනවා';
+  String get syncSkippedHint =>
+      'ස්කිප් කරපු අයිතම ආයෙත් ෆෙච් කළත් ඒ විදියටම තියෙනවා';
 
   @override
   String get commentsRules => 'කමෙන්ට් රූල්ස්';
 
   @override
-  String get commentsRulesBody => 'රීතියක් කැඩුවොත් එච්චරයි\n\n1. ජාතිවාදය, වෙනස්කම් කිරීම හෝ වෛර කතා එපා\n2. ස්පෑම් හෝ තමන්ගේම ප්‍රචාරණය එපා\n3. NSFW කන්ටෙන්ට් කොහෙත්ම එපා\n4. ඉංග්‍රීසි විතරයි, ව්‍යතිරේකයක් නෑ\n5. වෙන කෙනෙක් වගේ පෙනී සිටීම, හිරිහැර කිරීම හෝ බනින එක එපා\n6. නීතිවිරෝධී කන්ටෙන්ට් හෝ කිසිම ෆෑන්ඩම් එකකට අධික අගෞරවයක් එපා\n7. රෙපෝස් හෝ එක්ස්ටෙන්ෂන්ස් ඉල්ලන්න හෝ ෂෙයාර් කරන්න එපා\n8. ස්පොයිලර්ස් දාන්න පුළුවන් ස්පොයිලර් ටැග් එකකුයි අනතුරු ඇඟවීමකුයි එක්ක විතරයි\n9. ළමා චරිත ගැන ලිංගිකකරණය කරන හෝ නුසුදුසු කමෙන්ට්ස් එපා\n10. වැරදි නම් පෝස්ට් කරන්න එපා!';
+  String get commentsRulesBody =>
+      'රීතියක් කැඩුවොත් එච්චරයි\n\n1. ජාතිවාදය, වෙනස්කම් කිරීම හෝ වෛර කතා එපා\n2. ස්පෑම් හෝ තමන්ගේම ප්‍රචාරණය එපා\n3. NSFW කන්ටෙන්ට් කොහෙත්ම එපා\n4. ඉංග්‍රීසි විතරයි, ව්‍යතිරේකයක් නෑ\n5. වෙන කෙනෙක් වගේ පෙනී සිටීම, හිරිහැර කිරීම හෝ බනින එක එපා\n6. නීතිවිරෝධී කන්ටෙන්ට් හෝ කිසිම ෆෑන්ඩම් එකකට අධික අගෞරවයක් එපා\n7. රෙපෝස් හෝ එක්ස්ටෙන්ෂන්ස් ඉල්ලන්න හෝ ෂෙයාර් කරන්න එපා\n8. ස්පොයිලර්ස් දාන්න පුළුවන් ස්පොයිලර් ටැග් එකකුයි අනතුරු ඇඟවීමකුයි එක්ක විතරයි\n9. ළමා චරිත ගැන ලිංගිකකරණය කරන හෝ නුසුදුසු කමෙන්ට්ස් එපා\n10. වැරදි නම් පෝස්ට් කරන්න එපා!';
 
   @override
   String get commentsRulesAccept => 'මට තේරුණා';
@@ -3376,22 +3463,26 @@ class AppLocalizationsSi extends AppLocalizations {
   String get commentsEmptyFiltered => 'මේ ෆිල්ටර් එකට කමෙන්ට්ස් නෑ';
 
   @override
-  String get commentsSignIn => 'කමෙන්ට්ස් කියවන්න සහ ලියන්න AniList එකට සයින් ඉන් වෙන්න';
+  String get commentsSignIn =>
+      'කමෙන්ට්ස් කියවන්න සහ ලියන්න AniList එකට සයින් ඉන් වෙන්න';
 
   @override
-  String get commentsSignInMessage => 'කමෙන්ට්ස් හැම සර්විස් එකක් අතරම බෙදාගන්නවා, ඒවා ඔයාගේ AniList ගිණුම පාවිච්චි කරනවා.';
+  String get commentsSignInMessage =>
+      'කමෙන්ට්ස් හැම සර්විස් එකක් අතරම බෙදාගන්නවා, ඒවා ඔයාගේ AniList ගිණුම පාවිච්චි කරනවා.';
 
   @override
   String get commentsUnavailable => 'මේ ටයිටල් එකට කමෙන්ට්ස් නෑ';
 
   @override
-  String get commentsUnavailableMessage => 'ඒක AniList එන්ට්‍රි එකකට ගැලපුවේ නෑ.';
+  String get commentsUnavailableMessage =>
+      'ඒක AniList එන්ට්‍රි එකකට ගැලපුවේ නෑ.';
 
   @override
   String get commentsDisabled => 'කමෙන්ට්ස් ඕෆ් කරලා';
 
   @override
-  String get commentsDisabledMessage => 'ඒවා ආයෙත් Settings › General වලින් ඔන් කරන්න පුළුවන්.';
+  String get commentsDisabledMessage =>
+      'ඒවා ආයෙත් Settings › General වලින් ඔන් කරන්න පුළුවන්.';
 
   @override
   String get commentsOffline => 'කමෙන්ට්ස් ලෝඩ් කරන්න බැරි වුණා';
@@ -3409,13 +3500,15 @@ class AppLocalizationsSi extends AppLocalizations {
   String get commentsSettingEnabled => 'කමෙන්ට්ස්';
 
   @override
-  String get commentsSettingEnabledDesc => 'ටයිටල්ස් වල කමෙන්ට්ස් ටැබ් එක පෙන්වලා, ඔයාගේ AniList ගිණුමෙන් කමෙන්ට් සර්වර් එකට සයින් ඉන් වෙන්න';
+  String get commentsSettingEnabledDesc =>
+      'ටයිටල්ස් වල කමෙන්ට්ස් ටැබ් එක පෙන්වලා, ඔයාගේ AniList ගිණුමෙන් කමෙන්ට් සර්වර් එකට සයින් ඉන් වෙන්න';
 
   @override
   String get commentsSettingAlerts => 'රිප්ලයි නොටිෆිකේෂන්ස්';
 
   @override
-  String get commentsSettingAlertsDesc => 'කවුරුහරි මගේ කමෙන්ට්ස් වලට රිප්ලයි කළොත් මට දැනුම් දෙන්න';
+  String get commentsSettingAlertsDesc =>
+      'කවුරුහරි මගේ කමෙන්ට්ස් වලට රිප්ලයි කළොත් මට දැනුම් දෙන්න';
 
   @override
   String get commentsNoticeReplyTitle => 'අලුත් කමෙන්ට් රිප්ලයි එකක්';
@@ -3429,7 +3522,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get commentsNoticeWarningTitle => 'ඔයාට අනතුරු ඇඟවීමක් ලැබුණා';
 
   @override
-  String get commentsNoticeWarning => 'ඔයාගේ කමෙන්ට්ස් ගැන තව ටිකක් සැලකිලිමත් වෙන්න';
+  String get commentsNoticeWarning =>
+      'ඔයාගේ කමෙන්ට්ස් ගැන තව ටිකක් සැලකිලිමත් වෙන්න';
 
   @override
   String get commentsNoticeUpdateTitle => 'Dantotsu එකෙන් අප්ඩේට් එකක්';
@@ -3441,10 +3535,12 @@ class AppLocalizationsSi extends AppLocalizations {
   String get barcodeTooltip => 'බාර්කෝඩ් එකෙන් manga එකක් හෝ නවකතාවක් හොයන්න';
 
   @override
-  String get barcodeIntro => 'වෝල්යුම් එකක පිටිපස්සේ තියෙන බාර්කෝඩ් එකට කැමරාව දාන්න, නැත්නම් ඒකේ ISBN එක ටයිප් කරන්න.';
+  String get barcodeIntro =>
+      'වෝල්යුම් එකක පිටිපස්සේ තියෙන බාර්කෝඩ් එකට කැමරාව දාන්න, නැත්නම් ඒකේ ISBN එක ටයිප් කරන්න.';
 
   @override
-  String get barcodeIntroManual => 'වෝල්යුම් එකක පිටිපස්සේ බාර්කෝඩ් එකට උඩින් මුද්‍රණය කරලා තියෙන ISBN එක ටයිප් කරන්න.';
+  String get barcodeIntroManual =>
+      'වෝල්යුම් එකක පිටිපස්සේ බාර්කෝඩ් එකට උඩින් මුද්‍රණය කරලා තියෙන ISBN එක ටයිප් කරන්න.';
 
   @override
   String get barcodeIsbnHint => 'ISBN';
@@ -3458,7 +3554,8 @@ class AppLocalizationsSi extends AppLocalizations {
   }
 
   @override
-  String get barcodeCameraDenied => 'කැමරාව නෑ. කැමරා ඇක්සස් එක දෙන්න නැත්නම් ISBN එක ටයිප් කරන්න.';
+  String get barcodeCameraDenied =>
+      'කැමරාව නෑ. කැමරා ඇක්සස් එක දෙන්න නැත්නම් ISBN එක ටයිප් කරන්න.';
 
   @override
   String get themesTitle => 'ඕපනිංස් සහ එන්ඩිංස්';
@@ -3509,7 +3606,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get sauceTitle => 'සෝස් එක හොයන්න';
 
   @override
-  String get sauceIntro => 'manga පිටුවක් හෝ ආට්වර්ක් එකක් අප්ලෝඩ් කරන්න, නැත්නම් එහි ලින්ක් එක පේස්ට් කරන්න, ඒක ආවේ කොහෙන්ද කියලා හොයන්න.';
+  String get sauceIntro =>
+      'manga පිටුවක් හෝ ආට්වර්ක් එකක් අප්ලෝඩ් කරන්න, නැත්නම් එහි ලින්ක් එක පේස්ට් කරන්න, ඒක ආවේ කොහෙන්ද කියලා හොයන්න.';
 
   @override
   String get sauceKeyTitle => 'SauceNAO API key එක';
@@ -3584,7 +3682,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get shareCardFailed => 'කාඩ් එක හදන්න බැරි වුණා';
 
   @override
-  String get shareCardListEmpty => 'ඔයාගේ ලිස්ට් එකේ ෂෙයාර් කරන්න තාම කිසිවක් නෑ';
+  String get shareCardListEmpty =>
+      'ඔයාගේ ලිස්ට් එකේ ෂෙයාර් කරන්න තාම කිසිවක් නෑ';
 
   @override
   String get shareCardTop => 'මගේ ටොප් පික්ස්';
@@ -3641,7 +3740,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get imageSearchTooltip => 'ස්ක්‍රීන්ෂොට් එකකින් anime එකක් හොයන්න';
 
   @override
-  String get imageSearchIntro => 'ස්ක්‍රීන්ෂොට් එකක් තෝරන්න නැත්නම් ඉමේජ් ලින්ක් එකක් පේස්ට් කරන්න, trace.moe එක ඒක ආවේ කොයි එපිසෝඩ් එකෙන්ද, කොයි මොහොතෙන්ද කියලා හොයාගන්නවා.';
+  String get imageSearchIntro =>
+      'ස්ක්‍රීන්ෂොට් එකක් තෝරන්න නැත්නම් ඉමේජ් ලින්ක් එකක් පේස්ට් කරන්න, trace.moe එක ඒක ආවේ කොයි එපිසෝඩ් එකෙන්ද, කොයි මොහොතෙන්ද කියලා හොයාගන්නවා.';
 
   @override
   String get imageSearchPick => 'ඉමේජ් එකක් තෝරන්න';
@@ -3733,10 +3833,12 @@ class AppLocalizationsSi extends AppLocalizations {
   String get groupsLeave => 'ග්‍රෲප් එකෙන් ඉවත් වෙන්න';
 
   @override
-  String get groupsLeaveAsk => 'මේ ග්‍රෲප් එකේ පෝස්ට්ස් ඔයාගේ ෆීඩ් එකේ තවදුරටත් පේන්නේ නෑ.';
+  String get groupsLeaveAsk =>
+      'මේ ග්‍රෲප් එකේ පෝස්ට්ස් ඔයාගේ ෆීඩ් එකේ තවදුරටත් පේන්නේ නෑ.';
 
   @override
-  String get groupsJoinFailed => 'මේ ග්‍රෲප් එකට ජොයින් වෙන්න බැරි වුණා, ඒක ආරාධනා මත පමණක් වෙන්න පුළුවන්';
+  String get groupsJoinFailed =>
+      'මේ ග්‍රෲප් එකට ජොයින් වෙන්න බැරි වුණා, ඒක ආරාධනා මත පමණක් වෙන්න පුළුවන්';
 
   @override
   String get groupsLeaveFailed => 'මේ ග්‍රෲප් එකෙන් ඉවත් වෙන්න බැරි වුණා';
@@ -3831,10 +3933,12 @@ class AppLocalizationsSi extends AppLocalizations {
   String get notificationsFollows => 'ෆොලෝස්';
 
   @override
-  String get notificationsNoServices => 'සයින් ඉන් වෙලා තියෙන කිසිම සර්විස් එකකට නොටිෆිකේෂන්ස් නෑ';
+  String get notificationsNoServices =>
+      'සයින් ඉන් වෙලා තියෙන කිසිම සර්විස් එකකට නොටිෆිකේෂන්ස් නෑ';
 
   @override
-  String get notificationsNoServicesMessage => 'නොටිෆිකේෂන්ස් යවන සර්විස් එකකට සයින් ඉන් වුණාම ඒවා මෙතන පේනවා.';
+  String get notificationsNoServicesMessage =>
+      'නොටිෆිකේෂන්ස් යවන සර්විස් එකකට සයින් ඉන් වුණාම ඒවා මෙතන පේනවා.';
 
   @override
   String get notificationsEmptyKind => 'මේ කැටගරි එකේ තාම කිසිවක් නෑ';
@@ -3843,7 +3947,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get notificationsCommentsEmpty => 'කමෙන්ට් නොටිෆිකේෂන්ස් නෑ';
 
   @override
-  String get notificationsCommentsEmptyMessage => 'ඔයාගේ කමෙන්ට්ස් වලට රිප්ලයි සහ Dantotsu වලින් නිවේදන මෙතන පේනවා.';
+  String get notificationsCommentsEmptyMessage =>
+      'ඔයාගේ කමෙන්ට්ස් වලට රිප්ලයි සහ Dantotsu වලින් නිවේදන මෙතන පේනවා.';
 
   @override
   String get notificationsSettings => 'නොටිෆිකේෂන් සැකසුම්';
@@ -3871,10 +3976,12 @@ class AppLocalizationsSi extends AppLocalizations {
   String get notificationsTestSent => 'ටෙස්ට් නොටිෆිකේෂන් එක යැව්වා';
 
   @override
-  String get notificationsTestDenied => 'Dartotsu වලට නොටිෆිකේෂන්ස් ඉඩ දීලා නෑ. සිස්ටම් සැකසුම් වලින් ඔන් කරන්න.';
+  String get notificationsTestDenied =>
+      'Dartotsu වලට නොටිෆිකේෂන්ස් ඉඩ දීලා නෑ. සිස්ටම් සැකසුම් වලින් ඔන් කරන්න.';
 
   @override
-  String get notificationsTestHint => 'ටෙස්ට් නොටිෆිකේෂන් එකක් යවන්න ලොංග් ප්‍රෙස් කරන්න';
+  String get notificationsTestHint =>
+      'ටෙස්ට් නොටිෆිකේෂන් එකක් යවන්න ලොංග් ප්‍රෙස් කරන්න';
 
   @override
   String get notificationsTestSample => 'මේක ටෙස්ට් නොටිෆිකේෂන් එකක්';
@@ -3891,7 +3998,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get imageSearchQuota => 'සර්ච් කෝටාව ඉවරයි';
 
   @override
-  String get imageSearchBusy => 'රික්වෙස්ට්ස් වැඩියි, ටිකකින් ආයෙත් උත්සාහ කරන්න';
+  String get imageSearchBusy =>
+      'රික්වෙස්ට්ස් වැඩියි, ටිකකින් ආයෙත් උත්සාහ කරන්න';
 
   @override
   String imageSearchFailed(int code) {
@@ -3907,7 +4015,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get reactionsTitle => 'රියැක්ෂන්ස්';
 
   @override
-  String get reactionsNeedEntry => 'රියැක්ට් කරන්න කලින් මේ ටයිටල් එක ඔයාගේ ලිස්ට් එකට එකතු කරන්න';
+  String get reactionsNeedEntry =>
+      'රියැක්ට් කරන්න කලින් මේ ටයිටල් එක ඔයාගේ ලිස්ට් එකට එකතු කරන්න';
 
   @override
   String get reactionsAdd => 'රියැක්ෂන් එකක් එකතු කරන්න';
@@ -3925,7 +4034,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get settingsWatch => 'බලන්න සහ කියවන්න';
 
   @override
-  String get settingsWatchDesc => 'එපිසෝඩ් ලිස්ට්ස්, සෝස් මැච් කිරීම සහ එපිසෝඩ් විස්තර';
+  String get settingsWatchDesc =>
+      'එපිසෝඩ් ලිස්ට්ස්, සෝස් මැච් කිරීම සහ එපිසෝඩ් විස්තර';
 
   @override
   String get watchSettingsLayout => 'එපිසෝඩ් ලිස්ට් එක';
@@ -3949,31 +4059,36 @@ class AppLocalizationsSi extends AppLocalizations {
   String get watchCompactView => 'කොම්පැක්ට්';
 
   @override
-  String get watchDefaultLayoutDesc => 'ටයිටල් එකකට වෙනස් කරනකම් එපිසෝඩ්ස් සහ චැප්ටර්ස් පෙන්වන විදිය';
+  String get watchDefaultLayoutDesc =>
+      'ටයිටල් එකකට වෙනස් කරනකම් එපිසෝඩ්ස් සහ චැප්ටර්ස් පෙන්වන විදිය';
 
   @override
   String get watchChunkSize => 'රේන්ජ් ප්‍රමාණය';
 
   @override
-  String get watchChunkSizeDesc => 'හැම රේන්ජ් ටැබ් එකකම තියෙන එපිසෝඩ්ස් හෝ චැප්ටර්ස් ගණන';
+  String get watchChunkSizeDesc =>
+      'හැම රේන්ජ් ටැබ් එකකම තියෙන එපිසෝඩ්ස් හෝ චැප්ටර්ස් ගණන';
 
   @override
   String get watchShowDescription => 'විස්තර පෙන්වන්න';
 
   @override
-  String get watchShowDescriptionDesc => 'ලිස්ට් ලේඅවුට් එකේ හැම ටයිටල් එකක් යටින්ම එපිසෝඩ් සාරාංශය පෙන්වන්න';
+  String get watchShowDescriptionDesc =>
+      'ලිස්ට් ලේඅවුට් එකේ හැම ටයිටල් එකක් යටින්ම එපිසෝඩ් සාරාංශය පෙන්වන්න';
 
   @override
   String get watchShowFiller => 'ෆිලර් එපිසෝඩ්ස් පෙන්වන්න';
 
   @override
-  String get watchShowFillerDesc => 'ෆිලර් කියලා සලකුණු කරපු එපිසෝඩ්ස් හංගන්න ඕෆ් කරන්න';
+  String get watchShowFillerDesc =>
+      'ෆිලර් කියලා සලකුණු කරපු එපිසෝඩ්ස් හංගන්න ඕෆ් කරන්න';
 
   @override
   String get watchBlurUnwatched => 'ස්පොයිලර් තම්බ්නේල්ස් හංගන්න';
 
   @override
-  String get watchBlurUnwatchedDesc => 'ඔයා තාම බලලා නැති එපිසෝඩ්ස් වල තම්බ්නේල් එක බ්ලර් කරන්න';
+  String get watchBlurUnwatchedDesc =>
+      'ඔයා තාම බලලා නැති එපිසෝඩ්ස් වල තම්බ්නේල් එක බ්ලර් කරන්න';
 
   @override
   String get watchResumeShelf => 'රිස්යූම් ෂෙල්ෆ් එක';
@@ -3982,16 +4097,19 @@ class AppLocalizationsSi extends AppLocalizations {
   String get watchResumeShelfDesc => 'හෝම් එකේ රිස්යූම් පේළිය පෙන්වන්න';
 
   @override
-  String get watchMarkOnLongPress => 'ලොංග් ප්‍රෙස් එකෙන් ප්‍රගතිය සලකුණු කරනවා';
+  String get watchMarkOnLongPress =>
+      'ලොංග් ප්‍රෙස් එකෙන් ප්‍රගතිය සලකුණු කරනවා';
 
   @override
-  String get watchMarkOnLongPressDesc => 'එපිසෝඩ් එකක් හෝ චැප්ටර් එකක් ලොංග් ප්‍රෙස් කළාම බැලූ/නොබැලූ විදියට සලකුණු වෙනවා';
+  String get watchMarkOnLongPressDesc =>
+      'එපිසෝඩ් එකක් හෝ චැප්ටර් එකක් ලොංග් ප්‍රෙස් කළාම බැලූ/නොබැලූ විදියට සලකුණු වෙනවා';
 
   @override
   String get watchMatching => 'සෝස් මැච් කිරීම';
 
   @override
-  String get watchMatchingDesc => 'ක්ලෝසස්ට් කියන්නේ හොඳම සර්ච් ප්‍රතිඵලය ගන්නවා. එක්සැක්ට් ඔන්ලි කියන්නේ ආසන්න වශයෙන් සමාන ටයිටල් එකක් විතරක් පිළිගෙන ඉතිරි ඒවා ඔයාට තෝරන්න ඉතිරි කරනවා.';
+  String get watchMatchingDesc =>
+      'ක්ලෝසස්ට් කියන්නේ හොඳම සර්ච් ප්‍රතිඵලය ගන්නවා. එක්සැක්ට් ඔන්ලි කියන්නේ ආසන්න වශයෙන් සමාන ටයිටල් එකක් විතරක් පිළිගෙන ඉතිරි ඒවා ඔයාට තෝරන්න ඉතිරි කරනවා.';
 
   @override
   String get watchMatchClosest => 'ආසන්නතම ගැලපීම';
@@ -4000,28 +4118,34 @@ class AppLocalizationsSi extends AppLocalizations {
   String get watchMatchExact => 'හරියටම ගැලපෙන ඒවා විතරයි';
 
   @override
-  String get watchMetadataDesc => 'එපිසෝඩ් ටයිටල්ස්, සාරාංශ, තම්බ්නේල්ස්, ප්‍රචාරණ දින සහ ෆිලර් ෆ්ලැග්ස් එන්නේ කොහෙන්ද. ප්‍රමුඛතාව සෙට් කරන්න ඇදලා දාන්න; අගයක් තියෙන පළවෙනි සෝස් එක දිනනවා.';
+  String get watchMetadataDesc =>
+      'එපිසෝඩ් ටයිටල්ස්, සාරාංශ, තම්බ්නේල්ස්, ප්‍රචාරණ දින සහ ෆිලර් ෆ්ලැග්ස් එන්නේ කොහෙන්ද. ප්‍රමුඛතාව සෙට් කරන්න ඇදලා දාන්න; අගයක් තියෙන පළවෙනි සෝස් එක දිනනවා.';
 
   @override
-  String get watchMetaAniZipDesc => 'එපිසෝඩ් ටයිටල්ස්, සාරාංශ, ස්ටිල්ස් සහ ප්‍රචාරණ දින';
+  String get watchMetaAniZipDesc =>
+      'එපිසෝඩ් ටයිටල්ස්, සාරාංශ, ස්ටිල්ස් සහ ප්‍රචාරණ දින';
 
   @override
   String get watchMetaKitsuDesc => 'එපිසෝඩ් ටයිටල්ස්, විස්තර සහ තම්බ්නේල්ස්';
 
   @override
-  String get watchMetaSimklDesc => 'එපිසෝඩ් ටයිටල්ස්, විස්තර, ස්ටිල්ස් සහ ප්‍රචාරණ දින';
+  String get watchMetaSimklDesc =>
+      'එපිසෝඩ් ටයිටල්ස්, විස්තර, ස්ටිල්ස් සහ ප්‍රචාරණ දින';
 
   @override
-  String get watchMetaAniListDesc => 'ස්ට්‍රීමින් එපිසෝඩ් ටයිටල්ස්, තම්බ්නේල්ස් සහ ප්‍රචාරණ කාලසටහන';
+  String get watchMetaAniListDesc =>
+      'ස්ට්‍රීමින් එපිසෝඩ් ටයිටල්ස්, තම්බ්නේල්ස් සහ ප්‍රචාරණ කාලසටහන';
 
   @override
-  String get watchMetaTenraiDesc => 'Tenrai හරහා MyAnimeList එපිසෝඩ් ටයිටල්ස්, ප්‍රචාරණ දින, ෆිලර් සහ රීකැප් ෆ්ලැග්ස්';
+  String get watchMetaTenraiDesc =>
+      'Tenrai හරහා MyAnimeList එපිසෝඩ් ටයිටල්ස්, ප්‍රචාරණ දින, ෆිලර් සහ රීකැප් ෆ්ලැග්ස්';
 
   @override
   String get watchClearMetadata => 'එපිසෝඩ් විස්තර රිෆ්‍රෙෂ් කරන්න';
 
   @override
-  String get watchClearMetadataDesc => 'කෑෂ් කරපු එපිසෝඩ් විස්තර අමතක කරන්න, ඒවා ආයෙත් ෆෙච් වෙනවා';
+  String get watchClearMetadataDesc =>
+      'කෑෂ් කරපු එපිසෝඩ් විස්තර අමතක කරන්න, ඒවා ආයෙත් ෆෙච් වෙනවා';
 
   @override
   String get watchMetadataCleared => 'එපිසෝඩ් විස්තර ආයෙත් ෆෙච් වෙනවා';
@@ -4086,7 +4210,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get watchLoadFailed => 'ලිස්ට් එක ලෝඩ් කරන්න බැරි වුණා';
 
   @override
-  String get watchSignInToTrack => 'ඔයාගේ ප්‍රගතිය ට්‍රැක් කරන්න සයින් ඉන් වෙන්න';
+  String get watchSignInToTrack =>
+      'ඔයාගේ ප්‍රගතිය ට්‍රැක් කරන්න සයින් ඉන් වෙන්න';
 
   @override
   String watchInstallSource(String action) {
@@ -4168,7 +4293,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get watchOpenWebView => 'වෙබ් වීව් එකේ විවෘත කරන්න';
 
   @override
-  String get watchOpenWebViewDesc => 'Cloudflare චෙක් එකක් සෝල්ව් කරන්න හෝ ලොගින් වෙන්න; කුකීස් සෝස් රික්වෙස්ට්ස් එක්ක බෙදාගන්නවා';
+  String get watchOpenWebViewDesc =>
+      'Cloudflare චෙක් එකක් සෝල්ව් කරන්න හෝ ලොගින් වෙන්න; කුකීස් සෝස් රික්වෙස්ට්ස් එක්ක බෙදාගන්නවා';
 
   @override
   String watchCookieCount(int count, String host) {
@@ -4194,10 +4320,12 @@ class AppLocalizationsSi extends AppLocalizations {
   String get watchClearanceSession => 'ඇප් එක වහනකම් පවතිනවා';
 
   @override
-  String get watchAgentShared => 'රික්වෙස්ට්ස් වෙබ් වීව් එකේ යූසර් ඒජන්ට් එක පාවිච්චි කරනවා, Cloudflare ඒක චෙක් කරනවා';
+  String get watchAgentShared =>
+      'රික්වෙස්ට්ස් වෙබ් වීව් එකේ යූසර් ඒජන්ට් එක පාවිච්චි කරනවා, Cloudflare ඒක චෙක් කරනවා';
 
   @override
-  String get watchAgentCustom => 'කස්ටම් යූසර් ඒජන්ට් එකක් සෙට් කරලා තියෙන නිසා, වෙබ් වීව් එකෙන් ගත්ත Cloudflare ක්ලියරන්ස් එක ප්‍රතික්ෂේප වෙන්න පුළුවන්';
+  String get watchAgentCustom =>
+      'කස්ටම් යූසර් ඒජන්ට් එකක් සෙට් කරලා තියෙන නිසා, වෙබ් වීව් එකෙන් ගත්ත Cloudflare ක්ලියරන්ස් එක ප්‍රතික්ෂේප වෙන්න පුළුවන්';
 
   @override
   String get watchTestConnection => 'කනෙක්ෂන් එක ටෙස්ට් කරන්න';
@@ -4243,7 +4371,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get settingsPlayer => 'ප්ලේයර්';
 
   @override
-  String get settingsPlayerDesc => 'ප්ලේබැක්, සබ්ටයිටල්ස්, ෂේඩර්ස්, mpv සහ ෆයිල්ස් ඕපන් කිරීම';
+  String get settingsPlayerDesc =>
+      'ප්ලේබැක්, සබ්ටයිටල්ස්, ෂේඩර්ස්, mpv සහ ෆයිල්ස් ඕපන් කිරීම';
 
   @override
   String get playerSettingsTitle => 'ප්ලේයර් සැකසුම්';
@@ -4297,13 +4426,15 @@ class AppLocalizationsSi extends AppLocalizations {
   String get playerSkipDuration => 'ස්කිප් බට්න් එකේ දිග';
 
   @override
-  String get playerSkipDurationDesc => 'ඕපනිංස් සහ එන්ඩිංස් වලින් පිටත ස්කිප් බට්න් එක පනින තත්පර';
+  String get playerSkipDurationDesc =>
+      'ඕපනිංස් සහ එන්ඩිංස් වලින් පිටත ස්කිප් බට්න් එක පනින තත්පර';
 
   @override
   String get playerSeekDuration => 'ඩබල් ටැප් සීක්';
 
   @override
-  String get playerSeekDurationDesc => 'ඩබල් ටැප් එකකට හෝ ඇරෝ කී එකකට පනින තත්පර';
+  String get playerSeekDurationDesc =>
+      'ඩබල් ටැප් එකකට හෝ ඇරෝ කී එකකට පනින තත්පර';
 
   @override
   String get playerAutoPlay => 'ඊළඟ එක ඔටෝ ප්ලේ කරන්න';
@@ -4315,7 +4446,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get playerResume => 'නැවැත්වූ තැනින් දිගටම කරන්න';
 
   @override
-  String get playerResumeDesc => 'එපිසෝඩ් එකක් අන්තිමට හිටපු තැනින් දිගටම කරන්න';
+  String get playerResumeDesc =>
+      'එපිසෝඩ් එකක් අන්තිමට හිටපු තැනින් දිගටම කරන්න';
 
   @override
   String get playerOrientation => 'ඕරියන්ටේෂන්';
@@ -4339,31 +4471,36 @@ class AppLocalizationsSi extends AppLocalizations {
   String get playerAutoSkipRecap => 'රීකැප්ස් ස්කිප් කරන්න';
 
   @override
-  String get playerAutoSkipDesc => 'AniSkip සහ ස්ට්‍රීම් ටයිම්ස්ටැම්ප්ස් පාවිච්චි කරලා, පටන් ගත්ත ගමන් පනින්න';
+  String get playerAutoSkipDesc =>
+      'AniSkip සහ ස්ට්‍රීම් ටයිම්ස්ටැම්ප්ස් පාවිච්චි කරලා, පටන් ගත්ත ගමන් පනින්න';
 
   @override
   String get playerSkipOnce => 'එක පාරක් විතරක් ස්කිප් කරන්න';
 
   @override
-  String get playerSkipOnceDesc => 'ඔයා ආපහු සීක් කළොත් ඒ කොටසම ආයෙත් ස්කිප් කරන්න එපා';
+  String get playerSkipOnceDesc =>
+      'ඔයා ආපහු සීක් කළොත් ඒ කොටසම ආයෙත් ස්කිප් කරන්න එපා';
 
   @override
   String get playerAdjustBrightness => 'බ්‍රයිට්නස් ජෙස්චර් එක';
 
   @override
-  String get playerAdjustBrightnessDesc => 'ස්ක්‍රීන් එකේ දකුණු භාගයේ උඩට පහළට ස්වයිප් කරන්න';
+  String get playerAdjustBrightnessDesc =>
+      'ස්ක්‍රීන් එකේ දකුණු භාගයේ උඩට පහළට ස්වයිප් කරන්න';
 
   @override
   String get playerAdjustVolume => 'වෝල්යුම් ජෙස්චර් එක';
 
   @override
-  String get playerAdjustVolumeDesc => 'ස්ක්‍රීන් එකේ වම් භාගයේ උඩට පහළට ස්වයිප් කරන්න';
+  String get playerAdjustVolumeDesc =>
+      'ස්ක්‍රීන් එකේ වම් භාගයේ උඩට පහළට ස්වයිප් කරන්න';
 
   @override
   String get playerHoldToSpeed => 'හෝල්ඩ් කළාම වේගවත් වෙනවා';
 
   @override
-  String get playerHoldToSpeedDesc => 'වීඩියෝව ඔබාගෙන හිටියම වේගයෙන් ප්ලේ වෙනවා, වේගය වෙනස් කරන්න පැත්තට ඇදලා දාන්න';
+  String get playerHoldToSpeedDesc =>
+      'වීඩියෝව ඔබාගෙන හිටියම වේගයෙන් ප්ලේ වෙනවා, වේගය වෙනස් කරන්න පැත්තට ඇදලා දාන්න';
 
   @override
   String get playerThumbless => 'ඝන සීක් බාර් එක';
@@ -4375,7 +4512,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get playerShowSubtitles => 'සබ්ටයිටල්ස් පෙන්වන්න';
 
   @override
-  String get playerShowSubtitlesDesc => 'හැම සබ්ටයිටල් ට්‍රැක් එකක්ම හංගන්න ඕෆ් කරන්න';
+  String get playerShowSubtitlesDesc =>
+      'හැම සබ්ටයිටල් ට්‍රැක් එකක්ම හංගන්න ඕෆ් කරන්න';
 
   @override
   String get playerSubtitleLanguage => 'කැමති සබ්ටයිටල් භාෂාව';
@@ -4405,7 +4543,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get playerLibass => 'libass පාවිච්චි කරන්න';
 
   @override
-  String get playerLibassDesc => 'ස්ටයිල් කරපු .ass සබ්ටයිටල්ස් රෙන්ඩර් කරන්න. එතකොට උඩ තියෙන ප්‍රමාණය, පාට සහ ෆොන්ට් වැඩ කරන්නේ නෑ';
+  String get playerLibassDesc =>
+      'ස්ටයිල් කරපු .ass සබ්ටයිටල්ස් රෙන්ඩර් කරන්න. එතකොට උඩ තියෙන ප්‍රමාණය, පාට සහ ෆොන්ට් වැඩ කරන්නේ නෑ';
 
   @override
   String get playerShaders => 'ෂේඩර්ස්';
@@ -4414,7 +4553,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get playerShadersEnable => 'ෂේඩර්ස් එනේබල් කරන්න';
 
   @override
-  String get playerShadersEnableDesc => 'Anime4K වගේ GLSL ෂේඩර්ස් වලින් පින්තූරය අප්ස්කේල් කරලා පිරිසිදු කරන්න';
+  String get playerShadersEnableDesc =>
+      'Anime4K වගේ GLSL ෂේඩර්ස් වලින් පින්තූරය අප්ස්කේල් කරලා පිරිසිදු කරන්න';
 
   @override
   String get playerShadersOff => 'ෂේඩර්ස් ඕෆ්';
@@ -4423,7 +4563,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get playerShadersMissing => 'Anime4K ඉන්ස්ටෝල් කරලා නෑ';
 
   @override
-  String get playerShadersMissingDesc => 'බිල්ට්-ඉන් මෝඩ්ස් පාවිච්චි කරන්න Anime4K ෂේඩර් පැක් එක (ආසන්න වශයෙන් 0.8 MB) ඩවුන්ලෝඩ් කරන්න.';
+  String get playerShadersMissingDesc =>
+      'බිල්ට්-ඉන් මෝඩ්ස් පාවිච්චි කරන්න Anime4K ෂේඩර් පැක් එක (ආසන්න වශයෙන් 0.8 MB) ඩවුන්ලෝඩ් කරන්න.';
 
   @override
   String get playerShadersDownload => 'Anime4K ඩවුන්ලෝඩ් කරන්න';
@@ -4492,7 +4633,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get playerShadersOriginal => 'ඔරිජිනල්';
 
   @override
-  String get playerShadersPreviewFailed => 'ප්‍රිවිව් කරන්න ෆ්‍රේම් එකක් ගන්න බැරි වුණා';
+  String get playerShadersPreviewFailed =>
+      'ප්‍රිවිව් කරන්න ෆ්‍රේම් එකක් ගන්න බැරි වුණා';
 
   @override
   String get playerShadersCustomFiles => 'ඔයාගේ ෂේඩර්ස්';
@@ -4504,7 +4646,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get playerShadersImport => '.glsl ඉම්පෝර්ට් කරන්න';
 
   @override
-  String get playerShadersNone => 'ඔයාගේම .glsl හෝ .hook ෆයිල්ස් ඉම්පෝර්ට් කරලා, චේන් කරන්න ටික් කරන්න';
+  String get playerShadersNone =>
+      'ඔයාගේම .glsl හෝ .hook ෆයිල්ස් ඉම්පෝර්ට් කරලා, චේන් කරන්න ටික් කරන්න';
 
   @override
   String get playerShadersBadFile => '.glsl හෝ .hook ෂේඩර් ෆයිල් එකක් තෝරන්න';
@@ -4537,13 +4680,15 @@ class AppLocalizationsSi extends AppLocalizations {
   String get playerBuffer => 'බෆර් ප්‍රමාණය (MB)';
 
   @override
-  String get playerBufferDesc => 'ස්ට්‍රීම් එකක් බෆර් කරන්න ප්ලේයර් එකට පාවිච්චි කරන්න පුළුවන් මතකය';
+  String get playerBufferDesc =>
+      'ස්ට්‍රීම් එකක් බෆර් කරන්න ප්ලේයර් එකට පාවිච්චි කරන්න පුළුවන් මතකය';
 
   @override
   String get playerUseMpvConf => 'mpv.conf පාවිච්චි කරන්න';
 
   @override
-  String get playerUseMpvConfDesc => 'ප්ලේබැක් පටන් ගද්දි ඔයාගේ mpv.conf එකේ විකල්ප ඇප්ලයි කරන්න';
+  String get playerUseMpvConfDesc =>
+      'ප්ලේබැක් පටන් ගද්දි ඔයාගේ mpv.conf එකේ විකල්ප ඇප්ලයි කරන්න';
 
   @override
   String get playerMpvConf => 'mpv.conf';
@@ -4552,7 +4697,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get playerMpvConfEdit => 'mpv කොන්ෆිගරේෂන් එක එඩිට් කරන්න';
 
   @override
-  String get playerMpvConfDesc => 'පේළියකට එක විකල්පයක්, සාමාන්‍ය mpv.conf එකක --hwdec=auto වගේ. [වරහන්] ඇතුළේ තියෙන ප්‍රොෆයිල්ස් නොසලකා හරිනවා.';
+  String get playerMpvConfDesc =>
+      'පේළියකට එක විකල්පයක්, සාමාන්‍ය mpv.conf එකක --hwdec=auto වගේ. [වරහන්] ඇතුළේ තියෙන ප්‍රොෆයිල්ස් නොසලකා හරිනවා.';
 
   @override
   String get playerMpvConfSaved => 'mpv.conf සේව් වුණා';
@@ -4561,31 +4707,36 @@ class AppLocalizationsSi extends AppLocalizations {
   String get playerUseScripts => 'mpv ස්ක්‍රිප්ට්ස් පාවිච්චි කරන්න';
 
   @override
-  String get playerUseScriptsDesc => 'ස්ක්‍රිප්ට්ස් ෆෝල්ඩර් එකෙන් ප්ලගින්ස් ලෝඩ් කරන්න. ඒවාට Lua හෝ JavaScript සහාය තියෙන libmpv බිල්ඩ් එකක් ඕනේ';
+  String get playerUseScriptsDesc =>
+      'ස්ක්‍රිප්ට්ස් ෆෝල්ඩර් එකෙන් ප්ලගින්ස් ලෝඩ් කරන්න. ඒවාට Lua හෝ JavaScript සහාය තියෙන libmpv බිල්ඩ් එකක් ඕනේ';
 
   @override
   String get playerScripts => 'mpv ස්ක්‍රිප්ට්ස්';
 
   @override
-  String get playerScriptsManage => 'ප්ලගින්ස් එකතු කරන්න, අයින් කරන්න සහ මාරු කරන්න';
+  String get playerScriptsManage =>
+      'ප්ලගින්ස් එකතු කරන්න, අයින් කරන්න සහ මාරු කරන්න';
 
   @override
   String get playerScriptsAdd => 'ස්ක්‍රිප්ට් එකක් එකතු කරන්න';
 
   @override
-  String get playerScriptsDesc => 'මෙතන දාපු Lua, JavaScript සහ නේටිව් ප්ලගින්ස් ප්ලේබැක් පටන් ගද්දි ලෝඩ් වෙනවා.';
+  String get playerScriptsDesc =>
+      'මෙතන දාපු Lua, JavaScript සහ නේටිව් ප්ලගින්ස් ප්ලේබැක් පටන් ගද්දි ලෝඩ් වෙනවා.';
 
   @override
   String get playerScriptsNone => 'තාම ස්ක්‍රිප්ට්ස් නෑ';
 
   @override
-  String get playerScriptsBadFile => '.lua, .js හෝ නේටිව් ප්ලගින් ෆයිල් එකක් තෝරන්න';
+  String get playerScriptsBadFile =>
+      '.lua, .js හෝ නේටිව් ප්ලගින් ෆයිල් එකක් තෝරන්න';
 
   @override
   String get playerTuning => 'ඇඩ්වාන්ස්ඩ් වීඩියෝ ටියුනින්';
 
   @override
-  String get playerTuningDesc => 'සින්ක්, කෑෂින්, ස්කේලින් සහ ටෝන් මැපින් ඕවර්රයිඩ් කරන්න. වැරදි අගයන් ප්ලේබැක් එක නරක් කරන්න පුළුවන්';
+  String get playerTuningDesc =>
+      'සින්ක්, කෑෂින්, ස්කේලින් සහ ටෝන් මැපින් ඕවර්රයිඩ් කරන්න. වැරදි අගයන් ප්ලේබැක් එක නරක් කරන්න පුළුවන්';
 
   @override
   String get playerVideoSync => 'වීඩියෝ සින්ක්';
@@ -4594,7 +4745,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get playerInterpolation => 'ෆ්‍රේම් ඉන්ටර්පොලේෂන්';
 
   @override
-  String get playerInterpolationDesc => 'සුමට චලනය, display-resample සින්ක් එකක් ඕනේ';
+  String get playerInterpolationDesc =>
+      'සුමට චලනය, display-resample සින්ක් එකක් ඕනේ';
 
   @override
   String get playerPitch => 'පිච් කරෙක්ෂන්';
@@ -4654,13 +4806,15 @@ class AppLocalizationsSi extends AppLocalizations {
   String get playerOpenFolder => 'ෆෝල්ඩර් එකක් විවෘත කරන්න';
 
   @override
-  String get playerOpenFolderDesc => 'ෆෝල්ඩර් එකක තියෙන හැම වීඩියෝවක්ම ප්ලේලිස්ට් එකක් විදියට ප්ලේ කරන්න';
+  String get playerOpenFolderDesc =>
+      'ෆෝල්ඩර් එකක තියෙන හැම වීඩියෝවක්ම ප්ලේලිස්ට් එකක් විදියට ප්ලේ කරන්න';
 
   @override
   String get playerNetworkStream => 'නෙට්වර්ක් ස්ට්‍රීම්';
 
   @override
-  String get playerNetworkStreamDesc => 'ඩිරෙක්ට් වීඩියෝ හෝ HLS ලින්ක් එකක් විවෘත කරන්න';
+  String get playerNetworkStreamDesc =>
+      'ඩිරෙක්ට් වීඩියෝ හෝ HLS ලින්ක් එකක් විවෘත කරන්න';
 
   @override
   String get playerStreamUrl => 'ස්ට්‍රීම් URL එක';
@@ -4672,7 +4826,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get playerTorrent => 'ටොරන්ට්';
 
   @override
-  String get playerTorrentDesc => 'මැග්නට් ලින්ක් එකක් හෝ .torrent ෆයිල් එකක් ස්ට්‍රීම් කරන්න';
+  String get playerTorrentDesc =>
+      'මැග්නට් ලින්ක් එකක් හෝ .torrent ෆයිල් එකක් ස්ට්‍රීම් කරන්න';
 
   @override
   String get playerMagnetLink => 'මැග්නට් ලින්ක් එක හෝ ටොරන්ට් URL එක';
@@ -4681,7 +4836,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get playerPickTorrent => '.torrent ෆයිල් එකක් තෝරන්න';
 
   @override
-  String get playerTorrentMissing => 'මුලින්ම Settings > Addons වලින් ටොරන්ට් ඇඩ්-ඔන් එක ඉන්ස්ටෝල් කරන්න';
+  String get playerTorrentMissing =>
+      'මුලින්ම Settings > Addons වලින් ටොරන්ට් ඇඩ්-ඔන් එක ඉන්ස්ටෝල් කරන්න';
 
   @override
   String get playerNoVideos => 'ප්ලේ කළ හැකි වීඩියෝ හම්බුණේ නෑ';
@@ -4708,7 +4864,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get playerAutoSelect => 'ස්ට්‍රීම් එක ඔටෝ තෝරන්න';
 
   @override
-  String get playerAutoSelectDesc => 'මේ ටයිටල් එකට ඔයාගේ අන්තිම තේරීමට වඩාත්ම සමාන ස්ට්‍රීම් එක තෝරන්න';
+  String get playerAutoSelectDesc =>
+      'මේ ටයිටල් එකට ඔයාගේ අන්තිම තේරීමට වඩාත්ම සමාන ස්ට්‍රීම් එක තෝරන්න';
 
   @override
   String get playerLoadingStreams => 'ස්ට්‍රීම්ස් හොයනවා…';
@@ -4726,7 +4883,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get playerTorrentNeeded => 'මේ ස්ට්‍රීම් එක ටොරන්ට් එකක්';
 
   @override
-  String get playerTorrentNeededDesc => 'මැග්නට් ලින්ක්ස් සහ .torrent ෆයිල්ස් ප්ලේ කරන්න ටොරන්ට් ඇඩ්-ඔන් එක ඉන්ස්ටෝල් කරන්න';
+  String get playerTorrentNeededDesc =>
+      'මැග්නට් ලින්ක්ස් සහ .torrent ෆයිල්ස් ප්ලේ කරන්න ටොරන්ට් ඇඩ්-ඔන් එක ඉන්ස්ටෝල් කරන්න';
 
   @override
   String get playerOpenAddons => 'ඇඩ්-ඔන්ස් විවෘත කරන්න';
@@ -4777,7 +4935,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get readerPerTitle => 'මේ ටයිටල් එකට විතරයි';
 
   @override
-  String get readerPerTitleDesc => 'මේ රීඩර් සැකසුම් මේ ටයිටල් එකට විතරක් තියාගන්න';
+  String get readerPerTitleDesc =>
+      'මේ රීඩර් සැකසුම් මේ ටයිටල් එකට විතරක් තියාගන්න';
 
   @override
   String get readerSectionReading => 'කියවීම';
@@ -4834,13 +4993,15 @@ class AppLocalizationsSi extends AppLocalizations {
   String get readerDoublePage => 'ඩබල් පේජස්';
 
   @override
-  String get readerDoublePageDesc => 'ලැන්ඩ්ස්කේප් එකේදී පිටු දෙකක් පැත්තෙන් පැත්තට පෙන්වන්න';
+  String get readerDoublePageDesc =>
+      'ලැන්ඩ්ස්කේප් එකේදී පිටු දෙකක් පැත්තෙන් පැත්තට පෙන්වන්න';
 
   @override
   String get readerDoubleTapZoom => 'ඩබල් ටැප් කරලා සූම් කරන්න';
 
   @override
-  String get readerDoubleTapZoomDesc => 'ඩබල් ටැප් එකකින් පිටුවක් සූම් ඉන් සහ අවුට් කරන්න';
+  String get readerDoubleTapZoomDesc =>
+      'ඩබල් ටැප් එකකින් පිටුවක් සූම් ඉන් සහ අවුට් කරන්න';
 
   @override
   String get readerAnimate => 'පේජ් ඇනිමේෂන්';
@@ -4864,7 +5025,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get readerAutoNext => 'ඊළඟ චැප්ටර් එකටත් දිගටම යන්න';
 
   @override
-  String get readerAutoNextDesc => 'මේ චැප්ටර් එකේ අන්තිම කියවද්දී ඊළඟ චැප්ටර් එක ලෝඩ් කරන්න';
+  String get readerAutoNextDesc =>
+      'මේ චැප්ටර් එකේ අන්තිම කියවද්දී ඊළඟ චැප්ටර් එක ලෝඩ් කරන්න';
 
   @override
   String get readerPreload => 'පිටු ප්‍රීලෝඩ් කරන්න';
@@ -4948,13 +5110,15 @@ class AppLocalizationsSi extends AppLocalizations {
   String get readerCropBorders => 'බෝඩර්ස් කපන්න';
 
   @override
-  String get readerCropBordersDesc => 'පිටු වල හිස් සුදු හෝ කළු මාජින් කපා දාන්න';
+  String get readerCropBordersDesc =>
+      'පිටු වල හිස් සුදු හෝ කළු මාජින් කපා දාන්න';
 
   @override
   String get readerVolumeKeys => 'වෝල්යුම් කී වලින් පිටු හරවන්න';
 
   @override
-  String get readerVolumeKeysDesc => 'වෝල්යුම් ඩවුන් එකෙන් ඉස්සරහට යනවා, වෝල්යුම් අප් එකෙන් ආපස්සට යනවා';
+  String get readerVolumeKeysDesc =>
+      'වෝල්යුම් ඩවුන් එකෙන් ඉස්සරහට යනවා, වෝල්යුම් අප් එකෙන් ආපස්සට යනවා';
 
   @override
   String get readerBookmarks => 'බුක්මාර්ක්ස්';
@@ -4983,7 +5147,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get readerAutoScrollSpeed => 'ඔටෝ ස්ක්‍රෝල් වේගය';
 
   @override
-  String get readerAutoScrollSpeedDesc => 'පිටු තනියම ස්ක්‍රෝල් වෙන හෝ හැරෙන වේගය';
+  String get readerAutoScrollSpeedDesc =>
+      'පිටු තනියම ස්ක්‍රෝල් වෙන හෝ හැරෙන වේගය';
 
   @override
   String get readerKeepOn => 'ස්ක්‍රීන් එක ඔන් එකේම තියන්න';
@@ -5007,7 +5172,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get readerSaveProgress => 'ප්‍රගතිය සේව් කරන්න';
 
   @override
-  String get readerSaveProgressDesc => 'ඔයාගේ පිටුව මතක තියාගෙන චැප්ටර්ස් කියවපු විදියට සලකුණු කරන්න';
+  String get readerSaveProgressDesc =>
+      'ඔයාගේ පිටුව මතක තියාගෙන චැප්ටර්ස් කියවපු විදියට සලකුණු කරන්න';
 
   @override
   String get readerReset => 'රීඩර් සැකසුම් රීසෙට් කරන්න';
@@ -5074,7 +5240,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get trackProgressYes => 'සේව් කරන්න';
 
   @override
-  String get trackProgressReset => 'මේ වර්ගයට ප්‍රගතිය සේව් කරන ප්‍රොම්ප්ට් එක රීසෙට් වුණා, ආයෙත් අහනවා';
+  String get trackProgressReset =>
+      'මේ වර්ගයට ප්‍රගතිය සේව් කරන ප්‍රොම්ප්ට් එක රීසෙට් වුණා, ආයෙත් අහනවා';
 
   @override
   String get trackProgressNo => 'නෑ';
@@ -5089,10 +5256,12 @@ class AppLocalizationsSi extends AppLocalizations {
   String get trackProgressSettingAnime => 'anime ප්‍රගතිය ට්‍රැක් කරන්න';
 
   @override
-  String get trackProgressSettingManga => 'manga සහ නවකතා ප්‍රගතිය ට්‍රැක් කරන්න';
+  String get trackProgressSettingManga =>
+      'manga සහ නවකතා ප්‍රගතිය ට්‍රැක් කරන්න';
 
   @override
-  String get trackProgressSettingDesc => 'එපිසෝඩ් එකක් ඕපන් කරද්දී හෝ චැප්ටර් එකක් ඉවර කරද්දී මොනවා කරන්නද';
+  String get trackProgressSettingDesc =>
+      'එපිසෝඩ් එකක් ඕපන් කරද්දී හෝ චැප්ටර් එකක් ඉවර කරද්දී මොනවා කරන්නද';
 
   @override
   String get trackProgressAsk => 'අහන්න';
@@ -5107,7 +5276,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get dantotsuImport => 'Dantotsu එකෙන් ඉම්පෝර්ට් කරන්න';
 
   @override
-  String get dantotsuImportDesc => 'Dantotsu සැකසුම් බැකප් එකක් කියවන්න (.ani, නැත්නම් එන්ක්‍රිප්ට් කරපු .sani)';
+  String get dantotsuImportDesc =>
+      'Dantotsu සැකසුම් බැකප් එකක් කියවන්න (.ani, නැත්නම් එන්ක්‍රිප්ට් කරපු .sani)';
 
   @override
   String get dantotsuPick => 'Dantotsu බැකප් එකක් තෝරන්න';
@@ -5175,13 +5345,15 @@ class AppLocalizationsSi extends AppLocalizations {
   String get dantotsuPlayer => 'ප්ලේයර් වේගය සහ සබ්ටයිටල් පාට';
 
   @override
-  String get dantotsuWarning => 'මේ ෆයිල් එකේ ලොගින් ටෝකන්ස් තියෙනවා. රහසිගතව තියාගන්න.';
+  String get dantotsuWarning =>
+      'මේ ෆයිල් එකේ ලොගින් ටෝකන්ස් තියෙනවා. රහසිගතව තියාගන්න.';
 
   @override
   String get novelIndent => 'ඡේද ඉන්ඩෙන්ට් කරන්න';
 
   @override
-  String get novelIndentDesc => 'හැම ඡේදයක්ම පළවෙනි පේළි ඉන්ඩෙන්ට් එකකින් පටන් ගන්න';
+  String get novelIndentDesc =>
+      'හැම ඡේදයක්ම පළවෙනි පේළි ඉන්ඩෙන්ට් එකකින් පටන් ගන්න';
 
   @override
   String get novelLetterSpacing => 'අකුරු අතර ඉඩ';
@@ -5196,13 +5368,15 @@ class AppLocalizationsSi extends AppLocalizations {
   String get kitsuGraphqlDetail => 'වේගවත් ඩිටේල් පේජස් (GraphQL)';
 
   @override
-  String get kitsuGraphqlDetailDesc => 'ටයිටල් එකක් එහි චරිත, ස්ටාෆ් සහ ඔයාගේ එන්ට්‍රි එක එක්ක එක රික්වෙස්ට් එකකින් ලෝඩ් කරන්න';
+  String get kitsuGraphqlDetailDesc =>
+      'ටයිටල් එකක් එහි චරිත, ස්ටාෆ් සහ ඔයාගේ එන්ට්‍රි එක එක්ක එක රික්වෙස්ට් එකකින් ලෝඩ් කරන්න';
 
   @override
   String get togetherTitle => 'එකට බලමු';
 
   @override
-  String get togetherIntro => 'ඔයාගේ යාළුවා එවපු රූම් ලින්ක් එක පේස්ට් කරන්න. එක පාරටම ජොයින් වෙලා, ඒගොල්ලෝ බලන්න පටන් ගත්තම ප්ලේයර් එක ඕපන් වෙනවා.';
+  String get togetherIntro =>
+      'ඔයාගේ යාළුවා එවපු රූම් ලින්ක් එක පේස්ට් කරන්න. එක පාරටම ජොයින් වෙලා, ඒගොල්ලෝ බලන්න පටන් ගත්තම ප්ලේයර් එක ඕපන් වෙනවා.';
 
   @override
   String get togetherName => 'ඔයාගේ නම';
@@ -5223,7 +5397,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get togetherPassword => 'සර්වර් මුරපදය (අවශ්‍ය නම් විතරයි)';
 
   @override
-  String get togetherPublicNote => 'පබ්ලික් සර්වර්ස් වලට මුරපදයක් නෑ, රූම්ස් විවෘතයි. දිග රූම් නමක් පාවිච්චි කරලා යාළුවන් එක්ක විතරක් බෙදාගන්න.';
+  String get togetherPublicNote =>
+      'පබ්ලික් සර්වර්ස් වලට මුරපදයක් නෑ, රූම්ස් විවෘතයි. දිග රූම් නමක් පාවිච්චි කරලා යාළුවන් එක්ක විතරක් බෙදාගන්න.';
 
   @override
   String get togetherConnect => 'කනෙක්ට් වෙන්න';
@@ -5302,7 +5477,8 @@ class AppLocalizationsSi extends AppLocalizations {
   }
 
   @override
-  String get togetherFollowFailed => 'හෝස්ට්ගේ එපිසෝඩ් එක ඕපන් කරන්න බැරි වුණා. ඔයාම ඕපන් කරන්න.';
+  String get togetherFollowFailed =>
+      'හෝස්ට්ගේ එපිසෝඩ් එක ඕපන් කරන්න බැරි වුණා. ඔයාම ඕපන් කරන්න.';
 
   @override
   String get togetherHostRole => 'රූම් එකක් හෝස්ට් කරන්න';
@@ -5314,7 +5490,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get togetherFollow => 'හෝස්ට්ගේ එපිසෝඩ් එක අනුගමනය කරන්න';
 
   @override
-  String get togetherFollowDesc => 'එකම සර්විස් එක පාවිච්චි කරද්දී එපිසෝඩ්ස් ඔටෝ ඕපන් කරලා මාරු කරනවා';
+  String get togetherFollowDesc =>
+      'එකම සර්විස් එක පාවිච්චි කරද්දී එපිසෝඩ්ස් ඔටෝ ඕපන් කරලා මාරු කරනවා';
 
   @override
   String get togetherOpenHost => 'හෝස්ට්ගේ එපිසෝඩ් එක ඕපන් කරන්න';
@@ -5331,13 +5508,16 @@ class AppLocalizationsSi extends AppLocalizations {
   String get togetherShowChat => 'ලයිව් චැට් පෙන්වන්න';
 
   @override
-  String get togetherWaitingHost => 'හෝස්ට් එපිසෝඩ් එකක් පටන් ගන්නකම් බලා ඉන්නවා';
+  String get togetherWaitingHost =>
+      'හෝස්ට් එපිසෝඩ් එකක් පටන් ගන්නකම් බලා ඉන්නවා';
 
   @override
-  String get togetherDifferentService => 'හෝස්ට් ඉන්නේ වෙන සර්විස් එකක, සින්ක් කිරීම ඕෆ්';
+  String get togetherDifferentService =>
+      'හෝස්ට් ඉන්නේ වෙන සර්විස් එකක, සින්ක් කිරීම ඕෆ්';
 
   @override
-  String get togetherNoSource => 'හෝස්ට්ව අනුගමනය කරන්න anime එක්ස්ටෙන්ෂන් එකක් ඉන්ස්ටෝල් කරන්න';
+  String get togetherNoSource =>
+      'හෝස්ට්ව අනුගමනය කරන්න anime එක්ස්ටෙන්ෂන් එකක් ඉන්ස්ටෝල් කරන්න';
 
   @override
   String togetherNoMatch(String source) {
@@ -5383,10 +5563,12 @@ class AppLocalizationsSi extends AppLocalizations {
   String get togetherChip => 'එකට';
 
   @override
-  String get togetherSettingsDesc => 'ලින්ක් එකකින් යාළුවෙකුගේ රූම් එකකට ජොයින් වෙන්න';
+  String get togetherSettingsDesc =>
+      'ලින්ක් එකකින් යාළුවෙකුගේ රූම් එකකට ජොයින් වෙන්න';
 
   @override
-  String get togetherNoPlayer => 'එපිසෝඩ් එකක් ඕපන් කළාම රූම් එක එක්ක ඔටෝ සින්ක් වෙනවා. චැට් එකයි මෙම්බර් ලිස්ට් එකයි දැන්ම වැඩ කරනවා.';
+  String get togetherNoPlayer =>
+      'එපිසෝඩ් එකක් ඕපන් කළාම රූම් එක එක්ක ඔටෝ සින්ක් වෙනවා. චැට් එකයි මෙම්බර් ලිස්ට් එකයි දැන්ම වැඩ කරනවා.';
 
   @override
   String togetherWatching(String name, String file) {
@@ -5397,7 +5579,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get novelBilingual => 'ඔරිජිනල් සහ පරිවර්තනය පෙන්වන්න';
 
   @override
-  String get novelBilingualDesc => 'හැම ඡේදයක්ම ඔරිජිනල් අකුරු ඒවා යටින් පරිවර්තනයත් එක්ක පෙන්වනවා';
+  String get novelBilingualDesc =>
+      'හැම ඡේදයක්ම ඔරිජිනල් අකුරු ඒවා යටින් පරිවර්තනයත් එක්ක පෙන්වනවා';
 
   @override
   String get novelTranslateTo => 'පරිවර්තනය කරන්න';
@@ -5453,7 +5636,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get novelTapPaging => 'පිටුව හරවන්න දාර ටැප් කරන්න';
 
   @override
-  String get novelTapPagingDesc => 'පිටුවක් ස්ක්‍රෝල් කරන්න වමේ හෝ දකුණේ පැත්ත ටැප් කරන්න, මැද කන්ට්‍රෝල්ස් පෙන්වනවා';
+  String get novelTapPagingDesc =>
+      'පිටුවක් ස්ක්‍රෝල් කරන්න වමේ හෝ දකුණේ පැත්ත ටැප් කරන්න, මැද කන්ට්‍රෝල්ස් පෙන්වනවා';
 
   @override
   String novelMinutesLeft(int count) {
@@ -5551,7 +5735,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get playerAudioLanguage => 'කැමති ඕඩියෝ භාෂාව';
 
   @override
-  String get playerLanguageOrderHint => 'භාෂා කොමා වලින් වෙන් කරන්න. හම්බවෙන පළවෙනි එක පාවිච්චි වෙනවා.';
+  String get playerLanguageOrderHint =>
+      'භාෂා කොමා වලින් වෙන් කරන්න. හම්බවෙන පළවෙනි එක පාවිච්චි වෙනවා.';
 
   @override
   String get playerPip => 'පික්චර් ඉන් පික්චර්';
@@ -5563,7 +5748,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get playerAutoPip => 'ඉවත් වෙද්දී පික්චර් ඉන් පික්චර්';
 
   @override
-  String get playerAutoPipDesc => 'ඇප් එකෙන් ඉවත් වෙද්දී පොඩි වින්ඩෝ එකකින් ප්ලේ වෙන එක දිගටම කරන්න';
+  String get playerAutoPipDesc =>
+      'ඇප් එකෙන් ඉවත් වෙද්දී පොඩි වින්ඩෝ එකකින් ප්ලේ වෙන එක දිගටම කරන්න';
 
   @override
   String playerAutoPlaying(String title) {
@@ -5584,7 +5770,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get playerPerTitle => 'මේ ටයිටල් එකට විතරයි';
 
   @override
-  String get playerPerTitleDesc => 'මේ විකල්ප මේ ටයිටල් එකට තියාගෙන ඔයාගේ ඩිෆෝල්ට්ස් ඒ විදියටම තියන්න';
+  String get playerPerTitleDesc =>
+      'මේ විකල්ප මේ ටයිටල් එකට තියාගෙන ඔයාගේ ඩිෆෝල්ට්ස් ඒ විදියටම තියන්න';
 
   @override
   String get playerHoldSpeed => 'හෝල්ඩ් වේගය';
@@ -5644,7 +5831,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get playerSeekPreview => 'සීක් ප්‍රිවිව් එක';
 
   @override
-  String get playerSeekPreviewDesc => 'ස්ක්‍රබ් කරද්දී සීක් බාර් එකට උඩින් පොඩි ෆ්‍රේම් ප්‍රිවිව් එකක් පෙන්වන්න. දෙවැනි අඩු රෙසොල්යුෂන් ඩිකෝඩර් එකක් විවෘත කරන නිසා ස්ට්‍රීම්ස් වල අමතර ඩේටා වැය වෙනවා.';
+  String get playerSeekPreviewDesc =>
+      'ස්ක්‍රබ් කරද්දී සීක් බාර් එකට උඩින් පොඩි ෆ්‍රේම් ප්‍රිවිව් එකක් පෙන්වන්න. දෙවැනි අඩු රෙසොල්යුෂන් ඩිකෝඩර් එකක් විවෘත කරන නිසා ස්ට්‍රීම්ස් වල අමතර ඩේටා වැය වෙනවා.';
 
   @override
   String get playerSettingsChip => 'සැකසුම්';
@@ -5656,19 +5844,22 @@ class AppLocalizationsSi extends AppLocalizations {
   String get settingsDownloads => 'ඩවුන්ලෝඩ්ස්';
 
   @override
-  String get settingsDownloadsDesc => 'ඕෆ්ලයින් එපිසෝඩ්ස්, ක්‍යූ සහ ඕෆ්ලයින් මෝඩ් එක';
+  String get settingsDownloadsDesc =>
+      'ඕෆ්ලයින් එපිසෝඩ්ස්, ක්‍යූ සහ ඕෆ්ලයින් මෝඩ් එක';
 
   @override
   String get downloadsTitle => 'ඩවුන්ලෝඩ්ස්';
 
   @override
-  String get downloadsOpenDesc => 'ක්‍යූ එකයි මේ ඩිවයිස් එකේ සේව් කරලා තියෙන හැමදේමයි බලන්න';
+  String get downloadsOpenDesc =>
+      'ක්‍යූ එකයි මේ ඩිවයිස් එකේ සේව් කරලා තියෙන හැමදේමයි බලන්න';
 
   @override
   String get downloadTitle => 'ඩවුන්ලෝඩ්';
 
   @override
-  String get downloadAlready => 'කලින්ම ඩවුන්ලෝඩ් කරලා නැත්නම් ක්‍යූ එකේ තියෙනවා';
+  String get downloadAlready =>
+      'කලින්ම ඩවුන්ලෝඩ් කරලා නැත්නම් ක්‍යූ එකේ තියෙනවා';
 
   @override
   String get downloadPickStream => 'ඩවුන්ලෝඩ් කරන්නේ මොන ස්ට්‍රීම් එකද?';
@@ -5689,10 +5880,12 @@ class AppLocalizationsSi extends AppLocalizations {
   String get downloadNoSubtitle => 'සබ්ටයිටල් නෑ';
 
   @override
-  String get downloadHlsNeedsFfmpeg => 'මේ ස්ට්‍රීම් එක HLS ප්ලේලිස්ට් එකක්. ඒක ඩවුන්ලෝඩ් කරන්න FFmpeg ඇඩ්-ඔන් එක ඕනේ.';
+  String get downloadHlsNeedsFfmpeg =>
+      'මේ ස්ට්‍රීම් එක HLS ප්ලේලිස්ට් එකක්. ඒක ඩවුන්ලෝඩ් කරන්න FFmpeg ඇඩ්-ඔන් එක ඕනේ.';
 
   @override
-  String get downloadSourceMissing => 'මේ එපිසෝඩ් එකේ සෝස් එක ඉන්ස්ටෝල් කරලා නෑ';
+  String get downloadSourceMissing =>
+      'මේ එපිසෝඩ් එකේ සෝස් එක ඉන්ස්ටෝල් කරලා නෑ';
 
   @override
   String get downloadWaitingConnection => 'කනෙක්ෂන් එකක් එනකම් බලා ඉන්නවා';
@@ -5734,7 +5927,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get downloadResolving => 'ස්ට්‍රීම් එක ගන්නවා…';
 
   @override
-  String get downloadUsedFallback => 'ගැලපෙන ස්ට්‍රීම් එකක් නෑ, පළවෙනි එක පාවිච්චි කළා';
+  String get downloadUsedFallback =>
+      'ගැලපෙන ස්ට්‍රීම් එකක් නෑ, පළවෙනි එක පාවිච්චි කළා';
 
   @override
   String get downloadTabQueue => 'ක්‍යූ';
@@ -5810,7 +6004,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get downloadParallel => 'එක වර ඩවුන්ලෝඩ්ස්';
 
   @override
-  String get downloadParallelDesc => 'එක එක ඩවුන්ලෝඩ් කරන්න හෝ කීපයක් එකට කරන්න';
+  String get downloadParallelDesc =>
+      'එක එක ඩවුන්ලෝඩ් කරන්න හෝ කීපයක් එකට කරන්න';
 
   @override
   String get downloadOneByOne => 'එකින් එක';
@@ -5819,7 +6014,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get downloadNotifications => 'ඩවුන්ලෝඩ් නොටිෆිකේෂන්ස්';
 
   @override
-  String get downloadNotificationsDesc => 'සිස්ටම් එකෙන් සහාය තියෙනවා නම් ලයිව් ප්‍රගතිය, නැත්නම් ඩවුන්ලෝඩ් එකක් ඉවර වුණාම සටහනක්';
+  String get downloadNotificationsDesc =>
+      'සිස්ටම් එකෙන් සහාය තියෙනවා නම් ලයිව් ප්‍රගතිය, නැත්නම් ඩවුන්ලෝඩ් එකක් ඉවර වුණාම සටහනක්';
 
   @override
   String get downloadNotifyLive => 'ලයිව්';
@@ -5831,16 +6027,19 @@ class AppLocalizationsSi extends AppLocalizations {
   String get downloadNotifyOff => 'ඕෆ්';
 
   @override
-  String get downloadInfoFile => 'හැම ඩවුන්ලෝඩ් එකක් ළඟම ඉන්ෆෝ ෆයිල් එකක් ලියන්න';
+  String get downloadInfoFile =>
+      'හැම ඩවුන්ලෝඩ් එකක් ළඟම ඉන්ෆෝ ෆයිල් එකක් ලියන්න';
 
   @override
-  String get downloadInfoFileDesc => 'ස්ට්‍රීම් එක, ක්වාලිටි එක, සබ්ටයිටල් එක සහ ස්කිප් ටයිම්ස් පොඩි .json ෆයිල් එකක් විදියට සේව් කරනවා';
+  String get downloadInfoFileDesc =>
+      'ස්ට්‍රීම් එක, ක්වාලිටි එක, සබ්ටයිටල් එක සහ ස්කිප් ටයිම්ස් පොඩි .json ෆයිල් එකක් විදියට සේව් කරනවා';
 
   @override
   String get offlineHeader => 'ඕෆ්ලයින්';
 
   @override
-  String get offlineModeDesc => 'ඔටෝ කියන්නේ ඇප් එක කනෙක්ෂන් එකක් නැතුව පටන් ගද්දි විතරක් ඕෆ්ලයින් යනවා. හැමවිටම කියන්නේ ඔයා වෙනස් කරනකම් ඕෆ්ලයින් ඉන්නවා.';
+  String get offlineModeDesc =>
+      'ඔටෝ කියන්නේ ඇප් එක කනෙක්ෂන් එකක් නැතුව පටන් ගද්දි විතරක් ඕෆ්ලයින් යනවා. හැමවිටම කියන්නේ ඔයා වෙනස් කරනකම් ඕෆ්ලයින් ඉන්නවා.';
 
   @override
   String get offlineModeOff => 'ඕෆ්';
@@ -5849,7 +6048,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get offlineModeAlways => 'හැමවිටම';
 
   @override
-  String get offlineModeOn => 'ඕෆ්ලයින් මෝඩ් එක ඔන් කරලා. වෙනස්කම් මෙතන සේව් වෙලා ඔයා ආයෙත් ඔන්ලයින් ආවම යවනවා.';
+  String get offlineModeOn =>
+      'ඕෆ්ලයින් මෝඩ් එක ඔන් කරලා. වෙනස්කම් මෙතන සේව් වෙලා ඔයා ආයෙත් ඔන්ලයින් ආවම යවනවා.';
 
   @override
   String get offlineLost => 'ඔයා ඕෆ්ලයින්. වෙනස්කම් මේ ඩිවයිස් එකේ සේව් වෙනවා';
@@ -5858,7 +6058,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get offlineBack => 'ආයෙත් ඔන්ලයින්. ඔයාගේ වෙනස්කම් සින්ක් කරනවා';
 
   @override
-  String get offlineSaved => 'මේ ඩිවයිස් එකේ සේව් වුණා, ඔයා ඔන්ලයින් ආවම සින්ක් වෙනවා';
+  String get offlineSaved =>
+      'මේ ඩිවයිස් එකේ සේව් වුණා, ඔයා ඔන්ලයින් ආවම සින්ක් වෙනවා';
 
   @override
   String offlineSynced(int count) {
@@ -5895,7 +6096,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get offlineDiscard => 'ඉවත දාන්න';
 
   @override
-  String get downloadNotOffline => 'මේ එපිසෝඩ් එක ඩවුන්ලෝඩ් කරලා නැති නිසා ඕෆ්ලයින් බලන්න බෑ';
+  String get downloadNotOffline =>
+      'මේ එපිසෝඩ් එක ඩවුන්ලෝඩ් කරලා නැති නිසා ඕෆ්ලයින් බලන්න බෑ';
 
   @override
   String get offlineModeChip => 'ඕෆ්ලයින්';
@@ -5932,13 +6134,15 @@ class AppLocalizationsSi extends AppLocalizations {
   String get downloadFfmpegTitle => 'FFmpeg ඇඩ්-ඔන් එක ඕනේ';
 
   @override
-  String get downloadFfmpegBody => 'මේ ස්ට්‍රීම් එක HLS ප්ලේලිස්ට් එකක්. FFmpeg ඇඩ්-ඔන් එක ඒකේ කෑලි එක mp4 ෆයිල් එකකට එකතු කරනවා. ඒක නැතුව කෑලි එපිසෝඩ් ෆෝල්ඩර් එකක තියෙනවා, එතනින්ම ප්ලේ වෙනවා.';
+  String get downloadFfmpegBody =>
+      'මේ ස්ට්‍රීම් එක HLS ප්ලේලිස්ට් එකක්. FFmpeg ඇඩ්-ඔන් එක ඒකේ කෑලි එක mp4 ෆයිල් එකකට එකතු කරනවා. ඒක නැතුව කෑලි එපිසෝඩ් ෆෝල්ඩර් එකක තියෙනවා, එතනින්ම ප්ලේ වෙනවා.';
 
   @override
   String get downloadFfmpegInstall => 'ඉන්ස්ටෝල් කරන්න';
 
   @override
-  String get downloadFfmpegInstalling => 'FFmpeg ඉන්ස්ටෝල් කරනවා, ටිකක් වෙලා යයි…';
+  String get downloadFfmpegInstalling =>
+      'FFmpeg ඉන්ස්ටෝල් කරනවා, ටිකක් වෙලා යයි…';
 
   @override
   String get downloadFinishing => 'කෑලි එක ෆයිල් එකකට එකතු කරනවා…';
@@ -5949,7 +6153,8 @@ class AppLocalizationsSi extends AppLocalizations {
   }
 
   @override
-  String get downloadTorrentNoFile => 'ටොරන්ට් එකේ ඩවුන්ලෝඩ් කරන්න වීඩියෝ ෆයිල් එකක් නෑ';
+  String get downloadTorrentNoFile =>
+      'ටොරන්ට් එකේ ඩවුන්ලෝඩ් කරන්න වීඩියෝ ෆයිල් එකක් නෑ';
 
   @override
   String downloadServiceText(int count) {
@@ -5966,13 +6171,15 @@ class AppLocalizationsSi extends AppLocalizations {
   String get downloadAutoDelete => 'බැලූ ඩවුන්ලෝඩ්ස් මකන්න';
 
   @override
-  String get downloadAutoDeleteDesc => 'ඔයාගේ ප්‍රගතිය ඒ එපිසෝඩ් එකට හෝ චැප්ටර් එකට ළඟා වුණාම ඩවුන්ලෝඩ් එක අයින් කරනවා';
+  String get downloadAutoDeleteDesc =>
+      'ඔයාගේ ප්‍රගතිය ඒ එපිසෝඩ් එකට හෝ චැප්ටර් එකට ළඟා වුණාම ඩවුන්ලෝඩ් එක අයින් කරනවා';
 
   @override
   String get downloadConnections => 'ඩවුන්ලෝඩ් එකකට කනෙක්ෂන්ස්';
 
   @override
-  String get downloadConnectionsDesc => 'ලොකු ෆයිල් එකක් එකවර ගන්න කොටස් වලට බෙදනවා. සමහර සර්වර්ස් මේක සීමා කරනවා.';
+  String get downloadConnectionsDesc =>
+      'ලොකු ෆයිල් එකක් එකවර ගන්න කොටස් වලට බෙදනවා. සමහර සර්වර්ස් මේක සීමා කරනවා.';
 
   @override
   String get downloadPlayChoice => 'ප්ලේ කරන්නේ';
@@ -5990,7 +6197,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get offlineFeedTitle => 'මේ ඩිවයිස් එකේ ඩවුන්ලෝඩ් කරපු';
 
   @override
-  String get offlineFeedEmpty => 'ඔන්ලයින් ඉද්දී යමක් ඩවුන්ලෝඩ් කරන්න, ඒක මෙතන පේනවා';
+  String get offlineFeedEmpty =>
+      'ඔන්ලයින් ඉද්දී යමක් ඩවුන්ලෝඩ් කරන්න, ඒක මෙතන පේනවා';
 
   @override
   String get offlineEnabled => 'ඕෆ්ලයින් මෝඩ් එක ඔන්';
@@ -6044,13 +6252,15 @@ class AppLocalizationsSi extends AppLocalizations {
   String get downloadWifiOnly => 'Wi-Fi විතරයි';
 
   @override
-  String get downloadWifiOnlyDesc => 'මොබයිල් ඩේටා වල ඉන්නකොට ඩවුන්ලෝඩ්ස් බලා ඉන්නවා';
+  String get downloadWifiOnlyDesc =>
+      'මොබයිල් ඩේටා වල ඉන්නකොට ඩවුන්ලෝඩ්ස් බලා ඉන්නවා';
 
   @override
   String get downloadMetered => 'මීටර් කනෙක්ෂන්ස් වල පෝස් කරන්න';
 
   @override
-  String get downloadMeteredDesc => 'ඔයාගේ ඩිවයිස් එක මීටර් කියලා සලකුණු කරපු Wi-Fi එකේත් බලා ඉන්නවා';
+  String get downloadMeteredDesc =>
+      'ඔයාගේ ඩිවයිස් එක මීටර් කියලා සලකුණු කරපු Wi-Fi එකේත් බලා ඉන්නවා';
 
   @override
   String get downloadSpeedLimit => 'වේග සීමාව';
@@ -6082,7 +6292,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get watchAutoSource => 'ඊළඟ සෝස් එකට ඔටෝ මාරු වෙන්න';
 
   @override
-  String get watchAutoSourceDesc => 'සෝස් එකට ටයිටල් එක හොයාගන්න බැරි වුණොත් හෝ ලෝඩ් වෙන්නේ නැත්නම්, ඉන්ස්ටෝල් කරපු ඊළඟ සෝස් එක උත්සාහ කරන්න';
+  String get watchAutoSourceDesc =>
+      'සෝස් එකට ටයිටල් එක හොයාගන්න බැරි වුණොත් හෝ ලෝඩ් වෙන්නේ නැත්නම්, ඉන්ස්ටෝල් කරපු ඊළඟ සෝස් එක උත්සාහ කරන්න';
 
   @override
   String get extensionTest => 'එක්ස්ටෙන්ෂන්ස් ටෙස්ට් කරන්න';
@@ -6134,31 +6345,36 @@ class AppLocalizationsSi extends AppLocalizations {
   String get onboardingFeaturesTitle => 'හැමදේම එක තැනක';
 
   @override
-  String get onboardingFeaturesBody => 'ඔයා ට්‍රැක් කරන, බලන, කියවන හැමදේම, ඇප්ස් මාරු කරකර ඉන්න ඕනේ නැතුව.';
+  String get onboardingFeaturesBody =>
+      'ඔයා ට්‍රැක් කරන, බලන, කියවන හැමදේම, ඇප්ස් මාරු කරකර ඉන්න ඕනේ නැතුව.';
 
   @override
   String get onboardingFeatureTrack => 'හැමදේම ට්‍රැක් කරන්න';
 
   @override
-  String get onboardingFeatureTrackDesc => 'AniList, MyAnimeList, Simkl, Kitsu සහ MangaBaka වල ලිස්ට්ස්, ප්‍රගතිය සහ ස්කෝර්ස්.';
+  String get onboardingFeatureTrackDesc =>
+      'AniList, MyAnimeList, Simkl, Kitsu සහ MangaBaka වල ලිස්ට්ස්, ප්‍රගතිය සහ ස්කෝර්ස්.';
 
   @override
   String get onboardingFeatureWatch => 'බලන්න සහ කියවන්න';
 
   @override
-  String get onboardingFeatureWatchDesc => 'එක්ස්ටෙන්ෂන්ස් ඉන්ස්ටෝල් කරලා anime ස්ට්‍රීම් කරන්න, නැත්නම් manga සහ නවකතා ඇප් එක ඇතුළෙම කියවන්න.';
+  String get onboardingFeatureWatchDesc =>
+      'එක්ස්ටෙන්ෂන්ස් ඉන්ස්ටෝල් කරලා anime ස්ට්‍රීම් කරන්න, නැත්නම් manga සහ නවකතා ඇප් එක ඇතුළෙම කියවන්න.';
 
   @override
   String get onboardingFeatureOffline => 'ඕෆ්ලයින් අරන් යන්න';
 
   @override
-  String get onboardingFeatureOfflineDesc => 'එපිසෝඩ්ස් සහ චැප්ටර්ස් ඩවුන්ලෝඩ් කරලා, කනෙක්ෂන් එකක් නැතුවත් දිගටම කරන්න.';
+  String get onboardingFeatureOfflineDesc =>
+      'එපිසෝඩ්ස් සහ චැප්ටර්ස් ඩවුන්ලෝඩ් කරලා, කනෙක්ෂන් එකක් නැතුවත් දිගටම කරන්න.';
 
   @override
   String get onboardingFeatureSync => 'ලිස්ට්ස් සින්ක් එකේ තියාගන්න';
 
   @override
-  String get onboardingFeatureSyncDesc => 'ඔයාගේ ලිස්ට් එක සර්විසස් හරහා කොපි කරන්න, නැත්නම් ඉදිරියෙන් ඉන්න එක දිනන්න දෙන්න.';
+  String get onboardingFeatureSyncDesc =>
+      'ඔයාගේ ලිස්ට් එක සර්විසස් හරහා කොපි කරන්න, නැත්නම් ඉදිරියෙන් ඉන්න එක දිනන්න දෙන්න.';
 
   @override
   String get onboardingThemeShape => 'පාට';

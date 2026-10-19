@@ -12,7 +12,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get appName => 'Dartotsu';
 
   @override
-  String get appTagline => 'SABUWAR Mafi Kyakkyawar App Don\nBibiyar Anime & Manga';
+  String get appTagline =>
+      'SABUWAR Mafi Kyakkyawar App Don\nBibiyar Anime & Manga';
 
   @override
   String get anilist => 'AniList';
@@ -71,7 +72,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get animationSpeed => 'Animations';
 
   @override
-  String get animationSpeedDesc => 'Saurin sauye-sauye da tasirin shigowa a ko\'ina cikin app';
+  String get animationSpeedDesc =>
+      'Saurin sauye-sauye da tasirin shigowa a ko\'ina cikin app';
 
   @override
   String get animationSpeedOff => 'A kashe';
@@ -227,16 +229,19 @@ class AppLocalizationsHa extends AppLocalizations {
   String get glassMode => 'Yanayin gilashi';
 
   @override
-  String get glassModeDesc => 'Fuskoki masu sanyi a kan hotunan ɗakin karatunka';
+  String get glassModeDesc =>
+      'Fuskoki masu sanyi a kan hotunan ɗakin karatunka';
 
   @override
   String get shelfFrame => 'Firam kewaye da sassa';
 
   @override
-  String get shelfFrameDesc => 'Nuna kati a bayan kowane shiryayye, ko a bar layuka kai tsaye a shafi';
+  String get shelfFrameDesc =>
+      'Nuna kati a bayan kowane shiryayye, ko a bar layuka kai tsaye a shafi';
 
   @override
-  String get settingsExtensionsDesc => 'Manajojin tushe, wuraren ajiya da zaɓuɓɓukan extension';
+  String get settingsExtensionsDesc =>
+      'Manajojin tushe, wuraren ajiya da zaɓuɓɓukan extension';
 
   @override
   String get settingsAddons => 'Addons';
@@ -248,7 +253,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get customPath => 'Hanyar ajiya ta musamman';
 
   @override
-  String get customPathDesc => 'Inda ake ajiye bayanan app. Danna ka riƙe don sake saitawa';
+  String get customPathDesc =>
+      'Inda ake ajiye bayanan app. Danna ka riƙe don sake saitawa';
 
   @override
   String get selectDirectory => 'Zaɓi directory';
@@ -257,7 +263,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get differentCacheManager => 'Madadin cache na hotuna';
 
   @override
-  String get differentCacheManagerDesc => 'Yi amfani da wani manajan cache na daban don hotuna';
+  String get differentCacheManagerDesc =>
+      'Yi amfani da wani manajan cache na daban don hotuna';
 
   @override
   String get backupAndRestore => 'Ajiyar baya da maidowa';
@@ -326,7 +333,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get backupPasswordHint => 'A bar fanko don amfani da tsoho';
 
   @override
-  String get backupSensitive => 'Ya haɗa da token ɗin shiga. A kiyaye wannan fayil a asirce';
+  String get backupSensitive =>
+      'Ya haɗa da token ɗin shiga. A kiyaye wannan fayil a asirce';
 
   @override
   String get backupCreate => 'Ƙirƙiri ajiyar baya';
@@ -372,7 +380,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get backupUnlock => 'Buɗe';
 
   @override
-  String get backupWrongPassword => 'Ba a iya karanta wannan fayil ba. Duba kalmar sirri';
+  String get backupWrongPassword =>
+      'Ba a iya karanta wannan fayil ba. Duba kalmar sirri';
 
   @override
   String get backupRestoreSelected => 'Maido da waɗanda aka zaɓa';
@@ -397,13 +406,15 @@ class AppLocalizationsHa extends AppLocalizations {
   String get backupCatTheme => 'Kamanni';
 
   @override
-  String get backupCatThemeDesc => 'Jigo, launuka, gilashi, rubutu da salon kati';
+  String get backupCatThemeDesc =>
+      'Jigo, launuka, gilashi, rubutu da salon kati';
 
   @override
   String get backupCatCommon => 'Gabaɗaya';
 
   @override
-  String get backupCatCommonDesc => 'Harshe, ajiya, network da zaɓuɓɓukan extension';
+  String get backupCatCommonDesc =>
+      'Harshe, ajiya, network da zaɓuɓɓukan extension';
 
   @override
   String get backupCatPlayer => 'Mai kunnawa';
@@ -427,7 +438,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get backupCatOther => 'Sabis-sabis da feed';
 
   @override
-  String get backupCatOtherDesc => 'Tsarin feed, jerin sunaye da zaɓuɓɓukan sabis';
+  String get backupCatOtherDesc =>
+      'Tsarin feed, jerin sunaye da zaɓuɓɓukan sabis';
 
   @override
   String get logFile => 'Fayil ɗin log';
@@ -442,7 +454,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get donateSheetTitle => 'Kana jin daɗin Dartotsu?';
 
   @override
-  String get donateSheetMessage => 'Mutum ɗaya ne ke ginawa da kula da Dartotsu. Idan yana da amfani a gare ka, ka yi tunanin tallafa wa ci gabansa.';
+  String get donateSheetMessage =>
+      'Mutum ɗaya ne ke ginawa da kula da Dartotsu. Idan yana da amfani a gare ka, ka yi tunanin tallafa wa ci gabansa.';
 
   @override
   String get donateLater => 'Daga baya';
@@ -451,16 +464,19 @@ class AppLocalizationsHa extends AppLocalizations {
   String get glassBackground => 'Bangon gilashi';
 
   @override
-  String get glassBackgroundDesc => 'Banner ɗin profile naka sai dai idan ka saka hanyar hoto';
+  String get glassBackgroundDesc =>
+      'Banner ɗin profile naka sai dai idan ka saka hanyar hoto';
 
   @override
-  String get glassBackgroundHint => 'Hanyar hoto (a bar fanko don banner ɗinka)';
+  String get glassBackgroundHint =>
+      'Hanyar hoto (a bar fanko don banner ɗinka)';
 
   @override
   String get followCover => 'Bi cover';
 
   @override
-  String get followCoverDesc => 'Launuka suna bin bango, da cover a shafukan bayani';
+  String get followCoverDesc =>
+      'Launuka suna bin bango, da cover a shafukan bayani';
 
   @override
   String get cardStyle => 'Salon kati';
@@ -505,7 +521,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get jsonTheme => 'Fayil ɗin jigo na musamman';
 
   @override
-  String get jsonThemeDesc => 'Launuka kai tsaye daga ~/.config/dartotsu/theme.json (script na musamman, ko gyare-gyarenka)';
+  String get jsonThemeDesc =>
+      'Launuka kai tsaye daga ~/.config/dartotsu/theme.json (script na musamman, ko gyare-gyarenka)';
 
   @override
   String get themeMode => 'Yanayin jigo';
@@ -534,7 +551,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get checkForUpdates => 'Duba sabuntawa';
 
   @override
-  String get checkForUpdatesDesc => 'A sanar da ni idan sabon GitHub release ya fito';
+  String get checkForUpdatesDesc =>
+      'A sanar da ni idan sabon GitHub release ya fito';
 
   @override
   String get updateChannel => 'Tashar sabuntawa';
@@ -618,7 +636,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get highRefreshRate => 'Babban refresh rate';
 
   @override
-  String get highRefreshRateDesc => 'Yi amfani da mafi girman refresh rate da allonka ke goyi';
+  String get highRefreshRateDesc =>
+      'Yi amfani da mafi girman refresh rate da allonka ke goyi';
 
   @override
   String get imageSave => 'Ajiye hoto';
@@ -644,10 +663,12 @@ class AppLocalizationsHa extends AppLocalizations {
   String get verifyTls => 'Tabbatar da certificates';
 
   @override
-  String get verifyTlsDesc => 'Ƙi sabobin da ke da HTTPS certificate mara inganci. A kashe kawai don tushen da ke amfani da na kansa';
+  String get verifyTlsDesc =>
+      'Ƙi sabobin da ke da HTTPS certificate mara inganci. A kashe kawai don tushen da ke amfani da na kansa';
 
   @override
-  String get clearCookiesConfirm => 'A cire duk cookies da aka adana? Wannan na iya fitar da kai daga wasu tushe.';
+  String get clearCookiesConfirm =>
+      'A cire duk cookies da aka adana? Wannan na iya fitar da kai daga wasu tushe.';
 
   @override
   String get version => 'Sigar';
@@ -722,7 +743,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get onboardingPaletteTitle => 'Mai da shi naka';
 
   @override
-  String get onboardingPaletteBody => 'Zaɓi palette. Kowane launi, daga kati zuwa mai kunnawa, zai bi shi.';
+  String get onboardingPaletteBody =>
+      'Zaɓi palette. Kowane launi, daga kati zuwa mai kunnawa, zai bi shi.';
 
   @override
   String get themeModeAuto => 'Kai tsaye';
@@ -737,7 +759,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get onboardingSyncTitle => 'Daidaita ɗakin karatunka';
 
   @override
-  String get onboardingSyncBody => 'Shiga da AniList don kawo jerin sunayenka, ci gaba da maki. Ko ka tsallake ka yi bincike a matsayin baƙo.';
+  String get onboardingSyncBody =>
+      'Shiga da AniList don kawo jerin sunayenka, ci gaba da maki. Ko ka tsallake ka yi bincike a matsayin baƙo.';
 
   @override
   String get onboardingOpenLinks => 'Buɗe hanyoyin AniList da repo a Dartotsu';
@@ -746,19 +769,22 @@ class AppLocalizationsHa extends AppLocalizations {
   String get onboardingPermsTitle => 'Izini';
 
   @override
-  String get onboardingPermsBody => 'A ba da su yanzu don zazzagewa, sabuntawa da faɗakarwa su yi aiki ba tare da tsangwama ba. Za ka iya canza su daga baya a saitunan system.';
+  String get onboardingPermsBody =>
+      'A ba da su yanzu don zazzagewa, sabuntawa da faɗakarwa su yi aiki ba tare da tsangwama ba. Za ka iya canza su daga baya a saitunan system.';
 
   @override
   String get permNotifications => 'Sanarwa';
 
   @override
-  String get permNotificationsDesc => 'Ci gaban zazzagewa, sabbin episode da amsoshi';
+  String get permNotificationsDesc =>
+      'Ci gaban zazzagewa, sabbin episode da amsoshi';
 
   @override
   String get permStorage => 'Samun duk fayiloli';
 
   @override
-  String get permStorageDesc => 'Ajiye abubuwan da aka zazzage a folder ɗin Dartotsu na jama\'a';
+  String get permStorageDesc =>
+      'Ajiye abubuwan da aka zazzage a folder ɗin Dartotsu na jama\'a';
 
   @override
   String get permInstall => 'Shigar da sabuntawa';
@@ -825,13 +851,15 @@ class AppLocalizationsHa extends AppLocalizations {
   String get shareAnalytics => 'Raba bayanan amfani da ba a bayyana ba';
 
   @override
-  String get shareAnalyticsDesc => 'Adadin masu amfani da rahoton lalacewa ba tare da suna ba. Babu asusu ko bayanan sirri';
+  String get shareAnalyticsDesc =>
+      'Adadin masu amfani da rahoton lalacewa ba tare da suna ba. Babu asusu ko bayanan sirri';
 
   @override
   String get linkOpenAnilist => 'Buɗe hanyoyin AniList a Dartotsu';
 
   @override
-  String get linkOpenAnilistDesc => 'Kunna sarrafa hanyoyin haɗi don anilist.co ya buɗe app';
+  String get linkOpenAnilistDesc =>
+      'Kunna sarrafa hanyoyin haɗi don anilist.co ya buɗe app';
 
   @override
   String get linkSettingsFailed => 'Ba a iya buɗe saitunan system ba';
@@ -840,16 +868,19 @@ class AppLocalizationsHa extends AppLocalizations {
   String get discordRichPresence => 'Rich Presence';
 
   @override
-  String get discordRichPresenceTokenDesc => 'Nuna abin da kake yi a profile ɗin Discord. Yana buƙatar token ɗin Discord.';
+  String get discordRichPresenceTokenDesc =>
+      'Nuna abin da kake yi a profile ɗin Discord. Yana buƙatar token ɗin Discord.';
 
   @override
-  String get discordRichPresenceDesktopDesc => 'Nuna abin da kake yi a profile ɗin Discord. Yana buƙatar Discord desktop app ya kasance a buɗe.';
+  String get discordRichPresenceDesktopDesc =>
+      'Nuna abin da kake yi a profile ɗin Discord. Yana buƙatar Discord desktop app ya kasance a buɗe.';
 
   @override
   String get discordBrowsing => 'Nuna ayyukan bincike';
 
   @override
-  String get discordBrowsingDesc => 'Nuna tab, shafi ko profile da kake kallo, ba kawai abin da kake kallo ko karantawa ba.';
+  String get discordBrowsingDesc =>
+      'Nuna tab, shafi ko profile da kake kallo, ba kawai abin da kake kallo ko karantawa ba.';
 
   @override
   String get discordLookHeader => 'Kamannin presence';
@@ -858,7 +889,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get discordActivityType => 'Nau\'in aiki';
 
   @override
-  String get discordActivityTypeDesc => 'Yadda Discord ke rubuta shi: \"Watching …\" ko \"Playing …\". Kai tsaye yana amfani da Watching don anime da Playing ga sauran.';
+  String get discordActivityTypeDesc =>
+      'Yadda Discord ke rubuta shi: \"Watching …\" ko \"Playing …\". Kai tsaye yana amfani da Watching don anime da Playing ga sauran.';
 
   @override
   String get discordWatching => 'Watching';
@@ -876,19 +908,22 @@ class AppLocalizationsHa extends AppLocalizations {
   String get discordTimer => 'Nuna lokaci';
 
   @override
-  String get discordTimerDesc => 'Lokacin da ya wuce ko ya rage a ƙarƙashin take.';
+  String get discordTimerDesc =>
+      'Lokacin da ya wuce ko ya rage a ƙarƙashin take.';
 
   @override
   String get discordButtons => 'Nuna maɓallai';
 
   @override
-  String get discordButtonsDesc => 'Maɓallan \"View anime / manga\" da \"Open Dartotsu\".';
+  String get discordButtonsDesc =>
+      'Maɓallan \"View anime / manga\" da \"Open Dartotsu\".';
 
   @override
   String get discordHideTitles => 'Ɓoye take';
 
   @override
-  String get discordHideTitlesDesc => 'Maye gurbin sunayen anime da manga (da cover da hanyar haɗinsu) da \"Something private\".';
+  String get discordHideTitlesDesc =>
+      'Maye gurbin sunayen anime da manga (da cover da hanyar haɗinsu) da \"Something private\".';
 
   @override
   String get discordConnectionHeader => 'Haɗi';
@@ -951,13 +986,15 @@ class AppLocalizationsHa extends AppLocalizations {
   String get discordToken => 'Token ɗin Discord';
 
   @override
-  String get discordTokenSaved => 'An ajiye. Danna don maye gurbin, danna ka riƙe don cirewa.';
+  String get discordTokenSaved =>
+      'An ajiye. Danna don maye gurbin, danna ka riƙe don cirewa.';
 
   @override
   String get discordTokenNotSet => 'Ba a saita ba. Danna don ƙarawa.';
 
   @override
-  String get discordTokenPrompt => 'Manna token ɗin asusun Discord da za a nuna presence a kai. Yana zama a wannan na\'ura kawai.';
+  String get discordTokenPrompt =>
+      'Manna token ɗin asusun Discord da za a nuna presence a kai. Yana zama a wannan na\'ura kawai.';
 
   @override
   String get discordTokenHint => 'Token';
@@ -975,7 +1012,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get discordRichPresenceRowOn => 'A kunne · danna don canza kamanninsa';
 
   @override
-  String get discordRichPresenceRowOff => 'Nuna abin da kake yi a profile ɗin Discord';
+  String get discordRichPresenceRowOff =>
+      'Nuna abin da kake yi a profile ɗin Discord';
 
   @override
   String get loginCancelled => 'An soke shiga';
@@ -992,7 +1030,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get malLoginFailed => 'Shiga MyAnimeList ya kasa';
 
   @override
-  String get kitsuLoginFailed => 'Shiga Kitsu ya kasa. Duba imel da kalmar sirrinka.';
+  String get kitsuLoginFailed =>
+      'Shiga Kitsu ya kasa. Duba imel da kalmar sirrinka.';
 
   @override
   String get kitsuLoginTitle => 'Shiga Kitsu';
@@ -1043,13 +1082,15 @@ class AppLocalizationsHa extends AppLocalizations {
   String get hideNsfw => 'Ɓoye NSFW';
 
   @override
-  String get hideNsfwDesc => 'Kiyaye take na manya daga feed da bincike, kuma lissafa shigarwar manya naka a Hidden Media.';
+  String get hideNsfwDesc =>
+      'Kiyaye take na manya daga feed da bincike, kuma lissafa shigarwar manya naka a Hidden Media.';
 
   @override
   String get kitsuAccountOptions => 'Zaɓuɓɓukan asusun Kitsu';
 
   @override
-  String get couldNotUpdateKitsuSettings => 'An kasa sabunta saitunan Kitsu naka';
+  String get couldNotUpdateKitsuSettings =>
+      'An kasa sabunta saitunan Kitsu naka';
 
   @override
   String get titleCanonical => 'Na asali';
@@ -1088,7 +1129,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get shareToGlobal => 'Raba zuwa feed na duniya';
 
   @override
-  String get shareToGlobalDesc => 'A bar ayyukanka su bayyana a feed na duniya na Kitsu.';
+  String get shareToGlobalDesc =>
+      'A bar ayyukanka su bayyana a feed na duniya na Kitsu.';
 
   @override
   String get memberSince => 'Memba tun';
@@ -1142,7 +1184,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get homeSections => 'Sassan Home';
 
   @override
-  String get homeSectionsHint => 'Ja don sake tsarawa. Ba a taɓa ɗaukar sassan da aka ɓoye ba.';
+  String get homeSectionsHint =>
+      'Ja don sake tsarawa. Ba a taɓa ɗaukar sassan da aka ɓoye ba.';
 
   @override
   String get customListDeleteFailed => 'An kasa share jeri na musamman';
@@ -1350,7 +1393,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get nothingMatched => 'Babu abin da ya dace';
 
   @override
-  String get nothingSavedFromSource => 'Babu abin da aka ajiye daga wannan tushen tukuna';
+  String get nothingSavedFromSource =>
+      'Babu abin da aka ajiye daga wannan tushen tukuna';
 
   @override
   String get sourceReturnedNothing => 'Wannan tushen bai dawo da komai ba';
@@ -1362,7 +1406,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get tryDifferentSearch => 'Gwada wata kalmar bincike.';
 
   @override
-  String get savedTitlesAppearHere => 'Take da ka ƙara a jerinka za su bayyana a nan.';
+  String get savedTitlesAppearHere =>
+      'Take da ka ƙara a jerinka za su bayyana a nan.';
 
   @override
   String get tryOtherFeed => 'Gwada ɗayan feed ɗin ko bincike maimakon haka.';
@@ -1382,7 +1427,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get nothingHereYet => 'Babu komai a nan tukuna';
 
   @override
-  String get savedOnDeviceUntilLogin => 'Duk abin da ke ƙasa yana ajiye a wannan na\'ura har sai ka yi hakan.';
+  String get savedOnDeviceUntilLogin =>
+      'Duk abin da ke ƙasa yana ajiye a wannan na\'ura har sai ka yi hakan.';
 
   @override
   String get yourProfile => 'Profile ɗinka';
@@ -1643,7 +1689,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get nothingToPreview => 'Babu abin da za a yi samfoti';
 
   @override
-  String get writeSomethingHint => 'Rubuta wani abu… AniList markdown yana aiki a nan';
+  String get writeSomethingHint =>
+      'Rubuta wani abu… AniList markdown yana aiki a nan';
 
   @override
   String get privateMessage => 'Saƙo na sirri';
@@ -1879,7 +1926,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get querySize => 'Girman query';
 
   @override
-  String get querySizeDesc => 'Babban query ɗaya yana ɗora kowane layi (da cikakken profile) a buƙata ɗaya. Rarrabe queries suna aika ƙaramar buƙata ga kowane layi ko ɓangaren profile: kowanne yana da sauri kuma ɓangarorin suna bayyana yayin da suke zuwa.';
+  String get querySizeDesc =>
+      'Babban query ɗaya yana ɗora kowane layi (da cikakken profile) a buƙata ɗaya. Rarrabe queries suna aika ƙaramar buƙata ga kowane layi ko ɓangaren profile: kowanne yana da sauri kuma ɓangarorin suna bayyana yayin da suke zuwa.';
 
   @override
   String get oneBig => 'Babba ɗaya';
@@ -1910,7 +1958,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get accountOptions => 'Zaɓuɓɓukan asusu';
 
   @override
-  String get accountOptionsDesc => 'Sunaye, tsarin maki, tsarin jeri, sanarwa da sauransu';
+  String get accountOptionsDesc =>
+      'Sunaye, tsarin maki, tsarin jeri, sanarwa da sauransu';
 
   @override
   String get anilistAccountOptions => 'Zaɓuɓɓukan asusun AniList';
@@ -1922,13 +1971,15 @@ class AppLocalizationsHa extends AppLocalizations {
   String get hidePrivateEntries => 'Ɓoye shigarwa na sirri';
 
   @override
-  String get hidePrivateEntriesDesc => 'Kiyaye shigarwar da aka yi wa alama ta sirri a AniList daga feed';
+  String get hidePrivateEntriesDesc =>
+      'Kiyaye shigarwar da aka yi wa alama ta sirri a AniList daga feed';
 
   @override
   String get anilistExcludeList => 'Exclude your list';
 
   @override
-  String get anilistExcludeListDesc => 'Keep titles already on your AniList out of the anime and manga pages';
+  String get anilistExcludeListDesc =>
+      'Keep titles already on your AniList out of the anime and manga pages';
 
   @override
   String get anilistProfile => 'Profile ɗin AniList';
@@ -1937,7 +1988,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get refreshFromAnilist => 'Sabunta daga AniList';
 
   @override
-  String get couldNotUpdateAnilistSettings => 'An kasa sabunta saitunan AniList';
+  String get couldNotUpdateAnilistSettings =>
+      'An kasa sabunta saitunan AniList';
 
   @override
   String get sectionNames => 'Sunaye';
@@ -1946,7 +1998,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get titleLanguage => 'Harshen take';
 
   @override
-  String get titleLanguageDesc => 'Yadda ake rubuta take a ko\'ina, misali Attack on Titan / Shingeki no Kyojin / 進撃の巨人.';
+  String get titleLanguageDesc =>
+      'Yadda ake rubuta take a ko\'ina, misali Attack on Titan / Shingeki no Kyojin / 進撃の巨人.';
 
   @override
   String get staffCharacterNames => 'Sunayen ma\'aikata da haruffa';
@@ -1988,7 +2041,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get airingNotifications => 'Sanarwar fitowa';
 
   @override
-  String get airingNotificationsDesc => 'A sanar da kai idan episode na shirin da kake bi ya fito';
+  String get airingNotificationsDesc =>
+      'A sanar da kai idan episode na shirin da kake bi ya fito';
 
   @override
   String get displayAdultContent => 'Nuna abun ciki na manya';
@@ -2000,7 +2054,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get restrictMessages => 'Taƙaita saƙonni ga waɗanda kake bi';
 
   @override
-  String get restrictMessagesDesc => 'Waɗanda kake bi ne kawai za su iya yi maka saƙo';
+  String get restrictMessagesDesc =>
+      'Waɗanda kake bi ne kawai za su iya yi maka saƙo';
 
   @override
   String get sectionServices => 'Sabis-sabis';
@@ -2032,7 +2087,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get importLists => 'Shigo da jerin sunaye';
 
   @override
-  String get importListsDesc => 'Daga ajiyar baya ta Aniyomi, Mihon / Tachiyomi ko Kotatsu';
+  String get importListsDesc =>
+      'Daga ajiyar baya ta Aniyomi, Mihon / Tachiyomi ko Kotatsu';
 
   @override
   String get exportLists => 'Fitar da jerin sunaye';
@@ -2121,10 +2177,12 @@ class AppLocalizationsHa extends AppLocalizations {
   String get couldntLoad => 'An kasa ɗorawa';
 
   @override
-  String get progressStyleHint => 'Pill da bar suna kan poster; a waje yana nuna ƙidayar a matsayin rubutu kawai — zaɓi ɗaya.';
+  String get progressStyleHint =>
+      'Pill da bar suna kan poster; a waje yana nuna ƙidayar a matsayin rubutu kawai — zaɓi ɗaya.';
 
   @override
-  String get nixManagedUpdate => 'Nix ne ke sarrafa wannan build — gudanar da \"nix flake update\" a flake ɗinka ka sake build maimakon sabuntawa daga nan';
+  String get nixManagedUpdate =>
+      'Nix ne ke sarrafa wannan build — gudanar da \"nix flake update\" a flake ɗinka ka sake build maimakon sabuntawa daga nan';
 
   @override
   String autoUpdateFailed(String error) {
@@ -2152,10 +2210,12 @@ class AppLocalizationsHa extends AppLocalizations {
   String get sort => 'Tsara';
 
   @override
-  String get chooseBackupDialog => 'Zaɓi ajiyar baya ta Aniyomi, Mihon ko Kotatsu';
+  String get chooseBackupDialog =>
+      'Zaɓi ajiyar baya ta Aniyomi, Mihon ko Kotatsu';
 
   @override
-  String get importListsHint => 'Kawo ɗakin karatu daga Aniyomi, Mihon / Tachiyomi ko Kotatsu. Ana kiyaye take, covers, ci gaba da rukunai.';
+  String get importListsHint =>
+      'Kawo ɗakin karatu daga Aniyomi, Mihon / Tachiyomi ko Kotatsu. Ana kiyaye take, covers, ci gaba da rukunai.';
 
   @override
   String get chooseBackupFile => 'Zaɓi fayil ɗin ajiyar baya';
@@ -2174,7 +2234,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get mergeWithExisting => 'Haɗa da jerin da ke akwai';
 
   @override
-  String get mergeWithExistingDesc => 'Yana kiyaye abin da kake da shi; idan a kashe, yana maye gurbin take masu dacewa';
+  String get mergeWithExistingDesc =>
+      'Yana kiyaye abin da kake da shi; idan a kashe, yana maye gurbin take masu dacewa';
 
   @override
   String get chooseAnother => 'Zaɓi wani';
@@ -2206,7 +2267,8 @@ class AppLocalizationsHa extends AppLocalizations {
   }
 
   @override
-  String get nothingInLocalLists => 'Babu komai a jerin sunayenka na gida tukuna.';
+  String get nothingInLocalLists =>
+      'Babu komai a jerin sunayenka na gida tukuna.';
 
   @override
   String exportsSummary(int anime, int manga) {
@@ -2450,7 +2512,8 @@ class AppLocalizationsHa extends AppLocalizations {
   }
 
   @override
-  String get localEntryNote => 'Wannan take yana jerin gidanka ne kawai a wannan na\'ura. An kashe gyara a nan saboda yana iya karo da jerin asusunka; amma har yanzu za ka iya cire shi.';
+  String get localEntryNote =>
+      'Wannan take yana jerin gidanka ne kawai a wannan na\'ura. An kashe gyara a nan saboda yana iya karo da jerin asusunka; amma har yanzu za ka iya cire shi.';
 
   @override
   String get cardPresetPoster => 'Poster';
@@ -2681,10 +2744,12 @@ class AppLocalizationsHa extends AppLocalizations {
   String get trendingShowsWeek => 'Shirye-shirye masu tashe a wannan mako';
 
   @override
-  String get mostWatchedMoviesMonth => 'Fina-finan da aka fi kallo a wannan wata';
+  String get mostWatchedMoviesMonth =>
+      'Fina-finan da aka fi kallo a wannan wata';
 
   @override
-  String get mostWatchedShowsMonth => 'Shirye-shiryen da aka fi kallo a wannan wata';
+  String get mostWatchedShowsMonth =>
+      'Shirye-shiryen da aka fi kallo a wannan wata';
 
   @override
   String get trendingThisWeek => 'Masu tashe a wannan mako';
@@ -2696,7 +2761,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get repoLinksAdded => 'An ƙara hanyoyin repo cikin nasara!';
 
   @override
-  String get errorGettingAnilistData => 'Kuskure wajen samun bayanai daga AniList.';
+  String get errorGettingAnilistData =>
+      'Kuskure wajen samun bayanai daga AniList.';
 
   @override
   String get navInfo => 'BAYANI';
@@ -2914,7 +2980,8 @@ class AppLocalizationsHa extends AppLocalizations {
   }
 
   @override
-  String get deletePluginMessage => 'Ka tabbata kana so ka share wannan plugin?';
+  String get deletePluginMessage =>
+      'Ka tabbata kana so ka share wannan plugin?';
 
   @override
   String pluginDeleted(String name) {
@@ -2997,25 +3064,29 @@ class AppLocalizationsHa extends AppLocalizations {
   String get syncMainService => 'Babban sabis';
 
   @override
-  String get syncMainServiceDesc => 'Jerinsa ne tushen gaskiya; ana sabunta kowane sabis da ka shiga don ya yi daidai';
+  String get syncMainServiceDesc =>
+      'Jerinsa ne tushen gaskiya; ana sabunta kowane sabis da ka shiga don ya yi daidai';
 
   @override
   String get syncAuto => 'Daidaitawa ta kai tsaye';
 
   @override
-  String get syncAutoDesc => 'Ɗauko da daidaita a bango lokacin da app ya buɗe da kowane minti 30';
+  String get syncAutoDesc =>
+      'Ɗauko da daidaita a bango lokacin da app ya buɗe da kowane minti 30';
 
   @override
   String get syncAddMissing => 'Ƙara shigarwar da suka ɓace';
 
   @override
-  String get syncAddMissingDesc => 'Ƙara kuma shigarwar da ɗayan sabis ɗin ba shi da su tukuna';
+  String get syncAddMissingDesc =>
+      'Ƙara kuma shigarwar da ɗayan sabis ɗin ba shi da su tukuna';
 
   @override
   String get syncOnlyForward => 'Kiyaye ci gaba mafi nisa';
 
   @override
-  String get syncOnlyForwardDesc => 'Kar a rage ci gaban sabis da ya riga ya wuce';
+  String get syncOnlyForwardDesc =>
+      'Kar a rage ci gaban sabis da ya riga ya wuce';
 
   @override
   String get syncFetch => 'Ɗauko';
@@ -3033,7 +3104,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get syncResume => 'Ci gaba';
 
   @override
-  String get syncNothingToSync => 'Ba za a iya daidaita wannan sabis ɗin ba don wannan nau\'in';
+  String get syncNothingToSync =>
+      'Ba za a iya daidaita wannan sabis ɗin ba don wannan nau\'in';
 
   @override
   String get syncNoTargets => 'Shiga wani sabis don daidaitawa da shi';
@@ -3045,7 +3117,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get syncComparing => 'Ana kwatanta jerin sunaye';
 
   @override
-  String get syncIntro => 'Zaɓi babban sabis ka danna Ɗauko. Ana tambayar kowane sabis sau ɗaya don jerinka, sannan a kwatanta da babban.';
+  String get syncIntro =>
+      'Zaɓi babban sabis ka danna Ɗauko. Ana tambayar kowane sabis sau ɗaya don jerinka, sannan a kwatanta da babban.';
 
   @override
   String get syncStateSynced => 'An daidaita';
@@ -3117,7 +3190,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get syncOnEdit => 'Daidaita canje-canje nan take';
 
   @override
-  String get syncOnEditDesc => 'Aika kowane sabuntawar ci gaba da gyaran jeri zuwa sauran sabis ɗinka da kake ciki nan take';
+  String get syncOnEditDesc =>
+      'Aika kowane sabuntawar ci gaba da gyaran jeri zuwa sauran sabis ɗinka da kake ciki nan take';
 
   @override
   String syncPushed(String services) {
@@ -3130,13 +3204,15 @@ class AppLocalizationsHa extends AppLocalizations {
   }
 
   @override
-  String get syncRateLimited => 'An iyakance buƙatu, a sake gwadawa nan da ɗan lokaci';
+  String get syncRateLimited =>
+      'An iyakance buƙatu, a sake gwadawa nan da ɗan lokaci';
 
   @override
   String get syncAhead => 'Duk wanda ya riga';
 
   @override
-  String get syncAheadDesc => 'Ta bangarori biyu: ga kowane take, shigarwar da ta fi nisa ce ke nasara kuma a kwafe ta zuwa sauran sabis ɗinka';
+  String get syncAheadDesc =>
+      'Ta bangarori biyu: ga kowane take, shigarwar da ta fi nisa ce ke nasara kuma a kwafe ta zuwa sauran sabis ɗinka';
 
   @override
   String syncAheadFrom(String service) {
@@ -3147,7 +3223,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get syncConfirm => 'Duba kafin daidaitawa';
 
   @override
-  String get syncConfirmDesc => 'Nuna abin da Daidaita duka zai canza da buƙatu nawa yake bukata';
+  String get syncConfirmDesc =>
+      'Nuna abin da Daidaita duka zai canza da buƙatu nawa yake bukata';
 
   @override
   String get syncPreviewTitle => 'A shirye don daidaitawa';
@@ -3207,13 +3284,15 @@ class AppLocalizationsHa extends AppLocalizations {
   String get syncFailedReason => 'Dalilin gazawa';
 
   @override
-  String get syncSkippedHint => 'Ana barin abubuwan da aka tsallake, ko bayan an sake ɗauko';
+  String get syncSkippedHint =>
+      'Ana barin abubuwan da aka tsallake, ko bayan an sake ɗauko';
 
   @override
   String get commentsRules => 'Dokokin yin sharhi';
 
   @override
-  String get commentsRulesBody => 'DUK WANDA YA KARYA KOWACE DOKA = A KORE SHI\n\n1. Babu wariyar launin fata, nuna bambanci ko maganganun ƙiyayya\n2. Babu spam ko tallata kai\n3. Babu abun ciki na NSFW kwata-kwata\n4. Turanci kawai, babu togaciya\n5. Babu kwaikwayon wani, cin zarafi ko zagi\n6. Babu abun ciki na haram ko rashin mutunci mai tsanani ga kowace fandom\n7. Kar ka nema ko ka raba wuraren ajiya ko extensions\n8. Spoilers kawai da alamar spoiler da gargaɗi\n9. Babu maganganun lalata ko marasa dacewa game da haruffa ƙananan yara\n10. Idan ba daidai ba ne, kar ka saka shi!';
+  String get commentsRulesBody =>
+      'DUK WANDA YA KARYA KOWACE DOKA = A KORE SHI\n\n1. Babu wariyar launin fata, nuna bambanci ko maganganun ƙiyayya\n2. Babu spam ko tallata kai\n3. Babu abun ciki na NSFW kwata-kwata\n4. Turanci kawai, babu togaciya\n5. Babu kwaikwayon wani, cin zarafi ko zagi\n6. Babu abun ciki na haram ko rashin mutunci mai tsanani ga kowace fandom\n7. Kar ka nema ko ka raba wuraren ajiya ko extensions\n8. Spoilers kawai da alamar spoiler da gargaɗi\n9. Babu maganganun lalata ko marasa dacewa game da haruffa ƙananan yara\n10. Idan ba daidai ba ne, kar ka saka shi!';
 
   @override
   String get commentsRulesAccept => 'Na gane';
@@ -3379,19 +3458,22 @@ class AppLocalizationsHa extends AppLocalizations {
   String get commentsSignIn => 'Shiga AniList don karantawa da rubuta sharhi';
 
   @override
-  String get commentsSignInMessage => 'Ana raba sharhi tsakanin kowane sabis kuma suna amfani da asusun AniList naka.';
+  String get commentsSignInMessage =>
+      'Ana raba sharhi tsakanin kowane sabis kuma suna amfani da asusun AniList naka.';
 
   @override
   String get commentsUnavailable => 'Babu sharhi ga wannan take';
 
   @override
-  String get commentsUnavailableMessage => 'Ba a iya daidaita shi da shigarwar AniList ba.';
+  String get commentsUnavailableMessage =>
+      'Ba a iya daidaita shi da shigarwar AniList ba.';
 
   @override
   String get commentsDisabled => 'An kashe sharhi';
 
   @override
-  String get commentsDisabledMessage => 'Za ka iya sake kunna su a Saituna › Gabaɗaya.';
+  String get commentsDisabledMessage =>
+      'Za ka iya sake kunna su a Saituna › Gabaɗaya.';
 
   @override
   String get commentsOffline => 'An kasa ɗora sharhi';
@@ -3409,13 +3491,15 @@ class AppLocalizationsHa extends AppLocalizations {
   String get commentsSettingEnabled => 'Sharhi';
 
   @override
-  String get commentsSettingEnabledDesc => 'Nuna tab ɗin Sharhi a take kuma shiga sabar sharhi da asusun AniList naka';
+  String get commentsSettingEnabledDesc =>
+      'Nuna tab ɗin Sharhi a take kuma shiga sabar sharhi da asusun AniList naka';
 
   @override
   String get commentsSettingAlerts => 'Sanarwar amsa';
 
   @override
-  String get commentsSettingAlertsDesc => 'A sanar da ni idan wani ya amsa sharhina';
+  String get commentsSettingAlertsDesc =>
+      'A sanar da ni idan wani ya amsa sharhina';
 
   @override
   String get commentsNoticeReplyTitle => 'Sabuwar amsa ga sharhi';
@@ -3441,10 +3525,12 @@ class AppLocalizationsHa extends AppLocalizations {
   String get barcodeTooltip => 'Nemo manga ko novel ta barcode ɗinsa';
 
   @override
-  String get barcodeIntro => 'Nuna kyamara ga barcode a bayan juzu\'i, ko rubuta ISBN ɗinsa.';
+  String get barcodeIntro =>
+      'Nuna kyamara ga barcode a bayan juzu\'i, ko rubuta ISBN ɗinsa.';
 
   @override
-  String get barcodeIntroManual => 'Rubuta ISBN da aka buga a sama da barcode a bayan juzu\'i.';
+  String get barcodeIntroManual =>
+      'Rubuta ISBN da aka buga a sama da barcode a bayan juzu\'i.';
 
   @override
   String get barcodeIsbnHint => 'ISBN';
@@ -3458,7 +3544,8 @@ class AppLocalizationsHa extends AppLocalizations {
   }
 
   @override
-  String get barcodeCameraDenied => 'Kyamara ba ta samu ba. A ba da izinin kyamara ko a rubuta ISBN maimakon haka.';
+  String get barcodeCameraDenied =>
+      'Kyamara ba ta samu ba. A ba da izinin kyamara ko a rubuta ISBN maimakon haka.';
 
   @override
   String get themesTitle => 'Openings & endings';
@@ -3509,7 +3596,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get sauceTitle => 'Nemo tushe';
 
   @override
-  String get sauceIntro => 'Ɗora shafin manga ko zane, ko manna hanyar haɗinsa, don gano daga ina ya fito.';
+  String get sauceIntro =>
+      'Ɗora shafin manga ko zane, ko manna hanyar haɗinsa, don gano daga ina ya fito.';
 
   @override
   String get sauceKeyTitle => 'SauceNAO API key';
@@ -3641,7 +3729,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get imageSearchTooltip => 'Nemo anime daga screenshot';
 
   @override
-  String get imageSearchIntro => 'Zaɓi screenshot ko manna hanyar hoto kuma trace.moe zai nemo episode da lokacin da ya fito.';
+  String get imageSearchIntro =>
+      'Zaɓi screenshot ko manna hanyar hoto kuma trace.moe zai nemo episode da lokacin da ya fito.';
 
   @override
   String get imageSearchPick => 'Zaɓi hoto';
@@ -3733,10 +3822,12 @@ class AppLocalizationsHa extends AppLocalizations {
   String get groupsLeave => 'Bar ƙungiya';
 
   @override
-  String get groupsLeaveAsk => 'Ba za ka ƙara ganin saƙonnin wannan ƙungiya a feed ɗinka ba.';
+  String get groupsLeaveAsk =>
+      'Ba za ka ƙara ganin saƙonnin wannan ƙungiya a feed ɗinka ba.';
 
   @override
-  String get groupsJoinFailed => 'An kasa shiga wannan ƙungiya, mai yiwuwa da gayyata kawai ake shiga';
+  String get groupsJoinFailed =>
+      'An kasa shiga wannan ƙungiya, mai yiwuwa da gayyata kawai ake shiga';
 
   @override
   String get groupsLeaveFailed => 'An kasa barin wannan ƙungiya';
@@ -3834,7 +3925,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get notificationsNoServices => 'Babu sabis da ka shiga mai sanarwa';
 
   @override
-  String get notificationsNoServicesMessage => 'Shiga sabis da ke aika sanarwa kuma za su bayyana a nan.';
+  String get notificationsNoServicesMessage =>
+      'Shiga sabis da ke aika sanarwa kuma za su bayyana a nan.';
 
   @override
   String get notificationsEmptyKind => 'Babu komai a wannan rukuni tukuna';
@@ -3843,7 +3935,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get notificationsCommentsEmpty => 'Babu sanarwar sharhi';
 
   @override
-  String get notificationsCommentsEmptyMessage => 'Amsoshi ga sharhinka da sanarwa daga Dantotsu suna bayyana a nan.';
+  String get notificationsCommentsEmptyMessage =>
+      'Amsoshi ga sharhinka da sanarwa daga Dantotsu suna bayyana a nan.';
 
   @override
   String get notificationsSettings => 'Saitunan sanarwa';
@@ -3871,7 +3964,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get notificationsTestSent => 'An aika sanarwar gwaji';
 
   @override
-  String get notificationsTestDenied => 'Ba a yarda da sanarwa ga Dartotsu ba. Kunna su a saitunan system.';
+  String get notificationsTestDenied =>
+      'Ba a yarda da sanarwa ga Dartotsu ba. Kunna su a saitunan system.';
 
   @override
   String get notificationsTestHint => 'Danna ka riƙe don aika sanarwar gwaji';
@@ -3891,7 +3985,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get imageSearchQuota => 'Iyakar bincike ta ƙare';
 
   @override
-  String get imageSearchBusy => 'Buƙatu da yawa, a sake gwadawa nan da ɗan lokaci';
+  String get imageSearchBusy =>
+      'Buƙatu da yawa, a sake gwadawa nan da ɗan lokaci';
 
   @override
   String imageSearchFailed(int code) {
@@ -3907,7 +4002,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get reactionsTitle => 'Martani';
 
   @override
-  String get reactionsNeedEntry => 'Ƙara wannan take a jerinka kafin yin martani';
+  String get reactionsNeedEntry =>
+      'Ƙara wannan take a jerinka kafin yin martani';
 
   @override
   String get reactionsAdd => 'Ƙara martani';
@@ -3925,7 +4021,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get settingsWatch => 'Kalla & karanta';
 
   @override
-  String get settingsWatchDesc => 'Jerin episode, daidaita tushe da bayanan episode';
+  String get settingsWatchDesc =>
+      'Jerin episode, daidaita tushe da bayanan episode';
 
   @override
   String get watchSettingsLayout => 'Jerin episode';
@@ -3949,31 +4046,36 @@ class AppLocalizationsHa extends AppLocalizations {
   String get watchCompactView => 'Ƙarami';
 
   @override
-  String get watchDefaultLayoutDesc => 'Yadda ake tsara episodes da babuka har sai ka canza shi ga wani take';
+  String get watchDefaultLayoutDesc =>
+      'Yadda ake tsara episodes da babuka har sai ka canza shi ga wani take';
 
   @override
   String get watchChunkSize => 'Girman kewayo';
 
   @override
-  String get watchChunkSizeDesc => 'Episodes ko babuka nawa kowane tab na kewayo ke ɗauka';
+  String get watchChunkSizeDesc =>
+      'Episodes ko babuka nawa kowane tab na kewayo ke ɗauka';
 
   @override
   String get watchShowDescription => 'Nuna bayani';
 
   @override
-  String get watchShowDescriptionDesc => 'Nuna taƙaicin episode a ƙarƙashin kowane take a tsarin jeri';
+  String get watchShowDescriptionDesc =>
+      'Nuna taƙaicin episode a ƙarƙashin kowane take a tsarin jeri';
 
   @override
   String get watchShowFiller => 'Nuna episodes na filler';
 
   @override
-  String get watchShowFillerDesc => 'A kashe don ɓoye episodes da aka yi wa alama filler';
+  String get watchShowFillerDesc =>
+      'A kashe don ɓoye episodes da aka yi wa alama filler';
 
   @override
   String get watchBlurUnwatched => 'Ɓoye hotunan spoiler';
 
   @override
-  String get watchBlurUnwatchedDesc => 'Dusashe hoton episodes da ba ka kalla ba tukuna';
+  String get watchBlurUnwatchedDesc =>
+      'Dusashe hoton episodes da ba ka kalla ba tukuna';
 
   @override
   String get watchResumeShelf => 'Shiryayyen ci gaba';
@@ -3985,13 +4087,15 @@ class AppLocalizationsHa extends AppLocalizations {
   String get watchMarkOnLongPress => 'Dogon danna yana yi wa ci gaba alama';
 
   @override
-  String get watchMarkOnLongPressDesc => 'Danna ka riƙe episode ko babi don yi masa alama an kalla ko ba a kalla ba';
+  String get watchMarkOnLongPressDesc =>
+      'Danna ka riƙe episode ko babi don yi masa alama an kalla ko ba a kalla ba';
 
   @override
   String get watchMatching => 'Daidaita tushe';
 
   @override
-  String get watchMatchingDesc => 'Mafi kusa yana ɗaukar mafi kyawun sakamakon bincike. Daidai kawai yana karɓar take mai kama da juna kuma ya bar sauran ka zaɓa.';
+  String get watchMatchingDesc =>
+      'Mafi kusa yana ɗaukar mafi kyawun sakamakon bincike. Daidai kawai yana karɓar take mai kama da juna kuma ya bar sauran ka zaɓa.';
 
   @override
   String get watchMatchClosest => 'Mafi kusa';
@@ -4000,28 +4104,34 @@ class AppLocalizationsHa extends AppLocalizations {
   String get watchMatchExact => 'Daidai kawai';
 
   @override
-  String get watchMetadataDesc => 'Daga ina take na episode, taƙaici, hotuna, ranakun fitowa da alamun filler suke zuwa. Ja don saita fifiko; tushen farko mai ƙima shi ne yake nasara.';
+  String get watchMetadataDesc =>
+      'Daga ina take na episode, taƙaici, hotuna, ranakun fitowa da alamun filler suke zuwa. Ja don saita fifiko; tushen farko mai ƙima shi ne yake nasara.';
 
   @override
-  String get watchMetaAniZipDesc => 'Take na episode, taƙaici, hotuna da ranakun fitowa';
+  String get watchMetaAniZipDesc =>
+      'Take na episode, taƙaici, hotuna da ranakun fitowa';
 
   @override
   String get watchMetaKitsuDesc => 'Take na episode, bayani da hotuna';
 
   @override
-  String get watchMetaSimklDesc => 'Take na episode, bayani, hotuna da ranakun fitowa';
+  String get watchMetaSimklDesc =>
+      'Take na episode, bayani, hotuna da ranakun fitowa';
 
   @override
-  String get watchMetaAniListDesc => 'Take na episodes na streaming, hotuna da jadawalin fitowa';
+  String get watchMetaAniListDesc =>
+      'Take na episodes na streaming, hotuna da jadawalin fitowa';
 
   @override
-  String get watchMetaTenraiDesc => 'Take na episodes na MyAnimeList, ranakun fitowa, alamun filler da recap ta Tenrai';
+  String get watchMetaTenraiDesc =>
+      'Take na episodes na MyAnimeList, ranakun fitowa, alamun filler da recap ta Tenrai';
 
   @override
   String get watchClearMetadata => 'Sabunta bayanan episode';
 
   @override
-  String get watchClearMetadataDesc => 'Manta bayanan episode da aka adana don a sake ɗauko su';
+  String get watchClearMetadataDesc =>
+      'Manta bayanan episode da aka adana don a sake ɗauko su';
 
   @override
   String get watchMetadataCleared => 'Za a sake ɗauko bayanan episode';
@@ -4168,7 +4278,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get watchOpenWebView => 'Buɗe a web view';
 
   @override
-  String get watchOpenWebViewDesc => 'Warware binciken Cloudflare ko shiga; ana raba cookies da buƙatun tushe';
+  String get watchOpenWebViewDesc =>
+      'Warware binciken Cloudflare ko shiga; ana raba cookies da buƙatun tushe';
 
   @override
   String watchCookieCount(int count, String host) {
@@ -4194,10 +4305,12 @@ class AppLocalizationsHa extends AppLocalizations {
   String get watchClearanceSession => 'yana dawwama har app ya rufe';
 
   @override
-  String get watchAgentShared => 'Buƙatu suna amfani da user agent na web view, wanda Cloudflare ke dubawa';
+  String get watchAgentShared =>
+      'Buƙatu suna amfani da user agent na web view, wanda Cloudflare ke dubawa';
 
   @override
-  String get watchAgentCustom => 'An saita user agent na musamman, don haka izinin Cloudflare daga web view na iya a ƙi shi';
+  String get watchAgentCustom =>
+      'An saita user agent na musamman, don haka izinin Cloudflare daga web view na iya a ƙi shi';
 
   @override
   String get watchTestConnection => 'Gwada haɗi';
@@ -4243,7 +4356,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get settingsPlayer => 'Mai kunnawa';
 
   @override
-  String get settingsPlayerDesc => 'Kunnawa, subtitles, shaders, mpv da buɗe fayiloli';
+  String get settingsPlayerDesc =>
+      'Kunnawa, subtitles, shaders, mpv da buɗe fayiloli';
 
   @override
   String get playerSettingsTitle => 'Saitunan mai kunnawa';
@@ -4297,13 +4411,15 @@ class AppLocalizationsHa extends AppLocalizations {
   String get playerSkipDuration => 'Tsawon maɓallin tsallakewa';
 
   @override
-  String get playerSkipDurationDesc => 'Daƙiƙun da maɓallin tsallakewa ke tsalle a wajen openings da endings';
+  String get playerSkipDurationDesc =>
+      'Daƙiƙun da maɓallin tsallakewa ke tsalle a wajen openings da endings';
 
   @override
   String get playerSeekDuration => 'Danna sau biyu don tsalle';
 
   @override
-  String get playerSeekDurationDesc => 'Daƙiƙun tsalle idan an danna sau biyu ko maɓallin kibiya';
+  String get playerSeekDurationDesc =>
+      'Daƙiƙun tsalle idan an danna sau biyu ko maɓallin kibiya';
 
   @override
   String get playerAutoPlay => 'Kunna na gaba kai tsaye';
@@ -4339,31 +4455,36 @@ class AppLocalizationsHa extends AppLocalizations {
   String get playerAutoSkipRecap => 'Tsallake recaps';
 
   @override
-  String get playerAutoSkipDesc => 'Tsallake nan take da ya fara, ta amfani da AniSkip da timestamps na stream';
+  String get playerAutoSkipDesc =>
+      'Tsallake nan take da ya fara, ta amfani da AniSkip da timestamps na stream';
 
   @override
   String get playerSkipOnce => 'Tsallake sau ɗaya kawai';
 
   @override
-  String get playerSkipOnceDesc => 'Kar a sake tsallake sashe ɗaya idan ka koma cikinsa';
+  String get playerSkipOnceDesc =>
+      'Kar a sake tsallake sashe ɗaya idan ka koma cikinsa';
 
   @override
   String get playerAdjustBrightness => 'Alamar haske';
 
   @override
-  String get playerAdjustBrightnessDesc => 'Zazzage sama da ƙasa a rabin allon na dama';
+  String get playerAdjustBrightnessDesc =>
+      'Zazzage sama da ƙasa a rabin allon na dama';
 
   @override
   String get playerAdjustVolume => 'Alamar ƙarar sauti';
 
   @override
-  String get playerAdjustVolumeDesc => 'Zazzage sama da ƙasa a rabin allon na hagu';
+  String get playerAdjustVolumeDesc =>
+      'Zazzage sama da ƙasa a rabin allon na hagu';
 
   @override
   String get playerHoldToSpeed => 'Riƙe don ƙara gudu';
 
   @override
-  String get playerHoldToSpeedDesc => 'Danna ka riƙe bidiyo don kunna da sauri, ja a gefe don canza gudu';
+  String get playerHoldToSpeedDesc =>
+      'Danna ka riƙe bidiyo don kunna da sauri, ja a gefe don canza gudu';
 
   @override
   String get playerThumbless => 'Seek bar mai kauri';
@@ -4375,7 +4496,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get playerShowSubtitles => 'Nuna subtitles';
 
   @override
-  String get playerShowSubtitlesDesc => 'A kashe don ɓoye duk hanyoyin subtitle';
+  String get playerShowSubtitlesDesc =>
+      'A kashe don ɓoye duk hanyoyin subtitle';
 
   @override
   String get playerSubtitleLanguage => 'Harshen subtitle da aka fi so';
@@ -4405,7 +4527,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get playerLibass => 'Yi amfani da libass';
 
   @override
-  String get playerLibassDesc => 'Nuna subtitles na .ass masu salo. Girma, launi da rubutun da ke sama ba za su yi aiki ba';
+  String get playerLibassDesc =>
+      'Nuna subtitles na .ass masu salo. Girma, launi da rubutun da ke sama ba za su yi aiki ba';
 
   @override
   String get playerShaders => 'Shaders';
@@ -4414,7 +4537,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get playerShadersEnable => 'Kunna shaders';
 
   @override
-  String get playerShadersEnableDesc => 'Ƙara inganci da tsabtace hoto da shaders na GLSL kamar Anime4K';
+  String get playerShadersEnableDesc =>
+      'Ƙara inganci da tsabtace hoto da shaders na GLSL kamar Anime4K';
 
   @override
   String get playerShadersOff => 'An kashe shaders';
@@ -4423,7 +4547,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get playerShadersMissing => 'Ba a shigar da Anime4K ba';
 
   @override
-  String get playerShadersMissingDesc => 'Zazzage fakitin shader na Anime4K (kusan 0.8 MB) don amfani da yanayin da aka gina.';
+  String get playerShadersMissingDesc =>
+      'Zazzage fakitin shader na Anime4K (kusan 0.8 MB) don amfani da yanayin da aka gina.';
 
   @override
   String get playerShadersDownload => 'Zazzage Anime4K';
@@ -4504,7 +4629,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get playerShadersImport => 'Shigo da .glsl';
 
   @override
-  String get playerShadersNone => 'Shigo da fayilolin .glsl ko .hook naka kuma yi musu alama don haɗa su';
+  String get playerShadersNone =>
+      'Shigo da fayilolin .glsl ko .hook naka kuma yi musu alama don haɗa su';
 
   @override
   String get playerShadersBadFile => 'Zaɓi fayil ɗin shader na .glsl ko .hook';
@@ -4537,13 +4663,15 @@ class AppLocalizationsHa extends AppLocalizations {
   String get playerBuffer => 'Girman buffer (MB)';
 
   @override
-  String get playerBufferDesc => 'Memory da mai kunnawa zai iya amfani da shi don buffer na stream';
+  String get playerBufferDesc =>
+      'Memory da mai kunnawa zai iya amfani da shi don buffer na stream';
 
   @override
   String get playerUseMpvConf => 'Yi amfani da mpv.conf';
 
   @override
-  String get playerUseMpvConfDesc => 'Aiwatar da zaɓuɓɓukan mpv.conf naka idan kunnawa ta fara';
+  String get playerUseMpvConfDesc =>
+      'Aiwatar da zaɓuɓɓukan mpv.conf naka idan kunnawa ta fara';
 
   @override
   String get playerMpvConf => 'mpv.conf';
@@ -4552,7 +4680,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get playerMpvConfEdit => 'Gyara tsarin mpv';
 
   @override
-  String get playerMpvConfDesc => 'Zaɓi ɗaya a kowane layi, kamar --hwdec=auto a mpv.conf na yau da kullum. Ana yin watsi da profiles da ke cikin [brackets].';
+  String get playerMpvConfDesc =>
+      'Zaɓi ɗaya a kowane layi, kamar --hwdec=auto a mpv.conf na yau da kullum. Ana yin watsi da profiles da ke cikin [brackets].';
 
   @override
   String get playerMpvConfSaved => 'An ajiye mpv.conf';
@@ -4561,7 +4690,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get playerUseScripts => 'Yi amfani da scripts na mpv';
 
   @override
-  String get playerUseScriptsDesc => 'Ɗora plugins daga folder na scripts. Suna buƙatar libmpv build mai goyon bayan Lua ko JavaScript';
+  String get playerUseScriptsDesc =>
+      'Ɗora plugins daga folder na scripts. Suna buƙatar libmpv build mai goyon bayan Lua ko JavaScript';
 
   @override
   String get playerScripts => 'Scripts na mpv';
@@ -4573,19 +4703,22 @@ class AppLocalizationsHa extends AppLocalizations {
   String get playerScriptsAdd => 'Ƙara script';
 
   @override
-  String get playerScriptsDesc => 'Ana ɗora plugins na Lua, JavaScript da na asali da aka sa a nan idan kunnawa ta fara.';
+  String get playerScriptsDesc =>
+      'Ana ɗora plugins na Lua, JavaScript da na asali da aka sa a nan idan kunnawa ta fara.';
 
   @override
   String get playerScriptsNone => 'Babu scripts tukuna';
 
   @override
-  String get playerScriptsBadFile => 'Zaɓi fayil ɗin .lua, .js ko plugin na asali';
+  String get playerScriptsBadFile =>
+      'Zaɓi fayil ɗin .lua, .js ko plugin na asali';
 
   @override
   String get playerTuning => 'Gyaran bidiyo na ci gaba';
 
   @override
-  String get playerTuningDesc => 'Soke sync, caching, scaling da tone mapping. Ƙimar da ba daidai ba na iya lalata kunnawa';
+  String get playerTuningDesc =>
+      'Soke sync, caching, scaling da tone mapping. Ƙimar da ba daidai ba na iya lalata kunnawa';
 
   @override
   String get playerVideoSync => 'Sync na bidiyo';
@@ -4594,7 +4727,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get playerInterpolation => 'Frame interpolation';
 
   @override
-  String get playerInterpolationDesc => 'Motsi mai santsi, yana buƙatar display-resample sync';
+  String get playerInterpolationDesc =>
+      'Motsi mai santsi, yana buƙatar display-resample sync';
 
   @override
   String get playerPitch => 'Gyaran pitch';
@@ -4654,7 +4788,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get playerOpenFolder => 'Buɗe folder';
 
   @override
-  String get playerOpenFolderDesc => 'Kunna kowane bidiyo a folder a matsayin playlist';
+  String get playerOpenFolderDesc =>
+      'Kunna kowane bidiyo a folder a matsayin playlist';
 
   @override
   String get playerNetworkStream => 'Network stream';
@@ -4672,7 +4807,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get playerTorrent => 'Torrent';
 
   @override
-  String get playerTorrentDesc => 'Yi stream na magnet link ko fayil ɗin .torrent';
+  String get playerTorrentDesc =>
+      'Yi stream na magnet link ko fayil ɗin .torrent';
 
   @override
   String get playerMagnetLink => 'Magnet link ko URL na torrent';
@@ -4681,7 +4817,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get playerPickTorrent => 'Zaɓi fayil ɗin .torrent';
 
   @override
-  String get playerTorrentMissing => 'Shigar da torrent addon daga Saituna > Addons tukuna';
+  String get playerTorrentMissing =>
+      'Shigar da torrent addon daga Saituna > Addons tukuna';
 
   @override
   String get playerNoVideos => 'Ba a sami bidiyon da za a iya kunnawa ba';
@@ -4690,7 +4827,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get playerReset => 'Sake saita saitunan mai kunnawa';
 
   @override
-  String get playerResetDesc => 'Mayar da kowane zaɓi na mai kunnawa zuwa tsoho';
+  String get playerResetDesc =>
+      'Mayar da kowane zaɓi na mai kunnawa zuwa tsoho';
 
   @override
   String get playerResetConfirm => 'A sake saita duk saitunan mai kunnawa?';
@@ -4708,7 +4846,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get playerAutoSelect => 'Zaɓin stream kai tsaye';
 
   @override
-  String get playerAutoSelectDesc => 'Zaɓi stream ɗin da ya fi kama da zaɓinka na ƙarshe ga wannan take';
+  String get playerAutoSelectDesc =>
+      'Zaɓi stream ɗin da ya fi kama da zaɓinka na ƙarshe ga wannan take';
 
   @override
   String get playerLoadingStreams => 'Ana neman streams…';
@@ -4726,7 +4865,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get playerTorrentNeeded => 'Wannan stream torrent ne';
 
   @override
-  String get playerTorrentNeededDesc => 'Shigar da torrent addon don kunna magnet links da fayilolin .torrent';
+  String get playerTorrentNeededDesc =>
+      'Shigar da torrent addon don kunna magnet links da fayilolin .torrent';
 
   @override
   String get playerOpenAddons => 'Buɗe addons';
@@ -4777,7 +4917,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get readerPerTitle => 'Wannan take kawai';
 
   @override
-  String get readerPerTitleDesc => 'Kiyaye waɗannan saitunan mai karatu don wannan take kawai';
+  String get readerPerTitleDesc =>
+      'Kiyaye waɗannan saitunan mai karatu don wannan take kawai';
 
   @override
   String get readerSectionReading => 'Karatu';
@@ -4834,13 +4975,15 @@ class AppLocalizationsHa extends AppLocalizations {
   String get readerDoublePage => 'Shafuka biyu';
 
   @override
-  String get readerDoublePageDesc => 'Nuna shafuka biyu gefe da gefe a landscape';
+  String get readerDoublePageDesc =>
+      'Nuna shafuka biyu gefe da gefe a landscape';
 
   @override
   String get readerDoubleTapZoom => 'Danna sau biyu don zuƙowa';
 
   @override
-  String get readerDoubleTapZoomDesc => 'Zuƙowa shafi ciki da waje da danna sau biyu';
+  String get readerDoubleTapZoomDesc =>
+      'Zuƙowa shafi ciki da waje da danna sau biyu';
 
   @override
   String get readerAnimate => 'Animation na shafi';
@@ -4864,7 +5007,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get readerAutoNext => 'Ci gaba zuwa babi na gaba';
 
   @override
-  String get readerAutoNextDesc => 'Ɗora babi na gaba yayin da kake karanta ƙarshen wannan';
+  String get readerAutoNextDesc =>
+      'Ɗora babi na gaba yayin da kake karanta ƙarshen wannan';
 
   @override
   String get readerPreload => 'Preload shafuka';
@@ -4983,7 +5127,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get readerAutoScrollSpeed => 'Saurin gungurawa kai tsaye';
 
   @override
-  String get readerAutoScrollSpeedDesc => 'Yadda shafuka ke gungurawa ko juyawa da kansu';
+  String get readerAutoScrollSpeedDesc =>
+      'Yadda shafuka ke gungurawa ko juyawa da kansu';
 
   @override
   String get readerKeepOn => 'Ci gaba da kunna allo';
@@ -5007,7 +5152,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get readerSaveProgress => 'Ajiye ci gaba';
 
   @override
-  String get readerSaveProgressDesc => 'Tuna shafinka kuma yi wa babuka alamar an karanta';
+  String get readerSaveProgressDesc =>
+      'Tuna shafinka kuma yi wa babuka alamar an karanta';
 
   @override
   String get readerReset => 'Sake saita saitunan mai karatu';
@@ -5074,7 +5220,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get trackProgressYes => 'Ajiye';
 
   @override
-  String get trackProgressReset => 'An sake saita tambayar ajiye ci gaba ga wannan nau\'i, za ta sake tambaya';
+  String get trackProgressReset =>
+      'An sake saita tambayar ajiye ci gaba ga wannan nau\'i, za ta sake tambaya';
 
   @override
   String get trackProgressNo => 'A\'a';
@@ -5092,7 +5239,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get trackProgressSettingManga => 'Bibiyar ci gaban manga da novel';
 
   @override
-  String get trackProgressSettingDesc => 'Abin da za a yi idan ka buɗe episode ko ka gama babi';
+  String get trackProgressSettingDesc =>
+      'Abin da za a yi idan ka buɗe episode ko ka gama babi';
 
   @override
   String get trackProgressAsk => 'Tambaya';
@@ -5107,13 +5255,15 @@ class AppLocalizationsHa extends AppLocalizations {
   String get dantotsuImport => 'Shigo da daga Dantotsu';
 
   @override
-  String get dantotsuImportDesc => 'Karanta ajiyar saitunan Dantotsu (.ani, ko .sani mai rufin asiri)';
+  String get dantotsuImportDesc =>
+      'Karanta ajiyar saitunan Dantotsu (.ani, ko .sani mai rufin asiri)';
 
   @override
   String get dantotsuPick => 'Zaɓi ajiyar baya ta Dantotsu';
 
   @override
-  String get dantotsuNothing => 'Babu abin da za a iya shigowa da shi a wannan fayil';
+  String get dantotsuNothing =>
+      'Babu abin da za a iya shigowa da shi a wannan fayil';
 
   @override
   String get dantotsuApply => 'Shigo da waɗanda aka zaɓa';
@@ -5175,13 +5325,15 @@ class AppLocalizationsHa extends AppLocalizations {
   String get dantotsuPlayer => 'Saurin mai kunnawa da launukan subtitle';
 
   @override
-  String get dantotsuWarning => 'Wannan fayil yana ɗauke da token ɗin shiga. A kiyaye shi a asirce.';
+  String get dantotsuWarning =>
+      'Wannan fayil yana ɗauke da token ɗin shiga. A kiyaye shi a asirce.';
 
   @override
   String get novelIndent => 'Shigar da sakin layi';
 
   @override
-  String get novelIndentDesc => 'Fara kowane sakin layi da indent na layin farko';
+  String get novelIndentDesc =>
+      'Fara kowane sakin layi da indent na layin farko';
 
   @override
   String get novelLetterSpacing => 'Tazarar haruffa';
@@ -5196,13 +5348,15 @@ class AppLocalizationsHa extends AppLocalizations {
   String get kitsuGraphqlDetail => 'Shafukan bayani masu sauri (GraphQL)';
 
   @override
-  String get kitsuGraphqlDetailDesc => 'Ɗora take tare da haruffansa, ma\'aikata da shigarwarka a buƙata ɗaya';
+  String get kitsuGraphqlDetailDesc =>
+      'Ɗora take tare da haruffansa, ma\'aikata da shigarwarka a buƙata ɗaya';
 
   @override
   String get togetherTitle => 'Kallo tare';
 
   @override
-  String get togetherIntro => 'Manna hanyar ɗakin da abokinka ya aiko. Za ka shiga nan take kuma mai kunnawa zai buɗe idan sun fara kallo.';
+  String get togetherIntro =>
+      'Manna hanyar ɗakin da abokinka ya aiko. Za ka shiga nan take kuma mai kunnawa zai buɗe idan sun fara kallo.';
 
   @override
   String get togetherName => 'Sunanka';
@@ -5223,7 +5377,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get togetherPassword => 'Kalmar sirrin sabar (zaɓi)';
 
   @override
-  String get togetherPublicNote => 'Sabobin jama\'a ba su da kalmar sirri kuma ɗakuna a buɗe suke. Yi amfani da dogon sunan ɗaki kuma raba shi da abokai kawai.';
+  String get togetherPublicNote =>
+      'Sabobin jama\'a ba su da kalmar sirri kuma ɗakuna a buɗe suke. Yi amfani da dogon sunan ɗaki kuma raba shi da abokai kawai.';
 
   @override
   String get togetherConnect => 'Haɗa';
@@ -5302,7 +5457,8 @@ class AppLocalizationsHa extends AppLocalizations {
   }
 
   @override
-  String get togetherFollowFailed => 'An kasa buɗe episode na mai masauki. Buɗe da kanka.';
+  String get togetherFollowFailed =>
+      'An kasa buɗe episode na mai masauki. Buɗe da kanka.';
 
   @override
   String get togetherHostRole => 'Karɓi ɗaki';
@@ -5314,7 +5470,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get togetherFollow => 'Bi episode na mai masauki';
 
   @override
-  String get togetherFollowDesc => 'Yana buɗewa da canza episodes kai tsaye idan kuna amfani da sabis ɗaya';
+  String get togetherFollowDesc =>
+      'Yana buɗewa da canza episodes kai tsaye idan kuna amfani da sabis ɗaya';
 
   @override
   String get togetherOpenHost => 'Buɗe episode na mai masauki';
@@ -5334,10 +5491,12 @@ class AppLocalizationsHa extends AppLocalizations {
   String get togetherWaitingHost => 'Ana jiran mai masauki ya fara episode';
 
   @override
-  String get togetherDifferentService => 'Mai masaukin yana kan wani sabis, an kashe daidaitawa';
+  String get togetherDifferentService =>
+      'Mai masaukin yana kan wani sabis, an kashe daidaitawa';
 
   @override
-  String get togetherNoSource => 'Shigar da extension na anime don bin mai masauki';
+  String get togetherNoSource =>
+      'Shigar da extension na anime don bin mai masauki';
 
   @override
   String togetherNoMatch(String source) {
@@ -5386,7 +5545,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get togetherSettingsDesc => 'Shiga ɗakin aboki da hanyar haɗi';
 
   @override
-  String get togetherNoPlayer => 'Buɗe episode kuma zai daidaita da ɗakin kai tsaye. Hira da jerin mambobi suna aiki yanzu.';
+  String get togetherNoPlayer =>
+      'Buɗe episode kuma zai daidaita da ɗakin kai tsaye. Hira da jerin mambobi suna aiki yanzu.';
 
   @override
   String togetherWatching(String name, String file) {
@@ -5397,7 +5557,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get novelBilingual => 'Nuna na asali da fassara';
 
   @override
-  String get novelBilingualDesc => 'Kowane sakin layi yana nuna rubutun asali da fassararsa a ƙasa';
+  String get novelBilingualDesc =>
+      'Kowane sakin layi yana nuna rubutun asali da fassararsa a ƙasa';
 
   @override
   String get novelTranslateTo => 'Fassara zuwa';
@@ -5435,7 +5596,8 @@ class AppLocalizationsHa extends AppLocalizations {
   }
 
   @override
-  String get novelSpeechUnavailable => 'Rubutu zuwa magana ba ya samuwa a wannan na\'ura';
+  String get novelSpeechUnavailable =>
+      'Rubutu zuwa magana ba ya samuwa a wannan na\'ura';
 
   @override
   String get novelSpeechVoice => 'Murya';
@@ -5453,7 +5615,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get novelTapPaging => 'Taɓa gefuna don juya shafi';
 
   @override
-  String get novelTapPagingDesc => 'Taɓa gefen hagu ko dama don gungurawa shafi, tsakiya yana nuna sarrafawa';
+  String get novelTapPagingDesc =>
+      'Taɓa gefen hagu ko dama don gungurawa shafi, tsakiya yana nuna sarrafawa';
 
   @override
   String novelMinutesLeft(int count) {
@@ -5551,7 +5714,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get playerAudioLanguage => 'Harshen sauti da aka fi so';
 
   @override
-  String get playerLanguageOrderHint => 'Raba harsuna da waƙafi. Ana amfani da na farko da aka samu.';
+  String get playerLanguageOrderHint =>
+      'Raba harsuna da waƙafi. Ana amfani da na farko da aka samu.';
 
   @override
   String get playerPip => 'Hoto cikin hoto';
@@ -5563,7 +5727,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get playerAutoPip => 'Hoto cikin hoto idan an fita';
 
   @override
-  String get playerAutoPipDesc => 'Ci gaba da kunnawa a ƙaramar taga idan ka bar app';
+  String get playerAutoPipDesc =>
+      'Ci gaba da kunnawa a ƙaramar taga idan ka bar app';
 
   @override
   String playerAutoPlaying(String title) {
@@ -5584,7 +5749,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get playerPerTitle => 'Wannan take kawai';
 
   @override
-  String get playerPerTitleDesc => 'Kiyaye waɗannan zaɓuɓɓuka ga wannan take kuma bar tsoffinka';
+  String get playerPerTitleDesc =>
+      'Kiyaye waɗannan zaɓuɓɓuka ga wannan take kuma bar tsoffinka';
 
   @override
   String get playerHoldSpeed => 'Saurin riƙewa';
@@ -5599,7 +5765,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get fontImport => 'Shigo da rubutu';
 
   @override
-  String get fontSample => 'Ɗan kyanwa mai ruwan kasa yana tsallake kare mai kasala';
+  String get fontSample =>
+      'Ɗan kyanwa mai ruwan kasa yana tsallake kare mai kasala';
 
   @override
   String get playerSubtitleDelay => 'Jinkirin subtitle';
@@ -5644,7 +5811,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get playerSeekPreview => 'Samfotin seek';
 
   @override
-  String get playerSeekPreviewDesc => 'Nuna ƙaramin samfotin frame a sama da seek bar yayin jan. Yana buɗe decoder na biyu mai ƙaramin resolution, don haka yana amfani da ƙarin data a streams.';
+  String get playerSeekPreviewDesc =>
+      'Nuna ƙaramin samfotin frame a sama da seek bar yayin jan. Yana buɗe decoder na biyu mai ƙaramin resolution, don haka yana amfani da ƙarin data a streams.';
 
   @override
   String get playerSettingsChip => 'Saituna';
@@ -5656,13 +5824,15 @@ class AppLocalizationsHa extends AppLocalizations {
   String get settingsDownloads => 'Zazzagewa';
 
   @override
-  String get settingsDownloadsDesc => 'Episodes na offline, jerin gwano da yanayin offline';
+  String get settingsDownloadsDesc =>
+      'Episodes na offline, jerin gwano da yanayin offline';
 
   @override
   String get downloadsTitle => 'Zazzagewa';
 
   @override
-  String get downloadsOpenDesc => 'Duba jerin gwano da duk abin da aka ajiye a wannan na\'ura';
+  String get downloadsOpenDesc =>
+      'Duba jerin gwano da duk abin da aka ajiye a wannan na\'ura';
 
   @override
   String get downloadTitle => 'Zazzage';
@@ -5689,7 +5859,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get downloadNoSubtitle => 'Babu subtitle';
 
   @override
-  String get downloadHlsNeedsFfmpeg => 'Wannan stream HLS playlist ne. Zazzage shi yana buƙatar FFmpeg addon.';
+  String get downloadHlsNeedsFfmpeg =>
+      'Wannan stream HLS playlist ne. Zazzage shi yana buƙatar FFmpeg addon.';
 
   @override
   String get downloadSourceMissing => 'Ba a shigar da tushen wannan episode ba';
@@ -5734,7 +5905,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get downloadResolving => 'Ana samun stream…';
 
   @override
-  String get downloadUsedFallback => 'Babu stream mai dacewa, an yi amfani da na farko';
+  String get downloadUsedFallback =>
+      'Babu stream mai dacewa, an yi amfani da na farko';
 
   @override
   String get downloadTabQueue => 'Jerin gwano';
@@ -5810,7 +5982,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get downloadParallel => 'Zazzagewa a lokaci guda';
 
   @override
-  String get downloadParallelDesc => 'Yi zazzagewa ɗaya a lokaci ko da yawa tare';
+  String get downloadParallelDesc =>
+      'Yi zazzagewa ɗaya a lokaci ko da yawa tare';
 
   @override
   String get downloadOneByOne => 'Ɗaya bayan ɗaya';
@@ -5819,7 +5992,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get downloadNotifications => 'Sanarwar zazzagewa';
 
   @override
-  String get downloadNotificationsDesc => 'Ci gaba kai tsaye inda system ke goyi, in ba haka ba sanarwa idan zazzagewa ta ƙare';
+  String get downloadNotificationsDesc =>
+      'Ci gaba kai tsaye inda system ke goyi, in ba haka ba sanarwa idan zazzagewa ta ƙare';
 
   @override
   String get downloadNotifyLive => 'Kai tsaye';
@@ -5831,16 +6005,19 @@ class AppLocalizationsHa extends AppLocalizations {
   String get downloadNotifyOff => 'A kashe';
 
   @override
-  String get downloadInfoFile => 'Rubuta fayil ɗin bayani kusa da kowace zazzagewa';
+  String get downloadInfoFile =>
+      'Rubuta fayil ɗin bayani kusa da kowace zazzagewa';
 
   @override
-  String get downloadInfoFileDesc => 'Yana ajiye stream, inganci, subtitle da lokutan tsallakewa a ƙaramin fayil na .json';
+  String get downloadInfoFileDesc =>
+      'Yana ajiye stream, inganci, subtitle da lokutan tsallakewa a ƙaramin fayil na .json';
 
   @override
   String get offlineHeader => 'Offline';
 
   @override
-  String get offlineModeDesc => 'Kai tsaye yana yin offline ne kawai idan app ya fara ba tare da haɗi ba. Kullum yana zama offline har sai ka canza.';
+  String get offlineModeDesc =>
+      'Kai tsaye yana yin offline ne kawai idan app ya fara ba tare da haɗi ba. Kullum yana zama offline har sai ka canza.';
 
   @override
   String get offlineModeOff => 'A kashe';
@@ -5849,16 +6026,19 @@ class AppLocalizationsHa extends AppLocalizations {
   String get offlineModeAlways => 'Kullum';
 
   @override
-  String get offlineModeOn => 'Yanayin offline yana kunne. Ana ajiye canje-canje a nan kuma a aika idan ka dawo online.';
+  String get offlineModeOn =>
+      'Yanayin offline yana kunne. Ana ajiye canje-canje a nan kuma a aika idan ka dawo online.';
 
   @override
-  String get offlineLost => 'Kana offline. Ana ajiye canje-canje a wannan na\'ura';
+  String get offlineLost =>
+      'Kana offline. Ana ajiye canje-canje a wannan na\'ura';
 
   @override
   String get offlineBack => 'An dawo online. Ana daidaita canje-canjenka';
 
   @override
-  String get offlineSaved => 'An ajiye a wannan na\'ura, zai daidaita idan ka kasance online';
+  String get offlineSaved =>
+      'An ajiye a wannan na\'ura, zai daidaita idan ka kasance online';
 
   @override
   String offlineSynced(int count) {
@@ -5895,7 +6075,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get offlineDiscard => 'Yar da';
 
   @override
-  String get downloadNotOffline => 'Ba a zazzage wannan episode ba, don haka ba ya samuwa offline';
+  String get downloadNotOffline =>
+      'Ba a zazzage wannan episode ba, don haka ba ya samuwa offline';
 
   @override
   String get offlineModeChip => 'Offline';
@@ -5932,13 +6113,15 @@ class AppLocalizationsHa extends AppLocalizations {
   String get downloadFfmpegTitle => 'Ana buƙatar FFmpeg addon';
 
   @override
-  String get downloadFfmpegBody => 'Wannan stream HLS playlist ne. FFmpeg addon yana haɗa gutsuttsuransa zuwa fayil ɗin mp4 ɗaya. Ba tare da shi ba, ana ajiye gutsuttsuran a folder na episode kuma a kunna daga can.';
+  String get downloadFfmpegBody =>
+      'Wannan stream HLS playlist ne. FFmpeg addon yana haɗa gutsuttsuransa zuwa fayil ɗin mp4 ɗaya. Ba tare da shi ba, ana ajiye gutsuttsuran a folder na episode kuma a kunna daga can.';
 
   @override
   String get downloadFfmpegInstall => 'Shigar';
 
   @override
-  String get downloadFfmpegInstalling => 'Ana shigar da FFmpeg, wannan na iya ɗaukar lokaci…';
+  String get downloadFfmpegInstalling =>
+      'Ana shigar da FFmpeg, wannan na iya ɗaukar lokaci…';
 
   @override
   String get downloadFinishing => 'Ana haɗa gutsuttsura zuwa fayil ɗaya…';
@@ -5949,7 +6132,8 @@ class AppLocalizationsHa extends AppLocalizations {
   }
 
   @override
-  String get downloadTorrentNoFile => 'Torrent ba shi da fayil ɗin bidiyo da za a zazzage';
+  String get downloadTorrentNoFile =>
+      'Torrent ba shi da fayil ɗin bidiyo da za a zazzage';
 
   @override
   String downloadServiceText(int count) {
@@ -5966,13 +6150,15 @@ class AppLocalizationsHa extends AppLocalizations {
   String get downloadAutoDelete => 'Share zazzagewar da aka kalla';
 
   @override
-  String get downloadAutoDeleteDesc => 'Yana cire zazzagewa idan ci gabanka ya kai wannan episode ko babi';
+  String get downloadAutoDeleteDesc =>
+      'Yana cire zazzagewa idan ci gabanka ya kai wannan episode ko babi';
 
   @override
   String get downloadConnections => 'Haɗi a kowace zazzagewa';
 
   @override
-  String get downloadConnectionsDesc => 'Yana raba babban fayil zuwa sassa da ake ɗauko a lokaci guda. Wasu sabobi suna iyakance wannan.';
+  String get downloadConnectionsDesc =>
+      'Yana raba babban fayil zuwa sassa da ake ɗauko a lokaci guda. Wasu sabobi suna iyakance wannan.';
 
   @override
   String get downloadPlayChoice => 'Kunna daga';
@@ -5990,7 +6176,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get offlineFeedTitle => 'An zazzage a wannan na\'ura';
 
   @override
-  String get offlineFeedEmpty => 'Zazzage wani abu yayin da kake online kuma zai bayyana a nan';
+  String get offlineFeedEmpty =>
+      'Zazzage wani abu yayin da kake online kuma zai bayyana a nan';
 
   @override
   String get offlineEnabled => 'Yanayin offline yana kunne';
@@ -6028,8 +6215,10 @@ class AppLocalizationsHa extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'A yar da canje-canje $count da ba a taɓa aikawa ba? Ba za a iya mayar da wannan ba.',
-      one: 'A yar da canjin da ba a taɓa aikawa ba? Ba za a iya mayar da wannan ba.',
+      other:
+          'A yar da canje-canje $count da ba a taɓa aikawa ba? Ba za a iya mayar da wannan ba.',
+      one:
+          'A yar da canjin da ba a taɓa aikawa ba? Ba za a iya mayar da wannan ba.',
     );
     return '$_temp0';
   }
@@ -6044,19 +6233,22 @@ class AppLocalizationsHa extends AppLocalizations {
   String get downloadWifiOnly => 'Wi-Fi kawai';
 
   @override
-  String get downloadWifiOnlyDesc => 'Zazzagewa suna jira idan kana kan mobile data';
+  String get downloadWifiOnlyDesc =>
+      'Zazzagewa suna jira idan kana kan mobile data';
 
   @override
   String get downloadMetered => 'Dakata a haɗin da ake biya';
 
   @override
-  String get downloadMeteredDesc => 'Yana kuma jira a Wi-Fi da na\'urarka ta yi wa alama a matsayin mai biya';
+  String get downloadMeteredDesc =>
+      'Yana kuma jira a Wi-Fi da na\'urarka ta yi wa alama a matsayin mai biya';
 
   @override
   String get downloadSpeedLimit => 'Iyakar gudu';
 
   @override
-  String get downloadSpeedLimitDesc => 'Yana iyakance jimillar saurin zazzagewa';
+  String get downloadSpeedLimitDesc =>
+      'Yana iyakance jimillar saurin zazzagewa';
 
   @override
   String get downloadUnlimited => 'Babu iyaka';
@@ -6082,7 +6274,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get watchAutoSource => 'Canza zuwa tushe na gaba kai tsaye';
 
   @override
-  String get watchAutoSourceDesc => 'Idan tushe ya kasa samun take ko ya kasa lodawa, gwada tushen da aka shigar na gaba';
+  String get watchAutoSourceDesc =>
+      'Idan tushe ya kasa samun take ko ya kasa lodawa, gwada tushen da aka shigar na gaba';
 
   @override
   String get extensionTest => 'Gwada extensions';
@@ -6100,7 +6293,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get extensionTestStop => 'Tsaya';
 
   @override
-  String get extensionTestNone => 'Babu extensions na wannan nau\'in da aka shigar';
+  String get extensionTestNone =>
+      'Babu extensions na wannan nau\'in da aka shigar';
 
   @override
   String get extensionTestNotRun => 'Ba a gwada ba tukuna';
@@ -6134,31 +6328,36 @@ class AppLocalizationsHa extends AppLocalizations {
   String get onboardingFeaturesTitle => 'Duka a wuri ɗaya';
 
   @override
-  String get onboardingFeaturesBody => 'Duk abin da kake bibiya, kallo da karantawa, ba tare da sauya app ba.';
+  String get onboardingFeaturesBody =>
+      'Duk abin da kake bibiya, kallo da karantawa, ba tare da sauya app ba.';
 
   @override
   String get onboardingFeatureTrack => 'Bibiyi komai';
 
   @override
-  String get onboardingFeatureTrackDesc => 'Jerin sunaye, ci gaba da maki a AniList, MyAnimeList, Simkl, Kitsu da MangaBaka.';
+  String get onboardingFeatureTrackDesc =>
+      'Jerin sunaye, ci gaba da maki a AniList, MyAnimeList, Simkl, Kitsu da MangaBaka.';
 
   @override
   String get onboardingFeatureWatch => 'Kalla da karanta';
 
   @override
-  String get onboardingFeatureWatchDesc => 'Shigar da extensions ka yi streaming na anime ko ka karanta manga da novels kai tsaye a cikin app.';
+  String get onboardingFeatureWatchDesc =>
+      'Shigar da extensions ka yi streaming na anime ko ka karanta manga da novels kai tsaye a cikin app.';
 
   @override
   String get onboardingFeatureOffline => 'Yi shi offline';
 
   @override
-  String get onboardingFeatureOfflineDesc => 'Zazzage episodes da babuka, kuma ci gaba ba tare da haɗi ba.';
+  String get onboardingFeatureOfflineDesc =>
+      'Zazzage episodes da babuka, kuma ci gaba ba tare da haɗi ba.';
 
   @override
   String get onboardingFeatureSync => 'Kiyaye jerin sunaye a daidaice';
 
   @override
-  String get onboardingFeatureSyncDesc => 'Kwafi jerinka tsakanin sabis-sabis, ko ka bar wanda ya fi gaba ya yi nasara.';
+  String get onboardingFeatureSyncDesc =>
+      'Kwafi jerinka tsakanin sabis-sabis, ko ka bar wanda ya fi gaba ya yi nasara.';
 
   @override
   String get onboardingThemeShape => 'Launuka';

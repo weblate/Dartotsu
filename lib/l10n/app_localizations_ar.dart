@@ -235,10 +235,12 @@ class AppLocalizationsAr extends AppLocalizations {
   String get shelfFrame => 'إطار حول الأقسام';
 
   @override
-  String get shelfFrameDesc => 'اعرض بطاقة خلف كل قسم، أو خلّ الصفوف مباشرة على الصفحة';
+  String get shelfFrameDesc =>
+      'اعرض بطاقة خلف كل قسم، أو خلّ الصفوف مباشرة على الصفحة';
 
   @override
-  String get settingsExtensionsDesc => 'مديرو المصادر والمستودعات وخيارات الإضافات';
+  String get settingsExtensionsDesc =>
+      'مديرو المصادر والمستودعات وخيارات الإضافات';
 
   @override
   String get settingsAddons => 'الإضافات الجانبية';
@@ -250,7 +252,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get customPath => 'مسار تخزين مخصص';
 
   @override
-  String get customPathDesc => 'مكان حفظ بيانات التطبيق. اضغط مطولًا لإعادة الضبط';
+  String get customPathDesc =>
+      'مكان حفظ بيانات التطبيق. اضغط مطولًا لإعادة الضبط';
 
   @override
   String get selectDirectory => 'اختر مجلدًا';
@@ -328,7 +331,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get backupPasswordHint => 'اتركها فاضية لاستخدام الافتراضية';
 
   @override
-  String get backupSensitive => 'تتضمن توكنات تسجيل الدخول. خلّ هذا الملف خاصًا';
+  String get backupSensitive =>
+      'تتضمن توكنات تسجيل الدخول. خلّ هذا الملف خاصًا';
 
   @override
   String get backupCreate => 'إنشاء نسخة احتياطية';
@@ -374,7 +378,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get backupUnlock => 'فتح القفل';
 
   @override
-  String get backupWrongPassword => 'ما قدرنا نقرأ هذا الملف. تأكد من كلمة المرور';
+  String get backupWrongPassword =>
+      'ما قدرنا نقرأ هذا الملف. تأكد من كلمة المرور';
 
   @override
   String get backupRestoreSelected => 'استعادة المحدد';
@@ -399,7 +404,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get backupCatTheme => 'المظهر';
 
   @override
-  String get backupCatThemeDesc => 'السمة والألوان والزجاج والخطوط وشكل البطاقات';
+  String get backupCatThemeDesc =>
+      'السمة والألوان والزجاج والخطوط وشكل البطاقات';
 
   @override
   String get backupCatCommon => 'عام';
@@ -444,7 +450,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get donateSheetTitle => 'عجبك Dartotsu؟';
 
   @override
-  String get donateSheetMessage => 'Dartotsu يبنيه ويصونه شخص واحد. إذا كان مفيدًا لك، فكّر تدعم تطويره.';
+  String get donateSheetMessage =>
+      'Dartotsu يبنيه ويصونه شخص واحد. إذا كان مفيدًا لك، فكّر تدعم تطويره.';
 
   @override
   String get donateLater => 'لاحقًا';
@@ -462,7 +469,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get followCover => 'اتبع الغلاف';
 
   @override
-  String get followCoverDesc => 'الألوان تتبع الخلفية، وفي صفحات التفاصيل تتبع الغلاف';
+  String get followCoverDesc =>
+      'الألوان تتبع الخلفية، وفي صفحات التفاصيل تتبع الغلاف';
 
   @override
   String get cardStyle => 'شكل البطاقة';
@@ -507,7 +515,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get jsonTheme => 'ملف سمة مخصص';
 
   @override
-  String get jsonThemeDesc => 'ألوان مباشرة من ~/.config/dartotsu/theme.json (سكربت مخصص أو تعديلاتك)';
+  String get jsonThemeDesc =>
+      'ألوان مباشرة من ~/.config/dartotsu/theme.json (سكربت مخصص أو تعديلاتك)';
 
   @override
   String get themeMode => 'وضع السمة';
@@ -646,10 +655,12 @@ class AppLocalizationsAr extends AppLocalizations {
   String get verifyTls => 'التحقق من الشهادات';
 
   @override
-  String get verifyTlsDesc => 'ارفض الخوادم ذات شهادات HTTPS غير صالحة. أوقفه فقط لمصدر يستخدم شهادة موقّعة ذاتيًا';
+  String get verifyTlsDesc =>
+      'ارفض الخوادم ذات شهادات HTTPS غير صالحة. أوقفه فقط لمصدر يستخدم شهادة موقّعة ذاتيًا';
 
   @override
-  String get clearCookiesConfirm => 'تحذف كل الكوكيز المخزّنة؟ ممكن يسجّل خروجك من بعض المصادر.';
+  String get clearCookiesConfirm =>
+      'تحذف كل الكوكيز المخزّنة؟ ممكن يسجّل خروجك من بعض المصادر.';
 
   @override
   String get version => 'الإصدار';
@@ -724,7 +735,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get onboardingPaletteTitle => 'خلّه يشبهك';
 
   @override
-  String get onboardingPaletteBody => 'اختر لوحة ألوان. كل لون مميز، من البطاقات للمشغّل، يتبعها.';
+  String get onboardingPaletteBody =>
+      'اختر لوحة ألوان. كل لون مميز، من البطاقات للمشغّل، يتبعها.';
 
   @override
   String get themeModeAuto => 'تلقائي';
@@ -739,16 +751,19 @@ class AppLocalizationsAr extends AppLocalizations {
   String get onboardingSyncTitle => 'زامن مكتبتك';
 
   @override
-  String get onboardingSyncBody => 'سجّل الدخول بـ AniList لتجيب قوائمك وتقدّمك وتقييماتك معك. أو تخطَّ وتصفّح كضيف.';
+  String get onboardingSyncBody =>
+      'سجّل الدخول بـ AniList لتجيب قوائمك وتقدّمك وتقييماتك معك. أو تخطَّ وتصفّح كضيف.';
 
   @override
-  String get onboardingOpenLinks => 'افتح روابط AniList والمستودعات في Dartotsu';
+  String get onboardingOpenLinks =>
+      'افتح روابط AniList والمستودعات في Dartotsu';
 
   @override
   String get onboardingPermsTitle => 'الأذونات';
 
   @override
-  String get onboardingPermsBody => 'اسمح بها الآن عشان التنزيلات والتحديثات والتنبيهات تشتغل بدون انقطاع. تقدر تغيّرها لاحقًا من إعدادات النظام.';
+  String get onboardingPermsBody =>
+      'اسمح بها الآن عشان التنزيلات والتحديثات والتنبيهات تشتغل بدون انقطاع. تقدر تغيّرها لاحقًا من إعدادات النظام.';
 
   @override
   String get permNotifications => 'الإشعارات';
@@ -827,13 +842,15 @@ class AppLocalizationsAr extends AppLocalizations {
   String get shareAnalytics => 'شارك بيانات استخدام مجهولة';
 
   @override
-  String get shareAnalyticsDesc => 'أعداد مستخدمين مجهولة وتقارير أعطال. بدون حساب أو بيانات شخصية';
+  String get shareAnalyticsDesc =>
+      'أعداد مستخدمين مجهولة وتقارير أعطال. بدون حساب أو بيانات شخصية';
 
   @override
   String get linkOpenAnilist => 'افتح روابط AniList في Dartotsu';
 
   @override
-  String get linkOpenAnilistDesc => 'فعّل معالجة الروابط عشان روابط anilist.co تفتح التطبيق';
+  String get linkOpenAnilistDesc =>
+      'فعّل معالجة الروابط عشان روابط anilist.co تفتح التطبيق';
 
   @override
   String get linkSettingsFailed => 'ما قدرنا نفتح إعدادات النظام';
@@ -842,16 +859,19 @@ class AppLocalizationsAr extends AppLocalizations {
   String get discordRichPresence => 'Rich Presence';
 
   @override
-  String get discordRichPresenceTokenDesc => 'اعرض اللي تفعله على ملفك في Discord. يحتاج توكن Discord الخاص بك.';
+  String get discordRichPresenceTokenDesc =>
+      'اعرض اللي تفعله على ملفك في Discord. يحتاج توكن Discord الخاص بك.';
 
   @override
-  String get discordRichPresenceDesktopDesc => 'اعرض اللي تفعله على ملفك في Discord. يحتاج تطبيق Discord للكمبيوتر شغّال.';
+  String get discordRichPresenceDesktopDesc =>
+      'اعرض اللي تفعله على ملفك في Discord. يحتاج تطبيق Discord للكمبيوتر شغّال.';
 
   @override
   String get discordBrowsing => 'اعرض نشاط التصفّح';
 
   @override
-  String get discordBrowsingDesc => 'اعرض كمان التبويب أو الصفحة أو الملف اللي تتصفحه، ليس فقط اللي تشاهده أو تقرأه.';
+  String get discordBrowsingDesc =>
+      'اعرض كمان التبويب أو الصفحة أو الملف اللي تتصفحه، ليس فقط اللي تشاهده أو تقرأه.';
 
   @override
   String get discordLookHeader => 'شكل الحالة';
@@ -860,7 +880,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get discordActivityType => 'نوع النشاط';
 
   @override
-  String get discordActivityTypeDesc => 'كيف يصيغها Discord: \"يشاهد …\" أو \"يلعب …\". تلقائي يستخدم \"يشاهد\" للأنمي و\"يلعب\" لكل شيء ثاني.';
+  String get discordActivityTypeDesc =>
+      'كيف يصيغها Discord: \"يشاهد …\" أو \"يلعب …\". تلقائي يستخدم \"يشاهد\" للأنمي و\"يلعب\" لكل شيء ثاني.';
 
   @override
   String get discordWatching => 'يشاهد';
@@ -884,13 +905,15 @@ class AppLocalizationsAr extends AppLocalizations {
   String get discordButtons => 'عرض الأزرار';
 
   @override
-  String get discordButtonsDesc => 'زرّا \"عرض الأنمي / المانجا\" و\"افتح Dartotsu\".';
+  String get discordButtonsDesc =>
+      'زرّا \"عرض الأنمي / المانجا\" و\"افتح Dartotsu\".';
 
   @override
   String get discordHideTitles => 'إخفاء العناوين';
 
   @override
-  String get discordHideTitlesDesc => 'استبدل أسماء الأنمي والمانجا (مع غلافها ورابطها) بـ \"شيء خاص\".';
+  String get discordHideTitlesDesc =>
+      'استبدل أسماء الأنمي والمانجا (مع غلافها ورابطها) بـ \"شيء خاص\".';
 
   @override
   String get discordConnectionHeader => 'الاتصال';
@@ -953,13 +976,15 @@ class AppLocalizationsAr extends AppLocalizations {
   String get discordToken => 'توكن Discord';
 
   @override
-  String get discordTokenSaved => 'تم الحفظ. اضغط للاستبدال، واضغط مطولًا للحذف.';
+  String get discordTokenSaved =>
+      'تم الحفظ. اضغط للاستبدال، واضغط مطولًا للحذف.';
 
   @override
   String get discordTokenNotSet => 'غير محدد. اضغط للإضافة.';
 
   @override
-  String get discordTokenPrompt => 'الصق توكن حساب Discord الذي تريد إظهار الحالة عليه. يبقى على هذا الجهاز فقط.';
+  String get discordTokenPrompt =>
+      'الصق توكن حساب Discord الذي تريد إظهار الحالة عليه. يبقى على هذا الجهاز فقط.';
 
   @override
   String get discordTokenHint => 'التوكن';
@@ -994,7 +1019,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get malLoginFailed => 'فشل تسجيل الدخول إلى MyAnimeList';
 
   @override
-  String get kitsuLoginFailed => 'فشل تسجيل الدخول إلى Kitsu. تأكد من بريدك وكلمة المرور.';
+  String get kitsuLoginFailed =>
+      'فشل تسجيل الدخول إلى Kitsu. تأكد من بريدك وكلمة المرور.';
 
   @override
   String get kitsuLoginTitle => 'سجّل الدخول إلى Kitsu';
@@ -1045,7 +1071,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get hideNsfw => 'إخفاء NSFW';
 
   @override
-  String get hideNsfwDesc => 'أبعد عناوين البالغين عن الخلاصات والبحث، واعرض مدخلاتك الخاصة للبالغين تحت \"الوسائط المخفية\".';
+  String get hideNsfwDesc =>
+      'أبعد عناوين البالغين عن الخلاصات والبحث، واعرض مدخلاتك الخاصة للبالغين تحت \"الوسائط المخفية\".';
 
   @override
   String get kitsuAccountOptions => 'خيارات حساب Kitsu';
@@ -1144,7 +1171,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get homeSections => 'أقسام الرئيسية';
 
   @override
-  String get homeSectionsHint => 'اسحب لإعادة الترتيب. الأقسام المخفية ما تُجلب أبدًا.';
+  String get homeSectionsHint =>
+      'اسحب لإعادة الترتيب. الأقسام المخفية ما تُجلب أبدًا.';
 
   @override
   String get customListDeleteFailed => 'فشل حذف القائمة المخصصة';
@@ -1384,7 +1412,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get nothingHereYet => 'ما في شيء هنا لحد الآن';
 
   @override
-  String get savedOnDeviceUntilLogin => 'كل اللي تحت محفوظ على هذا الجهاز حتى تغيّره.';
+  String get savedOnDeviceUntilLogin =>
+      'كل اللي تحت محفوظ على هذا الجهاز حتى تغيّره.';
 
   @override
   String get yourProfile => 'ملفك الشخصي';
@@ -1881,7 +1910,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get querySize => 'حجم الاستعلام';
 
   @override
-  String get querySizeDesc => 'استعلام كبير واحد يحمّل كل الصفوف (وملفًا شخصيًا كاملًا) بطلب واحد. الاستعلامات المقسّمة ترسل طلبًا صغيرًا لكل صف أو جزء من الملف: كل واحد سريع والأجزاء تظهر أول بأول.';
+  String get querySizeDesc =>
+      'استعلام كبير واحد يحمّل كل الصفوف (وملفًا شخصيًا كاملًا) بطلب واحد. الاستعلامات المقسّمة ترسل طلبًا صغيرًا لكل صف أو جزء من الملف: كل واحد سريع والأجزاء تظهر أول بأول.';
 
   @override
   String get oneBig => 'استعلام كبير';
@@ -1912,7 +1942,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get accountOptions => 'خيارات الحساب';
 
   @override
-  String get accountOptionsDesc => 'الأسماء وصيغة التقييم وترتيب القوائم والإشعارات وغيرها';
+  String get accountOptionsDesc =>
+      'الأسماء وصيغة التقييم وترتيب القوائم والإشعارات وغيرها';
 
   @override
   String get anilistAccountOptions => 'خيارات حساب AniList';
@@ -1924,13 +1955,15 @@ class AppLocalizationsAr extends AppLocalizations {
   String get hidePrivateEntries => 'إخفاء المدخلات الخاصة';
 
   @override
-  String get hidePrivateEntriesDesc => 'أبعد المدخلات المعلّمة كخاصة في AniList عن الخلاصة';
+  String get hidePrivateEntriesDesc =>
+      'أبعد المدخلات المعلّمة كخاصة في AniList عن الخلاصة';
 
   @override
   String get anilistExcludeList => 'Exclude your list';
 
   @override
-  String get anilistExcludeListDesc => 'Keep titles already on your AniList out of the anime and manga pages';
+  String get anilistExcludeListDesc =>
+      'Keep titles already on your AniList out of the anime and manga pages';
 
   @override
   String get anilistProfile => 'ملف AniList الشخصي';
@@ -1948,7 +1981,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get titleLanguage => 'لغة العناوين';
 
   @override
-  String get titleLanguageDesc => 'كيف تُكتب العناوين في كل مكان، مثل Attack on Titan / Shingeki no Kyojin / 進撃の巨人.';
+  String get titleLanguageDesc =>
+      'كيف تُكتب العناوين في كل مكان، مثل Attack on Titan / Shingeki no Kyojin / 進撃の巨人.';
 
   @override
   String get staffCharacterNames => 'أسماء الطاقم والشخصيات';
@@ -1990,13 +2024,15 @@ class AppLocalizationsAr extends AppLocalizations {
   String get airingNotifications => 'إشعارات البث';
 
   @override
-  String get airingNotificationsDesc => 'نبّهني عند عرض حلقة جديدة من عمل أتابعه';
+  String get airingNotificationsDesc =>
+      'نبّهني عند عرض حلقة جديدة من عمل أتابعه';
 
   @override
   String get displayAdultContent => 'عرض محتوى البالغين';
 
   @override
-  String get displayAdultContentDesc => 'أدرج عناوين +18 في التصفح والبحث والخلاصات';
+  String get displayAdultContentDesc =>
+      'أدرج عناوين +18 في التصفح والبحث والخلاصات';
 
   @override
   String get restrictMessages => 'حصر الرسائل بمن أتابعهم';
@@ -2034,7 +2070,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get importLists => 'استيراد القوائم';
 
   @override
-  String get importListsDesc => 'من نسخ Aniyomi وMihon / Tachiyomi وKotatsu الاحتياطية';
+  String get importListsDesc =>
+      'من نسخ Aniyomi وMihon / Tachiyomi وKotatsu الاحتياطية';
 
   @override
   String get exportLists => 'تصدير القوائم';
@@ -2123,10 +2160,12 @@ class AppLocalizationsAr extends AppLocalizations {
   String get couldntLoad => 'ما قدرنا نحمّل';
 
   @override
-  String get progressStyleHint => 'الحبّة والشريط يتراكبان على الملصق؛ \"خارجي\" يعرض نفس العدد كنص عادي بدلًا منهما — اختر واحدًا.';
+  String get progressStyleHint =>
+      'الحبّة والشريط يتراكبان على الملصق؛ \"خارجي\" يعرض نفس العدد كنص عادي بدلًا منهما — اختر واحدًا.';
 
   @override
-  String get nixManagedUpdate => 'هذا الإصدار تديره Nix — شغّل \"nix flake update\" على الـ flake الخاص بك وأعد البناء بدل التحديث من هنا';
+  String get nixManagedUpdate =>
+      'هذا الإصدار تديره Nix — شغّل \"nix flake update\" على الـ flake الخاص بك وأعد البناء بدل التحديث من هنا';
 
   @override
   String autoUpdateFailed(String error) {
@@ -2154,10 +2193,12 @@ class AppLocalizationsAr extends AppLocalizations {
   String get sort => 'ترتيب';
 
   @override
-  String get chooseBackupDialog => 'اختر نسخة Aniyomi أو Mihon أو Kotatsu احتياطية';
+  String get chooseBackupDialog =>
+      'اختر نسخة Aniyomi أو Mihon أو Kotatsu احتياطية';
 
   @override
-  String get importListsHint => 'انقل مكتبة من Aniyomi أو Mihon / Tachiyomi أو Kotatsu. العناوين والأغلفة والتقدّم والفئات تنحفظ.';
+  String get importListsHint =>
+      'انقل مكتبة من Aniyomi أو Mihon / Tachiyomi أو Kotatsu. العناوين والأغلفة والتقدّم والفئات تنحفظ.';
 
   @override
   String get chooseBackupFile => 'اختر ملف النسخة الاحتياطية';
@@ -2176,7 +2217,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get mergeWithExisting => 'دمج مع القوائم الحالية';
 
   @override
-  String get mergeWithExistingDesc => 'يحافظ على اللي عندك؛ إيقافه يستبدل العناوين المتطابقة';
+  String get mergeWithExistingDesc =>
+      'يحافظ على اللي عندك؛ إيقافه يستبدل العناوين المتطابقة';
 
   @override
   String get chooseAnother => 'اختر ملفًا آخر';
@@ -2452,7 +2494,8 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
-  String get localEntryNote => 'هذا العنوان موجود فقط في قائمتك المحلية على هذا الجهاز. التعديل متوقف هنا لأنه قد يتعارض مع قائمة حسابك؛ لكن تقدر تحذفه.';
+  String get localEntryNote =>
+      'هذا العنوان موجود فقط في قائمتك المحلية على هذا الجهاز. التعديل متوقف هنا لأنه قد يتعارض مع قائمة حسابك؛ لكن تقدر تحذفه.';
 
   @override
   String get cardPresetPoster => 'ملصق';
@@ -3011,19 +3054,22 @@ class AppLocalizationsAr extends AppLocalizations {
   String get syncMainService => 'الخدمة الرئيسية';
 
   @override
-  String get syncMainServiceDesc => 'قائمتها هي المرجع؛ وكل الخدمات الأخرى المسجّل دخولها تتحدث لتطابقها';
+  String get syncMainServiceDesc =>
+      'قائمتها هي المرجع؛ وكل الخدمات الأخرى المسجّل دخولها تتحدث لتطابقها';
 
   @override
   String get syncAuto => 'مزامنة تلقائية';
 
   @override
-  String get syncAutoDesc => 'اجلب وزامن في الخلفية عند فتح التطبيق وكل 30 دقيقة';
+  String get syncAutoDesc =>
+      'اجلب وزامن في الخلفية عند فتح التطبيق وكل 30 دقيقة';
 
   @override
   String get syncAddMissing => 'إضافة المدخلات الناقصة';
 
   @override
-  String get syncAddMissingDesc => 'أضف كمان المدخلات اللي ما عند الخدمة الثانية';
+  String get syncAddMissingDesc =>
+      'أضف كمان المدخلات اللي ما عند الخدمة الثانية';
 
   @override
   String get syncOnlyForward => 'إبقاء التقدّم الأعلى';
@@ -3059,7 +3105,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get syncComparing => 'جارٍ مقارنة القوائم';
 
   @override
-  String get syncIntro => 'اختر خدمة رئيسية واضغط جلب. كل خدمة تُسأل مرة واحدة عن قائمتك، ثم تُقارن بالرئيسية.';
+  String get syncIntro =>
+      'اختر خدمة رئيسية واضغط جلب. كل خدمة تُسأل مرة واحدة عن قائمتك، ثم تُقارن بالرئيسية.';
 
   @override
   String get syncStateSynced => 'متزامن';
@@ -3131,7 +3178,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get syncOnEdit => 'مزامنة التغييرات فورًا';
 
   @override
-  String get syncOnEditDesc => 'أرسل كل تحديث للتقدّم وكل تعديل على القوائم إلى خدماتك الأخرى المسجّل دخولها فورًا';
+  String get syncOnEditDesc =>
+      'أرسل كل تحديث للتقدّم وكل تعديل على القوائم إلى خدماتك الأخرى المسجّل دخولها فورًا';
 
   @override
   String syncPushed(String services) {
@@ -3150,7 +3198,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get syncAhead => 'الأكثر تقدّمًا';
 
   @override
-  String get syncAheadDesc => 'باتجاهين: لكل عنوان تفوز المدخلة الأكثر تقدّمًا وتُنسخ إلى كل خدماتك الأخرى';
+  String get syncAheadDesc =>
+      'باتجاهين: لكل عنوان تفوز المدخلة الأكثر تقدّمًا وتُنسخ إلى كل خدماتك الأخرى';
 
   @override
   String syncAheadFrom(String service) {
@@ -3161,7 +3210,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get syncConfirm => 'راجِع قبل المزامنة';
 
   @override
-  String get syncConfirmDesc => 'اعرض ما ستغيّره \"مزامنة الكل\" وكم طلبًا تحتاج';
+  String get syncConfirmDesc =>
+      'اعرض ما ستغيّره \"مزامنة الكل\" وكم طلبًا تحتاج';
 
   @override
   String get syncPreviewTitle => 'جاهز للمزامنة';
@@ -3221,13 +3271,15 @@ class AppLocalizationsAr extends AppLocalizations {
   String get syncFailedReason => 'سبب الفشل';
 
   @override
-  String get syncSkippedHint => 'العناصر المتخطّاة تُترك كما هي، حتى بعد الجلب مرة أخرى';
+  String get syncSkippedHint =>
+      'العناصر المتخطّاة تُترك كما هي، حتى بعد الجلب مرة أخرى';
 
   @override
   String get commentsRules => 'قواعد التعليق';
 
   @override
-  String get commentsRulesBody => 'أي قاعدة تكسرها = تُطرد\n\n1. ممنوع العنصرية والتمييز وخطاب الكراهية\n2. ممنوع السبام والترويج الذاتي\n3. ممنوع منعًا باتًا أي محتوى NSFW\n4. الإنجليزية فقط، بدون استثناءات\n5. ممنوع انتحال الشخصية والمضايقة والإساءة\n6. ممنوع المحتوى غير القانوني أو الإساءة الشديدة لأي فاندوم\n7. لا تطلب أو تشارك مستودعات أو إضافات\n8. السبويلر فقط بوسم السبويلر وتحذير\n9. ممنوع التعليقات الجنسية أو غير اللائقة عن الشخصيات القاصرة\n10. إذا كان خطأ، لا تنشره!';
+  String get commentsRulesBody =>
+      'أي قاعدة تكسرها = تُطرد\n\n1. ممنوع العنصرية والتمييز وخطاب الكراهية\n2. ممنوع السبام والترويج الذاتي\n3. ممنوع منعًا باتًا أي محتوى NSFW\n4. الإنجليزية فقط، بدون استثناءات\n5. ممنوع انتحال الشخصية والمضايقة والإساءة\n6. ممنوع المحتوى غير القانوني أو الإساءة الشديدة لأي فاندوم\n7. لا تطلب أو تشارك مستودعات أو إضافات\n8. السبويلر فقط بوسم السبويلر وتحذير\n9. ممنوع التعليقات الجنسية أو غير اللائقة عن الشخصيات القاصرة\n10. إذا كان خطأ، لا تنشره!';
 
   @override
   String get commentsRulesAccept => 'فهمت';
@@ -3390,22 +3442,26 @@ class AppLocalizationsAr extends AppLocalizations {
   String get commentsEmptyFiltered => 'ما في تعليقات لهذا الفلتر';
 
   @override
-  String get commentsSignIn => 'سجّل الدخول إلى AniList لقراءة التعليقات وكتابتها';
+  String get commentsSignIn =>
+      'سجّل الدخول إلى AniList لقراءة التعليقات وكتابتها';
 
   @override
-  String get commentsSignInMessage => 'التعليقات مشتركة بين كل الخدمات وتستخدم حسابك في AniList.';
+  String get commentsSignInMessage =>
+      'التعليقات مشتركة بين كل الخدمات وتستخدم حسابك في AniList.';
 
   @override
   String get commentsUnavailable => 'التعليقات غير متاحة لهذا العنوان';
 
   @override
-  String get commentsUnavailableMessage => 'ما قدرنا نطابقه مع مدخلة في AniList.';
+  String get commentsUnavailableMessage =>
+      'ما قدرنا نطابقه مع مدخلة في AniList.';
 
   @override
   String get commentsDisabled => 'التعليقات متوقفة';
 
   @override
-  String get commentsDisabledMessage => 'تقدر تفعّلها من جديد من الإعدادات › عام.';
+  String get commentsDisabledMessage =>
+      'تقدر تفعّلها من جديد من الإعدادات › عام.';
 
   @override
   String get commentsOffline => 'ما قدرنا نحمّل التعليقات';
@@ -3423,7 +3479,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get commentsSettingEnabled => 'التعليقات';
 
   @override
-  String get commentsSettingEnabledDesc => 'اعرض تبويب التعليقات في العناوين وسجّل الدخول لخادم التعليقات بحسابك في AniList';
+  String get commentsSettingEnabledDesc =>
+      'اعرض تبويب التعليقات في العناوين وسجّل الدخول لخادم التعليقات بحسابك في AniList';
 
   @override
   String get commentsSettingAlerts => 'إشعارات الردود';
@@ -3455,10 +3512,12 @@ class AppLocalizationsAr extends AppLocalizations {
   String get barcodeTooltip => 'ابحث عن مانجا أو رواية من الباركود';
 
   @override
-  String get barcodeIntro => 'وجّه الكاميرا نحو الباركود على ظهر المجلد، أو اكتب رقم ISBN.';
+  String get barcodeIntro =>
+      'وجّه الكاميرا نحو الباركود على ظهر المجلد، أو اكتب رقم ISBN.';
 
   @override
-  String get barcodeIntroManual => 'اكتب رقم ISBN المطبوع فوق الباركود على ظهر المجلد.';
+  String get barcodeIntroManual =>
+      'اكتب رقم ISBN المطبوع فوق الباركود على ظهر المجلد.';
 
   @override
   String get barcodeIsbnHint => 'ISBN';
@@ -3472,7 +3531,8 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
-  String get barcodeCameraDenied => 'الكاميرا غير متاحة. اسمح بالوصول للكاميرا أو اكتب ISBN بدلًا منها.';
+  String get barcodeCameraDenied =>
+      'الكاميرا غير متاحة. اسمح بالوصول للكاميرا أو اكتب ISBN بدلًا منها.';
 
   @override
   String get themesTitle => 'المقدمات والخواتيم';
@@ -3523,7 +3583,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get sauceTitle => 'اعثر على المصدر';
 
   @override
-  String get sauceIntro => 'ارفع صفحة مانجا أو عملًا فنيًا، أو الصق رابطه، لتعرف من أين هو.';
+  String get sauceIntro =>
+      'ارفع صفحة مانجا أو عملًا فنيًا، أو الصق رابطه، لتعرف من أين هو.';
 
   @override
   String get sauceKeyTitle => 'مفتاح SauceNAO API';
@@ -3655,7 +3716,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get imageSearchTooltip => 'اعثر على أنمي من لقطة شاشة';
 
   @override
-  String get imageSearchIntro => 'اختر لقطة شاشة أو الصق رابط صورة، وtrace.moe يجد الحلقة واللحظة اللي أُخذت منها.';
+  String get imageSearchIntro =>
+      'اختر لقطة شاشة أو الصق رابط صورة، وtrace.moe يجد الحلقة واللحظة اللي أُخذت منها.';
 
   @override
   String get imageSearchPick => 'اختر صورة';
@@ -3749,10 +3811,12 @@ class AppLocalizationsAr extends AppLocalizations {
   String get groupsLeave => 'مغادرة المجموعة';
 
   @override
-  String get groupsLeaveAsk => 'لن ترى منشورات هذه المجموعة في خلاصتك بعد الآن.';
+  String get groupsLeaveAsk =>
+      'لن ترى منشورات هذه المجموعة في خلاصتك بعد الآن.';
 
   @override
-  String get groupsJoinFailed => 'ما قدرنا ننضم لهذه المجموعة، ممكن تكون بدعوة فقط';
+  String get groupsJoinFailed =>
+      'ما قدرنا ننضم لهذه المجموعة، ممكن تكون بدعوة فقط';
 
   @override
   String get groupsLeaveFailed => 'ما قدرنا نغادر هذه المجموعة';
@@ -3852,7 +3916,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get notificationsNoServices => 'ما في خدمة مسجّل دخولها عندها إشعارات';
 
   @override
-  String get notificationsNoServicesMessage => 'سجّل الدخول إلى خدمة ترسل إشعارات وستظهر هنا.';
+  String get notificationsNoServicesMessage =>
+      'سجّل الدخول إلى خدمة ترسل إشعارات وستظهر هنا.';
 
   @override
   String get notificationsEmptyKind => 'ما في شيء في هذه الفئة لحد الآن';
@@ -3861,7 +3926,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get notificationsCommentsEmpty => 'ما في إشعارات تعليقات';
 
   @override
-  String get notificationsCommentsEmptyMessage => 'الردود على تعليقاتك وإعلانات Dantotsu تظهر هنا.';
+  String get notificationsCommentsEmptyMessage =>
+      'الردود على تعليقاتك وإعلانات Dantotsu تظهر هنا.';
 
   @override
   String get notificationsSettings => 'إعدادات الإشعارات';
@@ -3889,7 +3955,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get notificationsTestSent => 'تم إرسال إشعار تجريبي';
 
   @override
-  String get notificationsTestDenied => 'الإشعارات غير مسموحة لـ Dartotsu. فعّلها من إعدادات النظام.';
+  String get notificationsTestDenied =>
+      'الإشعارات غير مسموحة لـ Dartotsu. فعّلها من إعدادات النظام.';
 
   @override
   String get notificationsTestHint => 'اضغط مطولًا لإرسال إشعار تجريبي';
@@ -3943,7 +4010,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get settingsWatch => 'شاهد واقرأ';
 
   @override
-  String get settingsWatchDesc => 'قوائم الحلقات ومطابقة المصادر وتفاصيل الحلقات';
+  String get settingsWatchDesc =>
+      'قوائم الحلقات ومطابقة المصادر وتفاصيل الحلقات';
 
   @override
   String get watchSettingsLayout => 'قائمة الحلقات';
@@ -3967,7 +4035,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get watchCompactView => 'مضغوط';
 
   @override
-  String get watchDefaultLayoutDesc => 'كيف تُرتّب الحلقات والفصول إلى أن تغيّرها لعنوان معيّن';
+  String get watchDefaultLayoutDesc =>
+      'كيف تُرتّب الحلقات والفصول إلى أن تغيّرها لعنوان معيّن';
 
   @override
   String get watchChunkSize => 'حجم النطاق';
@@ -3979,7 +4048,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get watchShowDescription => 'عرض الأوصاف';
 
   @override
-  String get watchShowDescriptionDesc => 'اعرض ملخص الحلقة تحت كل عنوان في تخطيط القائمة';
+  String get watchShowDescriptionDesc =>
+      'اعرض ملخص الحلقة تحت كل عنوان في تخطيط القائمة';
 
   @override
   String get watchShowFiller => 'عرض حلقات الحشو';
@@ -3991,7 +4061,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get watchBlurUnwatched => 'إخفاء صور السبويلر المصغّرة';
 
   @override
-  String get watchBlurUnwatchedDesc => 'غبّش الصورة المصغّرة للحلقات التي لم تشاهدها بعد';
+  String get watchBlurUnwatchedDesc =>
+      'غبّش الصورة المصغّرة للحلقات التي لم تشاهدها بعد';
 
   @override
   String get watchResumeShelf => 'رف الاستئناف';
@@ -4003,13 +4074,15 @@ class AppLocalizationsAr extends AppLocalizations {
   String get watchMarkOnLongPress => 'الضغط المطول يعلّم التقدّم';
 
   @override
-  String get watchMarkOnLongPressDesc => 'اضغط مطولًا على حلقة أو فصل لتعليمه كمشاهَد أو غير مشاهَد';
+  String get watchMarkOnLongPressDesc =>
+      'اضغط مطولًا على حلقة أو فصل لتعليمه كمشاهَد أو غير مشاهَد';
 
   @override
   String get watchMatching => 'مطابقة المصدر';
 
   @override
-  String get watchMatchingDesc => '\"الأقرب\" يأخذ أفضل نتيجة بحث. \"مطابق تمامًا\" يقبل فقط عنوانًا شبه مطابق ويترك الباقي لك لتختاره.';
+  String get watchMatchingDesc =>
+      '\"الأقرب\" يأخذ أفضل نتيجة بحث. \"مطابق تمامًا\" يقبل فقط عنوانًا شبه مطابق ويترك الباقي لك لتختاره.';
 
   @override
   String get watchMatchClosest => 'الأقرب تطابقًا';
@@ -4018,28 +4091,34 @@ class AppLocalizationsAr extends AppLocalizations {
   String get watchMatchExact => 'مطابق تمامًا فقط';
 
   @override
-  String get watchMetadataDesc => 'من أين تأتي عناوين الحلقات وملخصاتها وصورها المصغّرة وتواريخ عرضها وعلامات الحشو. اسحب لتحديد الأولوية؛ أول مصدر عنده قيمة يفوز.';
+  String get watchMetadataDesc =>
+      'من أين تأتي عناوين الحلقات وملخصاتها وصورها المصغّرة وتواريخ عرضها وعلامات الحشو. اسحب لتحديد الأولوية؛ أول مصدر عنده قيمة يفوز.';
 
   @override
-  String get watchMetaAniZipDesc => 'عناوين الحلقات والملخصات واللقطات وتواريخ العرض';
+  String get watchMetaAniZipDesc =>
+      'عناوين الحلقات والملخصات واللقطات وتواريخ العرض';
 
   @override
   String get watchMetaKitsuDesc => 'عناوين الحلقات والأوصاف والصور المصغّرة';
 
   @override
-  String get watchMetaSimklDesc => 'عناوين الحلقات والأوصاف واللقطات وتواريخ العرض';
+  String get watchMetaSimklDesc =>
+      'عناوين الحلقات والأوصاف واللقطات وتواريخ العرض';
 
   @override
-  String get watchMetaAniListDesc => 'عناوين حلقات البث والصور المصغّرة وجدول العرض';
+  String get watchMetaAniListDesc =>
+      'عناوين حلقات البث والصور المصغّرة وجدول العرض';
 
   @override
-  String get watchMetaTenraiDesc => 'عناوين حلقات MyAnimeList وتواريخ العرض وعلامات الحشو والملخصات عبر Tenrai';
+  String get watchMetaTenraiDesc =>
+      'عناوين حلقات MyAnimeList وتواريخ العرض وعلامات الحشو والملخصات عبر Tenrai';
 
   @override
   String get watchClearMetadata => 'تحديث تفاصيل الحلقات';
 
   @override
-  String get watchClearMetadataDesc => 'انسَ تفاصيل الحلقات المخزّنة لتُجلب من جديد';
+  String get watchClearMetadataDesc =>
+      'انسَ تفاصيل الحلقات المخزّنة لتُجلب من جديد';
 
   @override
   String get watchMetadataCleared => 'ستُجلب تفاصيل الحلقات من جديد';
@@ -4190,7 +4269,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get watchOpenWebView => 'افتح في عرض الويب';
 
   @override
-  String get watchOpenWebViewDesc => 'حلّ فحص Cloudflare أو سجّل الدخول؛ الكوكيز تُشارك مع طلبات المصدر';
+  String get watchOpenWebViewDesc =>
+      'حلّ فحص Cloudflare أو سجّل الدخول؛ الكوكيز تُشارك مع طلبات المصدر';
 
   @override
   String watchCookieCount(int count, String host) {
@@ -4218,10 +4298,12 @@ class AppLocalizationsAr extends AppLocalizations {
   String get watchClearanceSession => 'يستمر حتى إغلاق التطبيق';
 
   @override
-  String get watchAgentShared => 'الطلبات تستخدم user agent الخاص بعرض الويب، وCloudflare يفحصه';
+  String get watchAgentShared =>
+      'الطلبات تستخدم user agent الخاص بعرض الويب، وCloudflare يفحصه';
 
   @override
-  String get watchAgentCustom => 'تم ضبط user agent مخصص، لذا قد يُرفض تصريح Cloudflare من عرض الويب';
+  String get watchAgentCustom =>
+      'تم ضبط user agent مخصص، لذا قد يُرفض تصريح Cloudflare من عرض الويب';
 
   @override
   String get watchTestConnection => 'اختبار الاتصال';
@@ -4267,7 +4349,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get settingsPlayer => 'المشغّل';
 
   @override
-  String get settingsPlayerDesc => 'التشغيل والترجمات والشيدرز وmpv وفتح الملفات';
+  String get settingsPlayerDesc =>
+      'التشغيل والترجمات والشيدرز وmpv وفتح الملفات';
 
   @override
   String get playerSettingsTitle => 'إعدادات المشغّل';
@@ -4321,13 +4404,15 @@ class AppLocalizationsAr extends AppLocalizations {
   String get playerSkipDuration => 'مدة زر التخطي';
 
   @override
-  String get playerSkipDurationDesc => 'الثواني التي يقفزها زر التخطي خارج المقدمات والخواتيم';
+  String get playerSkipDurationDesc =>
+      'الثواني التي يقفزها زر التخطي خارج المقدمات والخواتيم';
 
   @override
   String get playerSeekDuration => 'القفز بالنقر المزدوج';
 
   @override
-  String get playerSeekDurationDesc => 'الثواني للقفز عند النقر المزدوج أو مفتاح السهم';
+  String get playerSeekDurationDesc =>
+      'الثواني للقفز عند النقر المزدوج أو مفتاح السهم';
 
   @override
   String get playerAutoPlay => 'تشغيل التالي تلقائيًا';
@@ -4363,31 +4448,36 @@ class AppLocalizationsAr extends AppLocalizations {
   String get playerAutoSkipRecap => 'تخطي الملخصات';
 
   @override
-  String get playerAutoSkipDesc => 'اقفز فوقها فور بدئها، باستخدام AniSkip والبصمات الزمنية للبث';
+  String get playerAutoSkipDesc =>
+      'اقفز فوقها فور بدئها، باستخدام AniSkip والبصمات الزمنية للبث';
 
   @override
   String get playerSkipOnce => 'تخطٍّ لمرة واحدة فقط';
 
   @override
-  String get playerSkipOnceDesc => 'لا تتخطَّ نفس الجزء مرة ثانية إذا رجعت إليه';
+  String get playerSkipOnceDesc =>
+      'لا تتخطَّ نفس الجزء مرة ثانية إذا رجعت إليه';
 
   @override
   String get playerAdjustBrightness => 'إيماءة السطوع';
 
   @override
-  String get playerAdjustBrightnessDesc => 'اسحب لأعلى وأسفل على النصف الأيمن من الشاشة';
+  String get playerAdjustBrightnessDesc =>
+      'اسحب لأعلى وأسفل على النصف الأيمن من الشاشة';
 
   @override
   String get playerAdjustVolume => 'إيماءة الصوت';
 
   @override
-  String get playerAdjustVolumeDesc => 'اسحب لأعلى وأسفل على النصف الأيسر من الشاشة';
+  String get playerAdjustVolumeDesc =>
+      'اسحب لأعلى وأسفل على النصف الأيسر من الشاشة';
 
   @override
   String get playerHoldToSpeed => 'اضغط مطولًا للتسريع';
 
   @override
-  String get playerHoldToSpeedDesc => 'اضغط مطولًا على الفيديو للتشغيل بسرعة أكبر، واسحب جانبيًا لتغيير السرعة';
+  String get playerHoldToSpeedDesc =>
+      'اضغط مطولًا على الفيديو للتشغيل بسرعة أكبر، واسحب جانبيًا لتغيير السرعة';
 
   @override
   String get playerThumbless => 'شريط تقديم أسمك';
@@ -4429,7 +4519,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get playerLibass => 'استخدام libass';
 
   @override
-  String get playerLibassDesc => 'يعرض ترجمات .ass المنسّقة. الحجم واللون والخط أعلاه لن تُطبَّق حينها';
+  String get playerLibassDesc =>
+      'يعرض ترجمات .ass المنسّقة. الحجم واللون والخط أعلاه لن تُطبَّق حينها';
 
   @override
   String get playerShaders => 'الشيدرز';
@@ -4438,7 +4529,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get playerShadersEnable => 'تفعيل الشيدرز';
 
   @override
-  String get playerShadersEnableDesc => 'حسّن الصورة ونظّفها بشيدرز GLSL مثل Anime4K';
+  String get playerShadersEnableDesc =>
+      'حسّن الصورة ونظّفها بشيدرز GLSL مثل Anime4K';
 
   @override
   String get playerShadersOff => 'الشيدرز متوقفة';
@@ -4447,7 +4539,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get playerShadersMissing => 'Anime4K غير مثبّت';
 
   @override
-  String get playerShadersMissingDesc => 'نزّل حزمة شيدرز Anime4K (حوالي 0.8 ميجابايت) لاستخدام الأوضاع المدمجة.';
+  String get playerShadersMissingDesc =>
+      'نزّل حزمة شيدرز Anime4K (حوالي 0.8 ميجابايت) لاستخدام الأوضاع المدمجة.';
 
   @override
   String get playerShadersDownload => 'نزّل Anime4K';
@@ -4528,7 +4621,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get playerShadersImport => 'استيراد .glsl';
 
   @override
-  String get playerShadersNone => 'استورد ملفات .glsl أو .hook الخاصة بك وعلّم عليها لربطها ببعض';
+  String get playerShadersNone =>
+      'استورد ملفات .glsl أو .hook الخاصة بك وعلّم عليها لربطها ببعض';
 
   @override
   String get playerShadersBadFile => 'اختر ملف شيدر .glsl أو .hook';
@@ -4561,13 +4655,15 @@ class AppLocalizationsAr extends AppLocalizations {
   String get playerBuffer => 'حجم المخزن المؤقت (ميجابايت)';
 
   @override
-  String get playerBufferDesc => 'الذاكرة التي يمكن للمشغّل استخدامها لتخزين البث مؤقتًا';
+  String get playerBufferDesc =>
+      'الذاكرة التي يمكن للمشغّل استخدامها لتخزين البث مؤقتًا';
 
   @override
   String get playerUseMpvConf => 'استخدام mpv.conf';
 
   @override
-  String get playerUseMpvConfDesc => 'طبّق الخيارات في mpv.conf عند بدء التشغيل';
+  String get playerUseMpvConfDesc =>
+      'طبّق الخيارات في mpv.conf عند بدء التشغيل';
 
   @override
   String get playerMpvConf => 'mpv.conf';
@@ -4576,7 +4672,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get playerMpvConfEdit => 'عدّل إعدادات mpv';
 
   @override
-  String get playerMpvConfDesc => 'خيار واحد في كل سطر، مثل --hwdec=auto في mpv.conf العادي. الملفات الشخصية بين [أقواس] تُتجاهل.';
+  String get playerMpvConfDesc =>
+      'خيار واحد في كل سطر، مثل --hwdec=auto في mpv.conf العادي. الملفات الشخصية بين [أقواس] تُتجاهل.';
 
   @override
   String get playerMpvConfSaved => 'تم حفظ mpv.conf';
@@ -4585,7 +4682,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get playerUseScripts => 'استخدام سكربتات mpv';
 
   @override
-  String get playerUseScriptsDesc => 'حمّل الإضافات من مجلد السكربتات. تحتاج نسخة libmpv بدعم Lua أو JavaScript';
+  String get playerUseScriptsDesc =>
+      'حمّل الإضافات من مجلد السكربتات. تحتاج نسخة libmpv بدعم Lua أو JavaScript';
 
   @override
   String get playerScripts => 'سكربتات mpv';
@@ -4597,7 +4695,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get playerScriptsAdd => 'إضافة سكربت';
 
   @override
-  String get playerScriptsDesc => 'إضافات Lua وJavaScript والأصلية الموضوعة هنا تُحمَّل عند بدء التشغيل.';
+  String get playerScriptsDesc =>
+      'إضافات Lua وJavaScript والأصلية الموضوعة هنا تُحمَّل عند بدء التشغيل.';
 
   @override
   String get playerScriptsNone => 'ما في سكربتات لحد الآن';
@@ -4609,7 +4708,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get playerTuning => 'ضبط الفيديو المتقدم';
 
   @override
-  String get playerTuningDesc => 'تجاوز المزامنة والتخزين المؤقت والتحجيم وتعيين النغمات. القيم الخاطئة قد تضر بالتشغيل';
+  String get playerTuningDesc =>
+      'تجاوز المزامنة والتخزين المؤقت والتحجيم وتعيين النغمات. القيم الخاطئة قد تضر بالتشغيل';
 
   @override
   String get playerVideoSync => 'مزامنة الفيديو';
@@ -4618,7 +4718,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get playerInterpolation => 'استيفاء الإطارات';
 
   @override
-  String get playerInterpolationDesc => 'حركة ناعمة، تحتاج مزامنة display-resample';
+  String get playerInterpolationDesc =>
+      'حركة ناعمة، تحتاج مزامنة display-resample';
 
   @override
   String get playerPitch => 'تصحيح النبرة';
@@ -4705,7 +4806,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get playerPickTorrent => 'اختر ملف .torrent';
 
   @override
-  String get playerTorrentMissing => 'ثبّت إضافة التورنت من الإعدادات > الإضافات الجانبية أولًا';
+  String get playerTorrentMissing =>
+      'ثبّت إضافة التورنت من الإعدادات > الإضافات الجانبية أولًا';
 
   @override
   String get playerNoVideos => 'ما لقينا فيديوهات قابلة للتشغيل';
@@ -4732,7 +4834,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get playerAutoSelect => 'اختيار البث تلقائيًا';
 
   @override
-  String get playerAutoSelectDesc => 'اختر البث الأقرب لاختيارك الأخير لهذا العنوان';
+  String get playerAutoSelectDesc =>
+      'اختر البث الأقرب لاختيارك الأخير لهذا العنوان';
 
   @override
   String get playerLoadingStreams => 'جارٍ البحث عن بثوث…';
@@ -4750,7 +4853,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get playerTorrentNeeded => 'هذا البث تورنت';
 
   @override
-  String get playerTorrentNeededDesc => 'ثبّت إضافة التورنت لتشغيل روابط magnet وملفات .torrent';
+  String get playerTorrentNeededDesc =>
+      'ثبّت إضافة التورنت لتشغيل روابط magnet وملفات .torrent';
 
   @override
   String get playerOpenAddons => 'فتح الإضافات الجانبية';
@@ -4858,7 +4962,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get readerDoublePage => 'صفحات مزدوجة';
 
   @override
-  String get readerDoublePageDesc => 'اعرض صفحتين جنبًا إلى جنب في الوضع الأفقي';
+  String get readerDoublePageDesc =>
+      'اعرض صفحتين جنبًا إلى جنب في الوضع الأفقي';
 
   @override
   String get readerDoubleTapZoom => 'التكبير بالنقر المزدوج';
@@ -4888,7 +4993,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get readerAutoNext => 'المتابعة إلى الفصل التالي';
 
   @override
-  String get readerAutoNextDesc => 'حمّل الفصل التالي وأنت تقرأ نهاية هذا الفصل';
+  String get readerAutoNextDesc =>
+      'حمّل الفصل التالي وأنت تقرأ نهاية هذا الفصل';
 
   @override
   String get readerPreload => 'تحميل الصفحات مسبقًا';
@@ -4972,7 +5078,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get readerCropBorders => 'قص الحواف';
 
   @override
-  String get readerCropBordersDesc => 'أزل الهوامش البيضاء أو السوداء الفارغة من الصفحات';
+  String get readerCropBordersDesc =>
+      'أزل الهوامش البيضاء أو السوداء الفارغة من الصفحات';
 
   @override
   String get readerVolumeKeys => 'مفاتيح الصوت تقلب الصفحات';
@@ -5007,7 +5114,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get readerAutoScrollSpeed => 'سرعة التمرير التلقائي';
 
   @override
-  String get readerAutoScrollSpeedDesc => 'سرعة تمرير الصفحات أو قلبها تلقائيًا';
+  String get readerAutoScrollSpeedDesc =>
+      'سرعة تمرير الصفحات أو قلبها تلقائيًا';
 
   @override
   String get readerKeepOn => 'إبقاء الشاشة مضاءة';
@@ -5098,7 +5206,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get trackProgressYes => 'حفظ';
 
   @override
-  String get trackProgressReset => 'تمت إعادة ضبط سؤال حفظ التقدّم لهذا النوع، وسيسأل من جديد';
+  String get trackProgressReset =>
+      'تمت إعادة ضبط سؤال حفظ التقدّم لهذا النوع، وسيسأل من جديد';
 
   @override
   String get trackProgressNo => 'لا';
@@ -5131,7 +5240,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get dantotsuImport => 'استيراد من Dantotsu';
 
   @override
-  String get dantotsuImportDesc => 'اقرأ نسخة إعدادات Dantotsu الاحتياطية (.ani، أو .sani المشفّرة)';
+  String get dantotsuImportDesc =>
+      'اقرأ نسخة إعدادات Dantotsu الاحتياطية (.ani، أو .sani المشفّرة)';
 
   @override
   String get dantotsuPick => 'اختر نسخة Dantotsu احتياطية';
@@ -5199,7 +5309,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get dantotsuPlayer => 'سرعة المشغّل وألوان الترجمة';
 
   @override
-  String get dantotsuWarning => 'هذا الملف يحتوي توكنات تسجيل الدخول. خلّه خاصًا.';
+  String get dantotsuWarning =>
+      'هذا الملف يحتوي توكنات تسجيل الدخول. خلّه خاصًا.';
 
   @override
   String get novelIndent => 'إزاحة الفقرات';
@@ -5220,13 +5331,15 @@ class AppLocalizationsAr extends AppLocalizations {
   String get kitsuGraphqlDetail => 'صفحات تفاصيل أسرع (GraphQL)';
 
   @override
-  String get kitsuGraphqlDetailDesc => 'حمّل العنوان مع شخصياته وطاقمه ومدخلتك بطلب واحد';
+  String get kitsuGraphqlDetailDesc =>
+      'حمّل العنوان مع شخصياته وطاقمه ومدخلتك بطلب واحد';
 
   @override
   String get togetherTitle => 'شاهد مع الأصدقاء';
 
   @override
-  String get togetherIntro => 'الصق رابط الغرفة اللي أرسله لك صديقك. تنضم فورًا ويفتح المشغّل عندما يبدؤون المشاهدة.';
+  String get togetherIntro =>
+      'الصق رابط الغرفة اللي أرسله لك صديقك. تنضم فورًا ويفتح المشغّل عندما يبدؤون المشاهدة.';
 
   @override
   String get togetherName => 'اسمك';
@@ -5247,7 +5360,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get togetherPassword => 'كلمة مرور الخادم (اختيارية)';
 
   @override
-  String get togetherPublicNote => 'الخوادم العامة ما لها كلمة مرور والغرف مفتوحة. استخدم اسم غرفة طويلًا وشاركه مع أصدقائك فقط.';
+  String get togetherPublicNote =>
+      'الخوادم العامة ما لها كلمة مرور والغرف مفتوحة. استخدم اسم غرفة طويلًا وشاركه مع أصدقائك فقط.';
 
   @override
   String get togetherConnect => 'اتصال';
@@ -5338,7 +5452,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get togetherFollow => 'تابع حلقة المضيف';
 
   @override
-  String get togetherFollowDesc => 'يفتح الحلقات ويبدّلها تلقائيًا عندما تستخدم نفس الخدمة';
+  String get togetherFollowDesc =>
+      'يفتح الحلقات ويبدّلها تلقائيًا عندما تستخدم نفس الخدمة';
 
   @override
   String get togetherOpenHost => 'افتح حلقة المضيف';
@@ -5358,7 +5473,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get togetherWaitingHost => 'بانتظار أن يبدأ المضيف حلقة';
 
   @override
-  String get togetherDifferentService => 'المضيف على خدمة ثانية، المزامنة متوقفة';
+  String get togetherDifferentService =>
+      'المضيف على خدمة ثانية، المزامنة متوقفة';
 
   @override
   String get togetherNoSource => 'ثبّت إضافة أنمي لمتابعة المضيف';
@@ -5410,7 +5526,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get togetherSettingsDesc => 'انضم إلى غرفة صديق برابط';
 
   @override
-  String get togetherNoPlayer => 'افتح حلقة وتتزامن مع الغرفة تلقائيًا. الدردشة وقائمة الأعضاء تعمل الآن.';
+  String get togetherNoPlayer =>
+      'افتح حلقة وتتزامن مع الغرفة تلقائيًا. الدردشة وقائمة الأعضاء تعمل الآن.';
 
   @override
   String togetherWatching(String name, String file) {
@@ -5459,7 +5576,8 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
-  String get novelSpeechUnavailable => 'تحويل النص إلى كلام غير متاح على هذا الجهاز';
+  String get novelSpeechUnavailable =>
+      'تحويل النص إلى كلام غير متاح على هذا الجهاز';
 
   @override
   String get novelSpeechVoice => 'الصوت';
@@ -5477,7 +5595,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get novelTapPaging => 'اضغط على الحواف لقلب الصفحة';
 
   @override
-  String get novelTapPagingDesc => 'اضغط على الجهة اليسرى أو اليمنى لتمرير صفحة، والوسط يعرض عناصر التحكم';
+  String get novelTapPagingDesc =>
+      'اضغط على الجهة اليسرى أو اليمنى لتمرير صفحة، والوسط يعرض عناصر التحكم';
 
   @override
   String novelMinutesLeft(int count) {
@@ -5575,7 +5694,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get playerAudioLanguage => 'لغة الصوت المفضلة';
 
   @override
-  String get playerLanguageOrderHint => 'افصل اللغات بفواصل. تُستخدم أول لغة موجودة.';
+  String get playerLanguageOrderHint =>
+      'افصل اللغات بفواصل. تُستخدم أول لغة موجودة.';
 
   @override
   String get playerPip => 'صورة داخل صورة';
@@ -5587,7 +5707,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get playerAutoPip => 'صورة داخل صورة عند الخروج';
 
   @override
-  String get playerAutoPipDesc => 'تابع التشغيل في نافذة صغيرة عند مغادرة التطبيق';
+  String get playerAutoPipDesc =>
+      'تابع التشغيل في نافذة صغيرة عند مغادرة التطبيق';
 
   @override
   String playerAutoPlaying(String title) {
@@ -5608,7 +5729,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get playerPerTitle => 'لهذا العنوان فقط';
 
   @override
-  String get playerPerTitleDesc => 'احتفظ بهذه الخيارات لهذا العنوان واترك افتراضياتك كما هي';
+  String get playerPerTitleDesc =>
+      'احتفظ بهذه الخيارات لهذا العنوان واترك افتراضياتك كما هي';
 
   @override
   String get playerHoldSpeed => 'سرعة الضغط المطول';
@@ -5623,7 +5745,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get fontImport => 'استيراد خط';
 
   @override
-  String get fontSample => 'نص حكيم له سر قاطع وذو شأن عظيم مكتوب على ثوب أخضر ومغلف بجلد أزرق';
+  String get fontSample =>
+      'نص حكيم له سر قاطع وذو شأن عظيم مكتوب على ثوب أخضر ومغلف بجلد أزرق';
 
   @override
   String get playerSubtitleDelay => 'تأخير الترجمة';
@@ -5668,7 +5791,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get playerSeekPreview => 'معاينة التقديم';
 
   @override
-  String get playerSeekPreviewDesc => 'اعرض معاينة صغيرة للإطار فوق شريط التقديم أثناء السحب. يفتح مفكّك ترميز ثانيًا بدقة منخفضة، فيستهلك بيانات إضافية في البث.';
+  String get playerSeekPreviewDesc =>
+      'اعرض معاينة صغيرة للإطار فوق شريط التقديم أثناء السحب. يفتح مفكّك ترميز ثانيًا بدقة منخفضة، فيستهلك بيانات إضافية في البث.';
 
   @override
   String get playerSettingsChip => 'الإعدادات';
@@ -5680,7 +5804,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get settingsDownloads => 'التنزيلات';
 
   @override
-  String get settingsDownloadsDesc => 'الحلقات دون اتصال والطابور ووضع عدم الاتصال';
+  String get settingsDownloadsDesc =>
+      'الحلقات دون اتصال والطابور ووضع عدم الاتصال';
 
   @override
   String get downloadsTitle => 'التنزيلات';
@@ -5713,7 +5838,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get downloadNoSubtitle => 'بدون ترجمة';
 
   @override
-  String get downloadHlsNeedsFfmpeg => 'هذا البث قائمة تشغيل HLS. تنزيله يحتاج إضافة FFmpeg.';
+  String get downloadHlsNeedsFfmpeg =>
+      'هذا البث قائمة تشغيل HLS. تنزيله يحتاج إضافة FFmpeg.';
 
   @override
   String get downloadSourceMissing => 'مصدر هذه الحلقة غير مثبّت';
@@ -5836,7 +5962,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get downloadParallel => 'تنزيلات في وقت واحد';
 
   @override
-  String get downloadParallelDesc => 'شغّل تنزيلًا واحدًا في كل مرة أو عدة تنزيلات معًا';
+  String get downloadParallelDesc =>
+      'شغّل تنزيلًا واحدًا في كل مرة أو عدة تنزيلات معًا';
 
   @override
   String get downloadOneByOne => 'واحدًا تلو الآخر';
@@ -5845,7 +5972,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get downloadNotifications => 'إشعارات التنزيل';
 
   @override
-  String get downloadNotificationsDesc => 'تقدّم مباشر حيث يدعمه النظام، وإلا ملاحظة عند انتهاء التنزيل';
+  String get downloadNotificationsDesc =>
+      'تقدّم مباشر حيث يدعمه النظام، وإلا ملاحظة عند انتهاء التنزيل';
 
   @override
   String get downloadNotifyLive => 'مباشر';
@@ -5860,13 +5988,15 @@ class AppLocalizationsAr extends AppLocalizations {
   String get downloadInfoFile => 'اكتب ملف معلومات بجانب كل تنزيل';
 
   @override
-  String get downloadInfoFileDesc => 'يحفظ البث والجودة والترجمة وأوقات التخطي كملف .json صغير';
+  String get downloadInfoFileDesc =>
+      'يحفظ البث والجودة والترجمة وأوقات التخطي كملف .json صغير';
 
   @override
   String get offlineHeader => 'دون اتصال';
 
   @override
-  String get offlineModeDesc => '\"تلقائي\" يعمل دون اتصال فقط عندما يبدأ التطبيق بدون إنترنت. \"دائمًا\" يبقى دون اتصال حتى تغيّره.';
+  String get offlineModeDesc =>
+      '\"تلقائي\" يعمل دون اتصال فقط عندما يبدأ التطبيق بدون إنترنت. \"دائمًا\" يبقى دون اتصال حتى تغيّره.';
 
   @override
   String get offlineModeOff => 'إيقاف';
@@ -5875,7 +6005,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get offlineModeAlways => 'دائمًا';
 
   @override
-  String get offlineModeOn => 'وضع عدم الاتصال مفعّل. التغييرات تنحفظ هنا وتُرسل عندما ترجع للإنترنت.';
+  String get offlineModeOn =>
+      'وضع عدم الاتصال مفعّل. التغييرات تنحفظ هنا وتُرسل عندما ترجع للإنترنت.';
 
   @override
   String get offlineLost => 'أنت بدون اتصال. التغييرات تنحفظ على هذا الجهاز';
@@ -5925,7 +6056,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get offlineDiscard => 'تجاهل';
 
   @override
-  String get downloadNotOffline => 'هذه الحلقة غير منزّلة، فهي غير متاحة دون اتصال';
+  String get downloadNotOffline =>
+      'هذه الحلقة غير منزّلة، فهي غير متاحة دون اتصال';
 
   @override
   String get offlineModeChip => 'دون اتصال';
@@ -5962,7 +6094,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get downloadFfmpegTitle => 'إضافة FFmpeg مطلوبة';
 
   @override
-  String get downloadFfmpegBody => 'هذا البث قائمة تشغيل HLS. إضافة FFmpeg تجمع أجزاءه في ملف mp4 واحد. بدونها تبقى الأجزاء في مجلد الحلقة وتُشغَّل منه.';
+  String get downloadFfmpegBody =>
+      'هذا البث قائمة تشغيل HLS. إضافة FFmpeg تجمع أجزاءه في ملف mp4 واحد. بدونها تبقى الأجزاء في مجلد الحلقة وتُشغَّل منه.';
 
   @override
   String get downloadFfmpegInstall => 'تثبيت';
@@ -5998,13 +6131,15 @@ class AppLocalizationsAr extends AppLocalizations {
   String get downloadAutoDelete => 'حذف التنزيلات المشاهَدة';
 
   @override
-  String get downloadAutoDeleteDesc => 'يحذف التنزيل عندما يصل تقدّمك إلى تلك الحلقة أو الفصل';
+  String get downloadAutoDeleteDesc =>
+      'يحذف التنزيل عندما يصل تقدّمك إلى تلك الحلقة أو الفصل';
 
   @override
   String get downloadConnections => 'اتصالات لكل تنزيل';
 
   @override
-  String get downloadConnectionsDesc => 'يقسّم الملف الكبير إلى أجزاء تُجلب في وقت واحد. بعض الخوادم تحدّ من هذا.';
+  String get downloadConnectionsDesc =>
+      'يقسّم الملف الكبير إلى أجزاء تُجلب في وقت واحد. بعض الخوادم تحدّ من هذا.';
 
   @override
   String get downloadPlayChoice => 'التشغيل من';
@@ -6078,13 +6213,15 @@ class AppLocalizationsAr extends AppLocalizations {
   String get downloadWifiOnly => 'Wi-Fi فقط';
 
   @override
-  String get downloadWifiOnlyDesc => 'التنزيلات تنتظر عندما تكون على بيانات الجوال';
+  String get downloadWifiOnlyDesc =>
+      'التنزيلات تنتظر عندما تكون على بيانات الجوال';
 
   @override
   String get downloadMetered => 'إيقاف مؤقت على الاتصالات المحدودة';
 
   @override
-  String get downloadMeteredDesc => 'ينتظر أيضًا على Wi-Fi الذي يعلّمه جهازك كمحدود';
+  String get downloadMeteredDesc =>
+      'ينتظر أيضًا على Wi-Fi الذي يعلّمه جهازك كمحدود';
 
   @override
   String get downloadSpeedLimit => 'حد السرعة';
@@ -6116,7 +6253,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get watchAutoSource => 'التبديل للمصدر التالي تلقائيًا';
 
   @override
-  String get watchAutoSourceDesc => 'إذا ما لقي المصدر العنوان أو فشل تحميله، جرّب المصدر المثبّت التالي';
+  String get watchAutoSourceDesc =>
+      'إذا ما لقي المصدر العنوان أو فشل تحميله، جرّب المصدر المثبّت التالي';
 
   @override
   String get extensionTest => 'اختبار الإضافات';
@@ -6168,31 +6306,36 @@ class AppLocalizationsAr extends AppLocalizations {
   String get onboardingFeaturesTitle => 'كل شيء في مكان واحد';
 
   @override
-  String get onboardingFeaturesBody => 'كل ما تتبّعه وتشاهده وتقرأه، دون أن تنتقل بين التطبيقات.';
+  String get onboardingFeaturesBody =>
+      'كل ما تتبّعه وتشاهده وتقرأه، دون أن تنتقل بين التطبيقات.';
 
   @override
   String get onboardingFeatureTrack => 'تتبّع كل شيء';
 
   @override
-  String get onboardingFeatureTrackDesc => 'قوائم وتقدّم وتقييمات على AniList وMyAnimeList وSimkl وKitsu وMangaBaka.';
+  String get onboardingFeatureTrackDesc =>
+      'قوائم وتقدّم وتقييمات على AniList وMyAnimeList وSimkl وKitsu وMangaBaka.';
 
   @override
   String get onboardingFeatureWatch => 'شاهد واقرأ';
 
   @override
-  String get onboardingFeatureWatchDesc => 'ثبّت إضافات وشاهد الأنمي بالبث أو اقرأ المانجا والروايات داخل التطبيق.';
+  String get onboardingFeatureWatchDesc =>
+      'ثبّت إضافات وشاهد الأنمي بالبث أو اقرأ المانجا والروايات داخل التطبيق.';
 
   @override
   String get onboardingFeatureOffline => 'خذه معك دون اتصال';
 
   @override
-  String get onboardingFeatureOfflineDesc => 'نزّل الحلقات والفصول وكمّل بدون إنترنت.';
+  String get onboardingFeatureOfflineDesc =>
+      'نزّل الحلقات والفصول وكمّل بدون إنترنت.';
 
   @override
   String get onboardingFeatureSync => 'حافظ على تزامن قوائمك';
 
   @override
-  String get onboardingFeatureSyncDesc => 'انسخ قائمتك بين الخدمات، أو خلّ الأكثر تقدّمًا يفوز.';
+  String get onboardingFeatureSyncDesc =>
+      'انسخ قائمتك بين الخدمات، أو خلّ الأكثر تقدّمًا يفوز.';
 
   @override
   String get onboardingThemeShape => 'الألوان';

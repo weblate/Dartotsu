@@ -441,7 +441,8 @@ class AppLocalizationsKo extends AppLocalizations {
   String get donateSheetTitle => 'Dartotsu 잘 쓰고 계세요?';
 
   @override
-  String get donateSheetMessage => 'Dartotsu는 한 사람이 만들고 관리하고 있어요. 도움이 됐다면 개발을 후원해 주세요.';
+  String get donateSheetMessage =>
+      'Dartotsu는 한 사람이 만들고 관리하고 있어요. 도움이 됐다면 개발을 후원해 주세요.';
 
   @override
   String get donateLater => '나중에';
@@ -504,7 +505,8 @@ class AppLocalizationsKo extends AppLocalizations {
   String get jsonTheme => '사용자 지정 테마 파일';
 
   @override
-  String get jsonThemeDesc => '~/.config/dartotsu/theme.json의 실시간 색상 (직접 만든 스크립트나 수동 편집)';
+  String get jsonThemeDesc =>
+      '~/.config/dartotsu/theme.json의 실시간 색상 (직접 만든 스크립트나 수동 편집)';
 
   @override
   String get themeMode => '테마 모드';
@@ -643,7 +645,8 @@ class AppLocalizationsKo extends AppLocalizations {
   String get verifyTls => '인증서 확인';
 
   @override
-  String get verifyTlsDesc => '유효하지 않은 HTTPS 인증서를 가진 서버를 거부해요. 자체 서명 인증서를 쓰는 소스일 때만 꺼주세요';
+  String get verifyTlsDesc =>
+      '유효하지 않은 HTTPS 인증서를 가진 서버를 거부해요. 자체 서명 인증서를 쓰는 소스일 때만 꺼주세요';
 
   @override
   String get clearCookiesConfirm => '저장된 쿠키를 모두 삭제할까요? 일부 소스에서 로그아웃될 수 있어요.';
@@ -736,7 +739,8 @@ class AppLocalizationsKo extends AppLocalizations {
   String get onboardingSyncTitle => '라이브러리 동기화';
 
   @override
-  String get onboardingSyncBody => 'AniList로 로그인해서 리스트, 진행도, 점수를 가져오세요. 건너뛰고 게스트로 둘러봐도 돼요.';
+  String get onboardingSyncBody =>
+      'AniList로 로그인해서 리스트, 진행도, 점수를 가져오세요. 건너뛰고 게스트로 둘러봐도 돼요.';
 
   @override
   String get onboardingOpenLinks => 'AniList와 저장소 링크를 Dartotsu에서 열기';
@@ -745,7 +749,8 @@ class AppLocalizationsKo extends AppLocalizations {
   String get onboardingPermsTitle => '권한';
 
   @override
-  String get onboardingPermsBody => '지금 허용해 두면 다운로드, 업데이트, 알림이 끊김 없이 동작해요. 나중에 시스템 설정에서 바꿀 수 있어요.';
+  String get onboardingPermsBody =>
+      '지금 허용해 두면 다운로드, 업데이트, 알림이 끊김 없이 동작해요. 나중에 시스템 설정에서 바꿀 수 있어요.';
 
   @override
   String get permNotifications => '알림';
@@ -839,10 +844,12 @@ class AppLocalizationsKo extends AppLocalizations {
   String get discordRichPresence => 'Rich Presence';
 
   @override
-  String get discordRichPresenceTokenDesc => 'Discord 프로필에 지금 뭘 하는지 보여줘요. Discord 토큰이 필요해요.';
+  String get discordRichPresenceTokenDesc =>
+      'Discord 프로필에 지금 뭘 하는지 보여줘요. Discord 토큰이 필요해요.';
 
   @override
-  String get discordRichPresenceDesktopDesc => 'Discord 프로필에 지금 뭘 하는지 보여줘요. Discord 데스크톱 앱이 실행 중이어야 해요.';
+  String get discordRichPresenceDesktopDesc =>
+      'Discord 프로필에 지금 뭘 하는지 보여줘요. Discord 데스크톱 앱이 실행 중이어야 해요.';
 
   @override
   String get discordBrowsing => '둘러보는 활동 표시';
@@ -857,7 +864,8 @@ class AppLocalizationsKo extends AppLocalizations {
   String get discordActivityType => '활동 유형';
 
   @override
-  String get discordActivityTypeDesc => 'Discord에 표시되는 문구예요: \"시청 중…\" 또는 \"플레이 중…\". 자동은 애니는 시청 중, 나머지는 플레이 중으로 표시해요.';
+  String get discordActivityTypeDesc =>
+      'Discord에 표시되는 문구예요: \"시청 중…\" 또는 \"플레이 중…\". 자동은 애니는 시청 중, 나머지는 플레이 중으로 표시해요.';
 
   @override
   String get discordWatching => '시청 중';
@@ -956,7 +964,8 @@ class AppLocalizationsKo extends AppLocalizations {
   String get discordTokenNotSet => '설정 안 됨. 탭해서 추가하세요.';
 
   @override
-  String get discordTokenPrompt => '프레즌스를 표시할 Discord 계정의 토큰을 붙여넣으세요. 이 기기에만 저장돼요.';
+  String get discordTokenPrompt =>
+      '프레즌스를 표시할 Discord 계정의 토큰을 붙여넣으세요. 이 기기에만 저장돼요.';
 
   @override
   String get discordTokenHint => '토큰';
@@ -1878,7 +1887,8 @@ class AppLocalizationsKo extends AppLocalizations {
   String get querySize => '쿼리 크기';
 
   @override
-  String get querySizeDesc => '\"한 번에\"는 모든 행(과 프로필 전체)을 요청 한 번으로 불러와요. \"나눠서\"는 행이나 프로필 부분마다 작은 요청을 보내요. 각각 빠르고 도착하는 대로 표시돼요.';
+  String get querySizeDesc =>
+      '\"한 번에\"는 모든 행(과 프로필 전체)을 요청 한 번으로 불러와요. \"나눠서\"는 행이나 프로필 부분마다 작은 요청을 보내요. 각각 빠르고 도착하는 대로 표시돼요.';
 
   @override
   String get oneBig => '한 번에';
@@ -1927,7 +1937,8 @@ class AppLocalizationsKo extends AppLocalizations {
   String get anilistExcludeList => 'Exclude your list';
 
   @override
-  String get anilistExcludeListDesc => 'Keep titles already on your AniList out of the anime and manga pages';
+  String get anilistExcludeListDesc =>
+      'Keep titles already on your AniList out of the anime and manga pages';
 
   @override
   String get anilistProfile => 'AniList 프로필';
@@ -1945,7 +1956,8 @@ class AppLocalizationsKo extends AppLocalizations {
   String get titleLanguage => '제목 언어';
 
   @override
-  String get titleLanguageDesc => '모든 곳에서 제목을 표기하는 방식이에요. 예: Attack on Titan / Shingeki no Kyojin / 進撃の巨人.';
+  String get titleLanguageDesc =>
+      '모든 곳에서 제목을 표기하는 방식이에요. 예: Attack on Titan / Shingeki no Kyojin / 進撃の巨人.';
 
   @override
   String get staffCharacterNames => '스태프 및 캐릭터 이름';
@@ -2120,10 +2132,12 @@ class AppLocalizationsKo extends AppLocalizations {
   String get couldntLoad => '불러오지 못했어요';
 
   @override
-  String get progressStyleHint => '알약과 막대는 포스터 위에 겹쳐 표시돼요. 바깥쪽은 같은 개수를 일반 텍스트로 보여줘요. 하나만 골라주세요.';
+  String get progressStyleHint =>
+      '알약과 막대는 포스터 위에 겹쳐 표시돼요. 바깥쪽은 같은 개수를 일반 텍스트로 보여줘요. 하나만 골라주세요.';
 
   @override
-  String get nixManagedUpdate => '이 빌드는 Nix로 관리돼요 — 여기서 업데이트하지 말고 flake에서 \"nix flake update\"를 실행한 뒤 다시 빌드하세요';
+  String get nixManagedUpdate =>
+      '이 빌드는 Nix로 관리돼요 — 여기서 업데이트하지 말고 flake에서 \"nix flake update\"를 실행한 뒤 다시 빌드하세요';
 
   @override
   String autoUpdateFailed(String error) {
@@ -2154,7 +2168,8 @@ class AppLocalizationsKo extends AppLocalizations {
   String get chooseBackupDialog => 'Aniyomi, Mihon, Kotatsu 백업 선택';
 
   @override
-  String get importListsHint => 'Aniyomi, Mihon / Tachiyomi, Kotatsu에서 라이브러리를 옮겨와요. 제목, 커버, 진행도, 카테고리가 그대로 유지돼요.';
+  String get importListsHint =>
+      'Aniyomi, Mihon / Tachiyomi, Kotatsu에서 라이브러리를 옮겨와요. 제목, 커버, 진행도, 카테고리가 그대로 유지돼요.';
 
   @override
   String get chooseBackupFile => '백업 파일 선택';
@@ -2449,7 +2464,8 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
-  String get localEntryNote => '이 작품은 이 기기의 로컬 리스트에만 있어요. 계정 리스트와 충돌할 수 있어서 여기서는 편집할 수 없지만, 삭제는 할 수 있어요.';
+  String get localEntryNote =>
+      '이 작품은 이 기기의 로컬 리스트에만 있어요. 계정 리스트와 충돌할 수 있어서 여기서는 편집할 수 없지만, 삭제는 할 수 있어요.';
 
   @override
   String get cardPresetPoster => '포스터';
@@ -2990,7 +3006,8 @@ class AppLocalizationsKo extends AppLocalizations {
   String get syncMainService => '메인 서비스';
 
   @override
-  String get syncMainServiceDesc => '이 서비스의 리스트가 기준이에요. 로그인된 다른 서비스는 여기에 맞춰 업데이트돼요';
+  String get syncMainServiceDesc =>
+      '이 서비스의 리스트가 기준이에요. 로그인된 다른 서비스는 여기에 맞춰 업데이트돼요';
 
   @override
   String get syncAuto => '자동 동기화';
@@ -3038,7 +3055,8 @@ class AppLocalizationsKo extends AppLocalizations {
   String get syncComparing => '리스트 비교 중';
 
   @override
-  String get syncIntro => '메인 서비스를 고르고 가져오기를 누르세요. 각 서비스에서 리스트를 한 번씩 가져와서 메인과 비교해요.';
+  String get syncIntro =>
+      '메인 서비스를 고르고 가져오기를 누르세요. 각 서비스에서 리스트를 한 번씩 가져와서 메인과 비교해요.';
 
   @override
   String get syncStateSynced => '동기화됨';
@@ -3206,7 +3224,8 @@ class AppLocalizationsKo extends AppLocalizations {
   String get commentsRules => '댓글 규칙';
 
   @override
-  String get commentsRulesBody => '규칙을 어기면 바로 퇴장\n\n1. 인종차별, 차별, 혐오 발언 금지\n2. 도배와 자기 홍보 금지\n3. NSFW 콘텐츠 절대 금지\n4. 영어만 사용, 예외 없음\n5. 사칭, 괴롭힘, 욕설 금지\n6. 불법 콘텐츠나 팬덤에 대한 심한 무례 금지\n7. 저장소나 확장 프로그램 요청 및 공유 금지\n8. 스포일러는 스포일러 태그와 경고를 달 때만\n9. 미성년 캐릭터를 성적으로 다루거나 부적절한 댓글 금지\n10. 아닌 것 같으면 올리지 마세요!';
+  String get commentsRulesBody =>
+      '규칙을 어기면 바로 퇴장\n\n1. 인종차별, 차별, 혐오 발언 금지\n2. 도배와 자기 홍보 금지\n3. NSFW 콘텐츠 절대 금지\n4. 영어만 사용, 예외 없음\n5. 사칭, 괴롭힘, 욕설 금지\n6. 불법 콘텐츠나 팬덤에 대한 심한 무례 금지\n7. 저장소나 확장 프로그램 요청 및 공유 금지\n8. 스포일러는 스포일러 태그와 경고를 달 때만\n9. 미성년 캐릭터를 성적으로 다루거나 부적절한 댓글 금지\n10. 아닌 것 같으면 올리지 마세요!';
 
   @override
   String get commentsRulesAccept => '알겠어요';
@@ -3402,7 +3421,8 @@ class AppLocalizationsKo extends AppLocalizations {
   String get commentsSettingEnabled => '댓글';
 
   @override
-  String get commentsSettingEnabledDesc => '작품에 댓글 탭을 보여주고 AniList 계정으로 댓글 서버에 로그인해요';
+  String get commentsSettingEnabledDesc =>
+      '작품에 댓글 탭을 보여주고 AniList 계정으로 댓글 서버에 로그인해요';
 
   @override
   String get commentsSettingAlerts => '답글 알림';
@@ -3451,7 +3471,8 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
-  String get barcodeCameraDenied => '카메라를 사용할 수 없어요. 카메라 접근을 허용하거나 ISBN을 직접 입력하세요.';
+  String get barcodeCameraDenied =>
+      '카메라를 사용할 수 없어요. 카메라 접근을 허용하거나 ISBN을 직접 입력하세요.';
 
   @override
   String get themesTitle => '오프닝 & 엔딩';
@@ -3634,7 +3655,8 @@ class AppLocalizationsKo extends AppLocalizations {
   String get imageSearchTooltip => '스크린샷으로 애니를 찾아요';
 
   @override
-  String get imageSearchIntro => '스크린샷을 고르거나 이미지 링크를 붙여넣으면 trace.moe가 어느 에피소드의 어느 장면인지 찾아줘요.';
+  String get imageSearchIntro =>
+      '스크린샷을 고르거나 이미지 링크를 붙여넣으면 trace.moe가 어느 에피소드의 어느 장면인지 찾아줘요.';
 
   @override
   String get imageSearchPick => '이미지 선택';
@@ -3834,7 +3856,8 @@ class AppLocalizationsKo extends AppLocalizations {
   String get notificationsCommentsEmpty => '댓글 알림이 없어요';
 
   @override
-  String get notificationsCommentsEmptyMessage => '내 댓글에 달린 답글과 Dantotsu의 공지가 여기에 나타나요.';
+  String get notificationsCommentsEmptyMessage =>
+      '내 댓글에 달린 답글과 Dantotsu의 공지가 여기에 나타나요.';
 
   @override
   String get notificationsSettings => '알림 설정';
@@ -3862,7 +3885,8 @@ class AppLocalizationsKo extends AppLocalizations {
   String get notificationsTestSent => '테스트 알림을 보냈어요';
 
   @override
-  String get notificationsTestDenied => 'Dartotsu의 알림이 허용되지 않았어요. 시스템 설정에서 켜주세요.';
+  String get notificationsTestDenied =>
+      'Dartotsu의 알림이 허용되지 않았어요. 시스템 설정에서 켜주세요.';
 
   @override
   String get notificationsTestHint => '길게 눌러서 테스트 알림 보내기';
@@ -3982,7 +4006,8 @@ class AppLocalizationsKo extends AppLocalizations {
   String get watchMatching => '소스 매칭';
 
   @override
-  String get watchMatchingDesc => '\"가장 가까운 것\"은 검색 결과 중 가장 좋은 걸 골라요. \"정확히 일치만\"은 거의 똑같은 제목만 받아들이고 나머지는 직접 고르게 해요.';
+  String get watchMatchingDesc =>
+      '\"가장 가까운 것\"은 검색 결과 중 가장 좋은 걸 골라요. \"정확히 일치만\"은 거의 똑같은 제목만 받아들이고 나머지는 직접 고르게 해요.';
 
   @override
   String get watchMatchClosest => '가장 가까운 것';
@@ -3991,7 +4016,8 @@ class AppLocalizationsKo extends AppLocalizations {
   String get watchMatchExact => '정확히 일치만';
 
   @override
-  String get watchMetadataDesc => '에피소드 제목, 줄거리, 썸네일, 방영일, 필러 표시를 가져올 곳이에요. 드래그해서 우선순위를 정하세요. 값이 있는 첫 번째 소스가 사용돼요.';
+  String get watchMetadataDesc =>
+      '에피소드 제목, 줄거리, 썸네일, 방영일, 필러 표시를 가져올 곳이에요. 드래그해서 우선순위를 정하세요. 값이 있는 첫 번째 소스가 사용돼요.';
 
   @override
   String get watchMetaAniZipDesc => '에피소드 제목, 줄거리, 스틸컷, 방영일';
@@ -4006,7 +4032,8 @@ class AppLocalizationsKo extends AppLocalizations {
   String get watchMetaAniListDesc => '스트리밍 에피소드 제목, 썸네일, 방영 일정';
 
   @override
-  String get watchMetaTenraiDesc => 'Tenrai를 통한 MyAnimeList 에피소드 제목, 방영일, 필러 및 요약 편 표시';
+  String get watchMetaTenraiDesc =>
+      'Tenrai를 통한 MyAnimeList 에피소드 제목, 방영일, 필러 및 요약 편 표시';
 
   @override
   String get watchClearMetadata => '에피소드 상세 정보 새로고침';
@@ -4157,7 +4184,8 @@ class AppLocalizationsKo extends AppLocalizations {
   String get watchOpenWebView => '웹뷰로 열기';
 
   @override
-  String get watchOpenWebViewDesc => 'Cloudflare 확인을 통과하거나 로그인하세요. 쿠키는 소스 요청과 공유돼요';
+  String get watchOpenWebViewDesc =>
+      'Cloudflare 확인을 통과하거나 로그인하세요. 쿠키는 소스 요청과 공유돼요';
 
   @override
   String watchCookieCount(int count, String host) {
@@ -4186,7 +4214,8 @@ class AppLocalizationsKo extends AppLocalizations {
   String get watchAgentShared => '요청은 웹뷰의 사용자 에이전트를 사용해요. Cloudflare가 이걸 확인해요';
 
   @override
-  String get watchAgentCustom => '사용자 지정 사용자 에이전트가 설정되어 있어서 웹뷰의 Cloudflare 통과가 거부될 수 있어요';
+  String get watchAgentCustom =>
+      '사용자 지정 사용자 에이전트가 설정되어 있어서 웹뷰의 Cloudflare 통과가 거부될 수 있어요';
 
   @override
   String get watchTestConnection => '연결 테스트';
@@ -4352,7 +4381,8 @@ class AppLocalizationsKo extends AppLocalizations {
   String get playerHoldToSpeed => '길게 눌러 배속';
 
   @override
-  String get playerHoldToSpeedDesc => '영상을 길게 누르면 더 빠르게 재생되고, 옆으로 드래그하면 속도를 바꿀 수 있어요';
+  String get playerHoldToSpeedDesc =>
+      '영상을 길게 누르면 더 빠르게 재생되고, 옆으로 드래그하면 속도를 바꿀 수 있어요';
 
   @override
   String get playerThumbless => '두꺼운 탐색 바';
@@ -4394,7 +4424,8 @@ class AppLocalizationsKo extends AppLocalizations {
   String get playerLibass => 'libass 사용';
 
   @override
-  String get playerLibassDesc => '스타일이 적용된 .ass 자막을 렌더링해요. 위의 크기, 색상, 글꼴은 적용되지 않아요';
+  String get playerLibassDesc =>
+      '스타일이 적용된 .ass 자막을 렌더링해요. 위의 크기, 색상, 글꼴은 적용되지 않아요';
 
   @override
   String get playerShaders => '셰이더';
@@ -4403,7 +4434,8 @@ class AppLocalizationsKo extends AppLocalizations {
   String get playerShadersEnable => '셰이더 사용';
 
   @override
-  String get playerShadersEnableDesc => 'Anime4K 같은 GLSL 셰이더로 화질을 업스케일하고 깔끔하게 만들어요';
+  String get playerShadersEnableDesc =>
+      'Anime4K 같은 GLSL 셰이더로 화질을 업스케일하고 깔끔하게 만들어요';
 
   @override
   String get playerShadersOff => '셰이더 꺼짐';
@@ -4412,7 +4444,8 @@ class AppLocalizationsKo extends AppLocalizations {
   String get playerShadersMissing => 'Anime4K가 설치되어 있지 않아요';
 
   @override
-  String get playerShadersMissingDesc => '기본 제공 모드를 쓰려면 Anime4K 셰이더 팩(약 0.8MB)을 다운로드하세요.';
+  String get playerShadersMissingDesc =>
+      '기본 제공 모드를 쓰려면 Anime4K 셰이더 팩(약 0.8MB)을 다운로드하세요.';
 
   @override
   String get playerShadersDownload => 'Anime4K 다운로드';
@@ -4541,7 +4574,8 @@ class AppLocalizationsKo extends AppLocalizations {
   String get playerMpvConfEdit => 'mpv 설정 편집';
 
   @override
-  String get playerMpvConfDesc => '한 줄에 옵션 하나씩, 일반 mpv.conf의 --hwdec=auto처럼 쓰세요. [대괄호] 프로필은 무시돼요.';
+  String get playerMpvConfDesc =>
+      '한 줄에 옵션 하나씩, 일반 mpv.conf의 --hwdec=auto처럼 쓰세요. [대괄호] 프로필은 무시돼요.';
 
   @override
   String get playerMpvConfSaved => 'mpv.conf를 저장했어요';
@@ -4550,7 +4584,8 @@ class AppLocalizationsKo extends AppLocalizations {
   String get playerUseScripts => 'mpv 스크립트 사용';
 
   @override
-  String get playerUseScriptsDesc => 'scripts 폴더의 플러그인을 불러와요. Lua나 JavaScript를 지원하는 libmpv 빌드가 필요해요';
+  String get playerUseScriptsDesc =>
+      'scripts 폴더의 플러그인을 불러와요. Lua나 JavaScript를 지원하는 libmpv 빌드가 필요해요';
 
   @override
   String get playerScripts => 'mpv 스크립트';
@@ -4562,7 +4597,8 @@ class AppLocalizationsKo extends AppLocalizations {
   String get playerScriptsAdd => '스크립트 추가';
 
   @override
-  String get playerScriptsDesc => '여기에 둔 Lua, JavaScript, 네이티브 플러그인은 재생이 시작될 때 불러와요.';
+  String get playerScriptsDesc =>
+      '여기에 둔 Lua, JavaScript, 네이티브 플러그인은 재생이 시작될 때 불러와요.';
 
   @override
   String get playerScriptsNone => '아직 스크립트가 없어요';
@@ -4574,7 +4610,8 @@ class AppLocalizationsKo extends AppLocalizations {
   String get playerTuning => '고급 비디오 튜닝';
 
   @override
-  String get playerTuningDesc => '동기화, 캐시, 스케일링, 톤 매핑을 직접 바꿔요. 값을 잘못 넣으면 재생에 문제가 생길 수 있어요';
+  String get playerTuningDesc =>
+      '동기화, 캐시, 스케일링, 톤 매핑을 직접 바꿔요. 값을 잘못 넣으면 재생에 문제가 생길 수 있어요';
 
   @override
   String get playerVideoSync => '비디오 동기화';
@@ -4583,7 +4620,8 @@ class AppLocalizationsKo extends AppLocalizations {
   String get playerInterpolation => '프레임 보간';
 
   @override
-  String get playerInterpolationDesc => '부드러운 움직임이에요. display-resample 동기화가 필요해요';
+  String get playerInterpolationDesc =>
+      '부드러운 움직임이에요. display-resample 동기화가 필요해요';
 
   @override
   String get playerPitch => '피치 보정';
@@ -4715,7 +4753,8 @@ class AppLocalizationsKo extends AppLocalizations {
   String get playerTorrentNeeded => '이 스트림은 토렌트예요';
 
   @override
-  String get playerTorrentNeededDesc => '마그넷 링크와 .torrent 파일을 재생하려면 토렌트 애드온을 설치하세요';
+  String get playerTorrentNeededDesc =>
+      '마그넷 링크와 .torrent 파일을 재생하려면 토렌트 애드온을 설치하세요';
 
   @override
   String get playerOpenAddons => '애드온 열기';
@@ -5191,7 +5230,8 @@ class AppLocalizationsKo extends AppLocalizations {
   String get togetherTitle => '함께 보기';
 
   @override
-  String get togetherIntro => '친구가 보낸 방 링크를 붙여넣으세요. 바로 참가하고, 친구가 재생을 시작하면 플레이어가 열려요.';
+  String get togetherIntro =>
+      '친구가 보낸 방 링크를 붙여넣으세요. 바로 참가하고, 친구가 재생을 시작하면 플레이어가 열려요.';
 
   @override
   String get togetherName => '내 이름';
@@ -5212,7 +5252,8 @@ class AppLocalizationsKo extends AppLocalizations {
   String get togetherPassword => '서버 비밀번호 (선택)';
 
   @override
-  String get togetherPublicNote => '공개 서버는 비밀번호가 없고 방도 열려 있어요. 방 이름을 길게 지어서 친구들에게만 공유하세요.';
+  String get togetherPublicNote =>
+      '공개 서버는 비밀번호가 없고 방도 열려 있어요. 방 이름을 길게 지어서 친구들에게만 공유하세요.';
 
   @override
   String get togetherConnect => '연결';
@@ -5375,7 +5416,8 @@ class AppLocalizationsKo extends AppLocalizations {
   String get togetherSettingsDesc => '링크로 친구의 방에 참가해요';
 
   @override
-  String get togetherNoPlayer => '에피소드를 열면 방과 자동으로 동기화돼요. 채팅과 멤버 목록은 지금 바로 쓸 수 있어요.';
+  String get togetherNoPlayer =>
+      '에피소드를 열면 방과 자동으로 동기화돼요. 채팅과 멤버 목록은 지금 바로 쓸 수 있어요.';
 
   @override
   String togetherWatching(String name, String file) {
@@ -5442,7 +5484,8 @@ class AppLocalizationsKo extends AppLocalizations {
   String get novelTapPaging => '가장자리를 탭해서 페이지 넘기기';
 
   @override
-  String get novelTapPagingDesc => '왼쪽이나 오른쪽을 탭하면 한 페이지씩 스크롤되고, 가운데를 탭하면 컨트롤이 나와요';
+  String get novelTapPagingDesc =>
+      '왼쪽이나 오른쪽을 탭하면 한 페이지씩 스크롤되고, 가운데를 탭하면 컨트롤이 나와요';
 
   @override
   String novelMinutesLeft(int count) {
@@ -5588,7 +5631,8 @@ class AppLocalizationsKo extends AppLocalizations {
   String get fontImport => '글꼴 가져오기';
 
   @override
-  String get fontSample => '다람쥐 헌 쳇바퀴에 타고파 The quick brown fox jumps over the lazy dog';
+  String get fontSample =>
+      '다람쥐 헌 쳇바퀴에 타고파 The quick brown fox jumps over the lazy dog';
 
   @override
   String get playerSubtitleDelay => '자막 지연';
@@ -5633,7 +5677,8 @@ class AppLocalizationsKo extends AppLocalizations {
   String get playerSeekPreview => '탐색 미리보기';
 
   @override
-  String get playerSeekPreviewDesc => '탐색할 때 바 위에 작은 프레임 미리보기를 보여줘요. 저해상도 디코더를 하나 더 열어서 스트림에서는 데이터를 더 써요.';
+  String get playerSeekPreviewDesc =>
+      '탐색할 때 바 위에 작은 프레임 미리보기를 보여줘요. 저해상도 디코더를 하나 더 열어서 스트림에서는 데이터를 더 써요.';
 
   @override
   String get playerSettingsChip => '설정';
@@ -5678,7 +5723,8 @@ class AppLocalizationsKo extends AppLocalizations {
   String get downloadNoSubtitle => '자막 없음';
 
   @override
-  String get downloadHlsNeedsFfmpeg => '이 스트림은 HLS 재생목록이에요. 다운로드하려면 FFmpeg 애드온이 필요해요.';
+  String get downloadHlsNeedsFfmpeg =>
+      '이 스트림은 HLS 재생목록이에요. 다운로드하려면 FFmpeg 애드온이 필요해요.';
 
   @override
   String get downloadSourceMissing => '이 에피소드의 소스가 설치되어 있지 않아요';
@@ -5807,7 +5853,8 @@ class AppLocalizationsKo extends AppLocalizations {
   String get downloadNotifications => '다운로드 알림';
 
   @override
-  String get downloadNotificationsDesc => '시스템이 지원하면 실시간 진행도를, 아니면 다운로드가 끝났을 때 알려줘요';
+  String get downloadNotificationsDesc =>
+      '시스템이 지원하면 실시간 진행도를, 아니면 다운로드가 끝났을 때 알려줘요';
 
   @override
   String get downloadNotifyLive => '실시간';
@@ -5828,7 +5875,8 @@ class AppLocalizationsKo extends AppLocalizations {
   String get offlineHeader => '오프라인';
 
   @override
-  String get offlineModeDesc => '\"자동\"은 연결 없이 앱을 시작했을 때만 오프라인이 돼요. \"항상\"은 바꾸기 전까지 오프라인으로 유지해요.';
+  String get offlineModeDesc =>
+      '\"자동\"은 연결 없이 앱을 시작했을 때만 오프라인이 돼요. \"항상\"은 바꾸기 전까지 오프라인으로 유지해요.';
 
   @override
   String get offlineModeOff => '끔';
@@ -5837,7 +5885,8 @@ class AppLocalizationsKo extends AppLocalizations {
   String get offlineModeAlways => '항상';
 
   @override
-  String get offlineModeOn => '오프라인 모드가 켜져 있어요. 변경 사항은 여기에 저장되고, 다시 온라인이 되면 전송돼요.';
+  String get offlineModeOn =>
+      '오프라인 모드가 켜져 있어요. 변경 사항은 여기에 저장되고, 다시 온라인이 되면 전송돼요.';
 
   @override
   String get offlineLost => '오프라인이에요. 변경 사항은 이 기기에 저장돼요';
@@ -5918,7 +5967,8 @@ class AppLocalizationsKo extends AppLocalizations {
   String get downloadFfmpegTitle => 'FFmpeg 애드온이 필요해요';
 
   @override
-  String get downloadFfmpegBody => '이 스트림은 HLS 재생목록이에요. FFmpeg 애드온이 조각들을 하나의 mp4 파일로 합쳐줘요. 없으면 조각이 에피소드 폴더에 그대로 남고 거기서 재생돼요.';
+  String get downloadFfmpegBody =>
+      '이 스트림은 HLS 재생목록이에요. FFmpeg 애드온이 조각들을 하나의 mp4 파일로 합쳐줘요. 없으면 조각이 에피소드 폴더에 그대로 남고 거기서 재생돼요.';
 
   @override
   String get downloadFfmpegInstall => '설치';
@@ -5957,7 +6007,8 @@ class AppLocalizationsKo extends AppLocalizations {
   String get downloadConnections => '다운로드당 연결 수';
 
   @override
-  String get downloadConnectionsDesc => '큰 파일을 여러 조각으로 나눠서 동시에 받아요. 일부 서버는 제한할 수 있어요.';
+  String get downloadConnectionsDesc =>
+      '큰 파일을 여러 조각으로 나눠서 동시에 받아요. 일부 서버는 제한할 수 있어요.';
 
   @override
   String get downloadPlayChoice => '재생 위치';
@@ -6124,25 +6175,29 @@ class AppLocalizationsKo extends AppLocalizations {
   String get onboardingFeatureTrack => '전부 기록하기';
 
   @override
-  String get onboardingFeatureTrackDesc => 'AniList, MyAnimeList, Simkl, Kitsu, MangaBaka에서 리스트, 진행도, 점수를 관리해요.';
+  String get onboardingFeatureTrackDesc =>
+      'AniList, MyAnimeList, Simkl, Kitsu, MangaBaka에서 리스트, 진행도, 점수를 관리해요.';
 
   @override
   String get onboardingFeatureWatch => '보고 읽기';
 
   @override
-  String get onboardingFeatureWatchDesc => '확장 프로그램을 설치해서 애니 스트리밍과 만화·웹소설 읽기를 앱 안에서 바로 즐기세요.';
+  String get onboardingFeatureWatchDesc =>
+      '확장 프로그램을 설치해서 애니 스트리밍과 만화·웹소설 읽기를 앱 안에서 바로 즐기세요.';
 
   @override
   String get onboardingFeatureOffline => '오프라인으로 즐기기';
 
   @override
-  String get onboardingFeatureOfflineDesc => '에피소드와 챕터를 다운로드해서 연결이 없어도 이어서 즐기세요.';
+  String get onboardingFeatureOfflineDesc =>
+      '에피소드와 챕터를 다운로드해서 연결이 없어도 이어서 즐기세요.';
 
   @override
   String get onboardingFeatureSync => '리스트 동기화 유지';
 
   @override
-  String get onboardingFeatureSyncDesc => '서비스 간에 리스트를 그대로 반영하거나, 더 앞선 쪽이 우선하게 할 수 있어요.';
+  String get onboardingFeatureSyncDesc =>
+      '서비스 간에 리스트를 그대로 반영하거나, 더 앞선 쪽이 우선하게 할 수 있어요.';
 
   @override
   String get onboardingThemeShape => '색상';

@@ -12,7 +12,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get appName => 'Dartotsu';
 
   @override
-  String get appTagline => 'അനിമെയും മംഗയും ട്രാക്ക് ചെയ്യാൻ\nപുതിയ ബെസ്റ്റ് ആപ്പ്';
+  String get appTagline =>
+      'അനിമെയും മംഗയും ട്രാക്ക് ചെയ്യാൻ\nപുതിയ ബെസ്റ്റ് ആപ്പ്';
 
   @override
   String get anilist => 'AniList';
@@ -71,7 +72,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get animationSpeed => 'ആനിമേഷനുകൾ';
 
   @override
-  String get animationSpeedDesc => 'ആപ്പിലെ ട്രാൻസിഷനുകളുടെയും എൻട്രി ഇഫക്റ്റുകളുടെയും വേഗത';
+  String get animationSpeedDesc =>
+      'ആപ്പിലെ ട്രാൻസിഷനുകളുടെയും എൻട്രി ഇഫക്റ്റുകളുടെയും വേഗത';
 
   @override
   String get animationSpeedOff => 'ഓഫ്';
@@ -121,7 +123,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get pluginRepoUpdated => 'പ്ലഗിൻ റിപ്പോസിറ്ററി അപ്ഡേറ്റ് ചെയ്തു';
 
   @override
-  String get pluginRepoUpdateFailed => 'പ്ലഗിൻ റിപ്പോസിറ്ററി റിഫ്രഷ് ചെയ്യാനായില്ല';
+  String get pluginRepoUpdateFailed =>
+      'പ്ലഗിൻ റിപ്പോസിറ്ററി റിഫ്രഷ് ചെയ്യാനായില്ല';
 
   @override
   String get ok => 'ശരി';
@@ -233,10 +236,12 @@ class AppLocalizationsMl extends AppLocalizations {
   String get shelfFrame => 'സെക്ഷനുകൾക്ക് ചുറ്റും ഫ്രെയിം';
 
   @override
-  String get shelfFrameDesc => 'ഓരോ ഷെൽഫിനും പിന്നിൽ ഒരു കാർഡ് കാണിക്കൂ, അല്ലെങ്കിൽ വരികൾ നേരിട്ട് പേജിൽ വയ്ക്കൂ';
+  String get shelfFrameDesc =>
+      'ഓരോ ഷെൽഫിനും പിന്നിൽ ഒരു കാർഡ് കാണിക്കൂ, അല്ലെങ്കിൽ വരികൾ നേരിട്ട് പേജിൽ വയ്ക്കൂ';
 
   @override
-  String get settingsExtensionsDesc => 'സോഴ്സ് മാനേജർമാർ, റിപ്പോസിറ്ററികൾ, എക്സ്റ്റൻഷൻ ഓപ്ഷനുകൾ';
+  String get settingsExtensionsDesc =>
+      'സോഴ്സ് മാനേജർമാർ, റിപ്പോസിറ്ററികൾ, എക്സ്റ്റൻഷൻ ഓപ്ഷനുകൾ';
 
   @override
   String get settingsAddons => 'ആഡ്-ഓണുകൾ';
@@ -248,7 +253,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get customPath => 'കസ്റ്റം സ്റ്റോറേജ് പാത്ത്';
 
   @override
-  String get customPathDesc => 'ആപ്പ് ഡാറ്റ സൂക്ഷിക്കുന്ന സ്ഥലം. റീസെറ്റ് ചെയ്യാൻ ലോങ് പ്രസ് ചെയ്യൂ';
+  String get customPathDesc =>
+      'ആപ്പ് ഡാറ്റ സൂക്ഷിക്കുന്ന സ്ഥലം. റീസെറ്റ് ചെയ്യാൻ ലോങ് പ്രസ് ചെയ്യൂ';
 
   @override
   String get selectDirectory => 'ഡയറക്ടറി തിരഞ്ഞെടുക്കൂ';
@@ -257,13 +263,15 @@ class AppLocalizationsMl extends AppLocalizations {
   String get differentCacheManager => 'ബദൽ ഇമേജ് കാഷെ';
 
   @override
-  String get differentCacheManagerDesc => 'ചിത്രങ്ങൾക്ക് വേറൊരു കാഷെ മാനേജർ ഉപയോഗിക്കൂ';
+  String get differentCacheManagerDesc =>
+      'ചിത്രങ്ങൾക്ക് വേറൊരു കാഷെ മാനേജർ ഉപയോഗിക്കൂ';
 
   @override
   String get backupAndRestore => 'ബാക്കപ്പും റീസ്റ്റോറും';
 
   @override
-  String get backupAndRestoreDesc => 'നിന്റെ പ്രിഫറൻസുകൾ സേവ് ചെയ്യൂ അല്ലെങ്കിൽ ലോഡ് ചെയ്യൂ';
+  String get backupAndRestoreDesc =>
+      'നിന്റെ പ്രിഫറൻസുകൾ സേവ് ചെയ്യൂ അല്ലെങ്കിൽ ലോഡ് ചെയ്യൂ';
 
   @override
   String get backup => 'ബാക്കപ്പ്';
@@ -275,7 +283,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get loadExtensionsIcon => 'എക്സ്റ്റൻഷൻ ഐക്കണുകൾ ലോഡ് ചെയ്യൂ';
 
   @override
-  String get loadExtensionsIconDesc => 'എക്സ്റ്റൻഷൻ ലിസ്റ്റുകളിൽ സോഴ്സ് ഐക്കണുകൾ കാണിക്കൂ';
+  String get loadExtensionsIconDesc =>
+      'എക്സ്റ്റൻഷൻ ലിസ്റ്റുകളിൽ സോഴ്സ് ഐക്കണുകൾ കാണിക്കൂ';
 
   @override
   String get sectionStorage => 'സ്റ്റോറേജ്';
@@ -326,7 +335,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get backupPasswordHint => 'ഡിഫോൾട്ട് ഉപയോഗിക്കാൻ ഒഴിച്ചിടൂ';
 
   @override
-  String get backupSensitive => 'ലോഗിൻ ടോക്കണുകൾ ഉൾപ്പെടുന്നു. ഈ ഫയൽ സ്വകാര്യമായി സൂക്ഷിക്കൂ';
+  String get backupSensitive =>
+      'ലോഗിൻ ടോക്കണുകൾ ഉൾപ്പെടുന്നു. ഈ ഫയൽ സ്വകാര്യമായി സൂക്ഷിക്കൂ';
 
   @override
   String get backupCreate => 'ബാക്കപ്പ് ഉണ്ടാക്കൂ';
@@ -372,7 +382,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get backupUnlock => 'അൺലോക്ക്';
 
   @override
-  String get backupWrongPassword => 'ഈ ഫയൽ വായിക്കാനായില്ല. പാസ്‌വേഡ് ഒന്നുകൂടി നോക്കൂ';
+  String get backupWrongPassword =>
+      'ഈ ഫയൽ വായിക്കാനായില്ല. പാസ്‌വേഡ് ഒന്നുകൂടി നോക്കൂ';
 
   @override
   String get backupRestoreSelected => 'തിരഞ്ഞെടുത്തത് റീസ്റ്റോർ ചെയ്യൂ';
@@ -383,7 +394,8 @@ class AppLocalizationsMl extends AppLocalizations {
   }
 
   @override
-  String get backupRestored => 'റീസ്റ്റോർ ചെയ്തു. എല്ലാം ബാധകമാകാൻ ആപ്പ് റീസ്റ്റാർട്ട് ചെയ്യൂ';
+  String get backupRestored =>
+      'റീസ്റ്റോർ ചെയ്തു. എല്ലാം ബാധകമാകാൻ ആപ്പ് റീസ്റ്റാർട്ട് ചെയ്യൂ';
 
   @override
   String backupRestoreFailed(Object error) {
@@ -397,13 +409,15 @@ class AppLocalizationsMl extends AppLocalizations {
   String get backupCatTheme => 'രൂപഭാവം';
 
   @override
-  String get backupCatThemeDesc => 'തീം, നിറങ്ങൾ, ഗ്ലാസ്, ഫോണ്ടുകൾ, കാർഡ് സ്റ്റൈൽ';
+  String get backupCatThemeDesc =>
+      'തീം, നിറങ്ങൾ, ഗ്ലാസ്, ഫോണ്ടുകൾ, കാർഡ് സ്റ്റൈൽ';
 
   @override
   String get backupCatCommon => 'പൊതുവായത്';
 
   @override
-  String get backupCatCommonDesc => 'ഭാഷ, സ്റ്റോറേജ്, നെറ്റ്‌വർക്ക്, എക്സ്റ്റൻഷൻ ഓപ്ഷനുകൾ';
+  String get backupCatCommonDesc =>
+      'ഭാഷ, സ്റ്റോറേജ്, നെറ്റ്‌വർക്ക്, എക്സ്റ്റൻഷൻ ഓപ്ഷനുകൾ';
 
   @override
   String get backupCatPlayer => 'പ്ലെയർ';
@@ -427,13 +441,15 @@ class AppLocalizationsMl extends AppLocalizations {
   String get backupCatOther => 'സർവീസുകളും ഫീഡുകളും';
 
   @override
-  String get backupCatOtherDesc => 'ഫീഡ് ലേഔട്ടുകൾ, ലിസ്റ്റുകൾ, സർവീസ് ഓപ്ഷനുകൾ';
+  String get backupCatOtherDesc =>
+      'ഫീഡ് ലേഔട്ടുകൾ, ലിസ്റ്റുകൾ, സർവീസ് ഓപ്ഷനുകൾ';
 
   @override
   String get logFile => 'ലോഗ് ഫയൽ';
 
   @override
-  String get logFileDesc => 'ആപ്പ് ലോഗ് ഷെയർ ചെയ്യൂ, അല്ലെങ്കിൽ Linux-ൽ അതിന്റെ പാത്ത് കോപ്പി ചെയ്യൂ';
+  String get logFileDesc =>
+      'ആപ്പ് ലോഗ് ഷെയർ ചെയ്യൂ, അല്ലെങ്കിൽ Linux-ൽ അതിന്റെ പാത്ത് കോപ്പി ചെയ്യൂ';
 
   @override
   String get logFileCopied => 'ലോഗ് പാത്ത് കോപ്പി ചെയ്തു';
@@ -442,7 +458,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get donateSheetTitle => 'Dartotsu ഇഷ്ടപ്പെട്ടോ?';
 
   @override
-  String get donateSheetMessage => 'Dartotsu ഉണ്ടാക്കുന്നതും നോക്കി നടത്തുന്നതും ഒരാൾ മാത്രമാണ്. ഇത് നിനക്ക് ഉപകാരപ്പെടുന്നുണ്ടെങ്കിൽ, ഡെവലപ്മെന്റിനെ സപ്പോർട്ട് ചെയ്യൂ.';
+  String get donateSheetMessage =>
+      'Dartotsu ഉണ്ടാക്കുന്നതും നോക്കി നടത്തുന്നതും ഒരാൾ മാത്രമാണ്. ഇത് നിനക്ക് ഉപകാരപ്പെടുന്നുണ്ടെങ്കിൽ, ഡെവലപ്മെന്റിനെ സപ്പോർട്ട് ചെയ്യൂ.';
 
   @override
   String get donateLater => 'പിന്നീട് ആവാം';
@@ -451,7 +468,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get glassBackground => 'ഗ്ലാസ് ബാക്ക്ഗ്രൗണ്ട്';
 
   @override
-  String get glassBackgroundDesc => 'ഒരു ഇമേജ് ലിങ്ക് നൽകിയില്ലെങ്കിൽ നിന്റെ പ്രൊഫൈൽ ബാനർ';
+  String get glassBackgroundDesc =>
+      'ഒരു ഇമേജ് ലിങ്ക് നൽകിയില്ലെങ്കിൽ നിന്റെ പ്രൊഫൈൽ ബാനർ';
 
   @override
   String get glassBackgroundHint => 'ഇമേജ് ലിങ്ക് (ബാനറിന് ഒഴിച്ചിടൂ)';
@@ -460,7 +478,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get followCover => 'കവർ പിന്തുടരൂ';
 
   @override
-  String get followCoverDesc => 'നിറങ്ങൾ ബാക്ക്ഗ്രൗണ്ടിനെയും, ഡീറ്റെയിൽ പേജുകളിൽ കവറിനെയും പിന്തുടരും';
+  String get followCoverDesc =>
+      'നിറങ്ങൾ ബാക്ക്ഗ്രൗണ്ടിനെയും, ഡീറ്റെയിൽ പേജുകളിൽ കവറിനെയും പിന്തുടരും';
 
   @override
   String get cardStyle => 'കാർഡ് സ്റ്റൈൽ';
@@ -472,7 +491,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get customFont => 'ഫോണ്ട്';
 
   @override
-  String get customFontDesc => 'ഡിഫോൾട്ട്, ഉപകരണത്തിലെ ഫയൽ, അല്ലെങ്കിൽ Google Fonts';
+  String get customFontDesc =>
+      'ഡിഫോൾട്ട്, ഉപകരണത്തിലെ ഫയൽ, അല്ലെങ്കിൽ Google Fonts';
 
   @override
   String get customFontError => 'ആ ഫോണ്ട് ഫയൽ ലോഡ് ചെയ്യാനായില്ല';
@@ -505,7 +525,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get jsonTheme => 'കസ്റ്റം തീം ഫയൽ';
 
   @override
-  String get jsonThemeDesc => '~/.config/dartotsu/theme.json-ൽ നിന്നുള്ള ലൈവ് നിറങ്ങൾ (കസ്റ്റം സ്ക്രിപ്റ്റ്, അല്ലെങ്കിൽ നിന്റെ സ്വന്തം എഡിറ്റുകൾ)';
+  String get jsonThemeDesc =>
+      '~/.config/dartotsu/theme.json-ൽ നിന്നുള്ള ലൈവ് നിറങ്ങൾ (കസ്റ്റം സ്ക്രിപ്റ്റ്, അല്ലെങ്കിൽ നിന്റെ സ്വന്തം എഡിറ്റുകൾ)';
 
   @override
   String get themeMode => 'തീം മോഡ്';
@@ -596,7 +617,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get clearCookies => 'കുക്കികൾ ക്ലിയർ ചെയ്യൂ';
 
   @override
-  String get clearCookiesDesc => 'സൂക്ഷിച്ചിരിക്കുന്ന എല്ലാ കുക്കികളും നീക്കം ചെയ്യൂ';
+  String get clearCookiesDesc =>
+      'സൂക്ഷിച്ചിരിക്കുന്ന എല്ലാ കുക്കികളും നീക്കം ചെയ്യൂ';
 
   @override
   String notImplementedArea(String area) {
@@ -618,7 +640,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get highRefreshRate => 'ഹൈ റിഫ്രഷ് റേറ്റ്';
 
   @override
-  String get highRefreshRateDesc => 'നിന്റെ സ്ക്രീൻ സപ്പോർട്ട് ചെയ്യുന്ന ഏറ്റവും ഉയർന്ന റിഫ്രഷ് റേറ്റ് ഉപയോഗിക്കൂ';
+  String get highRefreshRateDesc =>
+      'നിന്റെ സ്ക്രീൻ സപ്പോർട്ട് ചെയ്യുന്ന ഏറ്റവും ഉയർന്ന റിഫ്രഷ് റേറ്റ് ഉപയോഗിക്കൂ';
 
   @override
   String get imageSave => 'ചിത്രം സേവ് ചെയ്യൂ';
@@ -644,10 +667,12 @@ class AppLocalizationsMl extends AppLocalizations {
   String get verifyTls => 'സർട്ടിഫിക്കറ്റുകൾ പരിശോധിക്കൂ';
 
   @override
-  String get verifyTlsDesc => 'അസാധുവായ HTTPS സർട്ടിഫിക്കറ്റുള്ള സെർവറുകൾ നിരസിക്കൂ. സെൽഫ്-സൈൻഡ് ഉപയോഗിക്കുന്ന സോഴ്സിന് മാത്രം ഓഫ് ആക്കൂ';
+  String get verifyTlsDesc =>
+      'അസാധുവായ HTTPS സർട്ടിഫിക്കറ്റുള്ള സെർവറുകൾ നിരസിക്കൂ. സെൽഫ്-സൈൻഡ് ഉപയോഗിക്കുന്ന സോഴ്സിന് മാത്രം ഓഫ് ആക്കൂ';
 
   @override
-  String get clearCookiesConfirm => 'സൂക്ഷിച്ചിരിക്കുന്ന എല്ലാ കുക്കികളും നീക്കം ചെയ്യണോ? ചില സോഴ്സുകളിൽ നിന്ന് ഇത് നിന്നെ സൈൻ ഔട്ട് ചെയ്തേക്കാം.';
+  String get clearCookiesConfirm =>
+      'സൂക്ഷിച്ചിരിക്കുന്ന എല്ലാ കുക്കികളും നീക്കം ചെയ്യണോ? ചില സോഴ്സുകളിൽ നിന്ന് ഇത് നിന്നെ സൈൻ ഔട്ട് ചെയ്തേക്കാം.';
 
   @override
   String get version => 'വേർഷൻ';
@@ -722,7 +747,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get onboardingPaletteTitle => 'നിനക്കിഷ്ടമുള്ളതാക്കൂ';
 
   @override
-  String get onboardingPaletteBody => 'ഒരു പാലറ്റ് തിരഞ്ഞെടുക്കൂ. കാർഡുകൾ മുതൽ പ്ലെയർ വരെ എല്ലാ ആക്സന്റും അതിനെ പിന്തുടരും.';
+  String get onboardingPaletteBody =>
+      'ഒരു പാലറ്റ് തിരഞ്ഞെടുക്കൂ. കാർഡുകൾ മുതൽ പ്ലെയർ വരെ എല്ലാ ആക്സന്റും അതിനെ പിന്തുടരും.';
 
   @override
   String get themeModeAuto => 'ഓട്ടോ';
@@ -737,40 +763,47 @@ class AppLocalizationsMl extends AppLocalizations {
   String get onboardingSyncTitle => 'നിന്റെ ലൈബ്രറി സിങ്ക് ചെയ്യൂ';
 
   @override
-  String get onboardingSyncBody => 'ലിസ്റ്റുകളും പ്രോഗ്രസും സ്കോറുകളും കൂടെ കൊണ്ടുവരാൻ AniList-ൽ സൈൻ ഇൻ ചെയ്യൂ. അല്ലെങ്കിൽ ഒഴിവാക്കി ഗസ്റ്റായി ബ്രൗസ് ചെയ്യൂ.';
+  String get onboardingSyncBody =>
+      'ലിസ്റ്റുകളും പ്രോഗ്രസും സ്കോറുകളും കൂടെ കൊണ്ടുവരാൻ AniList-ൽ സൈൻ ഇൻ ചെയ്യൂ. അല്ലെങ്കിൽ ഒഴിവാക്കി ഗസ്റ്റായി ബ്രൗസ് ചെയ്യൂ.';
 
   @override
-  String get onboardingOpenLinks => 'AniList, റിപ്പോ ലിങ്കുകൾ Dartotsu-വിൽ തുറക്കൂ';
+  String get onboardingOpenLinks =>
+      'AniList, റിപ്പോ ലിങ്കുകൾ Dartotsu-വിൽ തുറക്കൂ';
 
   @override
   String get onboardingPermsTitle => 'അനുമതികൾ';
 
   @override
-  String get onboardingPermsBody => 'ഡൗൺലോഡുകളും അപ്ഡേറ്റുകളും അലർട്ടുകളും തടസ്സമില്ലാതെ പ്രവർത്തിക്കാൻ ഇവ ഇപ്പോൾ അനുവദിക്കൂ. പിന്നീട് സിസ്റ്റം സെറ്റിംഗ്സിൽ മാറ്റാം.';
+  String get onboardingPermsBody =>
+      'ഡൗൺലോഡുകളും അപ്ഡേറ്റുകളും അലർട്ടുകളും തടസ്സമില്ലാതെ പ്രവർത്തിക്കാൻ ഇവ ഇപ്പോൾ അനുവദിക്കൂ. പിന്നീട് സിസ്റ്റം സെറ്റിംഗ്സിൽ മാറ്റാം.';
 
   @override
   String get permNotifications => 'നോട്ടിഫിക്കേഷനുകൾ';
 
   @override
-  String get permNotificationsDesc => 'ഡൗൺലോഡ് പ്രോഗ്രസ്, പുതിയ എപ്പിസോഡുകൾ, മറുപടികൾ';
+  String get permNotificationsDesc =>
+      'ഡൗൺലോഡ് പ്രോഗ്രസ്, പുതിയ എപ്പിസോഡുകൾ, മറുപടികൾ';
 
   @override
   String get permStorage => 'എല്ലാ ഫയലുകളിലേക്കും ആക്സസ്';
 
   @override
-  String get permStorageDesc => 'ഡൗൺലോഡുകൾ പൊതു Dartotsu ഫോൾഡറിലേക്ക് സേവ് ചെയ്യൂ';
+  String get permStorageDesc =>
+      'ഡൗൺലോഡുകൾ പൊതു Dartotsu ഫോൾഡറിലേക്ക് സേവ് ചെയ്യൂ';
 
   @override
   String get permInstall => 'അപ്ഡേറ്റുകൾ ഇൻസ്റ്റാൾ ചെയ്യൂ';
 
   @override
-  String get permInstallDesc => 'Dartotsu-വിനെ സ്വന്തം ആപ്പ് അപ്ഡേറ്റുകൾ ഇൻസ്റ്റാൾ ചെയ്യാൻ അനുവദിക്കൂ';
+  String get permInstallDesc =>
+      'Dartotsu-വിനെ സ്വന്തം ആപ്പ് അപ്ഡേറ്റുകൾ ഇൻസ്റ്റാൾ ചെയ്യാൻ അനുവദിക്കൂ';
 
   @override
   String get permBattery => 'നിയന്ത്രണമില്ലാത്ത ബാറ്ററി';
 
   @override
-  String get permBatteryDesc => 'നീണ്ട ഡൗൺലോഡുകൾ ബാക്ക്ഗ്രൗണ്ടിൽ ഓടിക്കൊണ്ടിരിക്കട്ടെ';
+  String get permBatteryDesc =>
+      'നീണ്ട ഡൗൺലോഡുകൾ ബാക്ക്ഗ്രൗണ്ടിൽ ഓടിക്കൊണ്ടിരിക്കട്ടെ';
 
   @override
   String get permGrant => 'അനുവദിക്കൂ';
@@ -825,13 +858,15 @@ class AppLocalizationsMl extends AppLocalizations {
   String get shareAnalytics => 'അജ്ഞാത ഉപയോഗ ഡാറ്റ ഷെയർ ചെയ്യൂ';
 
   @override
-  String get shareAnalyticsDesc => 'അജ്ഞാത യൂസർ കൗണ്ടും ക്രാഷ് റിപ്പോർട്ടുകളും. അക്കൗണ്ടോ വ്യക്തിഗത ഡാറ്റയോ ഇല്ല';
+  String get shareAnalyticsDesc =>
+      'അജ്ഞാത യൂസർ കൗണ്ടും ക്രാഷ് റിപ്പോർട്ടുകളും. അക്കൗണ്ടോ വ്യക്തിഗത ഡാറ്റയോ ഇല്ല';
 
   @override
   String get linkOpenAnilist => 'AniList ലിങ്കുകൾ Dartotsu-വിൽ തുറക്കൂ';
 
   @override
-  String get linkOpenAnilistDesc => 'anilist.co ലിങ്കുകൾ ആപ്പിൽ തുറക്കാൻ ലിങ്ക് ഹാൻഡ്ലിംഗ് ഓണാക്കൂ';
+  String get linkOpenAnilistDesc =>
+      'anilist.co ലിങ്കുകൾ ആപ്പിൽ തുറക്കാൻ ലിങ്ക് ഹാൻഡ്ലിംഗ് ഓണാക്കൂ';
 
   @override
   String get linkSettingsFailed => 'സിസ്റ്റം സെറ്റിംഗ്സ് തുറക്കാനായില്ല';
@@ -840,16 +875,19 @@ class AppLocalizationsMl extends AppLocalizations {
   String get discordRichPresence => 'Rich Presence';
 
   @override
-  String get discordRichPresenceTokenDesc => 'നീ എന്തു ചെയ്യുന്നു എന്ന് നിന്റെ Discord പ്രൊഫൈലിൽ കാണിക്കൂ. നിന്റെ Discord ടോക്കൺ വേണം.';
+  String get discordRichPresenceTokenDesc =>
+      'നീ എന്തു ചെയ്യുന്നു എന്ന് നിന്റെ Discord പ്രൊഫൈലിൽ കാണിക്കൂ. നിന്റെ Discord ടോക്കൺ വേണം.';
 
   @override
-  String get discordRichPresenceDesktopDesc => 'നീ എന്തു ചെയ്യുന്നു എന്ന് നിന്റെ Discord പ്രൊഫൈലിൽ കാണിക്കൂ. Discord ഡെസ്ക്ടോപ്പ് ആപ്പ് ഓടിക്കൊണ്ടിരിക്കണം.';
+  String get discordRichPresenceDesktopDesc =>
+      'നീ എന്തു ചെയ്യുന്നു എന്ന് നിന്റെ Discord പ്രൊഫൈലിൽ കാണിക്കൂ. Discord ഡെസ്ക്ടോപ്പ് ആപ്പ് ഓടിക്കൊണ്ടിരിക്കണം.';
 
   @override
   String get discordBrowsing => 'ബ്രൗസിംഗ് ആക്റ്റിവിറ്റി കാണിക്കൂ';
 
   @override
-  String get discordBrowsingDesc => 'നീ കാണുന്നതോ വായിക്കുന്നതോ മാത്രമല്ല, നോക്കിക്കൊണ്ടിരിക്കുന്ന ടാബ്, പേജ്, പ്രൊഫൈൽ എന്നിവയും കാണിക്കൂ.';
+  String get discordBrowsingDesc =>
+      'നീ കാണുന്നതോ വായിക്കുന്നതോ മാത്രമല്ല, നോക്കിക്കൊണ്ടിരിക്കുന്ന ടാബ്, പേജ്, പ്രൊഫൈൽ എന്നിവയും കാണിക്കൂ.';
 
   @override
   String get discordLookHeader => 'പ്രസൻസ് ലുക്ക്';
@@ -858,7 +896,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get discordActivityType => 'ആക്റ്റിവിറ്റി ടൈപ്പ്';
 
   @override
-  String get discordActivityTypeDesc => 'Discord ഇത് എങ്ങനെ എഴുതുന്നു എന്നത്: \"Watching …\" അല്ലെങ്കിൽ \"Playing …\". ഓട്ടോ ആണെങ്കിൽ അനിമെയ്ക്ക് Watching, ബാക്കിയെല്ലാത്തിനും Playing.';
+  String get discordActivityTypeDesc =>
+      'Discord ഇത് എങ്ങനെ എഴുതുന്നു എന്നത്: \"Watching …\" അല്ലെങ്കിൽ \"Playing …\". ഓട്ടോ ആണെങ്കിൽ അനിമെയ്ക്ക് Watching, ബാക്കിയെല്ലാത്തിനും Playing.';
 
   @override
   String get discordWatching => 'കാണുന്നു';
@@ -876,19 +915,22 @@ class AppLocalizationsMl extends AppLocalizations {
   String get discordTimer => 'ടൈമർ കാണിക്കൂ';
 
   @override
-  String get discordTimerDesc => 'ടൈറ്റിലിന് താഴെ കഴിഞ്ഞതോ ബാക്കിയുള്ളതോ ആയ സമയം.';
+  String get discordTimerDesc =>
+      'ടൈറ്റിലിന് താഴെ കഴിഞ്ഞതോ ബാക്കിയുള്ളതോ ആയ സമയം.';
 
   @override
   String get discordButtons => 'ബട്ടണുകൾ കാണിക്കൂ';
 
   @override
-  String get discordButtonsDesc => '\"View anime / manga\", \"Open Dartotsu\" ബട്ടണുകൾ.';
+  String get discordButtonsDesc =>
+      '\"View anime / manga\", \"Open Dartotsu\" ബട്ടണുകൾ.';
 
   @override
   String get discordHideTitles => 'ടൈറ്റിലുകൾ മറയ്ക്കൂ';
 
   @override
-  String get discordHideTitlesDesc => 'അനിമെ, മംഗ പേരുകൾ (കവറും ലിങ്കും സഹിതം) \"Something private\" എന്നാക്കി മാറ്റൂ.';
+  String get discordHideTitlesDesc =>
+      'അനിമെ, മംഗ പേരുകൾ (കവറും ലിങ്കും സഹിതം) \"Something private\" എന്നാക്കി മാറ്റൂ.';
 
   @override
   String get discordConnectionHeader => 'കണക്ഷൻ';
@@ -951,13 +993,16 @@ class AppLocalizationsMl extends AppLocalizations {
   String get discordToken => 'Discord ടോക്കൺ';
 
   @override
-  String get discordTokenSaved => 'സേവ് ചെയ്തു. മാറ്റാൻ ടാപ്പ് ചെയ്യൂ, നീക്കാൻ ലോങ് പ്രസ് ചെയ്യൂ.';
+  String get discordTokenSaved =>
+      'സേവ് ചെയ്തു. മാറ്റാൻ ടാപ്പ് ചെയ്യൂ, നീക്കാൻ ലോങ് പ്രസ് ചെയ്യൂ.';
 
   @override
-  String get discordTokenNotSet => 'സെറ്റ് ചെയ്തിട്ടില്ല. ചേർക്കാൻ ടാപ്പ് ചെയ്യൂ.';
+  String get discordTokenNotSet =>
+      'സെറ്റ് ചെയ്തിട്ടില്ല. ചേർക്കാൻ ടാപ്പ് ചെയ്യൂ.';
 
   @override
-  String get discordTokenPrompt => 'പ്രസൻസ് കാണിക്കേണ്ട Discord അക്കൗണ്ടിന്റെ ടോക്കൺ പേസ്റ്റ് ചെയ്യൂ. ഇത് ഈ ഉപകരണത്തിൽ മാത്രമേ ഉണ്ടാകൂ.';
+  String get discordTokenPrompt =>
+      'പ്രസൻസ് കാണിക്കേണ്ട Discord അക്കൗണ്ടിന്റെ ടോക്കൺ പേസ്റ്റ് ചെയ്യൂ. ഇത് ഈ ഉപകരണത്തിൽ മാത്രമേ ഉണ്ടാകൂ.';
 
   @override
   String get discordTokenHint => 'ടോക്കൺ';
@@ -975,7 +1020,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get discordRichPresenceRowOn => 'ഓൺ · ലുക്ക് മാറ്റാൻ ടാപ്പ് ചെയ്യൂ';
 
   @override
-  String get discordRichPresenceRowOff => 'നീ എന്തു ചെയ്യുന്നു എന്ന് നിന്റെ Discord പ്രൊഫൈലിൽ കാണിക്കൂ';
+  String get discordRichPresenceRowOff =>
+      'നീ എന്തു ചെയ്യുന്നു എന്ന് നിന്റെ Discord പ്രൊഫൈലിൽ കാണിക്കൂ';
 
   @override
   String get loginCancelled => 'ലോഗിൻ റദ്ദാക്കി';
@@ -992,7 +1038,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get malLoginFailed => 'MyAnimeList ലോഗിൻ പരാജയപ്പെട്ടു';
 
   @override
-  String get kitsuLoginFailed => 'Kitsu ലോഗിൻ പരാജയപ്പെട്ടു. ഇമെയിലും പാസ്‌വേഡും പരിശോധിക്കൂ.';
+  String get kitsuLoginFailed =>
+      'Kitsu ലോഗിൻ പരാജയപ്പെട്ടു. ഇമെയിലും പാസ്‌വേഡും പരിശോധിക്കൂ.';
 
   @override
   String get kitsuLoginTitle => 'Kitsu-വിൽ സൈൻ ഇൻ ചെയ്യൂ';
@@ -1043,13 +1090,15 @@ class AppLocalizationsMl extends AppLocalizations {
   String get hideNsfw => 'NSFW മറയ്ക്കൂ';
 
   @override
-  String get hideNsfwDesc => 'അഡൾട്ട് ടൈറ്റിലുകൾ ഫീഡുകളിലും തിരയലിലും നിന്ന് ഒഴിവാക്കൂ, നിന്റെ സ്വന്തം അഡൾട്ട് എൻട്രികൾ Hidden Media-യിൽ കാണിക്കൂ.';
+  String get hideNsfwDesc =>
+      'അഡൾട്ട് ടൈറ്റിലുകൾ ഫീഡുകളിലും തിരയലിലും നിന്ന് ഒഴിവാക്കൂ, നിന്റെ സ്വന്തം അഡൾട്ട് എൻട്രികൾ Hidden Media-യിൽ കാണിക്കൂ.';
 
   @override
   String get kitsuAccountOptions => 'Kitsu അക്കൗണ്ട് ഓപ്ഷനുകൾ';
 
   @override
-  String get couldNotUpdateKitsuSettings => 'നിന്റെ Kitsu സെറ്റിംഗ്സ് അപ്ഡേറ്റ് ചെയ്യാനായില്ല';
+  String get couldNotUpdateKitsuSettings =>
+      'നിന്റെ Kitsu സെറ്റിംഗ്സ് അപ്ഡേറ്റ് ചെയ്യാനായില്ല';
 
   @override
   String get titleCanonical => 'കാനോനിക്കൽ';
@@ -1088,7 +1137,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get shareToGlobal => 'ഗ്ലോബൽ ഫീഡിലേക്ക് ഷെയർ ചെയ്യൂ';
 
   @override
-  String get shareToGlobalDesc => 'നിന്റെ ആക്റ്റിവിറ്റി Kitsu-വിന്റെ ഗ്ലോബൽ ഫീഡിൽ വരാൻ അനുവദിക്കൂ.';
+  String get shareToGlobalDesc =>
+      'നിന്റെ ആക്റ്റിവിറ്റി Kitsu-വിന്റെ ഗ്ലോബൽ ഫീഡിൽ വരാൻ അനുവദിക്കൂ.';
 
   @override
   String get memberSince => 'അംഗമായത്';
@@ -1115,7 +1165,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get simklReadOnly => 'Simkl റീഡ്-ഓൺലി ആക്സസ് അനുവദിച്ചു';
 
   @override
-  String get incognitoEditsBlocked => 'ഇൻകോഗ്നിറ്റോ: ലിസ്റ്റ് എഡിറ്റുകൾ തടഞ്ഞിരിക്കുന്നു';
+  String get incognitoEditsBlocked =>
+      'ഇൻകോഗ്നിറ്റോ: ലിസ്റ്റ് എഡിറ്റുകൾ തടഞ്ഞിരിക്കുന്നു';
 
   @override
   String serviceError(String service, String error) {
@@ -1123,7 +1174,8 @@ class AppLocalizationsMl extends AppLocalizations {
   }
 
   @override
-  String get incognitoProgressNotSaved => 'ഇൻകോഗ്നിറ്റോ: പ്രോഗ്രസ് സേവ് ചെയ്തില്ല';
+  String get incognitoProgressNotSaved =>
+      'ഇൻകോഗ്നിറ്റോ: പ്രോഗ്രസ് സേവ് ചെയ്തില്ല';
 
   @override
   String progressSet(int progress) {
@@ -1142,10 +1194,12 @@ class AppLocalizationsMl extends AppLocalizations {
   String get homeSections => 'ഹോം സെക്ഷനുകൾ';
 
   @override
-  String get homeSectionsHint => 'ക്രമം മാറ്റാൻ വലിച്ചിടൂ. മറച്ച സെക്ഷനുകൾ ഒരിക്കലും ലോഡ് ചെയ്യില്ല.';
+  String get homeSectionsHint =>
+      'ക്രമം മാറ്റാൻ വലിച്ചിടൂ. മറച്ച സെക്ഷനുകൾ ഒരിക്കലും ലോഡ് ചെയ്യില്ല.';
 
   @override
-  String get customListDeleteFailed => 'കസ്റ്റം ലിസ്റ്റ് ഡിലീറ്റ് ചെയ്യാനായില്ല';
+  String get customListDeleteFailed =>
+      'കസ്റ്റം ലിസ്റ്റ് ഡിലീറ്റ് ചെയ്യാനായില്ല';
 
   @override
   String get customListsSaveFailed => 'കസ്റ്റം ലിസ്റ്റുകൾ സേവ് ചെയ്യാനായില്ല';
@@ -1213,7 +1267,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get refreshFromMal => 'MyAnimeList-ൽ നിന്ന് റിഫ്രഷ് ചെയ്യൂ';
 
   @override
-  String get repullProfileCounts => 'നിന്റെ പ്രൊഫൈലും കൗണ്ടുകളും വീണ്ടും എടുക്കൂ';
+  String get repullProfileCounts =>
+      'നിന്റെ പ്രൊഫൈലും കൗണ്ടുകളും വീണ്ടും എടുക്കൂ';
 
   @override
   String get refreshed => 'റിഫ്രഷ് ചെയ്തു';
@@ -1225,7 +1280,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get refreshFromSimkl => 'Simkl-ൽ നിന്ന് റിഫ്രഷ് ചെയ്യൂ';
 
   @override
-  String get repullProfileLibrary => 'നിന്റെ പ്രൊഫൈലും ലൈബ്രറിയും വീണ്ടും എടുക്കൂ';
+  String get repullProfileLibrary =>
+      'നിന്റെ പ്രൊഫൈലും ലൈബ്രറിയും വീണ്ടും എടുക്കൂ';
 
   @override
   String get simklSignInToSearch => 'തിരയാൻ Simkl-ൽ സൈൻ ഇൻ ചെയ്യൂ';
@@ -1234,7 +1290,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get dropRate => 'ഡ്രോപ്പ് റേറ്റ്';
 
   @override
-  String get simklAttribution => 'ഡാറ്റയും ആർട്ട്‌വർക്കും നൽകിയത് Simkl. Simkl-ൽ കാണൂ';
+  String get simklAttribution =>
+      'ഡാറ്റയും ആർട്ട്‌വർക്കും നൽകിയത് Simkl. Simkl-ൽ കാണൂ';
 
   @override
   String get onHold => 'ഓൺ ഹോൾഡ്';
@@ -1329,7 +1386,8 @@ class AppLocalizationsMl extends AppLocalizations {
   }
 
   @override
-  String get logPathCopied => 'ലോഗ് ഫയൽ പാത്ത് ക്ലിപ്പ്ബോർഡിലേക്ക് കോപ്പി ചെയ്തു';
+  String get logPathCopied =>
+      'ലോഗ് ഫയൽ പാത്ത് ക്ലിപ്പ്ബോർഡിലേക്ക് കോപ്പി ചെയ്തു';
 
   @override
   String get animeSource => 'അനിമെ സോഴ്സ്';
@@ -1350,19 +1408,22 @@ class AppLocalizationsMl extends AppLocalizations {
   String get nothingMatched => 'ഒന്നും ചേരുന്നില്ല';
 
   @override
-  String get nothingSavedFromSource => 'ഈ സോഴ്സിൽ നിന്ന് ഇതുവരെ ഒന്നും സേവ് ചെയ്തിട്ടില്ല';
+  String get nothingSavedFromSource =>
+      'ഈ സോഴ്സിൽ നിന്ന് ഇതുവരെ ഒന്നും സേവ് ചെയ്തിട്ടില്ല';
 
   @override
   String get sourceReturnedNothing => 'ഈ സോഴ്സ് ഒന്നും തന്നില്ല';
 
   @override
-  String get checkConnectionOrSource => 'കണക്ഷൻ പരിശോധിക്കൂ, അല്ലെങ്കിൽ വേറൊരു സോഴ്സ് നോക്കൂ.';
+  String get checkConnectionOrSource =>
+      'കണക്ഷൻ പരിശോധിക്കൂ, അല്ലെങ്കിൽ വേറൊരു സോഴ്സ് നോക്കൂ.';
 
   @override
   String get tryDifferentSearch => 'വേറൊരു തിരയൽ വാക്ക് നോക്കൂ.';
 
   @override
-  String get savedTitlesAppearHere => 'ലിസ്റ്റിൽ ചേർക്കുന്ന ടൈറ്റിലുകൾ ഇവിടെ വരും.';
+  String get savedTitlesAppearHere =>
+      'ലിസ്റ്റിൽ ചേർക്കുന്ന ടൈറ്റിലുകൾ ഇവിടെ വരും.';
 
   @override
   String get tryOtherFeed => 'പകരം മറ്റേ ഫീഡോ തിരയലോ നോക്കൂ.';
@@ -1382,7 +1443,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get nothingHereYet => 'ഇവിടെ ഇതുവരെ ഒന്നുമില്ല';
 
   @override
-  String get savedOnDeviceUntilLogin => 'നീ ചെയ്യുന്നതുവരെ താഴെയുള്ളതെല്ലാം ഈ ഉപകരണത്തിൽ സേവ് ആയി ഇരിക്കും.';
+  String get savedOnDeviceUntilLogin =>
+      'നീ ചെയ്യുന്നതുവരെ താഴെയുള്ളതെല്ലാം ഈ ഉപകരണത്തിൽ സേവ് ആയി ഇരിക്കും.';
 
   @override
   String get yourProfile => 'നിന്റെ പ്രൊഫൈൽ';
@@ -1643,7 +1705,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get nothingToPreview => 'പ്രിവ്യൂ ചെയ്യാൻ ഒന്നുമില്ല';
 
   @override
-  String get writeSomethingHint => 'എന്തെങ്കിലും എഴുതൂ… ഇവിടെ AniList മാർക്ക്ഡൗൺ പ്രവർത്തിക്കും';
+  String get writeSomethingHint =>
+      'എന്തെങ്കിലും എഴുതൂ… ഇവിടെ AniList മാർക്ക്ഡൗൺ പ്രവർത്തിക്കും';
 
   @override
   String get privateMessage => 'പ്രൈവറ്റ് മെസ്സേജ്';
@@ -1739,7 +1802,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get unsubscribed => 'സബ്സ്ക്രൈബ് റദ്ദാക്കി';
 
   @override
-  String get failedToUpdateSubscription => 'സബ്സ്ക്രിപ്ഷൻ അപ്ഡേറ്റ് ചെയ്യാനായില്ല';
+  String get failedToUpdateSubscription =>
+      'സബ്സ്ക്രിപ്ഷൻ അപ്ഡേറ്റ് ചെയ്യാനായില്ല';
 
   @override
   String get edit => 'എഡിറ്റ്';
@@ -1859,7 +1923,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get currentStreak => 'ഇപ്പോഴത്തെ സ്ട്രീക്ക്';
 
   @override
-  String get tapOrHoverDay => 'ഒരു ദിവസത്തിൽ ടാപ്പ് ചെയ്യൂ അല്ലെങ്കിൽ ഹോവർ ചെയ്യൂ';
+  String get tapOrHoverDay =>
+      'ഒരു ദിവസത്തിൽ ടാപ്പ് ചെയ്യൂ അല്ലെങ്കിൽ ഹോവർ ചെയ്യൂ';
 
   @override
   String get less => 'കുറവ്';
@@ -1879,7 +1944,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get querySize => 'ക്വറി വലുപ്പം';
 
   @override
-  String get querySizeDesc => 'ഒരു വലിയ ക്വറി എല്ലാ വരികളും (പ്രൊഫൈൽ മുഴുവനും) ഒറ്റ റിക്വസ്റ്റിൽ ലോഡ് ചെയ്യും. സ്പ്ലിറ്റ് ക്വറികൾ ഓരോ വരിക്കും പ്രൊഫൈൽ ഭാഗത്തിനും ചെറിയ റിക്വസ്റ്റ് അയയ്ക്കും: ഓരോന്നും വേഗത്തിലാണ്, ഭാഗങ്ങൾ വരുന്ന മുറയ്ക്ക് കാണിക്കും.';
+  String get querySizeDesc =>
+      'ഒരു വലിയ ക്വറി എല്ലാ വരികളും (പ്രൊഫൈൽ മുഴുവനും) ഒറ്റ റിക്വസ്റ്റിൽ ലോഡ് ചെയ്യും. സ്പ്ലിറ്റ് ക്വറികൾ ഓരോ വരിക്കും പ്രൊഫൈൽ ഭാഗത്തിനും ചെറിയ റിക്വസ്റ്റ് അയയ്ക്കും: ഓരോന്നും വേഗത്തിലാണ്, ഭാഗങ്ങൾ വരുന്ന മുറയ്ക്ക് കാണിക്കും.';
 
   @override
   String get oneBig => 'ഒരു വലിയ ക്വറി';
@@ -1910,7 +1976,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get accountOptions => 'അക്കൗണ്ട് ഓപ്ഷനുകൾ';
 
   @override
-  String get accountOptionsDesc => 'പേരുകൾ, സ്കോർ ഫോർമാറ്റ്, ലിസ്റ്റ് ക്രമം, നോട്ടിഫിക്കേഷനുകൾ എന്നിവയും മറ്റും';
+  String get accountOptionsDesc =>
+      'പേരുകൾ, സ്കോർ ഫോർമാറ്റ്, ലിസ്റ്റ് ക്രമം, നോട്ടിഫിക്കേഷനുകൾ എന്നിവയും മറ്റും';
 
   @override
   String get anilistAccountOptions => 'AniList അക്കൗണ്ട് ഓപ്ഷനുകൾ';
@@ -1922,13 +1989,15 @@ class AppLocalizationsMl extends AppLocalizations {
   String get hidePrivateEntries => 'പ്രൈവറ്റ് എൻട്രികൾ മറയ്ക്കൂ';
 
   @override
-  String get hidePrivateEntriesDesc => 'AniList-ൽ പ്രൈവറ്റ് എന്ന് അടയാളപ്പെടുത്തിയ എൻട്രികൾ ഫീഡിൽ നിന്ന് ഒഴിവാക്കൂ';
+  String get hidePrivateEntriesDesc =>
+      'AniList-ൽ പ്രൈവറ്റ് എന്ന് അടയാളപ്പെടുത്തിയ എൻട്രികൾ ഫീഡിൽ നിന്ന് ഒഴിവാക്കൂ';
 
   @override
   String get anilistExcludeList => 'Exclude your list';
 
   @override
-  String get anilistExcludeListDesc => 'Keep titles already on your AniList out of the anime and manga pages';
+  String get anilistExcludeListDesc =>
+      'Keep titles already on your AniList out of the anime and manga pages';
 
   @override
   String get anilistProfile => 'AniList പ്രൊഫൈൽ';
@@ -1937,7 +2006,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get refreshFromAnilist => 'AniList-ൽ നിന്ന് റിഫ്രഷ് ചെയ്യൂ';
 
   @override
-  String get couldNotUpdateAnilistSettings => 'AniList സെറ്റിംഗ്സ് അപ്ഡേറ്റ് ചെയ്യാനായില്ല';
+  String get couldNotUpdateAnilistSettings =>
+      'AniList സെറ്റിംഗ്സ് അപ്ഡേറ്റ് ചെയ്യാനായില്ല';
 
   @override
   String get sectionNames => 'പേരുകൾ';
@@ -1946,7 +2016,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get titleLanguage => 'ടൈറ്റിൽ ഭാഷ';
 
   @override
-  String get titleLanguageDesc => 'എല്ലായിടത്തും ടൈറ്റിലുകൾ എങ്ങനെ എഴുതണം, ഉദാ. Attack on Titan / Shingeki no Kyojin / 進撃の巨人.';
+  String get titleLanguageDesc =>
+      'എല്ലായിടത്തും ടൈറ്റിലുകൾ എങ്ങനെ എഴുതണം, ഉദാ. Attack on Titan / Shingeki no Kyojin / 進撃の巨人.';
 
   @override
   String get staffCharacterNames => 'സ്റ്റാഫിന്റെയും കഥാപാത്രങ്ങളുടെയും പേരുകൾ';
@@ -1988,19 +2059,22 @@ class AppLocalizationsMl extends AppLocalizations {
   String get airingNotifications => 'എയറിംഗ് നോട്ടിഫിക്കേഷനുകൾ';
 
   @override
-  String get airingNotificationsDesc => 'ഫോളോ ചെയ്യുന്ന ഷോയുടെ എപ്പിസോഡ് വരുമ്പോൾ അറിയിക്കൂ';
+  String get airingNotificationsDesc =>
+      'ഫോളോ ചെയ്യുന്ന ഷോയുടെ എപ്പിസോഡ് വരുമ്പോൾ അറിയിക്കൂ';
 
   @override
   String get displayAdultContent => 'അഡൾട്ട് കണ്ടന്റ് കാണിക്കൂ';
 
   @override
-  String get displayAdultContentDesc => 'ബ്രൗസ്, തിരയൽ, ഫീഡുകൾ എന്നിവയിൽ 18+ ടൈറ്റിലുകൾ ഉൾപ്പെടുത്തൂ';
+  String get displayAdultContentDesc =>
+      'ബ്രൗസ്, തിരയൽ, ഫീഡുകൾ എന്നിവയിൽ 18+ ടൈറ്റിലുകൾ ഉൾപ്പെടുത്തൂ';
 
   @override
   String get restrictMessages => 'മെസ്സേജുകൾ ഫോളോ ചെയ്യുന്നവർക്ക് മാത്രമാക്കൂ';
 
   @override
-  String get restrictMessagesDesc => 'നീ ഫോളോ ചെയ്യുന്നവർക്ക് മാത്രമേ നിനക്ക് മെസ്സേജ് അയയ്ക്കാനാകൂ';
+  String get restrictMessagesDesc =>
+      'നീ ഫോളോ ചെയ്യുന്നവർക്ക് മാത്രമേ നിനക്ക് മെസ്സേജ് അയയ്ക്കാനാകൂ';
 
   @override
   String get sectionServices => 'സർവീസുകൾ';
@@ -2032,7 +2106,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get importLists => 'ലിസ്റ്റുകൾ ഇമ്പോർട്ട് ചെയ്യൂ';
 
   @override
-  String get importListsDesc => 'Aniyomi, Mihon / Tachiyomi, Kotatsu ബാക്കപ്പുകളിൽ നിന്ന്';
+  String get importListsDesc =>
+      'Aniyomi, Mihon / Tachiyomi, Kotatsu ബാക്കപ്പുകളിൽ നിന്ന്';
 
   @override
   String get exportLists => 'ലിസ്റ്റുകൾ എക്സ്പോർട്ട് ചെയ്യൂ';
@@ -2047,7 +2122,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get readingTab => 'റീഡിംഗ് ടാബ്';
 
   @override
-  String get readingTabDesc => 'മൂന്നാമത്തെ ടാബിൽ ഏതൊക്കെ എക്സ്റ്റൻഷനുകൾ കാണിക്കണം';
+  String get readingTabDesc =>
+      'മൂന്നാമത്തെ ടാബിൽ ഏതൊക്കെ എക്സ്റ്റൻഷനുകൾ കാണിക്കണം';
 
   @override
   String get defaultFeed => 'ഡിഫോൾട്ട് ഫീഡ്';
@@ -2115,16 +2191,19 @@ class AppLocalizationsMl extends AppLocalizations {
   String get nothingToShowYet => 'കാണിക്കാൻ ഇതുവരെ ഒന്നുമില്ല';
 
   @override
-  String get addTitlesHint => 'ലിസ്റ്റിൽ കുറച്ച് ടൈറ്റിലുകൾ ചേർക്കൂ, അവ ഇവിടെ വരും.';
+  String get addTitlesHint =>
+      'ലിസ്റ്റിൽ കുറച്ച് ടൈറ്റിലുകൾ ചേർക്കൂ, അവ ഇവിടെ വരും.';
 
   @override
   String get couldntLoad => 'ലോഡ് ചെയ്യാനായില്ല';
 
   @override
-  String get progressStyleHint => 'പിൽ, ബാർ എന്നിവ പോസ്റ്ററിന് മുകളിൽ വരും; \"പുറത്ത്\" അതേ എണ്ണം സാധാരണ ടെക്സ്റ്റായി കാണിക്കും — ഒന്ന് തിരഞ്ഞെടുക്കൂ.';
+  String get progressStyleHint =>
+      'പിൽ, ബാർ എന്നിവ പോസ്റ്ററിന് മുകളിൽ വരും; \"പുറത്ത്\" അതേ എണ്ണം സാധാരണ ടെക്സ്റ്റായി കാണിക്കും — ഒന്ന് തിരഞ്ഞെടുക്കൂ.';
 
   @override
-  String get nixManagedUpdate => 'ഈ ബിൽഡ് Nix ആണ് മാനേജ് ചെയ്യുന്നത് — ഇവിടെ നിന്ന് അപ്ഡേറ്റ് ചെയ്യുന്നതിന് പകരം നിന്റെ ഫ്ലേക്കിൽ \"nix flake update\" ഓടിച്ച് റീബിൽഡ് ചെയ്യൂ';
+  String get nixManagedUpdate =>
+      'ഈ ബിൽഡ് Nix ആണ് മാനേജ് ചെയ്യുന്നത് — ഇവിടെ നിന്ന് അപ്ഡേറ്റ് ചെയ്യുന്നതിന് പകരം നിന്റെ ഫ്ലേക്കിൽ \"nix flake update\" ഓടിച്ച് റീബിൽഡ് ചെയ്യൂ';
 
   @override
   String autoUpdateFailed(String error) {
@@ -2152,10 +2231,12 @@ class AppLocalizationsMl extends AppLocalizations {
   String get sort => 'സോർട്ട്';
 
   @override
-  String get chooseBackupDialog => 'Aniyomi, Mihon അല്ലെങ്കിൽ Kotatsu ബാക്കപ്പ് തിരഞ്ഞെടുക്കൂ';
+  String get chooseBackupDialog =>
+      'Aniyomi, Mihon അല്ലെങ്കിൽ Kotatsu ബാക്കപ്പ് തിരഞ്ഞെടുക്കൂ';
 
   @override
-  String get importListsHint => 'Aniyomi, Mihon / Tachiyomi, Kotatsu എന്നിവയിൽ നിന്ന് ലൈബ്രറി കൊണ്ടുവരൂ. ടൈറ്റിലുകൾ, കവറുകൾ, പ്രോഗ്രസ്, കാറ്റഗറികൾ എന്നിവ നിലനിൽക്കും.';
+  String get importListsHint =>
+      'Aniyomi, Mihon / Tachiyomi, Kotatsu എന്നിവയിൽ നിന്ന് ലൈബ്രറി കൊണ്ടുവരൂ. ടൈറ്റിലുകൾ, കവറുകൾ, പ്രോഗ്രസ്, കാറ്റഗറികൾ എന്നിവ നിലനിൽക്കും.';
 
   @override
   String get chooseBackupFile => 'ബാക്കപ്പ് ഫയൽ തിരഞ്ഞെടുക്കൂ';
@@ -2174,7 +2255,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get mergeWithExisting => 'നിലവിലുള്ള ലിസ്റ്റുകളുമായി ലയിപ്പിക്കൂ';
 
   @override
-  String get mergeWithExistingDesc => 'ഉള്ളത് അതുപോലെ നിലനിർത്തും; ഓഫ് ആക്കിയാൽ ചേരുന്ന ടൈറ്റിലുകൾ മാറ്റിയെഴുതും';
+  String get mergeWithExistingDesc =>
+      'ഉള്ളത് അതുപോലെ നിലനിർത്തും; ഓഫ് ആക്കിയാൽ ചേരുന്ന ടൈറ്റിലുകൾ മാറ്റിയെഴുതും';
 
   @override
   String get chooseAnother => 'മറ്റൊന്ന് തിരഞ്ഞെടുക്കൂ';
@@ -2193,7 +2275,8 @@ class AppLocalizationsMl extends AppLocalizations {
   }
 
   @override
-  String get chooseSaveLocation => 'ബാക്കപ്പ് എവിടെ സേവ് ചെയ്യണമെന്ന് തിരഞ്ഞെടുക്കൂ';
+  String get chooseSaveLocation =>
+      'ബാക്കപ്പ് എവിടെ സേവ് ചെയ്യണമെന്ന് തിരഞ്ഞെടുക്കൂ';
 
   @override
   String savedPath(String path) {
@@ -2206,7 +2289,8 @@ class AppLocalizationsMl extends AppLocalizations {
   }
 
   @override
-  String get nothingInLocalLists => 'നിന്റെ ലോക്കൽ ലിസ്റ്റുകളിൽ ഇതുവരെ ഒന്നുമില്ല.';
+  String get nothingInLocalLists =>
+      'നിന്റെ ലോക്കൽ ലിസ്റ്റുകളിൽ ഇതുവരെ ഒന്നുമില്ല.';
 
   @override
   String exportsSummary(int anime, int manga) {
@@ -2450,7 +2534,8 @@ class AppLocalizationsMl extends AppLocalizations {
   }
 
   @override
-  String get localEntryNote => 'ഈ ടൈറ്റിൽ ഈ ഉപകരണത്തിലെ ലോക്കൽ ലിസ്റ്റിൽ മാത്രമേ ഉള്ളൂ. നിന്റെ അക്കൗണ്ട് ലിസ്റ്റുമായി ഏറ്റുമുട്ടാൻ സാധ്യതയുള്ളതിനാൽ ഇവിടെ എഡിറ്റിംഗ് ഓഫാണ്; നീക്കം ചെയ്യാൻ പറ്റും.';
+  String get localEntryNote =>
+      'ഈ ടൈറ്റിൽ ഈ ഉപകരണത്തിലെ ലോക്കൽ ലിസ്റ്റിൽ മാത്രമേ ഉള്ളൂ. നിന്റെ അക്കൗണ്ട് ലിസ്റ്റുമായി ഏറ്റുമുട്ടാൻ സാധ്യതയുള്ളതിനാൽ ഇവിടെ എഡിറ്റിംഗ് ഓഫാണ്; നീക്കം ചെയ്യാൻ പറ്റും.';
 
   @override
   String get cardPresetPoster => 'പോസ്റ്റർ';
@@ -2552,7 +2637,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get resumeTitle => 'തുടരൂ';
 
   @override
-  String get resumeSourceMissing => 'തുടരാൻ ഈ ടൈറ്റിലിന്റെ സോഴ്സ് ഇൻസ്റ്റാൾ ചെയ്യൂ';
+  String get resumeSourceMissing =>
+      'തുടരാൻ ഈ ടൈറ്റിലിന്റെ സോഴ്സ് ഇൻസ്റ്റാൾ ചെയ്യൂ';
 
   @override
   String get resumeRemove => 'തുടരുന്നതിൽ നിന്ന് നീക്കം ചെയ്യൂ';
@@ -2696,7 +2782,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get repoLinksAdded => 'റിപ്പോ ലിങ്കുകൾ വിജയകരമായി ചേർത്തു!';
 
   @override
-  String get errorGettingAnilistData => 'AniList-ൽ നിന്ന് ഡാറ്റ എടുക്കുന്നതിൽ പിശക്.';
+  String get errorGettingAnilistData =>
+      'AniList-ൽ നിന്ന് ഡാറ്റ എടുക്കുന്നതിൽ പിശക്.';
 
   @override
   String get navInfo => 'വിവരം';
@@ -2988,7 +3075,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get syncRow => 'ലിസ്റ്റുകൾ സിങ്ക് ചെയ്യൂ';
 
   @override
-  String get syncRowDesc => 'ഒരു സർവീസിന്റെ ലിസ്റ്റ് നിന്റെ മറ്റ് അക്കൗണ്ടുകളിലേക്ക് പകർത്തൂ';
+  String get syncRowDesc =>
+      'ഒരു സർവീസിന്റെ ലിസ്റ്റ് നിന്റെ മറ്റ് അക്കൗണ്ടുകളിലേക്ക് പകർത്തൂ';
 
   @override
   String get syncTitle => 'സിങ്ക്';
@@ -2997,25 +3085,29 @@ class AppLocalizationsMl extends AppLocalizations {
   String get syncMainService => 'മെയിൻ സർവീസ്';
 
   @override
-  String get syncMainServiceDesc => 'അതിന്റെ ലിസ്റ്റാണ് അടിസ്ഥാനം; സൈൻ ഇൻ ചെയ്ത മറ്റെല്ലാ സർവീസുകളും അതിനോട് ചേരുംവിധം അപ്ഡേറ്റ് ചെയ്യും';
+  String get syncMainServiceDesc =>
+      'അതിന്റെ ലിസ്റ്റാണ് അടിസ്ഥാനം; സൈൻ ഇൻ ചെയ്ത മറ്റെല്ലാ സർവീസുകളും അതിനോട് ചേരുംവിധം അപ്ഡേറ്റ് ചെയ്യും';
 
   @override
   String get syncAuto => 'ഓട്ടോ സിങ്ക്';
 
   @override
-  String get syncAutoDesc => 'ആപ്പ് തുറക്കുമ്പോഴും ഓരോ 30 മിനിറ്റിലും ബാക്ക്ഗ്രൗണ്ടിൽ ഫെച്ച് ചെയ്ത് സിങ്ക് ചെയ്യൂ';
+  String get syncAutoDesc =>
+      'ആപ്പ് തുറക്കുമ്പോഴും ഓരോ 30 മിനിറ്റിലും ബാക്ക്ഗ്രൗണ്ടിൽ ഫെച്ച് ചെയ്ത് സിങ്ക് ചെയ്യൂ';
 
   @override
   String get syncAddMissing => 'ഇല്ലാത്ത എൻട്രികൾ ചേർക്കൂ';
 
   @override
-  String get syncAddMissingDesc => 'മറ്റേ സർവീസിൽ ഇതുവരെ ഇല്ലാത്ത എൻട്രികളും ചേർക്കൂ';
+  String get syncAddMissingDesc =>
+      'മറ്റേ സർവീസിൽ ഇതുവരെ ഇല്ലാത്ത എൻട്രികളും ചേർക്കൂ';
 
   @override
   String get syncOnlyForward => 'കൂടുതൽ പ്രോഗ്രസ് നിലനിർത്തൂ';
 
   @override
-  String get syncOnlyForwardDesc => 'മുന്നിലുള്ള സർവീസിന്റെ പ്രോഗ്രസ് കുറയ്ക്കരുത്';
+  String get syncOnlyForwardDesc =>
+      'മുന്നിലുള്ള സർവീസിന്റെ പ്രോഗ്രസ് കുറയ്ക്കരുത്';
 
   @override
   String get syncFetch => 'ഫെച്ച്';
@@ -3045,7 +3137,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get syncComparing => 'ലിസ്റ്റുകൾ താരതമ്യം ചെയ്യുന്നു';
 
   @override
-  String get syncIntro => 'ഒരു മെയിൻ സർവീസ് തിരഞ്ഞെടുത്ത് ഫെച്ച് അമർത്തൂ. ഓരോ സർവീസിൽ നിന്നും നിന്റെ ലിസ്റ്റ് ഒരു തവണ എടുത്ത് മെയിനുമായി താരതമ്യം ചെയ്യും.';
+  String get syncIntro =>
+      'ഒരു മെയിൻ സർവീസ് തിരഞ്ഞെടുത്ത് ഫെച്ച് അമർത്തൂ. ഓരോ സർവീസിൽ നിന്നും നിന്റെ ലിസ്റ്റ് ഒരു തവണ എടുത്ത് മെയിനുമായി താരതമ്യം ചെയ്യും.';
 
   @override
   String get syncStateSynced => 'സിങ്ക് ആയി';
@@ -3117,7 +3210,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get syncOnEdit => 'മാറ്റങ്ങൾ ഉടൻ സിങ്ക് ചെയ്യൂ';
 
   @override
-  String get syncOnEditDesc => 'ഓരോ പ്രോഗ്രസ് അപ്ഡേറ്റും ലിസ്റ്റ് എഡിറ്റും സൈൻ ഇൻ ചെയ്ത മറ്റ് സർവീസുകളിലേക്ക് ഉടൻ അയയ്ക്കൂ';
+  String get syncOnEditDesc =>
+      'ഓരോ പ്രോഗ്രസ് അപ്ഡേറ്റും ലിസ്റ്റ് എഡിറ്റും സൈൻ ഇൻ ചെയ്ത മറ്റ് സർവീസുകളിലേക്ക് ഉടൻ അയയ്ക്കൂ';
 
   @override
   String syncPushed(String services) {
@@ -3130,13 +3224,15 @@ class AppLocalizationsMl extends AppLocalizations {
   }
 
   @override
-  String get syncRateLimited => 'റേറ്റ് ലിമിറ്റ് ആയി, അൽപ്പം കഴിഞ്ഞ് വീണ്ടും ശ്രമിക്കൂ';
+  String get syncRateLimited =>
+      'റേറ്റ് ലിമിറ്റ് ആയി, അൽപ്പം കഴിഞ്ഞ് വീണ്ടും ശ്രമിക്കൂ';
 
   @override
   String get syncAhead => 'ഏതാണോ മുന്നിൽ അത്';
 
   @override
-  String get syncAheadDesc => 'ടു-വേ: ഓരോ ടൈറ്റിലിനും ഏറ്റവും മുന്നിലുള്ള എൻട്രി ജയിക്കുകയും നിന്റെ മറ്റ് എല്ലാ സർവീസുകളിലേക്കും പകർത്തുകയും ചെയ്യും';
+  String get syncAheadDesc =>
+      'ടു-വേ: ഓരോ ടൈറ്റിലിനും ഏറ്റവും മുന്നിലുള്ള എൻട്രി ജയിക്കുകയും നിന്റെ മറ്റ് എല്ലാ സർവീസുകളിലേക്കും പകർത്തുകയും ചെയ്യും';
 
   @override
   String syncAheadFrom(String service) {
@@ -3147,7 +3243,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get syncConfirm => 'സിങ്ക് ചെയ്യുംമുമ്പ് പരിശോധിക്കൂ';
 
   @override
-  String get syncConfirmDesc => 'എല്ലാം സിങ്ക് ചെയ്യുമ്പോൾ എന്തൊക്കെ മാറും, എത്ര റിക്വസ്റ്റ് വേണം എന്ന് കാണിക്കൂ';
+  String get syncConfirmDesc =>
+      'എല്ലാം സിങ്ക് ചെയ്യുമ്പോൾ എന്തൊക്കെ മാറും, എത്ര റിക്വസ്റ്റ് വേണം എന്ന് കാണിക്കൂ';
 
   @override
   String get syncPreviewTitle => 'സിങ്ക് ചെയ്യാൻ റെഡി';
@@ -3207,13 +3304,15 @@ class AppLocalizationsMl extends AppLocalizations {
   String get syncFailedReason => 'എന്തുകൊണ്ട് പരാജയപ്പെട്ടു';
 
   @override
-  String get syncSkippedHint => 'ഒഴിവാക്കിയ ഐറ്റങ്ങളെ വീണ്ടും ഫെച്ച് ചെയ്താലും തൊടില്ല';
+  String get syncSkippedHint =>
+      'ഒഴിവാക്കിയ ഐറ്റങ്ങളെ വീണ്ടും ഫെച്ച് ചെയ്താലും തൊടില്ല';
 
   @override
   String get commentsRules => 'കമന്റിംഗ് നിയമങ്ങൾ';
 
   @override
-  String get commentsRulesBody => 'ഏതെങ്കിലും നിയമം ലംഘിച്ചാൽ പുറത്താകും\n\n1. വംശീയതയോ വിവേചനമോ വിദ്വേഷ പ്രസംഗമോ പാടില്ല\n2. സ്പാമിംഗോ സ്വയം പ്രമോഷനോ പാടില്ല\n3. NSFW കണ്ടന്റ് ഒരിക്കലും പാടില്ല\n4. ഇംഗ്ലീഷ് മാത്രം, ഒഴിവില്ല\n5. ആൾമാറാട്ടം, ശല്യപ്പെടുത്തൽ, അധിക്ഷേപം പാടില്ല\n6. നിയമവിരുദ്ധ കണ്ടന്റോ ഏതെങ്കിലും ഫാൻഡത്തോടുള്ള കടുത്ത അനാദരവോ പാടില്ല\n7. റിപ്പോസിറ്ററികളോ എക്സ്റ്റൻഷനുകളോ ചോദിക്കുകയോ ഷെയർ ചെയ്യുകയോ ചെയ്യരുത്\n8. സ്പോയിലർ ടാഗും മുന്നറിയിപ്പും സഹിതം മാത്രം\n9. പ്രായപൂർത്തിയാകാത്ത കഥാപാത്രങ്ങളെക്കുറിച്ച് ലൈംഗികമോ അനുചിതമോ ആയ കമന്റുകൾ പാടില്ല\n10. തെറ്റാണെങ്കിൽ പോസ്റ്റ് ചെയ്യരുത്!';
+  String get commentsRulesBody =>
+      'ഏതെങ്കിലും നിയമം ലംഘിച്ചാൽ പുറത്താകും\n\n1. വംശീയതയോ വിവേചനമോ വിദ്വേഷ പ്രസംഗമോ പാടില്ല\n2. സ്പാമിംഗോ സ്വയം പ്രമോഷനോ പാടില്ല\n3. NSFW കണ്ടന്റ് ഒരിക്കലും പാടില്ല\n4. ഇംഗ്ലീഷ് മാത്രം, ഒഴിവില്ല\n5. ആൾമാറാട്ടം, ശല്യപ്പെടുത്തൽ, അധിക്ഷേപം പാടില്ല\n6. നിയമവിരുദ്ധ കണ്ടന്റോ ഏതെങ്കിലും ഫാൻഡത്തോടുള്ള കടുത്ത അനാദരവോ പാടില്ല\n7. റിപ്പോസിറ്ററികളോ എക്സ്റ്റൻഷനുകളോ ചോദിക്കുകയോ ഷെയർ ചെയ്യുകയോ ചെയ്യരുത്\n8. സ്പോയിലർ ടാഗും മുന്നറിയിപ്പും സഹിതം മാത്രം\n9. പ്രായപൂർത്തിയാകാത്ത കഥാപാത്രങ്ങളെക്കുറിച്ച് ലൈംഗികമോ അനുചിതമോ ആയ കമന്റുകൾ പാടില്ല\n10. തെറ്റാണെങ്കിൽ പോസ്റ്റ് ചെയ്യരുത്!';
 
   @override
   String get commentsRulesAccept => 'മനസ്സിലായി';
@@ -3247,7 +3346,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get commentsFilterChapterTitle => 'ചാപ്റ്റർ അനുസരിച്ച് ഫിൽട്ടർ';
 
   @override
-  String get commentsFilterTagTitle => 'ഒരു എപ്പിസോഡ് അല്ലെങ്കിൽ ചാപ്റ്റർ നമ്പർ നൽകൂ';
+  String get commentsFilterTagTitle =>
+      'ഒരു എപ്പിസോഡ് അല്ലെങ്കിൽ ചാപ്റ്റർ നമ്പർ നൽകൂ';
 
   @override
   String get commentsFilterHint => 'നമ്പർ';
@@ -3317,7 +3417,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get commentsEmptyText => 'കമന്റ് ശൂന്യമാകരുത്';
 
   @override
-  String get commentsBannedYou => 'നിനക്ക് കമന്റ് ചെയ്യുന്നതിൽ നിന്ന് വിലക്കുണ്ട്';
+  String get commentsBannedYou =>
+      'നിനക്ക് കമന്റ് ചെയ്യുന്നതിൽ നിന്ന് വിലക്കുണ്ട്';
 
   @override
   String get commentsEdited => 'കമന്റ് എഡിറ്റ് ചെയ്തു';
@@ -3338,19 +3439,22 @@ class AppLocalizationsMl extends AppLocalizations {
   String get commentsReport => 'റിപ്പോർട്ട്';
 
   @override
-  String get commentsReportAsk => 'ഈ കമന്റ് മോഡറേറ്റർമാർക്ക് റിപ്പോർട്ട് ചെയ്യണോ?';
+  String get commentsReportAsk =>
+      'ഈ കമന്റ് മോഡറേറ്റർമാർക്ക് റിപ്പോർട്ട് ചെയ്യണോ?';
 
   @override
   String get commentsDelete => 'ഡിലീറ്റ്';
 
   @override
-  String get commentsDeleteAsk => 'ഈ കമന്റ് എല്ലാവർക്കും വേണ്ടി നീക്കം ചെയ്യപ്പെടും.';
+  String get commentsDeleteAsk =>
+      'ഈ കമന്റ് എല്ലാവർക്കും വേണ്ടി നീക്കം ചെയ്യപ്പെടും.';
 
   @override
   String get commentsBan => 'ബാൻ';
 
   @override
-  String get commentsBanAsk => 'ഈ യൂസറെ കമന്റ് ചെയ്യുന്നതിൽ നിന്ന് ബാൻ ചെയ്യണോ?';
+  String get commentsBanAsk =>
+      'ഈ യൂസറെ കമന്റ് ചെയ്യുന്നതിൽ നിന്ന് ബാൻ ചെയ്യണോ?';
 
   @override
   String get commentsCopy => 'കോപ്പി';
@@ -3376,22 +3480,26 @@ class AppLocalizationsMl extends AppLocalizations {
   String get commentsEmptyFiltered => 'ഈ ഫിൽട്ടറിന് കമന്റുകൾ ഇല്ല';
 
   @override
-  String get commentsSignIn => 'കമന്റുകൾ വായിക്കാനും എഴുതാനും AniList-ൽ സൈൻ ഇൻ ചെയ്യൂ';
+  String get commentsSignIn =>
+      'കമന്റുകൾ വായിക്കാനും എഴുതാനും AniList-ൽ സൈൻ ഇൻ ചെയ്യൂ';
 
   @override
-  String get commentsSignInMessage => 'കമന്റുകൾ എല്ലാ സർവീസുകളിലും പൊതുവാണ്, നിന്റെ AniList അക്കൗണ്ട് ഉപയോഗിക്കുന്നു.';
+  String get commentsSignInMessage =>
+      'കമന്റുകൾ എല്ലാ സർവീസുകളിലും പൊതുവാണ്, നിന്റെ AniList അക്കൗണ്ട് ഉപയോഗിക്കുന്നു.';
 
   @override
   String get commentsUnavailable => 'ഈ ടൈറ്റിലിന് കമന്റുകൾ ലഭ്യമല്ല';
 
   @override
-  String get commentsUnavailableMessage => 'ഇത് ഒരു AniList എൻട്രിയുമായി ചേർക്കാനായില്ല.';
+  String get commentsUnavailableMessage =>
+      'ഇത് ഒരു AniList എൻട്രിയുമായി ചേർക്കാനായില്ല.';
 
   @override
   String get commentsDisabled => 'കമന്റുകൾ ഓഫാണ്';
 
   @override
-  String get commentsDisabledMessage => 'സെറ്റിംഗ്സ് › പൊതുവായത് എന്നതിൽ നിന്ന് വീണ്ടും ഓണാക്കാം.';
+  String get commentsDisabledMessage =>
+      'സെറ്റിംഗ്സ് › പൊതുവായത് എന്നതിൽ നിന്ന് വീണ്ടും ഓണാക്കാം.';
 
   @override
   String get commentsOffline => 'കമന്റുകൾ ലോഡ് ചെയ്യാനായില്ല';
@@ -3409,13 +3517,15 @@ class AppLocalizationsMl extends AppLocalizations {
   String get commentsSettingEnabled => 'കമന്റുകൾ';
 
   @override
-  String get commentsSettingEnabledDesc => 'ടൈറ്റിലുകളിൽ കമന്റ്സ് ടാബ് കാണിക്കൂ, നിന്റെ AniList അക്കൗണ്ട് ഉപയോഗിച്ച് കമന്റ് സെർവറിൽ സൈൻ ഇൻ ചെയ്യൂ';
+  String get commentsSettingEnabledDesc =>
+      'ടൈറ്റിലുകളിൽ കമന്റ്സ് ടാബ് കാണിക്കൂ, നിന്റെ AniList അക്കൗണ്ട് ഉപയോഗിച്ച് കമന്റ് സെർവറിൽ സൈൻ ഇൻ ചെയ്യൂ';
 
   @override
   String get commentsSettingAlerts => 'മറുപടി നോട്ടിഫിക്കേഷനുകൾ';
 
   @override
-  String get commentsSettingAlertsDesc => 'എന്റെ കമന്റുകൾക്ക് ആരെങ്കിലും മറുപടി തന്നാൽ അറിയിക്കൂ';
+  String get commentsSettingAlertsDesc =>
+      'എന്റെ കമന്റുകൾക്ക് ആരെങ്കിലും മറുപടി തന്നാൽ അറിയിക്കൂ';
 
   @override
   String get commentsNoticeReplyTitle => 'കമന്റിന് പുതിയ മറുപടി';
@@ -3441,10 +3551,12 @@ class AppLocalizationsMl extends AppLocalizations {
   String get barcodeTooltip => 'ബാർകോഡ് നോക്കി മംഗയോ നോവലോ കണ്ടെത്തൂ';
 
   @override
-  String get barcodeIntro => 'വോള്യത്തിന്റെ പിൻഭാഗത്തെ ബാർകോഡിലേക്ക് ക്യാമറ പിടിക്കൂ, അല്ലെങ്കിൽ ISBN ടൈപ്പ് ചെയ്യൂ.';
+  String get barcodeIntro =>
+      'വോള്യത്തിന്റെ പിൻഭാഗത്തെ ബാർകോഡിലേക്ക് ക്യാമറ പിടിക്കൂ, അല്ലെങ്കിൽ ISBN ടൈപ്പ് ചെയ്യൂ.';
 
   @override
-  String get barcodeIntroManual => 'വോള്യത്തിന്റെ പിൻഭാഗത്ത് ബാർകോഡിന് മുകളിൽ അച്ചടിച്ച ISBN ടൈപ്പ് ചെയ്യൂ.';
+  String get barcodeIntroManual =>
+      'വോള്യത്തിന്റെ പിൻഭാഗത്ത് ബാർകോഡിന് മുകളിൽ അച്ചടിച്ച ISBN ടൈപ്പ് ചെയ്യൂ.';
 
   @override
   String get barcodeIsbnHint => 'ISBN';
@@ -3458,7 +3570,8 @@ class AppLocalizationsMl extends AppLocalizations {
   }
 
   @override
-  String get barcodeCameraDenied => 'ക്യാമറ ലഭ്യമല്ല. ക്യാമറ ആക്സസ് അനുവദിക്കൂ, അല്ലെങ്കിൽ ISBN ടൈപ്പ് ചെയ്യൂ.';
+  String get barcodeCameraDenied =>
+      'ക്യാമറ ലഭ്യമല്ല. ക്യാമറ ആക്സസ് അനുവദിക്കൂ, അല്ലെങ്കിൽ ISBN ടൈപ്പ് ചെയ്യൂ.';
 
   @override
   String get themesTitle => 'ഓപ്പണിംഗുകളും എൻഡിംഗുകളും';
@@ -3509,7 +3622,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get sauceTitle => 'സോഴ്സ് കണ്ടെത്തൂ';
 
   @override
-  String get sauceIntro => 'ഒരു മംഗ പേജോ ആർട്ട്‌വർക്കോ അപ്ലോഡ് ചെയ്യൂ, അല്ലെങ്കിൽ അതിന്റെ ലിങ്ക് പേസ്റ്റ് ചെയ്യൂ, അത് എവിടെ നിന്നാണെന്ന് കണ്ടെത്താം.';
+  String get sauceIntro =>
+      'ഒരു മംഗ പേജോ ആർട്ട്‌വർക്കോ അപ്ലോഡ് ചെയ്യൂ, അല്ലെങ്കിൽ അതിന്റെ ലിങ്ക് പേസ്റ്റ് ചെയ്യൂ, അത് എവിടെ നിന്നാണെന്ന് കണ്ടെത്താം.';
 
   @override
   String get sauceKeyTitle => 'SauceNAO API കീ';
@@ -3533,7 +3647,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get sauceEmpty => 'ചേരുന്നത് കണ്ടില്ല';
 
   @override
-  String get sauceTooltip => 'ഒരു മംഗ പേജിന്റെയോ ആർട്ട്‌വർക്കിന്റെയോ സോഴ്സ് കണ്ടെത്തൂ';
+  String get sauceTooltip =>
+      'ഒരു മംഗ പേജിന്റെയോ ആർട്ട്‌വർക്കിന്റെയോ സോഴ്സ് കണ്ടെത്തൂ';
 
   @override
   String get sauceLowMatch => 'കുറഞ്ഞ മാച്ച്';
@@ -3584,7 +3699,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get shareCardFailed => 'കാർഡ് ഉണ്ടാക്കാനായില്ല';
 
   @override
-  String get shareCardListEmpty => 'നിന്റെ ലിസ്റ്റിൽ ഷെയർ ചെയ്യാൻ ഇതുവരെ ഒന്നുമില്ല';
+  String get shareCardListEmpty =>
+      'നിന്റെ ലിസ്റ്റിൽ ഷെയർ ചെയ്യാൻ ഇതുവരെ ഒന്നുമില്ല';
 
   @override
   String get shareCardTop => 'എന്റെ ടോപ്പ് പിക്കുകൾ';
@@ -3641,7 +3757,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get imageSearchTooltip => 'സ്ക്രീൻഷോട്ടിൽ നിന്ന് ഒരു അനിമെ കണ്ടെത്തൂ';
 
   @override
-  String get imageSearchIntro => 'ഒരു സ്ക്രീൻഷോട്ട് എടുക്കൂ അല്ലെങ്കിൽ ഇമേജ് ലിങ്ക് പേസ്റ്റ് ചെയ്യൂ, ഏത് എപ്പിസോഡിലെ ഏത് നിമിഷമാണെന്ന് trace.moe കണ്ടെത്തും.';
+  String get imageSearchIntro =>
+      'ഒരു സ്ക്രീൻഷോട്ട് എടുക്കൂ അല്ലെങ്കിൽ ഇമേജ് ലിങ്ക് പേസ്റ്റ് ചെയ്യൂ, ഏത് എപ്പിസോഡിലെ ഏത് നിമിഷമാണെന്ന് trace.moe കണ്ടെത്തും.';
 
   @override
   String get imageSearchPick => 'ചിത്രം തിരഞ്ഞെടുക്കൂ';
@@ -3733,10 +3850,12 @@ class AppLocalizationsMl extends AppLocalizations {
   String get groupsLeave => 'ഗ്രൂപ്പ് വിടൂ';
 
   @override
-  String get groupsLeaveAsk => 'ഈ ഗ്രൂപ്പിലെ പോസ്റ്റുകൾ നിന്റെ ഫീഡിൽ ഇനി കാണില്ല.';
+  String get groupsLeaveAsk =>
+      'ഈ ഗ്രൂപ്പിലെ പോസ്റ്റുകൾ നിന്റെ ഫീഡിൽ ഇനി കാണില്ല.';
 
   @override
-  String get groupsJoinFailed => 'ഈ ഗ്രൂപ്പിൽ ചേരാനായില്ല, ഇൻവൈറ്റ് മാത്രമായിരിക്കാം';
+  String get groupsJoinFailed =>
+      'ഈ ഗ്രൂപ്പിൽ ചേരാനായില്ല, ഇൻവൈറ്റ് മാത്രമായിരിക്കാം';
 
   @override
   String get groupsLeaveFailed => 'ഈ ഗ്രൂപ്പ് വിടാനായില്ല';
@@ -3831,10 +3950,12 @@ class AppLocalizationsMl extends AppLocalizations {
   String get notificationsFollows => 'ഫോളോകൾ';
 
   @override
-  String get notificationsNoServices => 'സൈൻ ഇൻ ചെയ്ത ഒരു സർവീസിനും നോട്ടിഫിക്കേഷൻ ഇല്ല';
+  String get notificationsNoServices =>
+      'സൈൻ ഇൻ ചെയ്ത ഒരു സർവീസിനും നോട്ടിഫിക്കേഷൻ ഇല്ല';
 
   @override
-  String get notificationsNoServicesMessage => 'നോട്ടിഫിക്കേഷൻ അയയ്ക്കുന്ന ഒരു സർവീസിൽ സൈൻ ഇൻ ചെയ്താൽ അവ ഇവിടെ വരും.';
+  String get notificationsNoServicesMessage =>
+      'നോട്ടിഫിക്കേഷൻ അയയ്ക്കുന്ന ഒരു സർവീസിൽ സൈൻ ഇൻ ചെയ്താൽ അവ ഇവിടെ വരും.';
 
   @override
   String get notificationsEmptyKind => 'ഈ വിഭാഗത്തിൽ ഇതുവരെ ഒന്നുമില്ല';
@@ -3843,7 +3964,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get notificationsCommentsEmpty => 'കമന്റ് നോട്ടിഫിക്കേഷനുകൾ ഇല്ല';
 
   @override
-  String get notificationsCommentsEmptyMessage => 'നിന്റെ കമന്റുകൾക്കുള്ള മറുപടികളും Dantotsu-വിൽ നിന്നുള്ള അറിയിപ്പുകളും ഇവിടെ വരും.';
+  String get notificationsCommentsEmptyMessage =>
+      'നിന്റെ കമന്റുകൾക്കുള്ള മറുപടികളും Dantotsu-വിൽ നിന്നുള്ള അറിയിപ്പുകളും ഇവിടെ വരും.';
 
   @override
   String get notificationsSettings => 'നോട്ടിഫിക്കേഷൻ സെറ്റിംഗ്സ്';
@@ -3871,10 +3993,12 @@ class AppLocalizationsMl extends AppLocalizations {
   String get notificationsTestSent => 'ടെസ്റ്റ് നോട്ടിഫിക്കേഷൻ അയച്ചു';
 
   @override
-  String get notificationsTestDenied => 'Dartotsu-വിന് നോട്ടിഫിക്കേഷൻ അനുവദിച്ചിട്ടില്ല. സിസ്റ്റം സെറ്റിംഗ്സിൽ ഓണാക്കൂ.';
+  String get notificationsTestDenied =>
+      'Dartotsu-വിന് നോട്ടിഫിക്കേഷൻ അനുവദിച്ചിട്ടില്ല. സിസ്റ്റം സെറ്റിംഗ്സിൽ ഓണാക്കൂ.';
 
   @override
-  String get notificationsTestHint => 'ടെസ്റ്റ് നോട്ടിഫിക്കേഷൻ അയയ്ക്കാൻ ലോങ് പ്രസ് ചെയ്യൂ';
+  String get notificationsTestHint =>
+      'ടെസ്റ്റ് നോട്ടിഫിക്കേഷൻ അയയ്ക്കാൻ ലോങ് പ്രസ് ചെയ്യൂ';
 
   @override
   String get notificationsTestSample => 'ഇതൊരു ടെസ്റ്റ് നോട്ടിഫിക്കേഷനാണ്';
@@ -3891,7 +4015,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get imageSearchQuota => 'തിരയൽ ക്വാട്ട കഴിഞ്ഞു';
 
   @override
-  String get imageSearchBusy => 'റിക്വസ്റ്റുകൾ കൂടുതലാണ്, അൽപ്പം കഴിഞ്ഞ് വീണ്ടും ശ്രമിക്കൂ';
+  String get imageSearchBusy =>
+      'റിക്വസ്റ്റുകൾ കൂടുതലാണ്, അൽപ്പം കഴിഞ്ഞ് വീണ്ടും ശ്രമിക്കൂ';
 
   @override
   String imageSearchFailed(int code) {
@@ -3907,13 +4032,15 @@ class AppLocalizationsMl extends AppLocalizations {
   String get reactionsTitle => 'റിയാക്ഷനുകൾ';
 
   @override
-  String get reactionsNeedEntry => 'റിയാക്ട് ചെയ്യുംമുമ്പ് ഈ ടൈറ്റിൽ നിന്റെ ലിസ്റ്റിൽ ചേർക്കൂ';
+  String get reactionsNeedEntry =>
+      'റിയാക്ട് ചെയ്യുംമുമ്പ് ഈ ടൈറ്റിൽ നിന്റെ ലിസ്റ്റിൽ ചേർക്കൂ';
 
   @override
   String get reactionsAdd => 'ഒരു റിയാക്ഷൻ ചേർക്കൂ';
 
   @override
-  String get reactionsHint => 'നിനക്ക് എങ്ങനെ തോന്നി? (ചെറുതായും സ്പോയിലർ ഇല്ലാതെയും)';
+  String get reactionsHint =>
+      'നിനക്ക് എങ്ങനെ തോന്നി? (ചെറുതായും സ്പോയിലർ ഇല്ലാതെയും)';
 
   @override
   String get reactionsPost => 'പോസ്റ്റ്';
@@ -3925,7 +4052,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get settingsWatch => 'കാണൂ & വായിക്കൂ';
 
   @override
-  String get settingsWatchDesc => 'എപ്പിസോഡ് ലിസ്റ്റുകൾ, സോഴ്സ് മാച്ചിംഗ്, എപ്പിസോഡ് വിശദാംശങ്ങൾ';
+  String get settingsWatchDesc =>
+      'എപ്പിസോഡ് ലിസ്റ്റുകൾ, സോഴ്സ് മാച്ചിംഗ്, എപ്പിസോഡ് വിശദാംശങ്ങൾ';
 
   @override
   String get watchSettingsLayout => 'എപ്പിസോഡ് ലിസ്റ്റ്';
@@ -3949,31 +4077,36 @@ class AppLocalizationsMl extends AppLocalizations {
   String get watchCompactView => 'കോംപാക്റ്റ്';
 
   @override
-  String get watchDefaultLayoutDesc => 'ഒരു ടൈറ്റിലിന് മാറ്റുന്നതുവരെ എപ്പിസോഡുകളും ചാപ്റ്ററുകളും എങ്ങനെ ക്രമീകരിക്കണം';
+  String get watchDefaultLayoutDesc =>
+      'ഒരു ടൈറ്റിലിന് മാറ്റുന്നതുവരെ എപ്പിസോഡുകളും ചാപ്റ്ററുകളും എങ്ങനെ ക്രമീകരിക്കണം';
 
   @override
   String get watchChunkSize => 'റേഞ്ച് വലുപ്പം';
 
   @override
-  String get watchChunkSizeDesc => 'ഓരോ റേഞ്ച് ടാബിലും എത്ര എപ്പിസോഡുകൾ അല്ലെങ്കിൽ ചാപ്റ്ററുകൾ';
+  String get watchChunkSizeDesc =>
+      'ഓരോ റേഞ്ച് ടാബിലും എത്ര എപ്പിസോഡുകൾ അല്ലെങ്കിൽ ചാപ്റ്ററുകൾ';
 
   @override
   String get watchShowDescription => 'വിവരണങ്ങൾ കാണിക്കൂ';
 
   @override
-  String get watchShowDescriptionDesc => 'ലിസ്റ്റ് ലേഔട്ടിൽ ഓരോ ടൈറ്റിലിനും താഴെ എപ്പിസോഡ് സംഗ്രഹം കാണിക്കൂ';
+  String get watchShowDescriptionDesc =>
+      'ലിസ്റ്റ് ലേഔട്ടിൽ ഓരോ ടൈറ്റിലിനും താഴെ എപ്പിസോഡ് സംഗ്രഹം കാണിക്കൂ';
 
   @override
   String get watchShowFiller => 'ഫില്ലർ എപ്പിസോഡുകൾ കാണിക്കൂ';
 
   @override
-  String get watchShowFillerDesc => 'ഫില്ലർ ആയി അടയാളപ്പെടുത്തിയ എപ്പിസോഡുകൾ മറയ്ക്കാൻ ഓഫ് ആക്കൂ';
+  String get watchShowFillerDesc =>
+      'ഫില്ലർ ആയി അടയാളപ്പെടുത്തിയ എപ്പിസോഡുകൾ മറയ്ക്കാൻ ഓഫ് ആക്കൂ';
 
   @override
   String get watchBlurUnwatched => 'സ്പോയിലർ തമ്പ്നെയിലുകൾ മറയ്ക്കൂ';
 
   @override
-  String get watchBlurUnwatchedDesc => 'ഇതുവരെ കാണാത്ത എപ്പിസോഡുകളുടെ തമ്പ്നെയിൽ ബ്ലർ ചെയ്യൂ';
+  String get watchBlurUnwatchedDesc =>
+      'ഇതുവരെ കാണാത്ത എപ്പിസോഡുകളുടെ തമ്പ്നെയിൽ ബ്ലർ ചെയ്യൂ';
 
   @override
   String get watchResumeShelf => 'റെസ്യൂം ഷെൽഫ്';
@@ -3982,16 +4115,19 @@ class AppLocalizationsMl extends AppLocalizations {
   String get watchResumeShelfDesc => 'ഹോമിൽ റെസ്യൂം വരി കാണിക്കൂ';
 
   @override
-  String get watchMarkOnLongPress => 'ലോങ് പ്രസ് ചെയ്താൽ പ്രോഗ്രസ് അടയാളപ്പെടുത്തും';
+  String get watchMarkOnLongPress =>
+      'ലോങ് പ്രസ് ചെയ്താൽ പ്രോഗ്രസ് അടയാളപ്പെടുത്തും';
 
   @override
-  String get watchMarkOnLongPressDesc => 'എപ്പിസോഡോ ചാപ്റ്ററോ ലോങ് പ്രസ് ചെയ്ത് കണ്ടത്/കാണാത്തത് ആയി അടയാളപ്പെടുത്തൂ';
+  String get watchMarkOnLongPressDesc =>
+      'എപ്പിസോഡോ ചാപ്റ്ററോ ലോങ് പ്രസ് ചെയ്ത് കണ്ടത്/കാണാത്തത് ആയി അടയാളപ്പെടുത്തൂ';
 
   @override
   String get watchMatching => 'സോഴ്സ് മാച്ചിംഗ്';
 
   @override
-  String get watchMatchingDesc => '\"ഏറ്റവും അടുത്ത മാച്ച്\" ഏറ്റവും നല്ല തിരയൽ ഫലം എടുക്കും. \"കൃത്യമായ മാച്ച് മാത്രം\" ഏതാണ്ട് ഒരേ ടൈറ്റിൽ മാത്രം സ്വീകരിക്കും, ബാക്കി നീ തിരഞ്ഞെടുക്കാൻ വിടും.';
+  String get watchMatchingDesc =>
+      '\"ഏറ്റവും അടുത്ത മാച്ച്\" ഏറ്റവും നല്ല തിരയൽ ഫലം എടുക്കും. \"കൃത്യമായ മാച്ച് മാത്രം\" ഏതാണ്ട് ഒരേ ടൈറ്റിൽ മാത്രം സ്വീകരിക്കും, ബാക്കി നീ തിരഞ്ഞെടുക്കാൻ വിടും.';
 
   @override
   String get watchMatchClosest => 'ഏറ്റവും അടുത്ത മാച്ച്';
@@ -4000,31 +4136,39 @@ class AppLocalizationsMl extends AppLocalizations {
   String get watchMatchExact => 'കൃത്യമായ മാച്ച് മാത്രം';
 
   @override
-  String get watchMetadataDesc => 'എപ്പിസോഡ് ടൈറ്റിലുകൾ, സംഗ്രഹങ്ങൾ, തമ്പ്നെയിലുകൾ, സംപ്രേഷണ തീയതികൾ, ഫില്ലർ ഫ്ലാഗുകൾ എവിടെ നിന്ന് വരണം. മുൻഗണന നിശ്ചയിക്കാൻ വലിച്ചിടൂ; മൂല്യമുള്ള ആദ്യ സോഴ്സ് ജയിക്കും.';
+  String get watchMetadataDesc =>
+      'എപ്പിസോഡ് ടൈറ്റിലുകൾ, സംഗ്രഹങ്ങൾ, തമ്പ്നെയിലുകൾ, സംപ്രേഷണ തീയതികൾ, ഫില്ലർ ഫ്ലാഗുകൾ എവിടെ നിന്ന് വരണം. മുൻഗണന നിശ്ചയിക്കാൻ വലിച്ചിടൂ; മൂല്യമുള്ള ആദ്യ സോഴ്സ് ജയിക്കും.';
 
   @override
-  String get watchMetaAniZipDesc => 'എപ്പിസോഡ് ടൈറ്റിലുകൾ, സംഗ്രഹങ്ങൾ, സ്റ്റില്ലുകൾ, സംപ്രേഷണ തീയതികൾ';
+  String get watchMetaAniZipDesc =>
+      'എപ്പിസോഡ് ടൈറ്റിലുകൾ, സംഗ്രഹങ്ങൾ, സ്റ്റില്ലുകൾ, സംപ്രേഷണ തീയതികൾ';
 
   @override
-  String get watchMetaKitsuDesc => 'എപ്പിസോഡ് ടൈറ്റിലുകൾ, വിവരണങ്ങൾ, തമ്പ്നെയിലുകൾ';
+  String get watchMetaKitsuDesc =>
+      'എപ്പിസോഡ് ടൈറ്റിലുകൾ, വിവരണങ്ങൾ, തമ്പ്നെയിലുകൾ';
 
   @override
-  String get watchMetaSimklDesc => 'എപ്പിസോഡ് ടൈറ്റിലുകൾ, വിവരണങ്ങൾ, സ്റ്റില്ലുകൾ, സംപ്രേഷണ തീയതികൾ';
+  String get watchMetaSimklDesc =>
+      'എപ്പിസോഡ് ടൈറ്റിലുകൾ, വിവരണങ്ങൾ, സ്റ്റില്ലുകൾ, സംപ്രേഷണ തീയതികൾ';
 
   @override
-  String get watchMetaAniListDesc => 'സ്ട്രീമിംഗ് എപ്പിസോഡ് ടൈറ്റിലുകൾ, തമ്പ്നെയിലുകൾ, എയറിംഗ് ഷെഡ്യൂൾ';
+  String get watchMetaAniListDesc =>
+      'സ്ട്രീമിംഗ് എപ്പിസോഡ് ടൈറ്റിലുകൾ, തമ്പ്നെയിലുകൾ, എയറിംഗ് ഷെഡ്യൂൾ';
 
   @override
-  String get watchMetaTenraiDesc => 'Tenrai വഴി MyAnimeList എപ്പിസോഡ് ടൈറ്റിലുകൾ, സംപ്രേഷണ തീയതികൾ, ഫില്ലർ, റീക്യാപ്പ് ഫ്ലാഗുകൾ';
+  String get watchMetaTenraiDesc =>
+      'Tenrai വഴി MyAnimeList എപ്പിസോഡ് ടൈറ്റിലുകൾ, സംപ്രേഷണ തീയതികൾ, ഫില്ലർ, റീക്യാപ്പ് ഫ്ലാഗുകൾ';
 
   @override
   String get watchClearMetadata => 'എപ്പിസോഡ് വിശദാംശങ്ങൾ റിഫ്രഷ് ചെയ്യൂ';
 
   @override
-  String get watchClearMetadataDesc => 'കാഷെ ചെയ്ത എപ്പിസോഡ് വിശദാംശങ്ങൾ മറക്കൂ, വീണ്ടും ഫെച്ച് ചെയ്യാം';
+  String get watchClearMetadataDesc =>
+      'കാഷെ ചെയ്ത എപ്പിസോഡ് വിശദാംശങ്ങൾ മറക്കൂ, വീണ്ടും ഫെച്ച് ചെയ്യാം';
 
   @override
-  String get watchMetadataCleared => 'എപ്പിസോഡ് വിശദാംശങ്ങൾ വീണ്ടും ഫെച്ച് ചെയ്യും';
+  String get watchMetadataCleared =>
+      'എപ്പിസോഡ് വിശദാംശങ്ങൾ വീണ്ടും ഫെച്ച് ചെയ്യും';
 
   @override
   String watchEpisodeCount(int count) {
@@ -4168,7 +4312,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get watchOpenWebView => 'വെബ് വ്യൂവിൽ തുറക്കൂ';
 
   @override
-  String get watchOpenWebViewDesc => 'ഒരു Cloudflare ചെക്ക് പരിഹരിക്കൂ അല്ലെങ്കിൽ ലോഗിൻ ചെയ്യൂ; കുക്കികൾ സോഴ്സ് റിക്വസ്റ്റുകളുമായി പങ്കിടും';
+  String get watchOpenWebViewDesc =>
+      'ഒരു Cloudflare ചെക്ക് പരിഹരിക്കൂ അല്ലെങ്കിൽ ലോഗിൻ ചെയ്യൂ; കുക്കികൾ സോഴ്സ് റിക്വസ്റ്റുകളുമായി പങ്കിടും';
 
   @override
   String watchCookieCount(int count, String host) {
@@ -4194,10 +4339,12 @@ class AppLocalizationsMl extends AppLocalizations {
   String get watchClearanceSession => 'ആപ്പ് അടയ്ക്കുംവരെ നിലനിൽക്കും';
 
   @override
-  String get watchAgentShared => 'റിക്വസ്റ്റുകൾ വെബ് വ്യൂവിന്റെ യൂസർ ഏജന്റ് ഉപയോഗിക്കുന്നു, Cloudflare അത് പരിശോധിക്കും';
+  String get watchAgentShared =>
+      'റിക്വസ്റ്റുകൾ വെബ് വ്യൂവിന്റെ യൂസർ ഏജന്റ് ഉപയോഗിക്കുന്നു, Cloudflare അത് പരിശോധിക്കും';
 
   @override
-  String get watchAgentCustom => 'കസ്റ്റം യൂസർ ഏജന്റ് സെറ്റ് ചെയ്തിട്ടുണ്ട്, അതിനാൽ വെബ് വ്യൂവിൽ നിന്നുള്ള Cloudflare ക്ലിയറൻസ് നിരസിക്കപ്പെട്ടേക്കാം';
+  String get watchAgentCustom =>
+      'കസ്റ്റം യൂസർ ഏജന്റ് സെറ്റ് ചെയ്തിട്ടുണ്ട്, അതിനാൽ വെബ് വ്യൂവിൽ നിന്നുള്ള Cloudflare ക്ലിയറൻസ് നിരസിക്കപ്പെട്ടേക്കാം';
 
   @override
   String get watchTestConnection => 'കണക്ഷൻ ടെസ്റ്റ് ചെയ്യൂ';
@@ -4243,7 +4390,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get settingsPlayer => 'പ്ലെയർ';
 
   @override
-  String get settingsPlayerDesc => 'പ്ലേബാക്ക്, സബ്ടൈറ്റിലുകൾ, ഷെയ്ഡറുകൾ, mpv, ഫയലുകൾ തുറക്കൽ';
+  String get settingsPlayerDesc =>
+      'പ്ലേബാക്ക്, സബ്ടൈറ്റിലുകൾ, ഷെയ്ഡറുകൾ, mpv, ഫയലുകൾ തുറക്കൽ';
 
   @override
   String get playerSettingsTitle => 'പ്ലെയർ സെറ്റിംഗ്സ്';
@@ -4279,7 +4427,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get playerCursedSpeed => 'അധിക വേഗതകൾ';
 
   @override
-  String get playerCursedSpeedDesc => 'ലിസ്റ്റിലേക്ക് 10x വരെയുള്ള വേഗതകൾ ചേർക്കൂ';
+  String get playerCursedSpeedDesc =>
+      'ലിസ്റ്റിലേക്ക് 10x വരെയുള്ള വേഗതകൾ ചേർക്കൂ';
 
   @override
   String get playerResize => 'റീസൈസ് മോഡ്';
@@ -4297,13 +4446,15 @@ class AppLocalizationsMl extends AppLocalizations {
   String get playerSkipDuration => 'സ്കിപ്പ് ബട്ടൺ ദൈർഘ്യം';
 
   @override
-  String get playerSkipDurationDesc => 'ഓപ്പണിംഗുകൾക്കും എൻഡിംഗുകൾക്കും പുറത്ത് സ്കിപ്പ് ബട്ടൺ ചാടുന്ന സെക്കൻഡുകൾ';
+  String get playerSkipDurationDesc =>
+      'ഓപ്പണിംഗുകൾക്കും എൻഡിംഗുകൾക്കും പുറത്ത് സ്കിപ്പ് ബട്ടൺ ചാടുന്ന സെക്കൻഡുകൾ';
 
   @override
   String get playerSeekDuration => 'ഡബിൾ ടാപ്പ് സീക്ക്';
 
   @override
-  String get playerSeekDurationDesc => 'ഡബിൾ ടാപ്പിലോ ആരോ കീയിലോ ചാടേണ്ട സെക്കൻഡുകൾ';
+  String get playerSeekDurationDesc =>
+      'ഡബിൾ ടാപ്പിലോ ആരോ കീയിലോ ചാടേണ്ട സെക്കൻഡുകൾ';
 
   @override
   String get playerAutoPlay => 'അടുത്തത് ഓട്ടോമാറ്റിക്കായി പ്ലേ ചെയ്യൂ';
@@ -4339,31 +4490,36 @@ class AppLocalizationsMl extends AppLocalizations {
   String get playerAutoSkipRecap => 'റീക്യാപ്പുകൾ സ്കിപ്പ് ചെയ്യൂ';
 
   @override
-  String get playerAutoSkipDesc => 'AniSkip-ഉം സ്ട്രീം ടൈംസ്റ്റാമ്പുകളും ഉപയോഗിച്ച് തുടങ്ങിയ ഉടൻ ചാടിക്കടക്കൂ';
+  String get playerAutoSkipDesc =>
+      'AniSkip-ഉം സ്ട്രീം ടൈംസ്റ്റാമ്പുകളും ഉപയോഗിച്ച് തുടങ്ങിയ ഉടൻ ചാടിക്കടക്കൂ';
 
   @override
   String get playerSkipOnce => 'ഒരു തവണ മാത്രം സ്കിപ്പ് ചെയ്യൂ';
 
   @override
-  String get playerSkipOnceDesc => 'പിന്നോട്ട് സീക്ക് ചെയ്താൽ അതേ ഭാഗം വീണ്ടും സ്കിപ്പ് ചെയ്യരുത്';
+  String get playerSkipOnceDesc =>
+      'പിന്നോട്ട് സീക്ക് ചെയ്താൽ അതേ ഭാഗം വീണ്ടും സ്കിപ്പ് ചെയ്യരുത്';
 
   @override
   String get playerAdjustBrightness => 'ബ്രൈറ്റ്നസ് ജെസ്ചർ';
 
   @override
-  String get playerAdjustBrightnessDesc => 'സ്ക്രീനിന്റെ വലത് പകുതിയിൽ മുകളിലേക്കും താഴേക്കും സ്വൈപ്പ് ചെയ്യൂ';
+  String get playerAdjustBrightnessDesc =>
+      'സ്ക്രീനിന്റെ വലത് പകുതിയിൽ മുകളിലേക്കും താഴേക്കും സ്വൈപ്പ് ചെയ്യൂ';
 
   @override
   String get playerAdjustVolume => 'വോളിയം ജെസ്ചർ';
 
   @override
-  String get playerAdjustVolumeDesc => 'സ്ക്രീനിന്റെ ഇടത് പകുതിയിൽ മുകളിലേക്കും താഴേക്കും സ്വൈപ്പ് ചെയ്യൂ';
+  String get playerAdjustVolumeDesc =>
+      'സ്ക്രീനിന്റെ ഇടത് പകുതിയിൽ മുകളിലേക്കും താഴേക്കും സ്വൈപ്പ് ചെയ്യൂ';
 
   @override
   String get playerHoldToSpeed => 'വേഗത കൂട്ടാൻ അമർത്തിപ്പിടിക്കൂ';
 
   @override
-  String get playerHoldToSpeedDesc => 'വേഗത്തിൽ പ്ലേ ചെയ്യാൻ വീഡിയോയിൽ അമർത്തിപ്പിടിക്കൂ, വേഗത മാറ്റാൻ വശത്തേക്ക് വലിക്കൂ';
+  String get playerHoldToSpeedDesc =>
+      'വേഗത്തിൽ പ്ലേ ചെയ്യാൻ വീഡിയോയിൽ അമർത്തിപ്പിടിക്കൂ, വേഗത മാറ്റാൻ വശത്തേക്ക് വലിക്കൂ';
 
   @override
   String get playerThumbless => 'കട്ടിയുള്ള സീക്ക് ബാർ';
@@ -4375,7 +4531,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get playerShowSubtitles => 'സബ്ടൈറ്റിലുകൾ കാണിക്കൂ';
 
   @override
-  String get playerShowSubtitlesDesc => 'എല്ലാ സബ്ടൈറ്റിൽ ട്രാക്കുകളും മറയ്ക്കാൻ ഓഫ് ആക്കൂ';
+  String get playerShowSubtitlesDesc =>
+      'എല്ലാ സബ്ടൈറ്റിൽ ട്രാക്കുകളും മറയ്ക്കാൻ ഓഫ് ആക്കൂ';
 
   @override
   String get playerSubtitleLanguage => 'ഇഷ്ടപ്പെട്ട സബ്ടൈറ്റിൽ ഭാഷ';
@@ -4405,7 +4562,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get playerLibass => 'libass ഉപയോഗിക്കൂ';
 
   @override
-  String get playerLibassDesc => 'സ്റ്റൈൽ ചെയ്ത .ass സബ്ടൈറ്റിലുകൾ റെൻഡർ ചെയ്യൂ. മുകളിലെ വലുപ്പം, നിറം, ഫോണ്ട് എന്നിവ അപ്പോൾ ബാധകമല്ല';
+  String get playerLibassDesc =>
+      'സ്റ്റൈൽ ചെയ്ത .ass സബ്ടൈറ്റിലുകൾ റെൻഡർ ചെയ്യൂ. മുകളിലെ വലുപ്പം, നിറം, ഫോണ്ട് എന്നിവ അപ്പോൾ ബാധകമല്ല';
 
   @override
   String get playerShaders => 'ഷെയ്ഡറുകൾ';
@@ -4414,7 +4572,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get playerShadersEnable => 'ഷെയ്ഡറുകൾ ഓണാക്കൂ';
 
   @override
-  String get playerShadersEnableDesc => 'Anime4K പോലുള്ള GLSL ഷെയ്ഡറുകൾ കൊണ്ട് ചിത്രം അപ്സ്കെയിൽ ചെയ്ത് വൃത്തിയാക്കൂ';
+  String get playerShadersEnableDesc =>
+      'Anime4K പോലുള്ള GLSL ഷെയ്ഡറുകൾ കൊണ്ട് ചിത്രം അപ്സ്കെയിൽ ചെയ്ത് വൃത്തിയാക്കൂ';
 
   @override
   String get playerShadersOff => 'ഷെയ്ഡറുകൾ ഓഫ്';
@@ -4423,7 +4582,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get playerShadersMissing => 'Anime4K ഇൻസ്റ്റാൾ ചെയ്തിട്ടില്ല';
 
   @override
-  String get playerShadersMissingDesc => 'ബിൽറ്റ്-ഇൻ മോഡുകൾ ഉപയോഗിക്കാൻ Anime4K ഷെയ്ഡർ പാക്ക് (ഏകദേശം 0.8 MB) ഡൗൺലോഡ് ചെയ്യൂ.';
+  String get playerShadersMissingDesc =>
+      'ബിൽറ്റ്-ഇൻ മോഡുകൾ ഉപയോഗിക്കാൻ Anime4K ഷെയ്ഡർ പാക്ക് (ഏകദേശം 0.8 MB) ഡൗൺലോഡ് ചെയ്യൂ.';
 
   @override
   String get playerShadersDownload => 'Anime4K ഡൗൺലോഡ് ചെയ്യൂ';
@@ -4492,7 +4652,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get playerShadersOriginal => 'ഒറിജിനൽ';
 
   @override
-  String get playerShadersPreviewFailed => 'പ്രിവ്യൂവിന് ഒരു ഫ്രെയിം എടുക്കാനായില്ല';
+  String get playerShadersPreviewFailed =>
+      'പ്രിവ്യൂവിന് ഒരു ഫ്രെയിം എടുക്കാനായില്ല';
 
   @override
   String get playerShadersCustomFiles => 'നിന്റെ ഷെയ്ഡറുകൾ';
@@ -4504,10 +4665,12 @@ class AppLocalizationsMl extends AppLocalizations {
   String get playerShadersImport => '.glsl ഇമ്പോർട്ട് ചെയ്യൂ';
 
   @override
-  String get playerShadersNone => 'നിന്റെ സ്വന്തം .glsl അല്ലെങ്കിൽ .hook ഫയലുകൾ ഇമ്പോർട്ട് ചെയ്ത് ടിക്ക് ചെയ്ത് ചെയിൻ ചെയ്യൂ';
+  String get playerShadersNone =>
+      'നിന്റെ സ്വന്തം .glsl അല്ലെങ്കിൽ .hook ഫയലുകൾ ഇമ്പോർട്ട് ചെയ്ത് ടിക്ക് ചെയ്ത് ചെയിൻ ചെയ്യൂ';
 
   @override
-  String get playerShadersBadFile => 'ഒരു .glsl അല്ലെങ്കിൽ .hook ഷെയ്ഡർ ഫയൽ തിരഞ്ഞെടുക്കൂ';
+  String get playerShadersBadFile =>
+      'ഒരു .glsl അല്ലെങ്കിൽ .hook ഷെയ്ഡർ ഫയൽ തിരഞ്ഞെടുക്കൂ';
 
   @override
   String get playerDecoder => 'ഡീകോഡർ';
@@ -4537,13 +4700,15 @@ class AppLocalizationsMl extends AppLocalizations {
   String get playerBuffer => 'ബഫർ വലുപ്പം (MB)';
 
   @override
-  String get playerBufferDesc => 'ഒരു സ്ട്രീം ബഫർ ചെയ്യാൻ പ്ലെയർക്ക് ഉപയോഗിക്കാവുന്ന മെമ്മറി';
+  String get playerBufferDesc =>
+      'ഒരു സ്ട്രീം ബഫർ ചെയ്യാൻ പ്ലെയർക്ക് ഉപയോഗിക്കാവുന്ന മെമ്മറി';
 
   @override
   String get playerUseMpvConf => 'mpv.conf ഉപയോഗിക്കൂ';
 
   @override
-  String get playerUseMpvConfDesc => 'പ്ലേബാക്ക് തുടങ്ങുമ്പോൾ നിന്റെ mpv.conf-ലെ ഓപ്ഷനുകൾ ബാധകമാക്കൂ';
+  String get playerUseMpvConfDesc =>
+      'പ്ലേബാക്ക് തുടങ്ങുമ്പോൾ നിന്റെ mpv.conf-ലെ ഓപ്ഷനുകൾ ബാധകമാക്കൂ';
 
   @override
   String get playerMpvConf => 'mpv.conf';
@@ -4552,7 +4717,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get playerMpvConfEdit => 'mpv കോൺഫിഗറേഷൻ എഡിറ്റ് ചെയ്യൂ';
 
   @override
-  String get playerMpvConfDesc => 'ഓരോ വരിയിലും ഒരു ഓപ്ഷൻ, സാധാരണ mpv.conf-ലെ --hwdec=auto പോലെ. [ബ്രാക്കറ്റിലെ] പ്രൊഫൈലുകൾ അവഗണിക്കും.';
+  String get playerMpvConfDesc =>
+      'ഓരോ വരിയിലും ഒരു ഓപ്ഷൻ, സാധാരണ mpv.conf-ലെ --hwdec=auto പോലെ. [ബ്രാക്കറ്റിലെ] പ്രൊഫൈലുകൾ അവഗണിക്കും.';
 
   @override
   String get playerMpvConfSaved => 'mpv.conf സേവ് ചെയ്തു';
@@ -4561,7 +4727,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get playerUseScripts => 'mpv സ്ക്രിപ്റ്റുകൾ ഉപയോഗിക്കൂ';
 
   @override
-  String get playerUseScriptsDesc => 'സ്ക്രിപ്റ്റ്സ് ഫോൾഡറിലെ പ്ലഗിനുകൾ ലോഡ് ചെയ്യൂ. Lua അല്ലെങ്കിൽ JavaScript സപ്പോർട്ടുള്ള libmpv ബിൽഡ് വേണം';
+  String get playerUseScriptsDesc =>
+      'സ്ക്രിപ്റ്റ്സ് ഫോൾഡറിലെ പ്ലഗിനുകൾ ലോഡ് ചെയ്യൂ. Lua അല്ലെങ്കിൽ JavaScript സപ്പോർട്ടുള്ള libmpv ബിൽഡ് വേണം';
 
   @override
   String get playerScripts => 'mpv സ്ക്രിപ്റ്റുകൾ';
@@ -4573,19 +4740,22 @@ class AppLocalizationsMl extends AppLocalizations {
   String get playerScriptsAdd => 'സ്ക്രിപ്റ്റ് ചേർക്കൂ';
 
   @override
-  String get playerScriptsDesc => 'ഇവിടെ വയ്ക്കുന്ന Lua, JavaScript, നേറ്റീവ് പ്ലഗിനുകൾ പ്ലേബാക്ക് തുടങ്ങുമ്പോൾ ലോഡ് ആകും.';
+  String get playerScriptsDesc =>
+      'ഇവിടെ വയ്ക്കുന്ന Lua, JavaScript, നേറ്റീവ് പ്ലഗിനുകൾ പ്ലേബാക്ക് തുടങ്ങുമ്പോൾ ലോഡ് ആകും.';
 
   @override
   String get playerScriptsNone => 'സ്ക്രിപ്റ്റുകൾ ഇതുവരെ ഇല്ല';
 
   @override
-  String get playerScriptsBadFile => 'ഒരു .lua, .js അല്ലെങ്കിൽ നേറ്റീവ് പ്ലഗിൻ ഫയൽ തിരഞ്ഞെടുക്കൂ';
+  String get playerScriptsBadFile =>
+      'ഒരു .lua, .js അല്ലെങ്കിൽ നേറ്റീവ് പ്ലഗിൻ ഫയൽ തിരഞ്ഞെടുക്കൂ';
 
   @override
   String get playerTuning => 'അഡ്വാൻസ്ഡ് വീഡിയോ ട്യൂണിംഗ്';
 
   @override
-  String get playerTuningDesc => 'സിങ്ക്, കാഷിംഗ്, സ്കെയിലിംഗ്, ടോൺ മാപ്പിംഗ് എന്നിവ ഓവർറൈഡ് ചെയ്യൂ. തെറ്റായ മൂല്യങ്ങൾ പ്ലേബാക്കിനെ ബാധിക്കാം';
+  String get playerTuningDesc =>
+      'സിങ്ക്, കാഷിംഗ്, സ്കെയിലിംഗ്, ടോൺ മാപ്പിംഗ് എന്നിവ ഓവർറൈഡ് ചെയ്യൂ. തെറ്റായ മൂല്യങ്ങൾ പ്ലേബാക്കിനെ ബാധിക്കാം';
 
   @override
   String get playerVideoSync => 'വീഡിയോ സിങ്ക്';
@@ -4594,13 +4764,15 @@ class AppLocalizationsMl extends AppLocalizations {
   String get playerInterpolation => 'ഫ്രെയിം ഇന്റർപോളേഷൻ';
 
   @override
-  String get playerInterpolationDesc => 'സ്മൂത്ത് മോഷൻ, display-resample സിങ്ക് വേണം';
+  String get playerInterpolationDesc =>
+      'സ്മൂത്ത് മോഷൻ, display-resample സിങ്ക് വേണം';
 
   @override
   String get playerPitch => 'പിച്ച് കറക്ഷൻ';
 
   @override
-  String get playerPitchDesc => 'മറ്റ് വേഗതകളിലും ശബ്ദം സ്വാഭാവികമായി നിലനിർത്തൂ';
+  String get playerPitchDesc =>
+      'മറ്റ് വേഗതകളിലും ശബ്ദം സ്വാഭാവികമായി നിലനിർത്തൂ';
 
   @override
   String get playerCacheSeconds => 'കാഷെ (സെക്കൻഡ്)';
@@ -4654,13 +4826,15 @@ class AppLocalizationsMl extends AppLocalizations {
   String get playerOpenFolder => 'ഒരു ഫോൾഡർ തുറക്കൂ';
 
   @override
-  String get playerOpenFolderDesc => 'ഒരു ഫോൾഡറിലെ എല്ലാ വീഡിയോയും പ്ലേലിസ്റ്റ് ആയി പ്ലേ ചെയ്യൂ';
+  String get playerOpenFolderDesc =>
+      'ഒരു ഫോൾഡറിലെ എല്ലാ വീഡിയോയും പ്ലേലിസ്റ്റ് ആയി പ്ലേ ചെയ്യൂ';
 
   @override
   String get playerNetworkStream => 'നെറ്റ്‌വർക്ക് സ്ട്രീം';
 
   @override
-  String get playerNetworkStreamDesc => 'ഡയറക്ട് വീഡിയോ അല്ലെങ്കിൽ HLS ലിങ്ക് തുറക്കൂ';
+  String get playerNetworkStreamDesc =>
+      'ഡയറക്ട് വീഡിയോ അല്ലെങ്കിൽ HLS ലിങ്ക് തുറക്കൂ';
 
   @override
   String get playerStreamUrl => 'സ്ട്രീം URL';
@@ -4672,7 +4846,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get playerTorrent => 'ടോറന്റ്';
 
   @override
-  String get playerTorrentDesc => 'മാഗ്നറ്റ് ലിങ്കോ .torrent ഫയലോ സ്ട്രീം ചെയ്യൂ';
+  String get playerTorrentDesc =>
+      'മാഗ്നറ്റ് ലിങ്കോ .torrent ഫയലോ സ്ട്രീം ചെയ്യൂ';
 
   @override
   String get playerMagnetLink => 'മാഗ്നറ്റ് ലിങ്ക് അല്ലെങ്കിൽ ടോറന്റ് URL';
@@ -4681,7 +4856,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get playerPickTorrent => 'ഒരു .torrent ഫയൽ തിരഞ്ഞെടുക്കൂ';
 
   @override
-  String get playerTorrentMissing => 'ആദ്യം സെറ്റിംഗ്സ് > ആഡ്-ഓണുകളിൽ നിന്ന് ടോറന്റ് ആഡ്-ഓൺ ഇൻസ്റ്റാൾ ചെയ്യൂ';
+  String get playerTorrentMissing =>
+      'ആദ്യം സെറ്റിംഗ്സ് > ആഡ്-ഓണുകളിൽ നിന്ന് ടോറന്റ് ആഡ്-ഓൺ ഇൻസ്റ്റാൾ ചെയ്യൂ';
 
   @override
   String get playerNoVideos => 'പ്ലേ ചെയ്യാവുന്ന വീഡിയോകൾ ഒന്നും കണ്ടില്ല';
@@ -4690,10 +4866,12 @@ class AppLocalizationsMl extends AppLocalizations {
   String get playerReset => 'പ്ലെയർ സെറ്റിംഗ്സ് റീസെറ്റ് ചെയ്യൂ';
 
   @override
-  String get playerResetDesc => 'എല്ലാ പ്ലെയർ ഓപ്ഷനുകളും ഡിഫോൾട്ടിലേക്ക് മാറ്റൂ';
+  String get playerResetDesc =>
+      'എല്ലാ പ്ലെയർ ഓപ്ഷനുകളും ഡിഫോൾട്ടിലേക്ക് മാറ്റൂ';
 
   @override
-  String get playerResetConfirm => 'എല്ലാ പ്ലെയർ സെറ്റിംഗ്സും റീസെറ്റ് ചെയ്യണോ?';
+  String get playerResetConfirm =>
+      'എല്ലാ പ്ലെയർ സെറ്റിംഗ്സും റീസെറ്റ് ചെയ്യണോ?';
 
   @override
   String get playerResetDone => 'പ്ലെയർ സെറ്റിംഗ്സ് റീസെറ്റ് ചെയ്തു';
@@ -4708,7 +4886,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get playerAutoSelect => 'സ്ട്രീം ഓട്ടോ സെലക്ട് ചെയ്യൂ';
 
   @override
-  String get playerAutoSelectDesc => 'ഈ ടൈറ്റിലിൽ നീ അവസാനം തിരഞ്ഞെടുത്തതിനോട് ഏറ്റവും സാമ്യമുള്ള സ്ട്രീം എടുക്കൂ';
+  String get playerAutoSelectDesc =>
+      'ഈ ടൈറ്റിലിൽ നീ അവസാനം തിരഞ്ഞെടുത്തതിനോട് ഏറ്റവും സാമ്യമുള്ള സ്ട്രീം എടുക്കൂ';
 
   @override
   String get playerLoadingStreams => 'സ്ട്രീമുകൾ തിരയുന്നു…';
@@ -4726,7 +4905,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get playerTorrentNeeded => 'ഈ സ്ട്രീം ഒരു ടോറന്റ് ആണ്';
 
   @override
-  String get playerTorrentNeededDesc => 'മാഗ്നറ്റ് ലിങ്കുകളും .torrent ഫയലുകളും പ്ലേ ചെയ്യാൻ ടോറന്റ് ആഡ്-ഓൺ ഇൻസ്റ്റാൾ ചെയ്യൂ';
+  String get playerTorrentNeededDesc =>
+      'മാഗ്നറ്റ് ലിങ്കുകളും .torrent ഫയലുകളും പ്ലേ ചെയ്യാൻ ടോറന്റ് ആഡ്-ഓൺ ഇൻസ്റ്റാൾ ചെയ്യൂ';
 
   @override
   String get playerOpenAddons => 'ആഡ്-ഓണുകൾ തുറക്കൂ';
@@ -4777,7 +4957,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get readerPerTitle => 'ഈ ടൈറ്റിലിന് മാത്രം';
 
   @override
-  String get readerPerTitleDesc => 'ഈ റീഡർ സെറ്റിംഗ്സ് ഈ ടൈറ്റിലിന് മാത്രമായി സൂക്ഷിക്കൂ';
+  String get readerPerTitleDesc =>
+      'ഈ റീഡർ സെറ്റിംഗ്സ് ഈ ടൈറ്റിലിന് മാത്രമായി സൂക്ഷിക്കൂ';
 
   @override
   String get readerSectionReading => 'വായന';
@@ -4834,13 +5015,15 @@ class AppLocalizationsMl extends AppLocalizations {
   String get readerDoublePage => 'ഇരട്ട പേജുകൾ';
 
   @override
-  String get readerDoublePageDesc => 'ലാൻഡ്സ്കേപ്പിൽ രണ്ട് പേജുകൾ അടുത്തടുത്ത് കാണിക്കൂ';
+  String get readerDoublePageDesc =>
+      'ലാൻഡ്സ്കേപ്പിൽ രണ്ട് പേജുകൾ അടുത്തടുത്ത് കാണിക്കൂ';
 
   @override
   String get readerDoubleTapZoom => 'ഡബിൾ ടാപ്പ് സൂം';
 
   @override
-  String get readerDoubleTapZoomDesc => 'ഡബിൾ ടാപ്പ് കൊണ്ട് പേജ് സൂം ഇൻ/ഔട്ട് ചെയ്യൂ';
+  String get readerDoubleTapZoomDesc =>
+      'ഡബിൾ ടാപ്പ് കൊണ്ട് പേജ് സൂം ഇൻ/ഔട്ട് ചെയ്യൂ';
 
   @override
   String get readerAnimate => 'പേജ് ആനിമേഷൻ';
@@ -4864,7 +5047,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get readerAutoNext => 'അടുത്ത ചാപ്റ്ററിലേക്ക് തുടരൂ';
 
   @override
-  String get readerAutoNextDesc => 'ഇതിന്റെ അവസാനം വായിക്കുമ്പോൾ അടുത്ത ചാപ്റ്റർ ലോഡ് ചെയ്യൂ';
+  String get readerAutoNextDesc =>
+      'ഇതിന്റെ അവസാനം വായിക്കുമ്പോൾ അടുത്ത ചാപ്റ്റർ ലോഡ് ചെയ്യൂ';
 
   @override
   String get readerPreload => 'പേജുകൾ പ്രീലോഡ് ചെയ്യൂ';
@@ -4948,13 +5132,15 @@ class AppLocalizationsMl extends AppLocalizations {
   String get readerCropBorders => 'ബോർഡറുകൾ ക്രോപ്പ് ചെയ്യൂ';
 
   @override
-  String get readerCropBordersDesc => 'പേജുകളിലെ ശൂന്യമായ വെള്ളയോ കറുപ്പോ മാർജിനുകൾ വെട്ടിമാറ്റൂ';
+  String get readerCropBordersDesc =>
+      'പേജുകളിലെ ശൂന്യമായ വെള്ളയോ കറുപ്പോ മാർജിനുകൾ വെട്ടിമാറ്റൂ';
 
   @override
   String get readerVolumeKeys => 'വോളിയം കീകൾ കൊണ്ട് പേജ് മറിക്കൂ';
 
   @override
-  String get readerVolumeKeysDesc => 'വോളിയം ഡൗൺ മുന്നോട്ട്, വോളിയം അപ്പ് പിന്നോട്ട്';
+  String get readerVolumeKeysDesc =>
+      'വോളിയം ഡൗൺ മുന്നോട്ട്, വോളിയം അപ്പ് പിന്നോട്ട്';
 
   @override
   String get readerBookmarks => 'ബുക്ക്മാർക്കുകൾ';
@@ -4983,7 +5169,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get readerAutoScrollSpeed => 'ഓട്ടോ സ്ക്രോൾ വേഗത';
 
   @override
-  String get readerAutoScrollSpeedDesc => 'പേജുകൾ തനിയെ സ്ക്രോൾ ചെയ്യുന്നതോ മറിയുന്നതോ എത്ര വേഗത്തിൽ';
+  String get readerAutoScrollSpeedDesc =>
+      'പേജുകൾ തനിയെ സ്ക്രോൾ ചെയ്യുന്നതോ മറിയുന്നതോ എത്ര വേഗത്തിൽ';
 
   @override
   String get readerKeepOn => 'സ്ക്രീൻ ഓണാക്കി നിർത്തൂ';
@@ -5007,7 +5194,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get readerSaveProgress => 'പ്രോഗ്രസ് സേവ് ചെയ്യൂ';
 
   @override
-  String get readerSaveProgressDesc => 'നിന്റെ പേജ് ഓർത്തുവയ്ക്കൂ, ചാപ്റ്ററുകൾ വായിച്ചതായി അടയാളപ്പെടുത്തൂ';
+  String get readerSaveProgressDesc =>
+      'നിന്റെ പേജ് ഓർത്തുവയ്ക്കൂ, ചാപ്റ്ററുകൾ വായിച്ചതായി അടയാളപ്പെടുത്തൂ';
 
   @override
   String get readerReset => 'റീഡർ സെറ്റിംഗ്സ് റീസെറ്റ് ചെയ്യൂ';
@@ -5074,7 +5262,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get trackProgressYes => 'സേവ്';
 
   @override
-  String get trackProgressReset => 'ഈ തരത്തിന് പ്രോഗ്രസ് സേവ് പ്രോംപ്റ്റ് റീസെറ്റ് ചെയ്തു, വീണ്ടും ചോദിക്കും';
+  String get trackProgressReset =>
+      'ഈ തരത്തിന് പ്രോഗ്രസ് സേവ് പ്രോംപ്റ്റ് റീസെറ്റ് ചെയ്തു, വീണ്ടും ചോദിക്കും';
 
   @override
   String get trackProgressNo => 'ഇല്ല';
@@ -5092,7 +5281,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get trackProgressSettingManga => 'മംഗ, നോവൽ പ്രോഗ്രസ് ട്രാക്ക് ചെയ്യൂ';
 
   @override
-  String get trackProgressSettingDesc => 'ഒരു എപ്പിസോഡ് തുറക്കുമ്പോഴോ ചാപ്റ്റർ തീർക്കുമ്പോഴോ എന്തു ചെയ്യണം';
+  String get trackProgressSettingDesc =>
+      'ഒരു എപ്പിസോഡ് തുറക്കുമ്പോഴോ ചാപ്റ്റർ തീർക്കുമ്പോഴോ എന്തു ചെയ്യണം';
 
   @override
   String get trackProgressAsk => 'ചോദിക്കൂ';
@@ -5107,7 +5297,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get dantotsuImport => 'Dantotsu-വിൽ നിന്ന് ഇമ്പോർട്ട് ചെയ്യൂ';
 
   @override
-  String get dantotsuImportDesc => 'Dantotsu സെറ്റിംഗ്സ് ബാക്കപ്പ് വായിക്കൂ (.ani, അല്ലെങ്കിൽ എൻക്രിപ്റ്റഡ് .sani)';
+  String get dantotsuImportDesc =>
+      'Dantotsu സെറ്റിംഗ്സ് ബാക്കപ്പ് വായിക്കൂ (.ani, അല്ലെങ്കിൽ എൻക്രിപ്റ്റഡ് .sani)';
 
   @override
   String get dantotsuPick => 'ഒരു Dantotsu ബാക്കപ്പ് തിരഞ്ഞെടുക്കൂ';
@@ -5175,7 +5366,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get dantotsuPlayer => 'പ്ലെയർ വേഗതയും സബ്ടൈറ്റിൽ നിറങ്ങളും';
 
   @override
-  String get dantotsuWarning => 'ഈ ഫയലിൽ ലോഗിൻ ടോക്കണുകൾ ഉണ്ട്. സ്വകാര്യമായി സൂക്ഷിക്കൂ.';
+  String get dantotsuWarning =>
+      'ഈ ഫയലിൽ ലോഗിൻ ടോക്കണുകൾ ഉണ്ട്. സ്വകാര്യമായി സൂക്ഷിക്കൂ.';
 
   @override
   String get novelIndent => 'പാരഗ്രാഫുകൾ ഇൻഡന്റ് ചെയ്യൂ';
@@ -5196,13 +5388,15 @@ class AppLocalizationsMl extends AppLocalizations {
   String get kitsuGraphqlDetail => 'വേഗമേറിയ ഡീറ്റെയിൽ പേജുകൾ (GraphQL)';
 
   @override
-  String get kitsuGraphqlDetailDesc => 'ഒരു ടൈറ്റിലിനെ അതിന്റെ കഥാപാത്രങ്ങൾ, സ്റ്റാഫ്, നിന്റെ എൻട്രി എന്നിവയോടൊപ്പം ഒറ്റ റിക്വസ്റ്റിൽ ലോഡ് ചെയ്യൂ';
+  String get kitsuGraphqlDetailDesc =>
+      'ഒരു ടൈറ്റിലിനെ അതിന്റെ കഥാപാത്രങ്ങൾ, സ്റ്റാഫ്, നിന്റെ എൻട്രി എന്നിവയോടൊപ്പം ഒറ്റ റിക്വസ്റ്റിൽ ലോഡ് ചെയ്യൂ';
 
   @override
   String get togetherTitle => 'ഒരുമിച്ച് കാണാം';
 
   @override
-  String get togetherIntro => 'കൂട്ടുകാരൻ അയച്ച റൂം ലിങ്ക് പേസ്റ്റ് ചെയ്യൂ. നീ ഉടൻ ചേരും, അവർ കാണാൻ തുടങ്ങുമ്പോൾ പ്ലെയർ തുറക്കും.';
+  String get togetherIntro =>
+      'കൂട്ടുകാരൻ അയച്ച റൂം ലിങ്ക് പേസ്റ്റ് ചെയ്യൂ. നീ ഉടൻ ചേരും, അവർ കാണാൻ തുടങ്ങുമ്പോൾ പ്ലെയർ തുറക്കും.';
 
   @override
   String get togetherName => 'നിന്റെ പേര്';
@@ -5223,7 +5417,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get togetherPassword => 'സെർവർ പാസ്‌വേഡ് (ഓപ്ഷണൽ)';
 
   @override
-  String get togetherPublicNote => 'പബ്ലിക് സെർവറുകൾക്ക് പാസ്‌വേഡ് ഇല്ല, റൂമുകൾ തുറന്നതാണ്. നീണ്ട റൂം പേര് ഉപയോഗിക്കൂ, കൂട്ടുകാരുമായി മാത്രം പങ്കിടൂ.';
+  String get togetherPublicNote =>
+      'പബ്ലിക് സെർവറുകൾക്ക് പാസ്‌വേഡ് ഇല്ല, റൂമുകൾ തുറന്നതാണ്. നീണ്ട റൂം പേര് ഉപയോഗിക്കൂ, കൂട്ടുകാരുമായി മാത്രം പങ്കിടൂ.';
 
   @override
   String get togetherConnect => 'കണക്ട്';
@@ -5302,7 +5497,8 @@ class AppLocalizationsMl extends AppLocalizations {
   }
 
   @override
-  String get togetherFollowFailed => 'ഹോസ്റ്റിന്റെ എപ്പിസോഡ് തുറക്കാനായില്ല. നീ തന്നെ തുറക്കൂ.';
+  String get togetherFollowFailed =>
+      'ഹോസ്റ്റിന്റെ എപ്പിസോഡ് തുറക്കാനായില്ല. നീ തന്നെ തുറക്കൂ.';
 
   @override
   String get togetherHostRole => 'റൂം ഹോസ്റ്റ് ചെയ്യൂ';
@@ -5314,7 +5510,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get togetherFollow => 'ഹോസ്റ്റിന്റെ എപ്പിസോഡ് പിന്തുടരൂ';
 
   @override
-  String get togetherFollowDesc => 'ഒരേ സർവീസ് ഉപയോഗിക്കുമ്പോൾ എപ്പിസോഡുകൾ തനിയെ തുറക്കുകയും മാറുകയും ചെയ്യും';
+  String get togetherFollowDesc =>
+      'ഒരേ സർവീസ് ഉപയോഗിക്കുമ്പോൾ എപ്പിസോഡുകൾ തനിയെ തുറക്കുകയും മാറുകയും ചെയ്യും';
 
   @override
   String get togetherOpenHost => 'ഹോസ്റ്റിന്റെ എപ്പിസോഡ് തുറക്കൂ';
@@ -5331,13 +5528,16 @@ class AppLocalizationsMl extends AppLocalizations {
   String get togetherShowChat => 'ലൈവ് ചാറ്റ് കാണിക്കൂ';
 
   @override
-  String get togetherWaitingHost => 'ഹോസ്റ്റ് ഒരു എപ്പിസോഡ് തുടങ്ങാൻ കാത്തിരിക്കുന്നു';
+  String get togetherWaitingHost =>
+      'ഹോസ്റ്റ് ഒരു എപ്പിസോഡ് തുടങ്ങാൻ കാത്തിരിക്കുന്നു';
 
   @override
-  String get togetherDifferentService => 'ഹോസ്റ്റ് മറ്റൊരു സർവീസിലാണ്, സിങ്കിംഗ് ഓഫാണ്';
+  String get togetherDifferentService =>
+      'ഹോസ്റ്റ് മറ്റൊരു സർവീസിലാണ്, സിങ്കിംഗ് ഓഫാണ്';
 
   @override
-  String get togetherNoSource => 'ഹോസ്റ്റിനെ പിന്തുടരാൻ ഒരു അനിമെ എക്സ്റ്റൻഷൻ ഇൻസ്റ്റാൾ ചെയ്യൂ';
+  String get togetherNoSource =>
+      'ഹോസ്റ്റിനെ പിന്തുടരാൻ ഒരു അനിമെ എക്സ്റ്റൻഷൻ ഇൻസ്റ്റാൾ ചെയ്യൂ';
 
   @override
   String togetherNoMatch(String source) {
@@ -5386,7 +5586,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get togetherSettingsDesc => 'ലിങ്ക് വഴി കൂട്ടുകാരന്റെ റൂമിൽ ചേരൂ';
 
   @override
-  String get togetherNoPlayer => 'ഒരു എപ്പിസോഡ് തുറന്നാൽ അത് റൂമുമായി തനിയെ സിങ്ക് ആകും. ചാറ്റും അംഗങ്ങളുടെ ലിസ്റ്റും ഇപ്പോൾ പ്രവർത്തിക്കും.';
+  String get togetherNoPlayer =>
+      'ഒരു എപ്പിസോഡ് തുറന്നാൽ അത് റൂമുമായി തനിയെ സിങ്ക് ആകും. ചാറ്റും അംഗങ്ങളുടെ ലിസ്റ്റും ഇപ്പോൾ പ്രവർത്തിക്കും.';
 
   @override
   String togetherWatching(String name, String file) {
@@ -5397,7 +5598,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get novelBilingual => 'ഒറിജിനലും വിവർത്തനവും കാണിക്കൂ';
 
   @override
-  String get novelBilingualDesc => 'ഓരോ പാരഗ്രാഫിലും ഒറിജിനൽ ടെക്സ്റ്റും താഴെ അതിന്റെ വിവർത്തനവും കാണിക്കും';
+  String get novelBilingualDesc =>
+      'ഓരോ പാരഗ്രാഫിലും ഒറിജിനൽ ടെക്സ്റ്റും താഴെ അതിന്റെ വിവർത്തനവും കാണിക്കും';
 
   @override
   String get novelTranslateTo => 'ഇതിലേക്ക് വിവർത്തനം ചെയ്യൂ';
@@ -5435,7 +5637,8 @@ class AppLocalizationsMl extends AppLocalizations {
   }
 
   @override
-  String get novelSpeechUnavailable => 'ഈ ഉപകരണത്തിൽ ടെക്സ്റ്റ് ടു സ്പീച്ച് ലഭ്യമല്ല';
+  String get novelSpeechUnavailable =>
+      'ഈ ഉപകരണത്തിൽ ടെക്സ്റ്റ് ടു സ്പീച്ച് ലഭ്യമല്ല';
 
   @override
   String get novelSpeechVoice => 'ശബ്ദം';
@@ -5453,7 +5656,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get novelTapPaging => 'പേജ് മറിക്കാൻ അരികുകളിൽ ടാപ്പ് ചെയ്യൂ';
 
   @override
-  String get novelTapPagingDesc => 'പേജ് സ്ക്രോൾ ചെയ്യാൻ ഇടത്തോ വലത്തോ വശത്ത് ടാപ്പ് ചെയ്യൂ, നടുവിൽ നിയന്ത്രണങ്ങൾ കാണിക്കും';
+  String get novelTapPagingDesc =>
+      'പേജ് സ്ക്രോൾ ചെയ്യാൻ ഇടത്തോ വലത്തോ വശത്ത് ടാപ്പ് ചെയ്യൂ, നടുവിൽ നിയന്ത്രണങ്ങൾ കാണിക്കും';
 
   @override
   String novelMinutesLeft(int count) {
@@ -5551,7 +5755,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get playerAudioLanguage => 'ഇഷ്ടപ്പെട്ട ഓഡിയോ ഭാഷ';
 
   @override
-  String get playerLanguageOrderHint => 'ഭാഷകളെ കോമ കൊണ്ട് വേർതിരിക്കൂ. ആദ്യം കിട്ടുന്നത് ഉപയോഗിക്കും.';
+  String get playerLanguageOrderHint =>
+      'ഭാഷകളെ കോമ കൊണ്ട് വേർതിരിക്കൂ. ആദ്യം കിട്ടുന്നത് ഉപയോഗിക്കും.';
 
   @override
   String get playerPip => 'പിക്ചർ ഇൻ പിക്ചർ';
@@ -5563,7 +5768,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get playerAutoPip => 'വിടുമ്പോൾ പിക്ചർ ഇൻ പിക്ചർ';
 
   @override
-  String get playerAutoPipDesc => 'ആപ്പ് വിടുമ്പോൾ ചെറിയ വിൻഡോയിൽ പ്ലേ ചെയ്യുന്നത് തുടരൂ';
+  String get playerAutoPipDesc =>
+      'ആപ്പ് വിടുമ്പോൾ ചെറിയ വിൻഡോയിൽ പ്ലേ ചെയ്യുന്നത് തുടരൂ';
 
   @override
   String playerAutoPlaying(String title) {
@@ -5584,7 +5790,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get playerPerTitle => 'ഈ ടൈറ്റിലിന് മാത്രം';
 
   @override
-  String get playerPerTitleDesc => 'ഈ ഓപ്ഷനുകൾ ഈ ടൈറ്റിലിന് മാത്രമായി സൂക്ഷിക്കൂ, നിന്റെ ഡിഫോൾട്ടുകൾ തൊടരുത്';
+  String get playerPerTitleDesc =>
+      'ഈ ഓപ്ഷനുകൾ ഈ ടൈറ്റിലിന് മാത്രമായി സൂക്ഷിക്കൂ, നിന്റെ ഡിഫോൾട്ടുകൾ തൊടരുത്';
 
   @override
   String get playerHoldSpeed => 'ഹോൾഡ് വേഗത';
@@ -5644,7 +5851,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get playerSeekPreview => 'സീക്ക് പ്രിവ്യൂ';
 
   @override
-  String get playerSeekPreviewDesc => 'സ്ക്രബ് ചെയ്യുമ്പോൾ സീക്ക് ബാറിന് മുകളിൽ ചെറിയ ഫ്രെയിം പ്രിവ്യൂ കാണിക്കൂ. രണ്ടാമതൊരു ലോ റെസല്യൂഷൻ ഡീകോഡർ തുറക്കും, അതിനാൽ സ്ട്രീമുകളിൽ കൂടുതൽ ഡാറ്റ ഉപയോഗിക്കും.';
+  String get playerSeekPreviewDesc =>
+      'സ്ക്രബ് ചെയ്യുമ്പോൾ സീക്ക് ബാറിന് മുകളിൽ ചെറിയ ഫ്രെയിം പ്രിവ്യൂ കാണിക്കൂ. രണ്ടാമതൊരു ലോ റെസല്യൂഷൻ ഡീകോഡർ തുറക്കും, അതിനാൽ സ്ട്രീമുകളിൽ കൂടുതൽ ഡാറ്റ ഉപയോഗിക്കും.';
 
   @override
   String get playerSettingsChip => 'സെറ്റിംഗ്സ്';
@@ -5689,10 +5897,12 @@ class AppLocalizationsMl extends AppLocalizations {
   String get downloadNoSubtitle => 'സബ്ടൈറ്റിൽ ഇല്ല';
 
   @override
-  String get downloadHlsNeedsFfmpeg => 'ഈ സ്ട്രീം ഒരു HLS പ്ലേലിസ്റ്റ് ആണ്. ഡൗൺലോഡ് ചെയ്യാൻ FFmpeg ആഡ്-ഓൺ വേണം.';
+  String get downloadHlsNeedsFfmpeg =>
+      'ഈ സ്ട്രീം ഒരു HLS പ്ലേലിസ്റ്റ് ആണ്. ഡൗൺലോഡ് ചെയ്യാൻ FFmpeg ആഡ്-ഓൺ വേണം.';
 
   @override
-  String get downloadSourceMissing => 'ഈ എപ്പിസോഡിന്റെ സോഴ്സ് ഇൻസ്റ്റാൾ ചെയ്തിട്ടില്ല';
+  String get downloadSourceMissing =>
+      'ഈ എപ്പിസോഡിന്റെ സോഴ്സ് ഇൻസ്റ്റാൾ ചെയ്തിട്ടില്ല';
 
   @override
   String get downloadWaitingConnection => 'കണക്ഷനായി കാത്തിരിക്കുന്നു';
@@ -5734,7 +5944,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get downloadResolving => 'സ്ട്രീം എടുക്കുന്നു…';
 
   @override
-  String get downloadUsedFallback => 'ചേരുന്ന സ്ട്രീം ഇല്ല, ആദ്യത്തേത് ഉപയോഗിച്ചു';
+  String get downloadUsedFallback =>
+      'ചേരുന്ന സ്ട്രീം ഇല്ല, ആദ്യത്തേത് ഉപയോഗിച്ചു';
 
   @override
   String get downloadTabQueue => 'ക്യൂ';
@@ -5810,7 +6021,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get downloadParallel => 'ഒരേസമയം ഡൗൺലോഡുകൾ';
 
   @override
-  String get downloadParallelDesc => 'ഒരു സമയം ഒരു ഡൗൺലോഡ് അല്ലെങ്കിൽ പലതും ഒരുമിച്ച് ഓടിക്കൂ';
+  String get downloadParallelDesc =>
+      'ഒരു സമയം ഒരു ഡൗൺലോഡ് അല്ലെങ്കിൽ പലതും ഒരുമിച്ച് ഓടിക്കൂ';
 
   @override
   String get downloadOneByOne => 'ഒന്നൊന്നായി';
@@ -5819,7 +6031,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get downloadNotifications => 'ഡൗൺലോഡ് നോട്ടിഫിക്കേഷനുകൾ';
 
   @override
-  String get downloadNotificationsDesc => 'സിസ്റ്റം സപ്പോർട്ട് ചെയ്യുന്നിടത്ത് ലൈവ് പ്രോഗ്രസ്, അല്ലെങ്കിൽ ഡൗൺലോഡ് തീരുമ്പോൾ ഒരു കുറിപ്പ്';
+  String get downloadNotificationsDesc =>
+      'സിസ്റ്റം സപ്പോർട്ട് ചെയ്യുന്നിടത്ത് ലൈവ് പ്രോഗ്രസ്, അല്ലെങ്കിൽ ഡൗൺലോഡ് തീരുമ്പോൾ ഒരു കുറിപ്പ്';
 
   @override
   String get downloadNotifyLive => 'ലൈവ്';
@@ -5834,13 +6047,15 @@ class AppLocalizationsMl extends AppLocalizations {
   String get downloadInfoFile => 'ഓരോ ഡൗൺലോഡിനും അടുത്ത് ഒരു ഇൻഫോ ഫയൽ എഴുതൂ';
 
   @override
-  String get downloadInfoFileDesc => 'സ്ട്രീം, ക്വാളിറ്റി, സബ്ടൈറ്റിൽ, സ്കിപ്പ് സമയങ്ങൾ എന്നിവ ചെറിയ .json ഫയലായി സേവ് ചെയ്യും';
+  String get downloadInfoFileDesc =>
+      'സ്ട്രീം, ക്വാളിറ്റി, സബ്ടൈറ്റിൽ, സ്കിപ്പ് സമയങ്ങൾ എന്നിവ ചെറിയ .json ഫയലായി സേവ് ചെയ്യും';
 
   @override
   String get offlineHeader => 'ഓഫ്‌ലൈൻ';
 
   @override
-  String get offlineModeDesc => 'ഓട്ടോ ആണെങ്കിൽ ആപ്പ് കണക്ഷൻ ഇല്ലാതെ തുടങ്ങുമ്പോൾ മാത്രം ഓഫ്‌ലൈൻ ആകും. എപ്പോഴും ആണെങ്കിൽ നീ മാറ്റുംവരെ ഓഫ്‌ലൈൻ തന്നെ.';
+  String get offlineModeDesc =>
+      'ഓട്ടോ ആണെങ്കിൽ ആപ്പ് കണക്ഷൻ ഇല്ലാതെ തുടങ്ങുമ്പോൾ മാത്രം ഓഫ്‌ലൈൻ ആകും. എപ്പോഴും ആണെങ്കിൽ നീ മാറ്റുംവരെ ഓഫ്‌ലൈൻ തന്നെ.';
 
   @override
   String get offlineModeOff => 'ഓഫ്';
@@ -5849,16 +6064,19 @@ class AppLocalizationsMl extends AppLocalizations {
   String get offlineModeAlways => 'എപ്പോഴും';
 
   @override
-  String get offlineModeOn => 'ഓഫ്‌ലൈൻ മോഡ് ഓണാണ്. മാറ്റങ്ങൾ ഇവിടെ സേവ് ചെയ്യും, ഓൺലൈൻ ആകുമ്പോൾ അയയ്ക്കും.';
+  String get offlineModeOn =>
+      'ഓഫ്‌ലൈൻ മോഡ് ഓണാണ്. മാറ്റങ്ങൾ ഇവിടെ സേവ് ചെയ്യും, ഓൺലൈൻ ആകുമ്പോൾ അയയ്ക്കും.';
 
   @override
-  String get offlineLost => 'നീ ഓഫ്‌ലൈൻ ആണ്. മാറ്റങ്ങൾ ഈ ഉപകരണത്തിൽ സേവ് ചെയ്യുന്നു';
+  String get offlineLost =>
+      'നീ ഓഫ്‌ലൈൻ ആണ്. മാറ്റങ്ങൾ ഈ ഉപകരണത്തിൽ സേവ് ചെയ്യുന്നു';
 
   @override
   String get offlineBack => 'വീണ്ടും ഓൺലൈൻ. നിന്റെ മാറ്റങ്ങൾ സിങ്ക് ചെയ്യുന്നു';
 
   @override
-  String get offlineSaved => 'ഈ ഉപകരണത്തിൽ സേവ് ചെയ്തു, ഓൺലൈൻ ആകുമ്പോൾ സിങ്ക് ചെയ്യും';
+  String get offlineSaved =>
+      'ഈ ഉപകരണത്തിൽ സേവ് ചെയ്തു, ഓൺലൈൻ ആകുമ്പോൾ സിങ്ക് ചെയ്യും';
 
   @override
   String offlineSynced(int count) {
@@ -5895,7 +6113,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get offlineDiscard => 'ഉപേക്ഷിക്കൂ';
 
   @override
-  String get downloadNotOffline => 'ഈ എപ്പിസോഡ് ഡൗൺലോഡ് ചെയ്തിട്ടില്ല, അതിനാൽ ഓഫ്‌ലൈനിൽ ലഭ്യമല്ല';
+  String get downloadNotOffline =>
+      'ഈ എപ്പിസോഡ് ഡൗൺലോഡ് ചെയ്തിട്ടില്ല, അതിനാൽ ഓഫ്‌ലൈനിൽ ലഭ്യമല്ല';
 
   @override
   String get offlineModeChip => 'ഓഫ്‌ലൈൻ';
@@ -5932,13 +6151,15 @@ class AppLocalizationsMl extends AppLocalizations {
   String get downloadFfmpegTitle => 'FFmpeg ആഡ്-ഓൺ വേണം';
 
   @override
-  String get downloadFfmpegBody => 'ഈ സ്ട്രീം ഒരു HLS പ്ലേലിസ്റ്റ് ആണ്. FFmpeg ആഡ്-ഓൺ അതിന്റെ കഷ്ണങ്ങൾ ചേർത്ത് ഒറ്റ mp4 ഫയലാക്കും. ഇല്ലെങ്കിൽ കഷ്ണങ്ങൾ ഒരു എപ്പിസോഡ് ഫോൾഡറിൽ സൂക്ഷിച്ച് അവിടെ നിന്ന് പ്ലേ ചെയ്യും.';
+  String get downloadFfmpegBody =>
+      'ഈ സ്ട്രീം ഒരു HLS പ്ലേലിസ്റ്റ് ആണ്. FFmpeg ആഡ്-ഓൺ അതിന്റെ കഷ്ണങ്ങൾ ചേർത്ത് ഒറ്റ mp4 ഫയലാക്കും. ഇല്ലെങ്കിൽ കഷ്ണങ്ങൾ ഒരു എപ്പിസോഡ് ഫോൾഡറിൽ സൂക്ഷിച്ച് അവിടെ നിന്ന് പ്ലേ ചെയ്യും.';
 
   @override
   String get downloadFfmpegInstall => 'ഇൻസ്റ്റാൾ';
 
   @override
-  String get downloadFfmpegInstalling => 'FFmpeg ഇൻസ്റ്റാൾ ചെയ്യുന്നു, കുറച്ച് സമയമെടുക്കാം…';
+  String get downloadFfmpegInstalling =>
+      'FFmpeg ഇൻസ്റ്റാൾ ചെയ്യുന്നു, കുറച്ച് സമയമെടുക്കാം…';
 
   @override
   String get downloadFinishing => 'കഷ്ണങ്ങൾ ഒറ്റ ഫയലാക്കുന്നു…';
@@ -5949,7 +6170,8 @@ class AppLocalizationsMl extends AppLocalizations {
   }
 
   @override
-  String get downloadTorrentNoFile => 'ഈ ടോറന്റിൽ ഡൗൺലോഡ് ചെയ്യാൻ വീഡിയോ ഫയൽ ഇല്ല';
+  String get downloadTorrentNoFile =>
+      'ഈ ടോറന്റിൽ ഡൗൺലോഡ് ചെയ്യാൻ വീഡിയോ ഫയൽ ഇല്ല';
 
   @override
   String downloadServiceText(int count) {
@@ -5966,13 +6188,15 @@ class AppLocalizationsMl extends AppLocalizations {
   String get downloadAutoDelete => 'കണ്ട ഡൗൺലോഡുകൾ ഡിലീറ്റ് ചെയ്യൂ';
 
   @override
-  String get downloadAutoDeleteDesc => 'നിന്റെ പ്രോഗ്രസ് ആ എപ്പിസോഡിലോ ചാപ്റ്ററിലോ എത്തുമ്പോൾ ഡൗൺലോഡ് നീക്കം ചെയ്യും';
+  String get downloadAutoDeleteDesc =>
+      'നിന്റെ പ്രോഗ്രസ് ആ എപ്പിസോഡിലോ ചാപ്റ്ററിലോ എത്തുമ്പോൾ ഡൗൺലോഡ് നീക്കം ചെയ്യും';
 
   @override
   String get downloadConnections => 'ഒരു ഡൗൺലോഡിന് കണക്ഷനുകൾ';
 
   @override
-  String get downloadConnectionsDesc => 'വലിയ ഫയലിനെ ഒരേസമയം എടുക്കുന്ന ഭാഗങ്ങളായി പിളർത്തും. ചില സെർവറുകൾ ഇത് പരിമിതപ്പെടുത്തും.';
+  String get downloadConnectionsDesc =>
+      'വലിയ ഫയലിനെ ഒരേസമയം എടുക്കുന്ന ഭാഗങ്ങളായി പിളർത്തും. ചില സെർവറുകൾ ഇത് പരിമിതപ്പെടുത്തും.';
 
   @override
   String get downloadPlayChoice => 'ഇതിൽ നിന്ന് പ്ലേ ചെയ്യൂ';
@@ -5990,7 +6214,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get offlineFeedTitle => 'ഈ ഉപകരണത്തിൽ ഡൗൺലോഡ് ചെയ്തത്';
 
   @override
-  String get offlineFeedEmpty => 'ഓൺലൈനിൽ ഇരിക്കുമ്പോൾ എന്തെങ്കിലും ഡൗൺലോഡ് ചെയ്താൽ അത് ഇവിടെ കാണും';
+  String get offlineFeedEmpty =>
+      'ഓൺലൈനിൽ ഇരിക്കുമ്പോൾ എന്തെങ്കിലും ഡൗൺലോഡ് ചെയ്താൽ അത് ഇവിടെ കാണും';
 
   @override
   String get offlineEnabled => 'ഓഫ്‌ലൈൻ മോഡ് ഓണാണ്';
@@ -6028,7 +6253,8 @@ class AppLocalizationsMl extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'അയയ്ക്കാത്ത $count മാറ്റങ്ങൾ ഉപേക്ഷിക്കണോ? ഇത് തിരിച്ചെടുക്കാനാവില്ല.',
+      other:
+          'അയയ്ക്കാത്ത $count മാറ്റങ്ങൾ ഉപേക്ഷിക്കണോ? ഇത് തിരിച്ചെടുക്കാനാവില്ല.',
       one: 'അയയ്ക്കാത്ത മാറ്റം ഉപേക്ഷിക്കണോ? ഇത് തിരിച്ചെടുക്കാനാവില്ല.',
     );
     return '$_temp0';
@@ -6044,13 +6270,15 @@ class AppLocalizationsMl extends AppLocalizations {
   String get downloadWifiOnly => 'Wi-Fi മാത്രം';
 
   @override
-  String get downloadWifiOnlyDesc => 'മൊബൈൽ ഡാറ്റയിൽ ഇരിക്കുമ്പോൾ ഡൗൺലോഡുകൾ കാത്തിരിക്കും';
+  String get downloadWifiOnlyDesc =>
+      'മൊബൈൽ ഡാറ്റയിൽ ഇരിക്കുമ്പോൾ ഡൗൺലോഡുകൾ കാത്തിരിക്കും';
 
   @override
   String get downloadMetered => 'മീറ്റേർഡ് കണക്ഷനുകളിൽ പോസ് ചെയ്യൂ';
 
   @override
-  String get downloadMeteredDesc => 'നിന്റെ ഉപകരണം മീറ്റേർഡ് എന്ന് അടയാളപ്പെടുത്തിയ Wi-Fi-യിലും കാത്തിരിക്കും';
+  String get downloadMeteredDesc =>
+      'നിന്റെ ഉപകരണം മീറ്റേർഡ് എന്ന് അടയാളപ്പെടുത്തിയ Wi-Fi-യിലും കാത്തിരിക്കും';
 
   @override
   String get downloadSpeedLimit => 'സ്പീഡ് ലിമിറ്റ്';
@@ -6082,7 +6310,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get watchAutoSource => 'അടുത്ത സോഴ്സിലേക്ക് തനിയെ മാറൂ';
 
   @override
-  String get watchAutoSourceDesc => 'സോഴ്സിന് ടൈറ്റിൽ കണ്ടെത്താനായില്ലെങ്കിലോ ലോഡ് പരാജയപ്പെട്ടാലോ, ഇൻസ്റ്റാൾ ചെയ്ത അടുത്ത സോഴ്സ് നോക്കൂ';
+  String get watchAutoSourceDesc =>
+      'സോഴ്സിന് ടൈറ്റിൽ കണ്ടെത്താനായില്ലെങ്കിലോ ലോഡ് പരാജയപ്പെട്ടാലോ, ഇൻസ്റ്റാൾ ചെയ്ത അടുത്ത സോഴ്സ് നോക്കൂ';
 
   @override
   String get extensionTest => 'എക്സ്റ്റൻഷനുകൾ ടെസ്റ്റ് ചെയ്യൂ';
@@ -6100,7 +6329,8 @@ class AppLocalizationsMl extends AppLocalizations {
   String get extensionTestStop => 'നിർത്തൂ';
 
   @override
-  String get extensionTestNone => 'ഈ തരത്തിൽ ഇൻസ്റ്റാൾ ചെയ്ത എക്സ്റ്റൻഷനുകൾ ഇല്ല';
+  String get extensionTestNone =>
+      'ഈ തരത്തിൽ ഇൻസ്റ്റാൾ ചെയ്ത എക്സ്റ്റൻഷനുകൾ ഇല്ല';
 
   @override
   String get extensionTestNotRun => 'ഇതുവരെ ടെസ്റ്റ് ചെയ്തിട്ടില്ല';
@@ -6134,31 +6364,36 @@ class AppLocalizationsMl extends AppLocalizations {
   String get onboardingFeaturesTitle => 'എല്ലാം ഒരിടത്ത്';
 
   @override
-  String get onboardingFeaturesBody => 'നീ ട്രാക്ക് ചെയ്യുന്നതും കാണുന്നതും വായിക്കുന്നതുമെല്ലാം, ആപ്പുകൾ മാറിമാറി ഉപയോഗിക്കാതെ.';
+  String get onboardingFeaturesBody =>
+      'നീ ട്രാക്ക് ചെയ്യുന്നതും കാണുന്നതും വായിക്കുന്നതുമെല്ലാം, ആപ്പുകൾ മാറിമാറി ഉപയോഗിക്കാതെ.';
 
   @override
   String get onboardingFeatureTrack => 'എല്ലാം ട്രാക്ക് ചെയ്യൂ';
 
   @override
-  String get onboardingFeatureTrackDesc => 'AniList, MyAnimeList, Simkl, Kitsu, MangaBaka എന്നിവയിലെ ലിസ്റ്റുകൾ, പ്രോഗ്രസ്, സ്കോറുകൾ.';
+  String get onboardingFeatureTrackDesc =>
+      'AniList, MyAnimeList, Simkl, Kitsu, MangaBaka എന്നിവയിലെ ലിസ്റ്റുകൾ, പ്രോഗ്രസ്, സ്കോറുകൾ.';
 
   @override
   String get onboardingFeatureWatch => 'കാണൂ, വായിക്കൂ';
 
   @override
-  String get onboardingFeatureWatchDesc => 'എക്സ്റ്റൻഷനുകൾ ഇൻസ്റ്റാൾ ചെയ്ത് അനിമെ സ്ട്രീം ചെയ്യൂ, മംഗയും നോവലുകളും ആപ്പിൽ തന്നെ വായിക്കൂ.';
+  String get onboardingFeatureWatchDesc =>
+      'എക്സ്റ്റൻഷനുകൾ ഇൻസ്റ്റാൾ ചെയ്ത് അനിമെ സ്ട്രീം ചെയ്യൂ, മംഗയും നോവലുകളും ആപ്പിൽ തന്നെ വായിക്കൂ.';
 
   @override
   String get onboardingFeatureOffline => 'ഓഫ്‌ലൈനിലും തുടരൂ';
 
   @override
-  String get onboardingFeatureOfflineDesc => 'എപ്പിസോഡുകളും ചാപ്റ്ററുകളും ഡൗൺലോഡ് ചെയ്ത് കണക്ഷൻ ഇല്ലാതെയും തുടരൂ.';
+  String get onboardingFeatureOfflineDesc =>
+      'എപ്പിസോഡുകളും ചാപ്റ്ററുകളും ഡൗൺലോഡ് ചെയ്ത് കണക്ഷൻ ഇല്ലാതെയും തുടരൂ.';
 
   @override
   String get onboardingFeatureSync => 'ലിസ്റ്റുകൾ സിങ്കിൽ നിർത്തൂ';
 
   @override
-  String get onboardingFeatureSyncDesc => 'നിന്റെ ലിസ്റ്റ് സർവീസുകളിലുടനീളം പകർത്തൂ, അല്ലെങ്കിൽ ആരാണോ മുന്നിൽ അത് ജയിക്കട്ടെ.';
+  String get onboardingFeatureSyncDesc =>
+      'നിന്റെ ലിസ്റ്റ് സർവീസുകളിലുടനീളം പകർത്തൂ, അല്ലെങ്കിൽ ആരാണോ മുന്നിൽ അത് ജയിക്കട്ടെ.';
 
   @override
   String get onboardingThemeShape => 'നിറങ്ങൾ';

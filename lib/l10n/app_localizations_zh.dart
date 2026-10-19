@@ -505,7 +505,8 @@ class AppLocalizationsZh extends AppLocalizations {
   String get jsonTheme => '自定义主题文件';
 
   @override
-  String get jsonThemeDesc => '读取 ~/.config/dartotsu/theme.json 的实时配色（自定义脚本或你自己改）';
+  String get jsonThemeDesc =>
+      '读取 ~/.config/dartotsu/theme.json 的实时配色（自定义脚本或你自己改）';
 
   @override
   String get themeMode => '主题模式';
@@ -840,10 +841,12 @@ class AppLocalizationsZh extends AppLocalizations {
   String get discordRichPresence => 'Rich Presence';
 
   @override
-  String get discordRichPresenceTokenDesc => '在你的 Discord 个人资料上显示你在做什么。需要你的 Discord Token。';
+  String get discordRichPresenceTokenDesc =>
+      '在你的 Discord 个人资料上显示你在做什么。需要你的 Discord Token。';
 
   @override
-  String get discordRichPresenceDesktopDesc => '在你的 Discord 个人资料上显示你在做什么。需要 Discord 桌面端正在运行。';
+  String get discordRichPresenceDesktopDesc =>
+      '在你的 Discord 个人资料上显示你在做什么。需要 Discord 桌面端正在运行。';
 
   @override
   String get discordBrowsing => '显示浏览动态';
@@ -858,7 +861,8 @@ class AppLocalizationsZh extends AppLocalizations {
   String get discordActivityType => '活动类型';
 
   @override
-  String get discordActivityTypeDesc => 'Discord 的措辞方式：“正在观看…”或“正在玩…”。自动模式下，动画显示“正在观看”，其余显示“正在玩”。';
+  String get discordActivityTypeDesc =>
+      'Discord 的措辞方式：“正在观看…”或“正在玩…”。自动模式下，动画显示“正在观看”，其余显示“正在玩”。';
 
   @override
   String get discordWatching => '正在观看';
@@ -888,7 +892,8 @@ class AppLocalizationsZh extends AppLocalizations {
   String get discordHideTitles => '隐藏标题';
 
   @override
-  String get discordHideTitlesDesc => '把动画和漫画的名称（及其封面和链接）替换成“Something private”。';
+  String get discordHideTitlesDesc =>
+      '把动画和漫画的名称（及其封面和链接）替换成“Something private”。';
 
   @override
   String get discordConnectionHeader => '连接';
@@ -1879,7 +1884,8 @@ class AppLocalizationsZh extends AppLocalizations {
   String get querySize => '查询方式';
 
   @override
-  String get querySizeDesc => '“单个大查询”会用一次请求加载所有行（以及整个个人资料）。“拆分查询”会为每一行或个人资料的每个部分发一个小请求：每个都很快，内容陆续出现。';
+  String get querySizeDesc =>
+      '“单个大查询”会用一次请求加载所有行（以及整个个人资料）。“拆分查询”会为每一行或个人资料的每个部分发一个小请求：每个都很快，内容陆续出现。';
 
   @override
   String get oneBig => '单个大查询';
@@ -1928,7 +1934,8 @@ class AppLocalizationsZh extends AppLocalizations {
   String get anilistExcludeList => 'Exclude your list';
 
   @override
-  String get anilistExcludeListDesc => 'Keep titles already on your AniList out of the anime and manga pages';
+  String get anilistExcludeListDesc =>
+      'Keep titles already on your AniList out of the anime and manga pages';
 
   @override
   String get anilistProfile => 'AniList 个人资料';
@@ -1946,7 +1953,8 @@ class AppLocalizationsZh extends AppLocalizations {
   String get titleLanguage => '标题语言';
 
   @override
-  String get titleLanguageDesc => '标题在各处的写法，例如 Attack on Titan / Shingeki no Kyojin / 進撃の巨人。';
+  String get titleLanguageDesc =>
+      '标题在各处的写法，例如 Attack on Titan / Shingeki no Kyojin / 進撃の巨人。';
 
   @override
   String get staffCharacterNames => '制作人员和角色名称';
@@ -2124,7 +2132,8 @@ class AppLocalizationsZh extends AppLocalizations {
   String get progressStyleHint => '胶囊和进度条叠在海报上；“外部”则把同样的数量显示成普通文字 — 二选一。';
 
   @override
-  String get nixManagedUpdate => '此版本由 Nix 管理 — 请在你的 flake 上运行“nix flake update”并重新构建，而不是在这里更新';
+  String get nixManagedUpdate =>
+      '此版本由 Nix 管理 — 请在你的 flake 上运行“nix flake update”并重新构建，而不是在这里更新';
 
   @override
   String autoUpdateFailed(String error) {
@@ -2155,7 +2164,8 @@ class AppLocalizationsZh extends AppLocalizations {
   String get chooseBackupDialog => '选择 Aniyomi、Mihon 或 Kotatsu 备份';
 
   @override
-  String get importListsHint => '把片库从 Aniyomi、Mihon / Tachiyomi 或 Kotatsu 搬过来。作品、封面、进度和分类都会保留。';
+  String get importListsHint =>
+      '把片库从 Aniyomi、Mihon / Tachiyomi 或 Kotatsu 搬过来。作品、封面、进度和分类都会保留。';
 
   @override
   String get chooseBackupFile => '选择备份文件';
@@ -2450,7 +2460,8 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String get localEntryNote => '这部作品只存在于这台设备的本地列表中。这里已关闭编辑，因为可能与你的账号列表冲突；不过你仍然可以移除它。';
+  String get localEntryNote =>
+      '这部作品只存在于这台设备的本地列表中。这里已关闭编辑，因为可能与你的账号列表冲突；不过你仍然可以移除它。';
 
   @override
   String get cardPresetPoster => '海报';
@@ -3213,7 +3224,8 @@ class AppLocalizationsZh extends AppLocalizations {
   String get commentsRules => '评论规则';
 
   @override
-  String get commentsRulesBody => '违反任何规则 = 直接封号\n\n1. 禁止种族主义、歧视或仇恨言论\n2. 禁止刷屏或自我宣传\n3. 绝对禁止 NSFW 内容\n4. 仅限英文，没有例外\n5. 禁止冒充、骚扰或辱骂\n6. 禁止违法内容，也禁止对任何圈子极端不尊重\n7. 不要索取或分享仓库或扩展\n8. 剧透必须使用剧透标签并附带警告\n9. 禁止对未成年角色进行性化或发表不当评论\n10. 觉得不对的，就别发！';
+  String get commentsRulesBody =>
+      '违反任何规则 = 直接封号\n\n1. 禁止种族主义、歧视或仇恨言论\n2. 禁止刷屏或自我宣传\n3. 绝对禁止 NSFW 内容\n4. 仅限英文，没有例外\n5. 禁止冒充、骚扰或辱骂\n6. 禁止违法内容，也禁止对任何圈子极端不尊重\n7. 不要索取或分享仓库或扩展\n8. 剧透必须使用剧透标签并附带警告\n9. 禁止对未成年角色进行性化或发表不当评论\n10. 觉得不对的，就别发！';
 
   @override
   String get commentsRulesAccept => '我知道了';
@@ -3843,7 +3855,8 @@ class AppLocalizationsZh extends AppLocalizations {
   String get notificationsCommentsEmpty => '没有评论通知';
 
   @override
-  String get notificationsCommentsEmptyMessage => '对你评论的回复和来自 Dantotsu 的公告会显示在这里。';
+  String get notificationsCommentsEmptyMessage =>
+      '对你评论的回复和来自 Dantotsu 的公告会显示在这里。';
 
   @override
   String get notificationsSettings => '通知设置';
@@ -4000,7 +4013,8 @@ class AppLocalizationsZh extends AppLocalizations {
   String get watchMatchExact => '仅完全匹配';
 
   @override
-  String get watchMetadataDesc => '剧集标题、简介、缩略图、播出日期和填充集标记的来源。拖动设置优先级；第一个有值的源生效。';
+  String get watchMetadataDesc =>
+      '剧集标题、简介、缩略图、播出日期和填充集标记的来源。拖动设置优先级；第一个有值的源生效。';
 
   @override
   String get watchMetaAniZipDesc => '剧集标题、简介、剧照和播出日期';
@@ -4015,7 +4029,8 @@ class AppLocalizationsZh extends AppLocalizations {
   String get watchMetaAniListDesc => '流媒体剧集标题、缩略图和播出时间表';
 
   @override
-  String get watchMetaTenraiDesc => '通过 Tenrai 获取 MyAnimeList 的剧集标题、播出日期、填充集和总集篇标记';
+  String get watchMetaTenraiDesc =>
+      '通过 Tenrai 获取 MyAnimeList 的剧集标题、播出日期、填充集和总集篇标记';
 
   @override
   String get watchClearMetadata => '刷新剧集详情';
@@ -4197,7 +4212,8 @@ class AppLocalizationsZh extends AppLocalizations {
   String get watchAgentShared => '请求使用 WebView 的 user agent，Cloudflare 会检查它';
 
   @override
-  String get watchAgentCustom => '已设置自定义 user agent，所以来自 WebView 的 Cloudflare 放行可能会被拒绝';
+  String get watchAgentCustom =>
+      '已设置自定义 user agent，所以来自 WebView 的 Cloudflare 放行可能会被拒绝';
 
   @override
   String get watchTestConnection => '测试连接';
@@ -4552,7 +4568,8 @@ class AppLocalizationsZh extends AppLocalizations {
   String get playerMpvConfEdit => '编辑 mpv 配置';
 
   @override
-  String get playerMpvConfDesc => '每行一个选项，就像普通 mpv.conf 里的 --hwdec=auto。[方括号] 里的配置组会被忽略。';
+  String get playerMpvConfDesc =>
+      '每行一个选项，就像普通 mpv.conf 里的 --hwdec=auto。[方括号] 里的配置组会被忽略。';
 
   @override
   String get playerMpvConfSaved => 'mpv.conf 已保存';
@@ -4561,7 +4578,8 @@ class AppLocalizationsZh extends AppLocalizations {
   String get playerUseScripts => '使用 mpv 脚本';
 
   @override
-  String get playerUseScriptsDesc => '从 scripts 文件夹加载插件。需要支持 Lua 或 JavaScript 的 libmpv 构建';
+  String get playerUseScriptsDesc =>
+      '从 scripts 文件夹加载插件。需要支持 Lua 或 JavaScript 的 libmpv 构建';
 
   @override
   String get playerScripts => 'mpv 脚本';
@@ -5644,7 +5662,8 @@ class AppLocalizationsZh extends AppLocalizations {
   String get playerSeekPreview => '拖动预览';
 
   @override
-  String get playerSeekPreviewDesc => '拖动进度条时在上方显示小画面预览。会额外打开一个低分辨率解码器，所以在视频流上会多用流量。';
+  String get playerSeekPreviewDesc =>
+      '拖动进度条时在上方显示小画面预览。会额外打开一个低分辨率解码器，所以在视频流上会多用流量。';
 
   @override
   String get playerSettingsChip => '设置';
@@ -5932,7 +5951,8 @@ class AppLocalizationsZh extends AppLocalizations {
   String get downloadFfmpegTitle => '需要 FFmpeg 组件';
 
   @override
-  String get downloadFfmpegBody => '这个视频流是 HLS 播放列表。FFmpeg 组件会把它的分片合并成一个 mp4 文件。没有它的话，分片会保留在剧集文件夹里，并从那里播放。';
+  String get downloadFfmpegBody =>
+      '这个视频流是 HLS 播放列表。FFmpeg 组件会把它的分片合并成一个 mp4 文件。没有它的话，分片会保留在剧集文件夹里，并从那里播放。';
 
   @override
   String get downloadFfmpegInstall => '安装';
@@ -6140,7 +6160,8 @@ class AppLocalizationsZh extends AppLocalizations {
   String get onboardingFeatureTrack => '追踪一切';
 
   @override
-  String get onboardingFeatureTrackDesc => '在 AniList、MyAnimeList、Simkl、Kitsu 和 MangaBaka 上管理列表、进度和评分。';
+  String get onboardingFeatureTrackDesc =>
+      '在 AniList、MyAnimeList、Simkl、Kitsu 和 MangaBaka 上管理列表、进度和评分。';
 
   @override
   String get onboardingFeatureWatch => '观看与阅读';

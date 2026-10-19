@@ -441,7 +441,8 @@ class AppLocalizationsJa extends AppLocalizations {
   String get donateSheetTitle => 'Dartotsu、楽しんでる？';
 
   @override
-  String get donateSheetMessage => 'Dartotsuは1人で作って運営してるよ。役に立ってたら、開発を応援してもらえるとうれしい。';
+  String get donateSheetMessage =>
+      'Dartotsuは1人で作って運営してるよ。役に立ってたら、開発を応援してもらえるとうれしい。';
 
   @override
   String get donateLater => 'あとで';
@@ -504,7 +505,8 @@ class AppLocalizationsJa extends AppLocalizations {
   String get jsonTheme => 'カスタムテーマファイル';
 
   @override
-  String get jsonThemeDesc => '~/.config/dartotsu/theme.jsonからリアルタイムで色を反映（自作スクリプトや手動編集）';
+  String get jsonThemeDesc =>
+      '~/.config/dartotsu/theme.jsonからリアルタイムで色を反映（自作スクリプトや手動編集）';
 
   @override
   String get themeMode => 'テーマモード';
@@ -721,7 +723,8 @@ class AppLocalizationsJa extends AppLocalizations {
   String get onboardingPaletteTitle => '自分好みにしよう';
 
   @override
-  String get onboardingPaletteBody => 'パレットを選んでね。カードからプレイヤーまで、アクセントカラーはすべてそれに合わせるよ。';
+  String get onboardingPaletteBody =>
+      'パレットを選んでね。カードからプレイヤーまで、アクセントカラーはすべてそれに合わせるよ。';
 
   @override
   String get themeModeAuto => '自動';
@@ -736,7 +739,8 @@ class AppLocalizationsJa extends AppLocalizations {
   String get onboardingSyncTitle => 'ライブラリを同期';
 
   @override
-  String get onboardingSyncBody => 'AniListにログインして、リスト、進捗、スコアを持ち込もう。スキップしてゲストで見てもOK。';
+  String get onboardingSyncBody =>
+      'AniListにログインして、リスト、進捗、スコアを持ち込もう。スキップしてゲストで見てもOK。';
 
   @override
   String get onboardingOpenLinks => 'AniListとリポジトリのリンクをDartotsuで開く';
@@ -745,7 +749,8 @@ class AppLocalizationsJa extends AppLocalizations {
   String get onboardingPermsTitle => '権限';
 
   @override
-  String get onboardingPermsBody => '今のうちに許可しておくと、ダウンロードやアップデート、通知がスムーズに動くよ。あとでシステム設定からも変えられる。';
+  String get onboardingPermsBody =>
+      '今のうちに許可しておくと、ダウンロードやアップデート、通知がスムーズに動くよ。あとでシステム設定からも変えられる。';
 
   @override
   String get permNotifications => '通知';
@@ -839,16 +844,19 @@ class AppLocalizationsJa extends AppLocalizations {
   String get discordRichPresence => 'Rich Presence';
 
   @override
-  String get discordRichPresenceTokenDesc => 'Discordのプロフィールに今やってることを表示するよ。Discordトークンが必要。';
+  String get discordRichPresenceTokenDesc =>
+      'Discordのプロフィールに今やってることを表示するよ。Discordトークンが必要。';
 
   @override
-  String get discordRichPresenceDesktopDesc => 'Discordのプロフィールに今やってることを表示するよ。Discordのデスクトップアプリを起動しておく必要があるよ。';
+  String get discordRichPresenceDesktopDesc =>
+      'Discordのプロフィールに今やってることを表示するよ。Discordのデスクトップアプリを起動しておく必要があるよ。';
 
   @override
   String get discordBrowsing => '閲覧中の画面も表示';
 
   @override
-  String get discordBrowsingDesc => '見たり読んだりしてる作品だけでなく、開いてるタブ、ページ、プロフィールも表示するよ。';
+  String get discordBrowsingDesc =>
+      '見たり読んだりしてる作品だけでなく、開いてるタブ、ページ、プロフィールも表示するよ。';
 
   @override
   String get discordLookHeader => 'プレゼンスの見た目';
@@ -857,7 +865,8 @@ class AppLocalizationsJa extends AppLocalizations {
   String get discordActivityType => 'アクティビティの種類';
 
   @override
-  String get discordActivityTypeDesc => 'Discordでの表示のされ方：「視聴中…」か「プレイ中…」。自動だとアニメは視聴中、それ以外はプレイ中になるよ。';
+  String get discordActivityTypeDesc =>
+      'Discordでの表示のされ方：「視聴中…」か「プレイ中…」。自動だとアニメは視聴中、それ以外はプレイ中になるよ。';
 
   @override
   String get discordWatching => '視聴中';
@@ -956,7 +965,8 @@ class AppLocalizationsJa extends AppLocalizations {
   String get discordTokenNotSet => '未設定。タップで追加。';
 
   @override
-  String get discordTokenPrompt => 'プレゼンスを表示したいDiscordアカウントのトークンを貼り付けてね。この端末の中だけに保存されるよ。';
+  String get discordTokenPrompt =>
+      'プレゼンスを表示したいDiscordアカウントのトークンを貼り付けてね。この端末の中だけに保存されるよ。';
 
   @override
   String get discordTokenHint => 'トークン';
@@ -1878,7 +1888,8 @@ class AppLocalizationsJa extends AppLocalizations {
   String get querySize => 'クエリのサイズ';
 
   @override
-  String get querySizeDesc => '「ひとまとめ」は全行（とプロフィール全体）を1回のリクエストで読み込むよ。「分割」は行やプロフィールの部分ごとに小さなリクエストを送るから、それぞれ速くて、届いたものから順に表示されるよ。';
+  String get querySizeDesc =>
+      '「ひとまとめ」は全行（とプロフィール全体）を1回のリクエストで読み込むよ。「分割」は行やプロフィールの部分ごとに小さなリクエストを送るから、それぞれ速くて、届いたものから順に表示されるよ。';
 
   @override
   String get oneBig => 'ひとまとめ';
@@ -1927,7 +1938,8 @@ class AppLocalizationsJa extends AppLocalizations {
   String get anilistExcludeList => 'Exclude your list';
 
   @override
-  String get anilistExcludeListDesc => 'Keep titles already on your AniList out of the anime and manga pages';
+  String get anilistExcludeListDesc =>
+      'Keep titles already on your AniList out of the anime and manga pages';
 
   @override
   String get anilistProfile => 'AniListプロフィール';
@@ -1945,7 +1957,8 @@ class AppLocalizationsJa extends AppLocalizations {
   String get titleLanguage => 'タイトルの言語';
 
   @override
-  String get titleLanguageDesc => 'あらゆる場所でのタイトルの表記。例：Attack on Titan / Shingeki no Kyojin / 進撃の巨人。';
+  String get titleLanguageDesc =>
+      'あらゆる場所でのタイトルの表記。例：Attack on Titan / Shingeki no Kyojin / 進撃の巨人。';
 
   @override
   String get staffCharacterNames => 'スタッフとキャラクターの名前';
@@ -2120,10 +2133,12 @@ class AppLocalizationsJa extends AppLocalizations {
   String get couldntLoad => '読み込めなかったよ';
 
   @override
-  String get progressStyleHint => 'ピルとバーはポスターの上に重なるよ。「外側」は同じ件数をただのテキストで表示するよ。どちらか1つを選んでね。';
+  String get progressStyleHint =>
+      'ピルとバーはポスターの上に重なるよ。「外側」は同じ件数をただのテキストで表示するよ。どちらか1つを選んでね。';
 
   @override
-  String get nixManagedUpdate => 'このビルドはNixで管理されてるよ。ここで更新せず、flakeで「nix flake update」を実行して再ビルドしてね';
+  String get nixManagedUpdate =>
+      'このビルドはNixで管理されてるよ。ここで更新せず、flakeで「nix flake update」を実行して再ビルドしてね';
 
   @override
   String autoUpdateFailed(String error) {
@@ -2154,7 +2169,8 @@ class AppLocalizationsJa extends AppLocalizations {
   String get chooseBackupDialog => 'Aniyomi、Mihon、Kotatsuのバックアップを選択';
 
   @override
-  String get importListsHint => 'Aniyomi、Mihon / Tachiyomi、Kotatsuからライブラリを移行できるよ。タイトル、カバー、進捗、カテゴリはそのまま引き継ぐよ。';
+  String get importListsHint =>
+      'Aniyomi、Mihon / Tachiyomi、Kotatsuからライブラリを移行できるよ。タイトル、カバー、進捗、カテゴリはそのまま引き継ぐよ。';
 
   @override
   String get chooseBackupFile => 'バックアップファイルを選択';
@@ -2449,7 +2465,8 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
-  String get localEntryNote => 'この作品はこの端末のローカルリストにだけあるよ。アカウントのリストと衝突するかもしれないから、ここでは編集できないけど、削除はできるよ。';
+  String get localEntryNote =>
+      'この作品はこの端末のローカルリストにだけあるよ。アカウントのリストと衝突するかもしれないから、ここでは編集できないけど、削除はできるよ。';
 
   @override
   String get cardPresetPoster => 'ポスター';
@@ -2990,7 +3007,8 @@ class AppLocalizationsJa extends AppLocalizations {
   String get syncMainService => 'メインサービス';
 
   @override
-  String get syncMainServiceDesc => 'このサービスのリストが基準になるよ。ほかのログイン済みサービスはそれに合わせて更新されるよ';
+  String get syncMainServiceDesc =>
+      'このサービスのリストが基準になるよ。ほかのログイン済みサービスはそれに合わせて更新されるよ';
 
   @override
   String get syncAuto => '自動同期';
@@ -3038,7 +3056,8 @@ class AppLocalizationsJa extends AppLocalizations {
   String get syncComparing => 'リストを比較中';
 
   @override
-  String get syncIntro => 'メインサービスを選んで「取得」を押してね。各サービスからリストを1回ずつ取得して、メインのものと比べるよ。';
+  String get syncIntro =>
+      'メインサービスを選んで「取得」を押してね。各サービスからリストを1回ずつ取得して、メインのものと比べるよ。';
 
   @override
   String get syncStateSynced => '同期済み';
@@ -3206,7 +3225,8 @@ class AppLocalizationsJa extends AppLocalizations {
   String get commentsRules => 'コメントのルール';
 
   @override
-  String get commentsRulesBody => 'ルールを破ったら即退場\n\n1. 人種差別、差別、ヘイトスピーチは禁止\n2. スパムや自己宣伝は禁止\n3. NSFWコンテンツは絶対禁止\n4. 英語のみ、例外なし\n5. なりすまし、嫌がらせ、暴言は禁止\n6. 違法なコンテンツや、ファンダムへの極端な侮辱は禁止\n7. リポジトリや拡張機能のリクエスト・共有は禁止\n8. ネタバレはスポイラータグと警告をつけた場合のみ\n9. 未成年キャラクターを性的に扱うコメントや不適切なコメントは禁止\n10. ダメだと思ったら、投稿しないでね！';
+  String get commentsRulesBody =>
+      'ルールを破ったら即退場\n\n1. 人種差別、差別、ヘイトスピーチは禁止\n2. スパムや自己宣伝は禁止\n3. NSFWコンテンツは絶対禁止\n4. 英語のみ、例外なし\n5. なりすまし、嫌がらせ、暴言は禁止\n6. 違法なコンテンツや、ファンダムへの極端な侮辱は禁止\n7. リポジトリや拡張機能のリクエスト・共有は禁止\n8. ネタバレはスポイラータグと警告をつけた場合のみ\n9. 未成年キャラクターを性的に扱うコメントや不適切なコメントは禁止\n10. ダメだと思ったら、投稿しないでね！';
 
   @override
   String get commentsRulesAccept => 'わかった';
@@ -3402,7 +3422,8 @@ class AppLocalizationsJa extends AppLocalizations {
   String get commentsSettingEnabled => 'コメント';
 
   @override
-  String get commentsSettingEnabledDesc => '作品ページにコメントタブを表示して、AniListアカウントでコメントサーバーにログインするよ';
+  String get commentsSettingEnabledDesc =>
+      '作品ページにコメントタブを表示して、AniListアカウントでコメントサーバーにログインするよ';
 
   @override
   String get commentsSettingAlerts => '返信の通知';
@@ -3634,7 +3655,8 @@ class AppLocalizationsJa extends AppLocalizations {
   String get imageSearchTooltip => 'スクリーンショットからアニメを探す';
 
   @override
-  String get imageSearchIntro => 'スクリーンショットを選ぶか画像リンクを貼り付けると、trace.moeがそのシーンのエピソードと時間を見つけてくれるよ。';
+  String get imageSearchIntro =>
+      'スクリーンショットを選ぶか画像リンクを貼り付けると、trace.moeがそのシーンのエピソードと時間を見つけてくれるよ。';
 
   @override
   String get imageSearchPick => '画像を選ぶ';
@@ -3834,7 +3856,8 @@ class AppLocalizationsJa extends AppLocalizations {
   String get notificationsCommentsEmpty => 'コメントの通知はないよ';
 
   @override
-  String get notificationsCommentsEmptyMessage => 'コメントへの返信とDantotsuからのお知らせがここに表示されるよ。';
+  String get notificationsCommentsEmptyMessage =>
+      'コメントへの返信とDantotsuからのお知らせがここに表示されるよ。';
 
   @override
   String get notificationsSettings => '通知の設定';
@@ -3982,7 +4005,8 @@ class AppLocalizationsJa extends AppLocalizations {
   String get watchMatching => 'ソースの照合';
 
   @override
-  String get watchMatchingDesc => '「いちばん近い」は検索結果のトップを選ぶよ。「完全一致のみ」はほぼ同じタイトルだけを採用して、残りは自分で選ぶ形になるよ。';
+  String get watchMatchingDesc =>
+      '「いちばん近い」は検索結果のトップを選ぶよ。「完全一致のみ」はほぼ同じタイトルだけを採用して、残りは自分で選ぶ形になるよ。';
 
   @override
   String get watchMatchClosest => 'いちばん近いものを選ぶ';
@@ -3991,7 +4015,8 @@ class AppLocalizationsJa extends AppLocalizations {
   String get watchMatchExact => '完全一致のみ';
 
   @override
-  String get watchMetadataDesc => 'エピソードのタイトル、あらすじ、サムネイル、放送日、フィラー情報の取得元。ドラッグで優先順位を決めてね。値があった最初のソースが採用されるよ。';
+  String get watchMetadataDesc =>
+      'エピソードのタイトル、あらすじ、サムネイル、放送日、フィラー情報の取得元。ドラッグで優先順位を決めてね。値があった最初のソースが採用されるよ。';
 
   @override
   String get watchMetaAniZipDesc => 'エピソードのタイトル、あらすじ、スチル、放送日';
@@ -4006,7 +4031,8 @@ class AppLocalizationsJa extends AppLocalizations {
   String get watchMetaAniListDesc => '配信のエピソードタイトル、サムネイル、放送スケジュール';
 
   @override
-  String get watchMetaTenraiDesc => 'Tenrai経由のMyAnimeListのエピソードタイトル、放送日、フィラー・総集編フラグ';
+  String get watchMetaTenraiDesc =>
+      'Tenrai経由のMyAnimeListのエピソードタイトル、放送日、フィラー・総集編フラグ';
 
   @override
   String get watchClearMetadata => 'エピソードの詳細を更新';
@@ -4157,7 +4183,8 @@ class AppLocalizationsJa extends AppLocalizations {
   String get watchOpenWebView => 'Webビューで開く';
 
   @override
-  String get watchOpenWebViewDesc => 'Cloudflareのチェックを通すかログインしてね。Cookieはソースのリクエストと共有されるよ';
+  String get watchOpenWebViewDesc =>
+      'Cloudflareのチェックを通すかログインしてね。Cookieはソースのリクエストと共有されるよ';
 
   @override
   String watchCookieCount(int count, String host) {
@@ -4183,10 +4210,12 @@ class AppLocalizationsJa extends AppLocalizations {
   String get watchClearanceSession => 'アプリを閉じるまで有効';
 
   @override
-  String get watchAgentShared => 'リクエストにはWebビューのユーザーエージェントを使うよ。Cloudflareがここをチェックするんだ';
+  String get watchAgentShared =>
+      'リクエストにはWebビューのユーザーエージェントを使うよ。Cloudflareがここをチェックするんだ';
 
   @override
-  String get watchAgentCustom => 'カスタムのユーザーエージェントが設定されてるから、Webビューのクリアランスは拒否されるかも';
+  String get watchAgentCustom =>
+      'カスタムのユーザーエージェントが設定されてるから、Webビューのクリアランスは拒否されるかも';
 
   @override
   String get watchTestConnection => '接続をテスト';
@@ -4403,7 +4432,8 @@ class AppLocalizationsJa extends AppLocalizations {
   String get playerShadersEnable => 'シェーダーを有効にする';
 
   @override
-  String get playerShadersEnableDesc => 'Anime4KなどのGLSLシェーダーで映像をアップスケール・きれいにするよ';
+  String get playerShadersEnableDesc =>
+      'Anime4KなどのGLSLシェーダーで映像をアップスケール・きれいにするよ';
 
   @override
   String get playerShadersOff => 'シェーダーはオフ';
@@ -4412,7 +4442,8 @@ class AppLocalizationsJa extends AppLocalizations {
   String get playerShadersMissing => 'Anime4Kがインストールされてないよ';
 
   @override
-  String get playerShadersMissingDesc => '内蔵モードを使うには、Anime4Kのシェーダーパック（約0.8MB）をダウンロードしてね。';
+  String get playerShadersMissingDesc =>
+      '内蔵モードを使うには、Anime4Kのシェーダーパック（約0.8MB）をダウンロードしてね。';
 
   @override
   String get playerShadersDownload => 'Anime4Kをダウンロード';
@@ -4541,7 +4572,8 @@ class AppLocalizationsJa extends AppLocalizations {
   String get playerMpvConfEdit => 'mpvの設定を編集';
 
   @override
-  String get playerMpvConfDesc => '普通のmpv.confのように、1行に1オプション（例：--hwdec=auto）。[角かっこ]のプロファイルは無視されるよ。';
+  String get playerMpvConfDesc =>
+      '普通のmpv.confのように、1行に1オプション（例：--hwdec=auto）。[角かっこ]のプロファイルは無視されるよ。';
 
   @override
   String get playerMpvConfSaved => 'mpv.confを保存したよ';
@@ -4550,7 +4582,8 @@ class AppLocalizationsJa extends AppLocalizations {
   String get playerUseScripts => 'mpvスクリプトを使う';
 
   @override
-  String get playerUseScriptsDesc => 'scriptsフォルダのプラグインを読み込むよ。LuaかJavaScriptに対応したlibmpvビルドが必要';
+  String get playerUseScriptsDesc =>
+      'scriptsフォルダのプラグインを読み込むよ。LuaかJavaScriptに対応したlibmpvビルドが必要';
 
   @override
   String get playerScripts => 'mpvスクリプト';
@@ -4562,7 +4595,8 @@ class AppLocalizationsJa extends AppLocalizations {
   String get playerScriptsAdd => 'スクリプトを追加';
 
   @override
-  String get playerScriptsDesc => 'ここに置いたLua、JavaScript、ネイティブのプラグインは再生開始時に読み込まれるよ。';
+  String get playerScriptsDesc =>
+      'ここに置いたLua、JavaScript、ネイティブのプラグインは再生開始時に読み込まれるよ。';
 
   @override
   String get playerScriptsNone => 'まだスクリプトはないよ';
@@ -4574,7 +4608,8 @@ class AppLocalizationsJa extends AppLocalizations {
   String get playerTuning => '高度な映像チューニング';
 
   @override
-  String get playerTuningDesc => '同期、キャッシュ、スケーリング、トーンマッピングを上書きするよ。値を間違えると再生に影響するかも';
+  String get playerTuningDesc =>
+      '同期、キャッシュ、スケーリング、トーンマッピングを上書きするよ。値を間違えると再生に影響するかも';
 
   @override
   String get playerVideoSync => '映像の同期';
@@ -4715,7 +4750,8 @@ class AppLocalizationsJa extends AppLocalizations {
   String get playerTorrentNeeded => 'このストリームはトレントだよ';
 
   @override
-  String get playerTorrentNeededDesc => 'マグネットリンクや.torrentファイルを再生するには、トレントアドオンをインストールしてね';
+  String get playerTorrentNeededDesc =>
+      'マグネットリンクや.torrentファイルを再生するには、トレントアドオンをインストールしてね';
 
   @override
   String get playerOpenAddons => 'アドオンを開く';
@@ -5096,7 +5132,8 @@ class AppLocalizationsJa extends AppLocalizations {
   String get dantotsuImport => 'Dantotsuからインポート';
 
   @override
-  String get dantotsuImportDesc => 'Dantotsuの設定バックアップを読み込む（.ani、または暗号化された.sani）';
+  String get dantotsuImportDesc =>
+      'Dantotsuの設定バックアップを読み込む（.ani、または暗号化された.sani）';
 
   @override
   String get dantotsuPick => 'Dantotsuのバックアップを選択';
@@ -5191,7 +5228,8 @@ class AppLocalizationsJa extends AppLocalizations {
   String get togetherTitle => 'いっしょに見る';
 
   @override
-  String get togetherIntro => '友達から届いたルームのリンクを貼り付けてね。すぐ参加して、友達が再生を始めるとプレイヤーが開くよ。';
+  String get togetherIntro =>
+      '友達から届いたルームのリンクを貼り付けてね。すぐ参加して、友達が再生を始めるとプレイヤーが開くよ。';
 
   @override
   String get togetherName => 'あなたの名前';
@@ -5212,7 +5250,8 @@ class AppLocalizationsJa extends AppLocalizations {
   String get togetherPassword => 'サーバーのパスワード（任意）';
 
   @override
-  String get togetherPublicNote => '公開サーバーにパスワードはなく、ルームは誰でも入れるよ。長めのルーム名にして、友達とだけ共有してね。';
+  String get togetherPublicNote =>
+      '公開サーバーにパスワードはなく、ルームは誰でも入れるよ。長めのルーム名にして、友達とだけ共有してね。';
 
   @override
   String get togetherConnect => '接続';
@@ -5588,7 +5627,8 @@ class AppLocalizationsJa extends AppLocalizations {
   String get fontImport => 'フォントをインポート';
 
   @override
-  String get fontSample => 'いろはにほへと ちりぬるを The quick brown fox jumps over the lazy dog';
+  String get fontSample =>
+      'いろはにほへと ちりぬるを The quick brown fox jumps over the lazy dog';
 
   @override
   String get playerSubtitleDelay => '字幕の遅延';
@@ -5633,7 +5673,8 @@ class AppLocalizationsJa extends AppLocalizations {
   String get playerSeekPreview => 'シークのプレビュー';
 
   @override
-  String get playerSeekPreviewDesc => 'シーク中にバーの上に小さなフレームのプレビューを表示するよ。低解像度のデコーダーをもう1つ開くから、ストリームでは通信量が増えるよ。';
+  String get playerSeekPreviewDesc =>
+      'シーク中にバーの上に小さなフレームのプレビューを表示するよ。低解像度のデコーダーをもう1つ開くから、ストリームでは通信量が増えるよ。';
 
   @override
   String get playerSettingsChip => '設定';
@@ -5678,7 +5719,8 @@ class AppLocalizationsJa extends AppLocalizations {
   String get downloadNoSubtitle => '字幕なし';
 
   @override
-  String get downloadHlsNeedsFfmpeg => 'このストリームはHLSプレイリストだよ。ダウンロードにはFFmpegアドオンが必要。';
+  String get downloadHlsNeedsFfmpeg =>
+      'このストリームはHLSプレイリストだよ。ダウンロードにはFFmpegアドオンが必要。';
 
   @override
   String get downloadSourceMissing => 'このエピソードのソースがインストールされてないよ';
@@ -5807,7 +5849,8 @@ class AppLocalizationsJa extends AppLocalizations {
   String get downloadNotifications => 'ダウンロード通知';
 
   @override
-  String get downloadNotificationsDesc => 'システムが対応していればリアルタイムで進捗を表示、それ以外はダウンロード完了時に通知するよ';
+  String get downloadNotificationsDesc =>
+      'システムが対応していればリアルタイムで進捗を表示、それ以外はダウンロード完了時に通知するよ';
 
   @override
   String get downloadNotifyLive => 'リアルタイム';
@@ -5828,7 +5871,8 @@ class AppLocalizationsJa extends AppLocalizations {
   String get offlineHeader => 'オフライン';
 
   @override
-  String get offlineModeDesc => '「自動」は、接続なしでアプリを起動したときだけオフラインになるよ。「常に」は変えるまでオフラインのまま。';
+  String get offlineModeDesc =>
+      '「自動」は、接続なしでアプリを起動したときだけオフラインになるよ。「常に」は変えるまでオフラインのまま。';
 
   @override
   String get offlineModeOff => 'オフ';
@@ -5918,7 +5962,8 @@ class AppLocalizationsJa extends AppLocalizations {
   String get downloadFfmpegTitle => 'FFmpegアドオンが必要';
 
   @override
-  String get downloadFfmpegBody => 'このストリームはHLSプレイリストだよ。FFmpegアドオンが断片を1つのmp4ファイルにつなげるよ。ないと、断片はエピソードのフォルダに残って、そこから再生されるよ。';
+  String get downloadFfmpegBody =>
+      'このストリームはHLSプレイリストだよ。FFmpegアドオンが断片を1つのmp4ファイルにつなげるよ。ないと、断片はエピソードのフォルダに残って、そこから再生されるよ。';
 
   @override
   String get downloadFfmpegInstall => 'インストール';
@@ -5957,7 +6002,8 @@ class AppLocalizationsJa extends AppLocalizations {
   String get downloadConnections => 'ダウンロードごとの接続数';
 
   @override
-  String get downloadConnectionsDesc => '大きなファイルを分割して同時に取得するよ。サーバーによっては制限されてるよ。';
+  String get downloadConnectionsDesc =>
+      '大きなファイルを分割して同時に取得するよ。サーバーによっては制限されてるよ。';
 
   @override
   String get downloadPlayChoice => '再生元';
@@ -6066,7 +6112,8 @@ class AppLocalizationsJa extends AppLocalizations {
   String get watchAutoSource => '次のソースに自動で切り替える';
 
   @override
-  String get watchAutoSourceDesc => 'ソースで作品が見つからない、または読み込みに失敗したら、次にインストール済みのソースを試すよ';
+  String get watchAutoSourceDesc =>
+      'ソースで作品が見つからない、または読み込みに失敗したら、次にインストール済みのソースを試すよ';
 
   @override
   String get extensionTest => '拡張機能をテスト';
@@ -6124,25 +6171,29 @@ class AppLocalizationsJa extends AppLocalizations {
   String get onboardingFeatureTrack => 'ぜんぶ記録';
 
   @override
-  String get onboardingFeatureTrackDesc => 'AniList、MyAnimeList、Simkl、Kitsu、MangaBakaでリスト、進捗、スコアを管理。';
+  String get onboardingFeatureTrackDesc =>
+      'AniList、MyAnimeList、Simkl、Kitsu、MangaBakaでリスト、進捗、スコアを管理。';
 
   @override
   String get onboardingFeatureWatch => '見る＆読む';
 
   @override
-  String get onboardingFeatureWatchDesc => '拡張機能を入れて、アニメのストリーミングやマンガ・ノベルの閲覧をアプリ内で。';
+  String get onboardingFeatureWatchDesc =>
+      '拡張機能を入れて、アニメのストリーミングやマンガ・ノベルの閲覧をアプリ内で。';
 
   @override
   String get onboardingFeatureOffline => 'オフラインでも';
 
   @override
-  String get onboardingFeatureOfflineDesc => 'エピソードやチャプターをダウンロードして、接続なしでも続きを楽しめるよ。';
+  String get onboardingFeatureOfflineDesc =>
+      'エピソードやチャプターをダウンロードして、接続なしでも続きを楽しめるよ。';
 
   @override
   String get onboardingFeatureSync => 'リストを同期';
 
   @override
-  String get onboardingFeatureSyncDesc => 'サービス間でリストをミラーリング。進んでるほうを優先することもできるよ。';
+  String get onboardingFeatureSyncDesc =>
+      'サービス間でリストをミラーリング。進んでるほうを優先することもできるよ。';
 
   @override
   String get onboardingThemeShape => 'カラー';
