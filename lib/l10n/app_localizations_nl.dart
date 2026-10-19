@@ -5771,6 +5771,13 @@ class AppLocalizationsNl extends AppLocalizations {
       'Bewaar deze opties voor deze titel en laat je standaardinstellingen met rust';
 
   @override
+  String get playerSwapGestures => 'Swap swipe sides';
+
+  @override
+  String get playerSwapGesturesDesc =>
+      'Brightness on the left and volume on the right';
+
+  @override
   String get playerHoldSpeed => 'Vasthoudsnelheid';
 
   @override

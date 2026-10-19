@@ -203,6 +203,13 @@ List<Setting> playerSettingsRows(
       (v) => update((x) => x.adjustVolume = v),
     ),
     switchSetting(
+      getString.playerSwapGestures,
+      getString.playerSwapGesturesDesc,
+      Icons.swap_horiz_rounded,
+      s.swapGestures,
+      (v) => update((x) => x.swapGestures = v),
+    ),
+    switchSetting(
       getString.playerHoldToSpeed,
       getString.playerHoldToSpeedDesc,
       Icons.touch_app_rounded,

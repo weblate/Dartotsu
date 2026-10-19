@@ -7,6 +7,7 @@ import '../../../Core/ThemeManager/LanguageSwitcher.dart';
 import '../../../Utils/Animation/WidgetAnimations.dart';
 import '../../../Utils/Extensions/ContextExtensions.dart';
 import '../../../Utils/Extensions/StringExtensions.dart';
+import '../../../Utils/Functions/CopyToClip.dart';
 import '../../../Widgets/Components/AppSheet.dart';
 import '../../../Widgets/Components/CustomBottomDialog.dart';
 import '../../../Widgets/Components/EmptyState.dart';
@@ -161,6 +162,7 @@ Widget _repoTile(
     onTap: () async {
       if (!selected) await state.selectRepo(type, repo);
     },
+    onLongPress: () => copyToClipboard(repo.url),
     leading: repo.iconUrl != null
         ? ClipRRect(
             borderRadius: BorderRadius.circular(10),

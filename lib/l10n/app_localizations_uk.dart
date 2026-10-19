@@ -5778,6 +5778,13 @@ class AppLocalizationsUk extends AppLocalizations {
       'Зберегти ці опції для цього тайтла, не чіпаючи типових';
 
   @override
+  String get playerSwapGestures => 'Swap swipe sides';
+
+  @override
+  String get playerSwapGesturesDesc =>
+      'Brightness on the left and volume on the right';
+
+  @override
   String get playerHoldSpeed => 'Швидкість утримання';
 
   @override

@@ -5797,6 +5797,13 @@ class AppLocalizationsEl extends AppLocalizations {
       'Κράτα αυτές τις επιλογές για αυτόν τον τίτλο και άφησε τις προεπιλογές σου ήσυχες';
 
   @override
+  String get playerSwapGestures => 'Swap swipe sides';
+
+  @override
+  String get playerSwapGesturesDesc =>
+      'Brightness on the left and volume on the right';
+
+  @override
   String get playerHoldSpeed => 'Ταχύτητα κρατήματος';
 
   @override

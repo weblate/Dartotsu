@@ -5733,6 +5733,13 @@ class AppLocalizationsAr extends AppLocalizations {
       'احتفظ بهذه الخيارات لهذا العنوان واترك افتراضياتك كما هي';
 
   @override
+  String get playerSwapGestures => 'Swap swipe sides';
+
+  @override
+  String get playerSwapGesturesDesc =>
+      'Brightness on the left and volume on the right';
+
+  @override
   String get playerHoldSpeed => 'سرعة الضغط المطول';
 
   @override

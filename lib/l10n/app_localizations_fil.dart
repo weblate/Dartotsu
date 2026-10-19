@@ -5787,6 +5787,13 @@ class AppLocalizationsFil extends AppLocalizations {
       'Panatilihin ang mga opsyong ito para sa title na ito at huwag galawin ang mga default mo';
 
   @override
+  String get playerSwapGestures => 'Swap swipe sides';
+
+  @override
+  String get playerSwapGesturesDesc =>
+      'Brightness on the left and volume on the right';
+
+  @override
   String get playerHoldSpeed => 'Hold speed';
 
   @override

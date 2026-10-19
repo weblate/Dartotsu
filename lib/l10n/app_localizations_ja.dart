@@ -5615,6 +5615,13 @@ class AppLocalizationsJa extends AppLocalizations {
   String get playerPerTitleDesc => 'この作品にだけこのオプションを使って、デフォルトはそのままにするよ';
 
   @override
+  String get playerSwapGestures => 'Swap swipe sides';
+
+  @override
+  String get playerSwapGesturesDesc =>
+      'Brightness on the left and volume on the right';
+
+  @override
   String get playerHoldSpeed => '長押しの速度';
 
   @override

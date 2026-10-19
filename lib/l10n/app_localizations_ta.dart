@@ -5774,6 +5774,13 @@ class AppLocalizationsTa extends AppLocalizations {
       'இந்த ஆப்ஷன்ஸை இந்த டைட்டிலுக்கு வச்சுக்கோ, உன் டீஃபால்ட்ஸை தொடாத';
 
   @override
+  String get playerSwapGestures => 'Swap swipe sides';
+
+  @override
+  String get playerSwapGesturesDesc =>
+      'Brightness on the left and volume on the right';
+
+  @override
   String get playerHoldSpeed => 'ஹோல்டு ஸ்பீட்';
 
   @override

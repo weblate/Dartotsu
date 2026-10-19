@@ -5723,6 +5723,13 @@ class AppLocalizationsFa extends AppLocalizations {
       'این گزینه‌ها رو برای این عنوان نگه دار و پیش‌فرض‌هات رو دست نزن';
 
   @override
+  String get playerSwapGestures => 'Swap swipe sides';
+
+  @override
+  String get playerSwapGesturesDesc =>
+      'Brightness on the left and volume on the right';
+
+  @override
   String get playerHoldSpeed => 'سرعت نگه‌داشتن';
 
   @override

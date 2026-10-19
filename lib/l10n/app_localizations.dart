@@ -10469,6 +10469,18 @@ abstract class AppLocalizations {
   /// **'Keep these options for this title and leave your defaults alone'**
   String get playerPerTitleDesc;
 
+  /// No description provided for @playerSwapGestures.
+  ///
+  /// In en, this message translates to:
+  /// **'Swap swipe sides'**
+  String get playerSwapGestures;
+
+  /// No description provided for @playerSwapGesturesDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Brightness on the left and volume on the right'**
+  String get playerSwapGesturesDesc;
+
   /// No description provided for @playerHoldSpeed.
   ///
   /// In en, this message translates to:

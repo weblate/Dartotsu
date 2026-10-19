@@ -5732,6 +5732,13 @@ class AppLocalizationsPs extends AppLocalizations {
       'دا غوراوي د دې سرلیک لپاره وساته او خپل ډیفالټ پرېږده';
 
   @override
+  String get playerSwapGestures => 'Swap swipe sides';
+
+  @override
+  String get playerSwapGesturesDesc =>
+      'Brightness on the left and volume on the right';
+
+  @override
   String get playerHoldSpeed => 'د ساتلو چټکتیا';
 
   @override

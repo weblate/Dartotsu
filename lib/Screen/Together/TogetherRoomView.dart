@@ -15,8 +15,23 @@ import 'TogetherLink.dart';
 class TogetherRoomView extends StatelessWidget {
   final TogetherController session;
   final VoidCallback? onClose;
+  final Widget? stage;
+  final List<Widget> leading;
+  final ScrollController? scroll;
 
-  const TogetherRoomView({super.key, required this.session, this.onClose});
+  const TogetherRoomView({super.key, required this.session, this.onClose})
+    : stage = null,
+      leading = const [],
+      scroll = null;
+
+  const TogetherRoomView.inline({
+    super.key,
+    required this.session,
+    required Widget this.stage,
+    this.leading = const [],
+    this.scroll,
+    this.onClose,
+  });
 
   TogetherController get s => session;
 
@@ -26,7 +41,27 @@ class TogetherRoomView extends StatelessWidget {
   );
 
   @override
-  Widget build(BuildContext context) => Watch(() => _room(context));
+  Widget build(BuildContext context) =>
+      Watch(() => stage == null ? _room(context) : _inline(context));
+
+  Widget _inline(BuildContext context) => Column(
+    children: [
+      Expanded(
+        child: CustomScrollView(
+          controller: scroll,
+          slivers: [
+            SliverToBoxAdapter(child: stage),
+            for (final item in leading) SliverToBoxAdapter(child: item),
+            SliverToBoxAdapter(child: _header(context)),
+            SliverToBoxAdapter(child: _members(context)),
+            SliverToBoxAdapter(child: _nowPlaying(context)),
+            TogetherChatSliver(session: s),
+          ],
+        ),
+      ),
+      TogetherComposer(session: s, scroll: scroll),
+    ],
+  );
 
   Widget _room(BuildContext context) => Column(
     children: [

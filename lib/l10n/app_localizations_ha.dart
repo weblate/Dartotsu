@@ -5753,6 +5753,13 @@ class AppLocalizationsHa extends AppLocalizations {
       'Kiyaye waɗannan zaɓuɓɓuka ga wannan take kuma bar tsoffinka';
 
   @override
+  String get playerSwapGestures => 'Swap swipe sides';
+
+  @override
+  String get playerSwapGesturesDesc =>
+      'Brightness on the left and volume on the right';
+
+  @override
   String get playerHoldSpeed => 'Saurin riƙewa';
 
   @override

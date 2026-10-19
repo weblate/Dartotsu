@@ -5761,6 +5761,13 @@ class AppLocalizationsDa extends AppLocalizations {
       'Behold disse indstillinger for denne titel og lad dine standarder være i fred';
 
   @override
+  String get playerSwapGestures => 'Swap swipe sides';
+
+  @override
+  String get playerSwapGesturesDesc =>
+      'Brightness on the left and volume on the right';
+
+  @override
   String get playerHoldSpeed => 'Holdehastighed';
 
   @override

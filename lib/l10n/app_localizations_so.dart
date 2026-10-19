@@ -5780,6 +5780,13 @@ class AppLocalizationsSo extends AppLocalizations {
       'Ilaali ikhtiyaarradan ciwaankan oo ha taaban kuwa caadiga ah';
 
   @override
+  String get playerSwapGestures => 'Swap swipe sides';
+
+  @override
+  String get playerSwapGesturesDesc =>
+      'Brightness on the left and volume on the right';
+
+  @override
   String get playerHoldSpeed => 'Xawaaraha haynta';
 
   @override

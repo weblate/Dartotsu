@@ -5756,6 +5756,13 @@ class AppLocalizationsTr extends AppLocalizations {
       'Bu seçenekleri bu başlık için tut, varsayılanlarına dokunma';
 
   @override
+  String get playerSwapGestures => 'Swap swipe sides';
+
+  @override
+  String get playerSwapGesturesDesc =>
+      'Brightness on the left and volume on the right';
+
+  @override
   String get playerHoldSpeed => 'Basılı tutma hızı';
 
   @override

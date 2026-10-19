@@ -5661,6 +5661,13 @@ class AppLocalizationsAm extends AppLocalizations {
   String get playerPerTitleDesc => 'እነዚህን አማራጮች ለዚህ ርዕስ አቆይና ነባሪዎችህን ተው';
 
   @override
+  String get playerSwapGestures => 'Swap swipe sides';
+
+  @override
+  String get playerSwapGesturesDesc =>
+      'Brightness on the left and volume on the right';
+
+  @override
   String get playerHoldSpeed => 'የመያዣ ፍጥነት';
 
   @override

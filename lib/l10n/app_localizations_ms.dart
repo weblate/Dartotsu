@@ -5751,6 +5751,13 @@ class AppLocalizationsMs extends AppLocalizations {
       'Simpan pilihan ni untuk tajuk ni dan jangan usik lalai awak';
 
   @override
+  String get playerSwapGestures => 'Swap swipe sides';
+
+  @override
+  String get playerSwapGesturesDesc =>
+      'Brightness on the left and volume on the right';
+
+  @override
   String get playerHoldSpeed => 'Kelajuan tahan';
 
   @override

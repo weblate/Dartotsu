@@ -5780,6 +5780,13 @@ class AppLocalizationsPt extends AppLocalizations {
       'Mantém essas opções pra esse título e deixa seus padrões em paz';
 
   @override
+  String get playerSwapGestures => 'Swap swipe sides';
+
+  @override
+  String get playerSwapGesturesDesc =>
+      'Brightness on the left and volume on the right';
+
+  @override
   String get playerHoldSpeed => 'Velocidade ao segurar';
 
   @override

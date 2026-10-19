@@ -5619,6 +5619,13 @@ class AppLocalizationsKo extends AppLocalizations {
   String get playerPerTitleDesc => '이 작품에만 이 옵션을 쓰고 기본값은 그대로 둬요';
 
   @override
+  String get playerSwapGestures => 'Swap swipe sides';
+
+  @override
+  String get playerSwapGesturesDesc =>
+      'Brightness on the left and volume on the right';
+
+  @override
   String get playerHoldSpeed => '길게 누를 때 속도';
 
   @override

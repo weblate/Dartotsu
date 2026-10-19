@@ -5772,6 +5772,13 @@ class AppLocalizationsTe extends AppLocalizations {
       'ఈ ఆప్షన్లు ఈ టైటిల్‌కి ఉంచు, నీ డిఫాల్ట్స్‌ని ముట్టుకోకు';
 
   @override
+  String get playerSwapGestures => 'Swap swipe sides';
+
+  @override
+  String get playerSwapGesturesDesc =>
+      'Brightness on the left and volume on the right';
+
+  @override
   String get playerHoldSpeed => 'హోల్డ్ స్పీడ్';
 
   @override

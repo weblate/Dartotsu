@@ -5760,6 +5760,13 @@ class AppLocalizationsKn extends AppLocalizations {
       'ಈ ಆಯ್ಕೆಗಳನ್ನು ಈ ಶೀರ್ಷಿಕೆಗೆ ಇಟ್ಟು ನಿನ್ನ ಡೀಫಾಲ್ಟ್‌ಗಳನ್ನು ಮುಟ್ಟಬೇಡ';
 
   @override
+  String get playerSwapGestures => 'Swap swipe sides';
+
+  @override
+  String get playerSwapGesturesDesc =>
+      'Brightness on the left and volume on the right';
+
+  @override
   String get playerHoldSpeed => 'ಹೋಲ್ಡ್ ವೇಗ';
 
   @override

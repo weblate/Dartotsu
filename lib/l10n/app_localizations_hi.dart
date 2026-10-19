@@ -5740,6 +5740,13 @@ class AppLocalizationsHi extends AppLocalizations {
       'ये ऑप्शन इसी टाइटल के लिए रखो और अपने डिफ़ॉल्ट को मत छेड़ो';
 
   @override
+  String get playerSwapGestures => 'Swap swipe sides';
+
+  @override
+  String get playerSwapGesturesDesc =>
+      'Brightness on the left and volume on the right';
+
+  @override
   String get playerHoldSpeed => 'होल्ड स्पीड';
 
   @override

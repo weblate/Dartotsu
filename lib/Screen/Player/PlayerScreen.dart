@@ -85,11 +85,24 @@ class _PlayerScreenState extends State<PlayerScreen>
         body: fullscreen ? _fullscreen(context) : _page(context),
       ),
     );
-    final wrapped = KeyboardListener(
-      focusNode: state.focus,
-      autofocus: true,
-      onKeyEvent: _key,
-      child: body,
+    final wrapped = Shortcuts(
+      shortcuts: const {
+        SingleActivator(LogicalKeyboardKey.space): _PlayPauseIntent(),
+      },
+      child: Actions(
+        actions: {
+          _PlayPauseIntent: _PlayPauseAction(() {
+            unawaited(state.engine.toggle());
+            state.showControls();
+          }),
+        },
+        child: KeyboardListener(
+          focusNode: state.focus,
+          autofocus: true,
+          onKeyEvent: _key,
+          child: body,
+        ),
+      ),
     );
     if (media == null) return wrapped;
     return PresenceScope(
@@ -258,13 +271,11 @@ class _PlayerScreenState extends State<PlayerScreen>
     final together = state.together;
     return Material(
       color: scheme.surface,
-      child: Column(
-        children: [
-          stage,
-          _heading(context, scheme),
-          _tools(context),
-          Expanded(child: TogetherRoomView(session: together)),
-        ],
+      child: TogetherRoomView.inline(
+        session: together,
+        stage: stage,
+        leading: [_heading(context, scheme), _tools(context)],
+        scroll: state.pageScroll,
       ),
     );
   }
@@ -272,16 +283,11 @@ class _PlayerScreenState extends State<PlayerScreen>
   Widget _chat(BuildContext context, ColorScheme scheme, Widget stage) =>
       Material(
         color: scheme.surface,
-        child: Column(
-          children: [
-            stage,
-            Expanded(
-              child: TogetherRoomView(
-                session: state.together,
-                onClose: () => state.chatOpen.value = false,
-              ),
-            ),
-          ],
+        child: TogetherRoomView.inline(
+          session: state.together,
+          stage: stage,
+          scroll: state.pageScroll,
+          onClose: () => state.chatOpen.value = false,
         ),
       );
 
@@ -716,10 +722,19 @@ class _PlayerScreenState extends State<PlayerScreen>
         if (state.locked.value) return;
         final delta = -d.delta.dy / 300;
         final x = d.localPosition.dx;
+        final swap = state.settings.swapGestures;
         if (x < width * 0.25) {
-          state.changeVolume(delta);
-        } else if (supportsBrightness && x > width * 0.75) {
-          state.changeBrightness(delta);
+          if (swap) {
+            if (supportsBrightness) state.changeBrightness(delta);
+          } else {
+            state.changeVolume(delta);
+          }
+        } else if (x > width * 0.75) {
+          if (swap) {
+            state.changeVolume(delta);
+          } else if (supportsBrightness) {
+            state.changeBrightness(delta);
+          }
         }
       },
       child: const SizedBox.expand(),
@@ -741,7 +756,7 @@ class _PlayerScreenState extends State<PlayerScreen>
     final key = event.logicalKey;
     final shift = HardwareKeyboard.instance.isShiftPressed;
     final engine = state.engine;
-    if (key == LogicalKeyboardKey.space || key == LogicalKeyboardKey.keyK) {
+    if (key == LogicalKeyboardKey.keyK) {
       unawaited(engine.toggle());
       state.showControls();
     } else if (key == LogicalKeyboardKey.arrowRight ||
@@ -781,5 +796,28 @@ class _PlayerScreenState extends State<PlayerScreen>
         state.seekTo(total * (digit / 10));
       }
     }
+  }
+}
+
+class _PlayPauseIntent extends Intent {
+  const _PlayPauseIntent();
+}
+
+class _PlayPauseAction extends Action<_PlayPauseIntent> {
+  final VoidCallback onPlayPause;
+
+  _PlayPauseAction(this.onPlayPause);
+
+  @override
+  bool isEnabled(_PlayPauseIntent intent) {
+    final focus = FocusManager.instance.primaryFocus?.context;
+    return focus == null ||
+        focus.findAncestorWidgetOfExactType<EditableText>() == null;
+  }
+
+  @override
+  Object? invoke(_PlayPauseIntent intent) {
+    onPlayPause();
+    return null;
   }
 }

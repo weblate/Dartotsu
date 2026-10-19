@@ -5794,6 +5794,13 @@ class AppLocalizationsMl extends AppLocalizations {
       'ഈ ഓപ്ഷനുകൾ ഈ ടൈറ്റിലിന് മാത്രമായി സൂക്ഷിക്കൂ, നിന്റെ ഡിഫോൾട്ടുകൾ തൊടരുത്';
 
   @override
+  String get playerSwapGestures => 'Swap swipe sides';
+
+  @override
+  String get playerSwapGesturesDesc =>
+      'Brightness on the left and volume on the right';
+
+  @override
   String get playerHoldSpeed => 'ഹോൾഡ് വേഗത';
 
   @override

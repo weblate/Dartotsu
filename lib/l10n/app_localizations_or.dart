@@ -5763,6 +5763,13 @@ class AppLocalizationsOr extends AppLocalizations {
       'ଏହି ବିକଳ୍ପ ଏହି ଶୀର୍ଷକ ପାଇଁ ରଖନ୍ତୁ ଓ ତୁମ ଡିଫଲ୍ଟକୁ ଛୁଅନ୍ତୁ ନାହିଁ';
 
   @override
+  String get playerSwapGestures => 'Swap swipe sides';
+
+  @override
+  String get playerSwapGesturesDesc =>
+      'Brightness on the left and volume on the right';
+
+  @override
   String get playerHoldSpeed => 'ଧରି ରଖିବା ବେଗ';
 
   @override

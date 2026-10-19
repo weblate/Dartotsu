@@ -5788,6 +5788,13 @@ class AppLocalizationsRu extends AppLocalizations {
       'Оставить эти параметры для этого тайтла, не трогая твои стандартные';
 
   @override
+  String get playerSwapGestures => 'Swap swipe sides';
+
+  @override
+  String get playerSwapGesturesDesc =>
+      'Brightness on the left and volume on the right';
+
+  @override
   String get playerHoldSpeed => 'Скорость при удержании';
 
   @override

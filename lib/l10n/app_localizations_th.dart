@@ -5691,6 +5691,13 @@ class AppLocalizationsTh extends AppLocalizations {
       'ใช้ตัวเลือกเหล่านี้กับเรื่องนี้ และไม่แตะค่าเริ่มต้นของคุณ';
 
   @override
+  String get playerSwapGestures => 'Swap swipe sides';
+
+  @override
+  String get playerSwapGesturesDesc =>
+      'Brightness on the left and volume on the right';
+
+  @override
   String get playerHoldSpeed => 'ความเร็วตอนกดค้าง';
 
   @override

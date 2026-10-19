@@ -5707,6 +5707,13 @@ class AppLocalizationsNe extends AppLocalizations {
       'यी विकल्प यही शीर्षकका लागि राख र आफ्ना डिफल्ट नछोऊ';
 
   @override
+  String get playerSwapGestures => 'Swap swipe sides';
+
+  @override
+  String get playerSwapGesturesDesc =>
+      'Brightness on the left and volume on the right';
+
+  @override
   String get playerHoldSpeed => 'होल्ड गति';
 
   @override

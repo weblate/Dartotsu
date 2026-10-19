@@ -5605,6 +5605,13 @@ class AppLocalizationsZh extends AppLocalizations {
   String get playerPerTitleDesc => '这些选项只对这部作品生效，不影响你的默认设置';
 
   @override
+  String get playerSwapGestures => 'Swap swipe sides';
+
+  @override
+  String get playerSwapGesturesDesc =>
+      'Brightness on the left and volume on the right';
+
+  @override
   String get playerHoldSpeed => '长按速度';
 
   @override

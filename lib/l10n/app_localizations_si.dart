@@ -5774,6 +5774,13 @@ class AppLocalizationsSi extends AppLocalizations {
       'මේ විකල්ප මේ ටයිටල් එකට තියාගෙන ඔයාගේ ඩිෆෝල්ට්ස් ඒ විදියටම තියන්න';
 
   @override
+  String get playerSwapGestures => 'Swap swipe sides';
+
+  @override
+  String get playerSwapGesturesDesc =>
+      'Brightness on the left and volume on the right';
+
+  @override
   String get playerHoldSpeed => 'හෝල්ඩ් වේගය';
 
   @override

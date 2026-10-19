@@ -18,40 +18,12 @@ class TogetherChatPanel extends StatefulWidget {
 class _TogetherChatPanelState extends State<TogetherChatPanel> {
   TogetherController get s => widget.session;
 
-  final _message = TextEditingController();
   final _scroll = ScrollController();
 
   @override
-  void initState() {
-    super.initState();
-    s.unread.value = 0;
-    s.sheetOpen = true;
-  }
-
-  @override
   void dispose() {
-    s.sheetOpen = false;
-    _message.dispose();
     _scroll.dispose();
     super.dispose();
-  }
-
-  void _send() {
-    s.sendChat(_message.text);
-    _message.clear();
-    _toEnd();
-  }
-
-  void _toEnd() {
-    Future<void>.delayed(const Duration(milliseconds: 60), () {
-      if (mounted && _scroll.hasClients) {
-        _scroll.animateTo(
-          _scroll.position.maxScrollExtent + 80,
-          duration: const Duration(milliseconds: 160),
-          curve: Curves.easeOut,
-        );
-      }
-    });
   }
 
   @override
@@ -77,53 +49,141 @@ class _TogetherChatPanelState extends State<TogetherChatPanel> {
                   itemBuilder: (_, i) => TogetherChatLine(line: lines[i]),
                 ),
         ),
-        Padding(
-          padding: EdgeInsetsDirectional.fromSTEB(
-            Dimens.pagePad,
-            Dimens.gapXs,
-            Dimens.gapSm,
-            Dimens.gapSm,
-          ),
-          child: Row(
-            children: [
-              Expanded(
-                child: TextField(
-                  controller: _message,
-                  textInputAction: TextInputAction.send,
-                  onSubmitted: (_) => _send(),
-                  decoration: InputDecoration(
-                    hintText: getString.togetherChatHint,
-                    isDense: true,
-                    filled: true,
-                    fillColor: scheme.surfaceContainerHighest,
-                    contentPadding: const EdgeInsets.symmetric(
-                      horizontal: 20,
-                      vertical: 12,
-                    ),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(28),
-                      borderSide: BorderSide.none,
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(28),
-                      borderSide: BorderSide.none,
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(28),
-                      borderSide: BorderSide(color: scheme.primary, width: 1.5),
-                    ),
-                  ),
-                ),
+        TogetherComposer(session: s, scroll: _scroll),
+      ],
+    );
+  });
+}
+
+class TogetherChatSliver extends StatelessWidget {
+  final TogetherController session;
+
+  const TogetherChatSliver({super.key, required this.session});
+
+  @override
+  Widget build(BuildContext context) => Watch(() {
+    final lines = session.chat.toList();
+    if (lines.isEmpty) {
+      return SliverToBoxAdapter(
+        child: Padding(
+          padding: EdgeInsets.all(Dimens.pagePad * 2),
+          child: Center(
+            child: Text(
+              getString.togetherNoChat,
+              style: context.textTheme.bodySmall?.copyWith(
+                color: context.colorScheme.onSurfaceVariant,
               ),
-              SizedBox(width: Dimens.gapXs),
-              IconButton.filled(
-                icon: const Icon(Icons.send_rounded),
-                onPressed: s.connected ? _send : null,
-              ),
-            ],
+            ),
           ),
         ),
-      ],
+      );
+    }
+    return SliverPadding(
+      padding: EdgeInsets.all(Dimens.pagePad),
+      sliver: SliverList.builder(
+        itemCount: lines.length,
+        itemBuilder: (_, i) => TogetherChatLine(line: lines[i]),
+      ),
+    );
+  });
+}
+
+class TogetherComposer extends StatefulWidget {
+  final TogetherController session;
+  final ScrollController? scroll;
+
+  const TogetherComposer({super.key, required this.session, this.scroll});
+
+  @override
+  State<TogetherComposer> createState() => _TogetherComposerState();
+}
+
+class _TogetherComposerState extends State<TogetherComposer> {
+  TogetherController get s => widget.session;
+
+  final _message = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    s.unread.value = 0;
+    s.sheetOpen = true;
+  }
+
+  @override
+  void dispose() {
+    s.sheetOpen = false;
+    _message.dispose();
+    super.dispose();
+  }
+
+  void _send() {
+    s.sendChat(_message.text);
+    _message.clear();
+    _toEnd();
+  }
+
+  void _toEnd() {
+    Future<void>.delayed(const Duration(milliseconds: 60), () {
+      final scroll = widget.scroll;
+      if (mounted && scroll != null && scroll.hasClients) {
+        scroll.animateTo(
+          scroll.position.maxScrollExtent + 80,
+          duration: const Duration(milliseconds: 160),
+          curve: Curves.easeOut,
+        );
+      }
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) => Watch(() {
+    final scheme = context.colorScheme;
+    return Padding(
+      padding: EdgeInsetsDirectional.fromSTEB(
+        Dimens.pagePad,
+        Dimens.gapXs,
+        Dimens.gapSm,
+        Dimens.gapSm,
+      ),
+      child: Row(
+        children: [
+          Expanded(
+            child: TextField(
+              controller: _message,
+              textInputAction: TextInputAction.send,
+              onSubmitted: (_) => _send(),
+              decoration: InputDecoration(
+                hintText: getString.togetherChatHint,
+                isDense: true,
+                filled: true,
+                fillColor: scheme.surfaceContainerHighest,
+                contentPadding: const EdgeInsets.symmetric(
+                  horizontal: 20,
+                  vertical: 12,
+                ),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(28),
+                  borderSide: BorderSide.none,
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(28),
+                  borderSide: BorderSide.none,
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(28),
+                  borderSide: BorderSide(color: scheme.primary, width: 1.5),
+                ),
+              ),
+            ),
+          ),
+          SizedBox(width: Dimens.gapXs),
+          IconButton.filled(
+            icon: const Icon(Icons.send_rounded),
+            onPressed: s.connected ? _send : null,
+          ),
+        ],
+      ),
     );
   });
 }

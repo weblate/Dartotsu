@@ -5750,6 +5750,13 @@ class AppLocalizationsSa extends AppLocalizations {
       'एतान् विकल्पान् अस्य शीर्षकस्य कृते रक्ष तव मूलभूतानि अस्पृष्टानि तिष्ठन्तु';
 
   @override
+  String get playerSwapGestures => 'Swap swipe sides';
+
+  @override
+  String get playerSwapGesturesDesc =>
+      'Brightness on the left and volume on the right';
+
+  @override
   String get playerHoldSpeed => 'धारण-वेगः';
 
   @override

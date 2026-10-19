@@ -10,6 +10,7 @@ class SheetTile extends StatelessWidget {
   final bool selected;
   final bool enabled;
   final VoidCallback? onTap;
+  final VoidCallback? onLongPress;
   final Widget? trailing;
   final BorderRadius? radius;
   final bool tinted;
@@ -22,6 +23,7 @@ class SheetTile extends StatelessWidget {
     this.selected = false,
     this.enabled = true,
     this.onTap,
+    this.onLongPress,
     this.trailing,
     this.radius,
     this.tinted = false,
@@ -44,6 +46,7 @@ class SheetTile extends StatelessWidget {
         borderRadius: shape,
         child: DpadTap(
           onTap: enabled ? onTap : null,
+          onLongPress: enabled ? onLongPress : null,
           borderRadius: shape,
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),

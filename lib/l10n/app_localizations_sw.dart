@@ -5780,6 +5780,13 @@ class AppLocalizationsSw extends AppLocalizations {
       'Weka chaguo hizi kwa kichwa hiki na usiguse chaguomsingi zako';
 
   @override
+  String get playerSwapGestures => 'Swap swipe sides';
+
+  @override
+  String get playerSwapGesturesDesc =>
+      'Brightness on the left and volume on the right';
+
+  @override
   String get playerHoldSpeed => 'Kasi ya kushikilia';
 
   @override

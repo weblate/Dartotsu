@@ -43,6 +43,8 @@ class PlayerSettings {
   set seekDuration(int v) => _v['seekDuration'] = v;
   double get holdSpeed => _get('holdSpeed', 2.0);
   set holdSpeed(double v) => _v['holdSpeed'] = v;
+  bool get swapGestures => _get('swapGestures', false);
+  set swapGestures(bool v) => _v['swapGestures'] = v;
   bool get autoPlay => _get('autoPlay', true);
   set autoPlay(bool v) => _v['autoPlay'] = v;
   bool get resume => _get('resume', true);

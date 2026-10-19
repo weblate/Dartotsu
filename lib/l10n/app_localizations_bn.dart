@@ -5722,6 +5722,13 @@ class AppLocalizationsBn extends AppLocalizations {
       'এই অপশনগুলো শুধু এই টাইটেলের জন্য রাখো, তোমার ডিফল্ট ছুঁয়ো না';
 
   @override
+  String get playerSwapGestures => 'Swap swipe sides';
+
+  @override
+  String get playerSwapGesturesDesc =>
+      'Brightness on the left and volume on the right';
+
+  @override
   String get playerHoldSpeed => 'হোল্ড স্পিড';
 
   @override

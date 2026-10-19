@@ -5736,6 +5736,13 @@ class AppLocalizationsVi extends AppLocalizations {
       'Giữ các tùy chọn này cho tựa này và không đụng tới mặc định của bạn';
 
   @override
+  String get playerSwapGestures => 'Swap swipe sides';
+
+  @override
+  String get playerSwapGesturesDesc =>
+      'Brightness on the left and volume on the right';
+
+  @override
   String get playerHoldSpeed => 'Tốc độ khi giữ';
 
   @override

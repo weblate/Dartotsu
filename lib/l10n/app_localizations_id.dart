@@ -5753,6 +5753,13 @@ class AppLocalizationsId extends AppLocalizations {
       'Pakai opsi ini untuk judul ini dan biarkan bawaanmu tidak berubah';
 
   @override
+  String get playerSwapGestures => 'Swap swipe sides';
+
+  @override
+  String get playerSwapGesturesDesc =>
+      'Brightness on the left and volume on the right';
+
+  @override
   String get playerHoldSpeed => 'Kecepatan tahan';
 
   @override

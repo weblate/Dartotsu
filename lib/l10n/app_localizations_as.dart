@@ -5722,6 +5722,13 @@ class AppLocalizationsAs extends AppLocalizations {
       'এই বিকল্পবোৰ এই শিৰোনামৰ বাবে ৰাখা আৰু তোমাৰ ডিফল্ট নুচুবা';
 
   @override
+  String get playerSwapGestures => 'Swap swipe sides';
+
+  @override
+  String get playerSwapGesturesDesc =>
+      'Brightness on the left and volume on the right';
+
+  @override
   String get playerHoldSpeed => 'হোল্ড গতি';
 
   @override

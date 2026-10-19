@@ -5776,6 +5776,13 @@ class AppLocalizationsHr extends AppLocalizations {
       'Zadrži ove opcije za ovaj naslov i ostavi svoje zadane na miru';
 
   @override
+  String get playerSwapGestures => 'Swap swipe sides';
+
+  @override
+  String get playerSwapGesturesDesc =>
+      'Brightness on the left and volume on the right';
+
+  @override
   String get playerHoldSpeed => 'Brzina držanja';
 
   @override
