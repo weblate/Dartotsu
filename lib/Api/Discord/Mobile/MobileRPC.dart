@@ -16,7 +16,7 @@ class MobileRPC extends AppController implements BaseDiscordRPC {
   Map<String, dynamic> _payload(DiscordPresence p) => {
     'activities': [
       {
-        'application_id': MobileTokenManager.clientId,
+        'application_id': MobileTokenManager.applicationId,
         'name': p.name,
         'details': p.details,
         'state': ?p.state,

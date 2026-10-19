@@ -49,6 +49,7 @@ class DiscordTokenRejected implements Exception {
 
 class MobileTokenManager {
   static const clientId = "503557087041683458";
+  static const applicationId = "1135077904435396718";
   static const redirectUri = "https://login.premid.app";
   static const scopes = ["identify", "activities.write"];
 
