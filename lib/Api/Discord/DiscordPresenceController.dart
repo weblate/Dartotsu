@@ -145,14 +145,28 @@ class DiscordPresenceController extends AppController
     final want = _desired();
     try {
       if (want == null) {
+        logger(
+          'sync: nothing to show (enabled=${PrefName.discordRpc.value} '
+          'incognito=$isIncognito hidden=$_appHidden held=$_held '
+          'entries=${_stack.length}) shown=${_shown != null}',
+          tag: 'DISCORD',
+        );
         if (_shown == null) return;
         _shown = null;
         await _rpc.clear();
         return;
       }
-      if (want == _shown) return;
+      if (want == _shown) {
+        logger('sync: presence unchanged, skipping', tag: 'DISCORD');
+        return;
+      }
+      logger(
+        'sync: showing ${want.name} | ${want.details} | ${want.state}',
+        tag: 'DISCORD',
+      );
       _shown = want;
       if (!await _rpc.show(want)) {
+        logger('sync: show failed, retrying in 30s', tag: 'DISCORD');
         _shown = null;
         _retry();
       }

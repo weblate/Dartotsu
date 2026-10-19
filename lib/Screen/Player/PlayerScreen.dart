@@ -716,10 +716,10 @@ class _PlayerScreenState extends State<PlayerScreen>
         if (state.locked.value) return;
         final delta = -d.delta.dy / 300;
         final x = d.localPosition.dx;
-        if (supportsBrightness && x < width * 0.25) {
-          state.changeBrightness(delta);
-        } else if (x > width * 0.75) {
+        if (x < width * 0.25) {
           state.changeVolume(delta);
+        } else if (supportsBrightness && x > width * 0.75) {
+          state.changeBrightness(delta);
         }
       },
       child: const SizedBox.expand(),

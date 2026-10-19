@@ -1,13 +1,51 @@
 import '../../../Logger.dart';
+
 import 'dart:async';
 import 'dart:convert';
 import 'dart:math';
 
 import 'package:crypto/crypto.dart';
 import 'package:rhttp/rhttp.dart';
+
 import '../../../Core/NetworkManager/NetworkManager.dart';
 import '../../../Core/Preferences/PrefManager.dart';
 import '../../../Core/State/State.dart';
+
+const _secretKeys = {
+  'access_token',
+  'refresh_token',
+  'token',
+  'location',
+  'code',
+  'code_verifier',
+  'authorization',
+};
+
+Object? _redact(Object? value) {
+  if (value is Map) {
+    return {
+      for (final e in value.entries)
+        '${e.key}': _secretKeys.contains('${e.key}'.toLowerCase())
+            ? '<redacted>'
+            : _redact(e.value),
+    };
+  }
+  if (value is List) return [for (final e in value) _redact(e)];
+  return value;
+}
+
+String discordSafe(Object? value) {
+  final text = '${_redact(value)}';
+  return text.length > 800 ? '${text.substring(0, 800)}…' : text;
+}
+
+void discordLog(String message, {LogLevel level = LogLevel.info}) =>
+    logger(message, logLevel: level, tag: 'DISCORD');
+
+class DiscordTokenRejected implements Exception {
+  @override
+  String toString() => 'Discord token rejected';
+}
 
 class MobileTokenManager {
   static const clientId = "503557087041683458";
@@ -17,7 +55,8 @@ class MobileTokenManager {
   final NetworkManager network = find();
 
   String? _accessToken;
-  Completer<String>? _refreshCompleter;
+  String? _rejectedToken;
+  Future<String>? _pending;
 
   static const _authKey = 'DiscordToken';
 
@@ -31,41 +70,52 @@ class MobileTokenManager {
       saveCustomData<String>(_authKey, token.trim());
 
   void removeAuthToken() {
+    discordLog('removing saved user token');
     removeCustomData(_authKey);
     _accessToken = null;
   }
 
   Future<String> getToken() async {
-    if (authToken == null) {
+    final auth = authToken;
+    if (auth == null) {
+      discordLog('getToken: no user token saved', level: LogLevel.error);
       throw Exception("Discord auth token is not set");
     }
-    if (_accessToken != null) return _accessToken!;
+    if (auth == _rejectedToken) {
+      discordLog('getToken: saved user token was already rejected by Discord');
+      throw DiscordTokenRejected();
+    }
+    if (_accessToken != null) {
+      discordLog('getToken: using in-memory access token');
+      return _accessToken!;
+    }
 
     final cached = loadCustomData<String>("DiscordAccessToken");
+    discordLog('getToken: stored access token present=${cached != null}');
     if (cached != null && await _testToken(cached)) {
+      discordLog('getToken: stored access token still valid');
       _accessToken = cached;
       return cached;
     }
 
-    if (_refreshCompleter != null) {
-      return _refreshCompleter!.future;
+    final running = _pending;
+    if (running != null) {
+      discordLog('getToken: waiting for a refresh already in progress');
+      return running;
     }
 
-    _refreshCompleter = Completer<String>();
+    discordLog('getToken: requesting a new access token');
+    final next = _refresh().whenComplete(() => _pending = null);
+    _pending = next;
+    return next;
+  }
 
-    try {
-      final token = await _createToken();
-      _accessToken = token;
-      saveCustomData("DiscordAccessToken", token);
-
-      _refreshCompleter!.complete(token);
-      return token;
-    } catch (e) {
-      _refreshCompleter!.completeError(e);
-      rethrow;
-    } finally {
-      _refreshCompleter = null;
-    }
+  Future<String> _refresh() async {
+    final token = await _createToken();
+    _accessToken = token;
+    saveCustomData("DiscordAccessToken", token);
+    discordLog('access token created and stored');
+    return token;
   }
 
   Future<bool> _testToken(String token) async {
@@ -75,8 +125,10 @@ class MobileTokenManager {
         headers: {"Authorization": "Bearer $token"},
       );
 
+      discordLog('test access token: HTTP ${res.statusCode}');
       return res.statusCode == 200;
     } catch (e, st) {
+      discordLog('test access token failed: $e', level: LogLevel.error);
       logError('TokenManager', e, st);
       return false;
     }
@@ -101,6 +153,10 @@ class MobileTokenManager {
   Future<String> _createToken() async {
     final verifier = _randomString(128);
     final challenge = _codeChallenge(verifier);
+    discordLog(
+      'authorize: POST oauth2/authorize client_id=$clientId '
+      'redirect_uri=$redirectUri scope=identify activities.write',
+    );
 
     final authRes = await network.post(
       "https://discord.com/api/v9/oauth2/authorize",
@@ -120,13 +176,37 @@ class MobileTokenManager {
       data: const {"authorize": true},
     );
 
+    discordLog(
+      'authorize: HTTP ${authRes.statusCode} '
+      'body=${discordSafe(authRes.data)}',
+    );
+
+    if (authRes.statusCode == 401) {
+      discordLog(
+        'authorize: Discord rejected the saved user token',
+        level: LogLevel.error,
+      );
+      _rejectedToken = authToken;
+      throw DiscordTokenRejected();
+    }
+
     if (authRes.statusCode != 200) {
+      discordLog(
+        'authorize failed: HTTP ${authRes.statusCode} '
+        'body=${discordSafe(authRes.data)}',
+        level: LogLevel.error,
+      );
       throw Exception("Discord OAuth authorize failed");
     }
 
     final location = authRes.data["location"];
     final code = Uri.parse(location).queryParameters["code"];
+    discordLog(
+      'authorize: redirect host=${Uri.parse(location).host} '
+      'code present=${code != null}',
+    );
     if (code == null) {
+      discordLog('authorize: no code in redirect', level: LogLevel.error);
       throw Exception("OAuth code missing");
     }
 
@@ -141,8 +221,13 @@ class MobileTokenManager {
       }),
     );
 
+    discordLog(
+      'token exchange: HTTP ${tokenRes.statusCode} '
+      'body=${discordSafe(tokenRes.data)}',
+    );
     final accessToken = tokenRes.data["access_token"];
     if (accessToken == null) {
+      discordLog('token exchange: access_token missing', level: LogLevel.error);
       throw Exception("Access token missing");
     }
 
@@ -150,6 +235,7 @@ class MobileTokenManager {
   }
 
   Future<void> clear() async {
+    discordLog('clearing stored access token');
     _accessToken = null;
     removeCustomData("DiscordAccessToken");
   }
