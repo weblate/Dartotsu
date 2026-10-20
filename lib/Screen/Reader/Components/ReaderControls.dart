@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../Widgets/Components/SeekProgressBar.dart';
+
 import '../../../Core/State/State.dart';
 import '../../../Core/ThemeManager/LanguageSwitcher.dart';
 import '../../../Utils/Animation/WidgetAnimations.dart';
@@ -206,13 +208,14 @@ class ReaderControls extends StatelessWidget {
                     Expanded(
                       child: count < 2
                           ? const SizedBox.shrink()
-                          : Slider(
-                              min: 0,
-                              max: (count - 1).toDouble(),
-                              divisions: count - 1,
-                              value: page.clamp(0, count - 1).toDouble(),
-                              onChanged: (v) => state.go(
-                                state.flatIndexOf(state.chapter, v.round()),
+                          : SeekProgressBar(
+                              value: (page.clamp(0, count - 1) + 1) / count,
+                              step: 1 / count,
+                              onChanged: (f) => state.go(
+                                state.flatIndexOf(
+                                  state.chapter,
+                                  (f * count).floor().clamp(0, count - 1),
+                                ),
                               ),
                             ),
                     ),

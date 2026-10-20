@@ -1,6 +1,8 @@
 import 'dart:async';
 import 'dart:io';
 import 'package:flutter/material.dart';
+
+import '../../../Widgets/Components/SeekProgressBar.dart';
 import 'package:flutter/services.dart';
 
 import '../../../Core/Fonts/AppFonts.dart';
@@ -480,8 +482,10 @@ class _NovelScreenState extends State<NovelScreen>
                 style: context.textTheme.labelLarge,
               ),
               Expanded(
-                child: Slider(
+                child: SeekProgressBar(
                   value: state.fraction.value.clamp(0.0, 1.0),
+                  activeColor: foreground,
+                  trackColor: foreground.withValues(alpha: 0.2),
                   onChanged: state.seekTo,
                 ),
               ),
