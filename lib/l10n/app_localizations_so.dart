@@ -3185,9 +3185,6 @@ class AppLocalizationsSo extends AppLocalizations {
   String get syncNotInList => 'Weli liiska kuma jiro';
 
   @override
-  String get syncMatchingIds => 'Matching ids';
-
-  @override
   String get syncCleared => 'Qorshaha waa la nadiifiyay';
 
   @override

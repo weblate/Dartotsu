@@ -3175,9 +3175,6 @@ class AppLocalizationsNl extends AppLocalizations {
   String get syncNotInList => 'Nog niet in lijst';
 
   @override
-  String get syncMatchingIds => 'Matching ids';
-
-  @override
   String get syncCleared => 'Planning gewist';
 
   @override

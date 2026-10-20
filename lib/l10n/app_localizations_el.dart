@@ -3190,9 +3190,6 @@ class AppLocalizationsEl extends AppLocalizations {
   String get syncNotInList => 'Δεν είναι ακόμα στη λίστα';
 
   @override
-  String get syncMatchingIds => 'Matching ids';
-
-  @override
   String get syncCleared => 'Το πλάνο καθαρίστηκε';
 
   @override

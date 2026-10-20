@@ -5867,12 +5867,6 @@ abstract class AppLocalizations {
   /// **'Not in list yet'**
   String get syncNotInList;
 
-  /// No description provided for @syncMatchingIds.
-  ///
-  /// In en, this message translates to:
-  /// **'Matching ids'**
-  String get syncMatchingIds;
-
   /// No description provided for @syncCleared.
   ///
   /// In en, this message translates to:

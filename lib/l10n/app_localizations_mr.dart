@@ -3159,9 +3159,6 @@ class AppLocalizationsMr extends AppLocalizations {
   String get syncNotInList => 'अजून लिस्टमध्ये नाही';
 
   @override
-  String get syncMatchingIds => 'Matching ids';
-
-  @override
   String get syncCleared => 'प्लॅन क्लिअर केला';
 
   @override

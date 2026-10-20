@@ -3141,9 +3141,6 @@ class AppLocalizationsTh extends AppLocalizations {
   String get syncNotInList => 'ยังไม่อยู่ในรายการ';
 
   @override
-  String get syncMatchingIds => 'Matching ids';
-
-  @override
   String get syncCleared => 'ล้างแผนแล้ว';
 
   @override

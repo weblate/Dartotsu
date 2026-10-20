@@ -3162,9 +3162,6 @@ class AppLocalizationsVi extends AppLocalizations {
   String get syncNotInList => 'Chưa có trong danh sách';
 
   @override
-  String get syncMatchingIds => 'Matching ids';
-
-  @override
   String get syncCleared => 'Đã xóa kế hoạch';
 
   @override

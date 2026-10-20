@@ -3188,9 +3188,6 @@ class AppLocalizationsMl extends AppLocalizations {
   String get syncNotInList => 'ഇതുവരെ ലിസ്റ്റിൽ ഇല്ല';
 
   @override
-  String get syncMatchingIds => 'Matching ids';
-
-  @override
   String get syncCleared => 'പ്ലാൻ ക്ലിയർ ചെയ്തു';
 
   @override

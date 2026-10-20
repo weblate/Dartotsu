@@ -3176,9 +3176,6 @@ class AppLocalizationsTa extends AppLocalizations {
   String get syncNotInList => 'இன்னும் லிஸ்ட்ல இல்ல';
 
   @override
-  String get syncMatchingIds => 'Matching ids';
-
-  @override
   String get syncCleared => 'ப்ளான் கிளியர் ஆயிடுச்சு';
 
   @override

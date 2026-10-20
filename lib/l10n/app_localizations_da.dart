@@ -3169,9 +3169,6 @@ class AppLocalizationsDa extends AppLocalizations {
   String get syncNotInList => 'Endnu ikke på listen';
 
   @override
-  String get syncMatchingIds => 'Matching ids';
-
-  @override
   String get syncCleared => 'Plan ryddet';
 
   @override

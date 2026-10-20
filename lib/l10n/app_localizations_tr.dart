@@ -3170,9 +3170,6 @@ class AppLocalizationsTr extends AppLocalizations {
   String get syncNotInList => 'Henüz listede yok';
 
   @override
-  String get syncMatchingIds => 'Matching ids';
-
-  @override
   String get syncCleared => 'Plan temizlendi';
 
   @override

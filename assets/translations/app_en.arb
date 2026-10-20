@@ -1545,8 +1545,6 @@
   "syncMinute": "minute",
   "syncDay": "day",
   "syncNotInList": "Not in list yet",
-  "syncMatchingIds": "Matching ids",
-  "@syncMatchingIds": {},
   "syncCleared": "Plan cleared",
   "syncClear": "Clear",
   "syncOptions": "Options",

@@ -3125,9 +3125,6 @@ class AppLocalizationsAm extends AppLocalizations {
   String get syncNotInList => 'ገና በዝርዝር ውስጥ የለም';
 
   @override
-  String get syncMatchingIds => 'Matching ids';
-
-  @override
   String get syncCleared => 'እቅድ ጸድቷል';
 
   @override

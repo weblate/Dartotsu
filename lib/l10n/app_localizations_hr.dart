@@ -3182,9 +3182,6 @@ class AppLocalizationsHr extends AppLocalizations {
   String get syncNotInList => 'Još nije na popisu';
 
   @override
-  String get syncMatchingIds => 'Matching ids';
-
-  @override
   String get syncCleared => 'Plan očišćen';
 
   @override

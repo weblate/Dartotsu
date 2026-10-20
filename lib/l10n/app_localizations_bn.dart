@@ -3151,9 +3151,6 @@ class AppLocalizationsBn extends AppLocalizations {
   String get syncNotInList => 'এখনো লিস্টে নেই';
 
   @override
-  String get syncMatchingIds => 'Matching ids';
-
-  @override
   String get syncCleared => 'প্ল্যান মুছে ফেলা হয়েছে';
 
   @override

@@ -250,7 +250,7 @@ class SyncController extends AppController {
       if (!ahead) {
         fetchLabel.value = main!.name;
         prepared = await syncPrepareMain(
-          await _bridged(await adapter!.library(anime: isAnime), isAnime),
+          await adapter!.library(anime: isAnime),
           flat,
           adapter.key,
         );
@@ -270,7 +270,7 @@ class SyncController extends AppController {
         }
       }
       final loaded = await Future.wait([
-        for (final t in targets) _loadTarget(t, isAnime, bridge: ahead),
+        for (final t in targets) _loadTarget(t, isAnime),
       ]);
       final libraries = <String, SyncLibrary>{};
       final failed = <String>{};
@@ -341,93 +341,16 @@ class SyncController extends AppController {
 
   Future<(List<SyncItem>?, String?)> _loadTarget(
     MediaService service,
-    bool isAnime, {
-    bool bridge = false,
-  }) async {
+    bool isAnime,
+  ) async {
     try {
-      final items = await service.syncAdapter!.library(anime: isAnime);
-      return (bridge ? await _bridged(items, isAnime) : items, null);
+      return (await service.syncAdapter!.library(anime: isAnime), null);
     } catch (e) {
       return (null, '$e');
     } finally {
       fetchDone.value++;
       fetchLabel.value = service.name;
     }
-  }
-
-  SyncAdapter? _bridgeFor(bool isAnime) => _services
-      .map((s) => s.syncAdapter)
-      .nonNulls
-      .firstWhereOrNull((a) => a.bridges(anime: isAnime));
-
-  Future<Map<String, int>> _bridgeIds(
-    SyncAdapter bridge,
-    Map<String, int> ids,
-    bool isAnime, {
-    required bool throttle,
-  }) async {
-    final from = ids[SyncKey.anilist] != null ? SyncKey.anilist : SyncKey.mal;
-    final ref = ids[from];
-    if (ref == null) return ids;
-    if (ids[SyncKey.mal] != null &&
-        ids[SyncKey.anilist] != null &&
-        ids[bridge.key] != null) {
-      return ids;
-    }
-    final scope = 'bridge-${bridge.key}';
-    final cached = _memory.native(scope, isAnime, ref, from);
-    if (cached != null) {
-      if (cached == 0) return ids;
-      return {
-        ids[SyncKey.mal] == null ? SyncKey.mal : SyncKey.anilist: ?_memory
-            .native(scope, isAnime, ref, 'to-$from'),
-        bridge.key: cached,
-        ...ids,
-      };
-    }
-    if (throttle) await Future<void>.delayed(const Duration(milliseconds: 350));
-    final found = await bridge.bridge(ids, anime: isAnime);
-    final native = found[bridge.key];
-    if (native == null) {
-      _memory.remember(scope, isAnime, ref, 0, from);
-      return ids;
-    }
-    _memory.remember(scope, isAnime, ref, native, from);
-    final other =
-        found[from == SyncKey.anilist ? SyncKey.mal : SyncKey.anilist];
-    if (other != null) _memory.remember(scope, isAnime, ref, other, 'to-$from');
-    return {...found, ...ids};
-  }
-
-  Future<List<SyncItem>> _bridged(List<SyncItem> items, bool isAnime) async {
-    final bridge = _bridgeFor(isAnime);
-    if (bridge == null) return items;
-    final label = fetchLabel.value;
-    fetchLabel.value = getString.syncMatchingIds;
-    final out = <SyncItem>[];
-    var broken = false;
-    try {
-      for (final item in items) {
-        if (broken || _stop) {
-          out.add(item);
-          continue;
-        }
-        try {
-          out.add(
-            item.withIds(
-              await _bridgeIds(bridge, item.ids, isAnime, throttle: true),
-            ),
-          );
-        } catch (e) {
-          logger('Sync id bridge stopped: $e', logLevel: LogLevel.error);
-          broken = true;
-          out.add(item);
-        }
-      }
-    } finally {
-      fetchLabel.value = label;
-    }
-    return out;
   }
 
   Future<void> start({String? only}) async {
@@ -488,14 +411,6 @@ class SyncController extends AppController {
         );
       } catch (e, st) {
         logError('SyncController', e, st);
-      }
-    }
-    final bridge = _bridgeFor(isAnime);
-    if (bridge != null) {
-      try {
-        ids = await _bridgeIds(bridge, ids, isAnime, throttle: false);
-      } catch (e) {
-        logger('Sync id bridge failed: $e', logLevel: LogLevel.error);
       }
     }
     final want = SyncItem.fromMedia(media, ids);
