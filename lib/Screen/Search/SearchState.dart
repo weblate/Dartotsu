@@ -52,7 +52,6 @@ class SearchState extends ScreenState {
   final items = <Object>[].liveList;
   final loading = false.live;
   final failed = false.live;
-  final showTop = false.live;
   final historyTick = 0.live;
   late final type = initialType.searchType.live;
   late final mode = ResultView.values

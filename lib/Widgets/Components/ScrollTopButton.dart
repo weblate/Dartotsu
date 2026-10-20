@@ -14,22 +14,39 @@ class ScrollTopButton extends StatefulWidget {
 
 class _ScrollTopButtonState extends State<ScrollTopButton> {
   final shown = false.live;
-  ScrollPosition? _position;
+  final _far = <int, bool>{};
+  BuildContext? _origin;
 
   bool _onScroll(ScrollNotification n) {
-    if (n.depth != 0 || n.metrics.axis != Axis.vertical) return false;
-    final far = n.metrics.pixels > n.metrics.viewportDimension * 1.2;
+    if (n.depth > 1 || n.metrics.axis != Axis.vertical) return false;
     if (n is ScrollUpdateNotification || n is ScrollEndNotification) {
-      _position = Scrollable.maybeOf(n.context!)?.position;
-      if (shown.value != far) shown.value = far;
+      _far[n.depth] = n.metrics.pixels > n.metrics.viewportDimension * 1.2;
+      if (n.context != null && _far[n.depth] == true) _origin = n.context;
+      final any = _far.values.any((v) => v);
+      if (shown.value != any) shown.value = any;
     }
     return false;
   }
 
   void _top() {
-    final p = _position;
-    if (p == null || !p.hasPixels) return;
-    p.animateTo(0, duration: animDuration(450), curve: Curves.easeOutCubic);
+    var context = _origin;
+    while (context != null && context.mounted) {
+      final scrollable = Scrollable.maybeOf(context);
+      if (scrollable == null) break;
+      final position = scrollable.position;
+      if (position.axis == Axis.vertical &&
+          position.hasPixels &&
+          position.pixels > position.minScrollExtent) {
+        position.animateTo(
+          position.minScrollExtent,
+          duration: animDuration(450),
+          curve: Curves.easeOutCubic,
+        );
+      }
+      context = scrollable.context;
+      final next = Scrollable.maybeOf(context);
+      if (next == null || identical(next, scrollable)) break;
+    }
   }
 
   Widget _build(BuildContext context) {

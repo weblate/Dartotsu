@@ -1,4 +1,3 @@
-import '../../Utils/Animation/WidgetAnimations.dart';
 import 'dart:async';
 
 import 'package:flutter/material.dart';
@@ -393,7 +392,6 @@ class _SearchScreenState extends BaseScreen<SearchScreen>
     return NotificationListener<ScrollNotification>(
       onNotification: (n) {
         if (n.depth == 0) {
-          state.showTop.value = n.metrics.pixels > 700;
           if (state.hasMore &&
               n.metrics.pixels > n.metrics.maxScrollExtent - 600) {
             unawaited(state.search());
@@ -666,18 +664,6 @@ class _SearchScreenState extends BaseScreen<SearchScreen>
   Widget buildContent(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.transparent,
-      floatingActionButton: Watch(
-        () => state.showTop.value
-            ? FloatingActionButton.small(
-                onPressed: () => state.scroll.animateTo(
-                  0,
-                  duration: animDuration(400),
-                  curve: Curves.easeOut,
-                ),
-                child: const Icon(Icons.arrow_upward_rounded),
-              )
-            : const SizedBox.shrink(),
-      ),
       body: Column(
         children: [
           _searchBar(),

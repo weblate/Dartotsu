@@ -13,7 +13,6 @@ import '../../Utils/Extensions/Responsive.dart';
 import '../../Utils/Functions/RefreshController.dart' show routeObserver;
 import '../../Widgets/Components/AppControls.dart';
 import '../../Widgets/Components/ScrollConfig.dart';
-import '../../Widgets/Components/ThemedContainer.dart';
 import '../../Widgets/Components/SectionCard.dart';
 import '../../Widgets/Shelf/MediaSection.dart';
 import '../Widgets/ScreenWidgetView.dart';
@@ -117,33 +116,7 @@ class _ScreenWidgetListState extends State<ScreenWidgetList>
   @override
   Widget build(BuildContext context) {
     super.build(context);
-    return Stack(children: [_list(context), _topButton(context)]);
-  }
-
-  Widget _topButton(BuildContext context) {
-    return Positioned(
-      bottom: context.isPhone ? 72.0 + 32.bottomBar() : 64,
-      left: 0,
-      right: 0,
-      child: Watch(
-        () => state.showTop.value
-            ? Center(
-                child: ThemedContainer(
-                  borderRadius: BorderRadius.circular(64),
-                  padding: const EdgeInsets.all(4),
-                  child: IconButton(
-                    icon: const Icon(Icons.arrow_upward_rounded),
-                    onPressed: () => state.scroll.animateTo(
-                      0,
-                      duration: animDuration(500),
-                      curve: Curves.easeInOut,
-                    ),
-                  ),
-                ),
-              )
-            : const SizedBox.shrink(),
-      ),
-    );
+    return _list(context);
   }
 
   Widget _list(BuildContext context) {

@@ -91,7 +91,6 @@ class ScreenWidgetListState extends ScreenState {
   final current = <ScreenWidget>[].liveList;
   final error = Live<String?>(null);
   final scroll = ScrollController();
-  final showTop = false.live;
   final chip = Live<String?>(null);
   final chipMedia = Live<List<Media>?>(null);
   final chipLoading = false.live;
@@ -344,9 +343,6 @@ class ScreenWidgetListState extends ScreenState {
   }
 
   bool onScroll(ScrollNotification n) {
-    if (n.depth == 0 && n.metrics.axis == Axis.vertical) {
-      showTop.value = n.metrics.pixels > 700;
-    }
     final title = tailTitle;
     if (title != null &&
         n.depth == 0 &&
