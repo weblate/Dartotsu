@@ -377,7 +377,9 @@ class PlayerControls extends StatelessWidget {
                 enabled: !locked,
                 previewAt: state.previewAt.value,
                 preview: _preview(context, state),
-                onHover: state.scrubbing.value ? null : state.previewTo,
+                onHover: (d) {
+                  if (!state.scrubbing.value) state.previewTo(d);
+                },
                 onScrubStart: () {
                   state.holdControls();
                   state.scrubbing.value = true;

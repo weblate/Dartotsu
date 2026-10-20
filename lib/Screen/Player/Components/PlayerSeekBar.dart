@@ -71,6 +71,9 @@ class PlayerSeekBar extends StatelessWidget {
           onHorizontalDragEnd: enabled && duration > Duration.zero
               ? (_) => onSeek(position)
               : null,
+          onHorizontalDragCancel: enabled && duration > Duration.zero
+              ? () => onSeek(position)
+              : null,
           child: SizedBox(
             height: 28,
             width: double.infinity,
