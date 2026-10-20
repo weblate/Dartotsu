@@ -1,11 +1,13 @@
 import 'dart:convert';
 
 import 'package:dartotsu_extension_bridge/Models/Video.dart' as v;
+import 'package:flutter/painting.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:dartotsu/Screen/Detail/Watch/Data/Media/MediaRecord.dart';
 import 'package:dartotsu/Screen/Player/Engine/AniSkip.dart';
 import 'package:dartotsu/Screen/Player/Engine/MpvFiles.dart';
+import 'package:dartotsu/Screen/Player/Engine/SubtitleMarkup.dart';
 import 'package:dartotsu/Screen/Player/Engine/PlayRequest.dart';
 import 'package:dartotsu/Screen/Player/Engine/PlayerPlaylist.dart';
 import 'package:dartotsu/Screen/Player/Engine/PlayerSettings.dart';
@@ -191,6 +193,36 @@ vo=gpu-next
     test('a miss gives nothing', () {
       expect(parseAniSkip({'found': false}), isEmpty);
       expect(parseAniSkip(null), isEmpty);
+    });
+  });
+
+  group('subtitle markup', () {
+    test('italic and bold tags become styles, not text', () {
+      final spans = subtitleSpans('Hello <i>there</i> <b>you</b>');
+      final text = spans.map((s) => (s as TextSpan).text).join();
+      expect(text, 'Hello there you');
+      final italic = spans.whereType<TextSpan>().firstWhere(
+        (s) => s.text == 'there',
+      );
+      expect(italic.style?.fontStyle, FontStyle.italic);
+    });
+
+    test('ass override blocks and line breaks are cleaned', () {
+      final text = subtitleSpans(
+        r'{\an8}Top line\NSecond<br>third',
+      ).map((s) => (s as TextSpan).text).join();
+      expect(text, 'Top line\nSecond\nthird');
+    });
+
+    test('font colour is applied and unknown tags are dropped', () {
+      final spans = subtitleSpans(
+        '<font color="#ff0000">red</font> <x>plain</x>',
+      );
+      final red = spans.whereType<TextSpan>().firstWhere(
+        (s) => s.text == 'red',
+      );
+      expect(red.style?.color, const Color(0xFFFF0000));
+      expect(spans.map((s) => (s as TextSpan).text).join(), 'red plain');
     });
   });
 

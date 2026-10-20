@@ -82,7 +82,7 @@ class PlayerSettings {
   set subtitleLanguage(String v) => _v['subtitleLanguage'] = v;
   String get audioLanguage => _get('audioLanguage', '');
   set audioLanguage(String v) => _v['audioLanguage'] = v;
-  int get subtitleSize => _get('subtitleSize', 32);
+  int get subtitleSize => _get('subtitleSize', 26);
   set subtitleSize(int v) => _v['subtitleSize'] = v;
   int get subtitleColor => _get('subtitleColor', 0xFFFFFFFF);
   set subtitleColor(int v) => _v['subtitleColor'] = v;

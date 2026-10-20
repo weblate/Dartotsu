@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../Core/Fonts/AppFonts.dart';
 import '../Engine/PlayerSettings.dart';
+import '../Engine/SubtitleMarkup.dart';
 import '../../../Core/State/State.dart';
 import '../../../Utils/Animation/WidgetAnimations.dart';
 
@@ -29,6 +30,20 @@ class PlayerSubtitleView extends StatelessWidget {
     ].join('\n');
     if (text.isEmpty || !settings.showSubtitle) return const SizedBox.shrink();
     final outline = Color(settings.subtitleOutlineColor);
+    return LayoutBuilder(
+      builder: (context, box) =>
+          _positioned(context, box, text, family, outline),
+    );
+  }
+
+  Widget _positioned(
+    BuildContext context,
+    BoxConstraints box,
+    String text,
+    String? family,
+    Color outline,
+  ) {
+    final scale = (box.maxWidth / 720).clamp(0.55, 1.0);
     return AnimatedPositioned(
       duration: animDuration(200),
       left: 16,
@@ -46,11 +61,11 @@ class PlayerSubtitleView extends StatelessWidget {
               color: Color(settings.subtitleBackgroundColor),
               borderRadius: BorderRadius.circular(10),
             ),
-            child: Text(
-              text,
+            child: Text.rich(
+              TextSpan(children: subtitleSpans(text)),
               textAlign: TextAlign.center,
               style: TextStyle(
-                fontSize: settings.subtitleSize.toDouble(),
+                fontSize: settings.subtitleSize * scale,
                 fontWeight:
                     FontWeight.values[settings.subtitleWeight.clamp(0, 8)],
                 fontFamily: family,
