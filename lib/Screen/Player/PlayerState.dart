@@ -607,9 +607,9 @@ class PlayerState extends ScreenState {
     Duration start = Duration.zero;
     if (startAt != null) {
       start = startAt;
-    } else if (switching) {
+    } else if (switching && keep > const Duration(seconds: 1)) {
       start = keep;
-    } else if (!fromStart && settings.resume) {
+    } else if (!fromStart && (settings.resume || switching)) {
       final saved = _savedPlayback();
       if (saved != null && !saved.finished) {
         start = Duration(seconds: saved.position);

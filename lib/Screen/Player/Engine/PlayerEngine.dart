@@ -164,7 +164,27 @@ class PlayerEngine {
       s.buffering.listen((v) => buffering.value = v),
       s.completed.listen((v) => completed.value = v),
       s.rate.listen((v) => rate.value = v),
-      s.subtitle.listen((v) => subtitleLines.value = v),
+      s.subtitle.listen((v) {
+        final lines = [
+          for (final l in v)
+            if (l.trim().isNotEmpty) l,
+        ];
+        final shown = lines.length > 6
+            ? lines.sublist(lines.length - 6)
+            : lines;
+        final old = subtitleLines.value;
+        if (old.length == shown.length) {
+          var same = true;
+          for (var i = 0; i < shown.length; i++) {
+            if (old[i] != shown[i]) {
+              same = false;
+              break;
+            }
+          }
+          if (same) return;
+        }
+        subtitleLines.value = shown;
+      }),
       s.height.listen((v) => videoHeight.value = v),
       s.log.listen((v) {
         if (v.level == 'error' || v.level == 'fatal' || v.level == 'warn') {
@@ -436,6 +456,15 @@ class PlayerEngine {
       }
     } else if (!_isUri(url)) {
       target = Uri.file(url).toString();
+    } else if (url.startsWith('http')) {
+      try {
+        await native?.setProperty(
+          'stream-lavf-o',
+          'reconnect=1,reconnect_at_eof=1,reconnect_streamed=1,reconnect_on_network_error=1,reconnect_delay_max=10',
+        );
+      } catch (e) {
+        logger('mpv stream-lavf-o failed: $e', tag: 'MPV');
+      }
     }
     source = url;
     subtitleDelay.value = 0;
