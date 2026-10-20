@@ -83,35 +83,30 @@ void main(List<String> args) async {
       );
 
       if (!Platform.isAndroid && !Platform.isIOS) runApp(const SplashApp());
-      if (Platform.isIOS) {
-        final watchdog = Timer(const Duration(seconds: 20), () {
-          runApp(
-            StartupFailureApp(
-              error: 'Startup is taking too long at: $_stage',
-              stackTrace: '',
-            ),
-          );
-        });
-        try {
-          await init(args);
-        } catch (e, st) {
-          watchdog.cancel();
-          logger(
-            'Startup failed at $_stage: $e\n$st',
-            logLevel: LogLevel.error,
-          );
-          runApp(
-            StartupFailureApp(
-              error: 'Startup failed at $_stage: $e',
-              stackTrace: '$st',
-            ),
-          );
-          return;
-        }
-        watchdog.cancel();
-      } else {
+
+      final watchdog = Timer(const Duration(seconds: 20), () {
+        runApp(
+          StartupFailureApp(
+            error: 'Startup is taking too long at: $_stage',
+            stackTrace: '',
+          ),
+        );
+      });
+      try {
         await init(args);
+      } catch (e, st) {
+        watchdog.cancel();
+        logger('Startup failed at $_stage: $e\n$st', logLevel: LogLevel.error);
+        runApp(
+          StartupFailureApp(
+            error: 'Startup failed at $_stage: $e',
+            stackTrace: '$st',
+          ),
+        );
+        return;
       }
+      watchdog.cancel();
+
       runApp(const MyApp());
     },
     (error, stackTrace) {
