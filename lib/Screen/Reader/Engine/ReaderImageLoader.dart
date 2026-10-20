@@ -32,6 +32,20 @@ class ReaderImageLoader {
     if (process != null) _processors[page.url] = process;
   }
 
+  static final _progress = <String, Live<double?>>{};
+
+  static Live<double?> progressOf(String url) =>
+      _progress.putIfAbsent(url, () => Live<double?>(null));
+
+  static void _report(String url, int received, int total) {
+    if (received <= 0) return;
+    progressOf(url).value = total > 0
+        ? (received / total).clamp(0.0, 1.0)
+        : null;
+  }
+
+  static void _finished(String url) => _progress.remove(url);
+
   static var _epoch = 0;
 
   static void cancelAll() => _epoch++;
@@ -113,6 +127,8 @@ class _PagedFileService extends FileService {
       final res = await find<NetworkManager>().client.getBytes(
         url,
         headers: headers == null ? null : rhttp.HttpHeaders.rawMap(headers),
+        onReceiveProgress: (count, total) =>
+            ReaderImageLoader._report(url, count, total),
       );
       ensureOpen();
       final code = res.statusCode;
@@ -140,6 +156,8 @@ class _PagedFileService extends FileService {
         logger('Reader image failed: $e $url', tag: 'READER');
       }
       rethrow;
+    } finally {
+      ReaderImageLoader._finished(url);
     }
   }
 }

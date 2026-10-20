@@ -202,25 +202,44 @@ class _ReaderImageState extends State<ReaderImage> {
     );
   }
 
-  Widget _loading() => Column(
-    mainAxisSize: MainAxisSize.min,
-    children: [
-      const SizedBox(
-        width: 40,
-        height: 40,
-        child: CircularProgressIndicator(strokeWidth: 4, color: Colors.white),
-      ),
-      if (slow.value) ...[
-        const SizedBox(height: 12),
-        Text(
-          getString.readerSlowPage,
-          style: context.textTheme.bodySmall?.copyWith(color: Colors.white54),
+  Widget _loading() => Watch(() {
+    final value = ReaderImageLoader.progressOf(widget.page.url).value;
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        SizedBox(
+          width: 160,
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(6),
+            child: LinearProgressIndicator(
+              value: value,
+              minHeight: 6,
+              color: Colors.white,
+              backgroundColor: Colors.white24,
+            ),
+          ),
         ),
-        const SizedBox(height: 8),
-        _reload(),
+        if (value != null) ...[
+          const SizedBox(height: 8),
+          Text(
+            '${(value * 100).round()}%',
+            style: context.textTheme.labelMedium?.copyWith(
+              color: Colors.white70,
+            ),
+          ),
+        ],
+        if (slow.value) ...[
+          const SizedBox(height: 12),
+          Text(
+            getString.readerSlowPage,
+            style: context.textTheme.bodySmall?.copyWith(color: Colors.white54),
+          ),
+          const SizedBox(height: 8),
+          _reload(),
+        ],
       ],
-    ],
-  );
+    );
+  });
 
   Widget _reload() => FilledButton.tonalIcon(
     onPressed: _retry,
