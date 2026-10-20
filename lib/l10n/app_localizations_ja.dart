@@ -2992,6 +2992,24 @@ class AppLocalizationsJa extends AppLocalizations {
   String get topRatedMovies => '高評価の映画';
 
   @override
+  String get koreanDramas => 'Korean Dramas';
+
+  @override
+  String get chineseDramas => 'Chinese Dramas';
+
+  @override
+  String get japaneseDramas => 'Japanese Dramas';
+
+  @override
+  String get thaiDramas => 'Thai Dramas';
+
+  @override
+  String get turkishDramas => 'Turkish Dramas';
+
+  @override
+  String get miniSeries => 'Mini Series';
+
+  @override
   String get topRatedShows => '高評価の番組';
 
   @override

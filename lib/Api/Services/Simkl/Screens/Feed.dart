@@ -28,17 +28,24 @@ class SimklFeedView extends FeedScreenView {
       : [
           FeedChip('movies', getString.movies),
           FeedChip('tv', getString.shows),
-          FeedChip('anime', getString.anime),
+          FeedChip('kdrama', getString.koreanDramas),
+          FeedChip('cdrama', getString.chineseDramas),
+          FeedChip('jdrama', getString.japaneseDramas),
         ];
 
   @override
   Future<List<Media>?> chipMedia(MediaType type, FeedChip chip) {
-    final file = switch (chip.id) {
-      'today' || 'week' || 'month' => 'anime/${chip.id}_100',
-      final kind => '$kind/today_100',
+    final section = switch (chip.id) {
+      'today' ||
+      'week' ||
+      'month' => SimklSection(chip.label, 'anime/${chip.id}_100'),
+      'kdrama' => SimklSection.genre(chip.label, 'korean-drama'),
+      'cdrama' => SimklSection.genre(chip.label, 'drama', country: 'cn'),
+      'jdrama' => SimklSection.genre(chip.label, 'drama', country: 'jp'),
+      final kind => SimklSection(chip.label, '$kind/today_100'),
     };
     return simklAuth.queries
-        .trending(SimklSection(chip.label, file))
+        .trending(section)
         .then((items) => items.take(12).toList());
   }
 

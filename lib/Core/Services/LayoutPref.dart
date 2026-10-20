@@ -6,9 +6,17 @@ Pref<Map<String, bool>> layoutPref(String key, Map<String, bool> defaults) =>
       defaults,
       PrefLocation.OTHER,
       encode: (v) => Map<String, dynamic>.from(v),
-      decode: (raw) => raw is Map
-          ? {for (final e in raw.entries) e.key.toString(): e.value == true}
-          : defaults,
+      decode: (raw) {
+        if (raw is! Map) return defaults;
+        final stored = {
+          for (final e in raw.entries) e.key.toString(): e.value == true,
+        };
+        return {
+          ...stored,
+          for (final e in defaults.entries)
+            if (!stored.containsKey(e.key)) e.key: e.value,
+        };
+      },
     );
 
 List<T> applyLayout<T>(

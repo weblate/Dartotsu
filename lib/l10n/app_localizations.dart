@@ -5657,6 +5657,42 @@ abstract class AppLocalizations {
   /// **'Top rated movies'**
   String get topRatedMovies;
 
+  /// No description provided for @koreanDramas.
+  ///
+  /// In en, this message translates to:
+  /// **'Korean Dramas'**
+  String get koreanDramas;
+
+  /// No description provided for @chineseDramas.
+  ///
+  /// In en, this message translates to:
+  /// **'Chinese Dramas'**
+  String get chineseDramas;
+
+  /// No description provided for @japaneseDramas.
+  ///
+  /// In en, this message translates to:
+  /// **'Japanese Dramas'**
+  String get japaneseDramas;
+
+  /// No description provided for @thaiDramas.
+  ///
+  /// In en, this message translates to:
+  /// **'Thai Dramas'**
+  String get thaiDramas;
+
+  /// No description provided for @turkishDramas.
+  ///
+  /// In en, this message translates to:
+  /// **'Turkish Dramas'**
+  String get turkishDramas;
+
+  /// No description provided for @miniSeries.
+  ///
+  /// In en, this message translates to:
+  /// **'Mini Series'**
+  String get miniSeries;
+
   /// No description provided for @topRatedShows.
   ///
   /// In en, this message translates to:

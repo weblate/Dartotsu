@@ -22,12 +22,18 @@ const kSimklAnimeSections = <String, bool>{
 const kSimklMovieSections = <String, bool>{
   'Trending Movies Today': true,
   'Trending Shows Today': true,
-  'Trending Movies This Week': true,
-  'Trending Shows This Week': true,
-  'Most Watched Movies This Month': true,
-  'Most Watched Shows This Month': true,
+  'Trending Movies This Week': false,
+  'Trending Shows This Week': false,
+  'Most Watched Movies This Month': false,
+  'Most Watched Shows This Month': false,
   'Top Rated Movies': true,
   'Top Rated Shows': true,
+  'Korean Dramas': true,
+  'Chinese Dramas': true,
+  'Japanese Dramas': true,
+  'Thai Dramas': true,
+  'Turkish Dramas': false,
+  'Mini Series': false,
 };
 
 class SimklPref {

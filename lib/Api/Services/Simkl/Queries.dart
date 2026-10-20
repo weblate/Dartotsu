@@ -33,6 +33,7 @@ class SimklSection {
   final String? type;
   final bool airing;
   final SimklSort sort;
+  final String? browse;
 
   const SimklSection(
     this.title,
@@ -40,7 +41,15 @@ class SimklSection {
     this.type,
     this.airing = false,
     this.sort = SimklSort.none,
+    this.browse,
   });
+
+  const SimklSection.genre(this.title, String genre, {String country = 'all'})
+    : file = 'tv/genre',
+      type = null,
+      airing = false,
+      sort = SimklSort.none,
+      browse = '/tv/genres/$genre/all/$country/all/all/popular-this-week';
 
   bool matches(Map<String, dynamic> item) =>
       (type == null || item['anime_type'] == type) &&
@@ -85,6 +94,12 @@ List<SimklSection> simklSections(MediaType type) {
         sort: SimklSort.rating,
       ),
       SimklSection('Top Rated Shows', 'tv/month_500', sort: SimklSort.rating),
+      SimklSection.genre('Korean Dramas', 'korean-drama'),
+      SimklSection.genre('Chinese Dramas', 'drama', country: 'cn'),
+      SimklSection.genre('Japanese Dramas', 'drama', country: 'jp'),
+      SimklSection.genre('Thai Dramas', 'drama', country: 'th'),
+      SimklSection.genre('Turkish Dramas', 'drama', country: 'tr'),
+      SimklSection.genre('Mini Series', 'mini-series'),
     ];
   }
   return const [
@@ -261,6 +276,18 @@ class SimklQueries extends Queries {
   }
 
   Future<List<Media>> trending(SimklSection section, {int page = 1}) async {
+    final browse = section.browse;
+    if (browse != null) {
+      final listed = await client.get(
+        browse,
+        query: {'limit': '30', 'page': '$page'},
+      );
+      return _withList([
+        for (final item in (listed as List?) ?? const [])
+          if (item is Map)
+            ?mapSimklItem(item.cast<String, dynamic>(), kind: SimklKind.tv),
+      ]);
+    }
     final data = await client.get(
       '$simklData/discover/trending/${section.file}.json',
       auth: false,
