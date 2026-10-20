@@ -121,7 +121,7 @@ class _CommentComposerState extends State<CommentComposer> {
         borderRadius: BorderRadius.circular(20),
       ),
       child: Padding(
-        padding: EdgeInsets.fromLTRB(
+        padding: EdgeInsetsDirectional.fromSTEB(
           Dimens.gap,
           Dimens.gapSm,
           Dimens.gapSm,

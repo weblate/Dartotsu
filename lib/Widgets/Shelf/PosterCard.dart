@@ -135,22 +135,22 @@ class _PosterCardState extends State<PosterCard> {
         ..._cornerMarks(s, bottomTaken: true),
         ..._sourceMark(bottom: pill ? 32 : 10),
         if (_barOn)
-          Positioned(
-            left: 0,
-            right: 0,
+          PositionedDirectional(
+            start: 0,
+            end: 0,
             bottom: 0,
             child: _Bar(fraction: widget.progress!, color: _scheme.primary),
           ),
         if (pill)
-          Positioned(
-            left: 6,
-            right: 6,
+          PositionedDirectional(
+            start: 6,
+            end: 6,
             bottom: 6,
             child: _Pill(text: widget.progressText!),
           ),
-        Positioned(
-          left: 9,
-          right: 9,
+        PositionedDirectional(
+          start: 9,
+          end: 9,
           bottom: pill ? 32 : 10,
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -215,9 +215,9 @@ class _PosterCardState extends State<PosterCard> {
                     : 6,
               ),
               if (showBar)
-                Positioned(
-                  left: 0,
-                  right: 0,
+                PositionedDirectional(
+                  start: 0,
+                  end: 0,
                   bottom: 0,
                   child: _Bar(
                     fraction: widget.progress!,
@@ -225,9 +225,9 @@ class _PosterCardState extends State<PosterCard> {
                   ),
                 ),
               if (pill)
-                Positioned(
-                  left: 6,
-                  right: 6,
+                PositionedDirectional(
+                  start: 6,
+                  end: 6,
                   bottom: 6,
                   child: _Pill(text: widget.progressText!),
                 ),
@@ -288,9 +288,9 @@ class _PosterCardState extends State<PosterCard> {
                           ),
                         ),
                       if (pill)
-                        Positioned(
-                          left: 6,
-                          right: 6,
+                        PositionedDirectional(
+                          start: 6,
+                          end: 6,
                           bottom: 6,
                           child: _Pill(text: widget.progressText!),
                         ),
@@ -347,7 +347,7 @@ class _PosterCardState extends State<PosterCard> {
   List<Widget> _sourceMark({required double bottom}) {
     final overlay = widget.overlay;
     if (overlay == null) return const [];
-    return [Positioned(left: 6, bottom: bottom, child: overlay)];
+    return [PositionedDirectional(start: 6, bottom: bottom, child: overlay)];
   }
 
   List<Widget> _cornerMarks(CardStyle s, {bool bottomTaken = false}) {
@@ -431,8 +431,8 @@ class _PosterCardState extends State<PosterCard> {
       return DecoratedBox(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
+            begin: AlignmentDirectional.topStart,
+            end: AlignmentDirectional.bottomEnd,
             colors: [
               scheme.primaryContainer,
               scheme.surfaceContainerHighest,
@@ -566,7 +566,7 @@ class _Bar extends StatelessWidget {
     child: ColoredBox(
       color: const Color(0x59060A12),
       child: FractionallySizedBox(
-        alignment: Alignment.centerLeft,
+        alignment: AlignmentDirectional.centerStart,
         widthFactor: fraction.clamp(0.0, 1.0),
         child: ColoredBox(color: color),
       ),

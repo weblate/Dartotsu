@@ -53,8 +53,8 @@ class HeaderAvatar extends StatelessWidget {
             clipBehavior: Clip.none,
             children: [
               child,
-              Positioned(
-                right: -2,
+              PositionedDirectional(
+                end: -2,
                 top: -2,
                 child: Container(
                   padding: EdgeInsets.symmetric(horizontal: badge > 9 ? 4 : 0),

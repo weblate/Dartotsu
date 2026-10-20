@@ -121,9 +121,9 @@ class ProfileHeaderDelegate extends SliverPersistentHeaderDelegate {
                   ),
                 ),
               ),
-            Positioned(
-              left: 0,
-              right: 0,
+            PositionedDirectional(
+              start: 0,
+              end: 0,
               bottom: 0,
               height: contentHeight,
               child: Opacity(
@@ -237,9 +237,9 @@ class ProfileHeaderDelegate extends SliverPersistentHeaderDelegate {
                 ),
               ),
             ),
-            Positioned(
-              left: 56,
-              right: 56,
+            PositionedDirectional(
+              start: 56,
+              end: 56,
               top: top,
               height: _toolbarHeight,
               child: IgnorePointer(
@@ -248,7 +248,7 @@ class ProfileHeaderDelegate extends SliverPersistentHeaderDelegate {
                   child: Transform.translate(
                     offset: Offset(48 * (1 - labelP), 0),
                     child: Align(
-                      alignment: Alignment.centerLeft,
+                      alignment: AlignmentDirectional.centerStart,
                       child: Row(
                         children: [
                           UserAvatar(url: avatar, name: name, size: 30),
@@ -270,10 +270,10 @@ class ProfileHeaderDelegate extends SliverPersistentHeaderDelegate {
                 ),
               ),
             ),
-            Positioned(
+            PositionedDirectional(
               top: top,
-              left: 6,
-              right: 6,
+              start: 6,
+              end: 6,
               height: _toolbarHeight,
               child: Row(
                 children: [
@@ -366,9 +366,9 @@ class ProfileHeaderDelegate extends SliverPersistentHeaderDelegate {
     return Stack(
       fit: StackFit.expand,
       children: [
-        Positioned(
-          left: -40,
-          right: -40,
+        PositionedDirectional(
+          start: -40,
+          end: -40,
           top: -40,
           bottom: -40,
           child: ImageFiltered(

@@ -283,13 +283,13 @@ class _ShaderPreviewState extends State<ShaderPreview> {
                         ),
                       ),
                     ),
-                    Positioned(
-                      left: 12,
+                    PositionedDirectional(
+                      start: 12,
                       top: 72,
                       child: _tag(getString.playerShadersOriginal),
                     ),
-                    Positioned(
-                      right: 12,
+                    PositionedDirectional(
+                      end: 12,
                       top: 72,
                       child: _tag(
                         _chosen.value.isEmpty
@@ -303,9 +303,9 @@ class _ShaderPreviewState extends State<ShaderPreview> {
             ),
           ),
           if (_problem.value != null)
-            Positioned(
-              left: 12,
-              right: 12,
+            PositionedDirectional(
+              start: 12,
+              end: 12,
               top: 110,
               child: DecoratedBox(
                 decoration: BoxDecoration(
@@ -436,7 +436,7 @@ class _ShaderPreviewState extends State<ShaderPreview> {
                 children: [
                   for (final key in shaderProfiles.keys)
                     Padding(
-                      padding: const EdgeInsets.only(right: 8),
+                      padding: const EdgeInsetsDirectional.only(end: 8),
                       child: ChoiceChip(
                         label: Text(key),
                         selected: key == profile,
@@ -456,7 +456,7 @@ class _ShaderPreviewState extends State<ShaderPreview> {
                 children: [
                   for (final name in ['', ...names])
                     Padding(
-                      padding: const EdgeInsets.only(right: 8),
+                      padding: const EdgeInsetsDirectional.only(end: 8),
                       child: ChoiceChip(
                         label: Text(
                           name.isEmpty ? getString.playerShadersOff : name,
@@ -475,7 +475,7 @@ class _ShaderPreviewState extends State<ShaderPreview> {
                 children: [
                   for (final key in colorPresets.keys)
                     Padding(
-                      padding: const EdgeInsets.only(right: 8),
+                      padding: const EdgeInsetsDirectional.only(end: 8),
                       child: ChoiceChip(
                         avatar: const Icon(Icons.palette_rounded, size: 16),
                         label: Text(colorPresetLabel(key)),
@@ -484,7 +484,7 @@ class _ShaderPreviewState extends State<ShaderPreview> {
                       ),
                     ),
                   Padding(
-                    padding: const EdgeInsets.only(right: 8),
+                    padding: const EdgeInsetsDirectional.only(end: 8),
                     child: ActionChip(
                       avatar: const Icon(Icons.tune_rounded, size: 16),
                       label: Text(getString.playerColorAdjust),

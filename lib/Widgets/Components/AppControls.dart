@@ -95,9 +95,9 @@ class _SegmentButton<T> extends StatelessWidget {
     final scheme = context.colorScheme;
     final radius = selected
         ? BorderRadius.circular(_outer)
-        : BorderRadius.horizontal(
-            left: Radius.circular(first ? _outer : _inner),
-            right: Radius.circular(last ? _outer : _inner),
+        : BorderRadiusDirectional.horizontal(
+            start: Radius.circular(first ? _outer : _inner),
+            end: Radius.circular(last ? _outer : _inner),
           );
     final foreground = selected
         ? scheme.onPrimary
@@ -117,7 +117,7 @@ class _SegmentButton<T> extends StatelessWidget {
         type: MaterialType.transparency,
         child: InkWell(
           onTap: onTap,
-          borderRadius: radius,
+          borderRadius: radius.resolve(Directionality.of(context)),
           focusColor: foreground.withValues(alpha: 0.16),
           mouseCursor: kClickCursor,
           child: Padding(

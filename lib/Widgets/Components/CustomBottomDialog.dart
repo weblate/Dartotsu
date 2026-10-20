@@ -132,7 +132,7 @@ class _CustomBottomDialogState extends State<CustomBottomDialog> {
               if (widget.title != null)
                 SliverToBoxAdapter(
                   child: Padding(
-                    padding: const EdgeInsets.only(left: 0, right: 0),
+                    padding: EdgeInsets.zero,
                     child: Center(
                       child: Text(
                         widget.title!,

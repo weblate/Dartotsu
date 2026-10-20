@@ -85,7 +85,7 @@ class _ErrorScreenState extends State<ErrorScreen>
       automaticallyImplyLeading: false,
       flexibleSpace: FlexibleSpaceBar(
         collapseMode: CollapseMode.parallax,
-        titlePadding: const EdgeInsets.only(left: 16, bottom: 12),
+        titlePadding: const EdgeInsetsDirectional.only(start: 16, bottom: 12),
         title: Row(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.center,

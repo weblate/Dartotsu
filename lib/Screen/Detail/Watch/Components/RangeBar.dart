@@ -69,7 +69,7 @@ class _RangeBarState extends State<RangeBar> {
           for (final (i, label) in widget.labels.indexed)
             Padding(
               key: _key(i),
-              padding: EdgeInsets.only(right: Dimens.gapSm),
+              padding: EdgeInsetsDirectional.only(end: Dimens.gapSm),
               child: ChoiceChip(
                 mouseCursor: kClickCursor,
                 label: Text(label),

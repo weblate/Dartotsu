@@ -25,7 +25,7 @@ class DelayRow extends StatelessWidget {
       final value = delay.value;
       return Container(
         margin: const EdgeInsets.only(bottom: 12),
-        padding: const EdgeInsets.fromLTRB(16, 6, 6, 6),
+        padding: const EdgeInsetsDirectional.fromSTEB(16, 6, 6, 6),
         decoration: BoxDecoration(
           color: scheme.secondaryContainer.withValues(alpha: 0.5),
           borderRadius: BorderRadius.circular(20),

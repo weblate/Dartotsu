@@ -142,7 +142,7 @@ class HomeHeader extends StatelessWidget {
                         (service.hasReading ? user.chaptersRead : 0)) >
                     0)
               Padding(
-                padding: const EdgeInsets.only(top: 10, right: 8),
+                padding: const EdgeInsetsDirectional.only(top: 10, end: 8),
                 child: Row(
                   children: [
                     if (service.hasVideo)

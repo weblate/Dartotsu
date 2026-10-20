@@ -283,8 +283,8 @@ class _StoriesRowState extends State<StoriesRow> {
                       heroTag: loading ? null : 'story-${g.user.id}',
                     ),
                     if (isOwn && g.activities.isEmpty)
-                      Positioned(
-                        right: 2,
+                      PositionedDirectional(
+                        end: 2,
                         bottom: 2,
                         child: Container(
                           decoration: BoxDecoration(

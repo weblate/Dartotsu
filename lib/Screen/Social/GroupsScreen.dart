@@ -69,7 +69,7 @@ class _GroupsScreenState extends BaseScreen<GroupsScreen>
               vertical: Dimens.gapXs,
             ),
             child: Align(
-              alignment: Alignment.centerLeft,
+              alignment: AlignmentDirectional.centerStart,
               child: AppChoiceChips<GroupScope>(
                 value: state.scope.value,
                 onChanged: state.setScope,
@@ -97,7 +97,7 @@ class _GroupsScreenState extends BaseScreen<GroupsScreen>
               children: [
                 for (final c in [null, ...state.categories])
                   Padding(
-                    padding: EdgeInsets.only(right: Dimens.gapSm),
+                    padding: EdgeInsetsDirectional.only(end: Dimens.gapSm),
                     child: FilterChip(
                       label: Text(c?.name ?? getString.groupsAll),
                       selected: state.category.value == c?.id,

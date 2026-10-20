@@ -197,17 +197,17 @@ class _ReaderScreenState extends State<ReaderScreen>
   Widget _pageNumber(BuildContext context) {
     final count = state.pageCount;
     if (count == 0 || state.controlsVisible.value) {
-      return const Positioned(
+      return const PositionedDirectional(
         key: ValueKey('reader-number'),
-        left: 0,
+        start: 0,
         top: 0,
         child: SizedBox.shrink(),
       );
     }
-    return Positioned(
+    return PositionedDirectional(
       key: const ValueKey('reader-number'),
-      left: 0,
-      right: 0,
+      start: 0,
+      end: 0,
       bottom: 6,
       child: IgnorePointer(
         child: SafeArea(

@@ -412,7 +412,7 @@ class _PlayerScreenState extends State<PlayerScreen>
 
   Widget _tools(BuildContext context) {
     Widget chip(IconData icon, String label, VoidCallback onTap) => Padding(
-      padding: EdgeInsets.only(right: Dimens.gapSm),
+      padding: EdgeInsetsDirectional.only(end: Dimens.gapSm),
       child: ActionChip(
         avatar: Icon(icon, size: 18),
         label: Text(label),
@@ -497,7 +497,7 @@ class _PlayerScreenState extends State<PlayerScreen>
           SliverToBoxAdapter(child: stage),
           SliverToBoxAdapter(
             child: Padding(
-              padding: EdgeInsets.fromLTRB(
+              padding: EdgeInsetsDirectional.fromSTEB(
                 Dimens.pagePad,
                 Dimens.gapSm,
                 Dimens.gapSm,
@@ -620,8 +620,8 @@ class _PlayerScreenState extends State<PlayerScreen>
         PlayerChip(
           text: state.shaderOsd.value,
           icon: Icons.photo_filter_rounded,
-          alignment: Alignment.topRight,
-          margin: const EdgeInsets.only(top: 72, right: 24),
+          alignment: AlignmentDirectional.topEnd,
+          margin: const EdgeInsetsDirectional.only(top: 72, end: 24),
         ),
         if (state.loading.value && error == null)
           const IgnorePointer(

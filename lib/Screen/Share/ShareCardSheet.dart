@@ -118,7 +118,7 @@ class _ShareCardSheetState extends State<ShareCardSheet>
               Padding(
                 padding: EdgeInsets.only(bottom: Dimens.gap),
                 child: Align(
-                  alignment: Alignment.centerLeft,
+                  alignment: AlignmentDirectional.centerStart,
                   child: AppChoiceChips<int>(
                     value: state.mode,
                     onChanged: state.setMode,

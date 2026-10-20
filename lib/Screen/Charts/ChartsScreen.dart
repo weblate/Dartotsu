@@ -63,7 +63,7 @@ class _ChartsScreenState extends BaseScreen<ChartsScreen>
             vertical: Dimens.gapSm,
           ),
           child: Align(
-            alignment: Alignment.centerLeft,
+            alignment: AlignmentDirectional.centerStart,
             child: AppChoiceChips<TrendzChart>(
               scrollable: true,
               value: state.chart.value,

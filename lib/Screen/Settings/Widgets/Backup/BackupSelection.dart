@@ -17,7 +17,7 @@ class SelectAllButton<K> extends StatelessWidget {
   Widget build(BuildContext context) {
     final all = selection.isNotEmpty && selection.values.every((v) => v);
     return Align(
-      alignment: Alignment.centerRight,
+      alignment: AlignmentDirectional.centerEnd,
       child: TextButton(
         onPressed: () {
           for (final k in selection.keys.toList()) {

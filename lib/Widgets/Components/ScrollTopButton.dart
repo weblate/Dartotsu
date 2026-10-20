@@ -56,8 +56,8 @@ class _ScrollTopButtonState extends State<ScrollTopButton> {
       child: Stack(
         children: [
           widget.child,
-          Positioned(
-            right: 16,
+          PositionedDirectional(
+            end: 16,
             bottom: 96 + MediaQuery.paddingOf(context).bottom,
             child: IgnorePointer(
               ignoring: !shown.value,

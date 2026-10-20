@@ -378,10 +378,14 @@ class ListShareCard extends StatelessWidget {
                             fit: BoxFit.cover,
                           ),
                         ),
-                        Positioned(left: 6, top: 6, child: _pill('${i + 1}')),
+                        PositionedDirectional(
+                          start: 6,
+                          top: 6,
+                          child: _pill('${i + 1}'),
+                        ),
                         if (_score(m.userScore).isNotEmpty)
-                          Positioned(
-                            right: 6,
+                          PositionedDirectional(
+                            end: 6,
                             bottom: 6,
                             child: _pill(
                               _score(m.userScore),

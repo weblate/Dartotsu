@@ -25,7 +25,7 @@ class EpisodePanel extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: const EdgeInsets.fromLTRB(16, 12, 4, 4),
+              padding: const EdgeInsetsDirectional.fromSTEB(16, 12, 4, 4),
               child: Row(
                 children: [
                   Expanded(

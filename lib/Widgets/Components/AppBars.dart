@@ -152,22 +152,22 @@ class AppSliverBar extends StatelessWidget {
                       )
                     : ColoredBox(color: scheme.surface),
               ),
-              Positioned(
-                left: 44,
-                right: 56,
+              PositionedDirectional(
+                start: 44,
+                end: 56,
                 top: MediaQuery.paddingOf(context).top,
                 height: kToolbarHeight,
                 child: Opacity(
                   opacity: smallTitle,
                   child: Align(
-                    alignment: Alignment.centerLeft,
+                    alignment: AlignmentDirectional.centerStart,
                     child: AppScreenTitle(title),
                   ),
                 ),
               ),
-              Positioned(
-                left: 16,
-                right: 16,
+              PositionedDirectional(
+                start: 16,
+                end: 16,
                 bottom: 16,
                 child: Opacity(
                   opacity: largeTitle,

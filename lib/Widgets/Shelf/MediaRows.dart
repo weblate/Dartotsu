@@ -197,9 +197,9 @@ class _Cover extends StatelessWidget {
             ),
           ),
           if (airing)
-            Positioned(
+            PositionedDirectional(
               top: -3,
-              right: -3,
+              end: -3,
               child: Container(
                 width: 10,
                 height: 10,
@@ -472,9 +472,9 @@ class MediaBannerTile extends StatelessWidget {
         child: Stack(
           children: [
             Positioned.fill(child: ColoredBox(color: fill)),
-            Positioned(
-              left: 0,
-              right: 0,
+            PositionedDirectional(
+              start: 0,
+              end: 0,
               top: 0,
               height: thumbH * 0.8,
               child: Stack(

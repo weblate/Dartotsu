@@ -53,7 +53,7 @@ class _MpvConfSheetState extends State<MpvConfSheet> {
       title: getString.playerMpvConf,
       heightFactor: 0.85,
       trailing: Padding(
-        padding: const EdgeInsets.only(right: 12),
+        padding: const EdgeInsetsDirectional.only(end: 12),
         child: FilledButton(onPressed: _save, child: Text(getString.save)),
       ),
       child: Padding(
@@ -168,7 +168,7 @@ class _MpvScriptsSheetState extends State<MpvScriptsSheet> {
       title: getString.playerScripts,
       heightFactor: 0.7,
       trailing: Padding(
-        padding: const EdgeInsets.only(right: 12),
+        padding: const EdgeInsetsDirectional.only(end: 12),
         child: FilledButton.tonalIcon(
           onPressed: _add,
           icon: const Icon(Icons.add_rounded),

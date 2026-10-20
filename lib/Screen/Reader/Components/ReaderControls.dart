@@ -38,10 +38,10 @@ class ReaderControls extends StatelessWidget {
     final duration = animDuration(220);
     return Stack(
       children: [
-        Positioned(
+        PositionedDirectional(
           top: 0,
-          left: 0,
-          right: 0,
+          start: 0,
+          end: 0,
           child: IgnorePointer(
             ignoring: !visible,
             child: AnimatedSlide(
@@ -52,9 +52,9 @@ class ReaderControls extends StatelessWidget {
             ),
           ),
         ),
-        Positioned(
-          left: 0,
-          right: 0,
+        PositionedDirectional(
+          start: 0,
+          end: 0,
           bottom: 0,
           child: IgnorePointer(
             ignoring: !visible,

@@ -117,7 +117,7 @@ class _ColorSheetState extends State<ColorSheet> {
           ),
           _slider(getString.playerColorHue, v.hue, (x) => v.copyWith(hue: x)),
           Align(
-            alignment: Alignment.centerRight,
+            alignment: AlignmentDirectional.centerEnd,
             child: TextButton.icon(
               onPressed: v.isDefault ? null : () => _set(const ColorValues()),
               icon: const Icon(Icons.restart_alt_rounded),

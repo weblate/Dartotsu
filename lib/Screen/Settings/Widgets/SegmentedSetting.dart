@@ -68,7 +68,7 @@ Setting segmentedSetting<T>({
         if (description != null) ...[
           const SizedBox(height: 8),
           Padding(
-            padding: const EdgeInsets.only(left: 42),
+            padding: const EdgeInsetsDirectional.only(start: 42),
             child: Text(
               description,
               style: context.textTheme.bodySmall?.copyWith(

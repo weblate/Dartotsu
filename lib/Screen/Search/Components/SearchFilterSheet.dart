@@ -144,7 +144,7 @@ class _FilterBodyState extends State<_FilterBody>
                     ),
                     if (state.tagQuery.value.isEmpty && s.tags.length > 30)
                       Align(
-                        alignment: Alignment.centerLeft,
+                        alignment: AlignmentDirectional.centerStart,
                         child: TextButton(
                           onPressed: () =>
                               state.allTags.value = !state.allTags.value,
@@ -250,7 +250,11 @@ class _FilterBodyState extends State<_FilterBody>
   }
 
   Widget _title(String text, int selected) => Padding(
-    padding: EdgeInsets.only(top: Dimens.gap, bottom: Dimens.gapSm, left: 4),
+    padding: EdgeInsetsDirectional.only(
+      top: Dimens.gap,
+      bottom: Dimens.gapSm,
+      start: 4,
+    ),
     child: Row(
       children: [
         Text(

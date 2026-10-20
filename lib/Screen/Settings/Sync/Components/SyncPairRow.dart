@@ -53,14 +53,14 @@ class SyncPairRow extends StatelessWidget {
             borderRadius: BorderRadius.circular(18),
             child: Stack(
               children: [
-                Positioned(
-                  left: 0,
+                PositionedDirectional(
+                  start: 0,
                   top: 0,
                   bottom: 0,
                   child: Container(width: 4, color: accent),
                 ),
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(14, 8, 10, 8),
+                  padding: const EdgeInsetsDirectional.fromSTEB(14, 8, 10, 8),
                   child: Row(
                     children: [
                       Expanded(

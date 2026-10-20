@@ -105,7 +105,7 @@ class _Profile extends StatelessWidget {
       final loggedIn = user != null || (auth?.isLoggedIn ?? false);
 
       return Padding(
-        padding: const EdgeInsets.fromLTRB(20, 4, 12, 4),
+        padding: const EdgeInsetsDirectional.fromSTEB(20, 4, 12, 4),
         child: Row(
           children: [
             HeaderAvatar(url: user?.avatar, size: 56),
@@ -136,7 +136,7 @@ class _Profile extends StatelessWidget {
                         padding: const EdgeInsets.symmetric(horizontal: 4),
                         minimumSize: const Size(0, 32),
                         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                        alignment: Alignment.centerLeft,
+                        alignment: AlignmentDirectional.centerStart,
                       ),
                       icon: Icon(
                         loggedIn ? Icons.logout_rounded : Icons.login_rounded,

@@ -102,7 +102,7 @@ class WatchOptionsSheet extends StatelessWidget {
             ],
             SizedBox(height: Dimens.gapLg),
             Align(
-              alignment: Alignment.centerRight,
+              alignment: AlignmentDirectional.centerEnd,
               child: TextButton.icon(
                 onPressed: () {
                   state.resetSettings();

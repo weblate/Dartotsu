@@ -47,7 +47,7 @@ class AppSheet extends StatelessWidget {
               ),
               if (title != null)
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(24, 0, 12, 8),
+                  padding: const EdgeInsetsDirectional.fromSTEB(24, 0, 12, 8),
                   child: Row(
                     children: [
                       Expanded(

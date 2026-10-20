@@ -54,11 +54,16 @@ class PlayerControls extends StatelessWidget {
             ),
           ),
         ),
-        Positioned(top: 0, left: 0, right: 0, child: _top(context, locked)),
+        PositionedDirectional(
+          top: 0,
+          start: 0,
+          end: 0,
+          child: _top(context, locked),
+        ),
         if (!locked) Positioned.fill(child: _center(context)),
-        Positioned(
-          left: 0,
-          right: 0,
+        PositionedDirectional(
+          start: 0,
+          end: 0,
           bottom: 0,
           child: _bottom(
             context,

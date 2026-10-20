@@ -65,7 +65,9 @@ class _AniMediaCardState extends State<AniMediaCard> {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 6),
       child: Align(
-        alignment: widget.centered ? Alignment.center : Alignment.centerLeft,
+        alignment: widget.centered
+            ? Alignment.center
+            : AlignmentDirectional.centerStart,
         child: ConstrainedBox(
           constraints: const BoxConstraints(maxWidth: 460),
           child: Clickable(

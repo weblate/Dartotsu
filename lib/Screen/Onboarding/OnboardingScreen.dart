@@ -50,8 +50,8 @@ class _OnboardingScreenState extends State<OnboardingScreen>
             child: DecoratedBox(
               decoration: BoxDecoration(
                 gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
+                  begin: AlignmentDirectional.topStart,
+                  end: AlignmentDirectional.bottomEnd,
                   colors: [
                     scheme.surface,
                     scheme.surfaceContainerHigh,
@@ -92,7 +92,7 @@ class _OnboardingScreenState extends State<OnboardingScreen>
   }
 
   Widget _topBar(int page) => Padding(
-    padding: const EdgeInsets.fromLTRB(24, 8, 12, 0),
+    padding: const EdgeInsetsDirectional.fromSTEB(24, 8, 12, 0),
     child: SizedBox(
       height: 48,
       child: Row(
@@ -129,7 +129,7 @@ class _OnboardingScreenState extends State<OnboardingScreen>
                 duration: animDuration(200),
                 opacity: state.isFirst ? 0 : 1,
                 child: Align(
-                  alignment: Alignment.centerLeft,
+                  alignment: AlignmentDirectional.centerStart,
                   child: IgnorePointer(
                     ignoring: state.isFirst,
                     child: TextButton(
@@ -170,7 +170,7 @@ class _OnboardingScreenState extends State<OnboardingScreen>
             SizedBox(
               width: 140,
               child: Align(
-                alignment: Alignment.centerRight,
+                alignment: AlignmentDirectional.centerEnd,
                 child: DpadFocusable(
                   autofocus: true,
                   onSelect: state.next,
@@ -264,8 +264,8 @@ class _OnboardingScreenState extends State<OnboardingScreen>
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         gradient: LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
+          begin: AlignmentDirectional.topStart,
+          end: AlignmentDirectional.bottomEnd,
           colors: [scheme.primary, scheme.tertiary],
         ),
         boxShadow: [
@@ -464,14 +464,14 @@ class _OnboardingScreenState extends State<OnboardingScreen>
               children: [
                 ColoredBox(color: colors.surface),
                 Align(
-                  alignment: Alignment.centerRight,
+                  alignment: AlignmentDirectional.centerEnd,
                   child: FractionallySizedBox(
                     widthFactor: 0.5,
                     child: ColoredBox(color: colors.primary),
                   ),
                 ),
                 Align(
-                  alignment: Alignment.bottomRight,
+                  alignment: AlignmentDirectional.bottomEnd,
                   child: FractionallySizedBox(
                     widthFactor: 0.5,
                     heightFactor: 0.5,

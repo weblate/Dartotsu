@@ -163,8 +163,8 @@ class _MediaCarouselState extends State<MediaCarousel> {
                 ),
               ),
               if (items.length > 1)
-                Positioned(
-                  right: Dimens.cardPad,
+                PositionedDirectional(
+                  end: Dimens.cardPad,
                   bottom: 12,
                   child: Watch(() {
                     final current = _page.value;
@@ -174,7 +174,7 @@ class _MediaCarouselState extends State<MediaCarousel> {
                         for (var i = 0; i < items.length; i++)
                           AnimatedContainer(
                             duration: animDuration(250),
-                            margin: const EdgeInsets.only(left: 4),
+                            margin: const EdgeInsetsDirectional.only(start: 4),
                             width: i == current ? 18 : 6,
                             height: 6,
                             decoration: BoxDecoration(
@@ -474,15 +474,15 @@ class _SlideSkeleton extends StatelessWidget {
                 ],
               ),
             ),
-            Positioned(
-              right: Dimens.cardPad,
+            PositionedDirectional(
+              end: Dimens.cardPad,
               bottom: 12,
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   for (var i = 0; i < 4; i++)
                     Container(
-                      margin: const EdgeInsets.only(left: 4),
+                      margin: const EdgeInsetsDirectional.only(start: 4),
                       width: i == 0 ? 18 : 6,
                       height: 6,
                       decoration: BoxDecoration(

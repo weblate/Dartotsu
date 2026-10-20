@@ -72,7 +72,7 @@ class _SearchScreenState extends BaseScreen<SearchScreen>
   Widget _searchBar() {
     final scheme = context.colorScheme;
     return Padding(
-      padding: EdgeInsets.fromLTRB(
+      padding: EdgeInsetsDirectional.fromSTEB(
         Dimens.gap,
         Dimens.gapSm,
         Dimens.pagePad,
@@ -100,7 +100,7 @@ class _SearchScreenState extends BaseScreen<SearchScreen>
                   fillColor: scheme.onSurface.withValues(alpha: 0.08),
                   contentPadding: const EdgeInsets.symmetric(horizontal: 20),
                   suffixIcon: Padding(
-                    padding: const EdgeInsets.only(right: 8),
+                    padding: const EdgeInsetsDirectional.only(end: 8),
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
@@ -195,7 +195,7 @@ class _SearchScreenState extends BaseScreen<SearchScreen>
         borderRadius: BorderRadius.circular(12),
         onTap: () => onChanged(!value),
         child: Padding(
-          padding: const EdgeInsets.only(right: 12),
+          padding: const EdgeInsetsDirectional.only(end: 12),
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -265,7 +265,7 @@ class _SearchScreenState extends BaseScreen<SearchScreen>
             ),
             if (!spec.isEmpty)
               Padding(
-                padding: EdgeInsets.only(right: Dimens.pagePad),
+                padding: EdgeInsetsDirectional.only(end: Dimens.pagePad),
                 child: FilledButton.tonalIcon(
                   onPressed: state.openFilters,
                   icon: const Icon(Icons.filter_alt_rounded),
@@ -282,7 +282,7 @@ class _SearchScreenState extends BaseScreen<SearchScreen>
     if (!state.hasCriteria) return const SizedBox.shrink();
     final scheme = context.colorScheme;
     return Padding(
-      padding: EdgeInsets.fromLTRB(
+      padding: EdgeInsetsDirectional.fromSTEB(
         Dimens.pagePad,
         Dimens.gapXs,
         Dimens.gapSm,
@@ -365,7 +365,10 @@ class _SearchScreenState extends BaseScreen<SearchScreen>
                 borderRadius: BorderRadius.circular(14),
                 clipBehavior: Clip.antiAlias,
                 child: ListTile(
-                  contentPadding: const EdgeInsets.only(left: 18, right: 4),
+                  contentPadding: const EdgeInsetsDirectional.only(
+                    start: 18,
+                    end: 4,
+                  ),
                   title: Text(
                     term,
                     style: const TextStyle(fontWeight: FontWeight.w700),

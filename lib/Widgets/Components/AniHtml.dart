@@ -247,9 +247,9 @@ class _AniHtmlState extends State<AniHtml> {
                         physics: const NeverScrollableScrollPhysics(),
                         child: body,
                       ),
-                      Positioned(
-                        left: 0,
-                        right: 0,
+                      PositionedDirectional(
+                        start: 0,
+                        end: 0,
                         bottom: 0,
                         height: 48,
                         child: IgnorePointer(
@@ -565,7 +565,10 @@ class _AniHtmlState extends State<AniHtml> {
             children: [
               for (final li in e.children.where((c) => c.localName == 'li'))
                 Padding(
-                  padding: const EdgeInsets.only(left: 6, bottom: 2),
+                  padding: const EdgeInsetsDirectional.only(
+                    start: 6,
+                    bottom: 2,
+                  ),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -609,9 +612,11 @@ class _AniHtmlState extends State<AniHtml> {
           padding: const EdgeInsets.fromLTRB(12, 6, 12, 6),
           decoration: BoxDecoration(
             color: scheme.primary.withValues(alpha: 0.07),
-            border: Border(left: BorderSide(color: scheme.primary, width: 3)),
-            borderRadius: const BorderRadius.horizontal(
-              right: Radius.circular(10),
+            border: BorderDirectional(
+              start: BorderSide(color: scheme.primary, width: 3),
+            ),
+            borderRadius: const BorderRadiusDirectional.horizontal(
+              end: Radius.circular(10),
             ),
           ),
           child: Column(
@@ -983,7 +988,7 @@ class _MediaTile extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 6),
       child: Align(
-        alignment: Alignment.centerLeft,
+        alignment: AlignmentDirectional.centerStart,
         child: ConstrainedBox(
           constraints: const BoxConstraints(maxWidth: 420),
           child: Clickable(
@@ -1004,8 +1009,8 @@ class _MediaTile extends StatelessWidget {
                       ),
                     ColoredBox(color: Colors.black.withValues(alpha: 0.28)),
                     Center(child: Icon(icon, size: 56, color: Colors.white)),
-                    Positioned(
-                      left: 12,
+                    PositionedDirectional(
+                      start: 12,
                       bottom: 10,
                       child: Text(
                         label,

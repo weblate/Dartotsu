@@ -135,7 +135,7 @@ class SyncOverview extends StatelessWidget {
                   for (final t in tiles)
                     if (t.$1 == null || t.$3 > 0)
                       Padding(
-                        padding: EdgeInsets.only(right: Dimens.gapSm),
+                        padding: EdgeInsetsDirectional.only(end: Dimens.gapSm),
                         child: _StatTile(
                           label: t.$2,
                           count: t.$3,
@@ -299,7 +299,7 @@ class _ColumnHeader extends StatelessWidget {
       ),
     );
     return Padding(
-      padding: const EdgeInsets.fromLTRB(14, 0, 10, 0),
+      padding: const EdgeInsetsDirectional.fromSTEB(14, 0, 10, 0),
       child: Row(children: [side(from), const SizedBox(width: 34), side(to)]),
     );
   }

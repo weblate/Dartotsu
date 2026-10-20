@@ -74,9 +74,9 @@ class _ResumeShelfState extends State<ResumeShelf> {
       cardBuilder: (card) => Stack(
         children: [
           card,
-          Positioned(
+          PositionedDirectional(
             top: 6,
-            right: 6,
+            end: 6,
             child: Clickable(
               onTap: () => ResumeStore.remove(entry),
               child: Tooltip(

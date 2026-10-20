@@ -184,8 +184,8 @@ class _GroupScreenState extends BaseScreen<GroupScreen>
                   ? ColoredBox(color: scheme.secondaryContainer)
                   : cachedNetworkImage(imageUrl: cover, fit: BoxFit.cover),
             ),
-            Positioned(
-              left: Dimens.pagePad,
+            PositionedDirectional(
+              start: Dimens.pagePad,
               bottom: -34,
               child: Container(
                 padding: const EdgeInsets.all(3),

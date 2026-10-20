@@ -122,9 +122,9 @@ class DetailHeaderDelegate extends SliverPersistentHeaderDelegate {
                     : ColoredBox(color: scheme.surface.withValues(alpha: t)),
               ),
               if (!glass)
-                Positioned(
-                  left: 0,
-                  right: 0,
+                PositionedDirectional(
+                  start: 0,
+                  end: 0,
                   top: 0,
                   bottom: _below * (1 - t),
                   child: Opacity(
@@ -143,9 +143,9 @@ class DetailHeaderDelegate extends SliverPersistentHeaderDelegate {
                     ),
                   ),
                 ),
-              Positioned(
-                left: 0,
-                right: 0,
+              PositionedDirectional(
+                start: 0,
+                end: 0,
                 bottom: 0,
                 child: ExcludeFocus(
                   excluding: slideP > 0.95,
@@ -183,7 +183,7 @@ class DetailHeaderDelegate extends SliverPersistentHeaderDelegate {
                                   top: _actionsGap,
                                 ),
                                 child: Align(
-                                  alignment: Alignment.topLeft,
+                                  alignment: AlignmentDirectional.topStart,
                                   child: DpadLane(
                                     laneKey: actionsLane,
                                     verticalEdge: DpadEdgeBehavior.stop,
@@ -201,9 +201,9 @@ class DetailHeaderDelegate extends SliverPersistentHeaderDelegate {
                   ),
                 ),
               ),
-              Positioned(
-                left: 56,
-                right: 140,
+              PositionedDirectional(
+                start: 56,
+                end: 140,
                 top: top,
                 height: _toolbarHeight,
                 child: IgnorePointer(
@@ -212,7 +212,7 @@ class DetailHeaderDelegate extends SliverPersistentHeaderDelegate {
                     child: Transform.translate(
                       offset: Offset(48 * (1 - labelP), 0),
                       child: Align(
-                        alignment: Alignment.centerLeft,
+                        alignment: AlignmentDirectional.centerStart,
                         child: Text(
                           m.mainName,
                           maxLines: 1,
@@ -226,10 +226,10 @@ class DetailHeaderDelegate extends SliverPersistentHeaderDelegate {
                   ),
                 ),
               ),
-              Positioned(
+              PositionedDirectional(
                 top: top,
-                left: 6,
-                right: 6,
+                start: 6,
+                end: 6,
                 height: _toolbarHeight,
                 child: DpadLane(
                   laneKey: toolbarLane,
@@ -404,12 +404,15 @@ class DetailHeaderDelegate extends SliverPersistentHeaderDelegate {
         children: [
           if (onEditList != null)
             FilledButton.icon(
-              style: const ButtonStyle(
-                minimumSize: WidgetStatePropertyAll(Size(0, 50)),
+              style: ButtonStyle(
+                minimumSize: const WidgetStatePropertyAll(Size(0, 50)),
                 textStyle: WidgetStatePropertyAll(
-                  TextStyle(fontSize: 15, fontWeight: FontWeight.w700),
+                  context.textTheme.labelLarge?.copyWith(
+                    fontSize: 15,
+                    fontWeight: FontWeight.w700,
+                  ),
                 ),
-                padding: WidgetStatePropertyAll(
+                padding: const WidgetStatePropertyAll(
                   EdgeInsets.symmetric(horizontal: 22),
                 ),
                 visualDensity: VisualDensity.compact,

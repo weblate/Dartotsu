@@ -147,10 +147,10 @@ class _CardShelfState extends State<CardShelf> {
         child: ListView.builder(
           scrollDirection: Axis.horizontal,
           physics: const NeverScrollableScrollPhysics(),
-          padding: EdgeInsets.only(left: _inset, top: _pop),
+          padding: EdgeInsetsDirectional.only(start: _inset, top: _pop),
           itemCount: 8,
           itemBuilder: (context, index) => Padding(
-            padding: EdgeInsets.only(right: _gap),
+            padding: EdgeInsetsDirectional.only(end: _gap),
             child: _cardFor(index, ShelfCardItem.skeleton()),
           ),
         ),
@@ -226,7 +226,11 @@ class _CardShelfState extends State<CardShelf> {
       return Align(
         alignment: Alignment.topCenter,
         child: Padding(
-          padding: EdgeInsets.only(left: 6.5, right: _inset, top: Dimens.gapSm),
+          padding: EdgeInsetsDirectional.only(
+            start: 6.5,
+            end: _inset,
+            top: Dimens.gapSm,
+          ),
           child: SizedBox(
             width: _cardW,
             height: _cardH,

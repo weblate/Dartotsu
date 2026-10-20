@@ -34,7 +34,7 @@ class BackupCategoryTile extends StatelessWidget {
           child: ExpansionTile(
             shape: const Border(),
             collapsedShape: const Border(),
-            tilePadding: const EdgeInsets.fromLTRB(8, 0, 14, 0),
+            tilePadding: const EdgeInsetsDirectional.fromSTEB(8, 0, 14, 0),
             childrenPadding: const EdgeInsets.fromLTRB(16, 0, 16, 14),
             expandedCrossAxisAlignment: CrossAxisAlignment.start,
             leading: Watch(

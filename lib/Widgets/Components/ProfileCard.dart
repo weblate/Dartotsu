@@ -126,8 +126,8 @@ class ProfileCard extends StatelessWidget {
                 width: double.infinity,
                 child: _banner(scheme, cacheWidth: 480),
               ),
-              Positioned(
-                left: Dimens.gap,
+              PositionedDirectional(
+                start: Dimens.gap,
                 top: _bannerH - _avatarD / 2,
                 child: Container(
                   padding: const EdgeInsets.all(3),
@@ -156,8 +156,8 @@ class ProfileCard extends StatelessWidget {
                 ),
               ),
               if (action != null)
-                Positioned(
-                  right: Dimens.gap,
+                PositionedDirectional(
+                  end: Dimens.gap,
                   top: _bannerH + 8,
                   child: action!,
                 ),

@@ -323,8 +323,8 @@ class UnitTile extends StatelessWidget {
                     fit: StackFit.expand,
                     children: [
                       _thumb(context),
-                      Positioned(
-                        left: 6,
+                      PositionedDirectional(
+                        start: 6,
                         top: 6,
                         child: _badge(
                           context,
@@ -334,15 +334,15 @@ class UnitTile extends StatelessWidget {
                         ),
                       ),
                       if (unit.filler || unit.recap || downloadId != null)
-                        Positioned(
-                          right: 6,
+                        PositionedDirectional(
+                          end: 6,
                           top: 6,
                           child: Row(children: _flags(context)),
                         ),
                       if (progress != null)
-                        Positioned(
-                          left: 0,
-                          right: 0,
+                        PositionedDirectional(
+                          start: 0,
+                          end: 0,
                           bottom: 0,
                           child: ClipRRect(
                             borderRadius: const BorderRadius.vertical(
@@ -357,8 +357,8 @@ class UnitTile extends StatelessWidget {
                           ),
                         ),
                       if (watched)
-                        const Positioned(
-                          right: 6,
+                        const PositionedDirectional(
+                          end: 6,
                           bottom: 6,
                           child: Icon(
                             Icons.check_circle_rounded,
@@ -412,9 +412,9 @@ class UnitTile extends StatelessWidget {
             alignment: Alignment.center,
             children: [
               if (progress != null)
-                Positioned(
-                  left: 8,
-                  right: 8,
+                PositionedDirectional(
+                  start: 8,
+                  end: 8,
                   bottom: 4,
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(2),
@@ -428,9 +428,9 @@ class UnitTile extends StatelessWidget {
                   ),
                 ),
               if (downloadId != null)
-                Positioned(
+                PositionedDirectional(
                   top: 5,
-                  right: 5,
+                  end: 5,
                   child: DownloadDot(id: downloadId!),
                 ),
               Text(

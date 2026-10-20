@@ -310,11 +310,11 @@ class _NovelScreenState extends State<NovelScreen>
         ),
       ),
     );
-    return Positioned(
+    return PositionedDirectional(
       top: top ? 0 : null,
       bottom: top ? null : 0,
-      left: 0,
-      right: 0,
+      start: 0,
+      end: 0,
       child: IgnorePointer(
         ignoring: !visible,
         child: AnimatedSlide(
@@ -540,9 +540,9 @@ class _NovelScreenState extends State<NovelScreen>
           icon: Icon(icon),
         );
 
-    return Positioned(
-      left: 16,
-      right: 16,
+    return PositionedDirectional(
+      start: 16,
+      end: 16,
       bottom: 12 + MediaQuery.paddingOf(context).bottom,
       child: Center(
         child: Material(

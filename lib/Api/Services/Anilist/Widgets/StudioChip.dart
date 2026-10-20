@@ -18,7 +18,7 @@ class StudioChip extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: Dimens.pagePad),
       child: Align(
-        alignment: Alignment.centerLeft,
+        alignment: AlignmentDirectional.centerStart,
         child: ActionChip(
           mouseCursor: kClickCursor,
           avatar: const Icon(Icons.business_rounded, size: 18),

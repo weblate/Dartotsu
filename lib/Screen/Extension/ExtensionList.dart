@@ -389,7 +389,7 @@ class _ExtensionListState extends State<ExtensionList>
               navigateToPage(context, SourcePreferenceScreen(source: source)),
         ),
         Padding(
-          padding: const EdgeInsets.only(left: 8),
+          padding: const EdgeInsetsDirectional.only(start: 8),
           child: MouseRegion(
             cursor: SystemMouseCursors.grab,
             child: ReorderableDragStartListener(

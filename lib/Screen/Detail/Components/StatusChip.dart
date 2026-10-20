@@ -103,7 +103,7 @@ class StatusChip extends StatelessWidget {
         borderRadius: BorderRadius.circular(999),
       ),
       child: Padding(
-        padding: const EdgeInsets.fromLTRB(8, 4, 12, 4),
+        padding: const EdgeInsetsDirectional.fromSTEB(8, 4, 12, 4),
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [

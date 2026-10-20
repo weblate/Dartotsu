@@ -160,7 +160,7 @@ class _ThemePickerSheet extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Align(
-                  alignment: Alignment.centerRight,
+                  alignment: AlignmentDirectional.centerEnd,
                   child: FilledButton(
                     onPressed: () => popPage(context),
                     child: Text(getString.done),
@@ -402,8 +402,8 @@ class _RainbowPreview extends StatelessWidget {
     child: Container(
       decoration: const BoxDecoration(
         gradient: LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
+          begin: AlignmentDirectional.topStart,
+          end: AlignmentDirectional.bottomEnd,
           colors: [
             Color(0xFFFF6B6B),
             Color(0xFFFFD93D),

@@ -140,7 +140,7 @@ class _ActivityComposerState extends State<ActivityComposer>
               ),
             const SizedBox(height: 12),
             Align(
-              alignment: Alignment.centerRight,
+              alignment: AlignmentDirectional.centerEnd,
               child: FilledButton.icon(
                 onPressed: state.busy.value ? null : state.submit,
                 icon: state.busy.value

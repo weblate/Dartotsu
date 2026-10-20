@@ -133,7 +133,7 @@ class PlayerEpisodes extends StatelessWidget {
       ),
       if (state.metaLoading.value)
         Padding(
-          padding: const EdgeInsets.only(right: 8),
+          padding: const EdgeInsetsDirectional.only(end: 8),
           child: SizedBox(
             width: 16,
             height: 16,
@@ -220,7 +220,7 @@ class _PlayerOptionsSheet extends StatelessWidget {
                   state.updateWatchSettings(s.copy()..reverse = v),
             ),
             Align(
-              alignment: Alignment.centerRight,
+              alignment: AlignmentDirectional.centerEnd,
               child: TextButton.icon(
                 onPressed: () {
                   state.updateWatchSettings(

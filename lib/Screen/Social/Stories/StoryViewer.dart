@@ -150,8 +150,8 @@ class _StoryViewerState extends State<StoryViewer>
                     opacity: 1 - delta.abs() * 0.5,
                     child: Transform(
                       alignment: delta > 0
-                          ? Alignment.centerRight
-                          : Alignment.centerLeft,
+                          ? AlignmentDirectional.centerEnd
+                          : AlignmentDirectional.centerStart,
                       transform: Matrix4.identity()
                         ..setEntry(3, 2, 0.0012)
                         ..rotateY(-delta * 0.55),
@@ -291,8 +291,8 @@ class _StoryGroupPageState extends State<_StoryGroupPage>
             DecoratedBox(
               decoration: BoxDecoration(
                 gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
+                  begin: AlignmentDirectional.topStart,
+                  end: AlignmentDirectional.bottomEnd,
                   colors: [
                     scheme.primaryContainer.withValues(alpha: 0.9),
                     scheme.surface,
@@ -363,10 +363,10 @@ class _StoryGroupPageState extends State<_StoryGroupPage>
     final a = state.story;
     final user = widget.group.user;
     final top = MediaQuery.paddingOf(context).top;
-    return Positioned(
+    return PositionedDirectional(
       top: top + 8,
-      left: 12,
-      right: 12,
+      start: 12,
+      end: 12,
       child: Column(
         children: [
           Row(
@@ -413,7 +413,7 @@ class _StoryGroupPageState extends State<_StoryGroupPage>
                   ),
                 ),
                 child: _glass(
-                  padding: const EdgeInsets.fromLTRB(4, 4, 14, 4),
+                  padding: const EdgeInsetsDirectional.fromSTEB(4, 4, 14, 4),
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
@@ -470,9 +470,9 @@ class _StoryGroupPageState extends State<_StoryGroupPage>
   Widget _footer(BuildContext context) {
     final a = state.story;
     final bottom = MediaQuery.paddingOf(context).bottom;
-    return Positioned(
-      left: 16,
-      right: 16,
+    return PositionedDirectional(
+      start: 16,
+      end: 16,
       bottom: bottom + 14,
       child: _footerBar(
         padding: const EdgeInsets.all(6),
@@ -594,7 +594,7 @@ class _StoryGroupPageState extends State<_StoryGroupPage>
 
   Widget _glass({
     required Widget child,
-    EdgeInsets padding = EdgeInsets.zero,
+    EdgeInsetsGeometry padding = EdgeInsets.zero,
     double radius = 30,
   }) {
     return ClipRRect(

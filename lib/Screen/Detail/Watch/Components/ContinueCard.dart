@@ -69,8 +69,8 @@ class ContinueCard extends StatelessWidget {
               child: DecoratedBox(
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
-                    begin: Alignment.centerLeft,
-                    end: Alignment.centerRight,
+                    begin: AlignmentDirectional.centerStart,
+                    end: AlignmentDirectional.centerEnd,
                     colors: [
                       Colors.black.withValues(alpha: 0.85),
                       Colors.black.withValues(alpha: 0.45),
@@ -139,9 +139,9 @@ class ContinueCard extends StatelessWidget {
               ),
             ),
             if (fraction != null)
-              Positioned(
-                left: 0,
-                right: 0,
+              PositionedDirectional(
+                start: 0,
+                end: 0,
                 bottom: 0,
                 child: LinearProgressIndicator(
                   value: fraction,

@@ -52,7 +52,7 @@ class ShelfFrame extends StatelessWidget {
           children: [
             if (_hasTitle) ...[
               Padding(
-                padding: EdgeInsets.fromLTRB(
+                padding: EdgeInsetsDirectional.fromSTEB(
                   Dimens.cardPad + 8,
                   Dimens.cardPad,
                   8,
@@ -80,7 +80,7 @@ class ShelfFrame extends StatelessWidget {
           children: [
             if (_hasTitle) ...[
               Padding(
-                padding: EdgeInsets.fromLTRB(
+                padding: EdgeInsetsDirectional.fromSTEB(
                   Dimens.gap + 8,
                   Dimens.gapSm,
                   Dimens.gap,

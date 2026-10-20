@@ -209,7 +209,7 @@ class _ActivityHeatmapState extends State<ActivityHeatmap> {
               Container(
                 width: 12,
                 height: 12,
-                margin: const EdgeInsets.only(right: 3),
+                margin: const EdgeInsetsDirectional.only(end: 3),
                 decoration: BoxDecoration(
                   color: level == 0
                       ? scheme.surfaceContainerHighest.withValues(alpha: 0.55)

@@ -61,9 +61,9 @@ class NotImplemented extends StatelessWidget {
       child: Stack(
         children: [
           body,
-          const Positioned(
+          const PositionedDirectional(
             top: 0,
-            left: 8,
+            start: 8,
             child: SafeArea(child: AppBackButton()),
           ),
         ],

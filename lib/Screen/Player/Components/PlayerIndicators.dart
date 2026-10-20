@@ -136,8 +136,8 @@ class PlayerSeekRipple extends StatelessWidget {
 class PlayerChip extends StatelessWidget {
   final String? text;
   final IconData icon;
-  final Alignment alignment;
-  final EdgeInsets margin;
+  final AlignmentGeometry alignment;
+  final EdgeInsetsGeometry margin;
 
   const PlayerChip({
     super.key,
@@ -211,8 +211,8 @@ class PlayerNextCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final shown = seconds != null;
-    return Positioned(
-      right: 16,
+    return PositionedDirectional(
+      end: 16,
       bottom: 56,
       child: IgnorePointer(
         ignoring: !shown,
@@ -221,7 +221,7 @@ class PlayerNextCard extends StatelessWidget {
           duration: animDuration(200),
           child: Container(
             constraints: const BoxConstraints(maxWidth: 280),
-            padding: const EdgeInsets.fromLTRB(16, 12, 12, 12),
+            padding: const EdgeInsetsDirectional.fromSTEB(16, 12, 12, 12),
             decoration: BoxDecoration(
               color: Colors.black.withValues(alpha: 0.78),
               borderRadius: BorderRadius.circular(20),

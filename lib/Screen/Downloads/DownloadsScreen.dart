@@ -82,7 +82,7 @@ class _DownloadsScreenState extends BaseScreen<DownloadsScreen>
                   PendingSyncCard(pending: state.pending),
                   if (state.bytes.value > 0)
                     Align(
-                      alignment: Alignment.centerLeft,
+                      alignment: AlignmentDirectional.centerStart,
                       child: Padding(
                         padding: EdgeInsets.only(top: Dimens.gapXs),
                         child: Text(

@@ -50,8 +50,8 @@ class CommentTile extends StatelessWidget {
         child: Stack(
           children: [
             if (canCollapse && !collapsed)
-              Positioned(
-                left: 0,
+              PositionedDirectional(
+                start: 0,
                 top: _avatar + 6,
                 bottom: 0,
                 width: _avatar,
@@ -69,8 +69,8 @@ class CommentTile extends StatelessWidget {
                   ),
                 ),
               ),
-            Positioned(
-              left: 0,
+            PositionedDirectional(
+              start: 0,
               top: 0,
               child: Clickable(
                 onTap: canCollapse
@@ -84,7 +84,7 @@ class CommentTile extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: _gutter),
+              padding: const EdgeInsetsDirectional.only(start: _gutter),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [

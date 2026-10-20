@@ -168,7 +168,7 @@ class _WatchSectionState extends State<WatchSection>
         ),
         if (state.metaLoading.value)
           Padding(
-            padding: const EdgeInsets.only(right: 8),
+            padding: const EdgeInsetsDirectional.only(end: 8),
             child: SizedBox(
               width: 16,
               height: 16,

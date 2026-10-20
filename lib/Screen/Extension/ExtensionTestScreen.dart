@@ -333,7 +333,7 @@ class _SourceTile extends StatelessWidget {
           children: [
             if (r == null)
               Align(
-                alignment: Alignment.centerLeft,
+                alignment: AlignmentDirectional.centerStart,
                 child: Text(
                   getString.extensionTestNotRun,
                   style: context.textTheme.bodySmall,

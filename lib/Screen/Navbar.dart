@@ -136,9 +136,9 @@ class _FloatingBottomNavBarState extends State<FloatingBottomNavBar> {
   Widget _buildMobile(BuildContext context, MediaService service) {
     final itemWidth = _items.length <= 3 ? 96.0 : 72.0;
     const navHeight = 64.0;
-    return Positioned(
-      left: 0,
-      right: 0,
+    return PositionedDirectional(
+      start: 0,
+      end: 0,
       bottom: 32 + MediaQuery.paddingOf(context).bottom,
       child: Align(
         alignment: Alignment.bottomCenter,

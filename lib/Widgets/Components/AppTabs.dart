@@ -98,7 +98,7 @@ class AppTabBar extends StatelessWidget implements PreferredSizeWidget {
     final shown = [...tabs];
     if (shown.isNotEmpty) {
       shown[0] = Padding(
-        padding: EdgeInsets.only(left: inset),
+        padding: EdgeInsetsDirectional.only(start: inset),
         child: shown[0],
       );
     }
