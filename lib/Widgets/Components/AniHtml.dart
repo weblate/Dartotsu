@@ -129,7 +129,10 @@ class _AniHtmlState extends State<AniHtml> {
       .replaceAllMapped(_underBold, (m) => '<b>${m.group(1)}</b>');
 
   static String _normalize(String source) {
-    final html = _markdownLeft(_unescapeImages(source));
+    final html = _markdownLeft(_unescapeImages(source))
+        .replaceAll(RegExp(r'<br\s*/?>[ \t\r]*\n'), '<br>')
+        .replaceAll(RegExp(r'(?:[ \t\r]*<br\s*/?>[ \t\r]*){3,}'), '<br><br>')
+        .replaceAll(RegExp(r'(?:[ \t\r]*\n){3,}'), '\n\n');
     final out = StringBuffer();
     var cursor = 0;
     while (true) {
@@ -1144,6 +1147,7 @@ class _RemoteSvgState extends State<_RemoteSvg> {
           : (res.rawBytes == null ? null : utf8.decode(res.rawBytes!));
       if (text == null || !text.contains('<svg')) return null;
       if (text.contains('<foreignObject')) return null;
+      await vg.loadPicture(SvgStringLoader(text), null);
       return text;
     } catch (e, st) {
       logError('AniHtml', e, st);
