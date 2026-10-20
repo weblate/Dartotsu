@@ -57,10 +57,10 @@ String _field(String label, Object? Function() read) {
 }
 
 class Logger {
-  static late File _logFile;
+  static File? _logFile;
 
-  static String get filePath => _logFile.path;
-  static late IOSink _sink;
+  static String get filePath => _logFile?.path ?? '';
+  static IOSink? _sink;
 
   static bool _initialized = false;
   static bool _disposed = false;
@@ -81,30 +81,55 @@ class Logger {
     };
   }
 
+  static Future<File?> _openLogFile(Directory? directory) async {
+    if (directory == null) return null;
+    try {
+      final file = File('${directory.path}/appLogs.txt'.fixSeparator);
+      await file.parent.create(recursive: true);
+      if (await file.exists()) {
+        _logFile = file;
+        if (await file.length() > _maxLogSizeBytes) await _rotateLogs();
+      } else {
+        await file.create(recursive: true);
+      }
+      return file;
+    } catch (e) {
+      _bufferPreInit(
+        _formatLog(
+          time: DateTime.now(),
+          level: LogLevel.warning,
+          message: 'Log file unavailable in ${directory.path}: $e',
+        ),
+      );
+      return null;
+    }
+  }
+
   static Future<void> init() async {
-    final directory = await StorageManager.getDirectory(
+    final preferred = await StorageManager.getDirectory(
       useSystemPath: false,
       useCustomPath: true,
     );
+    var file = await _openLogFile(preferred);
+    file ??= await _openLogFile(
+      await StorageManager.getDirectory(useSystemPath: true),
+    );
+    _logFile = file;
 
-    _logFile = File('${directory?.path}/appLogs.txt'.fixSeparator);
-
-    if (await _logFile.exists()) {
-      if (await _logFile.length() > _maxLogSizeBytes) {
-        await _rotateLogs();
+    if (file != null) {
+      try {
+        _sink = file.openWrite(mode: FileMode.append)
+          ..writeln('[Dartotsu] Logger initialized\n')
+          ..writeln(await _collectDeviceInfo());
+      } catch (e) {
+        _sink = null;
       }
-    } else {
-      await _logFile.create(recursive: true);
     }
-
-    _sink = _logFile.openWrite(mode: FileMode.append);
-    _sink.writeln('[Dartotsu] Logger initialized\n');
-    _sink.writeln(await _collectDeviceInfo());
 
     final javaCrash = await NativeLogger.importJavaCrashLogs();
     if (javaCrash != null) {
       _sink
-        ..writeln('==== JAVA CRASH DETECTED ====')
+        ?..writeln('==== JAVA CRASH DETECTED ====')
         ..writeln(javaCrash)
         ..writeln('============================\n');
     }
@@ -167,7 +192,12 @@ class Logger {
 
     scheduleMicrotask(() async {
       while (_queue.isNotEmpty && !_disposed) {
-        _sink.writeln(_queue.removeFirst());
+        final line = _queue.removeFirst();
+        try {
+          _sink?.writeln(line);
+        } catch (_) {
+          _sink = null;
+        }
       }
       _writerActive = false;
     });
@@ -181,12 +211,14 @@ class Logger {
   }
 
   static Future<void> _rotateLogs() async {
-    final backup = File('${_logFile.path}.old');
+    final current = _logFile;
+    if (current == null) return;
+    final backup = File('${current.path}.old');
     if (await backup.exists()) {
       await backup.delete();
     }
-    await _logFile.rename(backup.path);
-    await _logFile.create(recursive: true);
+    await current.rename(backup.path);
+    await current.create(recursive: true);
   }
 
   static const _levelStrings = {
@@ -225,12 +257,13 @@ class Logger {
     if (_disposed) return;
     _disposed = true;
 
+    final sink = _sink;
     while (_queue.isNotEmpty) {
-      _sink.writeln(_queue.removeFirst());
+      sink?.writeln(_queue.removeFirst());
     }
 
-    await _sink.flush();
-    await _sink.close();
+    await sink?.flush();
+    await sink?.close();
   }
 
   static final DeviceInfoPlugin _deviceInfo = DeviceInfoPlugin();

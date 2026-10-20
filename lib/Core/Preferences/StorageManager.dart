@@ -52,7 +52,22 @@ class StorageManager {
             ? withAppRoot(customPath)
             : withAppRoot(emulatedRoot);
 
-        return await ensureDir(path.join(basePath, subPath ?? ''));
+        final target = path.join(basePath, subPath ?? '');
+        try {
+          final dir = await ensureDir(target);
+          final probe = File(path.join(dir.path, '.dartotsu_probe'));
+          await probe.writeAsString('');
+          await probe.delete();
+          return dir;
+        } catch (e) {
+          logger(
+            'Storage path $target is not writable ($e), using app storage',
+            logLevel: LogLevel.warning,
+          );
+          return await ensureDir(
+            path.join(withAppRoot(appDir.path), subPath ?? ''),
+          );
+        }
       }
 
       final base = customPath.isNotEmpty ? customPath : appDir.path;

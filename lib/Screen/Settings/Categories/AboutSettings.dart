@@ -67,6 +67,7 @@ List<Setting> aboutSettings(BuildContext context) => [
 
 void _shareLog() {
   final path = Logger.filePath;
+  if (path.isEmpty) return;
   if (Platform.isLinux) {
     copyToClipboard(path, message: getString.logFileCopied);
     return;
