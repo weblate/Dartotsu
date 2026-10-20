@@ -73,17 +73,31 @@ class MangaBakaSync extends SyncAdapter {
   bool get canResolve => true;
 
   @override
-  Future<(Map<int, int>, int)> resolve(
-    List<int> mal, {
+  List<String> get resolveKeys => const [SyncKey.mal, SyncKey.anilist];
+
+  @override
+  Future<(Map<int, int>, int)> resolve(List<int> mal, {required bool anime}) =>
+      resolveBy(SyncKey.mal, mal, anime: anime);
+
+  @override
+  Future<(Map<int, int>, int)> resolveBy(
+    String from,
+    List<int> ids, {
     required bool anime,
   }) async {
+    final path = switch (from) {
+      SyncKey.mal => 'my-anime-list',
+      SyncKey.anilist => 'anilist',
+      _ => null,
+    };
     final out = <int, int>{};
+    if (path == null) return (out, 0);
     var used = 0;
     try {
-      for (final id in mal) {
+      for (final id in ids) {
         used++;
         try {
-          final body = await queries.client.get('/source/my-anime-list/$id');
+          final body = await queries.client.get('/source/$path/$id');
           final series = (body['data'] as Map?)?['series'];
           final first = series is List && series.isNotEmpty
               ? series.first

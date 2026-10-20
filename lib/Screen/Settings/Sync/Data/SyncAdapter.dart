@@ -37,6 +37,16 @@ abstract class SyncAdapter {
 
   int get resolveBatch => 1;
 
+  List<String> get resolveKeys => const [SyncKey.mal];
+
+  Future<(Map<int, int>, int)> resolveBy(
+    String from,
+    List<int> ids, {
+    required bool anime,
+  }) async => from == SyncKey.mal
+      ? await resolve(ids, anime: anime)
+      : (const <int, int>{}, 0);
+
   Future<(Map<int, int>, int)> resolve(
     List<int> mal, {
     required bool anime,

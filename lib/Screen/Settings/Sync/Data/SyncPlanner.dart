@@ -13,6 +13,7 @@ List<SyncItem> expandItems(
 class SyncTarget {
   final String key;
   final bool canResolve;
+  final List<String> resolveKeys;
   final bool syncsDates;
   final bool syncsRepeat;
   final String prefix;
@@ -20,6 +21,7 @@ class SyncTarget {
   const SyncTarget({
     required this.key,
     required this.canResolve,
+    required this.resolveKeys,
     required this.syncsDates,
     required this.syncsRepeat,
     required this.prefix,
@@ -30,6 +32,7 @@ class SyncTarget {
     return SyncTarget(
       key: adapter.key,
       canResolve: adapter.canResolve,
+      resolveKeys: adapter.resolveKeys,
       syncsDates: adapter.syncsDates,
       syncsRepeat: adapter.syncsRepeat,
       prefix: sample.substring(0, sample.length - 1),
@@ -86,7 +89,9 @@ SyncTargetPlan planWith({
         found?.id ?? (native == null ? null : spec.targetId(native));
     final shared = found != null && !matched.add(found.id);
     final resolvable =
-        targetId == null && spec.canResolve && m.ids[SyncKey.mal] != null;
+        targetId == null &&
+        spec.canResolve &&
+        spec.resolveKeys.any((k) => m.ids[k] != null);
     final pair = SyncPair(
       dates: spec.syncsDates && mainDates,
       repeat: spec.syncsRepeat && mainRepeat,

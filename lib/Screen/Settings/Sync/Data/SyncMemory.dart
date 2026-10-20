@@ -1,3 +1,5 @@
+import 'SyncModels.dart';
+
 class SyncMemory {
   final Map<String, int> resolved;
   final Set<String> ignored;
@@ -14,8 +16,13 @@ class SyncMemory {
        fingerprints = fingerprints ?? {},
        fullAt = fullAt ?? {};
 
-  static String resolveKey(String service, bool anime, int mal) =>
-      '$service|${anime ? 'a' : 'm'}|$mal';
+  static String resolveKey(
+    String service,
+    bool anime,
+    int id, [
+    String from = SyncKey.mal,
+  ]) =>
+      '$service|${anime ? 'a' : 'm'}|${from == SyncKey.mal ? '' : '$from:'}$id';
 
   static String ignoreKey(String service, bool anime, String mainId) =>
       '$service|${anime ? 'a' : 'm'}|$mainId';
@@ -23,11 +30,20 @@ class SyncMemory {
   static String typeKey(String main, bool anime) =>
       '$main|${anime ? 'a' : 'm'}';
 
-  int? native(String service, bool anime, int mal) =>
-      resolved[resolveKey(service, anime, mal)];
+  int? native(
+    String service,
+    bool anime,
+    int id, [
+    String from = SyncKey.mal,
+  ]) => resolved[resolveKey(service, anime, id, from)];
 
-  void remember(String service, bool anime, int mal, int native) =>
-      resolved[resolveKey(service, anime, mal)] = native;
+  void remember(
+    String service,
+    bool anime,
+    int id,
+    int native, [
+    String from = SyncKey.mal,
+  ]) => resolved[resolveKey(service, anime, id, from)] = native;
 
   bool isIgnored(String service, bool anime, String mainId) =>
       ignored.contains(ignoreKey(service, anime, mainId));

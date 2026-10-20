@@ -422,15 +422,18 @@ class SyncController extends AppController {
           final native? => other.targetId(native, anime: isAnime),
           _ => null,
         };
-        final mal = ids[SyncKey.mal];
-        if (targetId == null && mal != null) {
-          var native = _memory.native(target.id, isAnime, mal);
+        for (final from in other.resolveKeys) {
+          final ref = ids[from];
+          if (targetId != null || ref == null) continue;
+          var native = _memory.native(target.id, isAnime, ref, from);
           if (native == null && other.canResolve) {
-            final (found, used) = await other.resolve([mal], anime: isAnime);
+            final (found, used) = await other.resolveBy(from, [
+              ref,
+            ], anime: isAnime);
             _budget.stamp(target.id, used);
-            native = found[mal];
+            native = found[ref];
             if (native != null) {
-              _memory.remember(target.id, isAnime, mal, native);
+              _memory.remember(target.id, isAnime, ref, native, from);
             }
           }
           if (native != null) targetId = other.targetId(native, anime: isAnime);
@@ -469,10 +472,16 @@ class SyncController extends AppController {
       p.op = SyncOpState.skipped;
       return;
     }
-    final mal = p.main.ids[SyncKey.mal];
-    if (p.targetId != null || mal == null || adapter == null) return;
-    final native = _memory.native(service, isAnime, mal);
-    if (native != null) p.targetId = adapter.targetId(native, anime: isAnime);
+    if (p.targetId != null || adapter == null) return;
+    for (final from in adapter.resolveKeys) {
+      final ref = p.main.ids[from];
+      if (ref == null) continue;
+      final native = _memory.native(service, isAnime, ref, from);
+      if (native != null) {
+        p.targetId = adapter.targetId(native, anime: isAnime);
+        return;
+      }
+    }
   }
 
   void setSkipped(String service, SyncPair pair, bool skip) {
@@ -573,58 +582,69 @@ class SyncController extends AppController {
     bool isAnime,
   ) async {
     if (!adapter.canResolve) return;
-    final open = [
-      for (final p in pairs)
-        if (p.targetId == null && p.main.ids[SyncKey.mal] != null) p,
-    ];
-    var at = 0;
-    while (at < open.length && !_stop) {
-      final wait = _waitFor(id, adapter);
-      if (wait > Duration.zero) {
-        await _sleep(id, wait);
-        continue;
+    for (final from in adapter.resolveKeys) {
+      if (_stop) return;
+      final open = [
+        for (final p in pairs)
+          if (p.targetId == null && p.main.ids[from] != null) p,
+      ];
+      for (final p in open) {
+        if (p.op == SyncOpState.failed) {
+          p
+            ..op = SyncOpState.idle
+            ..error = null;
+        }
       }
-      final chunk = open.sublist(
-        at,
-        (at + adapter.resolveBatch).clamp(0, open.length),
-      );
-      try {
-        final (found, used) = await adapter.resolve([
-          for (final p in chunk) p.main.ids[SyncKey.mal]!,
-        ], anime: isAnime);
-        _budget.stamp(id, used);
-        for (final p in chunk) {
-          final native = found[p.main.ids[SyncKey.mal]];
-          final target = native == null
-              ? null
-              : adapter.targetId(native, anime: isAnime);
-          if (target != null) {
-            p.targetId = target;
-            _memory.remember(id, isAnime, p.main.ids[SyncKey.mal]!, native!);
-          } else {
+      var at = 0;
+      while (at < open.length && !_stop) {
+        final wait = _waitFor(id, adapter);
+        if (wait > Duration.zero) {
+          await _sleep(id, wait);
+          continue;
+        }
+        final chunk = open.sublist(
+          at,
+          (at + adapter.resolveBatch).clamp(0, open.length),
+        );
+        try {
+          final (found, used) = await adapter.resolveBy(from, [
+            for (final p in chunk) p.main.ids[from]!,
+          ], anime: isAnime);
+          _budget.stamp(id, used);
+          for (final p in chunk) {
+            final ref = p.main.ids[from]!;
+            final native = found[ref];
+            final target = native == null
+                ? null
+                : adapter.targetId(native, anime: isAnime);
+            if (target != null) {
+              p.targetId = target;
+              _memory.remember(id, isAnime, ref, native!, from);
+            } else {
+              p
+                ..op = SyncOpState.failed
+                ..error = getString.syncNotFound(service.name);
+            }
+          }
+          at += chunk.length;
+        } on SyncRateLimited catch (e) {
+          _budget.stamp(id, 1);
+          _budget.hold(id, e.retryAfter);
+        } on SyncFatal catch (e) {
+          targetError[id] = e.message;
+          return;
+        } catch (e) {
+          _budget.stamp(id, 1);
+          for (final p in chunk) {
             p
               ..op = SyncOpState.failed
-              ..error = getString.syncNotFound(service.name);
+              ..error = '$e';
           }
+          at += chunk.length;
         }
-        at += chunk.length;
-      } on SyncRateLimited catch (e) {
-        _budget.stamp(id, 1);
-        _budget.hold(id, e.retryAfter);
-      } on SyncFatal catch (e) {
-        targetError[id] = e.message;
-        return;
-      } catch (e) {
-        _budget.stamp(id, 1);
-        for (final p in chunk) {
-          p
-            ..op = SyncOpState.failed
-            ..error = '$e';
-        }
-        at += chunk.length;
+        _notify();
+        _saveSoon();
       }
-      _notify();
-      _saveSoon();
     }
   }
 
