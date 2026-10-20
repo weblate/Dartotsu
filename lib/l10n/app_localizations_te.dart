@@ -3174,6 +3174,9 @@ class AppLocalizationsTe extends AppLocalizations {
   String get syncNotInList => 'ఇంకా లిస్ట్‌లో లేదు';
 
   @override
+  String get syncMatchingIds => 'Matching ids';
+
+  @override
   String get syncCleared => 'ప్లాన్ క్లియర్ అయింది';
 
   @override

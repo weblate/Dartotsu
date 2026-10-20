@@ -39,6 +39,13 @@ abstract class SyncAdapter {
 
   List<String> get resolveKeys => const [SyncKey.mal];
 
+  bool bridges({required bool anime}) => false;
+
+  Future<Map<String, int>> bridge(
+    Map<String, int> ids, {
+    required bool anime,
+  }) async => const {};
+
   Future<(Map<int, int>, int)> resolveBy(
     String from,
     List<int> ids, {

@@ -3151,6 +3151,9 @@ class AppLocalizationsFa extends AppLocalizations {
   String get syncNotInList => 'هنوز تو لیست نیست';
 
   @override
+  String get syncMatchingIds => 'Matching ids';
+
+  @override
   String get syncCleared => 'برنامه پاک شد';
 
   @override

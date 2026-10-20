@@ -3188,6 +3188,9 @@ class AppLocalizationsDe extends AppLocalizations {
   String get syncNotInList => 'Noch nicht in der Liste';
 
   @override
+  String get syncMatchingIds => 'Matching ids';
+
+  @override
   String get syncCleared => 'Plan gelöscht';
 
   @override

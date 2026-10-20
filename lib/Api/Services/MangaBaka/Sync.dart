@@ -2,6 +2,7 @@ import '../../../Core/Services/Model/Media.dart';
 import '../../../Screen/Settings/Sync/Data/SyncAdapter.dart';
 import '../../../Screen/Settings/Sync/Data/SyncModels.dart';
 import 'Client.dart';
+import 'IdLookup.dart';
 import 'Data/Mapper.dart';
 import 'Mutations.dart';
 import 'Queries.dart';
@@ -112,6 +113,31 @@ class MangaBakaSync extends SyncAdapter {
       throw syncError(e, status: e.status);
     }
     return (out, used);
+  }
+
+  @override
+  bool bridges({required bool anime}) => !anime;
+
+  @override
+  Future<Map<String, int>> bridge(
+    Map<String, int> ids, {
+    required bool anime,
+  }) async {
+    try {
+      final found = await mangaBakaIdsFor(
+        anilist: ids[SyncKey.anilist],
+        mal: ids[SyncKey.mal],
+        throwOnError: true,
+      );
+      if (found == null) return const {};
+      return {
+        SyncKey.mangabaka: found.id,
+        SyncKey.anilist: ?found.anilist,
+        SyncKey.mal: ?found.mal,
+      };
+    } on MangaBakaException catch (e) {
+      throw syncError(e, status: e.status);
+    }
   }
 
   @override

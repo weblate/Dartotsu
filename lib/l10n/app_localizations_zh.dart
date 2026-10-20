@@ -3106,6 +3106,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get syncNotInList => '尚未加入列表';
 
   @override
+  String get syncMatchingIds => 'Matching ids';
+
+  @override
   String get syncCleared => '已清除计划';
 
   @override

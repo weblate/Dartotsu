@@ -3178,6 +3178,9 @@ class AppLocalizationsPt extends AppLocalizations {
   String get syncNotInList => 'Ainda não está na lista';
 
   @override
+  String get syncMatchingIds => 'Matching ids';
+
+  @override
   String get syncCleared => 'Plano limpo';
 
   @override

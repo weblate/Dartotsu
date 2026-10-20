@@ -3188,6 +3188,9 @@ class AppLocalizationsRu extends AppLocalizations {
   String get syncNotInList => 'Пока не в списке';
 
   @override
+  String get syncMatchingIds => 'Matching ids';
+
+  @override
   String get syncCleared => 'План очищен';
 
   @override

@@ -3182,6 +3182,9 @@ class AppLocalizationsSw extends AppLocalizations {
   String get syncNotInList => 'Bado haipo kwenye orodha';
 
   @override
+  String get syncMatchingIds => 'Matching ids';
+
+  @override
   String get syncCleared => 'Mpango umefutwa';
 
   @override

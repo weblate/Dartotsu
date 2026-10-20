@@ -3169,6 +3169,9 @@ class AppLocalizationsKn extends AppLocalizations {
   String get syncNotInList => 'ಇನ್ನೂ ಪಟ್ಟಿಯಲ್ಲಿ ಇಲ್ಲ';
 
   @override
+  String get syncMatchingIds => 'Matching ids';
+
+  @override
   String get syncCleared => 'ಯೋಜನೆ ಕ್ಲಿಯರ್ ಆಯ್ತು';
 
   @override

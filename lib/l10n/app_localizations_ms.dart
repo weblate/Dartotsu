@@ -3167,6 +3167,9 @@ class AppLocalizationsMs extends AppLocalizations {
   String get syncNotInList => 'Belum dalam senarai';
 
   @override
+  String get syncMatchingIds => 'Matching ids';
+
+  @override
   String get syncCleared => 'Rancangan dikosongkan';
 
   @override

@@ -3156,6 +3156,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get syncNotInList => 'ليس في القائمة بعد';
 
   @override
+  String get syncMatchingIds => 'Matching ids';
+
+  @override
   String get syncCleared => 'تم مسح الخطة';
 
   @override

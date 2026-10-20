@@ -3172,6 +3172,9 @@ class AppLocalizationsOr extends AppLocalizations {
   String get syncNotInList => 'ଏପର୍ଯ୍ୟନ୍ତ ତାଲିକାରେ ନାହିଁ';
 
   @override
+  String get syncMatchingIds => 'Matching ids';
+
+  @override
   String get syncCleared => 'ଯୋଜନା ସଫା ହେଲା';
 
   @override

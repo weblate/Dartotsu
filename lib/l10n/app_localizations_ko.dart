@@ -3106,6 +3106,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get syncNotInList => '아직 리스트에 없어요';
 
   @override
+  String get syncMatchingIds => 'Matching ids';
+
+  @override
   String get syncCleared => '계획을 지웠어요';
 
   @override

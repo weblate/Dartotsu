@@ -5,7 +5,11 @@ import 'Client.dart';
 
 typedef MangaBakaIds = ({int id, int? anilist, int? mal});
 
-Future<MangaBakaIds?> mangaBakaIdsFor({int? anilist, int? mal}) async {
+Future<MangaBakaIds?> mangaBakaIdsFor({
+  int? anilist,
+  int? mal,
+  bool throwOnError = false,
+}) async {
   final lookups = [
     if (mal != null) 'my-anime-list/$mal',
     if (anilist != null) 'anilist/$anilist',
@@ -23,6 +27,7 @@ Future<MangaBakaIds?> mangaBakaIdsFor({int? anilist, int? mal}) async {
       return (id: id, anilist: extras?.anilistId, mal: extras?.malId);
     } on MangaBakaException catch (e) {
       if (e.status != 404) {
+        if (throwOnError) rethrow;
         logger('MangaBaka id lookup failed: $e', tag: 'WATCH');
       }
     }

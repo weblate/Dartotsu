@@ -3159,6 +3159,9 @@ class AppLocalizationsPs extends AppLocalizations {
   String get syncNotInList => 'لا په لیست کې نشته';
 
   @override
+  String get syncMatchingIds => 'Matching ids';
+
+  @override
   String get syncCleared => 'پلان پاک شو';
 
   @override

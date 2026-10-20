@@ -3168,6 +3168,9 @@ class AppLocalizationsHa extends AppLocalizations {
   String get syncNotInList => 'Ba ya cikin jeri tukuna';
 
   @override
+  String get syncMatchingIds => 'Matching ids';
+
+  @override
   String get syncCleared => 'An share shirin';
 
   @override

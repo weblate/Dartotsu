@@ -3167,6 +3167,9 @@ class AppLocalizationsId extends AppLocalizations {
   String get syncNotInList => 'Belum ada di daftar';
 
   @override
+  String get syncMatchingIds => 'Matching ids';
+
+  @override
   String get syncCleared => 'Rencana dihapus';
 
   @override

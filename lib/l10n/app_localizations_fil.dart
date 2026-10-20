@@ -3183,6 +3183,9 @@ class AppLocalizationsFil extends AppLocalizations {
   String get syncNotInList => 'Wala pa sa listahan';
 
   @override
+  String get syncMatchingIds => 'Matching ids';
+
+  @override
   String get syncCleared => 'Na-clear ang plano';
 
   @override
