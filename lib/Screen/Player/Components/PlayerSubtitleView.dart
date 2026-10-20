@@ -52,36 +52,38 @@ class PlayerSubtitleView extends StatelessWidget {
       bottom: controlsVisible
           ? 110 + settings.subtitleBottomPadding.toDouble()
           : settings.subtitleBottomPadding.toDouble(),
-      child: IgnorePointer(
-        child: Align(
-          alignment: Alignment.bottomCenter,
-          child: Container(
-            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-            decoration: BoxDecoration(
-              color: Color(settings.subtitleBackgroundColor),
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: Text.rich(
-              TextSpan(children: subtitleSpans(text)),
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: settings.subtitleSize * scale,
-                fontWeight:
-                    FontWeight.values[settings.subtitleWeight.clamp(0, 8)],
-                fontFamily: family,
-                color: Color(settings.subtitleColor),
-                shadows: [
-                  Shadow(
-                    offset: const Offset(1, 1),
-                    blurRadius: 6,
-                    color: outline,
-                  ),
-                  Shadow(
-                    offset: const Offset(-1, -1),
-                    blurRadius: 6,
-                    color: outline,
-                  ),
-                ],
+      child: RepaintBoundary(
+        child: IgnorePointer(
+          child: Align(
+            alignment: Alignment.bottomCenter,
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+              decoration: BoxDecoration(
+                color: Color(settings.subtitleBackgroundColor),
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Text.rich(
+                TextSpan(children: subtitleSpans(text)),
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: settings.subtitleSize * scale,
+                  fontWeight:
+                      FontWeight.values[settings.subtitleWeight.clamp(0, 8)],
+                  fontFamily: family,
+                  color: Color(settings.subtitleColor),
+                  shadows: [
+                    Shadow(
+                      offset: const Offset(1, 1),
+                      blurRadius: 6,
+                      color: outline,
+                    ),
+                    Shadow(
+                      offset: const Offset(-1, -1),
+                      blurRadius: 6,
+                      color: outline,
+                    ),
+                  ],
+                ),
               ),
             ),
           ),

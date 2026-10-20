@@ -214,6 +214,13 @@ vo=gpu-next
       expect(text, 'Top line\nSecond\nthird');
     });
 
+    test('ass drawing commands are dropped', () {
+      final text = subtitleSpans(
+        r'{\p1}m 0 0 l 100 0 100 100 0 100{\p0}Visible',
+      ).map((s) => (s as TextSpan).text).join();
+      expect(text, 'Visible');
+    });
+
     test('font colour is applied and unknown tags are dropped', () {
       final spans = subtitleSpans(
         '<font color="#ff0000">red</font> <x>plain</x>',

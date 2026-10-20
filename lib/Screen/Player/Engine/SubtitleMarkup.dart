@@ -1,5 +1,6 @@
 import 'package:flutter/painting.dart';
 
+final _drawing = RegExp(r'\{[^}]*\\p[1-9][^}]*\}[^{]*');
 final _ass = RegExp(r'\{\\[^}]*\}');
 final _tag = RegExp(
   r'<(/?)(i|b|u|s|em|strong|font|c|v|ruby|rt|lang)\b([^>]*)>',
@@ -21,6 +22,7 @@ const _named = {
 };
 
 String cleanSubtitle(String text) => text
+    .replaceAll(_drawing, '')
     .replaceAll(_ass, '')
     .replaceAll(r'\N', '\n')
     .replaceAll(r'\n', '\n')
