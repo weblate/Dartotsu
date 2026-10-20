@@ -1,3 +1,5 @@
+import '../../Utils/Functions/NavigateToScreen.dart';
+import 'dart:async';
 import 'package:flutter/material.dart';
 
 import '../../Core/Preferences/PrefManager.dart';
@@ -12,6 +14,6 @@ class LoginState extends ScreenState {
       nav.pop();
       return;
     }
-    nav.pushReplacement(MaterialPageRoute(builder: (_) => const MainScreen()));
+    unawaited(replacePage<void, void>(context, const MainScreen()));
   }
 }

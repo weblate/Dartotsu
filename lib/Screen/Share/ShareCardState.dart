@@ -1,3 +1,4 @@
+import '../../Core/Preferences/StorageManager.dart';
 import 'dart:async';
 import 'dart:io';
 import 'dart:typed_data';
@@ -7,7 +8,6 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:path/path.dart' as p;
-import 'package:path_provider/path_provider.dart';
 
 import '../../Core/Services/MediaService.dart';
 import '../../Core/Services/Model/Media.dart';
@@ -162,7 +162,7 @@ class ShareCardState extends ScreenState {
     try {
       final bytes = await _capture();
       if (bytes == null) throw StateError('capture failed');
-      final dir = await getTemporaryDirectory();
+      final dir = (await StorageManager.getTmpDirectory())!;
       final file = File(p.join(dir.path, '$fileName.png'));
       await file.writeAsBytes(bytes, flush: true);
       shareFile(

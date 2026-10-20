@@ -1,7 +1,6 @@
 import 'dart:io';
 
 import 'package:path/path.dart' as p;
-import 'package:path_provider/path_provider.dart';
 
 import '../../Core/Downloads/ChapterFetcher.dart';
 import '../../Core/NetworkManager/NetworkManager.dart';
@@ -17,7 +16,7 @@ String imageFileName(String name) {
 }
 
 Future<File> downloadImage(String url, {required String name}) async {
-  final temp = await getTemporaryDirectory();
+  final temp = (await StorageManager.getTmpDirectory())!;
   final part = File(p.join(temp.path, 'img_${url.hashCode.abs()}.part'));
   await find<NetworkManager>().download(url, part.path);
   final head = await part.openRead(0, 16).expand((b) => b).toList();

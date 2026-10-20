@@ -1,3 +1,5 @@
+import '../../Utils/Functions/NavigateToScreen.dart';
+import 'dart:async';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
@@ -62,9 +64,8 @@ class OnboardingState extends ScreenState {
     curve: Curves.easeOutCubic,
   );
 
-  void finish() => Navigator.of(
-    context,
-  ).pushReplacement(MaterialPageRoute(builder: (_) => const LoginScreen()));
+  void finish() =>
+      unawaited(replacePage<void, void>(context, const LoginScreen()));
 
   @override
   void onClose() {

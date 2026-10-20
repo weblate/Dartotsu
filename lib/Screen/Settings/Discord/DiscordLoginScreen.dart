@@ -1,3 +1,4 @@
+import '../../../Widgets/Components/AppBars.dart';
 import 'package:flutter/material.dart';
 import 'package:webview_all/webview_all.dart';
 
@@ -24,10 +25,7 @@ class _DiscordLoginScreenState extends State<DiscordLoginScreen>
     final scheme = context.colorScheme;
     return Scaffold(
       backgroundColor: scheme.surface,
-      appBar: AppBar(
-        backgroundColor: scheme.surface,
-        title: Text(getString.discordLogin),
-      ),
+      appBar: AppScreenBar(title: getString.discordLogin),
       body: Stack(
         children: [
           WebViewWidget(controller: state.controller),

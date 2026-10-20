@@ -24,8 +24,8 @@ class BellButton extends StatelessWidget {
           onLongPress: onLongPress,
         ),
         if (unread > 0)
-          Positioned(
-            right: 6,
+          PositionedDirectional(
+            end: 6,
             top: 6,
             child: Container(
               padding: const EdgeInsets.all(3),
@@ -37,7 +37,7 @@ class BellButton extends StatelessWidget {
               child: Text(
                 unread > 99 ? '99+' : '$unread',
                 textAlign: TextAlign.center,
-                style: TextStyle(
+                style: context.textTheme.labelSmall?.copyWith(
                   fontSize: 9,
                   fontWeight: FontWeight.bold,
                   color: context.colorScheme.onError,

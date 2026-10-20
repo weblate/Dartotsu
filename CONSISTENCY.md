@@ -19,6 +19,7 @@ A screen (page, sheet with logic) is `FooScreen.dart` + `FooState.dart`; see `Sc
 ## Navigation
 
 - Push: `navigateToPage(context, widget)` — never `Navigator.push(MaterialPageRoute(...))`.
+- Replace the current page: `replacePage(context, widget)` — never `pushReplacement(MaterialPageRoute(...))`.
 - Pop: `popPage(context, [result])` — never `Navigator.of(context).pop()` / `Get.back()`.
   Both live in `Utils/Functions/NavigateToScreen.dart`. The point of routing every push/pop
   through these two functions is so the navigation backend (Navigator vs GetX vs anything else)
@@ -70,6 +71,27 @@ All in `Widgets/Components/AppBars.dart`:
 ## Per-media state
 
 Anything remembered about one title (matches, settings, positions, stream choices, cached ids, player overrides) is a field of `MediaRecord` (`Core/Media/MediaRecord.dart`), saved with `MediaRecords.save` — one key per title. Don't add another `something/<service>/<media>` pref key.
+
+## Right-to-left / left-to-right
+
+The UI mirrors with the locale, so layout is written in `start` / `end`, never `left` / `right`:
+
+| Don't | Do |
+|---|---|
+| `EdgeInsets.only(left:, right:)`, asymmetric `EdgeInsets.fromLTRB` | `EdgeInsetsDirectional.only(start:, end:)`, `EdgeInsetsDirectional.fromSTEB` |
+| `Alignment.centerLeft`, `topRight`, … | `AlignmentDirectional.centerStart`, `topEnd`, … |
+| `Positioned(left:, right:)` with a fixed offset | `PositionedDirectional(start:, end:)` |
+| `BorderRadius.only(topLeft:)` / `.horizontal(left:, right:)` | `BorderRadiusDirectional.only(topStart:)` / `.horizontal(start:, end:)` |
+| `Border(left:)` | `BorderDirectional(start:)` |
+| `TextAlign.left` / `right` | `TextAlign.start` / `end` |
+
+Fields that hold geometry take `EdgeInsetsGeometry`, `AlignmentGeometry` and `BorderRadiusGeometry`, not the physical types; resolve with `.resolve(Directionality.of(context))` only where a widget needs the physical class (`InkWell.borderRadius`).
+
+Physical values stay physical when they describe the screen, not the reading order: coordinates derived from a pointer or a scroll position (seek bar and chart painters, preview bubbles), device safe-area and cut-out insets read from `MediaQuery`, and gesture zones in the player and reader (tap, double tap, brightness and volume sides). A media time line is conventionally left-to-right: wrap timecodes and numeric ranges in `Directionality(textDirection: TextDirection.ltr)`. Arrow, chevron and skip icons that point in a reading direction mirror by themselves; do not flip them by hand.
+
+## Automated check
+
+`dart tool/consistency_check.dart` scans `lib/` for the mechanical rules above (RTL geometry, raw route pushes, raw sheets and dialogs, `path_provider`, `TextStyle(fontSize:)`, `ScaffoldMessenger`, bare `AppBar` / `TabBar`) and exits non-zero on a violation. Wrappers and documented exceptions are in the rules' allow lists inside the script; add to a list only for a genuine exception, with the reason in the pull request.
 
 ## Animation speed
 

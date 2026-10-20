@@ -25,7 +25,7 @@ class UserAvatar extends StatelessWidget {
       child: Center(
         child: Text(
           name.isEmpty ? '?' : name.characters.first.toUpperCase(),
-          style: TextStyle(
+          style: context.textTheme.titleMedium?.copyWith(
             color: scheme.onSecondaryContainer,
             fontWeight: FontWeight.w800,
             fontSize: size * 0.42,
