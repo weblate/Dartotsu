@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import '../../../Core/NetworkManager/NetworkManager.dart';
 import '../../../Core/ThemeManager/LanguageSwitcher.dart';
 import '../../../Utils/Functions/SnackBar.dart';
@@ -13,6 +15,12 @@ class MobileRPC extends AppController implements BaseDiscordRPC {
   String? _sessionToken;
   String? _warnedToken;
 
+  static final _platform = Platform.isIOS
+      ? 'ios'
+      : Platform.isAndroid
+      ? 'android'
+      : 'desktop';
+
   Map<String, dynamic> _payload(DiscordPresence p) => {
     'activities': [
       {
@@ -21,7 +29,7 @@ class MobileRPC extends AppController implements BaseDiscordRPC {
         'details': p.details,
         'state': ?p.state,
         'type': p.type.code,
-        'platform': 'desktop',
+        'platform': _platform,
         if (p.start != null)
           'timestamps': {'start': p.start, if (p.end != null) 'end': p.end},
         'assets': {
