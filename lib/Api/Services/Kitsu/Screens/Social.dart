@@ -6,10 +6,12 @@ import '../../../../Utils/Lru.dart';
 import '../../../../Core/Services/Model/Author.dart';
 import '../../../../Core/Services/Model/Character.dart';
 import '../../../../Core/Services/Model/Media.dart';
+import '../../../../Core/ThemeManager/LanguageSwitcher.dart';
 import '../Auth.dart';
 import '../Client.dart';
 import '../Data/Mapper.dart';
 import '../Prefs.dart';
+import 'Settings.dart';
 
 const _pageSize = 20;
 
@@ -19,6 +21,12 @@ class KitsuSocialView extends SocialScreenView {
   KitsuClient get _client => kitsuAuth.client;
 
   final Map<String, String> _cursors = {};
+
+  @override
+  AccountOptions? get accountOptions => AccountOptions(
+    title: getString.kitsuAccountOptions,
+    build: KitsuSettingsView.accountOptions,
+  );
 
   @override
   bool get hasActivity => false;

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../../Screen/Settings/SubSettingsScreen.dart';
 import '../../../../Screen/Settings/Widgets/SegmentedSetting.dart';
-import '../../../../Utils/Functions/NavigateToScreen.dart';
 import '../../../../Widgets/Components/AppControls.dart';
 import '../../../../Widgets/Components/ChoiceSheet.dart';
 import '../../../../Core/Services/MediaService.dart';
@@ -78,20 +76,6 @@ class KitsuSettingsView extends SettingsScreenView {
         ),
       ),
       Setting.header(getString.account),
-      Setting.normal(
-        name: getString.accountOptions,
-        description: getString.accountOptionsDesc,
-        icon: Icons.manage_accounts_rounded,
-        isActivity: true,
-        isVisible: user is KitsuUser,
-        onClick: () => navigateToPage(
-          context,
-          SubSettingsScreen(
-            title: getString.kitsuAccountOptions,
-            settings: _accountOptions,
-          ),
-        ),
-      ),
       if (user is KitsuUser)
         Setting.normal(
           name: getString.kitsuProfile,
@@ -111,7 +95,7 @@ class KitsuSettingsView extends SettingsScreenView {
     ];
   }
 
-  List<Setting> _accountOptions(BuildContext context) {
+  static List<Setting> accountOptions(BuildContext context) {
     final current = kitsuAuth.user.value;
     if (current is! KitsuUser) return const [];
     final user = current;

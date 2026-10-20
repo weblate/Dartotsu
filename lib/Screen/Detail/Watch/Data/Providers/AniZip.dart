@@ -72,13 +72,28 @@ Map<String, EpisodeMeta> parseAniZipEpisodes(Object? episodes) {
   return out;
 }
 
-({int? tvdb, int? tmdb, String? imdb}) parseAniZipIds(Object? body) {
+typedef AniZipIds = ({
+  int? anilist,
+  int? mal,
+  int? kitsu,
+  int? simkl,
+  int? tvdb,
+  int? tmdb,
+  String? imdb,
+});
+
+AniZipIds parseAniZipIds(Object? body) {
   final map = body is Map && body['mappings'] is Map
       ? body['mappings'] as Map
       : const {};
+  int? id(String key) => int.tryParse('${map[key] ?? ''}');
   return (
-    tvdb: int.tryParse('${map['thetvdb_id'] ?? ''}'),
-    tmdb: int.tryParse('${map['themoviedb_id'] ?? ''}'),
+    anilist: id('anilist_id'),
+    mal: id('mal_id'),
+    kitsu: id('kitsu_id'),
+    simkl: id('simkl_id'),
+    tvdb: id('thetvdb_id'),
+    tmdb: id('themoviedb_id'),
     imdb: nonBlank(map['imdb_id']),
   );
 }

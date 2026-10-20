@@ -1054,6 +1054,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get kitsuAccountOptions => 'Kitsu 账号选项';
 
   @override
+  String get mangaBakaAccountOptions => 'MangaBaka account options';
+
+  @override
   String get couldNotUpdateKitsuSettings => '无法更新你的 Kitsu 设置';
 
   @override

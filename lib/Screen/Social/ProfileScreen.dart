@@ -6,6 +6,8 @@ import '../../Core/Services/MediaService.dart';
 import '../../Core/ThemeManager/ThemeController.dart';
 import '../../Utils/Extensions/ContextExtensions.dart';
 import '../Navbar.dart';
+import '../../Utils/Functions/NavigateToScreen.dart';
+import '../Settings/SubSettingsScreen.dart';
 import '../../Widgets/Components/AppBars.dart';
 import '../../Widgets/Components/BaseScreen.dart';
 import '../../Widgets/Components/EmptyState.dart';
@@ -106,6 +108,7 @@ class _ProfileScreenState extends BaseScreen<ProfileScreen>
                   onFollowing: state.openFollowing,
                   onAnime: () => state.openList(true),
                   onManga: () => state.openList(false),
+                  onSettings: _accountOptions(context),
                 ),
               ),
             ],
@@ -162,6 +165,15 @@ class _ProfileScreenState extends BaseScreen<ProfileScreen>
               Expanded(child: content),
             ],
           );
+  }
+
+  VoidCallback? _accountOptions(BuildContext context) {
+    final options = state.view.accountOptions;
+    if (options == null || !state.isSelf) return null;
+    return () => navigateToPage(
+      context,
+      SubSettingsScreen(title: options.title, settings: options.build),
+    );
   }
 
   Widget _page(String userId) {

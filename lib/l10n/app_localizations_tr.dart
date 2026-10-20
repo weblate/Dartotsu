@@ -1093,6 +1093,9 @@ class AppLocalizationsTr extends AppLocalizations {
   String get kitsuAccountOptions => 'Kitsu hesap seçenekleri';
 
   @override
+  String get mangaBakaAccountOptions => 'MangaBaka account options';
+
+  @override
   String get couldNotUpdateKitsuSettings => 'Kitsu ayarların güncellenemedi';
 
   @override

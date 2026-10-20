@@ -1085,6 +1085,9 @@ class AppLocalizationsPs extends AppLocalizations {
   String get kitsuAccountOptions => 'د Kitsu د حساب غوراوي';
 
   @override
+  String get mangaBakaAccountOptions => 'MangaBaka account options';
+
+  @override
   String get couldNotUpdateKitsuSettings => 'ستا د Kitsu تنظیمات تازه نه شول';
 
   @override

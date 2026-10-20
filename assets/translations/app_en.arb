@@ -696,6 +696,8 @@
   "hideNsfw": "Hide NSFW",
   "hideNsfwDesc": "Keep adult titles out of feeds and search, and list your own adult entries under Hidden Media.",
   "kitsuAccountOptions": "Kitsu account options",
+  "mangaBakaAccountOptions": "MangaBaka account options",
+  "@mangaBakaAccountOptions": {},
   "couldNotUpdateKitsuSettings": "Could not update your Kitsu settings",
   "titleCanonical": "Canonical",
   "titleRomanized": "Romanized",

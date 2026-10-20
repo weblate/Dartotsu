@@ -1077,6 +1077,9 @@ class AppLocalizationsHe extends AppLocalizations {
   String get kitsuAccountOptions => 'הגדרות חשבון Kitsu';
 
   @override
+  String get mangaBakaAccountOptions => 'MangaBaka account options';
+
+  @override
   String get couldNotUpdateKitsuSettings => 'אי אפשר לעדכן את הגדרות Kitsu שלך';
 
   @override

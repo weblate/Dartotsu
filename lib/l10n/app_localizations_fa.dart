@@ -1081,6 +1081,9 @@ class AppLocalizationsFa extends AppLocalizations {
   String get kitsuAccountOptions => 'گزینه‌های حساب Kitsu';
 
   @override
+  String get mangaBakaAccountOptions => 'MangaBaka account options';
+
+  @override
   String get couldNotUpdateKitsuSettings => 'تنظیمات Kitsu به‌روز نشد';
 
   @override

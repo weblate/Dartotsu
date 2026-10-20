@@ -1067,6 +1067,9 @@ class AppLocalizationsAm extends AppLocalizations {
   String get kitsuAccountOptions => 'የKitsu መለያ አማራጮች';
 
   @override
+  String get mangaBakaAccountOptions => 'MangaBaka account options';
+
+  @override
   String get couldNotUpdateKitsuSettings => 'የKitsu ቅንብሮችህን ማዘመን አልተቻለም';
 
   @override

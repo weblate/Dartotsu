@@ -1058,6 +1058,9 @@ class AppLocalizationsJa extends AppLocalizations {
   String get kitsuAccountOptions => 'Kitsuアカウントのオプション';
 
   @override
+  String get mangaBakaAccountOptions => 'MangaBaka account options';
+
+  @override
   String get couldNotUpdateKitsuSettings => 'Kitsuの設定を更新できなかったよ';
 
   @override

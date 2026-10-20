@@ -2171,6 +2171,12 @@ abstract class AppLocalizations {
   /// **'Kitsu account options'**
   String get kitsuAccountOptions;
 
+  /// No description provided for @mangaBakaAccountOptions.
+  ///
+  /// In en, this message translates to:
+  /// **'MangaBaka account options'**
+  String get mangaBakaAccountOptions;
+
   /// No description provided for @couldNotUpdateKitsuSettings.
   ///
   /// In en, this message translates to:

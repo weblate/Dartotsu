@@ -40,6 +40,7 @@ class ProfileHeaderDelegate extends SliverPersistentHeaderDelegate {
   final VoidCallback onFollowing;
   final VoidCallback onAnime;
   final VoidCallback onManga;
+  final VoidCallback? onSettings;
 
   ProfileHeaderDelegate({
     required this.service,
@@ -56,6 +57,7 @@ class ProfileHeaderDelegate extends SliverPersistentHeaderDelegate {
     required this.onFollowing,
     required this.onAnime,
     required this.onManga,
+    this.onSettings,
   });
 
   @override
@@ -70,6 +72,7 @@ class ProfileHeaderDelegate extends SliverPersistentHeaderDelegate {
       old.glass != glass ||
       old.isSelf != isSelf ||
       old.canFollow != canFollow ||
+      (old.onSettings == null) != (onSettings == null) ||
       old.seed != seed;
 
   @override
@@ -276,6 +279,12 @@ class ProfileHeaderDelegate extends SliverPersistentHeaderDelegate {
                 children: [
                   const AppBackButton(),
                   const Spacer(),
+                  if (onSettings != null)
+                    IconButton(
+                      tooltip: getString.accountOptions,
+                      icon: const Icon(Icons.settings_rounded),
+                      onPressed: onSettings,
+                    ),
                   if (url != null) _menu(context, url, u),
                 ],
               ),

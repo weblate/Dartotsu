@@ -1,12 +1,20 @@
 import '../../../../Core/Services/MediaService.dart';
 import '../../../../Core/Services/Model/Media.dart';
+import '../../../../Core/ThemeManager/LanguageSwitcher.dart';
 import '../Auth.dart';
+import 'Settings.dart';
 
 class AnilistSocialView extends SocialScreenView {
   AnilistSocialView(super.service);
 
   @override
   bool get hasStories => true;
+
+  @override
+  AccountOptions? get accountOptions => AccountOptions(
+    title: getString.anilistAccountOptions,
+    build: AnilistSettingsView.accountOptions,
+  );
 
   @override
   String? profileUrl(String name) => 'https://anilist.co/user/$name';

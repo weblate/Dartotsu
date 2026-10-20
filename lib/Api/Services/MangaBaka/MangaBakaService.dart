@@ -6,6 +6,7 @@ import 'Screens/Feed.dart';
 import 'Screens/Home.dart';
 import 'Screens/Search.dart';
 import 'Screens/Settings.dart';
+import 'Screens/Social.dart';
 import '../../../Screen/Settings/Sync/Data/SyncAdapter.dart';
 import 'Sync.dart';
 
@@ -55,6 +56,9 @@ class MangaBakaService extends MediaService {
 
   @override
   SettingsScreenView get settingsView => MangaBakaSettingsView();
+
+  @override
+  SocialScreenView get socialView => MangaBakaSocialView(this);
 
   @override
   Set<String> get linkHosts => const {'mangabaka.org', 'www.mangabaka.org'};

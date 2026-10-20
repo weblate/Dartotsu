@@ -41,6 +41,8 @@ class MangaBakaAuth extends AppController
   @override
   final user = Live<ServiceUser?>(null);
 
+  final rawProfile = Live<Map<String, dynamic>>(const {});
+
   late final MangaBakaClient client = MangaBakaClient(
     () => token.value,
     _refresh,
@@ -222,6 +224,7 @@ class MangaBakaAuth extends AppController
         chaptersRead: previous?.chaptersRead ?? 0,
         ratingSteps: (profile['rating_steps'] as num?)?.toInt() ?? 1,
       );
+      rawProfile.value = Map.unmodifiable(profile);
       user.value = parsed;
       PrefManager.setCustomType(
         _userCacheKey,
@@ -240,6 +243,7 @@ class MangaBakaAuth extends AppController
     MangaBakaPref.refresh.value = '';
     MangaBakaPref.expiresAt.value = 0;
     user.value = null;
+    rawProfile.value = const {};
     queries.clearLibrary();
     PrefManager.removeCustomVal(_userCacheKey, location: PrefLocation.CACHE);
   }

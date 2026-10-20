@@ -1097,6 +1097,9 @@ class AppLocalizationsFil extends AppLocalizations {
   String get kitsuAccountOptions => 'Mga opsyon ng Kitsu account';
 
   @override
+  String get mangaBakaAccountOptions => 'MangaBaka account options';
+
+  @override
   String get couldNotUpdateKitsuSettings =>
       'Hindi ma-update ang Kitsu settings mo';
 

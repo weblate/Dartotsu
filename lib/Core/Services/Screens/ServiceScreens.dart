@@ -295,6 +295,13 @@ abstract class SettingsScreenView {
 
 /// Profiles, activity feeds, likes, replies and stories. Every method returns
 /// plain data; `null` / empty results mean the service doesn't offer it.
+class AccountOptions {
+  final String title;
+  final List<Setting> Function(BuildContext) build;
+
+  const AccountOptions({required this.title, required this.build});
+}
+
 class SocialScreenView {
   final MediaService service;
 
@@ -303,6 +310,8 @@ class SocialScreenView {
   String? get currentUserId => service.auth?.user.value?.id.toString();
 
   bool get canInteract => service.isLoggedIn;
+
+  AccountOptions? get accountOptions => null;
 
   bool get hasStories => false;
 

@@ -1088,6 +1088,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get kitsuAccountOptions => 'Tùy chọn tài khoản Kitsu';
 
   @override
+  String get mangaBakaAccountOptions => 'MangaBaka account options';
+
+  @override
   String get couldNotUpdateKitsuSettings => 'Không cập nhật được cài đặt Kitsu';
 
   @override

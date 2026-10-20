@@ -1,5 +1,6 @@
 import '../../../../Api/Services/Anilist/Auth.dart';
 import '../../../../Api/Services/Simkl/Data/Mapper.dart';
+import '../../../../Api/Services/MangaBaka/IdLookup.dart';
 import '../../../../Api/Services/Simkl/IdLookup.dart';
 import '../../../../Logger.dart';
 import '../../../../Utils/Lru.dart';
@@ -89,6 +90,35 @@ class MediaIdResolver {
       ..kitsu = map[SyncKey.kitsu]
       ..simkl = map[SyncKey.simkl];
     if (!ids.known) await _byTitle(media, ids);
+    if (anime &&
+        (ids.anilist != null || ids.mal != null) &&
+        (ids.anilist == null ||
+            ids.mal == null ||
+            ids.kitsu == null ||
+            ids.simkl == null ||
+            ids.imdb == null)) {
+      final mapped = parseAniZipIds(await AniZipProvider.load(ids));
+      ids
+        ..anilist ??= mapped.anilist
+        ..mal ??= mapped.mal
+        ..kitsu ??= mapped.kitsu
+        ..simkl ??= mapped.simkl
+        ..tvdb ??= mapped.tvdb
+        ..tmdb ??= mapped.tmdb
+        ..imdb ??= mapped.imdb;
+    }
+    if (!anime &&
+        service.id != 'simkl' &&
+        (ids.anilist != null || ids.mal != null) &&
+        (ids.anilist == null || ids.mal == null || ids.mangabaka == null)) {
+      final mapped = await mangaBakaIdsFor(anilist: ids.anilist, mal: ids.mal);
+      if (mapped != null) {
+        ids
+          ..mangabaka ??= mapped.id
+          ..anilist ??= mapped.anilist
+          ..mal ??= mapped.mal;
+      }
+    }
     if (ids.simkl == null && ids.known) {
       try {
         ids.simkl = await simklIdFromRedirect(
@@ -103,13 +133,6 @@ class MediaIdResolver {
           tag: 'WATCH',
         );
       }
-    }
-    if (anime && ids.imdb == null && (ids.anilist != null || ids.mal != null)) {
-      final mapped = parseAniZipIds(await AniZipProvider.load(ids));
-      ids
-        ..tvdb ??= mapped.tvdb
-        ..tmdb ??= mapped.tmdb
-        ..imdb ??= mapped.imdb;
     }
     if (!anime && !ids.known && media.mainName.isNotEmpty) {
       ids.imdb = await imdbIdFor(

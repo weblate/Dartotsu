@@ -1095,6 +1095,9 @@ class AppLocalizationsHr extends AppLocalizations {
   String get kitsuAccountOptions => 'Opcije Kitsu računa';
 
   @override
+  String get mangaBakaAccountOptions => 'MangaBaka account options';
+
+  @override
   String get couldNotUpdateKitsuSettings =>
       'Ne mogu ažurirati tvoje Kitsu postavke';
 

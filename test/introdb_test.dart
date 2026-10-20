@@ -56,11 +56,18 @@ void main() {
   test('reads external ids from ani.zip mappings', () {
     final ids = parseAniZipIds({
       'mappings': {
+        'anilist_id': 1,
+        'mal_id': 1,
+        'kitsu_id': 1,
+        'simkl_id': 39,
         'thetvdb_id': 76885,
         'themoviedb_id': '30991',
         'imdb_id': 'tt0213338',
       },
     });
+    expect(ids.anilist, 1);
+    expect(ids.kitsu, 1);
+    expect(ids.simkl, 39);
     expect(ids.tvdb, 76885);
     expect(ids.tmdb, 30991);
     expect(ids.imdb, 'tt0213338');

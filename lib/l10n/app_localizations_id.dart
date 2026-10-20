@@ -1090,6 +1090,9 @@ class AppLocalizationsId extends AppLocalizations {
   String get kitsuAccountOptions => 'Opsi akun Kitsu';
 
   @override
+  String get mangaBakaAccountOptions => 'MangaBaka account options';
+
+  @override
   String get couldNotUpdateKitsuSettings =>
       'Pengaturan Kitsu-mu tidak bisa diperbarui';
 

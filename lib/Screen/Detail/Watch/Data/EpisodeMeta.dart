@@ -35,6 +35,7 @@ class MetaIds {
   int? mal;
   int? kitsu;
   int? simkl;
+  int? mangabaka;
   int? tvdb;
   int? tmdb;
   String? imdb;
@@ -45,6 +46,7 @@ class MetaIds {
     this.mal,
     this.kitsu,
     this.simkl,
+    this.mangabaka,
     this.tvdb,
     this.tmdb,
     this.imdb,
@@ -59,6 +61,7 @@ class MetaIds {
     mal: mal,
     kitsu: kitsu,
     simkl: simkl,
+    mangabaka: mangabaka,
     tvdb: tvdb,
     tmdb: tmdb,
     imdb: imdb,
@@ -70,6 +73,7 @@ class MetaIds {
     'mal': mal,
     'kitsu': kitsu,
     'simkl': simkl,
+    if (mangabaka != null) 'mangabaka': mangabaka,
     if (tvdb != null) 'tvdb': tvdb,
     if (tmdb != null) 'tmdb': tmdb,
     if (imdb != null) 'imdb': imdb,
@@ -81,6 +85,7 @@ class MetaIds {
         mal: (json['mal'] as num?)?.toInt(),
         kitsu: (json['kitsu'] as num?)?.toInt(),
         simkl: (json['simkl'] as num?)?.toInt(),
+        mangabaka: (json['mangabaka'] as num?)?.toInt(),
         tvdb: (json['tvdb'] as num?)?.toInt(),
         tmdb: (json['tmdb'] as num?)?.toInt(),
         imdb: json['imdb'] as String?,

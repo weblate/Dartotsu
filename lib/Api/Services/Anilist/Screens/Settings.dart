@@ -12,8 +12,6 @@ import '../../../../Utils/Functions/SnackBar.dart';
 import '../../../../Widgets/Components/ChoiceSheet.dart';
 import '../Data/Options.dart';
 import '../Data/User.dart';
-import '../../../../Screen/Settings/SubSettingsScreen.dart';
-import '../../../../Utils/Functions/NavigateToScreen.dart';
 import '../Prefs.dart';
 import '../Widgets/CustomListsSheet.dart';
 import '../../../../Widgets/Components/HomeLayoutSheet.dart';
@@ -27,7 +25,6 @@ class AnilistSettingsView extends SettingsScreenView {
     final auth = anilistAuth;
     final user = auth.user.value;
     final layout = AnilistPref.homeLayout.rx.value;
-    final viewer = user is AnilistUser ? user : null;
     final shown = layout.values.where((v) => v).length;
     return [
       Setting.header(getString.sectionLoading),
@@ -91,20 +88,6 @@ class AnilistSettingsView extends SettingsScreenView {
           tryFind<RefreshController>()?.all();
         },
       ),
-      Setting.normal(
-        name: getString.accountOptions,
-        description: getString.accountOptionsDesc,
-        icon: Icons.manage_accounts_rounded,
-        isActivity: true,
-        isVisible: viewer != null,
-        onClick: () => navigateToPage(
-          context,
-          SubSettingsScreen(
-            title: getString.anilistAccountOptions,
-            settings: _accountOptions,
-          ),
-        ),
-      ),
       Setting.header(getString.sectionPrivacy),
       Setting.switchType(
         name: getString.hidePrivateEntries,
@@ -132,7 +115,7 @@ class AnilistSettingsView extends SettingsScreenView {
     ];
   }
 
-  List<Setting> _accountOptions(BuildContext context) {
+  static List<Setting> accountOptions(BuildContext context) {
     final current = anilistAuth.user.value;
     if (current is! AnilistUser) return const [];
     final user = current;
