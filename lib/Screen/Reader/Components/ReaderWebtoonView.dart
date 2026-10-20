@@ -28,6 +28,9 @@ class _ReaderWebtoonViewState extends State<ReaderWebtoonView> {
   late final String _anchor;
   String? _lastId;
   bool _jumping = false;
+  String? _anchorId;
+  double _anchorTop = 0;
+  double? _lastPixels;
 
   ReaderState get state => widget.state;
 
@@ -43,6 +46,50 @@ class _ReaderWebtoonViewState extends State<ReaderWebtoonView> {
     SchedulerBinding.instance.addPostFrameCallback((_) {
       if (mounted) unawaited(_jump(state.current.value, quiet: true));
     });
+    SchedulerBinding.instance.addPostFrameCallback((_) => _holdAnchor());
+  }
+
+  void _holdAnchor() {
+    if (!mounted) return;
+    SchedulerBinding.instance.addPostFrameCallback((_) => _holdAnchor());
+    if (_jumping || !_controller.hasClients) {
+      _lastPixels = null;
+      return;
+    }
+    final box = context.findRenderObject();
+    if (box is! RenderBox || !box.hasSize) return;
+    final position = _controller.position;
+    final viewTop = box.localToGlobal(Offset.zero).dy;
+    if (_lastPixels != null && position.pixels == _lastPixels) {
+      final id = _anchorId;
+      final rb = id == null
+          ? null
+          : _keys[id]?.currentContext?.findRenderObject();
+      if (rb is RenderBox && rb.attached && rb.hasSize) {
+        final delta = rb.localToGlobal(Offset.zero).dy - viewTop - _anchorTop;
+        if (delta.abs() > 0.5) {
+          final target = (position.pixels + delta).clamp(
+            position.minScrollExtent,
+            position.maxScrollExtent,
+          );
+          _controller.jumpTo(target.toDouble());
+          _lastPixels = _controller.position.pixels;
+        }
+      }
+      return;
+    }
+    _lastPixels = position.pixels;
+    for (final item in state.items) {
+      final id = _id(item);
+      final rb = _keys[id]?.currentContext?.findRenderObject();
+      if (rb is! RenderBox || !rb.attached || !rb.hasSize) continue;
+      final top = rb.localToGlobal(Offset.zero).dy - viewTop;
+      if (top + rb.size.height > 1) {
+        _anchorId = id;
+        _anchorTop = top;
+        return;
+      }
+    }
   }
 
   @override
@@ -171,6 +218,7 @@ class _ReaderWebtoonViewState extends State<ReaderWebtoonView> {
       }
     } finally {
       _jumping = false;
+      _lastPixels = null;
     }
   }
 
