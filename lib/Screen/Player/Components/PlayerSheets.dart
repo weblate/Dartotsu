@@ -395,7 +395,7 @@ Future<void> showChaptersSheet(BuildContext context, PlayerState state) async {
 Future<void> showPictureSheet(BuildContext context, PlayerState state) async {
   Uint8List? frame;
   try {
-    frame = await state.engine.player.screenshot(format: 'image/png');
+    frame = await state.engine.captureFrame();
   } catch (e, st) {
     logError('PlayerSheets', e, st);
   }

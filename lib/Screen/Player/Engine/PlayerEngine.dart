@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:typed_data';
 import 'dart:io';
 
 import 'package:media_kit/media_kit.dart';
@@ -361,6 +362,33 @@ class PlayerEngine {
         logger('mpv ${e.key} failed: $err', tag: 'MPV');
       }
     }
+  }
+
+  Future<Uint8List?> captureFrame() async {
+    Uint8List? shot;
+    try {
+      shot = await player.screenshot(format: 'image/png');
+    } catch (e) {
+      logger('mpv screenshot failed: $e', tag: 'MPV');
+    }
+    final blank = shot == null || shot.length < 6000;
+    final mpv = native;
+    if (!blank || !Platform.isAndroid || mpv == null) return shot;
+    final decoder = decoderValue(settings.decoder);
+    try {
+      await mpv.setProperty('hwdec', 'mediacodec-copy');
+      await mpv.command(['seek', '0', 'relative+exact']);
+      await Future<void>.delayed(const Duration(milliseconds: 600));
+      final copy = await player.screenshot(format: 'image/png');
+      if (copy != null && copy.length >= 6000) shot = copy;
+    } catch (e) {
+      logger('mpv copy screenshot failed: $e', tag: 'MPV');
+    } finally {
+      try {
+        await mpv.setProperty('hwdec', decoder);
+      } catch (_) {}
+    }
+    return shot;
   }
 
   Timer? _redrawTimer;
