@@ -90,6 +90,8 @@ class _DetailScreenState extends BaseScreen<DetailScreen>
                 listLabel: state.listLabel,
                 sourceName: state.view.sourceName,
                 onEditList: state.mutations == null ? null : state.editList,
+                onFavourite: state.canFavourite ? state.toggleFavourite : null,
+                favouriteBusy: state.favouriteBusy,
                 onShareCard: () => unawaited(
                   showShareCard(
                     context,

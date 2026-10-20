@@ -43,6 +43,24 @@ class OfflineMutations extends Mutations {
       inner.saveEntry(media, exists: exists);
 
   @override
+  bool canFavourite(Media media) => inner.canFavourite(media);
+
+  @override
+  Future<bool> isFavourite(Media media) async {
+    if (await _isOffline()) return media.isFav;
+    return inner.isFavourite(media);
+  }
+
+  @override
+  Future<bool?> toggleFavourite(Media media) async {
+    if (await _isOffline()) {
+      snackString(getString.offlineModeOn);
+      return null;
+    }
+    return inner.toggleFavourite(media);
+  }
+
+  @override
   Future<void> deleteFromList(Media media) async {
     if (await _isOffline()) {
       find<PendingWrites>().record(service, media, PendingKind.delete);

@@ -12,6 +12,7 @@ import '../../../Core/ThemeManager/LanguageSwitcher.dart';
 
 part 'Mutations/DeleteFromList.dart';
 part 'Mutations/EditList.dart';
+part 'Mutations/Favourite.dart';
 part 'Mutations/SetProgress.dart';
 part 'Mutations/Social.dart';
 part 'Mutations/UpdateSettings.dart';
@@ -39,6 +40,12 @@ class AnilistMutations extends Mutations {
     }
     await _deleteFromList(media);
   }
+
+  @override
+  bool canFavourite(Media media) => true;
+
+  @override
+  Future<bool?> toggleFavourite(Media media) => _toggleFavourite(media);
 
   Future<bool?> toggleFollow(String userId) => _toggleFollow(userId);
 

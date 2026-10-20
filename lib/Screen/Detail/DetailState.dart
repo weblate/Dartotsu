@@ -10,6 +10,7 @@ import 'Watch/Data/Media/ResumeStore.dart';
 import '../../Utils/Animation/WidgetAnimations.dart';
 
 import 'package:flutter/material.dart';
+import '../../Logger.dart';
 
 import '../../Api/Discord/DiscordPresence.dart';
 import '../../Core/Services/MediaService.dart';
@@ -58,6 +59,7 @@ class DetailState extends ScreenState {
   Disposer? _sessionSub;
   final widgets = <ScreenWidget>[].liveList;
   final ready = false.live;
+  final favouriteBusy = false.live;
   late final tab = _initialTab().live;
   late final visited = <int>[0, tab.value].liveList;
 
@@ -219,6 +221,7 @@ class DetailState extends ScreenState {
           );
         }
         DetailCache.put(cacheKey, host.media.value);
+        unawaited(_loadFavourite());
         ResumeStore.noteProgress(
           view.service,
           host.media.value,
@@ -296,6 +299,43 @@ class DetailState extends ScreenState {
         curve: Curves.easeOut,
       ),
     );
+  }
+
+  bool get canFavourite {
+    final m = mutations;
+    return m != null && m.canFavourite(host.media.value);
+  }
+
+  Future<void> _loadFavourite() async {
+    final m = mutations;
+    final media = host.media.value;
+    if (m == null || !m.canFavourite(media)) return;
+    try {
+      final state = await m.isFavourite(media);
+      if (mounted && media.isFav != state) {
+        media.isFav = state;
+        host.media.refresh();
+      }
+    } catch (e, st) {
+      logError('Detail', e, st);
+    }
+  }
+
+  Future<void> toggleFavourite() async {
+    final m = mutations;
+    final media = host.media.value;
+    if (m == null || favouriteBusy.value) return;
+    favouriteBusy.value = true;
+    try {
+      final next = await m.toggleFavourite(media);
+      if (next != null) {
+        media.isFav = next;
+        DetailCache.put(cacheKey, media);
+        host.media.refresh();
+      }
+    } finally {
+      favouriteBusy.value = false;
+    }
   }
 
   void editList() {

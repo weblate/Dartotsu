@@ -79,6 +79,66 @@ class KitsuMutations extends Mutations {
     });
   }
 
+  @override
+  bool canFavourite(Media media) => parseKitsuMediaId(media.id) != null;
+
+  Future<int?> _favouriteId(Media media) async {
+    final ref = parseKitsuMediaId(media.id);
+    final user = userId();
+    if (ref == null || user == null) return null;
+    final res = await client.get(
+      '/favorites',
+      query: {
+        'filter[userId]': '$user',
+        'filter[itemId]': '${ref.$2}',
+        'filter[itemType]': ref.$1 ? 'Anime' : 'Manga',
+        'page[limit]': '1',
+      },
+    );
+    final data = (res['data'] as List?) ?? const [];
+    return data.isEmpty ? null : int.tryParse('${(data.first as Map)['id']}');
+  }
+
+  @override
+  Future<bool> isFavourite(Media media) async {
+    try {
+      return await _favouriteId(media) != null;
+    } on KitsuException {
+      return media.isFav;
+    }
+  }
+
+  @override
+  Future<bool?> toggleFavourite(Media media) async {
+    final ref = parseKitsuMediaId(media.id);
+    final user = userId();
+    if (ref == null || user == null) return null;
+    try {
+      final existing = await _favouriteId(media);
+      if (existing != null) {
+        await client.delete('/favorites/$existing');
+        return false;
+      }
+      await client.post('/favorites', {
+        'data': {
+          'type': 'favorites',
+          'relationships': {
+            'user': {
+              'data': {'type': 'users', 'id': '$user'},
+            },
+            'item': {
+              'data': {'type': ref.$1 ? 'anime' : 'manga', 'id': '${ref.$2}'},
+            },
+          },
+        },
+      });
+      return true;
+    } on KitsuException catch (e) {
+      snackString(getString.serviceError(getString.kitsu, e.message));
+      return null;
+    }
+  }
+
   Future<int?> _entryId(Media media, (bool, int) ref) async {
     if (media.userListId != null) return media.userListId;
     final user = userId();

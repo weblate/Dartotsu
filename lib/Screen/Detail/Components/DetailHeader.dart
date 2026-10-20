@@ -46,6 +46,8 @@ class DetailHeaderDelegate extends SliverPersistentHeaderDelegate {
   final String? sourceName;
   final VoidCallback? onEditList;
   final VoidCallback? onShareCard;
+  final VoidCallback? onFavourite;
+  final Live<bool>? favouriteBusy;
   final FocusNode? actionFocus;
   final GlobalKey<DpadRegionState>? toolbarLane;
   final GlobalKey<DpadRegionState>? actionsLane;
@@ -60,6 +62,8 @@ class DetailHeaderDelegate extends SliverPersistentHeaderDelegate {
     this.sourceName,
     this.onEditList,
     this.onShareCard,
+    this.onFavourite,
+    this.favouriteBusy,
     this.actionFocus,
     this.toolbarLane,
     this.actionsLane,
@@ -88,6 +92,7 @@ class DetailHeaderDelegate extends SliverPersistentHeaderDelegate {
       old.host != host ||
       old.onEditList != onEditList ||
       old.onShareCard != onShareCard ||
+      (old.onFavourite == null) != (onFavourite == null) ||
       old.actionFocus != actionFocus ||
       old.horizontalEdge != horizontalEdge;
 
@@ -241,6 +246,18 @@ class DetailHeaderDelegate extends SliverPersistentHeaderDelegate {
                       const Spacer(),
                       _reloadButton(context),
                       const SizedBox(width: 6),
+                      if (onFavourite != null) ...[
+                        _iconButton(
+                          context,
+                          m.isFav
+                              ? Icons.favorite_rounded
+                              : Icons.favorite_border_rounded,
+                          favouriteBusy?.value == true ? null : onFavourite,
+                          loading: favouriteBusy?.value == true,
+                          color: m.isFav ? context.colorScheme.error : null,
+                        ),
+                        const SizedBox(width: 6),
+                      ],
                       _iconButton(
                         context,
                         Icons.share_rounded,
@@ -444,6 +461,7 @@ class DetailHeaderDelegate extends SliverPersistentHeaderDelegate {
     IconData icon,
     VoidCallback? onTap, {
     bool loading = false,
+    Color? color,
   }) => IconButton.filledTonal(
     icon: loading
         ? const SizedBox(
@@ -451,7 +469,7 @@ class DetailHeaderDelegate extends SliverPersistentHeaderDelegate {
             height: 18,
             child: CircularProgressIndicator(strokeWidth: 2),
           )
-        : Icon(icon, size: 20),
+        : Icon(icon, size: 20, color: color),
     onPressed: onTap,
     visualDensity: VisualDensity.compact,
   );

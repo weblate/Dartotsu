@@ -215,6 +215,8 @@ query (\$id: Int, \$main: Boolean, \$page: Int) {
 
 String _mutationToggleFavourite(String kind) {
   final (arg, field) = switch (kind) {
+    'anime' => ('animeId', 'anime'),
+    'manga' => ('mangaId', 'manga'),
     'character' => ('characterId', 'characters'),
     'studio' => ('studioId', 'studios'),
     _ => ('staffId', 'staff'),

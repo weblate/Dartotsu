@@ -18,4 +18,10 @@ abstract class Mutations {
 
   /// Set watched/read progress, deriving the status transition.
   Future<void> setProgress(Media media, int progress);
+
+  bool canFavourite(Media media) => false;
+
+  Future<bool> isFavourite(Media media) async => media.isFav;
+
+  Future<bool?> toggleFavourite(Media media) async => null;
 }
