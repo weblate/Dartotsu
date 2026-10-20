@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../Screen/Settings/ServiceSettingsScreen.dart';
 import '../../Utils/Extensions/ContextExtensions.dart';
 import '../../Utils/Functions/NavigateToScreen.dart';
+import '../../Widgets/Components/ConnectedPair.dart';
 import '../../Widgets/Components/CustomBottomDialog.dart';
 import '../../Widgets/Components/LoadSvg.dart';
 import '../ThemeManager/LanguageSwitcher.dart';
@@ -69,47 +70,55 @@ class _ServiceRow extends StatelessWidget {
         ? (auth.user.value?.name ?? getString.signedIn)
         : getString.notSignedIn;
 
+    final onColor = selected ? scheme.onPrimaryContainer : scheme.onSurface;
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 3),
-      child: Material(
-        color: selected
-            ? scheme.primaryContainer.withValues(alpha: 0.5)
-            : scheme.surfaceContainerHigh,
-        borderRadius: BorderRadius.circular(18),
-        clipBehavior: Clip.antiAlias,
-        child: ListTile(
-          onTap: onTap,
-          leading: loadSvg(
-            service.iconPath,
-            width: 30,
-            height: 30,
-            color: scheme.primary,
-          ),
-          title: Text(
-            service.name,
-            style: context.textTheme.titleSmall?.copyWith(
-              fontWeight: FontWeight.w600,
-            ),
-          ),
-          subtitle: Text(
-            subtitle,
-            style: context.textTheme.labelSmall?.copyWith(
-              color: scheme.onSurfaceVariant,
-            ),
-          ),
-          trailing: Row(
-            mainAxisSize: MainAxisSize.min,
+      child: ConnectedPair(
+        height: 64,
+        color: selected ? scheme.primaryContainer : scheme.surfaceContainerHigh,
+        onTap: onTap,
+        icon: onSettings == null ? null : Icons.settings_rounded,
+        iconColor: scheme.onSurfaceVariant,
+        iconTooltip: getString.settings,
+        onIconTap: onSettings,
+        child: Padding(
+          padding: const EdgeInsetsDirectional.fromSTEB(16, 0, 16, 0),
+          child: Row(
             children: [
-              if (onSettings != null)
-                IconButton(
-                  icon: Icon(
-                    Icons.settings_rounded,
-                    color: scheme.onSurfaceVariant,
-                    size: 20,
-                  ),
-                  tooltip: getString.settings,
-                  onPressed: onSettings,
+              loadSvg(
+                service.iconPath,
+                width: 30,
+                height: 30,
+                color: scheme.primary,
+              ),
+              const SizedBox(width: 14),
+              Expanded(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      service.name,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: context.textTheme.titleSmall?.copyWith(
+                        fontWeight: FontWeight.w600,
+                        color: onColor,
+                      ),
+                    ),
+                    Text(
+                      subtitle,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: context.textTheme.labelSmall?.copyWith(
+                        color: selected
+                            ? onColor.withValues(alpha: 0.8)
+                            : scheme.onSurfaceVariant,
+                      ),
+                    ),
+                  ],
                 ),
+              ),
               if (selected)
                 Icon(Icons.check_circle_rounded, color: scheme.primary),
             ],

@@ -140,7 +140,7 @@ Widget Function(BuildContext, DpadFocusState, Widget) dpadIconFocus({
 class DpadTap extends StatelessWidget {
   final VoidCallback? onTap;
   final VoidCallback? onLongPress;
-  final BorderRadius? borderRadius;
+  final BorderRadiusGeometry? borderRadius;
   final bool ripple;
   final bool scale;
   final bool autofocus;
@@ -160,7 +160,9 @@ class DpadTap extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (onTap == null && onLongPress == null) return child;
-    final radius = borderRadius ?? BorderRadius.circular(14);
+    final radius = (borderRadius ?? BorderRadius.circular(14)).resolve(
+      Directionality.of(context),
+    );
     return DpadFocusable(
       onSelect: onTap,
       onLongSelect: onLongPress,
