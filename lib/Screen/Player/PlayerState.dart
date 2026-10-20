@@ -732,12 +732,18 @@ class PlayerState extends ScreenState {
 
   Future<void> _pickDefaultAudio() async {
     final priority = languageList(settings.audioLanguage);
-    if (priority.isEmpty) return;
-    final tracks = engine.audioTracks.value;
-    if (tracks.length < 2) return;
-    final pick = pickTrack(tracks, priority);
-    if (pick != null && pick.id != engine.activeAudio.value) {
+    var tracks = engine.audioTracks.value;
+    for (var i = 0; i < 20 && tracks.isEmpty; i++) {
+      await Future<void>.delayed(const Duration(milliseconds: 150));
+      tracks = engine.audioTracks.value;
+    }
+    if (tracks.isEmpty) return;
+    final pick = priority.isEmpty ? null : pickTrack(tracks, priority);
+    final active = engine.activeAudio.value;
+    if (pick != null && pick.id != active) {
       await engine.setAudio(pick.id);
+    } else if (active == null) {
+      await engine.setAudio(tracks.first.id);
     }
   }
 
