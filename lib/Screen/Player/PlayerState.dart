@@ -1246,14 +1246,21 @@ class PlayerState extends ScreenState {
   void holdStart() {
     if (!settings.holdToSpeed) return;
     _speedBeforeHold = engine.rate.value;
-    holdSpeedValue.value = settings.holdSpeed;
+    holdSpeedValue.value = double.parse(
+      (_speedBeforeHold * settings.holdSpeed)
+          .clamp(0.25, 16.0)
+          .toStringAsFixed(2),
+    );
     holdActive.value = true;
     unawaited(engine.setRate(holdSpeedValue.value));
   }
 
   void holdMove(double dx) {
     if (!holdActive.value) return;
-    final next = (settings.holdSpeed + dx * 0.01).clamp(0.25, 16.0);
+    final next = (_speedBeforeHold * (settings.holdSpeed + dx * 0.01)).clamp(
+      0.25,
+      16.0,
+    );
     holdSpeedValue.value = double.parse(next.toStringAsFixed(2));
     unawaited(engine.setRate(holdSpeedValue.value));
   }
