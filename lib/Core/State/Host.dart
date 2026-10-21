@@ -54,5 +54,19 @@ class AppRoot extends StatelessWidget {
     theme: theme,
     darkTheme: darkTheme,
     home: home,
+    onUnknownRoute: _ignoredRoute,
   );
 }
+
+Route<void> _ignoredRoute(RouteSettings settings) => PageRouteBuilder<void>(
+  settings: settings,
+  opaque: false,
+  transitionDuration: Duration.zero,
+  reverseTransitionDuration: Duration.zero,
+  pageBuilder: (context, _, _) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (context.mounted) Navigator.of(context).maybePop();
+    });
+    return const SizedBox.shrink();
+  },
+);
