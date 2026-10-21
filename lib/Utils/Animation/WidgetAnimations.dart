@@ -7,8 +7,10 @@ double get kAnimationSpeed => PrefName.animationSpeed.value;
 
 bool get animationsOff => kAnimationSpeed <= 0;
 
-Duration animDuration(int ms) =>
-    Duration(milliseconds: (ms * kAnimationSpeed).round());
+Duration animDuration(int ms) {
+  final scaled = (ms * kAnimationSpeed).round();
+  return Duration(milliseconds: ms > 0 && scaled < 1 ? 1 : scaled);
+}
 
 Duration animDelay(Duration delay) =>
     Duration(microseconds: (delay.inMicroseconds * kAnimationSpeed).round());
