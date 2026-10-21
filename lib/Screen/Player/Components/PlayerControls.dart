@@ -170,71 +170,89 @@ class PlayerControls extends StatelessWidget {
               child: locked || compact
                   ? const SizedBox(height: 40)
                   : Padding(
-                      padding: const EdgeInsets.only(top: 6),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            item.title,
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
-                            style: context.textTheme.titleSmall?.copyWith(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w700,
-                            ),
-                          ),
-                          if ((media?.mainName ?? item.subtitle) != null)
-                            Text(
-                              media?.mainName ?? item.subtitle!,
-                              maxLines: 1,
-                              overflow: TextOverflow.ellipsis,
-                              style: context.textTheme.bodySmall?.copyWith(
-                                color: Colors.white70,
-                              ),
-                            ),
-                        ],
+                padding: const EdgeInsets.only(top: 6),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      item.title,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: context.textTheme.titleSmall?.copyWith(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w700,
                       ),
                     ),
-            ),
-            if (!locked &&
-                compact &&
-                (state.videos.length > 1 || state.request.tracked))
-              _icon(
-                Icons.source_rounded,
-                () => _streams(context),
-                tooltip: getString.playerStreams,
-              ),
-            if (!locked && state.engine.videoVariants.value.length > 1)
-              _icon(
-                Icons.hd_rounded,
-                () => showQualitySheet(context, state),
-                tooltip: getString.playerQuality,
-              ),
-            if (!locked && !compact) ...[
-              if (state.items.length > 1)
-                _icon(
-                  Icons.video_collection_rounded,
-                  () => state.panel.value = !state.panel.value,
-                  tooltip: getString.playerEpisodes,
+                    if ((media?.mainName ?? item.subtitle) != null)
+                      Text(
+                        media?.mainName ?? item.subtitle!,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: context.textTheme.bodySmall?.copyWith(
+                          color: Colors.white70,
+                        ),
+                      ),
+                  ],
                 ),
-              _icon(
-                Icons.slow_motion_video_rounded,
-                () => showSpeedSheet(context, state),
-                tooltip: getString.playerSpeed,
               ),
-            ],
-            if (!compact)
+            ),
+            if (!locked)
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      if (compact &&
+                          (state.videos.length > 1 ||
+                              state.request.tracked))
+                        _icon(
+                          Icons.source_rounded,
+                              () => _streams(context),
+                          tooltip: getString.playerStreams,
+                        ),
+                      if (state.engine.videoVariants.value.length > 1)
+                        _icon(
+                          Icons.hd_rounded,
+                              () => showQualitySheet(context, state),
+                          tooltip: getString.playerQuality,
+                        ),
+                      if (!compact) ...[
+                        if (state.items.length > 1)
+                          _icon(
+                            Icons.video_collection_rounded,
+                                () => state.panel.value = !state.panel.value,
+                            tooltip: getString.playerEpisodes,
+                          ),
+                        _icon(
+                          Icons.slow_motion_video_rounded,
+                              () => showSpeedSheet(context, state),
+                          tooltip: getString.playerSpeed,
+                        ),
+                        _icon(
+                          Icons.lock_open_rounded,
+                          state.toggleLock,
+                          tooltip: getString.playerLock,
+                        ),
+                      ],
+                    ],
+                  ),
+                  _qualityTag(context),
+                ],
+              )
+            else if (!compact)
               _icon(
-                locked ? Icons.lock_rounded : Icons.lock_open_rounded,
+                Icons.lock_rounded,
                 state.toggleLock,
                 tooltip: getString.playerLock,
               ),
-            if (!locked) _qualityTag(context),
           ],
         ),
       ),
     );
   }
+
 
   Widget _qualityTag(BuildContext context) {
     final height = state.engine.videoHeight.value;
@@ -243,11 +261,6 @@ class PlayerControls extends StatelessWidget {
     final tag = Container(
       margin: const EdgeInsets.only(left: 4, top: 10),
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
-      decoration: BoxDecoration(
-        color: Colors.black.withValues(alpha: 0.45),
-        borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: Colors.white24),
-      ),
       child: Text(
         '${height}p',
         style: context.textTheme.labelMedium?.copyWith(
