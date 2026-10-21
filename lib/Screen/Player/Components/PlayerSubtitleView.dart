@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 
 import '../../../Core/Fonts/AppFonts.dart';
@@ -23,27 +24,28 @@ class PlayerSubtitleView extends StatelessWidget {
 
   Widget _build(BuildContext context) {
     fontsTick.value;
+
     final family = fontFamilyOf(settings.subtitleFont);
     final text = [
       for (final line in lines)
         if (line.trim().isNotEmpty) line.trim(),
     ].join('\n');
-    if (text.isEmpty || !settings.showSubtitle) return const SizedBox.shrink();
+
+    if (text.isEmpty || !settings.showSubtitle) {
+      return const SizedBox.shrink();
+    }
+
     final outline = Color(settings.subtitleOutlineColor);
-    return LayoutBuilder(
-      builder: (context, box) =>
-          _positioned(context, box, text, family, outline),
-    );
+
+    return _positioned(context, text, family, outline);
   }
 
   Widget _positioned(
-    BuildContext context,
-    BoxConstraints box,
-    String text,
-    String? family,
-    Color outline,
-  ) {
-    final scale = (box.maxWidth / 720).clamp(0.55, 1.0);
+      BuildContext context,
+      String text,
+      String? family,
+      Color outline,
+      ) {
     return AnimatedPositioned(
       duration: animDuration(200),
       left: 16,
@@ -52,42 +54,53 @@ class PlayerSubtitleView extends StatelessWidget {
       bottom: controlsVisible
           ? 110 + settings.subtitleBottomPadding.toDouble()
           : settings.subtitleBottomPadding.toDouble(),
-      child: RepaintBoundary(
-        child: IgnorePointer(
-          child: Align(
-            alignment: Alignment.bottomCenter,
-            child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-              decoration: BoxDecoration(
-                color: Color(settings.subtitleBackgroundColor),
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Text.rich(
-                TextSpan(children: subtitleSpans(text)),
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: settings.subtitleSize * scale,
-                  fontWeight:
-                      FontWeight.values[settings.subtitleWeight.clamp(0, 8)],
-                  fontFamily: family,
-                  color: Color(settings.subtitleColor),
-                  shadows: [
-                    Shadow(
-                      offset: const Offset(1, 1),
-                      blurRadius: 6,
-                      color: outline,
+      child: LayoutBuilder(
+        builder: (context, box) {
+          final scale = ((box.maxWidth + 32) / 720)
+              .clamp(0.55, 1.0);
+
+          return RepaintBoundary(
+            child: IgnorePointer(
+              child: Align(
+                alignment: Alignment.bottomCenter,
+                child: Container(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 10,
+                    vertical: 4,
+                  ),
+                  decoration: BoxDecoration(
+                    color: Color(settings.subtitleBackgroundColor),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Text.rich(
+                    TextSpan(children: subtitleSpans(text)),
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: settings.subtitleSize * scale,
+                      fontWeight: FontWeight.values[
+                      settings.subtitleWeight.clamp(0, 8)
+                      ],
+                      fontFamily: family,
+                      color: Color(settings.subtitleColor),
+                      shadows: [
+                        Shadow(
+                          offset: const Offset(1, 1),
+                          blurRadius: 6,
+                          color: outline,
+                        ),
+                        Shadow(
+                          offset: const Offset(-1, -1),
+                          blurRadius: 6,
+                          color: outline,
+                        ),
+                      ],
                     ),
-                    Shadow(
-                      offset: const Offset(-1, -1),
-                      blurRadius: 6,
-                      color: outline,
-                    ),
-                  ],
+                  ),
                 ),
               ),
             ),
-          ),
-        ),
+          );
+        },
       ),
     );
   }
