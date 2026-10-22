@@ -88,6 +88,49 @@ Future<String> _viaLoopback(Uri url, Uri callback, Duration timeout) async {
   }
 }
 
+Completer<String>? _pendingLink;
+String? _pendingRedirect;
+
+bool completeAuthLink(Uri uri) {
+  final pending = _pendingLink;
+  final redirect = _pendingRedirect;
+  if (pending == null || redirect == null || pending.isCompleted) return false;
+  final expected = Uri.parse(redirect);
+  if (uri.scheme != expected.scheme || uri.host != expected.host) return false;
+  pending.complete(uri.toString());
+  return true;
+}
+
+Future<String> _viaSession(String url, Uri callback, Duration timeout) async {
+  final link = Completer<String>();
+  _pendingLink = link;
+  _pendingRedirect = callback.toString();
+  final session = FlutterWebAuth2.authenticate(
+    url: url,
+    callbackUrlScheme: callback.scheme,
+    options: const FlutterWebAuth2Options(windowName: 'Dartotsu'),
+  );
+  unawaited(
+    session.then<void>(
+      (result) {
+        if (!link.isCompleted) link.complete(result);
+      },
+      onError: (Object e, StackTrace st) async {
+        await Future<void>.delayed(const Duration(seconds: 60));
+        if (!link.isCompleted) link.completeError(e, st);
+      },
+    ),
+  );
+  try {
+    return await link.future.timeout(timeout);
+  } finally {
+    if (identical(_pendingLink, link)) {
+      _pendingLink = null;
+      _pendingRedirect = null;
+    }
+  }
+}
+
 Future<String> browserAuthenticate({
   required String url,
   required String redirect,
@@ -95,9 +138,5 @@ Future<String> browserAuthenticate({
 }) {
   final callback = Uri.parse(redirect);
   if (_desktop) return _viaLoopback(Uri.parse(url), callback, timeout);
-  return FlutterWebAuth2.authenticate(
-    url: url,
-    callbackUrlScheme: callback.scheme,
-    options: const FlutterWebAuth2Options(windowName: 'Dartotsu'),
-  );
+  return _viaSession(url, callback, timeout);
 }

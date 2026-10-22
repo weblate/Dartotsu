@@ -8,6 +8,8 @@ import 'package:dartotsu_extension_bridge/ExtensionManager.dart';
 import 'package:flutter/widgets.dart';
 import 'package:receive_sharing_intent/receive_sharing_intent.dart';
 
+import '../../Core/Services/Api/BrowserAuth.dart';
+import '../../Core/Security/AppLock.dart';
 import '../../Core/Services/MediaServiceController.dart';
 import '../Extensions/StringExtensions.dart';
 import 'DeepLinkHandlers.dart';
@@ -35,9 +37,11 @@ class DeepLink {
 
   static void openFiles(List<String> paths) {
     if (paths.isEmpty) return;
-    final play = playFiles;
-    if (play == null) return snackString(getString.playerNotAvailable);
-    play(paths);
+    find<AppLock>().run(() {
+      final play = playFiles;
+      if (play == null) return snackString(getString.playerNotAvailable);
+      play(paths);
+    });
   }
 
   static void initVideoIntentListener(List<String> args) => openFiles(
@@ -124,6 +128,11 @@ class DeepLink {
   }
 
   static Future<void> _dispatch(Uri uri) async {
+    if (completeAuthLink(uri)) return;
+    if (find<AppLock>().locked.value) {
+      find<AppLock>().run(() => unawaited(_dispatch(uri)));
+      return;
+    }
     for (var i = 0; i < 50 && appContext == null; i++) {
       await Future<void>.delayed(const Duration(milliseconds: 100));
     }
