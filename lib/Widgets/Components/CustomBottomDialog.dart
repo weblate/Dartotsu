@@ -6,10 +6,9 @@ import '../../Utils/Nav/DpadLayers.dart';
 import 'ThemedContainer.dart';
 import '../../Utils/Animation/WidgetAnimations.dart';
 import '../../Utils/Extensions/ContextExtensions.dart';
-import '../../Utils/Functions/AppShortcuts.dart';
-import '../../Utils/Functions/NavigateToScreen.dart';
 import 'ScrollConfig.dart';
 import 'SheetDragScope.dart';
+import 'SheetHandle.dart';
 import '../../Core/State/State.dart';
 
 class CustomBottomDialog extends StatefulWidget {
@@ -78,57 +77,7 @@ class _CustomBottomDialogState extends State<CustomBottomDialog> {
             shrinkWrap: true,
             physics: const ClampingScrollPhysics(),
             children: [
-              SliverToBoxAdapter(
-                child: Padding(
-                  padding: const EdgeInsets.only(bottom: 12.0),
-                  child: IgnorePointer(
-                    ignoring: true,
-                    child: DpadFocusable(
-                      autofocus: true,
-                      entry: true,
-                      onSelect: () => popPage(context),
-                      child: Container(
-                        width: 40,
-                        height: 4,
-                        decoration: BoxDecoration(
-                          color: colorScheme.onSurface.withValues(alpha: 0.3),
-                          borderRadius: BorderRadius.circular(2),
-                        ),
-                      ),
-                      builder: (context, state, child) {
-                        final focus = state.focused && usingKeyboard;
-
-                        return Center(
-                          child: AnimatedContainer(
-                            duration: animDuration(120),
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 8,
-                              vertical: 6,
-                            ),
-                            decoration: BoxDecoration(
-                              color: focus
-                                  ? colorScheme.onSurface.withValues(
-                                      alpha: 0.08,
-                                    )
-                                  : Colors.transparent,
-                              borderRadius: BorderRadius.circular(12),
-                              border: focus
-                                  ? Border.all(
-                                      color: colorScheme.onSurface.withValues(
-                                        alpha: 0.25,
-                                      ),
-                                      width: 1,
-                                    )
-                                  : null,
-                            ),
-                            child: child,
-                          ),
-                        );
-                      },
-                    ),
-                  ),
-                ),
-              ),
+              const SliverToBoxAdapter(child: SheetHandle()),
               if (widget.title != null)
                 SliverToBoxAdapter(
                   child: Padding(

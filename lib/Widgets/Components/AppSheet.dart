@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../Utils/Extensions/ContextExtensions.dart';
 import 'SheetDragScope.dart';
+import 'SheetHandle.dart';
 import 'ThemedContainer.dart';
 
 class AppSheet extends StatelessWidget {
@@ -20,7 +21,6 @@ class AppSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final scheme = context.colorScheme;
     final sheet = ClipRRect(
       borderRadius: const BorderRadius.vertical(top: Radius.circular(28)),
       child: ThemedContainer(
@@ -36,15 +36,7 @@ class AppSheet extends StatelessWidget {
                 ? MainAxisSize.min
                 : MainAxisSize.max,
             children: [
-              Container(
-                width: 40,
-                height: 4,
-                margin: const EdgeInsets.only(bottom: 12),
-                decoration: BoxDecoration(
-                  color: scheme.onSurface.withValues(alpha: 0.3),
-                  borderRadius: BorderRadius.circular(2),
-                ),
-              ),
+              const SheetHandle(),
               if (title != null)
                 Padding(
                   padding: const EdgeInsetsDirectional.fromSTEB(24, 0, 12, 8),
