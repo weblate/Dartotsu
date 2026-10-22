@@ -88,7 +88,11 @@ class PlayerState extends ScreenState {
   final scrubbing = false.live;
   final scrubPosition = Duration.zero.live;
   final previewAt = Live<Duration?>(null);
-  final seekPreview = SeekPreview();
+  late final seekPreview = SeekPreview(
+    () => engine.player,
+    () => engine.previewTarget,
+    () => engine.previewHeaders,
+  );
   final commentsOpen = false.live;
   final chatOpen = false.live;
   final episodeTag = Live<int?>(null);
@@ -110,8 +114,6 @@ class PlayerState extends ScreenState {
   bool _busy = false;
   bool _closed = false;
   Disposer? _positionSub;
-  Disposer? _warmSub;
-  Timer? _stripTimer;
   Disposer? _completedSub;
   Disposer? _playingSub;
   int _generation = 0;
@@ -254,6 +256,7 @@ class PlayerState extends ScreenState {
   void onInit() {
     settings = _effective();
     engine = PlayerEngine(settings);
+    unawaited(SeekPreview.sweep());
     together.attach(this);
     fit.value = resizeFits[settings.resizeMode.clamp(0, 2)];
     index.value = request.index;
@@ -327,29 +330,18 @@ class PlayerState extends ScreenState {
     }
   }
 
-  void _warmPreview() {
-    if (!settings.seekPreview) return;
-    final target = engine.previewTarget;
-    if (target == null) return;
-    unawaited(seekPreview.open(target, engine.previewHeaders));
-  }
-
   void previewTo(Duration? at) {
     previewAt.value = at;
-    if (at == null || !settings.seekPreview) return;
-    final target = engine.previewTarget;
-    if (target == null || engine.duration.value <= Duration.zero) return;
-    if (seekPreview.strip.nearest(at, within: 1) != null) return;
-    unawaited(
-      seekPreview.open(target, engine.previewHeaders).then((_) {
-        if (previewAt.value != null) seekPreview.seek(previewAt.value!);
-      }),
-    );
+    if (at == null || !settings.seekPreview) {
+      seekPreview.stop();
+      return;
+    }
+    if (engine.duration.value <= Duration.zero) return;
+    seekPreview.seek(at);
   }
 
   void _bindEngine() {
     _positionSub?.dispose();
-    _warmSub?.dispose();
     _completedSub?.dispose();
     _playingSub?.dispose();
     _errorSub?.dispose();
@@ -357,21 +349,6 @@ class PlayerState extends ScreenState {
       if (e != null) unawaited(_recover());
     });
     _positionSub = engine.position.listen(_onPosition);
-    _warmSub = engine.duration.listen((d) {
-      if (d > Duration.zero) _warmPreview();
-    });
-    _stripTimer ??= Timer.periodic(const Duration(seconds: FrameStrip.step), (
-      _,
-    ) {
-      if (!settings.seekPreview ||
-          !engine.playing.value ||
-          engine.duration.value <= Duration.zero) {
-        return;
-      }
-      unawaited(
-        seekPreview.strip.capture(engine.player, engine.position.value),
-      );
-    });
     _completedSub = engine.completed.listen((done) {
       if (done) _onCompleted();
     });
@@ -435,10 +412,8 @@ class PlayerState extends ScreenState {
     _seekBackwardTimer?.cancel();
     _osdTimer?.cancel();
     _saveTimer?.cancel();
-    _stripTimer?.cancel();
     unawaited(_metaSub?.cancel());
     _positionSub?.dispose();
-    _warmSub?.dispose();
     _completedSub?.dispose();
     _playingSub?.dispose();
     _errorSub?.dispose();
