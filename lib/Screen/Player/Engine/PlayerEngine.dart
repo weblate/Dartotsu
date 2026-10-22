@@ -123,6 +123,18 @@ class PlayerEngine {
     PrefManager.setCustomVal<bool>(_softwareKey, value);
   }
 
+  static VideoController previewController(Player player) => VideoController(
+    player,
+    configuration: VideoControllerConfiguration(
+      hwdec: 'no',
+      enableHardwareAcceleration: !softwareRender,
+      vo: Platform.isAndroid ? 'gpu' : null,
+      androidAttachSurfaceAfterVideoParameters: Platform.isAndroid
+          ? true
+          : null,
+    ),
+  );
+
   PlayerEngine(this.settings) {
     final software = softwareRender;
     logger(

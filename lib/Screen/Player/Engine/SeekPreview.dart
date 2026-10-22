@@ -8,6 +8,7 @@ import 'package:media_kit_video/media_kit_video.dart';
 import '../../../Core/Preferences/StorageManager.dart';
 import '../../../Core/State/State.dart';
 import '../../../Logger.dart';
+import 'PlayerEngine.dart';
 
 class SeekPreview {
   static const _window = 30.0;
@@ -78,10 +79,7 @@ class SeekPreview {
       ),
     );
     _player = player;
-    _controller = VideoController(
-      player,
-      configuration: const VideoControllerConfiguration(hwdec: 'no'),
-    );
+    _controller = PlayerEngine.previewController(player);
     final native = player.platform;
     if (native is! NativePlayer) return;
     const props = {

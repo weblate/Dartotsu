@@ -8,6 +8,7 @@ import 'package:media_kit_video/media_kit_video.dart';
 import 'package:path/path.dart' as p;
 
 import '../Engine/MpvFiles.dart';
+import '../Engine/PlayerEngine.dart';
 import '../Engine/PlayerSettings.dart';
 import '../../../Core/State/State.dart';
 import '../../../Core/ThemeManager/LanguageSwitcher.dart';
@@ -71,19 +72,16 @@ class _ShaderPreviewState extends State<ShaderPreview> {
     _player = Player(
       configuration: const PlayerConfiguration(logLevel: MPVLogLevel.warn),
     );
-    _video = VideoController(
-      _player,
-      configuration: const VideoControllerConfiguration(hwdec: 'no'),
-    );
+    _video = PlayerEngine.previewController(_player);
     _plain = Player(
       configuration: const PlayerConfiguration(logLevel: MPVLogLevel.warn),
     );
-    _plainVideo = VideoController(
-      _plain,
-      configuration: const VideoControllerConfiguration(hwdec: 'no'),
-    );
+    _plainVideo = PlayerEngine.previewController(_plain);
     _log = _player.stream.log.listen((e) {
       final text = e.text.toLowerCase();
+      if (e.level == 'error') {
+        logger('Shader preview mpv: ${e.prefix} ${e.text.trim()}', tag: 'MPV');
+      }
       if ((e.level == 'error' || e.level == 'warn') &&
           (text.contains('shader') ||
               text.contains('glsl') ||
