@@ -36,26 +36,18 @@ Future<TrackChoice> confirmTracking(
   final host = context ?? appContext;
   if (host == null || !host.mounted) return TrackChoice.service;
   final remember = false.live;
-  final rememberSeries = false.live;
   final picked = await showCustomBottomDialog<TrackChoice>(
     host,
     _TrackSheet(
       anime: anime,
       name: name,
-      remember: remember,
-      rememberSeries: record == null ? null : rememberSeries,
+      remember: record == null ? null : remember,
     ),
   );
   final choice = picked ?? TrackChoice.none;
-  if (picked != null && record != null && rememberSeries.value) {
+  if (picked != null && record != null && remember.value) {
     record.trackChoice = choice.name;
     MediaRecords.save(service!, media!);
-  } else if (picked != null && remember.value) {
-    pref.value = switch (choice) {
-      TrackChoice.service => 'always',
-      TrackChoice.local => 'never',
-      TrackChoice.none => 'off',
-    };
   }
   return choice;
 }
@@ -63,14 +55,12 @@ Future<TrackChoice> confirmTracking(
 class _TrackSheet extends StatelessWidget {
   final bool anime;
   final String name;
-  final Live<bool> remember;
-  final Live<bool>? rememberSeries;
+  final Live<bool>? remember;
 
   const _TrackSheet({
     required this.anime,
     required this.name,
     required this.remember,
-    required this.rememberSeries,
   });
 
   @override
@@ -123,41 +113,24 @@ class _TrackSheet extends StatelessWidget {
               ),
             ),
             SizedBox(height: Dimens.gapSm),
-            Material(
-              color: Colors.transparent,
-              child: Watch(
-                () => Column(
-                  children: [
-                    if (rememberSeries != null)
-                      SwitchListTile(
-                        contentPadding: EdgeInsets.zero,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(14),
-                        ),
-                        title: Text(
-                          getString.trackProgressRememberSeries,
-                          style: context.textTheme.bodyMedium,
-                        ),
-                        value: rememberSeries!.value,
-                        onChanged: (v) => rememberSeries!.value = v,
-                      ),
-                    if (rememberSeries?.value != true)
-                      SwitchListTile(
-                        contentPadding: EdgeInsets.zero,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(14),
-                        ),
-                        title: Text(
-                          getString.trackProgressRemember,
-                          style: context.textTheme.bodyMedium,
-                        ),
-                        value: remember.value,
-                        onChanged: (v) => remember.value = v,
-                      ),
-                  ],
+            if (remember != null)
+              Material(
+                color: Colors.transparent,
+                child: Watch(
+                  () => SwitchListTile(
+                    contentPadding: EdgeInsets.zero,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(14),
+                    ),
+                    title: Text(
+                      getString.trackProgressRememberSeries,
+                      style: context.textTheme.bodyMedium,
+                    ),
+                    value: remember!.value,
+                    onChanged: (v) => remember!.value = v,
+                  ),
                 ),
               ),
-            ),
             SizedBox(height: Dimens.gapSm),
             FilledButton(
               onPressed: () => popPage(context, TrackChoice.service),
