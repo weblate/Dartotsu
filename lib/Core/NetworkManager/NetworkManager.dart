@@ -157,8 +157,16 @@ class NetworkManager extends AppController implements BridgeNetwork {
               'DoH failed for $host → fallback: $e',
               logLevel: LogLevel.error,
             );
-            final res = await InternetAddress.lookup(host);
-            return res.map((e) => e.address).toList();
+            try {
+              final res = await InternetAddress.lookup(host);
+              return res.map((e) => e.address).toList();
+            } catch (e) {
+              logger(
+                'DNS lookup failed for $host: $e',
+                logLevel: LogLevel.error,
+              );
+              return const <String>[];
+            }
           }
         },
       ),
