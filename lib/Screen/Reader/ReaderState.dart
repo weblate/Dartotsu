@@ -573,6 +573,8 @@ class ReaderState extends ScreenState {
       context,
       anime: false,
       name: media.mainName,
+      service: request.service,
+      media: media,
     );
     if (choice == TrackChoice.none) {
       _discard(units[chapterIndex]);

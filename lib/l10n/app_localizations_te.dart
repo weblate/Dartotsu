@@ -5324,6 +5324,9 @@ class AppLocalizationsTe extends AppLocalizations {
   String get trackProgressRemember => 'నా ఎంపిక గుర్తుంచుకో';
 
   @override
+  String get trackProgressRememberSeries => 'Remember for this series';
+
+  @override
   String get trackProgressYes => 'సేవ్';
 
   @override

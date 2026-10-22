@@ -5312,6 +5312,9 @@ class AppLocalizationsKn extends AppLocalizations {
   String get trackProgressRemember => 'ನನ್ನ ಆಯ್ಕೆ ನೆನಪಿಟ್ಟುಕೊ';
 
   @override
+  String get trackProgressRememberSeries => 'Remember for this series';
+
+  @override
   String get trackProgressYes => 'ಉಳಿಸು';
 
   @override

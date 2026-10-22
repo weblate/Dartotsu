@@ -5314,6 +5314,9 @@ class AppLocalizationsDa extends AppLocalizations {
   String get trackProgressRemember => 'Husk mit valg';
 
   @override
+  String get trackProgressRememberSeries => 'Remember for this series';
+
+  @override
   String get trackProgressYes => 'Gem';
 
   @override

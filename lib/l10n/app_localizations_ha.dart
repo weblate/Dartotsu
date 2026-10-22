@@ -5306,6 +5306,9 @@ class AppLocalizationsHa extends AppLocalizations {
   String get trackProgressRemember => 'Tuna zaɓina';
 
   @override
+  String get trackProgressRememberSeries => 'Remember for this series';
+
+  @override
   String get trackProgressYes => 'Ajiye';
 
   @override

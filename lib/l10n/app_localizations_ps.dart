@@ -5290,6 +5290,9 @@ class AppLocalizationsPs extends AppLocalizations {
   String get trackProgressRemember => 'زما ټاکنه په یاد وساته';
 
   @override
+  String get trackProgressRememberSeries => 'Remember for this series';
+
+  @override
   String get trackProgressYes => 'خوندي کړه';
 
   @override

@@ -5,8 +5,11 @@ import '../../../../Utils/Extensions/Responsive.dart';
 import '../../../../Utils/Functions/NavigateToScreen.dart';
 import '../../../../Widgets/Components/AppSheet.dart';
 import '../../../../Widgets/Components/CustomBottomDialog.dart';
+import '../../../../Core/Services/MediaService.dart';
+import '../../../../Core/Services/Model/Media.dart';
 import '../../../../Core/State/State.dart';
 import '../../../../Core/ThemeManager/LanguageSwitcher.dart';
+import 'Media/MediaRecord.dart';
 import 'WatchPrefs.dart';
 
 enum TrackChoice { service, local, none }
@@ -15,7 +18,16 @@ Future<TrackChoice> confirmTracking(
   BuildContext? context, {
   required bool anime,
   required String name,
+  MediaService? service,
+  Media? media,
 }) async {
+  final record = service != null && media != null
+      ? MediaRecords.of(service, media)
+      : null;
+  final stored = TrackChoice.values
+      .where((c) => c.name == record?.trackChoice)
+      .firstOrNull;
+  if (stored != null) return stored;
   final pref = anime ? trackAnimePref : trackMangaPref;
   final mode = pref.value;
   if (mode == 'always') return TrackChoice.service;
@@ -24,12 +36,21 @@ Future<TrackChoice> confirmTracking(
   final host = context ?? appContext;
   if (host == null || !host.mounted) return TrackChoice.service;
   final remember = false.live;
+  final rememberSeries = false.live;
   final picked = await showCustomBottomDialog<TrackChoice>(
     host,
-    _TrackSheet(anime: anime, name: name, remember: remember),
+    _TrackSheet(
+      anime: anime,
+      name: name,
+      remember: remember,
+      rememberSeries: record == null ? null : rememberSeries,
+    ),
   );
   final choice = picked ?? TrackChoice.none;
-  if (picked != null && remember.value) {
+  if (picked != null && record != null && rememberSeries.value) {
+    record.trackChoice = choice.name;
+    MediaRecords.save(service!, media!);
+  } else if (picked != null && remember.value) {
     pref.value = switch (choice) {
       TrackChoice.service => 'always',
       TrackChoice.local => 'never',
@@ -43,11 +64,13 @@ class _TrackSheet extends StatelessWidget {
   final bool anime;
   final String name;
   final Live<bool> remember;
+  final Live<bool>? rememberSeries;
 
   const _TrackSheet({
     required this.anime,
     required this.name,
     required this.remember,
+    required this.rememberSeries,
   });
 
   @override
@@ -103,17 +126,35 @@ class _TrackSheet extends StatelessWidget {
             Material(
               color: Colors.transparent,
               child: Watch(
-                () => SwitchListTile(
-                  contentPadding: EdgeInsets.zero,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(14),
-                  ),
-                  title: Text(
-                    getString.trackProgressRemember,
-                    style: context.textTheme.bodyMedium,
-                  ),
-                  value: remember.value,
-                  onChanged: (v) => remember.value = v,
+                () => Column(
+                  children: [
+                    if (rememberSeries != null)
+                      SwitchListTile(
+                        contentPadding: EdgeInsets.zero,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(14),
+                        ),
+                        title: Text(
+                          getString.trackProgressRememberSeries,
+                          style: context.textTheme.bodyMedium,
+                        ),
+                        value: rememberSeries!.value,
+                        onChanged: (v) => rememberSeries!.value = v,
+                      ),
+                    if (rememberSeries?.value != true)
+                      SwitchListTile(
+                        contentPadding: EdgeInsets.zero,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(14),
+                        ),
+                        title: Text(
+                          getString.trackProgressRemember,
+                          style: context.textTheme.bodyMedium,
+                        ),
+                        value: remember.value,
+                        onChanged: (v) => remember.value = v,
+                      ),
+                  ],
                 ),
               ),
             ),

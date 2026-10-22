@@ -5325,6 +5325,9 @@ class AppLocalizationsSi extends AppLocalizations {
   String get trackProgressRemember => 'මගේ තේරීම මතක තියාගන්න';
 
   @override
+  String get trackProgressRememberSeries => 'Remember for this series';
+
+  @override
   String get trackProgressYes => 'සේව් කරන්න';
 
   @override

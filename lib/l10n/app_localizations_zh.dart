@@ -5175,6 +5175,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get trackProgressRemember => '记住我的选择';
 
   @override
+  String get trackProgressRememberSeries => 'Remember for this series';
+
+  @override
   String get trackProgressYes => '保存';
 
   @override

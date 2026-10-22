@@ -5334,6 +5334,9 @@ class AppLocalizationsSw extends AppLocalizations {
   String get trackProgressRemember => 'Kumbuka chaguo langu';
 
   @override
+  String get trackProgressRememberSeries => 'Remember for this series';
+
+  @override
   String get trackProgressYes => 'Hifadhi';
 
   @override

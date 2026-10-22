@@ -5355,6 +5355,9 @@ class AppLocalizationsFr extends AppLocalizations {
   String get trackProgressRemember => 'Retenir mon choix';
 
   @override
+  String get trackProgressRememberSeries => 'Remember for this series';
+
+  @override
   String get trackProgressYes => 'Enregistrer';
 
   @override

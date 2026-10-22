@@ -5348,6 +5348,9 @@ class AppLocalizationsMl extends AppLocalizations {
   String get trackProgressRemember => 'എന്റെ തിരഞ്ഞെടുപ്പ് ഓർത്തുവയ്ക്കൂ';
 
   @override
+  String get trackProgressRememberSeries => 'Remember for this series';
+
+  @override
   String get trackProgressYes => 'സേവ്';
 
   @override

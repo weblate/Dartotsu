@@ -5278,6 +5278,9 @@ class AppLocalizationsFa extends AppLocalizations {
   String get trackProgressRemember => 'انتخابم رو یادت نگه دار';
 
   @override
+  String get trackProgressRememberSeries => 'Remember for this series';
+
+  @override
   String get trackProgressYes => 'ذخیره';
 
   @override

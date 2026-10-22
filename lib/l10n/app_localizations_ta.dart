@@ -5327,6 +5327,9 @@ class AppLocalizationsTa extends AppLocalizations {
   String get trackProgressRemember => 'என் தேர்வை நினைவுல வச்சுக்கோ';
 
   @override
+  String get trackProgressRememberSeries => 'Remember for this series';
+
+  @override
   String get trackProgressYes => 'சேமி';
 
   @override

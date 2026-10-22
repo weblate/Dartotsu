@@ -5279,6 +5279,9 @@ class AppLocalizationsBn extends AppLocalizations {
   String get trackProgressRemember => 'আমার পছন্দ মনে রাখো';
 
   @override
+  String get trackProgressRememberSeries => 'Remember for this series';
+
+  @override
   String get trackProgressYes => 'সেভ';
 
   @override

@@ -9707,6 +9707,12 @@ abstract class AppLocalizations {
   /// **'Remember my choice'**
   String get trackProgressRemember;
 
+  /// No description provided for @trackProgressRememberSeries.
+  ///
+  /// In en, this message translates to:
+  /// **'Remember for this series'**
+  String get trackProgressRememberSeries;
+
   /// No description provided for @trackProgressYes.
   ///
   /// In en, this message translates to:

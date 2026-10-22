@@ -773,9 +773,6 @@ class PlayerState extends ScreenState {
     if (at < const Duration(seconds: 3) || _recoveries >= 3) return;
     _recovering = true;
     final generation = _generation;
-    logger('Player recovering at ${at.inSeconds}s', tag: 'PLAYER');
-    try {
-      var index = videoIndex.value;
     await Future<void>.delayed(const Duration(milliseconds: 1200));
     final alive =
         engine.duration.value > Duration.zero &&
@@ -785,6 +782,9 @@ class PlayerState extends ScreenState {
       return;
     }
     _recoveries++;
+    logger('Player recovering at ${at.inSeconds}s', tag: 'PLAYER');
+    try {
+      var index = videoIndex.value;
       if (request.source != null && !item.hasFixedStreams) {
         final label = index < videos.length ? streamLabel(videos[index]) : null;
         final fresh = await fetchStreams(item);
@@ -1025,6 +1025,8 @@ class PlayerState extends ScreenState {
       context,
       anime: true,
       name: media.mainName,
+      service: request.service,
+      media: media,
     );
     _tracking = choice == TrackChoice.service;
     _localSave = choice != TrackChoice.none;

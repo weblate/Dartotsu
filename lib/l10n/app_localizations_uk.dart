@@ -5330,6 +5330,9 @@ class AppLocalizationsUk extends AppLocalizations {
   String get trackProgressRemember => 'Запам\'ятати мій вибір';
 
   @override
+  String get trackProgressRememberSeries => 'Remember for this series';
+
+  @override
   String get trackProgressYes => 'Зберегти';
 
   @override

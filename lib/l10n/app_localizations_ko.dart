@@ -5185,6 +5185,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get trackProgressRemember => '내 선택 기억하기';
 
   @override
+  String get trackProgressRememberSeries => 'Remember for this series';
+
+  @override
   String get trackProgressYes => '저장';
 
   @override

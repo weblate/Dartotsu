@@ -124,6 +124,7 @@ class MediaRecord {
   int? mangaUpdatesId;
   int tab;
   bool saveProgress;
+  String? trackChoice;
   Map<String, bool> skips;
   List<Bookmark> bookmarks;
 
@@ -139,6 +140,7 @@ class MediaRecord {
     this.mangaUpdatesId,
     this.tab = 0,
     this.saveProgress = true,
+    this.trackChoice,
     Map<String, bool>? skips,
     List<Bookmark>? bookmarks,
   }) : skips = skips ?? {},
@@ -163,6 +165,7 @@ class MediaRecord {
     'mangaUpdatesId': mangaUpdatesId,
     'tab': tab,
     'saveProgress': saveProgress,
+    'trackChoice': trackChoice,
     'skips': skips,
     'bookmarks': [for (final b in bookmarks) b.toJson()],
   };
@@ -198,6 +201,7 @@ class MediaRecord {
       mangaUpdatesId: (json['mangaUpdatesId'] as num?)?.toInt(),
       tab: (json['tab'] as num?)?.toInt() ?? 0,
       saveProgress: json['saveProgress'] != false,
+      trackChoice: json['trackChoice'] as String?,
       skips: {
         for (final e in _entries(json['skips']))
           if (e.value is bool) '${e.key}': e.value as bool,

@@ -2578,6 +2578,8 @@
   "@trackProgressManga": {"placeholders": {"name": {"type": "String"}}},
   "trackProgressRemember": "Remember my choice",
   "@trackProgressRemember": {},
+  "trackProgressRememberSeries": "Remember for this series",
+  "@trackProgressRememberSeries": {},
   "trackProgressYes": "Save",
   "@trackProgressYes": {},
   "trackProgressReset": "Save progress prompt reset for this type, it will ask again",

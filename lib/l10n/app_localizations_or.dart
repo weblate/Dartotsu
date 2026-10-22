@@ -5315,6 +5315,9 @@ class AppLocalizationsOr extends AppLocalizations {
   String get trackProgressRemember => 'ମୋ ପସନ୍ଦ ମନେ ରଖନ୍ତୁ';
 
   @override
+  String get trackProgressRememberSeries => 'Remember for this series';
+
+  @override
   String get trackProgressYes => 'ସେଭ୍ କରନ୍ତୁ';
 
   @override

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../../../Core/Services/Model/Media.dart';
-import '../../../Core/Services/Screens/DetailHost.dart';
+import '../../../Core/Services/MediaServiceController.dart';
 import '../../../Utils/Extensions/ContextExtensions.dart';
 import '../../../Utils/Extensions/Responsive.dart';
 import '../../../Utils/Function.dart';
@@ -15,6 +15,7 @@ import '../../../Widgets/Components/Clickable.dart';
 import '../../../Widgets/Components/ImageSheet.dart';
 import 'StatusChip.dart';
 import '../../../Core/State/State.dart';
+import '../Watch/Data/Media/MediaRecord.dart';
 import '../Watch/Data/WatchPrefs.dart';
 import '../../../Utils/Functions/SnackBar.dart';
 import '../../../Core/ThemeManager/LanguageSwitcher.dart';
@@ -422,6 +423,9 @@ class DetailHeaderDelegate extends SliverPersistentHeaderDelegate {
               onLongPress: () {
                 HapticFeedback.mediumImpact();
                 (m.isAnime ? trackAnimePref : trackMangaPref).value = 'ask';
+                final service = find<MediaServiceController>().currentService.value;
+                MediaRecords.of(service, m).trackChoice = null;
+                MediaRecords.save(service, m);
                 snackString(getString.trackProgressReset);
               },
               icon: Icon(

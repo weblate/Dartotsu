@@ -5295,6 +5295,9 @@ class AppLocalizationsMr extends AppLocalizations {
   String get trackProgressRemember => 'माझी निवड लक्षात ठेव';
 
   @override
+  String get trackProgressRememberSeries => 'Remember for this series';
+
+  @override
   String get trackProgressYes => 'सेव्ह';
 
   @override

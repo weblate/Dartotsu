@@ -5290,6 +5290,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get trackProgressRemember => 'Nhớ lựa chọn của tôi';
 
   @override
+  String get trackProgressRememberSeries => 'Remember for this series';
+
+  @override
   String get trackProgressYes => 'Lưu';
 
   @override

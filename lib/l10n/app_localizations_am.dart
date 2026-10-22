@@ -5223,6 +5223,9 @@ class AppLocalizationsAm extends AppLocalizations {
   String get trackProgressRemember => 'ምርጫዬን አስታውስ';
 
   @override
+  String get trackProgressRememberSeries => 'Remember for this series';
+
+  @override
   String get trackProgressYes => 'አስቀምጥ';
 
   @override

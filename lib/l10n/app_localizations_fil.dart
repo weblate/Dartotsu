@@ -5339,6 +5339,9 @@ class AppLocalizationsFil extends AppLocalizations {
   String get trackProgressRemember => 'Tandaan ang pinili ko';
 
   @override
+  String get trackProgressRememberSeries => 'Remember for this series';
+
+  @override
   String get trackProgressYes => 'I-save';
 
   @override

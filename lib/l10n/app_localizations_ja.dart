@@ -5182,6 +5182,9 @@ class AppLocalizationsJa extends AppLocalizations {
   String get trackProgressRemember => '選択を覚えておく';
 
   @override
+  String get trackProgressRememberSeries => 'Remember for this series';
+
+  @override
   String get trackProgressYes => '保存';
 
   @override
