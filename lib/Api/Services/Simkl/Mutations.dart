@@ -115,6 +115,7 @@ class SimklMutations extends Mutations {
     if (ref == null) return;
     try {
       await client.post('/sync/history/remove', _body(ref.$1, ref.$2));
+      clearListEntry(media);
       _done();
     } on SimklException catch (e) {
       snackString(getString.serviceError(getString.simkl, e.message));

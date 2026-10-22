@@ -63,6 +63,7 @@ class MalMutations extends Mutations {
       await client.delete(
         '/${ref.$1 ? 'anime' : 'manga'}/${ref.$2}/my_list_status',
       );
+      clearListEntry(media);
       _done();
     } on MalException catch (e) {
       snackString(getString.serviceError(getString.mal, e.message));

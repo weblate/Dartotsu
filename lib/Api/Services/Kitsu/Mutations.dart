@@ -57,6 +57,7 @@ class KitsuMutations extends Mutations {
     try {
       final entry = await _entryId(media, ref);
       if (entry != null) await client.delete('/library-entries/$entry');
+      clearListEntry(media);
       _done();
     } on KitsuException catch (e) {
       snackString(getString.serviceError(getString.kitsu, e.message));

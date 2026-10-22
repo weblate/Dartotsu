@@ -35,6 +35,7 @@ class LocalMutations extends Mutations {
       return;
     }
     _store(media).remove(media.id);
+    clearListEntry(media);
     _signal();
   }
 

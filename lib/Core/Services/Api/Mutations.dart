@@ -25,3 +25,14 @@ abstract class Mutations {
 
   Future<bool?> toggleFavourite(Media media) async => null;
 }
+
+void clearListEntry(Media media) {
+  media.userListId = null;
+  media.userStatus = null;
+  media.userProgress = null;
+  media.userScore = null;
+  media.userRepeat = 0;
+  media.userUpdatedAt = null;
+  media.userStartedAt = null;
+  media.userCompletedAt = null;
+}

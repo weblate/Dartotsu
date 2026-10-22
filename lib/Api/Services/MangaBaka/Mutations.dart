@@ -52,6 +52,7 @@ class MangaBakaMutations extends Mutations {
   Future<void> deleteFromList(Media media) async {
     try {
       await client.delete('/my/library/${media.id}');
+      clearListEntry(media);
       _done();
     } on MangaBakaException catch (e) {
       snackString(getString.serviceError(getString.mangaBaka, e.message));
