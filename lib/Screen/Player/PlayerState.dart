@@ -352,6 +352,10 @@ class PlayerState extends ScreenState {
     _warmSub?.dispose();
     _completedSub?.dispose();
     _playingSub?.dispose();
+    _errorSub?.dispose();
+    _errorSub = engine.error.listen((e) {
+      if (e != null) unawaited(_recover());
+    });
     _positionSub = engine.position.listen(_onPosition);
     _warmSub = engine.duration.listen((d) {
       if (d > Duration.zero) _warmPreview();
@@ -437,6 +441,7 @@ class PlayerState extends ScreenState {
     _warmSub?.dispose();
     _completedSub?.dispose();
     _playingSub?.dispose();
+    _errorSub?.dispose();
     _saveProgress(force: true);
     _commitWatched();
     unawaited(PlayerPip.setAuto(false));
@@ -568,6 +573,8 @@ class PlayerState extends ScreenState {
       _skipped.clear();
       _watchedMarked = false;
       _lastSave = -1;
+      _lastGood = Duration.zero;
+      _recoveries = 0;
       await selectStream(chosen, fromStart: false);
     } catch (e, st) {
       if (generation != _generation) return;
@@ -771,7 +778,46 @@ class PlayerState extends ScreenState {
     }
   }
 
+  Disposer? _errorSub;
+  Duration _lastGood = Duration.zero;
+  int _recoveries = 0;
+  bool _recovering = false;
+
+  Future<void> _recover() async {
+    if (_closed || _recovering || loading.value) return;
+    final at = _lastGood;
+    if (at < const Duration(seconds: 3) || _recoveries >= 3) return;
+    _recovering = true;
+    _recoveries++;
+    final generation = _generation;
+    logger('Player recovering at ${at.inSeconds}s', tag: 'PLAYER');
+    try {
+      var index = videoIndex.value;
+      if (request.source != null && !item.hasFixedStreams) {
+        final label = index < videos.length ? streamLabel(videos[index]) : null;
+        final fresh = await fetchStreams(item);
+        if (generation != _generation || _closed) return;
+        if (fresh.isNotEmpty) {
+          videos.value = fresh;
+          index = (label == null ? null : bestStreamIndex(fresh, label)) ?? 0;
+        }
+      }
+      await selectStream(index, startAt: at);
+    } catch (e, st) {
+      logError('PlayerState', e, st);
+    } finally {
+      _recovering = false;
+    }
+  }
+
   void _onPosition(Duration position) {
+    if (position > const Duration(seconds: 2) && !loading.value) {
+      if (_recoveries > 0 &&
+          position > _lastGood + const Duration(seconds: 30)) {
+        _recoveries = 0;
+      }
+      if (_recoveries == 0 || position > _lastGood) _lastGood = position;
+    }
     final seconds = position.inSeconds.toDouble();
     SkipStamp? current;
     for (final s in stamps) {
