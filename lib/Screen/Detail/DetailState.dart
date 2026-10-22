@@ -346,7 +346,7 @@ class DetailState extends ScreenState {
       media: host.media.value,
       view: view.listEditor,
       mutations: m,
-      onSaved: load,
+      onSaved: () => load(force: true),
     );
   }
 
