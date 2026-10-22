@@ -769,11 +769,19 @@ class PlayerState extends ScreenState {
     final at = _lastGood;
     if (at < const Duration(seconds: 3) || _recoveries >= 3) return;
     _recovering = true;
-    _recoveries++;
     final generation = _generation;
     logger('Player recovering at ${at.inSeconds}s', tag: 'PLAYER');
     try {
       var index = videoIndex.value;
+    await Future<void>.delayed(const Duration(milliseconds: 1200));
+    final alive =
+        engine.duration.value > Duration.zero &&
+        engine.position.value > const Duration(seconds: 1);
+    if (alive || _closed || loading.value || generation != _generation) {
+      _recovering = false;
+      return;
+    }
+    _recoveries++;
       if (request.source != null && !item.hasFixedStreams) {
         final label = index < videos.length ? streamLabel(videos[index]) : null;
         final fresh = await fetchStreams(item);
