@@ -5154,6 +5154,28 @@ class AppLocalizationsTe extends AppLocalizations {
   String get readerFilterSepia => 'సెపియా';
 
   @override
+  String get readerFilterQuality => 'Image filter quality';
+
+  @override
+  String get readerFilterQualityNone => 'None (Nearest neighbor)';
+
+  @override
+  String get readerFilterQualityLow => 'Low (Bilinear)';
+
+  @override
+  String get readerFilterQualityMedium => 'Medium (Trilinear)';
+
+  @override
+  String get readerFilterQualityHigh => 'High (Bicubic)';
+
+  @override
+  String get readerFilterQualityLanczos => 'Lanczos (Rust high quality)';
+
+  @override
+  String get readerFilterQualityDesc =>
+      'Resampling quality used when scaling manga pages';
+
+  @override
   String get readerDim => 'డిమ్';
 
   @override

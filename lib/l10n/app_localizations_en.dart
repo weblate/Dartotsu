@@ -5140,7 +5140,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get readerFilterQualityLanczos => 'Lanczos (Rust high quality)';
 
   @override
-  String get readerFilterQualityDesc => 'Resampling quality used when scaling manga pages';
+  String get readerFilterQualityDesc =>
+      'Resampling quality used when scaling manga pages';
 
   @override
   String get readerDim => 'Dim';
