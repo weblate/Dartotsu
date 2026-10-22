@@ -77,6 +77,26 @@ class ReaderImageLoader {
     }
   }
 
+  static Future<File?> fileFor(PageUrl page) async {
+    try {
+      if (_local(page.url)) {
+        final file = File(page.url);
+        return await file.exists() ? file : null;
+      }
+      _remember(page);
+      final cached = await manager.getFileFromCache(page.url);
+      if (cached != null && await cached.file.exists()) return cached.file;
+      final downloaded = await manager.downloadFile(
+        page.url,
+        authHeaders: page.headers,
+      );
+      return downloaded.file;
+    } catch (e, st) {
+      logError('ReaderImageLoader.fileFor', e, st);
+      return null;
+    }
+  }
+
   static Future<void> forget(PageUrl page) async {
     _errors.remove(page.url);
     if (_local(page.url)) return;

@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:dartotsu_extension_bridge/dartotsu_extension_bridge.dart';
+import 'package:dartotsu_image_rust/dartotsu_image_rust.dart';
 import 'package:flutter/material.dart';
 
 import '../Engine/BorderCrop.dart';
@@ -12,10 +13,12 @@ import '../../../Utils/Extensions/ContextExtensions.dart';
 
 class ReaderCropScope extends InheritedWidget {
   final bool enabled;
+  final String quality;
 
   const ReaderCropScope({
     super.key,
     required this.enabled,
+    this.quality = 'medium',
     required super.child,
   });
 
@@ -23,8 +26,13 @@ class ReaderCropScope extends InheritedWidget {
       context.dependOnInheritedWidgetOfExactType<ReaderCropScope>()?.enabled ??
       false;
 
+  static String qualityOf(BuildContext context) =>
+      context.dependOnInheritedWidgetOfExactType<ReaderCropScope>()?.quality ??
+      'medium';
+
   @override
-  bool updateShouldNotify(ReaderCropScope old) => old.enabled != enabled;
+  bool updateShouldNotify(ReaderCropScope old) =>
+      old.enabled != enabled || old.quality != quality;
 }
 
 class ReaderImage extends StatefulWidget {
@@ -69,7 +77,7 @@ class _ReaderImageState extends State<ReaderImage> {
     _syncCrop();
   }
 
-  ImageProvider _provider(BuildContext context) {
+  ImageProvider _baseProvider(BuildContext context) {
     final media = MediaQuery.of(context);
     final decode = widget.fit == BoxFit.fitWidth
         ? (media.size.width * media.devicePixelRatio).round().clamp(320, 2400)
@@ -79,6 +87,34 @@ class _ReaderImageState extends State<ReaderImage> {
         ? base
         : ResizeImage(base, width: decode, policy: ResizeImagePolicy.fit);
   }
+
+  ImageProvider _provider(BuildContext context, String quality) {
+    if (quality != 'lanczos' || !DartotsuImageRust.isSupported) {
+      return _baseProvider(context);
+    }
+    final media = MediaQuery.of(context);
+    final width = (media.size.width * media.devicePixelRatio).round();
+    final height = (media.size.height * media.devicePixelRatio).round();
+    final (maxW, maxH) = switch (widget.fit) {
+      BoxFit.fitWidth => (width, 0),
+      BoxFit.fitHeight => (0, height),
+      _ => (width, height),
+    };
+    return DartotsuScaledImage(
+      id: widget.page.url,
+      loadFile: () => ReaderImageLoader.fileFor(widget.page),
+      maxWidth: maxW,
+      maxHeight: maxH,
+    );
+  }
+
+  FilterQuality _filterQuality(String quality) => switch (quality) {
+    'none' => FilterQuality.none,
+    'low' => FilterQuality.low,
+    'high' => FilterQuality.high,
+    'lanczos' => FilterQuality.high,
+    _ => FilterQuality.medium,
+  };
 
   void _detachCrop() {
     final listener = _cropListener;
@@ -100,7 +136,7 @@ class _ReaderImageState extends State<ReaderImage> {
       return;
     }
     crop.value = null;
-    final stream = _provider(
+    final stream = _baseProvider(
       context,
     ).resolve(createLocalImageConfiguration(context));
     late final ImageStreamListener listener;
@@ -146,8 +182,10 @@ class _ReaderImageState extends State<ReaderImage> {
 
   Future<void> _retry() async {
     _shown = false;
+    final scaled = _provider(context, ReaderCropScope.qualityOf(context));
     await ReaderImageLoader.forget(widget.page);
     if (!mounted) return;
+    await scaled.evict();
     attempt.value++;
     _watch();
   }
@@ -156,7 +194,9 @@ class _ReaderImageState extends State<ReaderImage> {
   Widget build(BuildContext context) => Watch(() => _build(context));
 
   Widget _build(BuildContext context) {
-    final provider = _provider(context);
+    final quality = ReaderCropScope.qualityOf(context);
+    final provider = _provider(context, quality);
+    final fQuality = _filterQuality(quality);
     final info = crop.value;
     final rect = info?.rect;
     final image = Image(
@@ -166,7 +206,7 @@ class _ReaderImageState extends State<ReaderImage> {
       width: rect == null ? widget.width : info!.width,
       height: rect == null ? widget.height : info!.height,
       gaplessPlayback: true,
-      filterQuality: FilterQuality.medium,
+      filterQuality: fQuality,
       frameBuilder: (context, child, frame, sync) {
         if (frame == null) return _box(_loading());
         _shown = true;

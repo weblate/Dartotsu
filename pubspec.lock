@@ -339,6 +339,15 @@ packages:
       url: "https://github.com/aayush2622/DartotsuExtensionBridge.git"
     source: git
     version: "0.0.5"
+  dartotsu_image_rust:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: main
+      resolved-ref: c5d785b1566d17a3f680574d203564ee500faf5b
+      url: "https://github.com/itsmechinmoy/dartotsu_image_rust.git"
+    source: git
+    version: "0.2.0"
   dartx:
     dependency: transitive
     description:
