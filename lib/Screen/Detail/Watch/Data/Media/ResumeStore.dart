@@ -51,8 +51,8 @@ class ResumeEntry {
 
   String get mediaTitle =>
       (media['userPreferredName'] ??
-              media['nameRomaji'] ??
               media['name'] ??
+              media['nameRomaji'] ??
               mediaId)
           as String;
 

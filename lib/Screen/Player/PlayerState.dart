@@ -495,6 +495,7 @@ class PlayerState extends ScreenState {
     int? presetIndex,
   }) async {
     if (next < 0 || next >= items.length) return;
+    final key = items[next].key;
     final generation = ++_generation;
     cancelCountdown();
     _saveProgress(force: true);
@@ -544,6 +545,8 @@ class PlayerState extends ScreenState {
         return;
       }
       _commitWatched();
+      final moved = items.indexWhere((e) => e.key == key);
+      if (moved >= 0) next = moved;
       index.value = next;
       chunk.value = null;
       _tagEpisode(next);
