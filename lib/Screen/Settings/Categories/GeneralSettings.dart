@@ -11,10 +11,19 @@ import '../../../Model/Setting.dart';
 import '../../../Utils/Extensions/ContextExtensions.dart';
 import '../../../Utils/Functions/LinkSettings.dart';
 import '../../../Widgets/Components/CustomBottomDialog.dart';
+import '../../Lock/PasscodeSheets.dart';
 import '../Widgets/Backup/BackupSheet.dart';
 import '../../../Core/State/State.dart';
 
 List<Setting> generalSettings(BuildContext context) => [
+  Setting.switchType(
+    name: getString.appLock,
+    description: getString.appLockDesc,
+    icon: Icons.lock_outline_rounded,
+    isChecked: PrefName.appLockHash.rx.value.isNotEmpty,
+    onSwitchChange: (on) =>
+        on ? showPasscodeSetup(context) : showPasscodeRemove(context),
+  ),
   Setting.normal(
     name: getString.linkOpenInApp,
     description: getString.linkOpenInAppDesc,

@@ -13,6 +13,7 @@ import 'Api/Services/Kitsu/Auth.dart';
 import 'Api/Services/MangaBaka/Auth.dart';
 import 'Api/Updater/AppUpdater.dart';
 import 'Core/Offline/NetStatus.dart';
+import 'Core/Security/AppLock.dart';
 import 'Core/Offline/OfflineMode.dart';
 import 'Core/Offline/PendingWrites.dart';
 import 'Core/Downloads/DownloadEngine.dart';
@@ -52,6 +53,7 @@ class DI {
     unawaited(put(NotificationManager(), permanent: true).initialize());
 
     // Lazy — resolved on demand.
+    lazyPut<AppLock>(AppLock.new);
     lazyPut<ThemeController>(ThemeController.new);
     lazyPut<CardStyleController>(CardStyleController.new);
     lazyPut<LocaleController>(LocaleController.new);

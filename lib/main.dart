@@ -28,6 +28,7 @@ import 'Core/ThemeManager/DynamicColorScheme.dart';
 import 'Core/ThemeManager/LocaleController.dart';
 import 'Core/ThemeManager/ThemeController.dart';
 import 'DI.dart';
+import 'Screen/Lock/LockOverlay.dart';
 import 'Utils/Functions/RefreshController.dart';
 import 'Logger.dart';
 import 'Screen/Downloads/DownloadsLauncher.dart';
@@ -286,7 +287,7 @@ class _MyAppState extends State<MyApp> {
       1100,
     );
     applySystemBarStyle(isDark: _theme.isDarkModeActive);
-    return _dpadWrap(context, child);
+    return LockOverlay(child: _dpadWrap(context, child));
   }
 
   @override
