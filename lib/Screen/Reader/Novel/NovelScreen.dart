@@ -91,6 +91,7 @@ class _NovelScreenState extends State<NovelScreen>
           autofocus: true,
           onKeyEvent: _key,
           child: Stack(
+            fit: StackFit.expand,
             children: [
               Positioned.fill(child: body),
               if (!state.loading.value && state.error.value == null)
@@ -288,7 +289,7 @@ class _NovelScreenState extends State<NovelScreen>
     required bool top,
   }) {
     final visible = state.controlsVisible.value || state.speaking.value && !top;
-    final solid = background.withValues(alpha: 0.94);
+    final solid = background.withValues(alpha: 0.99);
     final clear = background.withValues(alpha: 0);
     final bar = DecoratedBox(
       decoration: BoxDecoration(
@@ -296,7 +297,7 @@ class _NovelScreenState extends State<NovelScreen>
           begin: top ? Alignment.topCenter : Alignment.bottomCenter,
           end: top ? Alignment.bottomCenter : Alignment.topCenter,
           colors: [solid, solid, clear],
-          stops: const [0, 0.6, 1],
+          stops: const [0, 0.72, 1],
         ),
       ),
       child: SafeArea(
@@ -336,13 +337,14 @@ class _NovelScreenState extends State<NovelScreen>
   }) => IconButton(
     onPressed: onTap,
     tooltip: tooltip,
-    color: active ? context.colorScheme.onPrimary : foreground,
+    color: active ? context.colorScheme.primary : foreground,
     disabledColor: foreground.withValues(alpha: 0.3),
+    visualDensity: VisualDensity.compact,
     style: IconButton.styleFrom(
-      backgroundColor: active
-          ? context.colorScheme.primary
-          : foreground.withValues(alpha: 0.12),
-      disabledBackgroundColor: foreground.withValues(alpha: 0.05),
+      backgroundColor: Colors.transparent,
+      disabledBackgroundColor: Colors.transparent,
+      highlightColor: Colors.transparent,
+      hoverColor: foreground.withValues(alpha: 0.08),
     ),
     icon: Icon(icon),
   );
@@ -354,10 +356,11 @@ class _NovelScreenState extends State<NovelScreen>
         Icons.arrow_back_ios_new_rounded,
         () => popPage(context),
       ),
-      const SizedBox(width: 4),
+      const SizedBox(width: 8),
       Expanded(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
           children: [
             Text(
               state.title,
@@ -365,14 +368,16 @@ class _NovelScreenState extends State<NovelScreen>
               overflow: TextOverflow.ellipsis,
               style: context.textTheme.titleSmall?.copyWith(
                 fontWeight: FontWeight.w700,
+                height: 1.25,
               ),
             ),
+            const SizedBox(height: 2),
             Text(
               state.request.media.mainName,
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
-              style: context.textTheme.bodySmall?.copyWith(
-                color: foreground.withValues(alpha: 0.7),
+              style: context.textTheme.labelSmall?.copyWith(
+                color: foreground.withValues(alpha: 0.65),
               ),
             ),
           ],
