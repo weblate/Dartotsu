@@ -43,6 +43,7 @@ class _PlayerScreenState extends State<PlayerScreen>
   final _videoKey = GlobalKey();
   Orientation? _orientation;
   Offset _holdStart = Offset.zero;
+  bool _edgeDrag = false;
   Offset? _lastTapDown;
 
   @override
@@ -131,7 +132,7 @@ class _PlayerScreenState extends State<PlayerScreen>
               visible: false,
             ),
           ),
-          if (!state.settings.useLibass)
+          if (!engine.assActive.value)
             PlayerSubtitleView(
               lines: engine.subtitleLines.value,
               settings: state.settings,
@@ -569,7 +570,7 @@ class _PlayerScreenState extends State<PlayerScreen>
             ),
           ),
         ),
-        if (!state.settings.useLibass)
+        if (!engine.assActive.value)
           PlayerSubtitleView(
             lines: engine.subtitleLines.value,
             settings: state.settings,
@@ -602,14 +603,14 @@ class _PlayerScreenState extends State<PlayerScreen>
           value: state.volume.value,
           icon: Icons.volume_up_rounded,
           shown: state.volumeShown.value,
-          left: false,
+          left: state.settings.swapGestures,
         ),
         if (supportsBrightness)
           PlayerLevelIndicator(
             value: state.brightness.value,
             icon: Icons.brightness_6_rounded,
             shown: state.brightnessShown.value,
-            left: true,
+            left: !state.settings.swapGestures,
           ),
         PlayerChip(
           text: state.holdActive.value
@@ -718,8 +719,11 @@ class _PlayerScreenState extends State<PlayerScreen>
       onLongPressMoveUpdate: (d) =>
           state.holdMove(d.localPosition.dx - _holdStart.dx),
       onLongPressEnd: (_) => state.holdEnd(),
+      onVerticalDragStart: (d) {
+        _edgeDrag = isMobilePlatform && d.localPosition.dy < 56;
+      },
       onVerticalDragUpdate: (d) {
-        if (state.locked.value) return;
+        if (state.locked.value || _edgeDrag) return;
         final delta = -d.delta.dy / 300;
         final x = d.localPosition.dx;
         final swap = state.settings.swapGestures;

@@ -104,6 +104,8 @@ class PlayerEngine {
   final chapters = <PlayerChapter>[].live;
   final videoHeight = Live<int?>(null);
   final scriptReport = <String>[].live;
+  final assActive = false.live;
+  String? _subtitleCodec;
 
   final _subs = <StreamSubscription<Object?>>[];
   bool _disposed = false;
@@ -131,7 +133,7 @@ class PlayerEngine {
       configuration: PlayerConfiguration(
         logLevel: MPVLogLevel.warn,
         bufferSize: settings.bufferMb * 1024 * 1024,
-        libass: settings.useLibass,
+        libass: true,
         libassAndroidFontName: 'Poppins',
         libassAndroidFont: 'assets/fonts/poppins.ttf',
       ),
@@ -229,6 +231,8 @@ class PlayerEngine {
       s.track.listen((t) {
         activeVariant.value = t.video.id;
         activeSubtitle.value = t.subtitle.id == 'no' ? null : t.subtitle.id;
+        _subtitleCodec = t.subtitle.codec?.toLowerCase();
+        unawaited(_syncAss());
         activeAudio.value = t.audio.id == 'no' ? null : t.audio.id;
       }),
     ]);
@@ -352,9 +356,21 @@ class PlayerEngine {
     return props;
   }
 
+  Future<void> _syncAss() async {
+    final styled = _subtitleCodec == 'ass' || _subtitleCodec == 'ssa';
+    final active = settings.useLibass && styled;
+    assActive.value = active;
+    try {
+      await native?.setProperty('sub-visibility', active ? 'yes' : 'no');
+    } catch (e) {
+      logger('mpv sub-visibility failed: $e', tag: 'MPV');
+    }
+  }
+
   Future<void> applySubtitleStyle() async {
     final mpv = native;
     if (mpv == null) return;
+    await _syncAss();
     for (final e in subtitleProps().entries) {
       try {
         await mpv.setProperty(e.key, e.value);
