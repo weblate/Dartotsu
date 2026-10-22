@@ -110,7 +110,11 @@ Future<ColorScheme> getImageMainColor(
   Brightness brightness,
 ) async {
   return await ColorScheme.fromImageProvider(
-    provider: CachedNetworkImageProvider(imageUrl),
+    provider: ResizeImage(
+      CachedNetworkImageProvider(imageUrl),
+      width: 112,
+      policy: ResizeImagePolicy.fit,
+    ),
     brightness: brightness,
     dynamicSchemeVariant: DynamicSchemeVariant.vibrant,
   );

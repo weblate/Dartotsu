@@ -40,17 +40,28 @@ class FollowCoverTheme {
       worker.dispose();
     }
     _userSub?.cancel();
+    _settle?.cancel();
+  }
+
+  Timer? _settle;
+
+  void _apply(String? url) {
+    _settle?.cancel();
+    if (_coverUrl.value == url) return;
+    _settle = Timer(const Duration(milliseconds: 450), () {
+      _coverUrl.value = url;
+    });
   }
 
   void set(Object owner, String? url) {
     _coverOwner = owner;
-    _coverUrl.value = url;
+    _apply(url);
   }
 
   void clear(Object owner) {
     if (_coverOwner != owner) return;
     _coverOwner = null;
-    _coverUrl.value = null;
+    _apply(null);
   }
 
   void _bindUser() {
