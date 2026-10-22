@@ -246,6 +246,13 @@ Future<T?> showCustomBottomDialog<T>(
       duration: animDuration(300),
       reverseDuration: animDuration(200),
     ),
-    builder: (context) => DpadEnter(child: child),
+    builder: (context) => Padding(
+      padding: EdgeInsets.only(bottom: MediaQuery.viewInsetsOf(context).bottom),
+      child: MediaQuery.removeViewInsets(
+        context: context,
+        removeBottom: true,
+        child: DpadEnter(child: child),
+      ),
+    ),
   ).whenComplete(() => onDismissed?.call());
 }
