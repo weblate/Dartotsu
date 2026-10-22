@@ -109,6 +109,20 @@ List<Setting> playerSettingsRows(
       (v) => update((x) => x.seekDuration = v),
     ),
     switchSetting(
+      getString.playerOpenBig,
+      getString.playerOpenBigDesc,
+      Icons.fullscreen_rounded,
+      s.openBig,
+      (v) => update((x) => x.openBig = v),
+    ),
+    switchSetting(
+      getString.playerPauseOnBlur,
+      getString.playerPauseOnBlurDesc,
+      Icons.pause_circle_outline_rounded,
+      s.pauseOnBlur,
+      (v) => update((x) => x.pauseOnBlur = v),
+    ),
+    switchSetting(
       getString.playerAutoPlay,
       getString.playerAutoPlayDesc,
       Icons.skip_next_rounded,
@@ -705,6 +719,12 @@ List<Setting> _globalPlayerRows(BuildContext context) => playerSettingsRows(
 
 List<Setting> playerSettings(BuildContext context) =>
     foldSections(context, _globalPlayerRows, [
+      SettingSection(
+        getString.playerSectionPlayback,
+        Icons.play_circle_outline_rounded,
+      ),
+      SettingSection(getString.playerSectionSkip, Icons.skip_next_rounded),
+      SettingSection(getString.playerSectionGestures, Icons.swipe_rounded),
       SettingSection(getString.playerSectionSubtitles, Icons.subtitles_rounded),
       SettingSection(
         getString.playerSectionShaders,

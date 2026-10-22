@@ -267,11 +267,34 @@ class PlayerState extends ScreenState {
       unawaited(_initFullscreen());
       unawaited(_initVolumeAndBrightness());
     }
+    if (settings.openBig && isMobilePlatform) unawaited(enterFullscreen());
+    _lifecycle = AppLifecycleListener(
+      onInactive: _blur,
+      onHide: _blur,
+      onResume: _focusBack,
+    );
     _bindEngine();
     focus.requestFocus();
     unawaited(mediaSession.start());
     unawaited(_initPip());
     unawaited(_begin());
+  }
+
+  AppLifecycleListener? _lifecycle;
+  bool _pausedByBlur = false;
+
+  void _blur() {
+    if (_closed || !settings.pauseOnBlur || pip.value || _pausedByBlur) return;
+    if (Platform.isAndroid && settings.autoPip) return;
+    if (!engine.playing.value) return;
+    _pausedByBlur = true;
+    unawaited(engine.pause());
+  }
+
+  void _focusBack() {
+    if (!_pausedByBlur) return;
+    _pausedByBlur = false;
+    if (!_closed && !engine.playing.value) unawaited(engine.play());
   }
 
   Future<void> _initPip() async {
@@ -393,6 +416,7 @@ class PlayerState extends ScreenState {
   @override
   void onClose() {
     _closed = true;
+    _lifecycle?.dispose();
     together.detach(this);
     find<DownloadEngine>().sweepFinished();
     _generation++;

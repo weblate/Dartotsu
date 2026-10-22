@@ -45,6 +45,10 @@ class PlayerSettings {
   set holdSpeed(double v) => _v['holdSpeed'] = v;
   bool get swapGestures => _get('swapGestures', false);
   set swapGestures(bool v) => _v['swapGestures'] = v;
+  bool get openBig => _get('openBig', false);
+  set openBig(bool v) => _v['openBig'] = v;
+  bool get pauseOnBlur => _get('pauseOnBlur', false);
+  set pauseOnBlur(bool v) => _v['pauseOnBlur'] = v;
   bool get autoPlay => _get('autoPlay', true);
   set autoPlay(bool v) => _v['autoPlay'] = v;
   bool get resume => _get('resume', true);
