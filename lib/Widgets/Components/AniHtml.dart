@@ -605,6 +605,7 @@ class _AniHtmlState extends State<AniHtml> {
           ),
           child: SelectableText(
             e.text,
+            scrollPhysics: const NeverScrollableScrollPhysics(),
             style: style.copyWith(fontFamily: 'monospace', fontSize: 12.5),
           ),
         );
