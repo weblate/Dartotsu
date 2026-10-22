@@ -111,22 +111,29 @@ class DiscordPresence {
     String? thumbnail,
     int positionSeconds = 0,
     int? durationSeconds,
+    int? anchorMs,
+    double rate = 1,
+    bool paused = false,
   }) {
-    final now = DateTime.now().millisecondsSinceEpoch;
-    final start = now - positionSeconds * 1000;
+    final at = anchorMs ?? DateTime.now().millisecondsSinceEpoch;
+    final speed = rate <= 0 ? 1.0 : rate;
+    final start = (at - positionSeconds * 1000 / speed).round();
     final unit = media.isAnime ? 'Episode' : 'Chapter';
+    final count = '$unit $number/${total ?? '?'}';
     return DiscordPresence(
       type: media.isAnime ? PresenceType.watching : PresenceType.playing,
       sensitive: true,
       details: media.mainName,
-      state: '$unit $number/${total ?? '?'}',
+      state: paused ? '$count • Paused at ${_clock(positionSeconds)}' : count,
       largeImage: thumbnail ?? media.cover ?? _logo,
       largeText: media.mainName,
       smallImage: _logo,
-      smallText: 'Dartotsu',
-      start: start,
-      end: durationSeconds == null ? null : start + durationSeconds * 1000,
-      live: true,
+      smallText: paused ? 'Paused' : 'Dartotsu',
+      start: paused ? null : start,
+      end: paused || durationSeconds == null
+          ? null
+          : (start + durationSeconds * 1000 / speed).round(),
+      live: !paused,
       buttons: [
         if (media.shareLink.startsWith('http'))
           PresenceButton(
@@ -136,6 +143,13 @@ class DiscordPresence {
         const PresenceButton('Open Dartotsu', _repo),
       ],
     );
+  }
+
+  static String _clock(int seconds) {
+    final h = seconds ~/ 3600;
+    final m = (seconds % 3600 ~/ 60).toString().padLeft(h > 0 ? 2 : 1, '0');
+    final s = (seconds % 60).toString().padLeft(2, '0');
+    return h > 0 ? '$h:$m:$s' : '$m:$s';
   }
 
   DiscordPresence shifted(Duration by) {

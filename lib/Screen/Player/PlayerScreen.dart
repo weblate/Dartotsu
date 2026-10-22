@@ -112,6 +112,13 @@ class _PlayerScreenState extends State<PlayerScreen>
         number: item.number,
         total: media.totalUnits,
         thumbnail: item.unit?.thumbnail,
+        positionSeconds: state.presenceClock.value.$1,
+        anchorMs: state.presenceClock.value.$2,
+        durationSeconds: state.engine.duration.value.inSeconds > 0
+            ? state.engine.duration.value.inSeconds
+            : null,
+        rate: state.engine.rate.value,
+        paused: !state.engine.playing.value,
       ),
       child: wrapped,
     );

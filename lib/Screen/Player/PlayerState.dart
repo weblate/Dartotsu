@@ -352,7 +352,10 @@ class PlayerState extends ScreenState {
     _completedSub = engine.completed.listen((done) {
       if (done) _onCompleted();
     });
+    _rateSub?.dispose();
+    _rateSub = engine.rate.listen((_) => _anchorPresence());
     _playingSub = engine.playing.listen((playing) {
+      _anchorPresence();
       _scheduleHide();
       unawaited(PlayerPip.setAuto(playing && settings.autoPip));
     });
@@ -417,6 +420,7 @@ class PlayerState extends ScreenState {
     _completedSub?.dispose();
     _playingSub?.dispose();
     _errorSub?.dispose();
+    _rateSub?.dispose();
     _saveProgress(force: true);
     _commitWatched();
     unawaited(PlayerPip.setAuto(false));
@@ -754,6 +758,8 @@ class PlayerState extends ScreenState {
   }
 
   Disposer? _errorSub;
+  Disposer? _rateSub;
+  final presenceClock = Live<(int, int)>((0, 0));
   Duration _lastGood = Duration.zero;
   int _recoveries = 0;
   bool _recovering = false;
@@ -785,7 +791,27 @@ class PlayerState extends ScreenState {
     }
   }
 
+  void _anchorPresence() {
+    presenceClock.value = (
+      engine.position.value.inSeconds,
+      DateTime.now().millisecondsSinceEpoch,
+    );
+  }
+
+  void _syncPresence(Duration position) {
+    final now = DateTime.now().millisecondsSinceEpoch;
+    final (anchorPosition, anchorAt) = presenceClock.value;
+    final playing = engine.playing.value;
+    final expected = playing
+        ? anchorPosition + (now - anchorAt) / 1000 * engine.rate.value
+        : anchorPosition;
+    if ((position.inSeconds - expected).abs() > (playing ? 3 : 1)) {
+      presenceClock.value = (position.inSeconds, now);
+    }
+  }
+
   void _onPosition(Duration position) {
+    _syncPresence(position);
     if (position > const Duration(seconds: 2) && !loading.value) {
       if (_recoveries > 0 &&
           position > _lastGood + const Duration(seconds: 30)) {
