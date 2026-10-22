@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:dartotsu_extension_bridge/Settings/KvStore.dart';
 import 'package:path/path.dart' as p;
 
 import 'Encryptor.dart';
@@ -12,9 +13,33 @@ import 'Validator.dart';
 class PrefBackup {
   PrefBackup._();
 
+  static const _bridgePrefix = 'bridge.';
+  static final _bridgeKey = RegExp(r'(Repos|ActiveRepo|Languages|Manager)$');
+
+  static List<KeyValue> _bridgeEntries() {
+    final out = <KeyValue>[];
+    KvStore.entriesWithPrefix('').forEach((key, value) {
+      if (!_bridgeKey.hasMatch(key)) return;
+      if (value is! String && value is! List<String> && value is! List) return;
+      try {
+        out.add(
+          KeyValue()
+            ..key = '${PrefLocation.OTHER.name}/$_bridgePrefix$key'
+            ..value = value is List ? List<String>.from(value) : value,
+        );
+      } catch (_) {}
+    });
+    return out;
+  }
+
+  static List<KeyValue> _all() => [
+    ...PrefManager.allEntries(),
+    ..._bridgeEntries(),
+  ];
+
   static Map<PrefLocation, List<String>> currentKeys() {
     final result = <PrefLocation, List<String>>{};
-    for (final kv in PrefManager.allEntries()) {
+    for (final kv in _all()) {
       if (kv.location == PrefLocation.CACHE || isInternal(kv.key)) continue;
       (result[kv.location] ??= []).add(_name(kv.key));
     }
@@ -33,7 +58,7 @@ class PrefBackup {
 
     final result = <String, Map<String, dynamic>>{};
 
-    for (final kv in PrefManager.allEntries()) {
+    for (final kv in _all()) {
       if (!selected.contains(kv.location) || isInternal(kv.key)) continue;
       (result[kv.location.name] ??= {})[kv.key] = kv.toJson();
     }
@@ -129,6 +154,15 @@ class PrefBackup {
       }
     }
 
+    final bridge = <KeyValue>[];
+    entries.removeWhere((e) {
+      final isBridge = _name(e.key).startsWith(_bridgePrefix);
+      if (isBridge) bridge.add(e);
+      return isBridge;
+    });
     await PrefManager.putEntries(entries);
+    for (final e in bridge) {
+      await KvStore.set(_name(e.key).substring(_bridgePrefix.length), e.value);
+    }
   }
 }
