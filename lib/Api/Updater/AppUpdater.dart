@@ -405,6 +405,7 @@ class AppUpdater extends AppController {
         if (message.toLowerCase().contains('cancel')) {
           logger('APK install cancelled by the user', tag: 'UPDATER');
           _resetDownloadState();
+          snackString(getString.updateInstallCancelled);
           return;
         }
         throw message;
@@ -413,9 +414,12 @@ class AppUpdater extends AppController {
       if (await file.exists()) {
         await file.delete();
       }
-    } catch (e) {
+    } catch (e, st) {
+      final cancelled = _cancelToken?.isCancelled ?? false;
       _resetDownloadState();
-      rethrow;
+      if (cancelled) return;
+      logError('AppUpdater', e, st);
+      snackString(getString.updateInstallFailed('$e'));
     }
   }
 
