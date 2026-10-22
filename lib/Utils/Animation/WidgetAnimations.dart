@@ -164,10 +164,11 @@ extension WidgetAnimations on Widget {
     int index = 0,
     int direction = 1,
     bool stagger = true,
+    bool instant = false,
   }) {
     if (_disabled) return this;
     final delay = Duration(milliseconds: stagger && index < 8 ? 45 * index : 0);
-    return _animation(target)
+    return animate(target: target ? 1 : 0, value: instant ? 1 : null)
         .slide(
           begin: Offset(direction.sign.toDouble(), 0),
           end: Offset.zero,
