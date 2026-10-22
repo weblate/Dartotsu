@@ -21,6 +21,8 @@ import '../../../Widgets/Components/CustomBottomDialog.dart';
 import '../../../Widgets/Components/SheetTile.dart';
 import '../../Settings/Categories/PlayerSettings.dart';
 import '../../Settings/Widgets/SettingsGroup.dart';
+import '../../Settings/Widgets/SettingSections.dart';
+import '../../../Widgets/Components/AppControls.dart';
 import '../PlayerState.dart';
 import 'PlayerSeekBar.dart';
 import 'DelayRow.dart';
@@ -227,131 +229,169 @@ Future<void> showTracksSheet(
   PlayerState state, {
   required bool audio,
 }) async {
+  final tab = 0.live;
   await _paused(state, () async {
     return showCustomBottomDialog<void>(
       context,
       AppSheet(
         title: audio ? getString.playerAudio : getString.playerSubtitles,
         heightFactor: 0.7,
-        child: Watch(() {
-          final engine = state.engine;
-          final tracks =
-              (audio ? engine.audioTracks : engine.subtitleTracks).value;
-          final active = audio
-              ? engine.activeAudio.value
-              : engine.activeSubtitle.value;
-          final extra = <v.Track>[
-            for (final t
-                in (audio ? state.video?.audios : state.video?.subtitles) ??
-                    const <v.Track>[])
-              if (t.file != null) t,
-          ];
-          return ListView(
-            padding: const EdgeInsets.fromLTRB(16, 0, 16, 24),
-            children: [
-              DelayRow(
-                label: audio
-                    ? getString.playerAudioDelay
-                    : getString.playerSubtitleDelay,
-                delay: audio ? engine.audioDelay : engine.subtitleDelay,
-                onChange: audio
-                    ? engine.setAudioDelay
-                    : engine.setSubtitleDelay,
-              ),
-              if (!audio)
-                SheetTile(
-                  tinted: true,
-                  radius: BorderRadius.circular(20),
-                  leading: const Icon(Icons.subtitles_off_rounded),
-                  title: Text(getString.playerSubtitlesOff),
-                  selected: active == null,
-                  onTap: () {
-                    engine.noSubtitle();
-                    popPage(context);
-                  },
-                ),
-              const SizedBox(height: 8),
-              for (final (i, t) in tracks.indexed)
-                SheetTile(
-                  tinted: true,
-                  radius: BorderRadius.vertical(
-                    top: Radius.circular(i == 0 ? 20 : 6),
-                    bottom: Radius.circular(
-                      i == tracks.length - 1 && extra.isEmpty ? 20 : 6,
+        child: audio
+            ? _tracksList(context, state, audio: true)
+            : Watch(
+                () => Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(16, 0, 16, 8),
+                      child: AppSegmented<int>(
+                        expand: true,
+                        value: tab.value,
+                        onChanged: (v) => tab.value = v,
+                        segments: [
+                          AppSegment(0, label: getString.playerSubtitles),
+                          AppSegment(1, label: getString.settings),
+                        ],
+                      ),
                     ),
-                  ),
-                  leading: Icon(
-                    audio ? Icons.audiotrack_rounded : Icons.subtitles_rounded,
-                  ),
-                  title: Text(t.label),
-                  selected: active == t.id,
-                  onTap: () {
-                    audio ? engine.setAudio(t.id) : engine.setSubtitle(t.id);
-                    popPage(context);
-                  },
-                ),
-              for (final (i, t) in extra.indexed)
-                SheetTile(
-                  tinted: true,
-                  radius: BorderRadius.vertical(
-                    top: Radius.circular(tracks.isEmpty && i == 0 ? 20 : 6),
-                    bottom: Radius.circular(i == extra.length - 1 ? 20 : 6),
-                  ),
-                  leading: const Icon(Icons.cloud_download_outlined),
-                  title: Text(t.label ?? t.file ?? ''),
-                  onTap: () {
-                    audio
-                        ? engine.addAudio(t.file!, t.label ?? '')
-                        : engine.addSubtitle(t.file!, t.label ?? '');
-                    popPage(context);
-                  },
-                ),
-              const SizedBox(height: 12),
-              if (!audio) ...[
-                FilledButton.tonalIcon(
-                  onPressed: () => showOnlineSubtitleSheet(context, state),
-                  icon: const Icon(Icons.cloud_download_rounded),
-                  label: Text(getString.playerOnlineSubtitles),
-                ),
-                const SizedBox(height: 8),
-              ],
-              OutlinedButton.icon(
-                onPressed: () async {
-                  final picked = await FilePicker.pickFile(
-                    type: FileType.custom,
-                    allowedExtensions: audio
-                        ? audioExtensions
-                        : subtitleExtensions,
-                  );
-                  final path = picked?.path;
-                  if (path == null) return;
-                  if (audio) {
-                    await engine.addAudio(
-                      Uri.file(path).toString(),
-                      picked!.name,
-                    );
-                  } else {
-                    await engine.addSubtitle(
-                      Uri.file(path).toString(),
-                      picked!.name,
-                    );
-                  }
-                  if (context.mounted) popPage(context);
-                },
-                icon: const Icon(Icons.upload_file_rounded),
-                label: Text(
-                  audio
-                      ? getString.playerAddAudio
-                      : getString.playerAddSubtitle,
+                    Expanded(
+                      child: tab.value == 0
+                          ? _tracksList(context, state, audio: false)
+                          : _subtitleSettings(context, state),
+                    ),
+                  ],
                 ),
               ),
-            ],
-          );
-        }),
       ),
     );
   });
 }
+
+Widget _subtitleSettings(BuildContext context, PlayerState state) =>
+    SingleChildScrollView(
+      padding: const EdgeInsets.fromLTRB(8, 0, 8, 24),
+      child: Watch(() {
+        state.settingsVersion.value;
+        return SettingsGroup(
+          settings: sectionRows(
+            playerSettingsRows(
+              context,
+              settings: state.settings,
+              update: (change) {
+                state.updateSettings(change);
+                state.settingsVersion.value++;
+              },
+              inPlayer: true,
+            ),
+            getString.playerSectionSubtitles,
+          ),
+        );
+      }),
+    );
+
+Widget _tracksList(
+  BuildContext context,
+  PlayerState state, {
+  required bool audio,
+}) => Watch(() {
+  final engine = state.engine;
+  final tracks = (audio ? engine.audioTracks : engine.subtitleTracks).value;
+  final active = audio ? engine.activeAudio.value : engine.activeSubtitle.value;
+  final extra = <v.Track>[
+    for (final t
+        in (audio ? state.video?.audios : state.video?.subtitles) ??
+            const <v.Track>[])
+      if (t.file != null) t,
+  ];
+  return ListView(
+    padding: const EdgeInsets.fromLTRB(16, 0, 16, 24),
+    children: [
+      DelayRow(
+        label: audio
+            ? getString.playerAudioDelay
+            : getString.playerSubtitleDelay,
+        delay: audio ? engine.audioDelay : engine.subtitleDelay,
+        onChange: audio ? engine.setAudioDelay : engine.setSubtitleDelay,
+      ),
+      if (!audio)
+        SheetTile(
+          tinted: true,
+          radius: BorderRadius.circular(20),
+          leading: const Icon(Icons.subtitles_off_rounded),
+          title: Text(getString.playerSubtitlesOff),
+          selected: active == null,
+          onTap: () {
+            engine.noSubtitle();
+            popPage(context);
+          },
+        ),
+      const SizedBox(height: 8),
+      for (final (i, t) in tracks.indexed)
+        SheetTile(
+          tinted: true,
+          radius: BorderRadius.vertical(
+            top: Radius.circular(i == 0 ? 20 : 6),
+            bottom: Radius.circular(
+              i == tracks.length - 1 && extra.isEmpty ? 20 : 6,
+            ),
+          ),
+          leading: Icon(
+            audio ? Icons.audiotrack_rounded : Icons.subtitles_rounded,
+          ),
+          title: Text(t.label),
+          selected: active == t.id,
+          onTap: () {
+            audio ? engine.setAudio(t.id) : engine.setSubtitle(t.id);
+            popPage(context);
+          },
+        ),
+      for (final (i, t) in extra.indexed)
+        SheetTile(
+          tinted: true,
+          radius: BorderRadius.vertical(
+            top: Radius.circular(tracks.isEmpty && i == 0 ? 20 : 6),
+            bottom: Radius.circular(i == extra.length - 1 ? 20 : 6),
+          ),
+          leading: const Icon(Icons.cloud_download_outlined),
+          title: Text(t.label ?? t.file ?? ''),
+          onTap: () {
+            audio
+                ? engine.addAudio(t.file!, t.label ?? '')
+                : engine.addSubtitle(t.file!, t.label ?? '');
+            popPage(context);
+          },
+        ),
+      const SizedBox(height: 12),
+      if (!audio) ...[
+        FilledButton.tonalIcon(
+          onPressed: () => showOnlineSubtitleSheet(context, state),
+          icon: const Icon(Icons.cloud_download_rounded),
+          label: Text(getString.playerOnlineSubtitles),
+        ),
+        const SizedBox(height: 8),
+      ],
+      OutlinedButton.icon(
+        onPressed: () async {
+          final picked = await FilePicker.pickFile(
+            type: FileType.custom,
+            allowedExtensions: audio ? audioExtensions : subtitleExtensions,
+          );
+          final path = picked?.path;
+          if (path == null) return;
+          if (audio) {
+            await engine.addAudio(Uri.file(path).toString(), picked!.name);
+          } else {
+            await engine.addSubtitle(Uri.file(path).toString(), picked!.name);
+          }
+          if (context.mounted) popPage(context);
+        },
+        icon: const Icon(Icons.upload_file_rounded),
+        label: Text(
+          audio ? getString.playerAddAudio : getString.playerAddSubtitle,
+        ),
+      ),
+    ],
+  );
+});
 
 Future<void> showChaptersSheet(BuildContext context, PlayerState state) async {
   final chapters = state.engine.chapters.value;
