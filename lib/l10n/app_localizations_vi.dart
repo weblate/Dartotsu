@@ -101,6 +101,50 @@ class AppLocalizationsVi extends AppLocalizations {
   String get uninstall => 'Gỡ cài đặt';
 
   @override
+  String get updateInstallCancelled =>
+      'Đã hủy cài đặt. Nếu Android báo xung đột với app đã cài thì là do chữ ký khác nhau: hãy gỡ phiên bản hiện tại trước rồi cài bản cập nhật';
+
+  @override
+  String updateInstallFailed(String error) {
+    return 'Cập nhật thất bại: $error';
+  }
+
+  @override
+  String get appLock => 'Khóa ứng dụng';
+
+  @override
+  String get appLockDesc => 'Hỏi mã khóa khi mở app hoặc quay lại sau một lúc';
+
+  @override
+  String get appLockUnlock => 'Nhập mã khóa của bạn';
+
+  @override
+  String get appLockWrong => 'Sai mã khóa';
+
+  @override
+  String appLockWait(String seconds) {
+    return 'Thử quá nhiều lần, đợi $seconds giây nhé';
+  }
+
+  @override
+  String get appLockNew => 'Chọn mã khóa';
+
+  @override
+  String get appLockNewHint => '4 đến 8 chữ số';
+
+  @override
+  String get appLockConfirm => 'Nhập lại lần nữa';
+
+  @override
+  String get appLockMismatch => 'Hai mã khóa không khớp';
+
+  @override
+  String get appLockOn => 'Đã đặt mã khóa';
+
+  @override
+  String get appLockRemoveTitle => 'Nhập mã khóa để tắt khóa';
+
+  @override
   String get installFailed => 'Cài đặt thất bại';
 
   @override
@@ -201,10 +245,10 @@ class AppLocalizationsVi extends AppLocalizations {
   String get settingsGeneralDesc => 'Ngôn ngữ và hành vi';
 
   @override
-  String get settingsNetwork => 'Network';
+  String get settingsNetwork => 'Mạng';
 
   @override
-  String get settingsNetworkDesc => 'User agent, certificates, DNS and proxy';
+  String get settingsNetworkDesc => 'User agent, chứng chỉ, DNS và proxy';
 
   @override
   String get settingsAccountDesc => 'Dịch vụ theo dõi và đăng nhập';
@@ -1088,7 +1132,7 @@ class AppLocalizationsVi extends AppLocalizations {
   String get kitsuAccountOptions => 'Tùy chọn tài khoản Kitsu';
 
   @override
-  String get mangaBakaAccountOptions => 'MangaBaka account options';
+  String get mangaBakaAccountOptions => 'Tùy chọn tài khoản MangaBaka';
 
   @override
   String get couldNotUpdateKitsuSettings => 'Không cập nhật được cài đặt Kitsu';
@@ -1370,7 +1414,7 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String chapterExpectedIn(int chapter, String time) {
-    return 'Chapter $chapter expected in about $time';
+    return 'Chương $chapter dự kiến ra sau khoảng $time';
   }
 
   @override
@@ -1976,11 +2020,11 @@ class AppLocalizationsVi extends AppLocalizations {
       'Không hiện các mục đánh dấu riêng tư trên AniList trong bảng tin';
 
   @override
-  String get anilistExcludeList => 'Exclude your list';
+  String get anilistExcludeList => 'Ẩn truyện/phim trong list của bạn';
 
   @override
   String get anilistExcludeListDesc =>
-      'Keep titles already on your AniList out of the anime and manga pages';
+      'Không hiện các tựa đã có trong AniList của bạn ở trang anime và manga';
 
   @override
   String get anilistProfile => 'Hồ sơ AniList';
@@ -3045,22 +3089,22 @@ class AppLocalizationsVi extends AppLocalizations {
   String get topRatedMovies => 'Phim điểm cao nhất';
 
   @override
-  String get koreanDramas => 'Korean Dramas';
+  String get koreanDramas => 'Phim Hàn';
 
   @override
-  String get chineseDramas => 'Chinese Dramas';
+  String get chineseDramas => 'Phim Trung';
 
   @override
-  String get japaneseDramas => 'Japanese Dramas';
+  String get japaneseDramas => 'Phim Nhật';
 
   @override
-  String get thaiDramas => 'Thai Dramas';
+  String get thaiDramas => 'Phim Thái';
 
   @override
-  String get turkishDramas => 'Turkish Dramas';
+  String get turkishDramas => 'Phim Thổ Nhĩ Kỳ';
 
   @override
-  String get miniSeries => 'Mini Series';
+  String get miniSeries => 'Phim ngắn tập';
 
   @override
   String get topRatedShows => 'Series điểm cao nhất';
@@ -5757,11 +5801,24 @@ class AppLocalizationsVi extends AppLocalizations {
       'Giữ các tùy chọn này cho tựa này và không đụng tới mặc định của bạn';
 
   @override
-  String get playerSwapGestures => 'Swap swipe sides';
+  String get playerSwapGestures => 'Đổi bên vuốt';
 
   @override
-  String get playerSwapGesturesDesc =>
-      'Brightness on the left and volume on the right';
+  String get playerSwapGesturesDesc => 'Độ sáng bên trái, âm lượng bên phải';
+
+  @override
+  String get playerOpenBig => 'Mở toàn màn hình';
+
+  @override
+  String get playerOpenBigDesc =>
+      'Mở trình phát toàn màn hình thay vì kèm danh sách tập';
+
+  @override
+  String get playerPauseOnBlur => 'Tạm dừng khi mất tiêu điểm';
+
+  @override
+  String get playerPauseOnBlurDesc =>
+      'Tạm dừng khi app bị che, như lúc kéo thanh thông báo, và phát tiếp khi bạn quay lại';
 
   @override
   String get playerHoldSpeed => 'Tốc độ khi giữ';

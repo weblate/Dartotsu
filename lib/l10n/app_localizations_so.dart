@@ -102,6 +102,52 @@ class AppLocalizationsSo extends AppLocalizations {
   String get uninstall => 'Ka saar';
 
   @override
+  String get updateInstallCancelled =>
+      'Rakibaadda waa la joojiyay. Haddii Android ku yidhi app-kan wuu ka hor imanayaa kii hore ee la rakibay, saxiixu waa kala duwan yahay: marka hore tirtir nooca hadda jira, kadibna rakib cusboonaysiinta';
+
+  @override
+  String updateInstallFailed(String error) {
+    return 'Cusboonaysiintii waa fashilantay: $error';
+  }
+
+  @override
+  String get appLock => 'Qufulka app-ka';
+
+  @override
+  String get appLockDesc =>
+      'Weydii passcode marka app-ka la furo ama marka aad dib ugu soo noqoto ka dib mudo';
+
+  @override
+  String get appLockUnlock => 'Geli passcode-kaaga';
+
+  @override
+  String get appLockWrong => 'Passcode-ku waa khalad';
+
+  @override
+  String appLockWait(String seconds) {
+    return 'Isku day badan, sug ${seconds}s';
+  }
+
+  @override
+  String get appLockNew => 'Dooro passcode';
+
+  @override
+  String get appLockNewHint => '4 ilaa 8 lambar';
+
+  @override
+  String get appLockConfirm => 'Mar kale geli';
+
+  @override
+  String get appLockMismatch => 'Passcode-yadu isma waafaqaan';
+
+  @override
+  String get appLockOn => 'Passcode waa la dejiyay';
+
+  @override
+  String get appLockRemoveTitle =>
+      'Geli passcode-kaaga si aad qufulka u damiso';
+
+  @override
   String get installFailed => 'Rakibiddu way fashilantay';
 
   @override
@@ -203,10 +249,10 @@ class AppLocalizationsSo extends AppLocalizations {
   String get settingsGeneralDesc => 'Luqadda iyo habdhaqanka';
 
   @override
-  String get settingsNetwork => 'Network';
+  String get settingsNetwork => 'Shabakadda';
 
   @override
-  String get settingsNetworkDesc => 'User agent, certificates, DNS and proxy';
+  String get settingsNetworkDesc => 'User agent, shahaadooyin, DNS iyo proxy';
 
   @override
   String get settingsAccountDesc => 'Adeegga la socodka iyo gelitaanka';
@@ -1105,7 +1151,7 @@ class AppLocalizationsSo extends AppLocalizations {
   String get kitsuAccountOptions => 'Ikhtiyaarrada akoonka Kitsu';
 
   @override
-  String get mangaBakaAccountOptions => 'MangaBaka account options';
+  String get mangaBakaAccountOptions => 'Doorashooyinka akoonka MangaBaka';
 
   @override
   String get couldNotUpdateKitsuSettings =>
@@ -1391,7 +1437,7 @@ class AppLocalizationsSo extends AppLocalizations {
 
   @override
   String chapterExpectedIn(int chapter, String time) {
-    return 'Chapter $chapter expected in about $time';
+    return 'Cutubka $chapter waxaa la filayaa ilaa $time';
   }
 
   @override
@@ -1999,11 +2045,11 @@ class AppLocalizationsSo extends AppLocalizations {
       'Ka ilaali feed-ka gelitaannada AniList lagu calaamadiyay gaar ah';
 
   @override
-  String get anilistExcludeList => 'Exclude your list';
+  String get anilistExcludeList => 'Ka saar liiskaaga';
 
   @override
   String get anilistExcludeListDesc =>
-      'Keep titles already on your AniList out of the anime and manga pages';
+      'Ka ilaali cinwaannada hore ugu jira AniList-kaaga bogagga anime iyo manga';
 
   @override
   String get anilistProfile => 'Profile-ka AniList';
@@ -3067,22 +3113,22 @@ class AppLocalizationsSo extends AppLocalizations {
   String get topRatedMovies => 'Aflaamta ugu qiimaha sarreeya';
 
   @override
-  String get koreanDramas => 'Korean Dramas';
+  String get koreanDramas => 'Riwaayadaha Kuuriyada';
 
   @override
-  String get chineseDramas => 'Chinese Dramas';
+  String get chineseDramas => 'Riwaayadaha Shiinaha';
 
   @override
-  String get japaneseDramas => 'Japanese Dramas';
+  String get japaneseDramas => 'Riwaayadaha Jabaan';
 
   @override
-  String get thaiDramas => 'Thai Dramas';
+  String get thaiDramas => 'Riwaayadaha Thailand';
 
   @override
-  String get turkishDramas => 'Turkish Dramas';
+  String get turkishDramas => 'Riwaayadaha Turkiga';
 
   @override
-  String get miniSeries => 'Mini Series';
+  String get miniSeries => 'Taxane gaaban';
 
   @override
   String get topRatedShows => 'Bandhigyada ugu qiimaha sarreeya';
@@ -5801,11 +5847,24 @@ class AppLocalizationsSo extends AppLocalizations {
       'Ilaali ikhtiyaarradan ciwaankan oo ha taaban kuwa caadiga ah';
 
   @override
-  String get playerSwapGestures => 'Swap swipe sides';
+  String get playerSwapGestures => 'Beddel dhinacyada swipe-ka';
 
   @override
-  String get playerSwapGesturesDesc =>
-      'Brightness on the left and volume on the right';
+  String get playerSwapGesturesDesc => 'Iftiinka bidixda iyo codka midigta';
+
+  @override
+  String get playerOpenBig => 'Ku fur muuqaal weyn';
+
+  @override
+  String get playerOpenBigDesc =>
+      'Ku bilow player-ka shaashadda buuxda halkii liiska qaybaha';
+
+  @override
+  String get playerPauseOnBlur => 'Jooji marka aan fooggnayn';
+
+  @override
+  String get playerPauseOnBlurDesc =>
+      'Jooji marka app-ka la dahaadho, sida guddiga ogeysiisyada, kuna sii wad marka aad soo noqoto';
 
   @override
   String get playerHoldSpeed => 'Xawaaraha haynta';

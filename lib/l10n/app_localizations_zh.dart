@@ -100,6 +100,50 @@ class AppLocalizationsZh extends AppLocalizations {
   String get uninstall => '卸载';
 
   @override
+  String get updateInstallCancelled =>
+      '安装已取消。如果安卓提示与已安装的应用冲突，说明签名不一致：请先卸载当前版本，再安装更新';
+
+  @override
+  String updateInstallFailed(String error) {
+    return '更新失败：$error';
+  }
+
+  @override
+  String get appLock => '应用锁';
+
+  @override
+  String get appLockDesc => '打开应用或隔一段时间回来时，需要输入密码';
+
+  @override
+  String get appLockUnlock => '输入你的密码';
+
+  @override
+  String get appLockWrong => '密码错误';
+
+  @override
+  String appLockWait(String seconds) {
+    return '尝试次数太多，请等 $seconds 秒';
+  }
+
+  @override
+  String get appLockNew => '设置一个密码';
+
+  @override
+  String get appLockNewHint => '4 到 8 位数字';
+
+  @override
+  String get appLockConfirm => '再输入一次';
+
+  @override
+  String get appLockMismatch => '两次输入的密码不一致';
+
+  @override
+  String get appLockOn => '已设置密码';
+
+  @override
+  String get appLockRemoveTitle => '输入密码以关闭应用锁';
+
+  @override
   String get installFailed => '安装失败';
 
   @override
@@ -200,10 +244,10 @@ class AppLocalizationsZh extends AppLocalizations {
   String get settingsGeneralDesc => '语言和行为';
 
   @override
-  String get settingsNetwork => 'Network';
+  String get settingsNetwork => '网络';
 
   @override
-  String get settingsNetworkDesc => 'User agent, certificates, DNS and proxy';
+  String get settingsNetworkDesc => 'User-Agent、证书、DNS 和代理';
 
   @override
   String get settingsAccountDesc => '追踪服务与登录';
@@ -1054,7 +1098,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get kitsuAccountOptions => 'Kitsu 账号选项';
 
   @override
-  String get mangaBakaAccountOptions => 'MangaBaka account options';
+  String get mangaBakaAccountOptions => 'MangaBaka 账号选项';
 
   @override
   String get couldNotUpdateKitsuSettings => '无法更新你的 Kitsu 设置';
@@ -1333,7 +1377,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String chapterExpectedIn(int chapter, String time) {
-    return 'Chapter $chapter expected in about $time';
+    return '第 $chapter 话预计约 $time 后更新';
   }
 
   @override
@@ -1934,11 +1978,10 @@ class AppLocalizationsZh extends AppLocalizations {
   String get hidePrivateEntriesDesc => '不在信息流中显示 AniList 上标记为私密的条目';
 
   @override
-  String get anilistExcludeList => 'Exclude your list';
+  String get anilistExcludeList => '排除我的列表';
 
   @override
-  String get anilistExcludeListDesc =>
-      'Keep titles already on your AniList out of the anime and manga pages';
+  String get anilistExcludeListDesc => '已经在你 AniList 里的作品不再出现在动画和漫画页面';
 
   @override
   String get anilistProfile => 'AniList 个人资料';
@@ -2993,22 +3036,22 @@ class AppLocalizationsZh extends AppLocalizations {
   String get topRatedMovies => '高分电影';
 
   @override
-  String get koreanDramas => 'Korean Dramas';
+  String get koreanDramas => '韩剧';
 
   @override
-  String get chineseDramas => 'Chinese Dramas';
+  String get chineseDramas => '国产剧';
 
   @override
-  String get japaneseDramas => 'Japanese Dramas';
+  String get japaneseDramas => '日剧';
 
   @override
-  String get thaiDramas => 'Thai Dramas';
+  String get thaiDramas => '泰剧';
 
   @override
-  String get turkishDramas => 'Turkish Dramas';
+  String get turkishDramas => '土耳其剧';
 
   @override
-  String get miniSeries => 'Mini Series';
+  String get miniSeries => '迷你剧';
 
   @override
   String get topRatedShows => '高分剧集';
@@ -5626,11 +5669,22 @@ class AppLocalizationsZh extends AppLocalizations {
   String get playerPerTitleDesc => '这些选项只对这部作品生效，不影响你的默认设置';
 
   @override
-  String get playerSwapGestures => 'Swap swipe sides';
+  String get playerSwapGestures => '左右滑动互换';
 
   @override
-  String get playerSwapGesturesDesc =>
-      'Brightness on the left and volume on the right';
+  String get playerSwapGesturesDesc => '左边调亮度，右边调音量';
+
+  @override
+  String get playerOpenBig => '以大画面打开';
+
+  @override
+  String get playerOpenBigDesc => '播放器直接全屏启动，不显示剧集列表';
+
+  @override
+  String get playerPauseOnBlur => '失去焦点时暂停';
+
+  @override
+  String get playerPauseOnBlurDesc => '应用被通知栏等遮住时暂停，回来后自动继续';
 
   @override
   String get playerHoldSpeed => '长按速度';

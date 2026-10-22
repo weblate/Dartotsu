@@ -101,6 +101,51 @@ class AppLocalizationsPs extends AppLocalizations {
   String get uninstall => 'لرې کړه';
 
   @override
+  String get updateInstallCancelled =>
+      'نصب لغوه شو. که اندروید ووې چې اپ له نصب شوې نسخې سره ټکر لري، لاسلیک توپیر لري: لومړی اوسنۍ نسخه حذف کړه، بیا تازه والی نصب کړه';
+
+  @override
+  String updateInstallFailed(String error) {
+    return 'تازه والی ونه شو: $error';
+  }
+
+  @override
+  String get appLock => 'د اپ قفل';
+
+  @override
+  String get appLockDesc =>
+      'کله چې اپ پرانیستل شي یا وروسته له یو وخته بیرته راشي، پن کوډ وغواړه';
+
+  @override
+  String get appLockUnlock => 'خپل پن کوډ ولیکه';
+
+  @override
+  String get appLockWrong => 'پن کوډ غلط دی';
+
+  @override
+  String appLockWait(String seconds) {
+    return 'ډېر هڅې وشوې، $seconds ثانیې انتظار وکړه';
+  }
+
+  @override
+  String get appLockNew => 'یو پن کوډ وټاکه';
+
+  @override
+  String get appLockNewHint => '۴ تر ۸ عددونه';
+
+  @override
+  String get appLockConfirm => 'بیا یې ولیکه';
+
+  @override
+  String get appLockMismatch => 'پن کوډونه سره نه جوړېږي';
+
+  @override
+  String get appLockOn => 'پن کوډ ټاکل شو';
+
+  @override
+  String get appLockRemoveTitle => 'د قفل بندولو لپاره خپل پن کوډ ولیکه';
+
+  @override
   String get installFailed => 'نصب ناکام شو';
 
   @override
@@ -201,10 +246,10 @@ class AppLocalizationsPs extends AppLocalizations {
   String get settingsGeneralDesc => 'ژبه او چلند';
 
   @override
-  String get settingsNetwork => 'Network';
+  String get settingsNetwork => 'شبکه';
 
   @override
-  String get settingsNetworkDesc => 'User agent, certificates, DNS and proxy';
+  String get settingsNetworkDesc => 'یوزر ایجنټ، سندونه، DNS او پروکسي';
 
   @override
   String get settingsAccountDesc => 'د تعقیب خدمت او ننوتل';
@@ -1085,7 +1130,7 @@ class AppLocalizationsPs extends AppLocalizations {
   String get kitsuAccountOptions => 'د Kitsu د حساب غوراوي';
 
   @override
-  String get mangaBakaAccountOptions => 'MangaBaka account options';
+  String get mangaBakaAccountOptions => 'د MangaBaka د حساب اختیارونه';
 
   @override
   String get couldNotUpdateKitsuSettings => 'ستا د Kitsu تنظیمات تازه نه شول';
@@ -1367,7 +1412,7 @@ class AppLocalizationsPs extends AppLocalizations {
 
   @override
   String chapterExpectedIn(int chapter, String time) {
-    return 'Chapter $chapter expected in about $time';
+    return '$chapter څپرکی شاوخوا $time کې راځي';
   }
 
   @override
@@ -1974,11 +2019,11 @@ class AppLocalizationsPs extends AppLocalizations {
       'هغه ننوتنې چې په AniList کې شخصي نښه شوې له فیډ څخه لرې وساته';
 
   @override
-  String get anilistExcludeList => 'Exclude your list';
+  String get anilistExcludeList => 'خپل لیست مه ښيه';
 
   @override
   String get anilistExcludeListDesc =>
-      'Keep titles already on your AniList out of the anime and manga pages';
+      'هغه سرلیکونه چې مخکې ستا په AniList کې دي د انیمې او مانګا له پاڼو لرې کړه';
 
   @override
   String get anilistProfile => 'د AniList پروفایل';
@@ -3043,22 +3088,22 @@ class AppLocalizationsPs extends AppLocalizations {
   String get topRatedMovies => 'تر ټولو لوړ درجه شوي فلمونه';
 
   @override
-  String get koreanDramas => 'Korean Dramas';
+  String get koreanDramas => 'کوریایي ډرامې';
 
   @override
-  String get chineseDramas => 'Chinese Dramas';
+  String get chineseDramas => 'چینايي ډرامې';
 
   @override
-  String get japaneseDramas => 'Japanese Dramas';
+  String get japaneseDramas => 'جاپاني ډرامې';
 
   @override
-  String get thaiDramas => 'Thai Dramas';
+  String get thaiDramas => 'تایلنډي ډرامې';
 
   @override
-  String get turkishDramas => 'Turkish Dramas';
+  String get turkishDramas => 'ترکي ډرامې';
 
   @override
-  String get miniSeries => 'Mini Series';
+  String get miniSeries => 'لنډ سریالونه';
 
   @override
   String get topRatedShows => 'تر ټولو لوړ درجه شوې شوګانې';
@@ -5753,11 +5798,24 @@ class AppLocalizationsPs extends AppLocalizations {
       'دا غوراوي د دې سرلیک لپاره وساته او خپل ډیفالټ پرېږده';
 
   @override
-  String get playerSwapGestures => 'Swap swipe sides';
+  String get playerSwapGestures => 'د سوایپ اړخونه بدل کړه';
 
   @override
-  String get playerSwapGesturesDesc =>
-      'Brightness on the left and volume on the right';
+  String get playerSwapGesturesDesc => 'روښانتیا چپ لور ته او غږ ښي لور ته';
+
+  @override
+  String get playerOpenBig => 'په لوی انځور کې پرانیستل';
+
+  @override
+  String get playerOpenBigDesc =>
+      'پلیر د قسمونو لیست پر ځای بشپړ سکرین پیل کړه';
+
+  @override
+  String get playerPauseOnBlur => 'کله چې فوکس نه وي ودرېږه';
+
+  @override
+  String get playerPauseOnBlurDesc =>
+      'کله چې اپ پټ شي، لکه د خبرتیاوو پینل، ودرېږي او بیرته راتلو سره دوام کوي';
 
   @override
   String get playerHoldSpeed => 'د ساتلو چټکتیا';

@@ -100,6 +100,51 @@ class AppLocalizationsFa extends AppLocalizations {
   String get uninstall => 'حذف نصب';
 
   @override
+  String get updateInstallCancelled =>
+      'نصب لغو شد. اگه اندروید گفت برنامه با نسخهٔ نصب‌شده تداخل داره، امضا فرق می‌کنه: اول نسخهٔ فعلی رو حذف کن، بعد آپدیت رو نصب کن';
+
+  @override
+  String updateInstallFailed(String error) {
+    return 'آپدیت نشد: $error';
+  }
+
+  @override
+  String get appLock => 'قفل برنامه';
+
+  @override
+  String get appLockDesc =>
+      'موقع باز کردن برنامه یا برگشتن بعد از یه مدت، رمز بخواد';
+
+  @override
+  String get appLockUnlock => 'رمزت رو وارد کن';
+
+  @override
+  String get appLockWrong => 'رمز اشتباهه';
+
+  @override
+  String appLockWait(String seconds) {
+    return 'زیاد تلاش کردی، $seconds ثانیه صبر کن';
+  }
+
+  @override
+  String get appLockNew => 'یه رمز انتخاب کن';
+
+  @override
+  String get appLockNewHint => '۴ تا ۸ رقم';
+
+  @override
+  String get appLockConfirm => 'دوباره وارد کن';
+
+  @override
+  String get appLockMismatch => 'رمزها یکی نیستن';
+
+  @override
+  String get appLockOn => 'رمز تنظیم شد';
+
+  @override
+  String get appLockRemoveTitle => 'برای خاموش کردن قفل، رمزت رو وارد کن';
+
+  @override
   String get installFailed => 'نصب نشد';
 
   @override
@@ -200,10 +245,10 @@ class AppLocalizationsFa extends AppLocalizations {
   String get settingsGeneralDesc => 'زبان و رفتار اپ';
 
   @override
-  String get settingsNetwork => 'Network';
+  String get settingsNetwork => 'شبکه';
 
   @override
-  String get settingsNetworkDesc => 'User agent, certificates, DNS and proxy';
+  String get settingsNetworkDesc => 'یوزر ایجنت، گواهی‌ها، DNS و پروکسی';
 
   @override
   String get settingsAccountDesc => 'سرویس ردیابی و ورود';
@@ -1081,7 +1126,7 @@ class AppLocalizationsFa extends AppLocalizations {
   String get kitsuAccountOptions => 'گزینه‌های حساب Kitsu';
 
   @override
-  String get mangaBakaAccountOptions => 'MangaBaka account options';
+  String get mangaBakaAccountOptions => 'گزینه‌های حساب MangaBaka';
 
   @override
   String get couldNotUpdateKitsuSettings => 'تنظیمات Kitsu به‌روز نشد';
@@ -1361,7 +1406,7 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String chapterExpectedIn(int chapter, String time) {
-    return 'Chapter $chapter expected in about $time';
+    return 'فصل $chapter تقریباً $time دیگه میاد';
   }
 
   @override
@@ -1968,11 +2013,11 @@ class AppLocalizationsFa extends AppLocalizations {
       'ورودی‌هایی که تو AniList خصوصی شدن رو از فید دور نگه دار';
 
   @override
-  String get anilistExcludeList => 'Exclude your list';
+  String get anilistExcludeList => 'حذف لیست خودت';
 
   @override
   String get anilistExcludeListDesc =>
-      'Keep titles already on your AniList out of the anime and manga pages';
+      'عنوان‌هایی که تو AniList خودت هست رو از صفحه‌های انیمه و مانگا حذف کن';
 
   @override
   String get anilistProfile => 'پروفایل AniList';
@@ -3034,22 +3079,22 @@ class AppLocalizationsFa extends AppLocalizations {
   String get topRatedMovies => 'فیلم‌های با بیشترین امتیاز';
 
   @override
-  String get koreanDramas => 'Korean Dramas';
+  String get koreanDramas => 'دراما‌های کره‌ای';
 
   @override
-  String get chineseDramas => 'Chinese Dramas';
+  String get chineseDramas => 'دراما‌های چینی';
 
   @override
-  String get japaneseDramas => 'Japanese Dramas';
+  String get japaneseDramas => 'دراما‌های ژاپنی';
 
   @override
-  String get thaiDramas => 'Thai Dramas';
+  String get thaiDramas => 'دراما‌های تایلندی';
 
   @override
-  String get turkishDramas => 'Turkish Dramas';
+  String get turkishDramas => 'دراما‌های ترکی';
 
   @override
-  String get miniSeries => 'Mini Series';
+  String get miniSeries => 'مینی‌سریال';
 
   @override
   String get topRatedShows => 'سریال‌های با بیشترین امتیاز';
@@ -5744,11 +5789,24 @@ class AppLocalizationsFa extends AppLocalizations {
       'این گزینه‌ها رو برای این عنوان نگه دار و پیش‌فرض‌هات رو دست نزن';
 
   @override
-  String get playerSwapGestures => 'Swap swipe sides';
+  String get playerSwapGestures => 'جابه‌جایی طرف‌های کشیدن';
 
   @override
-  String get playerSwapGesturesDesc =>
-      'Brightness on the left and volume on the right';
+  String get playerSwapGesturesDesc => 'روشنایی سمت چپ و صدا سمت راست';
+
+  @override
+  String get playerOpenBig => 'باز کردن در نمای بزرگ';
+
+  @override
+  String get playerOpenBigDesc =>
+      'پخش‌کننده به‌جای فهرست قسمت‌ها تمام‌صفحه شروع بشه';
+
+  @override
+  String get playerPauseOnBlur => 'توقف وقتی فوکوس نیست';
+
+  @override
+  String get playerPauseOnBlurDesc =>
+      'وقتی برنامه پوشیده می‌شه، مثلاً با پنل اعلان‌ها، پخش متوقف بشه و موقع برگشتن ادامه پیدا کنه';
 
   @override
   String get playerHoldSpeed => 'سرعت نگه‌داشتن';

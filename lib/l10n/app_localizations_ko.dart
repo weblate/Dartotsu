@@ -99,6 +99,50 @@ class AppLocalizationsKo extends AppLocalizations {
   String get uninstall => '삭제';
 
   @override
+  String get updateInstallCancelled =>
+      '설치가 취소됐어요. 안드로이드에서 기존 앱과 충돌한다고 떴다면 서명이 달라서예요. 현재 버전을 먼저 삭제한 다음 업데이트를 설치해 주세요';
+
+  @override
+  String updateInstallFailed(String error) {
+    return '업데이트 실패: $error';
+  }
+
+  @override
+  String get appLock => '앱 잠금';
+
+  @override
+  String get appLockDesc => '앱을 열거나 한참 뒤에 돌아올 때 비밀번호를 물어봐요';
+
+  @override
+  String get appLockUnlock => '비밀번호를 입력하세요';
+
+  @override
+  String get appLockWrong => '비밀번호가 틀렸어요';
+
+  @override
+  String appLockWait(String seconds) {
+    return '너무 많이 틀렸어요. $seconds초 후에 다시 해보세요';
+  }
+
+  @override
+  String get appLockNew => '비밀번호를 정하세요';
+
+  @override
+  String get appLockNewHint => '숫자 4~8자리';
+
+  @override
+  String get appLockConfirm => '한 번 더 입력하세요';
+
+  @override
+  String get appLockMismatch => '비밀번호가 서로 달라요';
+
+  @override
+  String get appLockOn => '비밀번호 설정됨';
+
+  @override
+  String get appLockRemoveTitle => '잠금을 끄려면 비밀번호를 입력하세요';
+
+  @override
   String get installFailed => '설치에 실패했어요';
 
   @override
@@ -199,10 +243,10 @@ class AppLocalizationsKo extends AppLocalizations {
   String get settingsGeneralDesc => '언어와 동작';
 
   @override
-  String get settingsNetwork => 'Network';
+  String get settingsNetwork => '네트워크';
 
   @override
-  String get settingsNetworkDesc => 'User agent, certificates, DNS and proxy';
+  String get settingsNetworkDesc => '유저 에이전트, 인증서, DNS, 프록시';
 
   @override
   String get settingsAccountDesc => '트래킹 서비스와 로그인';
@@ -1057,7 +1101,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get kitsuAccountOptions => 'Kitsu 계정 옵션';
 
   @override
-  String get mangaBakaAccountOptions => 'MangaBaka account options';
+  String get mangaBakaAccountOptions => 'MangaBaka 계정 옵션';
 
   @override
   String get couldNotUpdateKitsuSettings => 'Kitsu 설정을 업데이트하지 못했어요';
@@ -1336,7 +1380,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String chapterExpectedIn(int chapter, String time) {
-    return 'Chapter $chapter expected in about $time';
+    return '$chapter화는 약 $time 후에 나올 예정이에요';
   }
 
   @override
@@ -1937,11 +1981,10 @@ class AppLocalizationsKo extends AppLocalizations {
   String get hidePrivateEntriesDesc => 'AniList에서 비공개로 표시한 항목을 피드에서 빼요';
 
   @override
-  String get anilistExcludeList => 'Exclude your list';
+  String get anilistExcludeList => '내 목록 제외';
 
   @override
-  String get anilistExcludeListDesc =>
-      'Keep titles already on your AniList out of the anime and manga pages';
+  String get anilistExcludeListDesc => 'AniList에 이미 있는 작품은 애니·만화 페이지에서 빼요';
 
   @override
   String get anilistProfile => 'AniList 프로필';
@@ -2991,22 +3034,22 @@ class AppLocalizationsKo extends AppLocalizations {
   String get topRatedMovies => '높은 평점 영화';
 
   @override
-  String get koreanDramas => 'Korean Dramas';
+  String get koreanDramas => '한국 드라마';
 
   @override
-  String get chineseDramas => 'Chinese Dramas';
+  String get chineseDramas => '중국 드라마';
 
   @override
-  String get japaneseDramas => 'Japanese Dramas';
+  String get japaneseDramas => '일본 드라마';
 
   @override
-  String get thaiDramas => 'Thai Dramas';
+  String get thaiDramas => '태국 드라마';
 
   @override
-  String get turkishDramas => 'Turkish Dramas';
+  String get turkishDramas => '튀르키예 드라마';
 
   @override
-  String get miniSeries => 'Mini Series';
+  String get miniSeries => '미니시리즈';
 
   @override
   String get topRatedShows => '높은 평점 프로그램';
@@ -5640,11 +5683,22 @@ class AppLocalizationsKo extends AppLocalizations {
   String get playerPerTitleDesc => '이 작품에만 이 옵션을 쓰고 기본값은 그대로 둬요';
 
   @override
-  String get playerSwapGestures => 'Swap swipe sides';
+  String get playerSwapGestures => '스와이프 좌우 바꾸기';
 
   @override
-  String get playerSwapGesturesDesc =>
-      'Brightness on the left and volume on the right';
+  String get playerSwapGesturesDesc => '왼쪽은 밝기, 오른쪽은 볼륨';
+
+  @override
+  String get playerOpenBig => '큰 화면으로 열기';
+
+  @override
+  String get playerOpenBigDesc => '에피소드 목록 없이 플레이어를 전체 화면으로 시작해요';
+
+  @override
+  String get playerPauseOnBlur => '포커스를 잃으면 일시정지';
+
+  @override
+  String get playerPauseOnBlurDesc => '알림창 등으로 앱이 가려진 동안 일시정지하고, 돌아오면 다시 재생해요';
 
   @override
   String get playerHoldSpeed => '길게 누를 때 속도';

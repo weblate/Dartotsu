@@ -101,6 +101,51 @@ class AppLocalizationsSi extends AppLocalizations {
   String get uninstall => 'අන්ඉන්ස්ටෝල් කරන්න';
 
   @override
+  String get updateInstallCancelled =>
+      'ස්ථාපනය අවලංගු වුණා. ස්ථාපිත ඇප් එක සමඟ ගැටෙනවා කියා Android කිව්වොත්, අත්සන වෙනස්: මුලින් දැන් තියෙන සංස්කරණය අස්ථාපනය කරලා, ඊට පස්සේ යාවත්කාලීනය ස්ථාපනය කරන්න';
+
+  @override
+  String updateInstallFailed(String error) {
+    return 'යාවත්කාලීනය වුණේ නෑ: $error';
+  }
+
+  @override
+  String get appLock => 'ඇප් ලොක්';
+
+  @override
+  String get appLockDesc =>
+      'ඇප් එක ඇරද්දී හෝ ටික වෙලාවකට පස්සේ ආපහු එද්දී පාස්කෝඩ් එක අහනවා';
+
+  @override
+  String get appLockUnlock => 'ඔයාගේ පාස්කෝඩ් එක දාන්න';
+
+  @override
+  String get appLockWrong => 'පාස්කෝඩ් එක වැරදියි';
+
+  @override
+  String appLockWait(String seconds) {
+    return 'උත්සාහ කරලා ඉවරයි, තත්පර $secondsක් ඉන්න';
+  }
+
+  @override
+  String get appLockNew => 'පාස්කෝඩ් එකක් තෝරන්න';
+
+  @override
+  String get appLockNewHint => 'ඉලක්කම් 4 සිට 8 දක්වා';
+
+  @override
+  String get appLockConfirm => 'ආයෙත් දාන්න';
+
+  @override
+  String get appLockMismatch => 'පාස්කෝඩ් දෙක ගැළපෙන්නෙ නෑ';
+
+  @override
+  String get appLockOn => 'පාස්කෝඩ් එක සෙට් වුණා';
+
+  @override
+  String get appLockRemoveTitle => 'ලොක් එක ඕෆ් කරන්න පාස්කෝඩ් එක දාන්න';
+
+  @override
   String get installFailed => 'ඉන්ස්ටෝල් කරන්න බැරි වුණා';
 
   @override
@@ -202,10 +247,10 @@ class AppLocalizationsSi extends AppLocalizations {
   String get settingsGeneralDesc => 'භාෂාව සහ ඇප් එකේ හැසිරීම';
 
   @override
-  String get settingsNetwork => 'Network';
+  String get settingsNetwork => 'ජාලය';
 
   @override
-  String get settingsNetworkDesc => 'User agent, certificates, DNS and proxy';
+  String get settingsNetworkDesc => 'යූසර් එජන්ට්, සහතික, DNS සහ ප්‍රොක්සි';
 
   @override
   String get settingsAccountDesc => 'ට්‍රැකින් සර්විස් සහ සයින් ඉන්';
@@ -1096,7 +1141,7 @@ class AppLocalizationsSi extends AppLocalizations {
   String get kitsuAccountOptions => 'Kitsu ගිණුම් විකල්ප';
 
   @override
-  String get mangaBakaAccountOptions => 'MangaBaka account options';
+  String get mangaBakaAccountOptions => 'MangaBaka ගිණුමේ විකල්ප';
 
   @override
   String get couldNotUpdateKitsuSettings =>
@@ -1380,7 +1425,7 @@ class AppLocalizationsSi extends AppLocalizations {
 
   @override
   String chapterExpectedIn(int chapter, String time) {
-    return 'Chapter $chapter expected in about $time';
+    return '$chapter වන පරිච්ඡේදය $timeකින් පමණ එනවා';
   }
 
   @override
@@ -1988,11 +2033,11 @@ class AppLocalizationsSi extends AppLocalizations {
       'AniList එකේ පෞද්ගලික කියලා සලකුණු කරපු එන්ට්‍රීස් ෆීඩ් එකෙන් ඈත් කරන්න';
 
   @override
-  String get anilistExcludeList => 'Exclude your list';
+  String get anilistExcludeList => 'ඔයාගේ ලැයිස්තුව බැහැර කරන්න';
 
   @override
   String get anilistExcludeListDesc =>
-      'Keep titles already on your AniList out of the anime and manga pages';
+      'ඔයාගේ AniList එකේ දැනටමත් තියෙන ටයිටල් ඇනිමේ සහ මංගා පිටුවල පෙන්නන්න එපා';
 
   @override
   String get anilistProfile => 'AniList ප්‍රොෆයිල් එක';
@@ -3058,22 +3103,22 @@ class AppLocalizationsSi extends AppLocalizations {
   String get topRatedMovies => 'ඉහළම රේට් කරපු මූවීස්';
 
   @override
-  String get koreanDramas => 'Korean Dramas';
+  String get koreanDramas => 'කොරියානු ඩ්‍රාමා';
 
   @override
-  String get chineseDramas => 'Chinese Dramas';
+  String get chineseDramas => 'චීන ඩ්‍රාමා';
 
   @override
-  String get japaneseDramas => 'Japanese Dramas';
+  String get japaneseDramas => 'ජපන් ඩ්‍රාමා';
 
   @override
-  String get thaiDramas => 'Thai Dramas';
+  String get thaiDramas => 'තායි ඩ්‍රාමා';
 
   @override
-  String get turkishDramas => 'Turkish Dramas';
+  String get turkishDramas => 'තුර්කි ඩ්‍රාමා';
 
   @override
-  String get miniSeries => 'Mini Series';
+  String get miniSeries => 'මිනි සීරීස්';
 
   @override
   String get topRatedShows => 'ඉහළම රේට් කරපු ෂෝස්';
@@ -5795,11 +5840,25 @@ class AppLocalizationsSi extends AppLocalizations {
       'මේ විකල්ප මේ ටයිටල් එකට තියාගෙන ඔයාගේ ඩිෆෝල්ට්ස් ඒ විදියටම තියන්න';
 
   @override
-  String get playerSwapGestures => 'Swap swipe sides';
+  String get playerSwapGestures => 'ස්වයිප් පැති මාරු කරන්න';
 
   @override
   String get playerSwapGesturesDesc =>
-      'Brightness on the left and volume on the right';
+      'වම පැත්තෙන් බ්‍රයිට්නස්, දකුණු පැත්තෙන් වොලියුම්';
+
+  @override
+  String get playerOpenBig => 'ලොකු වීව් එකෙන් අරින්න';
+
+  @override
+  String get playerOpenBigDesc =>
+      'කථාංග ලැයිස්තුව නැතිව ප්ලේයර් එක කෙලින්ම ෆුල්ස්ක්‍රීන් එකෙන් පටන් ගන්නවා';
+
+  @override
+  String get playerPauseOnBlur => 'ෆෝකස් නැති වුණාම පෝස් කරන්න';
+
+  @override
+  String get playerPauseOnBlurDesc =>
+      'නොටිෆිකේෂන් පැනලය වගේ දෙයක් ඇප් එක වහපුවාම පෝස් වෙනවා, ආපහු ආවම ආයෙත් ධාවනය වෙනවා';
 
   @override
   String get playerHoldSpeed => 'හෝල්ඩ් වේගය';

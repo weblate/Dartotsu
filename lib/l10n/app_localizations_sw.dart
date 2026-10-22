@@ -101,6 +101,52 @@ class AppLocalizationsSw extends AppLocalizations {
   String get uninstall => 'Ondoa';
 
   @override
+  String get updateInstallCancelled =>
+      'Usakinishaji umeghairiwa. Kama Android ilisema programu inagongana na iliyosakinishwa, sahihi ni tofauti: ondoa toleo la sasa kwanza, kisha sakinisha sasisho';
+
+  @override
+  String updateInstallFailed(String error) {
+    return 'Sasisho limeshindwa: $error';
+  }
+
+  @override
+  String get appLock => 'Kufuli ya programu';
+
+  @override
+  String get appLockDesc =>
+      'Omba nambari ya siri programu inapofunguliwa au ukirudi baada ya muda';
+
+  @override
+  String get appLockUnlock => 'Weka nambari yako ya siri';
+
+  @override
+  String get appLockWrong => 'Nambari ya siri si sahihi';
+
+  @override
+  String appLockWait(String seconds) {
+    return 'Umejaribu mara nyingi, subiri sekunde $seconds';
+  }
+
+  @override
+  String get appLockNew => 'Chagua nambari ya siri';
+
+  @override
+  String get appLockNewHint => 'Tarakimu 4 hadi 8';
+
+  @override
+  String get appLockConfirm => 'Iweke tena';
+
+  @override
+  String get appLockMismatch => 'Nambari za siri hazifanani';
+
+  @override
+  String get appLockOn => 'Nambari ya siri imewekwa';
+
+  @override
+  String get appLockRemoveTitle =>
+      'Weka nambari yako ya siri ili kuzima kufuli';
+
+  @override
   String get installFailed => 'Kusakinisha kumeshindwa';
 
   @override
@@ -202,10 +248,10 @@ class AppLocalizationsSw extends AppLocalizations {
   String get settingsGeneralDesc => 'Lugha na tabia ya programu';
 
   @override
-  String get settingsNetwork => 'Network';
+  String get settingsNetwork => 'Mtandao';
 
   @override
-  String get settingsNetworkDesc => 'User agent, certificates, DNS and proxy';
+  String get settingsNetworkDesc => 'User agent, vyeti, DNS na proksi';
 
   @override
   String get settingsAccountDesc => 'Huduma ya ufuatiliaji na kuingia';
@@ -1096,7 +1142,7 @@ class AppLocalizationsSw extends AppLocalizations {
   String get kitsuAccountOptions => 'Chaguo za akaunti ya Kitsu';
 
   @override
-  String get mangaBakaAccountOptions => 'MangaBaka account options';
+  String get mangaBakaAccountOptions => 'Chaguo za akaunti ya MangaBaka';
 
   @override
   String get couldNotUpdateKitsuSettings =>
@@ -1379,7 +1425,7 @@ class AppLocalizationsSw extends AppLocalizations {
 
   @override
   String chapterExpectedIn(int chapter, String time) {
-    return 'Chapter $chapter expected in about $time';
+    return 'Sura ya $chapter inatarajiwa baada ya takriban $time';
   }
 
   @override
@@ -1988,11 +2034,11 @@ class AppLocalizationsSw extends AppLocalizations {
       'Weka vipengee vilivyowekwa faragha kwenye AniList nje ya mlisho';
 
   @override
-  String get anilistExcludeList => 'Exclude your list';
+  String get anilistExcludeList => 'Ficha orodha yako';
 
   @override
   String get anilistExcludeListDesc =>
-      'Keep titles already on your AniList out of the anime and manga pages';
+      'Usionyeshe kwenye kurasa za anime na manga vitu vilivyo tayari kwenye AniList yako';
 
   @override
   String get anilistProfile => 'Wasifu wa AniList';
@@ -3061,22 +3107,22 @@ class AppLocalizationsSw extends AppLocalizations {
   String get topRatedMovies => 'Filamu zilizokadiriwa juu';
 
   @override
-  String get koreanDramas => 'Korean Dramas';
+  String get koreanDramas => 'Tamthilia za Kikorea';
 
   @override
-  String get chineseDramas => 'Chinese Dramas';
+  String get chineseDramas => 'Tamthilia za Kichina';
 
   @override
-  String get japaneseDramas => 'Japanese Dramas';
+  String get japaneseDramas => 'Tamthilia za Kijapani';
 
   @override
-  String get thaiDramas => 'Thai Dramas';
+  String get thaiDramas => 'Tamthilia za Kithai';
 
   @override
-  String get turkishDramas => 'Turkish Dramas';
+  String get turkishDramas => 'Tamthilia za Kituruki';
 
   @override
-  String get miniSeries => 'Mini Series';
+  String get miniSeries => 'Mfululizo mfupi';
 
   @override
   String get topRatedShows => 'Vipindi vilivyokadiriwa juu';
@@ -5801,11 +5847,24 @@ class AppLocalizationsSw extends AppLocalizations {
       'Weka chaguo hizi kwa kichwa hiki na usiguse chaguomsingi zako';
 
   @override
-  String get playerSwapGestures => 'Swap swipe sides';
+  String get playerSwapGestures => 'Badilisha pande za kutelezesha';
 
   @override
-  String get playerSwapGesturesDesc =>
-      'Brightness on the left and volume on the right';
+  String get playerSwapGesturesDesc => 'Mwangaza kushoto na sauti kulia';
+
+  @override
+  String get playerOpenBig => 'Fungua kwa mwonekano mkubwa';
+
+  @override
+  String get playerOpenBigDesc =>
+      'Anza kicheza skrini nzima badala ya kuonyesha orodha ya vipindi';
+
+  @override
+  String get playerPauseOnBlur => 'Sitisha ukiwa nje ya programu';
+
+  @override
+  String get playerPauseOnBlurDesc =>
+      'Sitisha programu inapofunikwa, kama paneli ya arifa, na uendelee ukirudi';
 
   @override
   String get playerHoldSpeed => 'Kasi ya kushikilia';

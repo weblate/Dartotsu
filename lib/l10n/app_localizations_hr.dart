@@ -103,6 +103,51 @@ class AppLocalizationsHr extends AppLocalizations {
   String get uninstall => 'Deinstaliraj';
 
   @override
+  String get updateInstallCancelled =>
+      'Instalacija je otkazana. Ako je Android rekao da se aplikacija sukobljava s instaliranom, potpis je drukčiji: prvo deinstaliraj trenutnu verziju, pa onda instaliraj ažuriranje';
+
+  @override
+  String updateInstallFailed(String error) {
+    return 'Ažuriranje nije uspjelo: $error';
+  }
+
+  @override
+  String get appLock => 'Zaključavanje aplikacije';
+
+  @override
+  String get appLockDesc =>
+      'Traži šifru kad se aplikacija otvori ili vrati nakon nekog vremena';
+
+  @override
+  String get appLockUnlock => 'Upiši svoju šifru';
+
+  @override
+  String get appLockWrong => 'Pogrešna šifra';
+
+  @override
+  String appLockWait(String seconds) {
+    return 'Previše pokušaja, pričekaj $seconds s';
+  }
+
+  @override
+  String get appLockNew => 'Odaberi šifru';
+
+  @override
+  String get appLockNewHint => '4 do 8 znamenki';
+
+  @override
+  String get appLockConfirm => 'Upiši je još jednom';
+
+  @override
+  String get appLockMismatch => 'Šifre se ne podudaraju';
+
+  @override
+  String get appLockOn => 'Šifra je postavljena';
+
+  @override
+  String get appLockRemoveTitle => 'Upiši šifru da isključiš zaključavanje';
+
+  @override
   String get installFailed => 'Instalacija nije uspjela';
 
   @override
@@ -204,10 +249,10 @@ class AppLocalizationsHr extends AppLocalizations {
   String get settingsGeneralDesc => 'Jezik i ponašanje';
 
   @override
-  String get settingsNetwork => 'Network';
+  String get settingsNetwork => 'Mreža';
 
   @override
-  String get settingsNetworkDesc => 'User agent, certificates, DNS and proxy';
+  String get settingsNetworkDesc => 'User agent, certifikati, DNS i proxy';
 
   @override
   String get settingsAccountDesc => 'Servis za praćenje i prijava';
@@ -1095,7 +1140,7 @@ class AppLocalizationsHr extends AppLocalizations {
   String get kitsuAccountOptions => 'Opcije Kitsu računa';
 
   @override
-  String get mangaBakaAccountOptions => 'MangaBaka account options';
+  String get mangaBakaAccountOptions => 'Opcije MangaBaka računa';
 
   @override
   String get couldNotUpdateKitsuSettings =>
@@ -1380,7 +1425,7 @@ class AppLocalizationsHr extends AppLocalizations {
 
   @override
   String chapterExpectedIn(int chapter, String time) {
-    return 'Chapter $chapter expected in about $time';
+    return 'Poglavlje $chapter stiže za otprilike $time';
   }
 
   @override
@@ -1987,11 +2032,11 @@ class AppLocalizationsHr extends AppLocalizations {
       'Drži unose označene kao privatne na AniListu izvan feeda';
 
   @override
-  String get anilistExcludeList => 'Exclude your list';
+  String get anilistExcludeList => 'Izuzmi moj popis';
 
   @override
   String get anilistExcludeListDesc =>
-      'Keep titles already on your AniList out of the anime and manga pages';
+      'Ne prikazuj na stranicama animea i mange naslove koje već imaš na AniListu';
 
   @override
   String get anilistProfile => 'AniList profil';
@@ -3063,22 +3108,22 @@ class AppLocalizationsHr extends AppLocalizations {
   String get topRatedMovies => 'Najbolje ocijenjeni filmovi';
 
   @override
-  String get koreanDramas => 'Korean Dramas';
+  String get koreanDramas => 'Korejske drame';
 
   @override
-  String get chineseDramas => 'Chinese Dramas';
+  String get chineseDramas => 'Kineske drame';
 
   @override
-  String get japaneseDramas => 'Japanese Dramas';
+  String get japaneseDramas => 'Japanske drame';
 
   @override
-  String get thaiDramas => 'Thai Dramas';
+  String get thaiDramas => 'Tajlandske drame';
 
   @override
-  String get turkishDramas => 'Turkish Dramas';
+  String get turkishDramas => 'Turske serije';
 
   @override
-  String get miniSeries => 'Mini Series';
+  String get miniSeries => 'Miniserije';
 
   @override
   String get topRatedShows => 'Najbolje ocijenjene serije';
@@ -5797,11 +5842,24 @@ class AppLocalizationsHr extends AppLocalizations {
       'Zadrži ove opcije za ovaj naslov i ostavi svoje zadane na miru';
 
   @override
-  String get playerSwapGestures => 'Swap swipe sides';
+  String get playerSwapGestures => 'Zamijeni strane prevlačenja';
 
   @override
-  String get playerSwapGesturesDesc =>
-      'Brightness on the left and volume on the right';
+  String get playerSwapGesturesDesc => 'Svjetlina lijevo, glasnoća desno';
+
+  @override
+  String get playerOpenBig => 'Otvori u velikom prikazu';
+
+  @override
+  String get playerOpenBigDesc =>
+      'Pokreni player preko cijelog zaslona umjesto s popisom epizoda';
+
+  @override
+  String get playerPauseOnBlur => 'Pauziraj kad nije u fokusu';
+
+  @override
+  String get playerPauseOnBlurDesc =>
+      'Pauziraj dok je aplikacija prekrivena, npr. pločom obavijesti, i nastavi kad se vratiš';
 
   @override
   String get playerHoldSpeed => 'Brzina držanja';

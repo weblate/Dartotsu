@@ -100,6 +100,50 @@ class AppLocalizationsHe extends AppLocalizations {
   String get uninstall => 'הסר';
 
   @override
+  String get updateInstallCancelled =>
+      'ההתקנה בוטלה. אם אנדרואיד אמר שהאפליקציה מתנגשת עם הגרסה המותקנת, החתימה שונה: קודם מסירים את הגרסה הנוכחית ואז מתקינים את העדכון';
+
+  @override
+  String updateInstallFailed(String error) {
+    return 'העדכון נכשל: $error';
+  }
+
+  @override
+  String get appLock => 'נעילת אפליקציה';
+
+  @override
+  String get appLockDesc => 'לבקש קוד כשהאפליקציה נפתחת או חוזרת אחרי זמן מה';
+
+  @override
+  String get appLockUnlock => 'הכנס את הקוד שלך';
+
+  @override
+  String get appLockWrong => 'קוד שגוי';
+
+  @override
+  String appLockWait(String seconds) {
+    return 'יותר מדי ניסיונות, חכה $seconds שניות';
+  }
+
+  @override
+  String get appLockNew => 'בחר קוד';
+
+  @override
+  String get appLockNewHint => '4 עד 8 ספרות';
+
+  @override
+  String get appLockConfirm => 'הכנס אותו שוב';
+
+  @override
+  String get appLockMismatch => 'הקודים לא תואמים';
+
+  @override
+  String get appLockOn => 'הקוד הוגדר';
+
+  @override
+  String get appLockRemoveTitle => 'הכנס את הקוד כדי לכבות את הנעילה';
+
+  @override
   String get installFailed => 'ההתקנה נכשלה';
 
   @override
@@ -200,10 +244,10 @@ class AppLocalizationsHe extends AppLocalizations {
   String get settingsGeneralDesc => 'שפה והתנהגות';
 
   @override
-  String get settingsNetwork => 'Network';
+  String get settingsNetwork => 'רשת';
 
   @override
-  String get settingsNetworkDesc => 'User agent, certificates, DNS and proxy';
+  String get settingsNetworkDesc => 'User agent, תעודות, DNS ופרוקסי';
 
   @override
   String get settingsAccountDesc => 'שירות מעקב והתחברות';
@@ -1077,7 +1121,7 @@ class AppLocalizationsHe extends AppLocalizations {
   String get kitsuAccountOptions => 'הגדרות חשבון Kitsu';
 
   @override
-  String get mangaBakaAccountOptions => 'MangaBaka account options';
+  String get mangaBakaAccountOptions => 'אפשרויות חשבון MangaBaka';
 
   @override
   String get couldNotUpdateKitsuSettings => 'אי אפשר לעדכן את הגדרות Kitsu שלך';
@@ -1359,7 +1403,7 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String chapterExpectedIn(int chapter, String time) {
-    return 'Chapter $chapter expected in about $time';
+    return 'פרק $chapter צפוי בעוד בערך $time';
   }
 
   @override
@@ -1963,11 +2007,11 @@ class AppLocalizationsHe extends AppLocalizations {
       'הרחק מהפיד ערכים שסומנו כפרטיים ב-AniList';
 
   @override
-  String get anilistExcludeList => 'Exclude your list';
+  String get anilistExcludeList => 'להחריג את הרשימה שלך';
 
   @override
   String get anilistExcludeListDesc =>
-      'Keep titles already on your AniList out of the anime and manga pages';
+      'להסתיר מדפי האנימה והמנגה כותרים שכבר ברשימה שלך ב-AniList';
 
   @override
   String get anilistProfile => 'פרופיל AniList';
@@ -3027,22 +3071,22 @@ class AppLocalizationsHe extends AppLocalizations {
   String get topRatedMovies => 'סרטים עם הדירוג הגבוה ביותר';
 
   @override
-  String get koreanDramas => 'Korean Dramas';
+  String get koreanDramas => 'דרמות קוריאניות';
 
   @override
-  String get chineseDramas => 'Chinese Dramas';
+  String get chineseDramas => 'דרמות סיניות';
 
   @override
-  String get japaneseDramas => 'Japanese Dramas';
+  String get japaneseDramas => 'דרמות יפניות';
 
   @override
-  String get thaiDramas => 'Thai Dramas';
+  String get thaiDramas => 'דרמות תאילנדיות';
 
   @override
-  String get turkishDramas => 'Turkish Dramas';
+  String get turkishDramas => 'דרמות טורקיות';
 
   @override
-  String get miniSeries => 'Mini Series';
+  String get miniSeries => 'מיני סדרות';
 
   @override
   String get topRatedShows => 'סדרות עם הדירוג הגבוה ביותר';
@@ -5722,11 +5766,24 @@ class AppLocalizationsHe extends AppLocalizations {
       'שמור את האפשרויות האלה לכותר הזה והשאר את ברירות המחדל שלך כמו שהן';
 
   @override
-  String get playerSwapGestures => 'Swap swipe sides';
+  String get playerSwapGestures => 'להחליף צדדי החלקה';
 
   @override
-  String get playerSwapGesturesDesc =>
-      'Brightness on the left and volume on the right';
+  String get playerSwapGesturesDesc => 'בהירות בשמאל וווליום בימין';
+
+  @override
+  String get playerOpenBig => 'לפתוח בתצוגה גדולה';
+
+  @override
+  String get playerOpenBigDesc =>
+      'לפתוח את הנגן במסך מלא במקום עם רשימת הפרקים';
+
+  @override
+  String get playerPauseOnBlur => 'להשהות כשלא בפוקוס';
+
+  @override
+  String get playerPauseOnBlurDesc =>
+      'משהה כשהאפליקציה מכוסה, למשל על ידי פאנל ההתראות, וממשיך כשחוזרים';
 
   @override
   String get playerHoldSpeed => 'מהירות החזקה';

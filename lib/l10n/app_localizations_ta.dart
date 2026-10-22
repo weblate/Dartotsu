@@ -101,6 +101,51 @@ class AppLocalizationsTa extends AppLocalizations {
   String get uninstall => 'அன்இன்ஸ்டால்';
 
   @override
+  String get updateInstallCancelled =>
+      'இன்ஸ்டால் ரத்தானது. நிறுவப்பட்ட ஆப்புடன் முரண்படுவதாக Android சொன்னால், கையெழுத்து (signature) வேறு: முதலில் தற்போதைய வெர்ஷனை அன்இன்ஸ்டால் செய்துவிட்டு அப்டேட்டை இன்ஸ்டால் பண்ணுங்க';
+
+  @override
+  String updateInstallFailed(String error) {
+    return 'அப்டேட் ஆகலை: $error';
+  }
+
+  @override
+  String get appLock => 'ஆப் லாக்';
+
+  @override
+  String get appLockDesc =>
+      'ஆப்பைத் திறக்கும்போது அல்லது கொஞ்ச நேரம் கழித்து திரும்பி வரும்போது பாஸ்கோடு கேட்கும்';
+
+  @override
+  String get appLockUnlock => 'பாஸ்கோடை உள்ளிடுங்க';
+
+  @override
+  String get appLockWrong => 'பாஸ்கோடு தவறு';
+
+  @override
+  String appLockWait(String seconds) {
+    return 'நிறைய முறை முயற்சி பண்ணிட்டீங்க, $seconds வினாடி காத்திருங்க';
+  }
+
+  @override
+  String get appLockNew => 'ஒரு பாஸ்கோடை தேர்ந்தெடுங்க';
+
+  @override
+  String get appLockNewHint => '4 முதல் 8 இலக்கங்கள்';
+
+  @override
+  String get appLockConfirm => 'இன்னொரு முறை உள்ளிடுங்க';
+
+  @override
+  String get appLockMismatch => 'பாஸ்கோடுகள் பொருந்தலை';
+
+  @override
+  String get appLockOn => 'பாஸ்கோடு செட் ஆச்சு';
+
+  @override
+  String get appLockRemoveTitle => 'லாக்கை அணைக்க பாஸ்கோடை உள்ளிடுங்க';
+
+  @override
   String get installFailed => 'இன்ஸ்டால் ஆகல';
 
   @override
@@ -201,10 +246,11 @@ class AppLocalizationsTa extends AppLocalizations {
   String get settingsGeneralDesc => 'மொழி & பிகேவியர்';
 
   @override
-  String get settingsNetwork => 'Network';
+  String get settingsNetwork => 'நெட்வொர்க்';
 
   @override
-  String get settingsNetworkDesc => 'User agent, certificates, DNS and proxy';
+  String get settingsNetworkDesc =>
+      'யூசர் ஏஜென்ட், சான்றிதழ்கள், DNS மற்றும் ப்ராக்ஸி';
 
   @override
   String get settingsAccountDesc => 'டிராக்கிங் சர்வீஸ் & சைன்-இன்';
@@ -1095,7 +1141,7 @@ class AppLocalizationsTa extends AppLocalizations {
   String get kitsuAccountOptions => 'Kitsu அக்கவுண்ட் ஆப்ஷன்ஸ்';
 
   @override
-  String get mangaBakaAccountOptions => 'MangaBaka account options';
+  String get mangaBakaAccountOptions => 'MangaBaka அக்கவுண்ட் விருப்பங்கள்';
 
   @override
   String get couldNotUpdateKitsuSettings =>
@@ -1379,7 +1425,7 @@ class AppLocalizationsTa extends AppLocalizations {
 
   @override
   String chapterExpectedIn(int chapter, String time) {
-    return 'Chapter $chapter expected in about $time';
+    return 'அத்தியாயம் $chapter சுமார் $time-ல் வரும்';
   }
 
   @override
@@ -1987,11 +2033,11 @@ class AppLocalizationsTa extends AppLocalizations {
       'AniList-ல பிரைவேட்னு மார்க் பண்ண என்ட்ரிஸை ஃபீட்ல இருந்து விலக்கு';
 
   @override
-  String get anilistExcludeList => 'Exclude your list';
+  String get anilistExcludeList => 'உங்க லிஸ்ட்டை விலக்கு';
 
   @override
   String get anilistExcludeListDesc =>
-      'Keep titles already on your AniList out of the anime and manga pages';
+      'உங்க AniList-ல் ஏற்கனவே இருக்கும் தலைப்புகளை அனிமே, மாங்கா பக்கங்களில் காட்டாது';
 
   @override
   String get anilistProfile => 'AniList ப்ரொஃபைல்';
@@ -3057,22 +3103,22 @@ class AppLocalizationsTa extends AppLocalizations {
   String get topRatedMovies => 'டாப் ரேட்டட் மூவிஸ்';
 
   @override
-  String get koreanDramas => 'Korean Dramas';
+  String get koreanDramas => 'கொரியன் டிராமாக்கள்';
 
   @override
-  String get chineseDramas => 'Chinese Dramas';
+  String get chineseDramas => 'சீன டிராமாக்கள்';
 
   @override
-  String get japaneseDramas => 'Japanese Dramas';
+  String get japaneseDramas => 'ஜப்பானிய டிராமாக்கள்';
 
   @override
-  String get thaiDramas => 'Thai Dramas';
+  String get thaiDramas => 'தாய் டிராமாக்கள்';
 
   @override
-  String get turkishDramas => 'Turkish Dramas';
+  String get turkishDramas => 'துருக்கிய டிராமாக்கள்';
 
   @override
-  String get miniSeries => 'Mini Series';
+  String get miniSeries => 'மினி சீரிஸ்';
 
   @override
   String get topRatedShows => 'டாப் ரேட்டட் ஷோஸ்';
@@ -5795,11 +5841,25 @@ class AppLocalizationsTa extends AppLocalizations {
       'இந்த ஆப்ஷன்ஸை இந்த டைட்டிலுக்கு வச்சுக்கோ, உன் டீஃபால்ட்ஸை தொடாத';
 
   @override
-  String get playerSwapGestures => 'Swap swipe sides';
+  String get playerSwapGestures => 'ஸ்வைப் பக்கங்களை மாற்று';
 
   @override
   String get playerSwapGesturesDesc =>
-      'Brightness on the left and volume on the right';
+      'இடதுபுறம் பிரைட்னஸ், வலதுபுறம் வால்யூம்';
+
+  @override
+  String get playerOpenBig => 'பெரிய வியூவில் திற';
+
+  @override
+  String get playerOpenBigDesc =>
+      'எபிசோட் லிஸ்ட் இல்லாமல் பிளேயரை நேரடியாக ஃபுல்ஸ்கிரீனில் தொடங்கும்';
+
+  @override
+  String get playerPauseOnBlur => 'ஃபோகஸ் போனால் பாஸ்';
+
+  @override
+  String get playerPauseOnBlurDesc =>
+      'நோட்டிபிகேஷன் பேனல் போல ஆப்பை மறைத்தால் பாஸ் ஆகும், திரும்பி வந்ததும் தொடரும்';
 
   @override
   String get playerHoldSpeed => 'ஹோல்டு ஸ்பீட்';

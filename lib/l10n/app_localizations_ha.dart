@@ -102,6 +102,52 @@ class AppLocalizationsHa extends AppLocalizations {
   String get uninstall => 'Cire';
 
   @override
+  String get updateInstallCancelled =>
+      'An soke shigarwar. Idan Android ta ce manhajar tana karo da wadda aka sanya, sa hannun ya bambanta: da farko cire sigar yanzu, sannan ka shigar da sabuntawar';
+
+  @override
+  String updateInstallFailed(String error) {
+    return 'Sabuntawa ta kasa: $error';
+  }
+
+  @override
+  String get appLock => 'Makullin manhaja';
+
+  @override
+  String get appLockDesc =>
+      'Nemi lambar sirri idan an buɗe manhajar ko an dawo bayan ɗan lokaci';
+
+  @override
+  String get appLockUnlock => 'Shigar da lambar sirrinka';
+
+  @override
+  String get appLockWrong => 'Lambar sirri ba daidai ba ce';
+
+  @override
+  String appLockWait(String seconds) {
+    return 'An yi ƙoƙari da yawa, jira daƙiƙa $seconds';
+  }
+
+  @override
+  String get appLockNew => 'Zaɓi lambar sirri';
+
+  @override
+  String get appLockNewHint => 'Lambobi 4 zuwa 8';
+
+  @override
+  String get appLockConfirm => 'Sake shigar da ita';
+
+  @override
+  String get appLockMismatch => 'Lambobin sirrin ba iri ɗaya ba ne';
+
+  @override
+  String get appLockOn => 'An saita lambar sirri';
+
+  @override
+  String get appLockRemoveTitle =>
+      'Shigar da lambar sirrinka don kashe makullin';
+
+  @override
   String get installFailed => 'Shigarwa ta kasa';
 
   @override
@@ -202,10 +248,10 @@ class AppLocalizationsHa extends AppLocalizations {
   String get settingsGeneralDesc => 'Harshe da halayyar app';
 
   @override
-  String get settingsNetwork => 'Network';
+  String get settingsNetwork => 'Hanyar sadarwa';
 
   @override
-  String get settingsNetworkDesc => 'User agent, certificates, DNS and proxy';
+  String get settingsNetworkDesc => 'User agent, takardun shaida, DNS da proxy';
 
   @override
   String get settingsAccountDesc => 'Sabis ɗin bibiya da shiga';
@@ -1089,7 +1135,7 @@ class AppLocalizationsHa extends AppLocalizations {
   String get kitsuAccountOptions => 'Zaɓuɓɓukan asusun Kitsu';
 
   @override
-  String get mangaBakaAccountOptions => 'MangaBaka account options';
+  String get mangaBakaAccountOptions => 'Zaɓuɓɓukan asusun MangaBaka';
 
   @override
   String get couldNotUpdateKitsuSettings =>
@@ -1371,7 +1417,7 @@ class AppLocalizationsHa extends AppLocalizations {
 
   @override
   String chapterExpectedIn(int chapter, String time) {
-    return 'Chapter $chapter expected in about $time';
+    return 'Ana sa ran babi na $chapter nan da kusan $time';
   }
 
   @override
@@ -1978,11 +2024,11 @@ class AppLocalizationsHa extends AppLocalizations {
       'Kiyaye shigarwar da aka yi wa alama ta sirri a AniList daga feed';
 
   @override
-  String get anilistExcludeList => 'Exclude your list';
+  String get anilistExcludeList => 'Cire jerinka';
 
   @override
   String get anilistExcludeListDesc =>
-      'Keep titles already on your AniList out of the anime and manga pages';
+      'Ka da a nuna taken da ke cikin AniList ɗinka a shafukan anime da manga';
 
   @override
   String get anilistProfile => 'Profile ɗin AniList';
@@ -3049,22 +3095,22 @@ class AppLocalizationsHa extends AppLocalizations {
   String get topRatedMovies => 'Fina-finai mafi girman maki';
 
   @override
-  String get koreanDramas => 'Korean Dramas';
+  String get koreanDramas => 'Wasan kwaikwayo na Koriya';
 
   @override
-  String get chineseDramas => 'Chinese Dramas';
+  String get chineseDramas => 'Wasan kwaikwayo na China';
 
   @override
-  String get japaneseDramas => 'Japanese Dramas';
+  String get japaneseDramas => 'Wasan kwaikwayo na Japan';
 
   @override
-  String get thaiDramas => 'Thai Dramas';
+  String get thaiDramas => 'Wasan kwaikwayo na Thailand';
 
   @override
-  String get turkishDramas => 'Turkish Dramas';
+  String get turkishDramas => 'Wasan kwaikwayo na Turkiyya';
 
   @override
-  String get miniSeries => 'Mini Series';
+  String get miniSeries => 'Gajeren jerin shirye-shirye';
 
   @override
   String get topRatedShows => 'Shirye-shirye mafi girman maki';
@@ -5774,11 +5820,24 @@ class AppLocalizationsHa extends AppLocalizations {
       'Kiyaye waɗannan zaɓuɓɓuka ga wannan take kuma bar tsoffinka';
 
   @override
-  String get playerSwapGestures => 'Swap swipe sides';
+  String get playerSwapGestures => 'Musanya bangarorin swipe';
 
   @override
-  String get playerSwapGesturesDesc =>
-      'Brightness on the left and volume on the right';
+  String get playerSwapGesturesDesc => 'Haske a hagu, sauti a dama';
+
+  @override
+  String get playerOpenBig => 'Buɗe a babban gani';
+
+  @override
+  String get playerOpenBigDesc =>
+      'Fara na\'urar kunnawa a cikakken allo maimakon jerin sassa';
+
+  @override
+  String get playerPauseOnBlur => 'Dakata idan an bar manhajar';
+
+  @override
+  String get playerPauseOnBlurDesc =>
+      'Dakata idan wani abu ya rufe manhajar, kamar allon sanarwa, sai a ci gaba idan ka dawo';
 
   @override
   String get playerHoldSpeed => 'Saurin riƙewa';

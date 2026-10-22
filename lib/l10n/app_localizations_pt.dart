@@ -101,6 +101,51 @@ class AppLocalizationsPt extends AppLocalizations {
   String get uninstall => 'Desinstalar';
 
   @override
+  String get updateInstallCancelled =>
+      'Instalação cancelada. Se o Android disse que a app entra em conflito com a instalada, a assinatura é diferente: desinstala primeiro a versão atual e depois instala a atualização';
+
+  @override
+  String updateInstallFailed(String error) {
+    return 'A atualização falhou: $error';
+  }
+
+  @override
+  String get appLock => 'Bloqueio da app';
+
+  @override
+  String get appLockDesc =>
+      'Pede um código quando abres a app ou voltas a ela passado algum tempo';
+
+  @override
+  String get appLockUnlock => 'Mete o teu código';
+
+  @override
+  String get appLockWrong => 'Código errado';
+
+  @override
+  String appLockWait(String seconds) {
+    return 'Demasiadas tentativas, espera ${seconds}s';
+  }
+
+  @override
+  String get appLockNew => 'Escolhe um código';
+
+  @override
+  String get appLockNewHint => '4 a 8 dígitos';
+
+  @override
+  String get appLockConfirm => 'Escreve-o outra vez';
+
+  @override
+  String get appLockMismatch => 'Os códigos não coincidem';
+
+  @override
+  String get appLockOn => 'Código definido';
+
+  @override
+  String get appLockRemoveTitle => 'Mete o teu código para desligar o bloqueio';
+
+  @override
   String get installFailed => 'Falha ao instalar';
 
   @override
@@ -202,10 +247,10 @@ class AppLocalizationsPt extends AppLocalizations {
   String get settingsGeneralDesc => 'Idioma e comportamento';
 
   @override
-  String get settingsNetwork => 'Network';
+  String get settingsNetwork => 'Rede';
 
   @override
-  String get settingsNetworkDesc => 'User agent, certificates, DNS and proxy';
+  String get settingsNetworkDesc => 'User agent, certificados, DNS e proxy';
 
   @override
   String get settingsAccountDesc => 'Serviço de acompanhamento e login';
@@ -1098,7 +1143,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get kitsuAccountOptions => 'Opções da conta Kitsu';
 
   @override
-  String get mangaBakaAccountOptions => 'MangaBaka account options';
+  String get mangaBakaAccountOptions => 'Opções da conta MangaBaka';
 
   @override
   String get couldNotUpdateKitsuSettings =>
@@ -1382,7 +1427,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String chapterExpectedIn(int chapter, String time) {
-    return 'Chapter $chapter expected in about $time';
+    return 'Capítulo $chapter previsto daqui a cerca de $time';
   }
 
   @override
@@ -1989,11 +2034,11 @@ class AppLocalizationsPt extends AppLocalizations {
       'Mantém fora do feed as entradas marcadas como privadas no AniList';
 
   @override
-  String get anilistExcludeList => 'Exclude your list';
+  String get anilistExcludeList => 'Excluir a tua lista';
 
   @override
   String get anilistExcludeListDesc =>
-      'Keep titles already on your AniList out of the anime and manga pages';
+      'Esconde das páginas de anime e manga os títulos que já estão no teu AniList';
 
   @override
   String get anilistProfile => 'Perfil do AniList';
@@ -3058,22 +3103,22 @@ class AppLocalizationsPt extends AppLocalizations {
   String get topRatedMovies => 'Filmes mais bem avaliados';
 
   @override
-  String get koreanDramas => 'Korean Dramas';
+  String get koreanDramas => 'Doramas coreanos';
 
   @override
-  String get chineseDramas => 'Chinese Dramas';
+  String get chineseDramas => 'Doramas chineses';
 
   @override
-  String get japaneseDramas => 'Japanese Dramas';
+  String get japaneseDramas => 'Doramas japoneses';
 
   @override
-  String get thaiDramas => 'Thai Dramas';
+  String get thaiDramas => 'Doramas tailandeses';
 
   @override
-  String get turkishDramas => 'Turkish Dramas';
+  String get turkishDramas => 'Séries turcas';
 
   @override
-  String get miniSeries => 'Mini Series';
+  String get miniSeries => 'Minisséries';
 
   @override
   String get topRatedShows => 'Séries mais bem avaliadas';
@@ -5801,11 +5846,24 @@ class AppLocalizationsPt extends AppLocalizations {
       'Mantém essas opções pra esse título e deixa seus padrões em paz';
 
   @override
-  String get playerSwapGestures => 'Swap swipe sides';
+  String get playerSwapGestures => 'Trocar lados do deslize';
 
   @override
-  String get playerSwapGesturesDesc =>
-      'Brightness on the left and volume on the right';
+  String get playerSwapGesturesDesc => 'Brilho à esquerda e volume à direita';
+
+  @override
+  String get playerOpenBig => 'Abrir em vista grande';
+
+  @override
+  String get playerOpenBigDesc =>
+      'Abre o leitor em ecrã inteiro em vez de com a lista de episódios';
+
+  @override
+  String get playerPauseOnBlur => 'Pausar quando perde o foco';
+
+  @override
+  String get playerPauseOnBlurDesc =>
+      'Pausa enquanto a app está tapada, como pelo painel de notificações, e continua quando voltas';
 
   @override
   String get playerHoldSpeed => 'Velocidade ao segurar';
@@ -6515,6 +6573,51 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get uninstall => 'Desinstalar';
 
   @override
+  String get updateInstallCancelled =>
+      'Instalação cancelada. Se o Android disse que o app conflita com o instalado, a assinatura é diferente: desinstale a versão atual primeiro e depois instale a atualização';
+
+  @override
+  String updateInstallFailed(String error) {
+    return 'A atualização falhou: $error';
+  }
+
+  @override
+  String get appLock => 'Bloqueio do app';
+
+  @override
+  String get appLockDesc =>
+      'Pede um código quando você abre o app ou volta pra ele depois de um tempo';
+
+  @override
+  String get appLockUnlock => 'Digite seu código';
+
+  @override
+  String get appLockWrong => 'Código errado';
+
+  @override
+  String appLockWait(String seconds) {
+    return 'Muitas tentativas, espere ${seconds}s';
+  }
+
+  @override
+  String get appLockNew => 'Escolha um código';
+
+  @override
+  String get appLockNewHint => 'De 4 a 8 dígitos';
+
+  @override
+  String get appLockConfirm => 'Digite de novo';
+
+  @override
+  String get appLockMismatch => 'Os códigos não batem';
+
+  @override
+  String get appLockOn => 'Código definido';
+
+  @override
+  String get appLockRemoveTitle => 'Digite seu código pra desativar o bloqueio';
+
+  @override
   String get installFailed => 'Falha ao instalar';
 
   @override
@@ -6614,6 +6717,12 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String get settingsGeneralDesc => 'Idioma e comportamento';
+
+  @override
+  String get settingsNetwork => 'Rede';
+
+  @override
+  String get settingsNetworkDesc => 'User agent, certificados, DNS e proxy';
 
   @override
   String get settingsAccountDesc => 'Serviço de acompanhamento e login';
@@ -7506,6 +7615,9 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get kitsuAccountOptions => 'Opções da conta Kitsu';
 
   @override
+  String get mangaBakaAccountOptions => 'Opções da conta do MangaBaka';
+
+  @override
   String get couldNotUpdateKitsuSettings =>
       'Não consegui atualizar suas configurações do Kitsu';
 
@@ -7783,6 +7895,11 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   @override
   String nextEpisodeIn(String time) {
     return 'Próximo episódio em $time';
+  }
+
+  @override
+  String chapterExpectedIn(int chapter, String time) {
+    return 'Capítulo $chapter previsto pra daqui a uns $time';
   }
 
   @override
@@ -8387,6 +8504,13 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   @override
   String get hidePrivateEntriesDesc =>
       'Mantém fora do feed as entradas marcadas como privadas no AniList';
+
+  @override
+  String get anilistExcludeList => 'Excluir sua lista';
+
+  @override
+  String get anilistExcludeListDesc =>
+      'Esconde das páginas de anime e mangá os títulos que já estão no seu AniList';
 
   @override
   String get anilistProfile => 'Perfil do AniList';
@@ -9449,6 +9573,24 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String get topRatedMovies => 'Filmes mais bem avaliados';
+
+  @override
+  String get koreanDramas => 'Doramas coreanos';
+
+  @override
+  String get chineseDramas => 'Doramas chineses';
+
+  @override
+  String get japaneseDramas => 'Doramas japoneses';
+
+  @override
+  String get thaiDramas => 'Doramas tailandeses';
+
+  @override
+  String get turkishDramas => 'Séries turcas';
+
+  @override
+  String get miniSeries => 'Minisséries';
 
   @override
   String get topRatedShows => 'Séries mais bem avaliadas';
@@ -12174,6 +12316,26 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   @override
   String get playerPerTitleDesc =>
       'Mantém essas opções pra esse título e deixa seus padrões em paz';
+
+  @override
+  String get playerSwapGestures => 'Trocar lados do deslize';
+
+  @override
+  String get playerSwapGesturesDesc => 'Brilho na esquerda e volume na direita';
+
+  @override
+  String get playerOpenBig => 'Abrir em tela grande';
+
+  @override
+  String get playerOpenBigDesc =>
+      'Abre o player em tela cheia em vez de com a lista de episódios';
+
+  @override
+  String get playerPauseOnBlur => 'Pausar ao perder o foco';
+
+  @override
+  String get playerPauseOnBlurDesc =>
+      'Pausa enquanto o app está coberto, tipo pelo painel de notificações, e continua quando você volta';
 
   @override
   String get playerHoldSpeed => 'Velocidade ao segurar';

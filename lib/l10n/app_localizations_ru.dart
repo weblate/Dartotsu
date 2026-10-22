@@ -104,6 +104,51 @@ class AppLocalizationsRu extends AppLocalizations {
   String get uninstall => 'Удалить';
 
   @override
+  String get updateInstallCancelled =>
+      'Установка отменена. Если Android написал, что приложение конфликтует с установленным, значит подпись отличается: сначала удали текущую версию, потом установи обновление';
+
+  @override
+  String updateInstallFailed(String error) {
+    return 'Не удалось обновить: $error';
+  }
+
+  @override
+  String get appLock => 'Блокировка приложения';
+
+  @override
+  String get appLockDesc =>
+      'Спрашивать код при открытии приложения или возвращении в него спустя время';
+
+  @override
+  String get appLockUnlock => 'Введи код';
+
+  @override
+  String get appLockWrong => 'Неверный код';
+
+  @override
+  String appLockWait(String seconds) {
+    return 'Слишком много попыток, подожди $seconds с';
+  }
+
+  @override
+  String get appLockNew => 'Придумай код';
+
+  @override
+  String get appLockNewHint => 'От 4 до 8 цифр';
+
+  @override
+  String get appLockConfirm => 'Введи ещё раз';
+
+  @override
+  String get appLockMismatch => 'Коды не совпадают';
+
+  @override
+  String get appLockOn => 'Код установлен';
+
+  @override
+  String get appLockRemoveTitle => 'Введи код, чтобы отключить блокировку';
+
+  @override
   String get installFailed => 'Не удалось установить';
 
   @override
@@ -205,10 +250,10 @@ class AppLocalizationsRu extends AppLocalizations {
   String get settingsGeneralDesc => 'Язык и поведение';
 
   @override
-  String get settingsNetwork => 'Network';
+  String get settingsNetwork => 'Сеть';
 
   @override
-  String get settingsNetworkDesc => 'User agent, certificates, DNS and proxy';
+  String get settingsNetworkDesc => 'User agent, сертификаты, DNS и прокси';
 
   @override
   String get settingsAccountDesc => 'Сервис учёта и вход';
@@ -1096,7 +1141,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get kitsuAccountOptions => 'Настройки аккаунта Kitsu';
 
   @override
-  String get mangaBakaAccountOptions => 'MangaBaka account options';
+  String get mangaBakaAccountOptions => 'Настройки аккаунта MangaBaka';
 
   @override
   String get couldNotUpdateKitsuSettings =>
@@ -1379,7 +1424,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String chapterExpectedIn(int chapter, String time) {
-    return 'Chapter $chapter expected in about $time';
+    return 'Глава $chapter выйдет примерно через $time';
   }
 
   @override
@@ -1987,11 +2032,11 @@ class AppLocalizationsRu extends AppLocalizations {
       'Не показывать в ленте записи, помеченные приватными в AniList';
 
   @override
-  String get anilistExcludeList => 'Exclude your list';
+  String get anilistExcludeList => 'Скрыть мой список';
 
   @override
   String get anilistExcludeListDesc =>
-      'Keep titles already on your AniList out of the anime and manga pages';
+      'Не показывать на страницах аниме и манги тайтлы, которые уже есть в твоём AniList';
 
   @override
   String get anilistProfile => 'Профиль AniList';
@@ -3068,22 +3113,22 @@ class AppLocalizationsRu extends AppLocalizations {
   String get topRatedMovies => 'Лучшие фильмы по оценкам';
 
   @override
-  String get koreanDramas => 'Korean Dramas';
+  String get koreanDramas => 'Корейские дорамы';
 
   @override
-  String get chineseDramas => 'Chinese Dramas';
+  String get chineseDramas => 'Китайские дорамы';
 
   @override
-  String get japaneseDramas => 'Japanese Dramas';
+  String get japaneseDramas => 'Японские дорамы';
 
   @override
-  String get thaiDramas => 'Thai Dramas';
+  String get thaiDramas => 'Тайские дорамы';
 
   @override
-  String get turkishDramas => 'Turkish Dramas';
+  String get turkishDramas => 'Турецкие сериалы';
 
   @override
-  String get miniSeries => 'Mini Series';
+  String get miniSeries => 'Мини-сериалы';
 
   @override
   String get topRatedShows => 'Лучшие сериалы по оценкам';
@@ -5809,11 +5854,24 @@ class AppLocalizationsRu extends AppLocalizations {
       'Оставить эти параметры для этого тайтла, не трогая твои стандартные';
 
   @override
-  String get playerSwapGestures => 'Swap swipe sides';
+  String get playerSwapGestures => 'Поменять стороны свайпов';
 
   @override
-  String get playerSwapGesturesDesc =>
-      'Brightness on the left and volume on the right';
+  String get playerSwapGesturesDesc => 'Яркость слева, громкость справа';
+
+  @override
+  String get playerOpenBig => 'Открывать в большом режиме';
+
+  @override
+  String get playerOpenBigDesc =>
+      'Запускать плеер на весь экран, без списка серий';
+
+  @override
+  String get playerPauseOnBlur => 'Пауза при потере фокуса';
+
+  @override
+  String get playerPauseOnBlurDesc =>
+      'Ставить на паузу, когда приложение закрыто, например шторкой уведомлений, и продолжать при возврате';
 
   @override
   String get playerHoldSpeed => 'Скорость при удержании';

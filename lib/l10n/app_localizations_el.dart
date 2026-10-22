@@ -102,6 +102,52 @@ class AppLocalizationsEl extends AppLocalizations {
   String get uninstall => 'Απεγκατάσταση';
 
   @override
+  String get updateInstallCancelled =>
+      'Η εγκατάσταση ακυρώθηκε. Αν το Android είπε ότι η εφαρμογή συγκρούεται με την εγκατεστημένη, η υπογραφή είναι διαφορετική: πρώτα απεγκατάστησε την τρέχουσα έκδοση και μετά εγκατέστησε την ενημέρωση';
+
+  @override
+  String updateInstallFailed(String error) {
+    return 'Η ενημέρωση απέτυχε: $error';
+  }
+
+  @override
+  String get appLock => 'Κλείδωμα εφαρμογής';
+
+  @override
+  String get appLockDesc =>
+      'Ζήτα κωδικό όταν ανοίγει η εφαρμογή ή επιστρέφεις σε αυτήν μετά από λίγο';
+
+  @override
+  String get appLockUnlock => 'Βάλε τον κωδικό σου';
+
+  @override
+  String get appLockWrong => 'Λάθος κωδικός';
+
+  @override
+  String appLockWait(String seconds) {
+    return 'Πολλές προσπάθειες, περίμενε $seconds δ';
+  }
+
+  @override
+  String get appLockNew => 'Διάλεξε έναν κωδικό';
+
+  @override
+  String get appLockNewHint => '4 έως 8 ψηφία';
+
+  @override
+  String get appLockConfirm => 'Βάλ\' τον ξανά';
+
+  @override
+  String get appLockMismatch => 'Οι κωδικοί δεν ταιριάζουν';
+
+  @override
+  String get appLockOn => 'Ο κωδικός ορίστηκε';
+
+  @override
+  String get appLockRemoveTitle =>
+      'Βάλε τον κωδικό σου για να απενεργοποιήσεις το κλείδωμα';
+
+  @override
   String get installFailed => 'Η εγκατάσταση απέτυχε';
 
   @override
@@ -203,10 +249,10 @@ class AppLocalizationsEl extends AppLocalizations {
   String get settingsGeneralDesc => 'Γλώσσα και συμπεριφορά';
 
   @override
-  String get settingsNetwork => 'Network';
+  String get settingsNetwork => 'Δίκτυο';
 
   @override
-  String get settingsNetworkDesc => 'User agent, certificates, DNS and proxy';
+  String get settingsNetworkDesc => 'User agent, πιστοποιητικά, DNS και proxy';
 
   @override
   String get settingsAccountDesc => 'Υπηρεσία παρακολούθησης και σύνδεση';
@@ -1099,7 +1145,7 @@ class AppLocalizationsEl extends AppLocalizations {
   String get kitsuAccountOptions => 'Επιλογές λογαριασμού Kitsu';
 
   @override
-  String get mangaBakaAccountOptions => 'MangaBaka account options';
+  String get mangaBakaAccountOptions => 'Επιλογές λογαριασμού MangaBaka';
 
   @override
   String get couldNotUpdateKitsuSettings =>
@@ -1388,7 +1434,7 @@ class AppLocalizationsEl extends AppLocalizations {
 
   @override
   String chapterExpectedIn(int chapter, String time) {
-    return 'Chapter $chapter expected in about $time';
+    return 'Το κεφάλαιο $chapter έρχεται σε περίπου $time';
   }
 
   @override
@@ -1997,11 +2043,11 @@ class AppLocalizationsEl extends AppLocalizations {
       'Κράτα εκτός ροής τις εγγραφές που είναι ιδιωτικές στο AniList';
 
   @override
-  String get anilistExcludeList => 'Exclude your list';
+  String get anilistExcludeList => 'Εξαίρεση της λίστας σου';
 
   @override
   String get anilistExcludeListDesc =>
-      'Keep titles already on your AniList out of the anime and manga pages';
+      'Κρύψε από τις σελίδες anime και manga τους τίτλους που έχεις ήδη στο AniList';
 
   @override
   String get anilistProfile => 'Προφίλ AniList';
@@ -3070,22 +3116,22 @@ class AppLocalizationsEl extends AppLocalizations {
   String get topRatedMovies => 'Ταινίες με κορυφαία βαθμολογία';
 
   @override
-  String get koreanDramas => 'Korean Dramas';
+  String get koreanDramas => 'Κορεάτικα ντράμα';
 
   @override
-  String get chineseDramas => 'Chinese Dramas';
+  String get chineseDramas => 'Κινεζικά ντράμα';
 
   @override
-  String get japaneseDramas => 'Japanese Dramas';
+  String get japaneseDramas => 'Ιαπωνικά ντράμα';
 
   @override
-  String get thaiDramas => 'Thai Dramas';
+  String get thaiDramas => 'Ταϊλανδέζικα ντράμα';
 
   @override
-  String get turkishDramas => 'Turkish Dramas';
+  String get turkishDramas => 'Τουρκικά ντράμα';
 
   @override
-  String get miniSeries => 'Mini Series';
+  String get miniSeries => 'Μίνι σειρές';
 
   @override
   String get topRatedShows => 'Σειρές με κορυφαία βαθμολογία';
@@ -5818,11 +5864,24 @@ class AppLocalizationsEl extends AppLocalizations {
       'Κράτα αυτές τις επιλογές για αυτόν τον τίτλο και άφησε τις προεπιλογές σου ήσυχες';
 
   @override
-  String get playerSwapGestures => 'Swap swipe sides';
+  String get playerSwapGestures => 'Αλλαγή πλευρών σύρσιμου';
 
   @override
-  String get playerSwapGesturesDesc =>
-      'Brightness on the left and volume on the right';
+  String get playerSwapGesturesDesc => 'Φωτεινότητα αριστερά και ένταση δεξιά';
+
+  @override
+  String get playerOpenBig => 'Άνοιγμα σε μεγάλη προβολή';
+
+  @override
+  String get playerOpenBigDesc =>
+      'Ξεκίνα το πρόγραμμα αναπαραγωγής σε πλήρη οθόνη αντί με τη λίστα επεισοδίων';
+
+  @override
+  String get playerPauseOnBlur => 'Παύση όταν χάνεται η εστίαση';
+
+  @override
+  String get playerPauseOnBlurDesc =>
+      'Παύση όσο η εφαρμογή καλύπτεται, π.χ. από τον πίνακα ειδοποιήσεων, και συνέχεια όταν γυρίσεις';
 
   @override
   String get playerHoldSpeed => 'Ταχύτητα κρατήματος';

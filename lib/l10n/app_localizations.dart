@@ -341,6 +341,84 @@ abstract class AppLocalizations {
   /// **'Uninstall'**
   String get uninstall;
 
+  /// No description provided for @updateInstallCancelled.
+  ///
+  /// In en, this message translates to:
+  /// **'Install cancelled. If Android said the app conflicts with the installed one, the signature differs: uninstall the current version first, then install the update'**
+  String get updateInstallCancelled;
+
+  /// No description provided for @updateInstallFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Update failed: {error}'**
+  String updateInstallFailed(String error);
+
+  /// No description provided for @appLock.
+  ///
+  /// In en, this message translates to:
+  /// **'App lock'**
+  String get appLock;
+
+  /// No description provided for @appLockDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Ask for a passcode when the app opens or comes back after a while'**
+  String get appLockDesc;
+
+  /// No description provided for @appLockUnlock.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your passcode'**
+  String get appLockUnlock;
+
+  /// No description provided for @appLockWrong.
+  ///
+  /// In en, this message translates to:
+  /// **'Wrong passcode'**
+  String get appLockWrong;
+
+  /// No description provided for @appLockWait.
+  ///
+  /// In en, this message translates to:
+  /// **'Too many tries, wait {seconds}s'**
+  String appLockWait(String seconds);
+
+  /// No description provided for @appLockNew.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose a passcode'**
+  String get appLockNew;
+
+  /// No description provided for @appLockNewHint.
+  ///
+  /// In en, this message translates to:
+  /// **'4 to 8 digits'**
+  String get appLockNewHint;
+
+  /// No description provided for @appLockConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter it again'**
+  String get appLockConfirm;
+
+  /// No description provided for @appLockMismatch.
+  ///
+  /// In en, this message translates to:
+  /// **'The passcodes do not match'**
+  String get appLockMismatch;
+
+  /// No description provided for @appLockOn.
+  ///
+  /// In en, this message translates to:
+  /// **'Passcode set'**
+  String get appLockOn;
+
+  /// No description provided for @appLockRemoveTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your passcode to turn the lock off'**
+  String get appLockRemoveTitle;
+
   /// No description provided for @installFailed.
   ///
   /// In en, this message translates to:
@@ -10522,6 +10600,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Brightness on the left and volume on the right'**
   String get playerSwapGesturesDesc;
+
+  /// No description provided for @playerOpenBig.
+  ///
+  /// In en, this message translates to:
+  /// **'Open in big view'**
+  String get playerOpenBig;
+
+  /// No description provided for @playerOpenBigDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Start the player fullscreen instead of with the episode list'**
+  String get playerOpenBigDesc;
+
+  /// No description provided for @playerPauseOnBlur.
+  ///
+  /// In en, this message translates to:
+  /// **'Pause when out of focus'**
+  String get playerPauseOnBlur;
+
+  /// No description provided for @playerPauseOnBlurDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Pause while the app is covered, like the notification panel, and resume when you come back'**
+  String get playerPauseOnBlurDesc;
 
   /// No description provided for @playerHoldSpeed.
   ///

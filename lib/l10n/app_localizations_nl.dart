@@ -102,6 +102,52 @@ class AppLocalizationsNl extends AppLocalizations {
   String get uninstall => 'Verwijderen';
 
   @override
+  String get updateInstallCancelled =>
+      'Installatie geannuleerd. Als Android zei dat de app botst met de geïnstalleerde, klopt de handtekening niet: verwijder eerst de huidige versie en installeer dan de update';
+
+  @override
+  String updateInstallFailed(String error) {
+    return 'Update mislukt: $error';
+  }
+
+  @override
+  String get appLock => 'App-vergrendeling';
+
+  @override
+  String get appLockDesc =>
+      'Vraagt om een code als je de app opent of er na een tijdje terugkomt';
+
+  @override
+  String get appLockUnlock => 'Voer je code in';
+
+  @override
+  String get appLockWrong => 'Verkeerde code';
+
+  @override
+  String appLockWait(String seconds) {
+    return 'Te vaak geprobeerd, wacht ${seconds}s';
+  }
+
+  @override
+  String get appLockNew => 'Kies een code';
+
+  @override
+  String get appLockNewHint => '4 tot 8 cijfers';
+
+  @override
+  String get appLockConfirm => 'Voer hem nog een keer in';
+
+  @override
+  String get appLockMismatch => 'De codes komen niet overeen';
+
+  @override
+  String get appLockOn => 'Code ingesteld';
+
+  @override
+  String get appLockRemoveTitle =>
+      'Voer je code in om de vergrendeling uit te zetten';
+
+  @override
   String get installFailed => 'Installeren mislukt';
 
   @override
@@ -202,10 +248,10 @@ class AppLocalizationsNl extends AppLocalizations {
   String get settingsGeneralDesc => 'Taal en gedrag';
 
   @override
-  String get settingsNetwork => 'Network';
+  String get settingsNetwork => 'Netwerk';
 
   @override
-  String get settingsNetworkDesc => 'User agent, certificates, DNS and proxy';
+  String get settingsNetworkDesc => 'User agent, certificaten, DNS en proxy';
 
   @override
   String get settingsAccountDesc => 'Trackingservice en inloggen';
@@ -1090,7 +1136,7 @@ class AppLocalizationsNl extends AppLocalizations {
   String get kitsuAccountOptions => 'Kitsu-accountopties';
 
   @override
-  String get mangaBakaAccountOptions => 'MangaBaka account options';
+  String get mangaBakaAccountOptions => 'MangaBaka-accountopties';
 
   @override
   String get couldNotUpdateKitsuSettings =>
@@ -1375,7 +1421,7 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String chapterExpectedIn(int chapter, String time) {
-    return 'Chapter $chapter expected in about $time';
+    return 'Hoofdstuk $chapter verwacht over ongeveer $time';
   }
 
   @override
@@ -1982,11 +2028,11 @@ class AppLocalizationsNl extends AppLocalizations {
       'Houd items die op AniList als privé zijn gemarkeerd uit de feed';
 
   @override
-  String get anilistExcludeList => 'Exclude your list';
+  String get anilistExcludeList => 'Je lijst uitsluiten';
 
   @override
   String get anilistExcludeListDesc =>
-      'Keep titles already on your AniList out of the anime and manga pages';
+      'Verberg titels die al op je AniList staan op de anime- en mangapagina\'s';
 
   @override
   String get anilistProfile => 'AniList-profiel';
@@ -3054,22 +3100,22 @@ class AppLocalizationsNl extends AppLocalizations {
   String get topRatedMovies => 'Best beoordeelde films';
 
   @override
-  String get koreanDramas => 'Korean Dramas';
+  String get koreanDramas => 'Koreaanse drama\'s';
 
   @override
-  String get chineseDramas => 'Chinese Dramas';
+  String get chineseDramas => 'Chinese drama\'s';
 
   @override
-  String get japaneseDramas => 'Japanese Dramas';
+  String get japaneseDramas => 'Japanse drama\'s';
 
   @override
-  String get thaiDramas => 'Thai Dramas';
+  String get thaiDramas => 'Thaise drama\'s';
 
   @override
-  String get turkishDramas => 'Turkish Dramas';
+  String get turkishDramas => 'Turkse series';
 
   @override
-  String get miniSeries => 'Mini Series';
+  String get miniSeries => 'Miniseries';
 
   @override
   String get topRatedShows => 'Best beoordeelde series';
@@ -5792,11 +5838,24 @@ class AppLocalizationsNl extends AppLocalizations {
       'Bewaar deze opties voor deze titel en laat je standaardinstellingen met rust';
 
   @override
-  String get playerSwapGestures => 'Swap swipe sides';
+  String get playerSwapGestures => 'Veegkanten omwisselen';
 
   @override
-  String get playerSwapGesturesDesc =>
-      'Brightness on the left and volume on the right';
+  String get playerSwapGesturesDesc => 'Helderheid links en volume rechts';
+
+  @override
+  String get playerOpenBig => 'Openen in grote weergave';
+
+  @override
+  String get playerOpenBigDesc =>
+      'Start de speler op volledig scherm in plaats van met de afleveringenlijst';
+
+  @override
+  String get playerPauseOnBlur => 'Pauzeren bij verlies van focus';
+
+  @override
+  String get playerPauseOnBlurDesc =>
+      'Pauzeert zolang de app bedekt is, zoals door het meldingenpaneel, en gaat verder als je terugkomt';
 
   @override
   String get playerHoldSpeed => 'Vasthoudsnelheid';

@@ -62,6 +62,44 @@
   "@update": {},
   "uninstall": "Uninstall",
   "@uninstall": {},
+  "updateInstallCancelled": "Install cancelled. If Android said the app conflicts with the installed one, the signature differs: uninstall the current version first, then install the update",
+  "@updateInstallCancelled": {},
+  "updateInstallFailed": "Update failed: {error}",
+  "@updateInstallFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "appLock": "App lock",
+  "@appLock": {},
+  "appLockDesc": "Ask for a passcode when the app opens or comes back after a while",
+  "@appLockDesc": {},
+  "appLockUnlock": "Enter your passcode",
+  "@appLockUnlock": {},
+  "appLockWrong": "Wrong passcode",
+  "@appLockWrong": {},
+  "appLockWait": "Too many tries, wait {seconds}s",
+  "@appLockWait": {
+    "placeholders": {
+      "seconds": {
+        "type": "String"
+      }
+    }
+  },
+  "appLockNew": "Choose a passcode",
+  "@appLockNew": {},
+  "appLockNewHint": "4 to 8 digits",
+  "@appLockNewHint": {},
+  "appLockConfirm": "Enter it again",
+  "@appLockConfirm": {},
+  "appLockMismatch": "The passcodes do not match",
+  "@appLockMismatch": {},
+  "appLockOn": "Passcode set",
+  "@appLockOn": {},
+  "appLockRemoveTitle": "Enter your passcode to turn the lock off",
+  "@appLockRemoveTitle": {},
   "installFailed": "Install failed",
   "@installFailed": {},
   "updateFailed": "Update failed",
@@ -2836,6 +2874,14 @@
   "@playerSwapGestures": {},
   "playerSwapGesturesDesc": "Brightness on the left and volume on the right",
   "@playerSwapGesturesDesc": {},
+  "playerOpenBig": "Open in big view",
+  "@playerOpenBig": {},
+  "playerOpenBigDesc": "Start the player fullscreen instead of with the episode list",
+  "@playerOpenBigDesc": {},
+  "playerPauseOnBlur": "Pause when out of focus",
+  "@playerPauseOnBlur": {},
+  "playerPauseOnBlurDesc": "Pause while the app is covered, like the notification panel, and resume when you come back",
+  "@playerPauseOnBlurDesc": {},
   "playerHoldSpeed": "Hold speed",
   "@playerHoldSpeed": {},
   "playerAudioOutput": "Audio output",

@@ -100,6 +100,50 @@ class AppLocalizationsAm extends AppLocalizations {
   String get uninstall => 'አራግፍ';
 
   @override
+  String get updateInstallCancelled =>
+      'መጫኑ ተሰርዟል። አንድሮይድ መተግበሪያው ከተጫነው ጋር ይጋጫል ካለ፣ ፊርማው የተለየ ነው፦ መጀመሪያ አሁን ያለውን ስሪት አራግፈው ከዚያ ዝመናውን ይጫኑ';
+
+  @override
+  String updateInstallFailed(String error) {
+    return 'ዝመናው አልተሳካም፦ $error';
+  }
+
+  @override
+  String get appLock => 'የመተግበሪያ መቆለፊያ';
+
+  @override
+  String get appLockDesc => 'መተግበሪያው ሲከፈት ወይም ከትንሽ ጊዜ በኋላ ሲመለሱ የይለፍ ኮድ ጠይቅ';
+
+  @override
+  String get appLockUnlock => 'የይለፍ ኮድዎን ያስገቡ';
+
+  @override
+  String get appLockWrong => 'የይለፍ ኮዱ ልክ አይደለም';
+
+  @override
+  String appLockWait(String seconds) {
+    return 'ብዙ ጊዜ ሞክረዋል፣ $seconds ሰከንድ ይጠብቁ';
+  }
+
+  @override
+  String get appLockNew => 'የይለፍ ኮድ ይምረጡ';
+
+  @override
+  String get appLockNewHint => 'ከ4 እስከ 8 አሃዞች';
+
+  @override
+  String get appLockConfirm => 'እንደገና ያስገቡት';
+
+  @override
+  String get appLockMismatch => 'የይለፍ ኮዶቹ አይመሳሰሉም';
+
+  @override
+  String get appLockOn => 'የይለፍ ኮድ ተቀምጧል';
+
+  @override
+  String get appLockRemoveTitle => 'መቆለፊያውን ለማጥፋት የይለፍ ኮድዎን ያስገቡ';
+
+  @override
   String get installFailed => 'መጫን አልተሳካም';
 
   @override
@@ -200,10 +244,10 @@ class AppLocalizationsAm extends AppLocalizations {
   String get settingsGeneralDesc => 'ቋንቋና አሠራር';
 
   @override
-  String get settingsNetwork => 'Network';
+  String get settingsNetwork => 'አውታረ መረብ';
 
   @override
-  String get settingsNetworkDesc => 'User agent, certificates, DNS and proxy';
+  String get settingsNetworkDesc => 'ተጠቃሚ ወኪል፣ የምስክር ወረቀቶች፣ DNS እና ፕሮክሲ';
 
   @override
   String get settingsAccountDesc => 'የመከታተያ አገልግሎትና መግቢያ';
@@ -1067,7 +1111,7 @@ class AppLocalizationsAm extends AppLocalizations {
   String get kitsuAccountOptions => 'የKitsu መለያ አማራጮች';
 
   @override
-  String get mangaBakaAccountOptions => 'MangaBaka account options';
+  String get mangaBakaAccountOptions => 'የMangaBaka መለያ አማራጮች';
 
   @override
   String get couldNotUpdateKitsuSettings => 'የKitsu ቅንብሮችህን ማዘመን አልተቻለም';
@@ -1346,7 +1390,7 @@ class AppLocalizationsAm extends AppLocalizations {
 
   @override
   String chapterExpectedIn(int chapter, String time) {
-    return 'Chapter $chapter expected in about $time';
+    return 'ምዕራፍ $chapter በ$time አካባቢ ይጠበቃል';
   }
 
   @override
@@ -1950,11 +1994,11 @@ class AppLocalizationsAm extends AppLocalizations {
       'በAniList ላይ የግል ተብለው የተሰየሙ ግቤቶችን ከፊድ ውጭ አድርግ';
 
   @override
-  String get anilistExcludeList => 'Exclude your list';
+  String get anilistExcludeList => 'ዝርዝርዎን አግልል';
 
   @override
   String get anilistExcludeListDesc =>
-      'Keep titles already on your AniList out of the anime and manga pages';
+      'በAniList ዝርዝርዎ ላይ ያሉ ርዕሶችን ከአኒሜ እና ማንጋ ገጾች ያርቁ';
 
   @override
   String get anilistProfile => 'የAniList መገለጫ';
@@ -3010,22 +3054,22 @@ class AppLocalizationsAm extends AppLocalizations {
   String get topRatedMovies => 'ከፍተኛ ደረጃ የተሰጣቸው ፊልሞች';
 
   @override
-  String get koreanDramas => 'Korean Dramas';
+  String get koreanDramas => 'የኮሪያ ድራማዎች';
 
   @override
-  String get chineseDramas => 'Chinese Dramas';
+  String get chineseDramas => 'የቻይና ድራማዎች';
 
   @override
-  String get japaneseDramas => 'Japanese Dramas';
+  String get japaneseDramas => 'የጃፓን ድራማዎች';
 
   @override
-  String get thaiDramas => 'Thai Dramas';
+  String get thaiDramas => 'የታይ ድራማዎች';
 
   @override
-  String get turkishDramas => 'Turkish Dramas';
+  String get turkishDramas => 'የቱርክ ድራማዎች';
 
   @override
-  String get miniSeries => 'Mini Series';
+  String get miniSeries => 'አጫጭር ተከታታዮች';
 
   @override
   String get topRatedShows => 'ከፍተኛ ደረጃ የተሰጣቸው ሾዎች';
@@ -5682,11 +5726,23 @@ class AppLocalizationsAm extends AppLocalizations {
   String get playerPerTitleDesc => 'እነዚህን አማራጮች ለዚህ ርዕስ አቆይና ነባሪዎችህን ተው';
 
   @override
-  String get playerSwapGestures => 'Swap swipe sides';
+  String get playerSwapGestures => 'የማንሸራተቻ ጎኖችን ቀያይር';
 
   @override
-  String get playerSwapGesturesDesc =>
-      'Brightness on the left and volume on the right';
+  String get playerSwapGesturesDesc => 'ብሩህነት በግራ እና ድምጽ በቀኝ';
+
+  @override
+  String get playerOpenBig => 'በትልቅ እይታ ክፈት';
+
+  @override
+  String get playerOpenBigDesc => 'ተጫዋቹን ከትዕይንት ዝርዝር ይልቅ በሙሉ ማያ ጀምር';
+
+  @override
+  String get playerPauseOnBlur => 'ትኩረት ሲያጣ ባለበት አቁም';
+
+  @override
+  String get playerPauseOnBlurDesc =>
+      'መተግበሪያው ሲሸፈን፣ ለምሳሌ በማሳወቂያ ፓነል፣ ባለበት ያቁሙ እና ሲመለሱ ይቀጥሉ';
 
   @override
   String get playerHoldSpeed => 'የመያዣ ፍጥነት';

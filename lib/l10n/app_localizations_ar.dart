@@ -102,6 +102,51 @@ class AppLocalizationsAr extends AppLocalizations {
   String get uninstall => 'إلغاء التثبيت';
 
   @override
+  String get updateInstallCancelled =>
+      'تم إلغاء التثبيت. إذا قال أندرويد إن التطبيق يتعارض مع النسخة المثبّتة فالتوقيع مختلف: احذف النسخة الحالية أولاً ثم ثبّت التحديث';
+
+  @override
+  String updateInstallFailed(String error) {
+    return 'فشل التحديث: $error';
+  }
+
+  @override
+  String get appLock => 'قفل التطبيق';
+
+  @override
+  String get appLockDesc =>
+      'اطلب رمز PIN عند فتح التطبيق أو الرجوع إليه بعد فترة';
+
+  @override
+  String get appLockUnlock => 'اكتب رمز PIN';
+
+  @override
+  String get appLockWrong => 'رمز PIN غلط';
+
+  @override
+  String appLockWait(String seconds) {
+    return 'محاولات كثيرة، انتظر $seconds ثانية';
+  }
+
+  @override
+  String get appLockNew => 'اختر رمز PIN';
+
+  @override
+  String get appLockNewHint => 'من 4 إلى 8 أرقام';
+
+  @override
+  String get appLockConfirm => 'اكتبه مرة ثانية';
+
+  @override
+  String get appLockMismatch => 'الرمزان غير متطابقين';
+
+  @override
+  String get appLockOn => 'تم تعيين رمز PIN';
+
+  @override
+  String get appLockRemoveTitle => 'اكتب رمز PIN لإيقاف القفل';
+
+  @override
   String get installFailed => 'فشل التثبيت';
 
   @override
@@ -202,10 +247,10 @@ class AppLocalizationsAr extends AppLocalizations {
   String get settingsGeneralDesc => 'اللغة وطريقة العمل';
 
   @override
-  String get settingsNetwork => 'Network';
+  String get settingsNetwork => 'الشبكة';
 
   @override
-  String get settingsNetworkDesc => 'User agent, certificates, DNS and proxy';
+  String get settingsNetworkDesc => 'وكيل المستخدم والشهادات وDNS والبروكسي';
 
   @override
   String get settingsAccountDesc => 'خدمة التتبّع وتسجيل الدخول';
@@ -1078,7 +1123,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get kitsuAccountOptions => 'خيارات حساب Kitsu';
 
   @override
-  String get mangaBakaAccountOptions => 'MangaBaka account options';
+  String get mangaBakaAccountOptions => 'خيارات حساب MangaBaka';
 
   @override
   String get couldNotUpdateKitsuSettings => 'ما قدرنا نحدّث إعدادات Kitsu';
@@ -1358,7 +1403,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String chapterExpectedIn(int chapter, String time) {
-    return 'Chapter $chapter expected in about $time';
+    return 'الفصل $chapter متوقع بعد حوالي $time';
   }
 
   @override
@@ -1962,11 +2007,11 @@ class AppLocalizationsAr extends AppLocalizations {
       'أبعد المدخلات المعلّمة كخاصة في AniList عن الخلاصة';
 
   @override
-  String get anilistExcludeList => 'Exclude your list';
+  String get anilistExcludeList => 'استبعاد قائمتك';
 
   @override
   String get anilistExcludeListDesc =>
-      'Keep titles already on your AniList out of the anime and manga pages';
+      'أخفِ العناوين الموجودة في قائمتك على AniList من صفحات الأنمي والمانغا';
 
   @override
   String get anilistProfile => 'ملف AniList الشخصي';
@@ -3039,22 +3084,22 @@ class AppLocalizationsAr extends AppLocalizations {
   String get topRatedMovies => 'أفلام الأعلى تقييمًا';
 
   @override
-  String get koreanDramas => 'Korean Dramas';
+  String get koreanDramas => 'دراما كورية';
 
   @override
-  String get chineseDramas => 'Chinese Dramas';
+  String get chineseDramas => 'دراما صينية';
 
   @override
-  String get japaneseDramas => 'Japanese Dramas';
+  String get japaneseDramas => 'دراما يابانية';
 
   @override
-  String get thaiDramas => 'Thai Dramas';
+  String get thaiDramas => 'دراما تايلندية';
 
   @override
-  String get turkishDramas => 'Turkish Dramas';
+  String get turkishDramas => 'دراما تركية';
 
   @override
-  String get miniSeries => 'Mini Series';
+  String get miniSeries => 'مسلسلات قصيرة';
 
   @override
   String get topRatedShows => 'مسلسلات الأعلى تقييمًا';
@@ -5754,11 +5799,23 @@ class AppLocalizationsAr extends AppLocalizations {
       'احتفظ بهذه الخيارات لهذا العنوان واترك افتراضياتك كما هي';
 
   @override
-  String get playerSwapGestures => 'Swap swipe sides';
+  String get playerSwapGestures => 'عكس جهات السحب';
 
   @override
-  String get playerSwapGesturesDesc =>
-      'Brightness on the left and volume on the right';
+  String get playerSwapGesturesDesc => 'السطوع على اليسار والصوت على اليمين';
+
+  @override
+  String get playerOpenBig => 'الفتح بالعرض الكبير';
+
+  @override
+  String get playerOpenBigDesc => 'شغّل المشغل بملء الشاشة بدل قائمة الحلقات';
+
+  @override
+  String get playerPauseOnBlur => 'إيقاف مؤقت عند فقدان التركيز';
+
+  @override
+  String get playerPauseOnBlurDesc =>
+      'يتوقف التشغيل لما يتغطى التطبيق مثل لوحة الإشعارات، ويكمل لما ترجع';
 
   @override
   String get playerHoldSpeed => 'سرعة الضغط المطول';

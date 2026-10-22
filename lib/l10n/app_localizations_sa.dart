@@ -101,6 +101,51 @@ class AppLocalizationsSa extends AppLocalizations {
   String get uninstall => 'अस्थापय';
 
   @override
+  String get updateInstallCancelled =>
+      'संस्थापनं निरस्तम्। यदि Android इत्यवदत् यत् एषा एप् संस्थापितया सह विरुध्यते, तर्हि हस्ताक्षरं भिन्नम्: प्रथमं वर्तमानं संस्करणम् अपसारयतु, ततः अद्यतनं संस्थापयतु';
+
+  @override
+  String updateInstallFailed(String error) {
+    return 'अद्यतनं न सिद्धम्: $error';
+  }
+
+  @override
+  String get appLock => 'एप्-ताला';
+
+  @override
+  String get appLockDesc =>
+      'एप् उद्घाटनसमये कियत्कालानन्तरं पुनरागमनसमये वा गुप्तसङ्केतं पृच्छतु';
+
+  @override
+  String get appLockUnlock => 'स्वस्य गुप्तसङ्केतं लिखतु';
+
+  @override
+  String get appLockWrong => 'गुप्तसङ्केतः दोषयुक्तः';
+
+  @override
+  String appLockWait(String seconds) {
+    return 'बहुवारं प्रयत्नः कृतः, $seconds क्षणान् प्रतीक्षस्व';
+  }
+
+  @override
+  String get appLockNew => 'गुप्तसङ्केतं चिनोतु';
+
+  @override
+  String get appLockNewHint => '४ तः ८ अङ्काः';
+
+  @override
+  String get appLockConfirm => 'पुनः लिखतु';
+
+  @override
+  String get appLockMismatch => 'गुप्तसङ्केतौ न समानौ';
+
+  @override
+  String get appLockOn => 'गुप्तसङ्केतः स्थापितः';
+
+  @override
+  String get appLockRemoveTitle => 'ताला निवारयितुं स्वस्य गुप्तसङ्केतं लिखतु';
+
+  @override
   String get installFailed => 'स्थापना विफला';
 
   @override
@@ -201,10 +246,11 @@ class AppLocalizationsSa extends AppLocalizations {
   String get settingsGeneralDesc => 'भाषा आचरणं च';
 
   @override
-  String get settingsNetwork => 'Network';
+  String get settingsNetwork => 'जालम्';
 
   @override
-  String get settingsNetworkDesc => 'User agent, certificates, DNS and proxy';
+  String get settingsNetworkDesc =>
+      'उपयोक्तृ-प्रतिनिधिः, प्रमाणपत्राणि, DNS प्रॉक्सी च';
 
   @override
   String get settingsAccountDesc => 'अनुसरणसेवा लॉगिन् च';
@@ -1086,7 +1132,7 @@ class AppLocalizationsSa extends AppLocalizations {
   String get kitsuAccountOptions => 'Kitsu खाता-विकल्पाः';
 
   @override
-  String get mangaBakaAccountOptions => 'MangaBaka account options';
+  String get mangaBakaAccountOptions => 'MangaBaka खाता-विकल्पाः';
 
   @override
   String get couldNotUpdateKitsuSettings =>
@@ -1369,7 +1415,7 @@ class AppLocalizationsSa extends AppLocalizations {
 
   @override
   String chapterExpectedIn(int chapter, String time) {
-    return 'Chapter $chapter expected in about $time';
+    return 'अध्यायः $chapter प्रायः $time मध्ये आगमिष्यति';
   }
 
   @override
@@ -1976,11 +2022,11 @@ class AppLocalizationsSa extends AppLocalizations {
       'AniList मध्ये व्यक्तिगतत्वेन चिह्निताः प्रविष्टीः फीड्तः दूरे स्थापय';
 
   @override
-  String get anilistExcludeList => 'Exclude your list';
+  String get anilistExcludeList => 'स्वसूचीं वर्जयतु';
 
   @override
   String get anilistExcludeListDesc =>
-      'Keep titles already on your AniList out of the anime and manga pages';
+      'भवतः AniList मध्ये विद्यमानानि शीर्षकाणि एनिमे-मङ्गा-पृष्ठेभ्यः दूरे स्थापयतु';
 
   @override
   String get anilistProfile => 'AniList प्रोफाइल्';
@@ -3044,22 +3090,22 @@ class AppLocalizationsSa extends AppLocalizations {
   String get topRatedMovies => 'सर्वोत्तम-श्रेणीयुक्तानि चलचित्राणि';
 
   @override
-  String get koreanDramas => 'Korean Dramas';
+  String get koreanDramas => 'कोरियन-नाटकानि';
 
   @override
-  String get chineseDramas => 'Chinese Dramas';
+  String get chineseDramas => 'चीनी-नाटकानि';
 
   @override
-  String get japaneseDramas => 'Japanese Dramas';
+  String get japaneseDramas => 'जापानी-नाटकानि';
 
   @override
-  String get thaiDramas => 'Thai Dramas';
+  String get thaiDramas => 'थाई-नाटकानि';
 
   @override
-  String get turkishDramas => 'Turkish Dramas';
+  String get turkishDramas => 'तुर्की-नाटकानि';
 
   @override
-  String get miniSeries => 'Mini Series';
+  String get miniSeries => 'लघु-श्रृङ्खला';
 
   @override
   String get topRatedShows => 'सर्वोत्तम-श्रेणीयुक्ताः धारावाहिकाः';
@@ -5771,11 +5817,23 @@ class AppLocalizationsSa extends AppLocalizations {
       'एतान् विकल्पान् अस्य शीर्षकस्य कृते रक्ष तव मूलभूतानि अस्पृष्टानि तिष्ठन्तु';
 
   @override
-  String get playerSwapGestures => 'Swap swipe sides';
+  String get playerSwapGestures => 'स्वाइप्-पार्श्वौ विनिमयतु';
 
   @override
-  String get playerSwapGesturesDesc =>
-      'Brightness on the left and volume on the right';
+  String get playerSwapGesturesDesc => 'वामतः दीप्तिः दक्षिणतः ध्वनिमानं च';
+
+  @override
+  String get playerOpenBig => 'बृहद्दृश्ये उद्घाटयतु';
+
+  @override
+  String get playerOpenBigDesc => 'भागसूचीं विना प्लेयरं पूर्णपटले आरभताम्';
+
+  @override
+  String get playerPauseOnBlur => 'ध्यानाभावे विरमतु';
+
+  @override
+  String get playerPauseOnBlurDesc =>
+      'सूचनाफलकवत् एप् आच्छादिते विरमतु, पुनरागमने च प्रचलतु';
 
   @override
   String get playerHoldSpeed => 'धारण-वेगः';

@@ -101,6 +101,51 @@ class AppLocalizationsTr extends AppLocalizations {
   String get uninstall => 'Kaldır';
 
   @override
+  String get updateInstallCancelled =>
+      'Kurulum iptal edildi. Android uygulamanın yüklü olanla çakıştığını söylediyse imza farklıdır: önce mevcut sürümü kaldır, sonra güncellemeyi kur';
+
+  @override
+  String updateInstallFailed(String error) {
+    return 'Güncelleme başarısız oldu: $error';
+  }
+
+  @override
+  String get appLock => 'Uygulama kilidi';
+
+  @override
+  String get appLockDesc =>
+      'Uygulama açılırken ya da bir süre sonra geri dönüldüğünde şifre sor';
+
+  @override
+  String get appLockUnlock => 'Şifreni gir';
+
+  @override
+  String get appLockWrong => 'Şifre yanlış';
+
+  @override
+  String appLockWait(String seconds) {
+    return 'Çok fazla deneme, $seconds sn bekle';
+  }
+
+  @override
+  String get appLockNew => 'Bir şifre seç';
+
+  @override
+  String get appLockNewHint => '4 ile 8 rakam';
+
+  @override
+  String get appLockConfirm => 'Tekrar gir';
+
+  @override
+  String get appLockMismatch => 'Şifreler uyuşmuyor';
+
+  @override
+  String get appLockOn => 'Şifre ayarlandı';
+
+  @override
+  String get appLockRemoveTitle => 'Kilidi kapatmak için şifreni gir';
+
+  @override
   String get installFailed => 'Yükleme başarısız';
 
   @override
@@ -201,10 +246,10 @@ class AppLocalizationsTr extends AppLocalizations {
   String get settingsGeneralDesc => 'Dil ve davranış';
 
   @override
-  String get settingsNetwork => 'Network';
+  String get settingsNetwork => 'Ağ';
 
   @override
-  String get settingsNetworkDesc => 'User agent, certificates, DNS and proxy';
+  String get settingsNetworkDesc => 'User agent, sertifikalar, DNS ve proxy';
 
   @override
   String get settingsAccountDesc => 'Takip servisi ve giriş';
@@ -1093,7 +1138,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get kitsuAccountOptions => 'Kitsu hesap seçenekleri';
 
   @override
-  String get mangaBakaAccountOptions => 'MangaBaka account options';
+  String get mangaBakaAccountOptions => 'MangaBaka hesap seçenekleri';
 
   @override
   String get couldNotUpdateKitsuSettings => 'Kitsu ayarların güncellenemedi';
@@ -1375,7 +1420,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String chapterExpectedIn(int chapter, String time) {
-    return 'Chapter $chapter expected in about $time';
+    return '$chapter. bölüm yaklaşık $time içinde gelecek';
   }
 
   @override
@@ -1983,11 +2028,11 @@ class AppLocalizationsTr extends AppLocalizations {
       'AniList\'te özel işaretlenen girişleri akıştan çıkar';
 
   @override
-  String get anilistExcludeList => 'Exclude your list';
+  String get anilistExcludeList => 'Listeni hariç tut';
 
   @override
   String get anilistExcludeListDesc =>
-      'Keep titles already on your AniList out of the anime and manga pages';
+      'AniList\'inde zaten olan yapımları anime ve manga sayfalarında gösterme';
 
   @override
   String get anilistProfile => 'AniList profili';
@@ -3052,22 +3097,22 @@ class AppLocalizationsTr extends AppLocalizations {
   String get topRatedMovies => 'En yüksek puanlı filmler';
 
   @override
-  String get koreanDramas => 'Korean Dramas';
+  String get koreanDramas => 'Kore Dizileri';
 
   @override
-  String get chineseDramas => 'Chinese Dramas';
+  String get chineseDramas => 'Çin Dizileri';
 
   @override
-  String get japaneseDramas => 'Japanese Dramas';
+  String get japaneseDramas => 'Japon Dizileri';
 
   @override
-  String get thaiDramas => 'Thai Dramas';
+  String get thaiDramas => 'Tayland Dizileri';
 
   @override
-  String get turkishDramas => 'Turkish Dramas';
+  String get turkishDramas => 'Türk Dizileri';
 
   @override
-  String get miniSeries => 'Mini Series';
+  String get miniSeries => 'Mini Diziler';
 
   @override
   String get topRatedShows => 'En yüksek puanlı diziler';
@@ -5777,11 +5822,24 @@ class AppLocalizationsTr extends AppLocalizations {
       'Bu seçenekleri bu başlık için tut, varsayılanlarına dokunma';
 
   @override
-  String get playerSwapGestures => 'Swap swipe sides';
+  String get playerSwapGestures => 'Kaydırma taraflarını değiştir';
 
   @override
-  String get playerSwapGesturesDesc =>
-      'Brightness on the left and volume on the right';
+  String get playerSwapGesturesDesc => 'Solda parlaklık, sağda ses';
+
+  @override
+  String get playerOpenBig => 'Büyük görünümde aç';
+
+  @override
+  String get playerOpenBigDesc =>
+      'Oynatıcıyı bölüm listesi yerine tam ekran başlat';
+
+  @override
+  String get playerPauseOnBlur => 'Odak kaybolunca duraklat';
+
+  @override
+  String get playerPauseOnBlurDesc =>
+      'Uygulama bildirim paneli gibi bir şeyle kapandığında duraklat, geri dönünce devam et';
 
   @override
   String get playerHoldSpeed => 'Basılı tutma hızı';

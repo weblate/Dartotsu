@@ -101,6 +101,51 @@ class AppLocalizationsMs extends AppLocalizations {
   String get uninstall => 'Nyahpasang';
 
   @override
+  String get updateInstallCancelled =>
+      'Pemasangan dibatalkan. Kalau Android kata aplikasi bercanggah dengan yang dah dipasang, maksudnya tandatangan berbeza: nyahpasang versi sekarang dulu, baru pasang kemas kini';
+
+  @override
+  String updateInstallFailed(String error) {
+    return 'Kemas kini gagal: $error';
+  }
+
+  @override
+  String get appLock => 'Kunci aplikasi';
+
+  @override
+  String get appLockDesc =>
+      'Minta kod laluan bila aplikasi dibuka atau dibuka semula selepas seketika';
+
+  @override
+  String get appLockUnlock => 'Masukkan kod laluan anda';
+
+  @override
+  String get appLockWrong => 'Kod laluan salah';
+
+  @override
+  String appLockWait(String seconds) {
+    return 'Terlalu banyak cubaan, tunggu ${seconds}s';
+  }
+
+  @override
+  String get appLockNew => 'Pilih kod laluan';
+
+  @override
+  String get appLockNewHint => '4 hingga 8 digit';
+
+  @override
+  String get appLockConfirm => 'Masukkan sekali lagi';
+
+  @override
+  String get appLockMismatch => 'Kod laluan tak sama';
+
+  @override
+  String get appLockOn => 'Kod laluan telah ditetapkan';
+
+  @override
+  String get appLockRemoveTitle => 'Masukkan kod laluan untuk matikan kunci';
+
+  @override
   String get installFailed => 'Gagal dipasang';
 
   @override
@@ -201,10 +246,10 @@ class AppLocalizationsMs extends AppLocalizations {
   String get settingsGeneralDesc => 'Bahasa dan tingkah laku';
 
   @override
-  String get settingsNetwork => 'Network';
+  String get settingsNetwork => 'Rangkaian';
 
   @override
-  String get settingsNetworkDesc => 'User agent, certificates, DNS and proxy';
+  String get settingsNetworkDesc => 'User agent, sijil, DNS dan proksi';
 
   @override
   String get settingsAccountDesc => 'Perkhidmatan penjejakan dan log masuk';
@@ -1087,7 +1132,7 @@ class AppLocalizationsMs extends AppLocalizations {
   String get kitsuAccountOptions => 'Pilihan akaun Kitsu';
 
   @override
-  String get mangaBakaAccountOptions => 'MangaBaka account options';
+  String get mangaBakaAccountOptions => 'Pilihan akaun MangaBaka';
 
   @override
   String get couldNotUpdateKitsuSettings =>
@@ -1370,7 +1415,7 @@ class AppLocalizationsMs extends AppLocalizations {
 
   @override
   String chapterExpectedIn(int chapter, String time) {
-    return 'Chapter $chapter expected in about $time';
+    return 'Bab $chapter dijangka keluar dalam lebih kurang $time';
   }
 
   @override
@@ -1978,11 +2023,11 @@ class AppLocalizationsMs extends AppLocalizations {
       'Jauhkan entri yang ditanda peribadi di AniList daripada suapan';
 
   @override
-  String get anilistExcludeList => 'Exclude your list';
+  String get anilistExcludeList => 'Kecualikan senarai anda';
 
   @override
   String get anilistExcludeListDesc =>
-      'Keep titles already on your AniList out of the anime and manga pages';
+      'Jangan papar tajuk yang dah ada dalam AniList anda di halaman anime dan manga';
 
   @override
   String get anilistProfile => 'Profil AniList';
@@ -3047,22 +3092,22 @@ class AppLocalizationsMs extends AppLocalizations {
   String get topRatedMovies => 'Filem terbaik dinilai';
 
   @override
-  String get koreanDramas => 'Korean Dramas';
+  String get koreanDramas => 'Drama Korea';
 
   @override
-  String get chineseDramas => 'Chinese Dramas';
+  String get chineseDramas => 'Drama China';
 
   @override
-  String get japaneseDramas => 'Japanese Dramas';
+  String get japaneseDramas => 'Drama Jepun';
 
   @override
-  String get thaiDramas => 'Thai Dramas';
+  String get thaiDramas => 'Drama Thai';
 
   @override
-  String get turkishDramas => 'Turkish Dramas';
+  String get turkishDramas => 'Drama Turki';
 
   @override
-  String get miniSeries => 'Mini Series';
+  String get miniSeries => 'Siri Mini';
 
   @override
   String get topRatedShows => 'Show terbaik dinilai';
@@ -5772,11 +5817,25 @@ class AppLocalizationsMs extends AppLocalizations {
       'Simpan pilihan ni untuk tajuk ni dan jangan usik lalai awak';
 
   @override
-  String get playerSwapGestures => 'Swap swipe sides';
+  String get playerSwapGestures => 'Tukar sisi leret';
 
   @override
   String get playerSwapGesturesDesc =>
-      'Brightness on the left and volume on the right';
+      'Kecerahan di kiri, kelantangan di kanan';
+
+  @override
+  String get playerOpenBig => 'Buka dalam paparan besar';
+
+  @override
+  String get playerOpenBigDesc =>
+      'Mulakan pemain dalam skrin penuh, bukan bersama senarai episod';
+
+  @override
+  String get playerPauseOnBlur => 'Jeda bila tidak fokus';
+
+  @override
+  String get playerPauseOnBlurDesc =>
+      'Jeda semasa aplikasi terlindung, contohnya panel pemberitahuan, dan sambung semula bila anda kembali';
 
   @override
   String get playerHoldSpeed => 'Kelajuan tahan';

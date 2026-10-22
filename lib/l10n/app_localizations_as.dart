@@ -101,6 +101,51 @@ class AppLocalizationsAs extends AppLocalizations {
   String get uninstall => 'আনইনষ্টল';
 
   @override
+  String get updateInstallCancelled =>
+      'ইনষ্টল বাতিল কৰা হ’ল। Android এ যদি কৈছিল যে এপটো ইনষ্টল হৈ থকাটোৰ সৈতে সংঘাত হৈছে, তেন্তে চিগনেচাৰ বেলেগ: প্ৰথমে বৰ্তমানৰ সংস্কৰণটো আনইনষ্টল কৰক, তাৰ পিছত আপডেট ইনষ্টল কৰক';
+
+  @override
+  String updateInstallFailed(String error) {
+    return 'আপডেট হোৱা নাই: $error';
+  }
+
+  @override
+  String get appLock => 'এপ লক';
+
+  @override
+  String get appLockDesc =>
+      'এপ খোলোতে বা কিছুসময়ৰ পিছত ঘূৰি আহিলে পাছকোড সোধক';
+
+  @override
+  String get appLockUnlock => 'আপোনাৰ পাছকোড দিয়ক';
+
+  @override
+  String get appLockWrong => 'পাছকোড ভুল';
+
+  @override
+  String appLockWait(String seconds) {
+    return 'বহুত বেছি চেষ্টা কৰিলা, $seconds ছেকেণ্ড অপেক্ষা কৰা';
+  }
+
+  @override
+  String get appLockNew => 'এটা পাছকোড বাছক';
+
+  @override
+  String get appLockNewHint => '৪ ৰ পৰা ৮ টা সংখ্যা';
+
+  @override
+  String get appLockConfirm => 'আকৌ এবাৰ দিয়ক';
+
+  @override
+  String get appLockMismatch => 'পাছকোড দুটা মিলা নাই';
+
+  @override
+  String get appLockOn => 'পাছকোড ছেট হ’ল';
+
+  @override
+  String get appLockRemoveTitle => 'লক বন্ধ কৰিবলৈ আপোনাৰ পাছকোড দিয়ক';
+
+  @override
   String get installFailed => 'ইনষ্টল হোৱা নাই';
 
   @override
@@ -201,10 +246,10 @@ class AppLocalizationsAs extends AppLocalizations {
   String get settingsGeneralDesc => 'ভাষা আৰু আচৰণ';
 
   @override
-  String get settingsNetwork => 'Network';
+  String get settingsNetwork => 'নেটৱৰ্ক';
 
   @override
-  String get settingsNetworkDesc => 'User agent, certificates, DNS and proxy';
+  String get settingsNetworkDesc => 'ইউজাৰ এজেণ্ট, প্ৰমাণপত্ৰ, DNS আৰু প্ৰক্সি';
 
   @override
   String get settingsAccountDesc => 'ট্ৰেকিং ছাৰ্ভিচ আৰু ছাইন-ইন';
@@ -1078,7 +1123,7 @@ class AppLocalizationsAs extends AppLocalizations {
   String get kitsuAccountOptions => 'Kitsu একাউণ্ট বিকল্প';
 
   @override
-  String get mangaBakaAccountOptions => 'MangaBaka account options';
+  String get mangaBakaAccountOptions => 'MangaBaka একাউণ্ট বিকল্প';
 
   @override
   String get couldNotUpdateKitsuSettings =>
@@ -1360,7 +1405,7 @@ class AppLocalizationsAs extends AppLocalizations {
 
   @override
   String chapterExpectedIn(int chapter, String time) {
-    return 'Chapter $chapter expected in about $time';
+    return 'অধ্যায় $chapter প্ৰায় $timeৰ ভিতৰত আহিব';
   }
 
   @override
@@ -1967,11 +2012,11 @@ class AppLocalizationsAs extends AppLocalizations {
       'AniList-ত ব্যক্তিগত কৰা এণ্ট্ৰি ফিডৰ পৰা আতৰাই ৰাখা';
 
   @override
-  String get anilistExcludeList => 'Exclude your list';
+  String get anilistExcludeList => 'আপোনাৰ তালিকা বাদ দিয়ক';
 
   @override
   String get anilistExcludeListDesc =>
-      'Keep titles already on your AniList out of the anime and manga pages';
+      'আপোনাৰ AniList ত থকা শিৰোনামবোৰ এনিমে আৰু মাংগা পৃষ্ঠাৰ পৰা আঁতৰাই ৰাখক';
 
   @override
   String get anilistProfile => 'AniList প্ৰফাইল';
@@ -3034,22 +3079,22 @@ class AppLocalizationsAs extends AppLocalizations {
   String get topRatedMovies => 'আটাইতকৈ ভাল ৰেটিঙৰ চলচ্চিত্ৰ';
 
   @override
-  String get koreanDramas => 'Korean Dramas';
+  String get koreanDramas => 'কোৰিয়ান ড্ৰামা';
 
   @override
-  String get chineseDramas => 'Chinese Dramas';
+  String get chineseDramas => 'চাইনিজ ড্ৰামা';
 
   @override
-  String get japaneseDramas => 'Japanese Dramas';
+  String get japaneseDramas => 'জাপানী ড্ৰামা';
 
   @override
-  String get thaiDramas => 'Thai Dramas';
+  String get thaiDramas => 'থাই ড্ৰামা';
 
   @override
-  String get turkishDramas => 'Turkish Dramas';
+  String get turkishDramas => 'তুৰ্কী ড্ৰামা';
 
   @override
-  String get miniSeries => 'Mini Series';
+  String get miniSeries => 'মিনি ছিৰিজ';
 
   @override
   String get topRatedShows => 'আটাইতকৈ ভাল ৰেটিঙৰ শ্ব’';
@@ -5743,11 +5788,24 @@ class AppLocalizationsAs extends AppLocalizations {
       'এই বিকল্পবোৰ এই শিৰোনামৰ বাবে ৰাখা আৰু তোমাৰ ডিফল্ট নুচুবা';
 
   @override
-  String get playerSwapGestures => 'Swap swipe sides';
+  String get playerSwapGestures => 'স্ৱাইপৰ কাষ সলনি কৰক';
 
   @override
-  String get playerSwapGesturesDesc =>
-      'Brightness on the left and volume on the right';
+  String get playerSwapGesturesDesc => 'বাওঁফালে উজ্জ্বলতা আৰু সোঁফালে ভলিউম';
+
+  @override
+  String get playerOpenBig => 'ডাঙৰ ভিউত খোলক';
+
+  @override
+  String get playerOpenBigDesc =>
+      'পৰ্ব তালিকাৰ সলনি প্লেয়াৰ ফুলস্ক্ৰীণত আৰম্ভ কৰক';
+
+  @override
+  String get playerPauseOnBlur => 'ফকাছ হেৰুৱালে পজ কৰক';
+
+  @override
+  String get playerPauseOnBlurDesc =>
+      'নটিফিকেচন পেনেলৰ দৰে কিবা এটাই এপটো ঢাকিলে পজ হ’ব, আৰু ঘূৰি আহিলে চলিব';
 
   @override
   String get playerHoldSpeed => 'হোল্ড গতি';

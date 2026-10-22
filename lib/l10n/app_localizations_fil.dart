@@ -102,6 +102,51 @@ class AppLocalizationsFil extends AppLocalizations {
   String get uninstall => 'I-uninstall';
 
   @override
+  String get updateInstallCancelled =>
+      'Na-cancel ang install. Kung sinabi ng Android na nagko-conflict ang app sa naka-install, iba ang signature: i-uninstall muna ang kasalukuyang version, tapos i-install ang update';
+
+  @override
+  String updateInstallFailed(String error) {
+    return 'Hindi na-update: $error';
+  }
+
+  @override
+  String get appLock => 'App lock';
+
+  @override
+  String get appLockDesc =>
+      'Humingi ng passcode kapag binuksan ang app o bumalik pagkalipas ng ilang sandali';
+
+  @override
+  String get appLockUnlock => 'Ilagay ang passcode mo';
+
+  @override
+  String get appLockWrong => 'Mali ang passcode';
+
+  @override
+  String appLockWait(String seconds) {
+    return 'Masyadong maraming try, maghintay ng ${seconds}s';
+  }
+
+  @override
+  String get appLockNew => 'Pumili ng passcode';
+
+  @override
+  String get appLockNewHint => '4 hanggang 8 digits';
+
+  @override
+  String get appLockConfirm => 'Ilagay ulit';
+
+  @override
+  String get appLockMismatch => 'Hindi magkapareho ang mga passcode';
+
+  @override
+  String get appLockOn => 'Naka-set na ang passcode';
+
+  @override
+  String get appLockRemoveTitle => 'Ilagay ang passcode mo para i-off ang lock';
+
+  @override
   String get installFailed => 'Hindi na-install';
 
   @override
@@ -205,7 +250,7 @@ class AppLocalizationsFil extends AppLocalizations {
   String get settingsNetwork => 'Network';
 
   @override
-  String get settingsNetworkDesc => 'User agent, certificates, DNS and proxy';
+  String get settingsNetworkDesc => 'User agent, certificates, DNS at proxy';
 
   @override
   String get settingsAccountDesc => 'Tracking service at sign-in';
@@ -1097,7 +1142,7 @@ class AppLocalizationsFil extends AppLocalizations {
   String get kitsuAccountOptions => 'Mga opsyon ng Kitsu account';
 
   @override
-  String get mangaBakaAccountOptions => 'MangaBaka account options';
+  String get mangaBakaAccountOptions => 'Mga option ng MangaBaka account';
 
   @override
   String get couldNotUpdateKitsuSettings =>
@@ -1381,7 +1426,7 @@ class AppLocalizationsFil extends AppLocalizations {
 
   @override
   String chapterExpectedIn(int chapter, String time) {
-    return 'Chapter $chapter expected in about $time';
+    return 'Chapter $chapter ay inaasahan sa mga $time';
   }
 
   @override
@@ -1989,11 +2034,11 @@ class AppLocalizationsFil extends AppLocalizations {
       'Ilayo sa feed ang mga entry na naka-private sa AniList';
 
   @override
-  String get anilistExcludeList => 'Exclude your list';
+  String get anilistExcludeList => 'Huwag isama ang list mo';
 
   @override
   String get anilistExcludeListDesc =>
-      'Keep titles already on your AniList out of the anime and manga pages';
+      'Itago sa anime at manga pages ang mga title na nasa AniList mo na';
 
   @override
   String get anilistProfile => 'AniList profile';
@@ -5808,11 +5853,25 @@ class AppLocalizationsFil extends AppLocalizations {
       'Panatilihin ang mga opsyong ito para sa title na ito at huwag galawin ang mga default mo';
 
   @override
-  String get playerSwapGestures => 'Swap swipe sides';
+  String get playerSwapGestures => 'Ipalit ang gilid ng swipe';
 
   @override
   String get playerSwapGesturesDesc =>
-      'Brightness on the left and volume on the right';
+      'Brightness sa kaliwa at volume sa kanan';
+
+  @override
+  String get playerOpenBig => 'Buksan sa malaking view';
+
+  @override
+  String get playerOpenBigDesc =>
+      'I-start ang player nang fullscreen imbes na may episode list';
+
+  @override
+  String get playerPauseOnBlur => 'I-pause kapag wala sa focus';
+
+  @override
+  String get playerPauseOnBlurDesc =>
+      'Mag-pause kapag natatakpan ang app, tulad ng notification panel, at magpatuloy kapag bumalik ka';
 
   @override
   String get playerHoldSpeed => 'Hold speed';

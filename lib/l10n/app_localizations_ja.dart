@@ -99,6 +99,50 @@ class AppLocalizationsJa extends AppLocalizations {
   String get uninstall => 'アンインストール';
 
   @override
+  String get updateInstallCancelled =>
+      'インストールがキャンセルされました。Androidで既存のアプリと競合すると表示された場合は、署名が違うためです。いまのバージョンを先にアンインストールしてから、アップデートを入れてください';
+
+  @override
+  String updateInstallFailed(String error) {
+    return 'アップデートに失敗しました: $error';
+  }
+
+  @override
+  String get appLock => 'アプリロック';
+
+  @override
+  String get appLockDesc => 'アプリを開いたとき、またはしばらくして戻ったときにパスコードを聞く';
+
+  @override
+  String get appLockUnlock => 'パスコードを入力';
+
+  @override
+  String get appLockWrong => 'パスコードが違います';
+
+  @override
+  String appLockWait(String seconds) {
+    return '試行しすぎです。$seconds秒待ってね';
+  }
+
+  @override
+  String get appLockNew => 'パスコードを決めてね';
+
+  @override
+  String get appLockNewHint => '4〜8桁の数字';
+
+  @override
+  String get appLockConfirm => 'もう一度入力';
+
+  @override
+  String get appLockMismatch => 'パスコードが一致しません';
+
+  @override
+  String get appLockOn => 'パスコード設定済み';
+
+  @override
+  String get appLockRemoveTitle => 'ロックをオフにするにはパスコードを入力';
+
+  @override
   String get installFailed => 'インストールに失敗';
 
   @override
@@ -199,10 +243,10 @@ class AppLocalizationsJa extends AppLocalizations {
   String get settingsGeneralDesc => '言語と動作';
 
   @override
-  String get settingsNetwork => 'Network';
+  String get settingsNetwork => 'ネットワーク';
 
   @override
-  String get settingsNetworkDesc => 'User agent, certificates, DNS and proxy';
+  String get settingsNetworkDesc => 'ユーザーエージェント、証明書、DNS、プロキシ';
 
   @override
   String get settingsAccountDesc => '管理サービスとログイン';
@@ -1058,7 +1102,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get kitsuAccountOptions => 'Kitsuアカウントのオプション';
 
   @override
-  String get mangaBakaAccountOptions => 'MangaBaka account options';
+  String get mangaBakaAccountOptions => 'MangaBakaアカウントの設定';
 
   @override
   String get couldNotUpdateKitsuSettings => 'Kitsuの設定を更新できなかったよ';
@@ -1337,7 +1381,7 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String chapterExpectedIn(int chapter, String time) {
-    return 'Chapter $chapter expected in about $time';
+    return '第$chapter話は約$time後に公開予定';
   }
 
   @override
@@ -1938,11 +1982,10 @@ class AppLocalizationsJa extends AppLocalizations {
   String get hidePrivateEntriesDesc => 'AniListで非公開にしたエントリーをフィードに出さない';
 
   @override
-  String get anilistExcludeList => 'Exclude your list';
+  String get anilistExcludeList => '自分のリストを除外';
 
   @override
-  String get anilistExcludeListDesc =>
-      'Keep titles already on your AniList out of the anime and manga pages';
+  String get anilistExcludeListDesc => 'AniListのリストに入っている作品をアニメ・マンガページに出さない';
 
   @override
   String get anilistProfile => 'AniListプロフィール';
@@ -2992,22 +3035,22 @@ class AppLocalizationsJa extends AppLocalizations {
   String get topRatedMovies => '高評価の映画';
 
   @override
-  String get koreanDramas => 'Korean Dramas';
+  String get koreanDramas => '韓国ドラマ';
 
   @override
-  String get chineseDramas => 'Chinese Dramas';
+  String get chineseDramas => '中国ドラマ';
 
   @override
-  String get japaneseDramas => 'Japanese Dramas';
+  String get japaneseDramas => '日本のドラマ';
 
   @override
-  String get thaiDramas => 'Thai Dramas';
+  String get thaiDramas => 'タイドラマ';
 
   @override
-  String get turkishDramas => 'Turkish Dramas';
+  String get turkishDramas => 'トルコドラマ';
 
   @override
-  String get miniSeries => 'Mini Series';
+  String get miniSeries => 'ミニシリーズ';
 
   @override
   String get topRatedShows => '高評価の番組';
@@ -5636,11 +5679,22 @@ class AppLocalizationsJa extends AppLocalizations {
   String get playerPerTitleDesc => 'この作品にだけこのオプションを使って、デフォルトはそのままにするよ';
 
   @override
-  String get playerSwapGestures => 'Swap swipe sides';
+  String get playerSwapGestures => 'スワイプの左右を入れ替え';
 
   @override
-  String get playerSwapGesturesDesc =>
-      'Brightness on the left and volume on the right';
+  String get playerSwapGesturesDesc => '左で明るさ、右で音量';
+
+  @override
+  String get playerOpenBig => '大画面で開く';
+
+  @override
+  String get playerOpenBigDesc => 'エピソード一覧ではなく全画面でプレーヤーを開始';
+
+  @override
+  String get playerPauseOnBlur => 'フォーカスが外れたら一時停止';
+
+  @override
+  String get playerPauseOnBlurDesc => '通知パネルなどでアプリが隠れている間は一時停止して、戻ると再開';
 
   @override
   String get playerHoldSpeed => '長押しの速度';

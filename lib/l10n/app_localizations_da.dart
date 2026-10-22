@@ -102,6 +102,51 @@ class AppLocalizationsDa extends AppLocalizations {
   String get uninstall => 'Afinstaller';
 
   @override
+  String get updateInstallCancelled =>
+      'Installationen blev annulleret. Hvis Android sagde, at appen er i konflikt med den installerede, er signaturen en anden: afinstaller den nuværende version først, og installer så opdateringen';
+
+  @override
+  String updateInstallFailed(String error) {
+    return 'Opdateringen mislykkedes: $error';
+  }
+
+  @override
+  String get appLock => 'Applås';
+
+  @override
+  String get appLockDesc =>
+      'Bed om en kode, når appen åbnes eller kommer tilbage efter et stykke tid';
+
+  @override
+  String get appLockUnlock => 'Indtast din kode';
+
+  @override
+  String get appLockWrong => 'Forkert kode';
+
+  @override
+  String appLockWait(String seconds) {
+    return 'For mange forsøg, vent $seconds s';
+  }
+
+  @override
+  String get appLockNew => 'Vælg en kode';
+
+  @override
+  String get appLockNewHint => '4 til 8 cifre';
+
+  @override
+  String get appLockConfirm => 'Indtast den igen';
+
+  @override
+  String get appLockMismatch => 'Koderne er ikke ens';
+
+  @override
+  String get appLockOn => 'Kode sat';
+
+  @override
+  String get appLockRemoveTitle => 'Indtast din kode for at slå låsen fra';
+
+  @override
   String get installFailed => 'Installationen mislykkedes';
 
   @override
@@ -202,10 +247,10 @@ class AppLocalizationsDa extends AppLocalizations {
   String get settingsGeneralDesc => 'Sprog og adfærd';
 
   @override
-  String get settingsNetwork => 'Network';
+  String get settingsNetwork => 'Netværk';
 
   @override
-  String get settingsNetworkDesc => 'User agent, certificates, DNS and proxy';
+  String get settingsNetworkDesc => 'User agent, certifikater, DNS og proxy';
 
   @override
   String get settingsAccountDesc => 'Sporingstjeneste og login';
@@ -1085,7 +1130,7 @@ class AppLocalizationsDa extends AppLocalizations {
   String get kitsuAccountOptions => 'Kitsu-kontoindstillinger';
 
   @override
-  String get mangaBakaAccountOptions => 'MangaBaka account options';
+  String get mangaBakaAccountOptions => 'MangaBaka-kontoindstillinger';
 
   @override
   String get couldNotUpdateKitsuSettings =>
@@ -1372,7 +1417,7 @@ class AppLocalizationsDa extends AppLocalizations {
 
   @override
   String chapterExpectedIn(int chapter, String time) {
-    return 'Chapter $chapter expected in about $time';
+    return 'Kapitel $chapter kommer om cirka $time';
   }
 
   @override
@@ -1978,11 +2023,11 @@ class AppLocalizationsDa extends AppLocalizations {
       'Hold indslag, der er markeret som private på AniList, ude af feedet';
 
   @override
-  String get anilistExcludeList => 'Exclude your list';
+  String get anilistExcludeList => 'Udeluk din liste';
 
   @override
   String get anilistExcludeListDesc =>
-      'Keep titles already on your AniList out of the anime and manga pages';
+      'Skjul titler, du allerede har på din AniList, på anime- og mangasiderne';
 
   @override
   String get anilistProfile => 'AniList-profil';
@@ -3049,22 +3094,22 @@ class AppLocalizationsDa extends AppLocalizations {
   String get topRatedMovies => 'Bedst bedømte film';
 
   @override
-  String get koreanDramas => 'Korean Dramas';
+  String get koreanDramas => 'Koreanske dramaer';
 
   @override
-  String get chineseDramas => 'Chinese Dramas';
+  String get chineseDramas => 'Kinesiske dramaer';
 
   @override
-  String get japaneseDramas => 'Japanese Dramas';
+  String get japaneseDramas => 'Japanske dramaer';
 
   @override
-  String get thaiDramas => 'Thai Dramas';
+  String get thaiDramas => 'Thailandske dramaer';
 
   @override
-  String get turkishDramas => 'Turkish Dramas';
+  String get turkishDramas => 'Tyrkiske dramaer';
 
   @override
-  String get miniSeries => 'Mini Series';
+  String get miniSeries => 'Miniserier';
 
   @override
   String get topRatedShows => 'Bedst bedømte serier';
@@ -5782,11 +5827,25 @@ class AppLocalizationsDa extends AppLocalizations {
       'Behold disse indstillinger for denne titel og lad dine standarder være i fred';
 
   @override
-  String get playerSwapGestures => 'Swap swipe sides';
+  String get playerSwapGestures => 'Byt om på swipe-sider';
 
   @override
   String get playerSwapGesturesDesc =>
-      'Brightness on the left and volume on the right';
+      'Lysstyrke til venstre og lydstyrke til højre';
+
+  @override
+  String get playerOpenBig => 'Åbn i stor visning';
+
+  @override
+  String get playerOpenBigDesc =>
+      'Start afspilleren i fuldskærm i stedet for med episodelisten';
+
+  @override
+  String get playerPauseOnBlur => 'Pause når ude af fokus';
+
+  @override
+  String get playerPauseOnBlurDesc =>
+      'Sæt på pause, mens appen er dækket, fx af notifikationspanelet, og fortsæt, når du kommer tilbage';
 
   @override
   String get playerHoldSpeed => 'Holdehastighed';

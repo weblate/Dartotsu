@@ -102,6 +102,51 @@ class AppLocalizationsMl extends AppLocalizations {
   String get uninstall => 'അൺഇൻസ്റ്റാൾ';
 
   @override
+  String get updateInstallCancelled =>
+      'ഇൻസ്റ്റാൾ റദ്ദാക്കി. ഇൻസ്റ്റാൾ ചെയ്ത ആപ്പുമായി ഒത്തുപോകുന്നില്ലെന്ന് Android പറഞ്ഞാൽ, സിഗ്നേച്ചർ വ്യത്യസ്തമാണ്: ആദ്യം ഇപ്പോഴത്തെ വേർഷൻ അൺഇൻസ്റ്റാൾ ചെയ്യൂ, എന്നിട്ട് അപ്ഡേറ്റ് ഇൻസ്റ്റാൾ ചെയ്യൂ';
+
+  @override
+  String updateInstallFailed(String error) {
+    return 'അപ്ഡേറ്റ് ആയില്ല: $error';
+  }
+
+  @override
+  String get appLock => 'ആപ്പ് ലോക്ക്';
+
+  @override
+  String get appLockDesc =>
+      'ആപ്പ് തുറക്കുമ്പോഴോ കുറച്ചുനേരം കഴിഞ്ഞ് തിരികെ വരുമ്പോഴോ പാസ്‌കോഡ് ചോദിക്കും';
+
+  @override
+  String get appLockUnlock => 'പാസ്‌കോഡ് നൽകൂ';
+
+  @override
+  String get appLockWrong => 'പാസ്‌കോഡ് തെറ്റാണ്';
+
+  @override
+  String appLockWait(String seconds) {
+    return 'കുറേ തവണ ശ്രമിച്ചു, $seconds സെക്കൻഡ് കാത്തിരിക്കൂ';
+  }
+
+  @override
+  String get appLockNew => 'ഒരു പാസ്‌കോഡ് തിരഞ്ഞെടുക്കൂ';
+
+  @override
+  String get appLockNewHint => '4 മുതൽ 8 അക്കങ്ങൾ';
+
+  @override
+  String get appLockConfirm => 'ഒരിക്കൽ കൂടി നൽകൂ';
+
+  @override
+  String get appLockMismatch => 'പാസ്‌കോഡുകൾ ചേരുന്നില്ല';
+
+  @override
+  String get appLockOn => 'പാസ്‌കോഡ് സെറ്റ് ചെയ്തു';
+
+  @override
+  String get appLockRemoveTitle => 'ലോക്ക് ഓഫ് ആക്കാൻ പാസ്‌കോഡ് നൽകൂ';
+
+  @override
   String get installFailed => 'ഇൻസ്റ്റാൾ ചെയ്യാനായില്ല';
 
   @override
@@ -203,10 +248,11 @@ class AppLocalizationsMl extends AppLocalizations {
   String get settingsGeneralDesc => 'ഭാഷയും പെരുമാറ്റവും';
 
   @override
-  String get settingsNetwork => 'Network';
+  String get settingsNetwork => 'നെറ്റ്‌വർക്ക്';
 
   @override
-  String get settingsNetworkDesc => 'User agent, certificates, DNS and proxy';
+  String get settingsNetworkDesc =>
+      'യൂസർ ഏജന്റ്, സർട്ടിഫിക്കറ്റുകൾ, DNS, പ്രോക്സി';
 
   @override
   String get settingsAccountDesc => 'ട്രാക്കിംഗ് സർവീസും സൈൻ ഇനും';
@@ -1097,7 +1143,7 @@ class AppLocalizationsMl extends AppLocalizations {
   String get kitsuAccountOptions => 'Kitsu അക്കൗണ്ട് ഓപ്ഷനുകൾ';
 
   @override
-  String get mangaBakaAccountOptions => 'MangaBaka account options';
+  String get mangaBakaAccountOptions => 'MangaBaka അക്കൗണ്ട് ഓപ്ഷനുകൾ';
 
   @override
   String get couldNotUpdateKitsuSettings =>
@@ -1385,7 +1431,7 @@ class AppLocalizationsMl extends AppLocalizations {
 
   @override
   String chapterExpectedIn(int chapter, String time) {
-    return 'Chapter $chapter expected in about $time';
+    return 'അധ്യായം $chapter ഏകദേശം $time കഴിഞ്ഞ് വരും';
   }
 
   @override
@@ -1996,11 +2042,11 @@ class AppLocalizationsMl extends AppLocalizations {
       'AniList-ൽ പ്രൈവറ്റ് എന്ന് അടയാളപ്പെടുത്തിയ എൻട്രികൾ ഫീഡിൽ നിന്ന് ഒഴിവാക്കൂ';
 
   @override
-  String get anilistExcludeList => 'Exclude your list';
+  String get anilistExcludeList => 'നിങ്ങളുടെ ലിസ്റ്റ് ഒഴിവാക്കൂ';
 
   @override
   String get anilistExcludeListDesc =>
-      'Keep titles already on your AniList out of the anime and manga pages';
+      'നിങ്ങളുടെ AniList-ൽ ഇതിനകം ഉള്ള ടൈറ്റിലുകൾ അനിമേ, മംഗ പേജുകളിൽ കാണിക്കില്ല';
 
   @override
   String get anilistProfile => 'AniList പ്രൊഫൈൽ';
@@ -3069,22 +3115,22 @@ class AppLocalizationsMl extends AppLocalizations {
   String get topRatedMovies => 'ടോപ്പ് റേറ്റഡ് സിനിമകൾ';
 
   @override
-  String get koreanDramas => 'Korean Dramas';
+  String get koreanDramas => 'കൊറിയൻ ഡ്രാമകൾ';
 
   @override
-  String get chineseDramas => 'Chinese Dramas';
+  String get chineseDramas => 'ചൈനീസ് ഡ്രാമകൾ';
 
   @override
-  String get japaneseDramas => 'Japanese Dramas';
+  String get japaneseDramas => 'ജാപ്പനീസ് ഡ്രാമകൾ';
 
   @override
-  String get thaiDramas => 'Thai Dramas';
+  String get thaiDramas => 'തായ് ഡ്രാമകൾ';
 
   @override
-  String get turkishDramas => 'Turkish Dramas';
+  String get turkishDramas => 'ടർക്കിഷ് ഡ്രാമകൾ';
 
   @override
-  String get miniSeries => 'Mini Series';
+  String get miniSeries => 'മിനി സീരീസ്';
 
   @override
   String get topRatedShows => 'ടോപ്പ് റേറ്റഡ് ഷോകൾ';
@@ -5815,11 +5861,25 @@ class AppLocalizationsMl extends AppLocalizations {
       'ഈ ഓപ്ഷനുകൾ ഈ ടൈറ്റിലിന് മാത്രമായി സൂക്ഷിക്കൂ, നിന്റെ ഡിഫോൾട്ടുകൾ തൊടരുത്';
 
   @override
-  String get playerSwapGestures => 'Swap swipe sides';
+  String get playerSwapGestures => 'സ്വൈപ്പ് വശങ്ങൾ മാറ്റൂ';
 
   @override
   String get playerSwapGesturesDesc =>
-      'Brightness on the left and volume on the right';
+      'ഇടതുവശത്ത് ബ്രൈറ്റ്‌നെസ്, വലതുവശത്ത് വോളിയം';
+
+  @override
+  String get playerOpenBig => 'വലിയ വ്യൂവിൽ തുറക്കൂ';
+
+  @override
+  String get playerOpenBigDesc =>
+      'എപ്പിസോഡ് ലിസ്റ്റ് ഇല്ലാതെ പ്ലേയർ നേരിട്ട് ഫുൾസ്ക്രീനിൽ തുടങ്ങും';
+
+  @override
+  String get playerPauseOnBlur => 'ഫോക്കസ് പോയാൽ പോസ് ചെയ്യൂ';
+
+  @override
+  String get playerPauseOnBlurDesc =>
+      'നോട്ടിഫിക്കേഷൻ പാനൽ പോലുള്ളവ ആപ്പിനെ മറച്ചാൽ പോസ് ആകും, തിരികെ വരുമ്പോൾ തുടരും';
 
   @override
   String get playerHoldSpeed => 'ഹോൾഡ് വേഗത';

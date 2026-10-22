@@ -101,6 +101,51 @@ class AppLocalizationsEn extends AppLocalizations {
   String get uninstall => 'Uninstall';
 
   @override
+  String get updateInstallCancelled =>
+      'Install cancelled. If Android said the app conflicts with the installed one, the signature differs: uninstall the current version first, then install the update';
+
+  @override
+  String updateInstallFailed(String error) {
+    return 'Update failed: $error';
+  }
+
+  @override
+  String get appLock => 'App lock';
+
+  @override
+  String get appLockDesc =>
+      'Ask for a passcode when the app opens or comes back after a while';
+
+  @override
+  String get appLockUnlock => 'Enter your passcode';
+
+  @override
+  String get appLockWrong => 'Wrong passcode';
+
+  @override
+  String appLockWait(String seconds) {
+    return 'Too many tries, wait ${seconds}s';
+  }
+
+  @override
+  String get appLockNew => 'Choose a passcode';
+
+  @override
+  String get appLockNewHint => '4 to 8 digits';
+
+  @override
+  String get appLockConfirm => 'Enter it again';
+
+  @override
+  String get appLockMismatch => 'The passcodes do not match';
+
+  @override
+  String get appLockOn => 'Passcode set';
+
+  @override
+  String get appLockRemoveTitle => 'Enter your passcode to turn the lock off';
+
+  @override
   String get installFailed => 'Install failed';
 
   @override
@@ -5765,6 +5810,20 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get playerSwapGesturesDesc =>
       'Brightness on the left and volume on the right';
+
+  @override
+  String get playerOpenBig => 'Open in big view';
+
+  @override
+  String get playerOpenBigDesc =>
+      'Start the player fullscreen instead of with the episode list';
+
+  @override
+  String get playerPauseOnBlur => 'Pause when out of focus';
+
+  @override
+  String get playerPauseOnBlurDesc =>
+      'Pause while the app is covered, like the notification panel, and resume when you come back';
 
   @override
   String get playerHoldSpeed => 'Hold speed';
