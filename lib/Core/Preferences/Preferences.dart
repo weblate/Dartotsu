@@ -85,6 +85,11 @@ class PrefName {
     true,
     PrefLocation.COMMON,
   );
+  static const analyticsClientId = Pref(
+    'analyticsClientId',
+    '',
+    PrefLocation.PROTECTED,
+  );
   static const incognito = Pref('incognito', false, PrefLocation.COMMON);
   static const incognitoBlockEdits = Pref(
     'incognitoBlockEdits',
