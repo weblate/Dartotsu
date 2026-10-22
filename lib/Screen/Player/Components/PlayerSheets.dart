@@ -43,19 +43,92 @@ Future<T?> _paused<T>(PlayerState state, Future<T?> Function() open) async {
 String speedLabel(double speed) =>
     '${speed == speed.roundToDouble() ? speed.toInt() : speed}x';
 
-Future<void> showSpeedSheet(BuildContext context, PlayerState state) async {
-  final list = state.settings.cursedSpeed ? playerCursedSpeeds : playerSpeeds;
-  final picked = await _paused(
-    state,
-    () => showChoiceSheet<double>(
+Future<void> showSpeedSheet(BuildContext context, PlayerState state) =>
+    showCustomBottomDialog<void>(
       context,
-      title: getString.playerSpeed,
-      icon: Icons.slow_motion_video_rounded,
-      selected: state.engine.rate.value,
-      options: [for (final s in list) ChoiceOption(s, speedLabel(s))],
-    ),
-  );
-  if (picked != null) state.setSpeed(picked);
+      AppSheet(title: getString.playerSpeed, child: _SpeedPanel(state: state)),
+    );
+
+class _SpeedPanel extends StatefulWidget {
+  final PlayerState state;
+
+  const _SpeedPanel({required this.state});
+
+  @override
+  State<_SpeedPanel> createState() => _SpeedPanelState();
+}
+
+class _SpeedPanelState extends State<_SpeedPanel> {
+  late final speed = widget.state.engine.rate.value.live;
+
+  double get _max => widget.state.settings.cursedSpeed ? 10.0 : 4.0;
+
+  void _set(double value) {
+    final snapped = ((value.clamp(0.25, _max)) * 20).round() / 20;
+    speed.value = snapped;
+    widget.state.setSpeed(snapped);
+  }
+
+  @override
+  Widget build(BuildContext context) => Watch(() => _build(context));
+
+  Widget _build(BuildContext context) {
+    final scheme = context.colorScheme;
+    final list = widget.state.settings.cursedSpeed
+        ? playerCursedSpeeds
+        : playerSpeeds;
+    final current = speed.value;
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(20, 4, 20, 24),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Text(
+            speedLabel(current),
+            style: context.textTheme.headlineMedium?.copyWith(
+              color: scheme.primary,
+              fontWeight: FontWeight.w700,
+            ),
+          ),
+          const SizedBox(height: 4),
+          Row(
+            children: [
+              IconButton(
+                onPressed: () => _set(current - 0.05),
+                icon: const Icon(Icons.remove_rounded),
+              ),
+              Expanded(
+                child: Slider(
+                  value: current.clamp(0.25, _max),
+                  min: 0.25,
+                  max: _max,
+                  onChanged: _set,
+                ),
+              ),
+              IconButton(
+                onPressed: () => _set(current + 0.05),
+                icon: const Icon(Icons.add_rounded),
+              ),
+            ],
+          ),
+          const SizedBox(height: 8),
+          Wrap(
+            spacing: 8,
+            runSpacing: 8,
+            alignment: WrapAlignment.center,
+            children: [
+              for (final s in list)
+                ChoiceChip(
+                  label: Text(speedLabel(s)),
+                  selected: (current - s).abs() < 0.001,
+                  onSelected: (_) => _set(s),
+                ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
 }
 
 Future<void> showQualitySheet(BuildContext context, PlayerState state) async {

@@ -1068,7 +1068,7 @@ class PlayerState extends ScreenState {
   }
 
   void setSpeed(double value) {
-    settings.speed = value;
+    updateSettings((s) => s.speed = value);
     unawaited(engine.setRate(value));
   }
 
