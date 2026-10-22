@@ -26,8 +26,10 @@ class ReaderControls extends StatelessWidget {
         color: Colors.white,
         disabledColor: Colors.white30,
         style: IconButton.styleFrom(
-          backgroundColor: Colors.white.withValues(alpha: 0.14),
-          disabledBackgroundColor: Colors.white.withValues(alpha: 0.06),
+          backgroundColor: Colors.transparent,
+          disabledBackgroundColor: Colors.transparent,
+          highlightColor: Colors.transparent,
+          hoverColor: Colors.white.withValues(alpha: 0.08),
         ),
         icon: Icon(icon),
       );
