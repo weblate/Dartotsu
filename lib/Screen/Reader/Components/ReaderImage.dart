@@ -118,9 +118,13 @@ class _ReaderImageState extends State<ReaderImage> {
 
   void _detachCrop() {
     final listener = _cropListener;
-    if (listener != null) _cropStream?.removeListener(listener);
+    final stream = _cropStream;
     _cropStream = null;
     _cropListener = null;
+    if (listener == null || stream == null) return;
+    try {
+      stream.removeListener(listener);
+    } catch (_) {}
   }
 
   void _syncCrop() {
@@ -141,7 +145,11 @@ class _ReaderImageState extends State<ReaderImage> {
     ).resolve(createLocalImageConfiguration(context));
     late final ImageStreamListener listener;
     listener = ImageStreamListener((info, _) async {
-      stream.removeListener(listener);
+      if (identical(_cropListener, listener)) {
+        stream.removeListener(listener);
+        _cropStream = null;
+        _cropListener = null;
+      }
       final width = info.image.width.toDouble();
       final height = info.image.height.toDouble();
       final rect = await detectBorders(info.image);
