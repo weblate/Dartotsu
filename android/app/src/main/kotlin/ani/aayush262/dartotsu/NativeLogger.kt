@@ -1,6 +1,9 @@
 package ani.aayush262.dartotsu
 
+import android.app.ActivityManager
+import android.app.ApplicationExitInfo
 import android.content.Context
+import android.os.Build
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
@@ -26,7 +29,13 @@ class NativeLogger : FlutterPlugin {
     private companion object {
         private const val TAG = "NativeLogger"
         private const val FLUSH_INTERVAL_MS = 250L
-        private const val MAX_BATCH_SIZE = 100
+        private val NOISE = listOf(
+            "avc:  denied",
+            "Access denied finding property",
+            "FlagStore",
+            "Suspending all threads",
+            "Already have a pending vsync"
+        )
     }
 
     override fun onAttachedToEngine(binding: FlutterPlugin.FlutterPluginBinding) {
@@ -38,6 +47,9 @@ class NativeLogger : FlutterPlugin {
                 "startLogs" -> {
                     startLogStreaming(context)
                     result.success(null)
+                }
+                "getLastExit" -> {
+                    result.success(lastExit(context))
                 }
                 "getCrashLogFileDir" -> {
                     result.success("${context.filesDir.absolutePath}/logs/JavaCrash.txt")
@@ -59,7 +71,7 @@ class NativeLogger : FlutterPlugin {
                         "logcat",
                         "--uid=$uid",
                         "-v", "time",
-                        "*:V",
+                        "*:W",
                         "flutter:S",
                         "DartVM:S",
                         "FlutterJNI:S",
@@ -78,13 +90,11 @@ class NativeLogger : FlutterPlugin {
 
                     val logTime = parseLogTime(logLine) ?: continue
                     if (logTime < appStartTime) continue
+                    if (NOISE.any { logLine.contains(it) }) continue
 
                     synchronized(logBuffer) {
                         logBuffer.add(logLine)
-
-                        if (logBuffer.size >= MAX_BATCH_SIZE) {
-                            scheduleFlush()
-                        }
+                        scheduleFlush()
                     }
                 }
             } catch (e: Exception) {
@@ -110,6 +120,36 @@ class NativeLogger : FlutterPlugin {
                 channel.invokeMethod("onLogs", batch)
             }
         }, FLUSH_INTERVAL_MS)
+    }
+
+    private fun lastExit(context: Context): String? {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R) return null
+        return try {
+            val manager = context.getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
+            val info = manager.getHistoricalProcessExitReasons(context.packageName, 0, 1)
+                .firstOrNull() ?: return null
+            val prefs = context.getSharedPreferences("native_logger", Context.MODE_PRIVATE)
+            if (info.timestamp <= prefs.getLong("lastExit", 0L)) return null
+            prefs.edit().putLong("lastExit", info.timestamp).apply()
+            val reason = when (info.reason) {
+                ApplicationExitInfo.REASON_CRASH -> "CRASH"
+                ApplicationExitInfo.REASON_CRASH_NATIVE -> "CRASH_NATIVE"
+                ApplicationExitInfo.REASON_ANR -> "ANR"
+                ApplicationExitInfo.REASON_LOW_MEMORY -> "LOW_MEMORY"
+                ApplicationExitInfo.REASON_SIGNALED -> "SIGNALED"
+                ApplicationExitInfo.REASON_EXCESSIVE_RESOURCE_USAGE -> "EXCESSIVE_RESOURCE_USAGE"
+                ApplicationExitInfo.REASON_INITIALIZATION_FAILURE -> "INITIALIZATION_FAILURE"
+                ApplicationExitInfo.REASON_DEPENDENCY_DIED -> "DEPENDENCY_DIED"
+                else -> return null
+            }
+            val time = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.US).format(info.timestamp)
+            "reason=$reason status=${info.status} time=$time " +
+                "rssKb=${info.rss} pssKb=${info.pss} importance=${info.importance}\n" +
+                "description=${info.description ?: ""}"
+        } catch (e: Exception) {
+            Log.e(TAG, "Error reading exit info", e)
+            null
+        }
     }
 
     private fun parseLogTime(line: String): Long? {

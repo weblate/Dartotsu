@@ -134,6 +134,14 @@ class Logger {
         ..writeln('============================\n');
     }
 
+    final lastExit = await NativeLogger.lastExit();
+    if (lastExit != null) {
+      _sink
+        ?..writeln('==== PREVIOUS RUN ENDED ABNORMALLY ====')
+        ..writeln(lastExit)
+        ..writeln('=======================================\n');
+    }
+
     for (final log in _preInitBuffer) {
       _enqueue(log);
     }
@@ -380,6 +388,15 @@ class NativeLogger {
     }
 
     return crashLog;
+  }
+
+  static Future<String?> lastExit() async {
+    if (!Platform.isAndroid) return null;
+    try {
+      return await _channel.invokeMethod<String>('getLastExit');
+    } catch (_) {
+      return null;
+    }
   }
 
   static Future<Directory> getAndroidFilesDir() async {
