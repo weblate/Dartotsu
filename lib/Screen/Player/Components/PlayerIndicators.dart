@@ -67,7 +67,7 @@ class PlayerLevelIndicator extends StatelessWidget {
   }
 }
 
-class PlayerSeekRipple extends StatelessWidget {
+class PlayerSeekRipple extends StatefulWidget {
   final int seconds;
   final bool forward;
 
@@ -78,7 +78,17 @@ class PlayerSeekRipple extends StatelessWidget {
   });
 
   @override
+  State<PlayerSeekRipple> createState() => _PlayerSeekRippleState();
+}
+
+class _PlayerSeekRippleState extends State<PlayerSeekRipple> {
+  int _shown = 0;
+
+  @override
   Widget build(BuildContext context) {
+    final seconds = widget.seconds;
+    final forward = widget.forward;
+    if (seconds > 0) _shown = seconds;
     final width = MediaQuery.sizeOf(context).width;
     return Positioned(
       top: 0,
@@ -116,7 +126,7 @@ class PlayerSeekRipple extends StatelessWidget {
                     ),
                     const SizedBox(height: 2),
                     Text(
-                      '${forward ? '+' : '-'}${seconds}s',
+                      '${forward ? '+' : '-'}${_shown}s',
                       style: context.textTheme.titleMedium?.copyWith(
                         color: Colors.white,
                         fontWeight: FontWeight.w700,
