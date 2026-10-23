@@ -2876,6 +2876,8 @@
       }
     }
   },
+  "playerUnsupported": "The video player can't run on this device (its Android version is too old for the bundled player library). Tap to copy the details.",
+  "@playerUnsupported": {},
   "playerSkipNoMal": "This title has no MyAnimeList id, AniSkip can't take it",
   "@playerSkipNoMal": {},
   "playerNoChapters": "No chapters",

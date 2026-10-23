@@ -5676,6 +5676,10 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
+  String get playerUnsupported =>
+      'The video player can\'t run on this device (its Android version is too old for the bundled player library). Tap to copy the details.';
+
+  @override
   String get playerSkipNoMal =>
       'This title has no MyAnimeList id, AniSkip can\'t take it';
 

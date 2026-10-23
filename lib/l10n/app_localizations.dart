@@ -10589,6 +10589,12 @@ abstract class AppLocalizations {
   /// **'AniSkip refused the skip times: {error}'**
   String playerSkipFailed(String error);
 
+  /// No description provided for @playerUnsupported.
+  ///
+  /// In en, this message translates to:
+  /// **'The video player can\'t run on this device (its Android version is too old for the bundled player library). Tap to copy the details.'**
+  String get playerUnsupported;
+
   /// No description provided for @playerSkipNoMal.
   ///
   /// In en, this message translates to:

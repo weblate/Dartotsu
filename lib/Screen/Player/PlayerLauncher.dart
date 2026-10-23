@@ -7,6 +7,7 @@ import 'package:path/path.dart' as p;
 
 import 'Engine/PlayRequest.dart';
 import 'Engine/PlayerPlaylist.dart';
+import 'Engine/PlayerSupport.dart';
 import 'Engine/TorrentStream.dart';
 import '../../Core/State/State.dart';
 import '../../Core/ThemeManager/LanguageSwitcher.dart';
@@ -19,6 +20,10 @@ import 'PlayerScreen.dart';
 Future<void> openPlayer(PlayRequest request, {BuildContext? context}) async {
   final target = context ?? appContext;
   if (target == null || request.items.isEmpty) return;
+  if (!PlayerSupport.available) {
+    snackString(getString.playerUnsupported, clipboard: PlayerSupport.failure);
+    return;
+  }
   await navigateToPage(target, PlayerScreen(request: request));
 }
 

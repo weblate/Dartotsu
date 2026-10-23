@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:media_kit/media_kit.dart';
 
 import '../../../Logger.dart';
+import 'PlayerSupport.dart';
 
 class AudioDevice {
   final String name;
@@ -14,6 +15,7 @@ class AudioDevice {
 }
 
 Future<List<AudioDevice>> listAudioDevices() async {
+  if (!PlayerSupport.available) return const [];
   final player = Player(
     configuration: const PlayerConfiguration(
       logLevel: MPVLogLevel.error,

@@ -43,6 +43,7 @@ import 'Utils/Functions/LinkSettings.dart';
 import 'Api/Discord/DiscordPresenceController.dart';
 import 'Screen/Detail/Comments/Data/CommentAlerts.dart';
 import 'Core/Services/ActivityAlerts.dart';
+import 'Screen/Player/Engine/PlayerSupport.dart';
 import 'Screen/Player/PlayerLauncher.dart';
 import 'Utils/Functions/SnackBar.dart';
 import 'Widgets/Components/ScrollConfig.dart';
@@ -199,7 +200,13 @@ Future<void> init(List<String> args) async {
 
   _stage = 'media kit';
   unawaited(applyRefreshRate());
-  MediaKit.ensureInitialized();
+  try {
+    MediaKit.ensureInitialized();
+  } catch (e, st) {
+    PlayerSupport.available = false;
+    PlayerSupport.failure = '$e';
+    logger('Player unavailable: $e\n$st', logLevel: LogLevel.error);
+  }
   applySystemBarStyle(isDark: false);
 
   WidgetsBinding.instance.addPostFrameCallback(
