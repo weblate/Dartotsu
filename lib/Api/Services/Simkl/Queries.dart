@@ -33,7 +33,9 @@ class SimklSection {
   final String? type;
   final bool airing;
   final SimklSort sort;
-  final String? browse;
+  final List<String> moreFiles;
+  final String? country;
+  final String? genre;
 
   const SimklSection(
     this.title,
@@ -41,19 +43,33 @@ class SimklSection {
     this.type,
     this.airing = false,
     this.sort = SimklSort.none,
-    this.browse,
+    this.moreFiles = const [],
+    this.country,
+    this.genre,
   });
 
-  const SimklSection.genre(this.title, String genre, {String country = 'all'})
-    : file = 'tv/genre',
+  const SimklSection.country(this.title, this.country)
+    : file = 'tv/month_500',
+      moreFiles = const ['tv/week_500', 'tv/today_500'],
       type = null,
       airing = false,
-      sort = SimklSort.none,
-      browse = '/tv/genres/$genre/all/$country/all/all/popular-this-week';
+      sort = SimklSort.watching,
+      genre = null;
+
+  const SimklSection.tvGenre(this.title, this.genre)
+    : file = 'tv/month_500',
+      moreFiles = const ['tv/week_500', 'tv/today_500'],
+      type = null,
+      airing = false,
+      sort = SimklSort.watching,
+      country = null;
 
   bool matches(Map<String, dynamic> item) =>
       (type == null || item['anime_type'] == type) &&
-      (!airing || item['status'] == 'ongoing');
+      (!airing || item['status'] == 'ongoing') &&
+      (country == null || item['country'] == country) &&
+      (genre == null ||
+          ((item['genres'] as List?) ?? const []).contains(genre));
 
   num _rating(Map<String, dynamic> item) {
     final simkl = (item['ratings'] as Map?)?['simkl'] as Map?;
@@ -94,12 +110,12 @@ List<SimklSection> simklSections(MediaType type) {
         sort: SimklSort.rating,
       ),
       SimklSection('Top Rated Shows', 'tv/month_500', sort: SimklSort.rating),
-      SimklSection.genre('Korean Dramas', 'korean-drama'),
-      SimklSection.genre('Chinese Dramas', 'drama', country: 'cn'),
-      SimklSection.genre('Japanese Dramas', 'drama', country: 'jp'),
-      SimklSection.genre('Thai Dramas', 'drama', country: 'th'),
-      SimklSection.genre('Turkish Dramas', 'drama', country: 'tr'),
-      SimklSection.genre('Mini Series', 'mini-series'),
+      SimklSection.country('Korean Dramas', 'kr'),
+      SimklSection.country('Chinese Dramas', 'cn'),
+      SimklSection.country('Japanese Dramas', 'jp'),
+      SimklSection.country('Thai Dramas', 'th'),
+      SimklSection.country('Turkish Dramas', 'tr'),
+      SimklSection.tvGenre('Mini Series', 'Mini-Series'),
     ];
   }
   return const [
@@ -276,27 +292,20 @@ class SimklQueries extends Queries {
   }
 
   Future<List<Media>> trending(SimklSection section, {int page = 1}) async {
-    final browse = section.browse;
-    if (browse != null) {
-      final listed = await client.get(
-        browse,
-        query: {'limit': '30', 'page': '$page'},
-      );
-      return _withList([
-        for (final item in (listed as List?) ?? const [])
-          if (item is Map)
-            ?mapSimklItem(item.cast<String, dynamic>(), kind: SimklKind.tv),
-      ]);
-    }
-    final data = await client.get(
-      '$simklData/discover/trending/${section.file}.json',
-      auth: false,
-    );
+    final files = [section.file, ...section.moreFiles];
+    final datas = await Future.wait([
+      for (final file in files)
+        client.get('$simklData/discover/trending/$file.json', auth: false),
+    ]);
     final kind = SimklKind.fromName(section.file.split('/').first);
+    final seen = <Object?>{};
     final items = [
-      for (final item in (data as List?) ?? const [])
-        if (item is Map && section.matches(item.cast<String, dynamic>()))
-          item.cast<String, dynamic>(),
+      for (final data in datas)
+        for (final item in (data as List?) ?? const [])
+          if (item is Map &&
+              section.matches(item.cast<String, dynamic>()) &&
+              seen.add((item['ids'] as Map?)?['simkl_id'] ?? item['url']))
+            item.cast<String, dynamic>(),
     ];
     section.order(items);
     return _withList([

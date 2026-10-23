@@ -39,9 +39,9 @@ class SimklFeedView extends FeedScreenView {
       'today' ||
       'week' ||
       'month' => SimklSection(chip.label, 'anime/${chip.id}_100'),
-      'kdrama' => SimklSection.genre(chip.label, 'korean-drama'),
-      'cdrama' => SimklSection.genre(chip.label, 'drama', country: 'cn'),
-      'jdrama' => SimklSection.genre(chip.label, 'drama', country: 'jp'),
+      'kdrama' => SimklSection.country(chip.label, 'kr'),
+      'cdrama' => SimklSection.country(chip.label, 'cn'),
+      'jdrama' => SimklSection.country(chip.label, 'jp'),
       final kind => SimklSection(chip.label, '$kind/today_100'),
     };
     return simklAuth.queries
