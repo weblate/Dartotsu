@@ -29,16 +29,7 @@ import 'DelayRow.dart';
 import 'OnlineSubtitleSheet.dart';
 import 'PictureSheet.dart';
 import 'ShaderPreview.dart';
-
-Future<T?> _paused<T>(PlayerState state, Future<T?> Function() open) async {
-  final wasPlaying = state.engine.playing.value;
-  state.holdControls();
-  if (wasPlaying) await state.engine.pause();
-  final result = await open();
-  if (wasPlaying) await state.engine.play();
-  state.showControls();
-  return result;
-}
+import '../../../Utils/Extensions/Responsive.dart';
 
 String speedLabel(double speed) =>
     '${speed == speed.roundToDouble() ? speed.toInt() : speed}x';
@@ -46,7 +37,10 @@ String speedLabel(double speed) =>
 Future<void> showSpeedSheet(BuildContext context, PlayerState state) =>
     showCustomBottomDialog<void>(
       context,
-      AppSheet(title: getString.playerSpeed, child: _SpeedPanel(state: state)),
+      AppSheet(
+        title: getString.playerSpeed,
+        child: _SpeedPanel(state: state),
+      ),
     );
 
 class _SpeedPanel extends StatefulWidget {
@@ -79,7 +73,7 @@ class _SpeedPanelState extends State<_SpeedPanel> {
         : playerSpeeds;
     final current = speed.value;
     return Padding(
-      padding: const EdgeInsets.fromLTRB(20, 4, 20, 24),
+      padding: Dimens.sheetInsets,
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -112,18 +106,13 @@ class _SpeedPanelState extends State<_SpeedPanel> {
             ],
           ),
           const SizedBox(height: 8),
-          Wrap(
-            spacing: 8,
-            runSpacing: 8,
-            alignment: WrapAlignment.center,
-            children: [
-              for (final s in list)
-                ChoiceChip(
-                  label: Text(speedLabel(s)),
-                  selected: (current - s).abs() < 0.001,
-                  onSelected: (_) => _set(s),
-                ),
-            ],
+          AppChoiceChips<double>(
+            value: list.firstWhere(
+              (s) => (current - s).abs() < 0.001,
+              orElse: () => -1,
+            ),
+            onChanged: _set,
+            options: [for (final s in list) AppSegment(s, label: speedLabel(s))],
           ),
         ],
       ),
@@ -135,8 +124,7 @@ Future<void> showQualitySheet(BuildContext context, PlayerState state) async {
   final engine = state.engine;
   final variants = engine.videoVariants.value;
   final active = engine.activeVariant.value;
-  final picked = await _paused(
-    state,
+  final picked = await state.whilePaused(
     () => showChoiceSheet<String>(
       context,
       title: getString.playerQuality,
@@ -303,7 +291,7 @@ Future<void> showTracksSheet(
   required bool audio,
 }) async {
   final tab = 0.live;
-  await _paused(state, () async {
+  await state.whilePaused(() async {
     return showCustomBottomDialog<void>(
       context,
       AppSheet(
@@ -478,8 +466,7 @@ Future<void> showChaptersSheet(BuildContext context, PlayerState state) async {
     (e) => e.$1 <= now,
     orElse: () => (-1, '', true),
   );
-  final picked = await _paused<double>(
-    state,
+  final picked = await state.whilePaused<double>(
     () => showCustomBottomDialog<double>(
       context,
       AppSheet(
@@ -524,8 +511,7 @@ Future<void> showPictureSheet(BuildContext context, PlayerState state) async {
     logError('PlayerSheets', e, st);
   }
   if (!context.mounted) return;
-  await _paused<void>(
-    state,
+  await state.whilePaused<void>(
     () => showCustomBottomDialog<void>(
       context,
       Builder(
@@ -561,8 +547,7 @@ Future<void> showPictureSheet(BuildContext context, PlayerState state) async {
 }
 
 Future<void> showPlayerOptions(BuildContext context, PlayerState state) =>
-    _paused<void>(
-      state,
+    state.whilePaused<void>(
       () => showCustomBottomDialog<void>(
         context,
         AppSheet(
@@ -600,9 +585,3 @@ Future<void> showPlayerOptions(BuildContext context, PlayerState state) =>
         ),
       ),
     );
-
-Future<int?> askStreamFlow(
-  BuildContext context,
-  PlayerState state,
-  List<v.Video> list,
-) => showStreamSheet(context, state, list, selected: -1);

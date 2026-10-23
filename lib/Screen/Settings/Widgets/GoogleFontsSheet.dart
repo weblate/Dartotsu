@@ -11,6 +11,7 @@ import '../../../Widgets/Components/CustomBottomDialog.dart';
 import '../../../Widgets/Components/SheetTile.dart';
 import '../../../Widgets/Components/ThemedContainer.dart';
 import '../../../Core/State/State.dart';
+import '../../../Widgets/Components/AppSpinner.dart';
 
 Future<void> showGoogleFontsPicker(BuildContext context) =>
     showCustomBottomDialog<void>(
@@ -114,13 +115,7 @@ class _GoogleFontsSheetState extends State<_GoogleFontsSheet> {
                         onTap: () => _apply(family),
                         title: Text(family),
                         trailing: isBusy
-                            ? const SizedBox(
-                                width: 18,
-                                height: 18,
-                                child: CircularProgressIndicator(
-                                  strokeWidth: 2,
-                                ),
-                              )
+                            ? const AppSpinner()
                             : null,
                       );
                     },

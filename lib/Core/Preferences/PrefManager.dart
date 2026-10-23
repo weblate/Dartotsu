@@ -20,8 +20,6 @@ T loadData<T>(Pref<T> pref) => PrefManager.getVal(pref);
 
 void saveData<T>(Pref<T> pref, T value) => PrefManager.setVal(pref, value);
 
-void removeData(Pref<dynamic> pref) => PrefManager.removeVal(pref);
-
 T? loadCustomData<T>(
   String key, {
   T? defaultValue,

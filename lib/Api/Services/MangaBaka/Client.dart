@@ -10,7 +10,6 @@ import '../../../Utils/Lru.dart';
 
 const mangaBakaApi = 'https://api.mangabaka.org/v1';
 const mangaBakaOAuth = 'https://mangabaka.org/auth/oauth2';
-const mangaBakaWeb = 'https://mangabaka.org';
 
 class MangaBakaException implements Exception {
   final String message;

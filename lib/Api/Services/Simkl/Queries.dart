@@ -89,12 +89,6 @@ class SimklSection {
   };
 }
 
-SimklKind simklKindOfType(MediaType type) => switch (type) {
-  MediaType.anime => SimklKind.anime,
-  MediaType.movie => SimklKind.movies,
-  _ => SimklKind.tv,
-};
-
 List<SimklSection> simklSections(MediaType type) {
   if (type != MediaType.anime) {
     return const [

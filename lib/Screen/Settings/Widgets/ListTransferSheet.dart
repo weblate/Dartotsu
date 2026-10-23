@@ -14,6 +14,8 @@ import '../../../Core/State/State.dart';
 import '../../../Core/ThemeManager/LanguageSwitcher.dart';
 import '../../../Widgets/Components/ScreenState.dart';
 import 'ListTransferState.dart';
+import '../../../Utils/Extensions/Responsive.dart';
+import '../../../Widgets/Components/AppSpinner.dart';
 
 Future<void> showListImportSheet(
   BuildContext context,
@@ -52,7 +54,7 @@ class _ImportSheetState extends State<_ImportSheet>
     return AppSheet(
       title: getString.importLists,
       child: SingleChildScrollView(
-        padding: const EdgeInsets.fromLTRB(20, 0, 20, 24),
+        padding: Dimens.sheetInsets,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
@@ -80,11 +82,7 @@ class _ImportSheetState extends State<_ImportSheet>
               FilledButton.icon(
                 onPressed: state.busy.value ? null : state.pick,
                 icon: state.busy.value
-                    ? const SizedBox(
-                        width: 16,
-                        height: 16,
-                        child: CircularProgressIndicator(strokeWidth: 2),
-                      )
+                    ? const AppSpinner(size: 16)
                     : const Icon(Icons.upload_file_rounded),
                 label: Text(getString.chooseBackupFile),
               )
@@ -279,11 +277,7 @@ class _ExportSheetState extends State<_ExportSheet>
                 title: Text(format.label),
                 subtitle: Text(note),
                 trailing: state.busy.value
-                    ? const SizedBox(
-                        width: 18,
-                        height: 18,
-                        child: CircularProgressIndicator(strokeWidth: 2),
-                      )
+                    ? const AppSpinner()
                     : const Icon(Icons.chevron_right_rounded),
                 enabled: !state.busy.value && media.isNotEmpty,
                 onTap: () => state.export(format),

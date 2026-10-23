@@ -6,6 +6,7 @@ import '../../Widgets/Components/LoadSvg.dart';
 import '../../Core/State/State.dart';
 import '../../Widgets/Components/ScreenState.dart';
 import 'LoginViewState.dart';
+import '../../Widgets/Components/AppSpinner.dart';
 export 'LoginViewState.dart' show showTokenLogin;
 
 class LoginView extends StatefulWidget {
@@ -78,11 +79,7 @@ class _LoginViewState extends State<LoginView>
                   child: FilledButton.icon(
                     onPressed: state.loginAction(auth),
                     icon: state.busy.value
-                        ? const SizedBox(
-                            width: 18,
-                            height: 18,
-                            child: CircularProgressIndicator(strokeWidth: 2),
-                          )
+                        ? const AppSpinner()
                         : loadSvg(
                             service.iconPath,
                             width: 18,

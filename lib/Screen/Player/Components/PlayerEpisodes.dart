@@ -18,6 +18,7 @@ import '../../Detail/Watch/Components/UnitLayout.dart';
 import '../../Detail/Watch/Components/UnitTile.dart';
 import '../PlayerState.dart';
 import 'EpisodePanel.dart';
+import '../../../Widgets/Components/AppSpinner.dart';
 
 class PlayerEpisodes extends StatelessWidget {
   final PlayerState state;
@@ -134,14 +135,7 @@ class PlayerEpisodes extends StatelessWidget {
       if (state.metaLoading.value)
         Padding(
           padding: const EdgeInsetsDirectional.only(end: 8),
-          child: SizedBox(
-            width: 16,
-            height: 16,
-            child: CircularProgressIndicator(
-              strokeWidth: 2,
-              color: context.colorScheme.primary,
-            ),
-          ),
+          child: AppSpinner(size: 16, color: context.colorScheme.primary),
         ),
       if (state.canPickMeta)
         IconButton(

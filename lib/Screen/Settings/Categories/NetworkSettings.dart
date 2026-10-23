@@ -16,6 +16,7 @@ import '../../../Widgets/Components/AlertDialogBuilder.dart';
 import '../../../Widgets/Components/AppControls.dart';
 import '../../../Widgets/Components/CustomBottomDialog.dart';
 import '../../../Core/State/State.dart';
+import '../../../Widgets/Components/AppSpinner.dart';
 
 List<Setting> networkSettings(BuildContext context) {
   final network = find<NetworkManager>();
@@ -111,14 +112,7 @@ class _TestChip extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   if (state == _NetTestState.loading)
-                    SizedBox(
-                      width: 12,
-                      height: 12,
-                      child: CircularProgressIndicator(
-                        strokeWidth: 1.5,
-                        color: color,
-                      ),
-                    )
+                    AppSpinner(size: 12, strokeWidth: 1.5, color: color)
                   else
                     Icon(icon, size: 14, color: color),
                   const SizedBox(width: 5),

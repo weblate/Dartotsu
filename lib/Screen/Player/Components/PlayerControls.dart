@@ -11,6 +11,7 @@ import '../PlayerState.dart';
 import 'PlayerSeekBar.dart';
 import 'PlayerSheets.dart';
 import 'SkipSubmitSheet.dart';
+import '../../../Widgets/Components/Clickable.dart';
 
 class PlayerControls extends StatelessWidget {
   final PlayerState state;
@@ -259,7 +260,7 @@ class PlayerControls extends StatelessWidget {
     if (height == null || height <= 0) return const SizedBox.shrink();
     final several = state.engine.videoVariants.value.length > 1;
     final tag = Container(
-      margin: const EdgeInsets.only(left: 4, top: 10),
+      margin: const EdgeInsetsDirectional.only(start: 4, top: 10),
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
       child: Text(
         '${height}p',
@@ -270,7 +271,7 @@ class PlayerControls extends StatelessWidget {
       ),
     );
     return several
-        ? GestureDetector(
+        ? Clickable(
             onTap: () => showQualitySheet(context, state),
             child: tag,
           )
@@ -508,21 +509,17 @@ class PlayerControls extends StatelessWidget {
     );
   }
 
-  Future<void> _streams(BuildContext context) async {
-    state.holdControls();
-    final wasPlaying = state.engine.playing.value;
-    if (wasPlaying) await state.engine.pause();
-    if (!context.mounted) return;
-    final picked = await showStreamSheet(
-      context,
-      state,
-      state.videos.toList(),
-      selected: state.videoIndex.value,
-    );
-    if (picked != null && picked != state.videoIndex.value) {
-      await state.selectStream(picked);
-    }
-    if (wasPlaying) await state.engine.play();
-    state.showControls();
-  }
+  Future<void> _streams(BuildContext context) =>
+      state.whilePaused<void>(() async {
+        if (!context.mounted) return;
+        final picked = await showStreamSheet(
+          context,
+          state,
+          state.videos.toList(),
+          selected: state.videoIndex.value,
+        );
+        if (picked != null && picked != state.videoIndex.value) {
+          await state.selectStream(picked);
+        }
+      });
 }

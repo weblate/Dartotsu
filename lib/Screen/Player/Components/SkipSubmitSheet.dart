@@ -5,31 +5,26 @@ import '../../../Core/ThemeManager/LanguageSwitcher.dart';
 import '../../../Utils/Extensions/ContextExtensions.dart';
 import '../../../Utils/Functions/NavigateToScreen.dart';
 import '../../../Utils/Functions/SnackBar.dart';
+import '../../../Widgets/Components/AppControls.dart';
 import '../../../Widgets/Components/AppSheet.dart';
 import '../../../Widgets/Components/CustomBottomDialog.dart';
 import '../../Detail/Watch/Data/MediaIdResolver.dart';
 import '../Engine/AniSkip.dart';
 import '../PlayerState.dart';
 import 'PlayerSeekBar.dart';
+import '../../../Utils/Extensions/Responsive.dart';
+import '../../../Widgets/Components/AppSpinner.dart';
 
-Future<void> showSkipSubmitSheet(
-  BuildContext context,
-  PlayerState state,
-) async {
-  final wasPlaying = state.engine.playing.value;
-  state.holdControls();
-  if (wasPlaying) await state.engine.pause();
-  if (!context.mounted) return;
-  await showCustomBottomDialog<void>(
-    context,
-    AppSheet(
-      title: getString.playerSkipSubmit,
-      child: _SkipSubmitPanel(state: state),
-    ),
-  );
-  if (wasPlaying) await state.engine.play();
-  state.showControls();
-}
+Future<void> showSkipSubmitSheet(BuildContext context, PlayerState state) =>
+    state.whilePaused<void>(
+      () => showCustomBottomDialog<void>(
+        context,
+        AppSheet(
+          title: getString.playerSkipSubmit,
+          child: _SkipSubmitPanel(state: state),
+        ),
+      ),
+    );
 
 class _SkipSubmitPanel extends StatefulWidget {
   final PlayerState state;
@@ -55,8 +50,6 @@ class _SkipSubmitPanelState extends State<_SkipSubmitPanel> {
 
   @override
   Widget build(BuildContext context) => Watch(() => _build(context));
-
-  String _label(String t) => skipName(t);
 
   Widget _time(
     BuildContext context,
@@ -143,7 +136,7 @@ class _SkipSubmitPanelState extends State<_SkipSubmitPanel> {
   Widget _build(BuildContext context) {
     final valid = end.value > start.value && _length > 0;
     return Padding(
-      padding: const EdgeInsets.fromLTRB(20, 0, 20, 24),
+      padding: Dimens.sheetInsets,
       child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -155,17 +148,10 @@ class _SkipSubmitPanelState extends State<_SkipSubmitPanel> {
             ),
           ),
           const SizedBox(height: 12),
-          Wrap(
-            spacing: 8,
-            runSpacing: 8,
-            children: [
-              for (final t in aniSkipTypes)
-                ChoiceChip(
-                  label: Text(_label(t)),
-                  selected: type.value == t,
-                  onSelected: (_) => type.value = t,
-                ),
-            ],
+          AppChoiceChips<String>(
+            value: type.value,
+            onChanged: (t) => type.value = t,
+            options: [for (final t in aniSkipTypes) AppSegment(t, label: skipName(t))],
           ),
           const SizedBox(height: 8),
           _time(
@@ -184,11 +170,7 @@ class _SkipSubmitPanelState extends State<_SkipSubmitPanel> {
           FilledButton.icon(
             onPressed: valid && !sending.value ? _send : null,
             icon: sending.value
-                ? const SizedBox(
-                    width: 18,
-                    height: 18,
-                    child: CircularProgressIndicator(strokeWidth: 2),
-                  )
+                ? const AppSpinner()
                 : const Icon(Icons.cloud_upload_rounded),
             label: Text(getString.playerSkipSend),
           ),

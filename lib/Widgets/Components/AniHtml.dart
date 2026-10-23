@@ -15,6 +15,7 @@ import '../../Utils/Function.dart';
 import 'Clickable.dart';
 import '../../Core/State/State.dart';
 import '../../Core/ThemeManager/LanguageSwitcher.dart';
+import 'AppSpinner.dart';
 
 typedef AniLinkCardBuilder =
     Widget? Function(BuildContext context, String url, bool centered);
@@ -1165,11 +1166,7 @@ class _RemoteSvgState extends State<_RemoteSvg> {
           width: 48,
           height: 48,
           child: Center(
-            child: SizedBox(
-              width: 18,
-              height: 18,
-              child: CircularProgressIndicator(strokeWidth: 2),
-            ),
+            child: AppSpinner(),
           ),
         );
       }

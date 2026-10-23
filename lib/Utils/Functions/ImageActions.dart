@@ -15,28 +15,24 @@ String imageFileName(String name) {
   return clean.isEmpty ? 'image' : clean;
 }
 
-Future<File> downloadImage(String url, {required String name}) async {
-  final temp = (await StorageManager.getTmpDirectory())!;
-  final part = File(p.join(temp.path, 'img_${url.hashCode.abs()}.part'));
-  await find<NetworkManager>().download(url, part.path);
-  final head = await part.openRead(0, 16).expand((b) => b).toList();
-  final ext = sniffImageExtension(head) ?? 'jpg';
-  final target = File(p.join(temp.path, '${imageFileName(name)}.$ext'));
-  if (await target.exists()) await target.delete();
-  return part.rename(target.path);
-}
-
-Future<File> saveImage(String url, {required String name}) async =>
-    saveImageFile(await downloadImage(url, name: name), name: name);
-
-Future<File> namedImageCopy(File source, {required String name}) async {
+Future<File> _namedTarget(File source, String name) async {
   final temp = (await StorageManager.getTmpDirectory())!;
   final head = await source.openRead(0, 16).expand((b) => b).toList();
   final ext = sniffImageExtension(head) ?? 'jpg';
   final target = File(p.join(temp.path, '${imageFileName(name)}.$ext'));
   if (await target.exists()) await target.delete();
-  return source.copy(target.path);
+  return target;
 }
+
+Future<File> downloadImage(String url, {required String name}) async {
+  final temp = (await StorageManager.getTmpDirectory())!;
+  final part = File(p.join(temp.path, 'img_${url.hashCode.abs()}.part'));
+  await find<NetworkManager>().download(url, part.path);
+  return part.rename((await _namedTarget(part, name)).path);
+}
+
+Future<File> namedImageCopy(File source, {required String name}) async =>
+    source.copy((await _namedTarget(source, name)).path);
 
 Future<File> saveImageFile(File source, {required String name}) async {
   final dir = await StorageManager.getDirectory(subPath: 'images');

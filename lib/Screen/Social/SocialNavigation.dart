@@ -11,7 +11,6 @@ import '../Feed/FeedNavigation.dart';
 import 'ActivityFeedScreen.dart';
 import 'FollowScreen.dart';
 import 'GroupScreen.dart';
-import 'GroupsScreen.dart';
 import 'InboxScreen.dart';
 import 'ProfileScreen.dart';
 import '../../Core/ThemeManager/LanguageSwitcher.dart';
@@ -143,11 +142,6 @@ Future<void> openAppLink(
     case AppLinkKind.group:
       openGroup(context, service, link.value);
   }
-}
-
-void openGroups(BuildContext context, MediaService service) {
-  if (service.socialView == null) return;
-  navigateToPage(context, GroupsScreen(service: service));
 }
 
 void openGroup(

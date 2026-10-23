@@ -19,6 +19,7 @@ import '../Watch/Data/Media/MediaRecord.dart';
 import '../Watch/Data/WatchPrefs.dart';
 import '../../../Utils/Functions/SnackBar.dart';
 import '../../../Core/ThemeManager/LanguageSwitcher.dart';
+import '../../../Widgets/Components/AppSpinner.dart';
 
 const _toolbarHeight = 56.0;
 const _actionsHeight = 68.0;
@@ -173,7 +174,7 @@ class DetailHeaderDelegate extends SliverPersistentHeaderDelegate {
                                   child: SizedBox(
                                     height: _coverH,
                                     child: Align(
-                                      alignment: Alignment.bottomLeft,
+                                      alignment: AlignmentDirectional.bottomStart,
                                       child: _title(context, m),
                                     ),
                                   ),
@@ -481,11 +482,7 @@ class DetailHeaderDelegate extends SliverPersistentHeaderDelegate {
     Color? color,
   }) => IconButton.filledTonal(
     icon: loading
-        ? const SizedBox(
-            width: 18,
-            height: 18,
-            child: CircularProgressIndicator(strokeWidth: 2),
-          )
+        ? const AppSpinner()
         : Icon(icon, size: 20, color: color),
     onPressed: onTap,
     visualDensity: VisualDensity.compact,

@@ -6,6 +6,7 @@ import '../../../../Core/ThemeManager/LanguageSwitcher.dart';
 import '../../../../Utils/Extensions/ContextExtensions.dart';
 import '../../../../Utils/Extensions/Responsive.dart';
 import '../../../../Widgets/Components/CachedNetworkImage.dart';
+import '../../../../Widgets/Components/AppSpinner.dart';
 
 class SourceBar extends StatelessWidget {
   final Source? source;
@@ -115,14 +116,7 @@ class SourceBar extends StatelessWidget {
             if (busy)
               Padding(
                 padding: const EdgeInsetsDirectional.only(end: 8),
-                child: SizedBox(
-                  width: 14,
-                  height: 14,
-                  child: CircularProgressIndicator(
-                    strokeWidth: 2,
-                    color: scheme.primary,
-                  ),
-                ),
+                child: AppSpinner(size: 14, color: scheme.primary),
               ),
             Expanded(
               child: Text(

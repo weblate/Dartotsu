@@ -6,7 +6,6 @@ import '../../../Core/NetworkManager/NetworkManager.dart';
 import '../../../Core/State/State.dart';
 
 const kitsuApi = 'https://kitsu.io/api/edge';
-const kitsuWeb = 'https://kitsu.io';
 const kitsuGraphqlUrl = 'https://kitsu.io/api/graphql';
 const kitsuTokenUrl = 'https://kitsu.io/api/oauth/token';
 

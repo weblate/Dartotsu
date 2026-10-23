@@ -37,6 +37,7 @@ abstract final class Dimens {
   static double get cardPad => responsive(mobile: 16, tablet: 18, desktop: 18);
   static EdgeInsets get pageInsets => EdgeInsets.symmetric(horizontal: pagePad);
   static EdgeInsets get cardInsets => EdgeInsets.all(cardPad);
+  static const EdgeInsets sheetInsets = EdgeInsets.fromLTRB(20, 0, 20, 24);
 
   // --- radii ---
   static double get radius => 26;

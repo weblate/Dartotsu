@@ -12,6 +12,7 @@ import '../../../../Widgets/Components/Clickable.dart';
 import '../../../../Widgets/Components/UserAvatar.dart';
 import '../CommentsState.dart';
 import 'GifPickerSheet.dart';
+import '../../../../Widgets/Components/AppSpinner.dart';
 
 class CommentComposer extends StatefulWidget {
   final String hint;
@@ -215,11 +216,7 @@ class _CommentComposerState extends State<CommentComposer> {
                     padding: EdgeInsets.symmetric(horizontal: Dimens.gapLg),
                   ),
                   child: busy
-                      ? const SizedBox(
-                          width: 16,
-                          height: 16,
-                          child: CircularProgressIndicator(strokeWidth: 2),
-                        )
+                      ? const AppSpinner(size: 16)
                       : Text(getString.commentsSend),
                 ),
               ],

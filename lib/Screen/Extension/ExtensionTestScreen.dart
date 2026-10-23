@@ -17,6 +17,7 @@ import '../../Widgets/Components/SectionCard.dart';
 import '../../Widgets/Components/ThemedContainer.dart';
 import 'Data/SourceTester.dart';
 import 'ExtensionTestState.dart';
+import '../../Widgets/Components/AppSpinner.dart';
 
 class ExtensionTestScreen extends StatefulWidget {
   const ExtensionTestScreen({super.key});
@@ -320,11 +321,7 @@ class _SourceTile extends StatelessWidget {
                   ),
           ),
           trailing: r != null && r.running
-              ? const SizedBox(
-                  width: 20,
-                  height: 20,
-                  child: CircularProgressIndicator(strokeWidth: 2.5),
-                )
+              ? const AppSpinner(size: 20, strokeWidth: 2.5)
               : IconButton(
                   tooltip: getString.extensionTestRun,
                   icon: const Icon(Icons.refresh_rounded),

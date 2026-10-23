@@ -1165,6 +1165,16 @@ class PlayerState extends ScreenState {
 
   void holdControls() => _hideTimer?.cancel();
 
+  Future<T?> whilePaused<T>(Future<T?> Function() open) async {
+    final wasPlaying = engine.playing.value;
+    holdControls();
+    if (wasPlaying) await engine.pause();
+    final result = await open();
+    if (wasPlaying) await engine.play();
+    showControls();
+    return result;
+  }
+
   void toggleLock() => locked.value = !locked.value;
 
   Future<void> _initFullscreen() async {

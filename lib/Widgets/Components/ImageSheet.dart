@@ -15,6 +15,7 @@ import 'AppSheet.dart';
 import 'CachedNetworkImage.dart';
 import 'CustomBottomDialog.dart';
 import 'SheetTile.dart';
+import 'AppSpinner.dart';
 
 void showImageSheet(
   BuildContext context, {
@@ -76,11 +77,7 @@ void showImageSheet(
                     radius: groupedRadius(0, remote ? 4 : 2),
                     enabled: !busy.value,
                     leading: busy.value
-                        ? const SizedBox(
-                            width: 22,
-                            height: 22,
-                            child: CircularProgressIndicator(strokeWidth: 2),
-                          )
+                        ? const AppSpinner(size: 22)
                         : const Icon(Icons.download_rounded),
                     title: Text(getString.imageSave),
                     onTap: () => unawaited(

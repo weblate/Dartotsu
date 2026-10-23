@@ -12,6 +12,7 @@ import '../CommentNode.dart';
 import '../CommentsState.dart';
 import 'CommentComposer.dart';
 import 'CommentText.dart';
+import '../../../../Widgets/Components/AppSpinner.dart';
 
 class CommentTile extends StatelessWidget {
   final CommentsState state;
@@ -446,11 +447,7 @@ class CommentTile extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             if (busy)
-              const SizedBox(
-                width: 16,
-                height: 16,
-                child: CircularProgressIndicator(strokeWidth: 2),
-              )
+              const AppSpinner(size: 16)
             else
               Icon(icon, size: 18, color: tint),
             SizedBox(width: Dimens.gapSm),

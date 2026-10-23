@@ -9,6 +9,7 @@ import '../../../Core/State/State.dart';
 import '../../../Core/ThemeManager/LanguageSwitcher.dart';
 import '../../../Widgets/Components/ScreenState.dart';
 import 'ComposerState.dart';
+import '../../../Widgets/Components/AppSpinner.dart';
 export 'ComposerState.dart' show ComposerKind;
 
 class ActivityComposer extends StatefulWidget {
@@ -144,11 +145,7 @@ class _ActivityComposerState extends State<ActivityComposer>
               child: FilledButton.icon(
                 onPressed: state.busy.value ? null : state.submit,
                 icon: state.busy.value
-                    ? const SizedBox(
-                        width: 16,
-                        height: 16,
-                        child: CircularProgressIndicator(strokeWidth: 2),
-                      )
+                    ? const AppSpinner(size: 16)
                     : const Icon(Icons.send_rounded, size: 18),
                 label: Text(
                   widget.editId == null ? getString.post : getString.save,

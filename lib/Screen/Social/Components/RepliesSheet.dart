@@ -22,6 +22,7 @@ import '../../../Core/State/State.dart';
 import '../../../Core/ThemeManager/LanguageSwitcher.dart';
 import '../../../Widgets/Components/ScreenState.dart';
 import 'RepliesState.dart';
+import '../../../Utils/Extensions/Responsive.dart';
 
 class RepliesSheet extends StatefulWidget {
   final MediaService service;
@@ -78,7 +79,7 @@ class _RepliesSheetState extends State<RepliesSheet>
               child: NotificationListener<ScrollNotification>(
                 onNotification: state.onScroll,
                 child: ListView.separated(
-                  padding: const EdgeInsets.fromLTRB(20, 4, 20, 24),
+                  padding: Dimens.sheetInsets,
                   itemCount: replies.length + (state.loadingMore.value ? 1 : 0),
                   separatorBuilder: (_, _) => const Divider(height: 24),
                   itemBuilder: (_, i) => i >= replies.length

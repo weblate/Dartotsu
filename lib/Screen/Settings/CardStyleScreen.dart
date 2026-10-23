@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../Utils/Extensions/ClickCursor.dart';
 
 import '../../Model/CardStyle.dart';
 import '../../Utils/Extensions/CardStyleMetrics.dart';
@@ -126,26 +125,15 @@ class _CardStyleScreenState extends BaseScreen<CardStyleScreen>
     };
     return SectionCard(
       title: getString.preset,
-      child: Wrap(
-        spacing: 8,
-        runSpacing: 8,
-        children: [
-          for (final id in CardStyle.presetIds)
-            ChoiceChip(
-              mouseCursor: kClickCursor,
-              label: Text(names[id]!),
-              selected: s.preset == id,
-              showCheckmark: false,
-              onSelected: (_) => state.set(CardStyle.presetById(id)),
-            ),
+      child: AppChoiceChips<String>(
+        value: s.preset,
+        onChanged: (id) {
+          if (id != 'custom') state.set(CardStyle.presetById(id));
+        },
+        options: [
+          for (final id in CardStyle.presetIds) AppSegment(id, label: names[id]!),
           if (s.preset == 'custom')
-            ChoiceChip(
-              mouseCursor: kClickCursor,
-              label: Text(getString.colorPickerCustom),
-              selected: true,
-              showCheckmark: false,
-              onSelected: null,
-            ),
+            AppSegment('custom', label: getString.colorPickerCustom),
         ],
       ),
     );

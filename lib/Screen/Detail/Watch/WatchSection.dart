@@ -34,6 +34,7 @@ import 'Components/WatchOptionsSheet.dart';
 import 'Components/WrongTitleSheet.dart';
 import 'Data/LocalProgress.dart';
 import 'WatchState.dart';
+import '../../../Widgets/Components/AppSpinner.dart';
 
 class WatchSection extends StatefulWidget {
   final MediaService service;
@@ -169,14 +170,7 @@ class _WatchSectionState extends State<WatchSection>
         if (state.metaLoading.value)
           Padding(
             padding: const EdgeInsetsDirectional.only(end: 8),
-            child: SizedBox(
-              width: 16,
-              height: 16,
-              child: CircularProgressIndicator(
-                strokeWidth: 2,
-                color: scheme.primary,
-              ),
-            ),
+            child: AppSpinner(size: 16, color: scheme.primary),
           ),
         IconButton(
           tooltip: getString.downloadTitle,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../../Core/State/State.dart';
+import '../../../../Widgets/Components/AppSpinner.dart';
 
 class BackupActionButton extends StatelessWidget {
   final IconData icon;
@@ -23,11 +24,7 @@ class BackupActionButton extends StatelessWidget {
         child: FilledButton.icon(
           onPressed: busy.value ? null : onPressed,
           icon: busy.value
-              ? const SizedBox(
-                  width: 18,
-                  height: 18,
-                  child: CircularProgressIndicator(strokeWidth: 2),
-                )
+              ? const AppSpinner()
               : Icon(icon),
           label: Text(label),
         ),

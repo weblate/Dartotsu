@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 
 import '../../Core/State/State.dart';
 import '../../Utils/Extensions/ContextExtensions.dart';
+import 'Clickable.dart';
 
 const _swatches = <Color>[
   Color(0xFFF44336),
@@ -149,7 +150,7 @@ class _ColorPickerViewState extends State<ColorPickerView> {
           runSpacing: 8,
           children: [
             for (final swatch in _swatches)
-              GestureDetector(
+              Clickable(
                 onTap: () => _set(HSVColor.fromColor(swatch)),
                 child: Container(
                   width: 28,

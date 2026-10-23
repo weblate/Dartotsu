@@ -20,6 +20,7 @@ import 'ColorSheet.dart';
 import 'ShaderSheet.dart';
 import '../../../Utils/Animation/WidgetAnimations.dart';
 import '../../../Utils/Extensions/ContextExtensions.dart';
+import '../../../Widgets/Components/AppControls.dart';
 
 class ShaderPreview extends StatefulWidget {
   final Uint8List frame;
@@ -428,43 +429,29 @@ class _ShaderPreviewState extends State<ShaderPreview> {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                children: [
-                  for (final key in shaderProfiles.keys)
-                    Padding(
-                      padding: const EdgeInsetsDirectional.only(end: 8),
-                      child: ChoiceChip(
-                        label: Text(key),
-                        selected: key == profile,
-                        onSelected: (_) {
-                          _profile.value = key;
-                          _pick('');
-                        },
-                      ),
-                    ),
-                ],
-              ),
+            AppChoiceChips<String>(
+              scrollable: true,
+              value: profile,
+              onChanged: (key) {
+                _profile.value = key;
+                _pick('');
+              },
+              options: [
+                for (final key in shaderProfiles.keys) AppSegment(key, label: key),
+              ],
             ),
             const SizedBox(height: 8),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                children: [
-                  for (final name in ['', ...names])
-                    Padding(
-                      padding: const EdgeInsetsDirectional.only(end: 8),
-                      child: ChoiceChip(
-                        label: Text(
-                          name.isEmpty ? getString.playerShadersOff : name,
-                        ),
-                        selected: chosen == name,
-                        onSelected: (_) => _pick(name),
-                      ),
-                    ),
-                ],
-              ),
+            AppChoiceChips<String>(
+              scrollable: true,
+              value: chosen,
+              onChanged: _pick,
+              options: [
+                for (final name in ['', ...names])
+                  AppSegment(
+                    name,
+                    label: name.isEmpty ? getString.playerShadersOff : name,
+                  ),
+              ],
             ),
             const SizedBox(height: 8),
             SingleChildScrollView(

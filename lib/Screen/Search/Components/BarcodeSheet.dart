@@ -11,6 +11,7 @@ import '../../../Widgets/Components/AppSheet.dart';
 import '../../../Widgets/Components/CustomBottomDialog.dart';
 import '../../../Widgets/Components/ScreenState.dart';
 import 'BarcodeState.dart';
+import '../../../Widgets/Components/AppSpinner.dart';
 
 Future<String?> showBarcodeSearch(BuildContext context) =>
     showCustomBottomDialog<String>(context, const BarcodeSheet());
@@ -135,11 +136,7 @@ class _BarcodeSheetState extends State<BarcodeSheet>
                       ? null
                       : () => unawaited(state.submit()),
                   icon: state.busy.value
-                      ? const SizedBox(
-                          width: 20,
-                          height: 20,
-                          child: CircularProgressIndicator(strokeWidth: 2),
-                        )
+                      ? const AppSpinner(size: 20)
                       : const Icon(Icons.search_rounded),
                 ),
               ],

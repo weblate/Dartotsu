@@ -8,6 +8,7 @@ import '../../../Widgets/Components/LoadSvg.dart';
 import '../../../Widgets/Components/SectionCard.dart';
 import '../../Login/LoginView.dart';
 import '../../../Core/State/State.dart';
+import '../../../Widgets/Components/AppSpinner.dart';
 
 class LoginPrompt extends StatefulWidget {
   final MediaService service;
@@ -59,11 +60,7 @@ class _LoginPromptState extends State<LoginPrompt> {
             SizedBox(width: Dimens.gapSm),
             Watch(
               () => _busy.value
-                  ? const SizedBox(
-                      width: 20,
-                      height: 20,
-                      child: CircularProgressIndicator(strokeWidth: 2),
-                    )
+                  ? const AppSpinner(size: 20)
                   : Row(
                       children: [
                         if (auth.supportsTokenLogin)

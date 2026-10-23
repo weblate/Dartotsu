@@ -15,6 +15,7 @@ import '../../../../Widgets/Components/AppSheet.dart';
 import '../../../../Widgets/Components/SheetTile.dart';
 import '../../../Extension/SourcePreferenceScreen.dart';
 import '../../../Webview/WebView.dart';
+import '../../../../Widgets/Components/AppSpinner.dart';
 
 class SourceToolsSheet extends StatefulWidget {
   final Source source;
@@ -270,11 +271,7 @@ class _SourceToolsSheetState extends State<SourceToolsSheet> {
                   child: FilledButton.tonalIcon(
                     onPressed: busy ? null : _test,
                     icon: busy
-                        ? const SizedBox(
-                            width: 16,
-                            height: 16,
-                            child: CircularProgressIndicator(strokeWidth: 2),
-                          )
+                        ? const AppSpinner(size: 16)
                         : const Icon(Icons.network_check_rounded),
                     label: Text(getString.watchTestConnection),
                   ),

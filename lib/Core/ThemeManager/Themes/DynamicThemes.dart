@@ -55,56 +55,6 @@ ThemeData getCustomDarkTheme(int color) {
   );
 }
 
-Future<ThemeData> getImageDarkTheme(String imageUrl) async {
-  var colorScheme = await getImageMainColor(imageUrl, Brightness.dark);
-  colorScheme = colorScheme.copyWith(brightness: Brightness.dark);
-
-  return ThemeData(
-    brightness: Brightness.dark,
-    primaryColor: colorScheme.primary,
-    colorScheme: colorScheme,
-    appBarTheme: AppBarTheme(
-      color: colorScheme.primary,
-      iconTheme: IconThemeData(color: colorScheme.onPrimary),
-    ),
-    scaffoldBackgroundColor: colorScheme.surface,
-    textTheme: TextTheme(
-      headlineLarge: TextStyle(
-        color: colorScheme.onPrimary,
-        fontSize: 20,
-        fontWeight: FontWeight.bold,
-      ),
-      bodyLarge: TextStyle(color: colorScheme.onSurface),
-    ),
-    fontFamily: 'Poppins',
-  );
-}
-
-Future<ThemeData> getImageLightTheme(String imageUrl) async {
-  var colorScheme = await getImageMainColor(imageUrl, Brightness.light);
-  colorScheme = colorScheme.copyWith(brightness: Brightness.light);
-
-  return ThemeData(
-    brightness: Brightness.light,
-    primaryColor: colorScheme.primary,
-    colorScheme: colorScheme,
-    appBarTheme: AppBarTheme(
-      color: colorScheme.primary,
-      iconTheme: IconThemeData(color: colorScheme.onPrimary),
-    ),
-    scaffoldBackgroundColor: colorScheme.surface,
-    textTheme: TextTheme(
-      headlineLarge: TextStyle(
-        color: colorScheme.onPrimary,
-        fontSize: 20,
-        fontWeight: FontWeight.bold,
-      ),
-      bodyLarge: TextStyle(color: colorScheme.onSurface),
-    ),
-    fontFamily: 'Poppins',
-  );
-}
-
 Future<ColorScheme> getImageMainColor(
   String imageUrl,
   Brightness brightness,

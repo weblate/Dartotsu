@@ -12,6 +12,7 @@ import '../../../Widgets/Components/ChoiceSheet.dart';
 import '../../../Widgets/Components/CustomBottomDialog.dart';
 import '../../../Widgets/Components/SheetTile.dart';
 import '../PlayerState.dart';
+import '../../../Widgets/Components/AppSpinner.dart';
 
 Future<void> showOnlineSubtitleSheet(BuildContext context, PlayerState state) =>
     showCustomBottomDialog<void>(
@@ -195,11 +196,7 @@ class _OnlineSubtitleSheetState extends State<_OnlineSubtitleSheet> {
                         ),
                       ),
                       leading: busy == s.id
-                          ? const SizedBox(
-                              width: 24,
-                              height: 24,
-                              child: CircularProgressIndicator(strokeWidth: 2),
-                            )
+                          ? const AppSpinner(size: 24)
                           : Icon(
                               s.hashMatch
                                   ? Icons.verified_rounded

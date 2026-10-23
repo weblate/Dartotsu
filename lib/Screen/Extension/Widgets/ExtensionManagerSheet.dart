@@ -18,6 +18,7 @@ import '../../Settings/ExtensionSourceSettingsScreen.dart';
 import '../ExtensionScreen.dart';
 import '../../../Core/State/State.dart';
 import '../../../Utils/Extensions/StringExtensions.dart';
+import '../../../Widgets/Components/AppSpinner.dart';
 
 void showExtensionManagerSheet(BuildContext context, ItemType type) {
   final manager = find<ExtensionManager>();
@@ -165,11 +166,7 @@ void showAddPluginRepositoryDialog(BuildContext context) {
                 () => refreshing.value
                     ? const Padding(
                         padding: EdgeInsets.only(top: 12),
-                        child: SizedBox(
-                          width: 20,
-                          height: 20,
-                          child: CircularProgressIndicator(strokeWidth: 2),
-                        ),
+                        child: AppSpinner(size: 20),
                       )
                     : const SizedBox.shrink(),
               ),

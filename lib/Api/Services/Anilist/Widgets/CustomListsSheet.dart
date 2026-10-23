@@ -6,6 +6,7 @@ import '../../../../Core/State/State.dart';
 import '../../../../Core/ThemeManager/LanguageSwitcher.dart';
 import '../../../../Widgets/Components/ScreenState.dart';
 import 'CustomListsState.dart';
+import '../../../../Utils/Extensions/Responsive.dart';
 
 class CustomListsSheet extends StatefulWidget {
   final bool anime;
@@ -28,7 +29,7 @@ class _CustomListsSheetState extends State<CustomListsSheet>
     return AppSheet(
       title: state.title,
       child: Padding(
-        padding: const EdgeInsets.fromLTRB(20, 0, 20, 24),
+        padding: Dimens.sheetInsets,
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,

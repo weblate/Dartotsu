@@ -23,9 +23,6 @@ void logger(String message, {LogLevel logLevel = LogLevel.info, String? tag}) {
   );
 }
 
-void logDebug(String message, {String? tag}) =>
-    logger(message, logLevel: LogLevel.debug, tag: tag);
-
 void logWarn(String message, {String? tag}) =>
     logger(message, logLevel: LogLevel.warning, tag: tag);
 

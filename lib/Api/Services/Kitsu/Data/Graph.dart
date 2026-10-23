@@ -3,8 +3,6 @@ import '../../../../Core/Services/Model/Character.dart';
 import '../../../../Core/Services/Model/Media.dart';
 import 'Mapper.dart';
 
-const kitsuGraphql = 'https://kitsu.io/api/graphql';
-
 const _views = 'views(names: ["large", "medium", "small"]) { name url }';
 
 String kitsuDetailQuery(bool anime, {required bool withEntry}) {
