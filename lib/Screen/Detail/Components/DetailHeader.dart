@@ -170,9 +170,12 @@ class DetailHeaderDelegate extends SliverPersistentHeaderDelegate {
                                 _cover(context, m),
                                 SizedBox(width: Dimens.gap),
                                 Expanded(
-                                  child: Padding(
-                                    padding: EdgeInsets.only(bottom: _overhang),
-                                    child: _title(context, m),
+                                  child: SizedBox(
+                                    height: _coverH,
+                                    child: Align(
+                                      alignment: Alignment.bottomLeft,
+                                      child: _title(context, m),
+                                    ),
                                   ),
                                 ),
                               ],
@@ -330,6 +333,12 @@ class DetailHeaderDelegate extends SliverPersistentHeaderDelegate {
     );
   }
 
+  int _titleLines(Media m) {
+    final romaji = m.nameRomaji != null && m.nameRomaji != m.mainName;
+    final used = (romaji ? 24 : 0) + (m.status != null ? 44 : 0);
+    return ((_coverH - used) / 22).floor().clamp(2, 4);
+  }
+
   Widget _title(BuildContext context, Media m) {
     final scheme = context.colorScheme;
     return SelectionArea(
@@ -339,7 +348,7 @@ class DetailHeaderDelegate extends SliverPersistentHeaderDelegate {
         children: [
           Text(
             m.mainName,
-            maxLines: 2,
+            maxLines: _titleLines(m),
             overflow: TextOverflow.ellipsis,
             style: context.textTheme.titleLarge?.copyWith(
               fontSize: 19,
@@ -423,7 +432,8 @@ class DetailHeaderDelegate extends SliverPersistentHeaderDelegate {
               onLongPress: () {
                 HapticFeedback.mediumImpact();
                 (m.isAnime ? trackAnimePref : trackMangaPref).value = 'ask';
-                final service = find<MediaServiceController>().currentService.value;
+                final service =
+                    find<MediaServiceController>().currentService.value;
                 MediaRecords.of(service, m).trackChoice = null;
                 MediaRecords.save(service, m);
                 snackString(getString.trackProgressReset);
