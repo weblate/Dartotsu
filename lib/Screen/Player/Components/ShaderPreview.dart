@@ -1,8 +1,9 @@
 import 'dart:async';
 import 'dart:io';
-import 'dart:typed_data';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:image/image.dart' as img;
 import 'package:media_kit/media_kit.dart';
 import 'package:media_kit_video/media_kit_video.dart';
 import 'package:path/path.dart' as p;
@@ -10,6 +11,7 @@ import 'package:path/path.dart' as p;
 import '../Engine/MpvFiles.dart';
 import '../Engine/PlayerEngine.dart';
 import '../Engine/PlayerSettings.dart';
+import '../../../Core/Preferences/StorageManager.dart';
 import '../../../Core/State/State.dart';
 import '../../../Core/ThemeManager/LanguageSwitcher.dart';
 import '../../../Logger.dart';
@@ -21,6 +23,22 @@ import 'ShaderSheet.dart';
 import '../../../Utils/Animation/WidgetAnimations.dart';
 import '../../../Utils/Extensions/ContextExtensions.dart';
 import '../../../Widgets/Components/AppControls.dart';
+
+Uint8List _pngToJpeg(Uint8List png) {
+  final decoded = img.decodePng(png);
+  if (decoded == null) throw StateError('png');
+  return img.encodeJpg(decoded, quality: 95);
+}
+
+Future<Uint8List> _stillForMpv(Uint8List frame) async {
+  if (!Platform.isAndroid) return frame;
+  try {
+    return await compute(_pngToJpeg, frame);
+  } catch (e) {
+    logger('Shader preview JPEG conversion failed: $e', tag: 'MPV');
+    return frame;
+  }
+}
 
 class ShaderPreview extends StatefulWidget {
   final Uint8List frame;
@@ -45,8 +63,6 @@ class ShaderPreview extends StatefulWidget {
 class _ShaderPreviewState extends State<ShaderPreview> {
   late final Player _player;
   late final VideoController _video;
-  late final Player _plain;
-  late final VideoController _plainVideo;
   final _split = 0.5.live;
   final _problem = Live<String?>(null);
   StreamSubscription<PlayerLog>? _log;
@@ -54,9 +70,11 @@ class _ShaderPreviewState extends State<ShaderPreview> {
   final _chosen = ''.live;
   late final _color = widget.settings.color.live;
   final _ready = false.live;
+  final _processed = Live<Uint8List?>(null);
   final _controls = true.live;
   final _adjust = false.live;
   Timer? _colorTimer;
+  int _presentSerial = 0;
   File? _file;
 
   @override
@@ -74,10 +92,6 @@ class _ShaderPreviewState extends State<ShaderPreview> {
       configuration: const PlayerConfiguration(logLevel: MPVLogLevel.warn),
     );
     _video = PlayerEngine.previewController(_player);
-    _plain = Player(
-      configuration: const PlayerConfiguration(logLevel: MPVLogLevel.warn),
-    );
-    _plainVideo = PlayerEngine.previewController(_plain);
     _log = _player.stream.log.listen((e) {
       final text = e.text.toLowerCase();
       if (e.level == 'error') {
@@ -96,9 +110,9 @@ class _ShaderPreviewState extends State<ShaderPreview> {
   @override
   void dispose() {
     _colorTimer?.cancel();
+    _presentSerial++;
     unawaited(_log?.cancel());
     unawaited(_player.dispose());
-    unawaited(_plain.dispose());
     final file = _file;
     if (file != null) unawaited(file.delete().catchError((_) => file));
     super.dispose();
@@ -111,32 +125,131 @@ class _ShaderPreviewState extends State<ShaderPreview> {
 
   Future<void> _start() async {
     try {
-      final dir = Directory.systemTemp;
+      // systemTemp is not a path libmpv can open on Android. Seek preview
+      // already plays files from this cache directory. The Android libmpv
+      // build also has no PNG decoder, only MJPEG, so the still has to be JPEG.
+      final dir =
+          await StorageManager.getDirectory(subPath: 'cache/mpv-preview') ??
+          Directory.systemTemp;
+      final still = await _stillForMpv(widget.frame);
       final file = File(
         p.join(
           dir.path,
-          'dartotsu_shader_preview_${DateTime.now().millisecondsSinceEpoch}.png',
+          Platform.isAndroid ? 'shader-preview.jpg' : 'shader-preview.png',
         ),
       );
-      await file.writeAsBytes(widget.frame, flush: true);
+      await file.writeAsBytes(still, flush: true);
       _file = file;
       final mpv = _native;
-      await mpv?.setProperty('image-display-duration', 'inf');
-      await mpv?.setProperty('keep-open', 'yes');
-      await mpv?.setProperty('vf', 'scale=w=iw/2:h=ih/2');
-      final plain = _plain.platform;
-      if (plain is NativePlayer) {
-        await plain.setProperty('image-display-duration', 'inf');
-        await plain.setProperty('keep-open', 'yes');
-        await plain.setProperty('vf', 'scale=w=iw/2:h=ih/2');
-        await plain.setProperty('glsl-shaders', '');
-      }
+      await _prepare(mpv);
       await _apply();
-      await _plain.open(Media(file.path), play: true);
+      if (Platform.isAndroid) {
+        final shown = Completer<void>();
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          if (!shown.isCompleted) shown.complete();
+        });
+        await shown.future;
+      }
+      if (!mounted) return;
       await _player.open(Media(file.path), play: true);
-      if (mounted) _ready.value = true;
+      if (!Platform.isAndroid) {
+        if (mounted) _ready.value = true;
+      } else {
+        _schedulePresent();
+      }
     } catch (e) {
       logger('Shader preview failed: $e', tag: 'MPV');
+    }
+  }
+
+  Future<void> _prepare(NativePlayer? mpv) async {
+    if (mpv == null) return;
+    const props = {
+      'image-display-duration': 'inf',
+      'keep-open': 'yes',
+      'loop-file': 'inf',
+      'aid': 'no',
+      'sid': 'no',
+      'ao': 'null',
+      'volume': '0',
+    };
+    for (final e in props.entries) {
+      try {
+        await mpv.setProperty(e.key, e.value);
+      } catch (err) {
+        logger('Shader preview ${e.key} failed: $err', tag: 'MPV');
+      }
+    }
+    // lavfi scale before the Android surface exists drops the only image frame.
+    if (!Platform.isAndroid) {
+      try {
+        await mpv.setProperty('vf', 'scale=w=iw/2:h=ih/2');
+      } catch (err) {
+        logger('Shader preview vf failed: $err', tag: 'MPV');
+      }
+    }
+  }
+
+  void _schedulePresent() {
+    if (!Platform.isAndroid) return;
+    final serial = ++_presentSerial;
+    unawaited(_presentSoon(serial));
+  }
+
+  Future<void> _presentSoon(int serial) async {
+    await _present(serial);
+    final first = await _grab(serial);
+    await Future<void>.delayed(const Duration(milliseconds: 450));
+    if (!mounted || serial != _presentSerial) return;
+    // The surface is replaced once the image size is known. The first present
+    // can land on the old 1x1 surface, so present again after that resize.
+    await _present(serial);
+    final second = await _grab(serial);
+    if (!mounted || serial != _presentSerial) return;
+    _ready.value = true;
+    if (!first && !second && _processed.value == null) {
+      _problem.value = getString.playerShadersPreviewFailed;
+    }
+  }
+
+  Future<bool> _grab(int serial) async {
+    if (!mounted || serial != _presentSerial) return false;
+    try {
+      final shot = await _player.screenshot(format: 'image/png');
+      if (!mounted || serial != _presentSerial) return false;
+      if (shot != null && !PlayerEngine.blankPng(shot)) {
+        _processed.value = shot;
+        _problem.value = null;
+        return true;
+      }
+      logger('Shader preview grab blank: ${shot?.length ?? 0}', tag: 'MPV');
+    } catch (e) {
+      logger('Shader preview grab failed: $e', tag: 'MPV');
+    }
+    return false;
+  }
+
+  Future<void> _present(int serial) async {
+    final mpv = _native;
+    if (mpv == null || !mounted || serial != _presentSerial) return;
+    try {
+      if ((_player.state.width ?? 0) <= 1) {
+        await _player.stream.width
+            .firstWhere((w) => (w ?? 0) > 1)
+            .timeout(const Duration(seconds: 2));
+      }
+    } catch (_) {}
+    if (!mounted || serial != _presentSerial) return;
+    try {
+      // A still sits at position 0. Android replaces the Surface when the
+      // image size arrives and does not redraw, and mpv ignores a seek to
+      // the position it is already at. Nudge so the new Surface gets a frame.
+      await mpv.command(['seek', '0.001', 'absolute+exact']);
+      await mpv.command(['seek', '0', 'absolute+exact']);
+      await mpv.setProperty('pause', 'no');
+      await Future<void>.delayed(const Duration(milliseconds: 250));
+    } catch (e) {
+      logger('Shader preview present failed: $e', tag: 'MPV');
     }
   }
 
@@ -210,6 +323,7 @@ class _ShaderPreviewState extends State<ShaderPreview> {
     if (file == null || !mounted) return;
     _problem.value = null;
     await _player.open(Media(file.path), play: true);
+    _schedulePresent();
   }
 
   Future<void> _use() async {
@@ -240,6 +354,7 @@ class _ShaderPreviewState extends State<ShaderPreview> {
                   (d.localPosition.dx / box.maxWidth).clamp(0.0, 1.0),
               child: Watch(() {
                 final at = _split.value;
+                final processed = _processed.value;
                 return Stack(
                   fit: StackFit.expand,
                   children: [
@@ -247,14 +362,28 @@ class _ShaderPreviewState extends State<ShaderPreview> {
                       controller: _video,
                       controls: null,
                       fit: BoxFit.contain,
+                      fill: Colors.transparent,
                       filterQuality: FilterQuality.medium,
                     ),
+                    // Android's Surface never presents a still, so the shader
+                    // side is the frame mpv just rendered, not the texture.
+                    if (processed != null)
+                      Image.memory(
+                        processed,
+                        fit: BoxFit.contain,
+                        width: box.maxWidth,
+                        height: box.maxHeight,
+                        gaplessPlayback: true,
+                        filterQuality: FilterQuality.medium,
+                      ),
                     ClipRect(
                       clipper: _LeftClip(at),
-                      child: Video(
-                        controller: _plainVideo,
-                        controls: null,
+                      child: Image.memory(
+                        widget.frame,
                         fit: BoxFit.contain,
+                        width: box.maxWidth,
+                        height: box.maxHeight,
+                        gaplessPlayback: true,
                         filterQuality: FilterQuality.medium,
                       ),
                     ),
@@ -437,7 +566,8 @@ class _ShaderPreviewState extends State<ShaderPreview> {
                 _pick('');
               },
               options: [
-                for (final key in shaderProfiles.keys) AppSegment(key, label: key),
+                for (final key in shaderProfiles.keys)
+                  AppSegment(key, label: key),
               ],
             ),
             const SizedBox(height: 8),

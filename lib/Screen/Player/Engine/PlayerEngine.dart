@@ -392,6 +392,8 @@ class PlayerEngine {
     }
   }
 
+  static bool blankPng(Uint8List? png) => _blankFrame(png);
+
   static bool _blankFrame(Uint8List? png) {
     if (png == null || png.length < 33) return true;
     final data = ByteData.sublistView(png);
@@ -413,30 +415,55 @@ class PlayerEngine {
     );
     final mpv = native;
     if (!blank || !Platform.isAndroid || mpv == null) return shot;
+    // screenshot-raw reads the GL framebuffer. hwdec=mediacodec keeps the
+    // frame in an opaque Surface, so the PNG is black. A seek to the current
+    // position is a no-op and never redecodes, so nudge off the frame and back.
     final decoder = decoderValue(settings.decoder);
-    final at = position.value.inMilliseconds / 1000;
+    final at = position.value;
+    final wasPlaying = playing.value;
     try {
-      await mpv.setProperty('hwdec', 'mediacodec-copy');
-      await mpv.command(['seek', '$at', 'absolute+exact']);
-      await Future<void>.delayed(const Duration(milliseconds: 800));
-      final copy = await player.screenshot(format: 'image/png');
-      logger(
-        'Copy-decoded frame capture: ${copy?.length ?? 0} bytes, '
-        '${_blankFrame(copy) ? 'blank' : 'ok'}',
-        tag: 'MPV',
-      );
-      if (copy != null &&
-          (!_blankFrame(copy) || shot == null || copy.length > shot.length)) {
-        shot = copy;
+      if (wasPlaying) await pause();
+      for (final hw in const ['no', 'mediacodec-copy']) {
+        await mpv.setProperty('hwdec', hw);
+        await _redecode(mpv, at);
+        final copy = await player.screenshot(format: 'image/png');
+        logger(
+          'Frame capture ($hw): ${copy?.length ?? 0} bytes, '
+          '${_blankFrame(copy) ? 'blank' : 'ok'}',
+          tag: 'MPV',
+        );
+        if (copy != null && !_blankFrame(copy)) {
+          shot = copy;
+          break;
+        }
       }
     } catch (e) {
       logger('mpv copy screenshot failed: $e', tag: 'MPV');
     } finally {
       try {
         await mpv.setProperty('hwdec', decoder);
+        await mpv.command([
+          'seek',
+          (at.inMilliseconds / 1000).toStringAsFixed(3),
+          'absolute+exact',
+        ]);
       } catch (_) {}
+      if (wasPlaying) {
+        try {
+          await play();
+        } catch (_) {}
+      }
     }
-    return shot;
+    return _blankFrame(shot) ? null : shot;
+  }
+
+  Future<void> _redecode(NativePlayer mpv, Duration at) async {
+    final seconds = at.inMilliseconds / 1000;
+    final nudge = seconds > 0.08 ? seconds - 0.05 : seconds + 0.05;
+    await mpv.command(['seek', nudge.toStringAsFixed(3), 'absolute+exact']);
+    await Future<void>.delayed(const Duration(milliseconds: 350));
+    await mpv.command(['seek', seconds.toStringAsFixed(3), 'absolute+exact']);
+    await Future<void>.delayed(const Duration(milliseconds: 450));
   }
 
   Future<double?> videoFps() async {
