@@ -703,6 +703,9 @@ class AppLocalizationsSw extends AppLocalizations {
   String get imageTitleCover => 'Jalada';
 
   @override
+  String get imageTitlePage => 'Page';
+
+  @override
   String get imageTitleBanner => 'Bango';
 
   @override
@@ -5209,6 +5212,13 @@ class AppLocalizationsSw extends AppLocalizations {
   @override
   String get readerCropBordersDesc =>
       'Punguza pambizo tupu nyeupe au nyeusi kutoka kurasa';
+
+  @override
+  String get readerLongPressSave => 'Hold a page to save it';
+
+  @override
+  String get readerLongPressSaveDesc =>
+      'Long press a page to open save, share and copy options';
 
   @override
   String get readerVolumeKeys => 'Vitufe vya sauti hugeuza kurasa';

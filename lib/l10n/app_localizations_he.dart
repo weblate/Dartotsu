@@ -689,6 +689,9 @@ class AppLocalizationsHe extends AppLocalizations {
   String get imageTitleCover => 'כריכה';
 
   @override
+  String get imageTitlePage => 'Page';
+
+  @override
   String get imageTitleBanner => 'באנר';
 
   @override
@@ -5134,6 +5137,13 @@ class AppLocalizationsHe extends AppLocalizations {
   @override
   String get readerCropBordersDesc =>
       'חתוך שוליים ריקים לבנים או שחורים מהעמודים';
+
+  @override
+  String get readerLongPressSave => 'Hold a page to save it';
+
+  @override
+  String get readerLongPressSaveDesc =>
+      'Long press a page to open save, share and copy options';
 
   @override
   String get readerVolumeKeys => 'מקשי עוצמת קול מדפדפים';

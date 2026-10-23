@@ -688,6 +688,9 @@ class AppLocalizationsTh extends AppLocalizations {
   String get imageTitleCover => 'ปก';
 
   @override
+  String get imageTitlePage => 'Page';
+
+  @override
   String get imageTitleBanner => 'แบนเนอร์';
 
   @override
@@ -5130,6 +5133,13 @@ class AppLocalizationsTh extends AppLocalizations {
 
   @override
   String get readerCropBordersDesc => 'ตัดขอบว่างสีขาวหรือดำออกจากหน้า';
+
+  @override
+  String get readerLongPressSave => 'Hold a page to save it';
+
+  @override
+  String get readerLongPressSaveDesc =>
+      'Long press a page to open save, share and copy options';
 
   @override
   String get readerVolumeKeys => 'ปุ่มเสียงพลิกหน้า';

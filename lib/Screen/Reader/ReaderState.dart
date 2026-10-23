@@ -4,7 +4,7 @@ import 'dart:math' as math;
 import 'dart:ui' as ui;
 
 import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart' show GlobalKey;
+import 'package:flutter/widgets.dart' show BuildContext, GlobalKey;
 
 import 'package:dartotsu_extension_bridge/dartotsu_extension_bridge.dart';
 import 'package:flutter/services.dart';
@@ -12,6 +12,7 @@ import 'package:flutter/services.dart';
 import '../Detail/Watch/Data/Media/MediaRecord.dart';
 import '../Detail/Watch/Data/Media/ResumeStore.dart';
 import '../../Core/Preferences/Incognito.dart';
+import '../../Widgets/Components/ImageSheet.dart';
 import 'Engine/ReaderImageLoader.dart';
 import 'Engine/ReaderItems.dart';
 import 'Engine/ReaderRequest.dart';
@@ -128,6 +129,24 @@ class ReaderState extends ScreenState {
   String get chapterTitle => unitTitle(unit, false);
 
   String unitKey(WatchUnit u) => u.number;
+
+  void openPageSheet(BuildContext context, PageUrl page) {
+    final found = items.whereType<ReaderPage>().where(
+      (p) => p.url.url == page.url,
+    );
+    final at = found.isEmpty ? null : found.first;
+    final label = at == null
+        ? ''
+        : ' ${unitLabel(units[at.chapter.clamp(0, units.length - 1)], false)}'
+              ' p${at.page + 1}';
+    showImageSheet(
+      context,
+      url: page.url,
+      name: '${request.media.mainName}$label',
+      title: getString.imageTitlePage,
+      file: () => ReaderImageLoader.fileFor(page),
+    );
+  }
 
   ReaderSettings _effective() {
     final base = ReaderPrefs.global.value;

@@ -680,6 +680,9 @@ class AppLocalizationsJa extends AppLocalizations {
   String get imageTitleCover => 'カバー';
 
   @override
+  String get imageTitlePage => 'Page';
+
+  @override
   String get imageTitleBanner => 'バナー';
 
   @override
@@ -5060,6 +5063,13 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get readerCropBordersDesc => 'ページの白や黒の余白を切り取る';
+
+  @override
+  String get readerLongPressSave => 'Hold a page to save it';
+
+  @override
+  String get readerLongPressSaveDesc =>
+      'Long press a page to open save, share and copy options';
 
   @override
   String get readerVolumeKeys => '音量キーでページめくり';

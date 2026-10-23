@@ -696,6 +696,9 @@ class AppLocalizationsMs extends AppLocalizations {
   String get imageTitleCover => 'Muka depan';
 
   @override
+  String get imageTitlePage => 'Page';
+
+  @override
   String get imageTitleBanner => 'Sepanduk';
 
   @override
@@ -5181,6 +5184,13 @@ class AppLocalizationsMs extends AppLocalizations {
   @override
   String get readerCropBordersDesc =>
       'Potong jidar putih atau hitam kosong daripada halaman';
+
+  @override
+  String get readerLongPressSave => 'Hold a page to save it';
+
+  @override
+  String get readerLongPressSaveDesc =>
+      'Long press a page to open save, share and copy options';
 
   @override
   String get readerVolumeKeys => 'Kekunci kelantangan pusing halaman';

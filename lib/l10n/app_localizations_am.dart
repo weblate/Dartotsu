@@ -682,6 +682,9 @@ class AppLocalizationsAm extends AppLocalizations {
   String get imageTitleCover => 'ሽፋን';
 
   @override
+  String get imageTitlePage => 'Page';
+
+  @override
   String get imageTitleBanner => 'ባነር';
 
   @override
@@ -5100,6 +5103,13 @@ class AppLocalizationsAm extends AppLocalizations {
 
   @override
   String get readerCropBordersDesc => 'ከገጾች ባዶ ነጭ ወይም ጥቁር ጠርዞችን አስወግድ';
+
+  @override
+  String get readerLongPressSave => 'Hold a page to save it';
+
+  @override
+  String get readerLongPressSaveDesc =>
+      'Long press a page to open save, share and copy options';
 
   @override
   String get readerVolumeKeys => 'የድምጽ ቁልፎች ገጽ ይገልብጣሉ';

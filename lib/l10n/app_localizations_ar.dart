@@ -691,6 +691,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get imageTitleCover => 'الغلاف';
 
   @override
+  String get imageTitlePage => 'Page';
+
+  @override
   String get imageTitleBanner => 'البانر';
 
   @override
@@ -5168,6 +5171,13 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String get readerCropBordersDesc =>
       'أزل الهوامش البيضاء أو السوداء الفارغة من الصفحات';
+
+  @override
+  String get readerLongPressSave => 'Hold a page to save it';
+
+  @override
+  String get readerLongPressSaveDesc =>
+      'Long press a page to open save, share and copy options';
 
   @override
   String get readerVolumeKeys => 'مفاتيح الصوت تقلب الصفحات';

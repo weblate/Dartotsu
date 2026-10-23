@@ -703,6 +703,9 @@ class AppLocalizationsFil extends AppLocalizations {
   String get imageTitleCover => 'Cover';
 
   @override
+  String get imageTitlePage => 'Page';
+
+  @override
   String get imageTitleBanner => 'Banner';
 
   @override
@@ -5213,6 +5216,13 @@ class AppLocalizationsFil extends AppLocalizations {
   @override
   String get readerCropBordersDesc =>
       'Alisin ang blangkong puti o itim na margin sa mga page';
+
+  @override
+  String get readerLongPressSave => 'Hold a page to save it';
+
+  @override
+  String get readerLongPressSaveDesc =>
+      'Long press a page to open save, share and copy options';
 
   @override
   String get readerVolumeKeys => 'Pang-turn ng page ang volume keys';

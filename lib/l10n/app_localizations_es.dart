@@ -706,6 +706,9 @@ class AppLocalizationsEs extends AppLocalizations {
   String get imageTitleCover => 'Portada';
 
   @override
+  String get imageTitlePage => 'Page';
+
+  @override
   String get imageTitleBanner => 'Banner';
 
   @override
@@ -5227,6 +5230,13 @@ class AppLocalizationsEs extends AppLocalizations {
   @override
   String get readerCropBordersDesc =>
       'Quita los márgenes blancos o negros vacíos de las páginas';
+
+  @override
+  String get readerLongPressSave => 'Hold a page to save it';
+
+  @override
+  String get readerLongPressSaveDesc =>
+      'Long press a page to open save, share and copy options';
 
   @override
   String get readerVolumeKeys => 'Teclas de volumen pasan páginas';

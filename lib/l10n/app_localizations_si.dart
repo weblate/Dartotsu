@@ -701,6 +701,9 @@ class AppLocalizationsSi extends AppLocalizations {
   String get imageTitleCover => 'කවර්';
 
   @override
+  String get imageTitlePage => 'Page';
+
+  @override
   String get imageTitleBanner => 'බැනර්';
 
   @override
@@ -5200,6 +5203,13 @@ class AppLocalizationsSi extends AppLocalizations {
   @override
   String get readerCropBordersDesc =>
       'පිටු වල හිස් සුදු හෝ කළු මාජින් කපා දාන්න';
+
+  @override
+  String get readerLongPressSave => 'Hold a page to save it';
+
+  @override
+  String get readerLongPressSaveDesc =>
+      'Long press a page to open save, share and copy options';
 
   @override
   String get readerVolumeKeys => 'වෝල්යුම් කී වලින් පිටු හරවන්න';

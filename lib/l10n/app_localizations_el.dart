@@ -706,6 +706,9 @@ class AppLocalizationsEl extends AppLocalizations {
   String get imageTitleCover => 'Εξώφυλλο';
 
   @override
+  String get imageTitlePage => 'Page';
+
+  @override
   String get imageTitleBanner => 'Banner';
 
   @override
@@ -5223,6 +5226,13 @@ class AppLocalizationsEl extends AppLocalizations {
   @override
   String get readerCropBordersDesc =>
       'Αφαίρεση κενών λευκών ή μαύρων περιθωρίων από τις σελίδες';
+
+  @override
+  String get readerLongPressSave => 'Hold a page to save it';
+
+  @override
+  String get readerLongPressSaveDesc =>
+      'Long press a page to open save, share and copy options';
 
   @override
   String get readerVolumeKeys => 'Τα πλήκτρα έντασης γυρίζουν σελίδες';

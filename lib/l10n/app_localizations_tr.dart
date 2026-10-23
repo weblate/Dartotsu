@@ -700,6 +700,9 @@ class AppLocalizationsTr extends AppLocalizations {
   String get imageTitleCover => 'Kapak';
 
   @override
+  String get imageTitlePage => 'Page';
+
+  @override
   String get imageTitleBanner => 'Banner';
 
   @override
@@ -5185,6 +5188,13 @@ class AppLocalizationsTr extends AppLocalizations {
   @override
   String get readerCropBordersDesc =>
       'Sayfalardaki boş beyaz ya da siyah kenarları kes';
+
+  @override
+  String get readerLongPressSave => 'Hold a page to save it';
+
+  @override
+  String get readerLongPressSaveDesc =>
+      'Long press a page to open save, share and copy options';
 
   @override
   String get readerVolumeKeys => 'Ses tuşları sayfa çevirir';

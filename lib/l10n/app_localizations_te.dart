@@ -702,6 +702,9 @@ class AppLocalizationsTe extends AppLocalizations {
   String get imageTitleCover => 'కవర్';
 
   @override
+  String get imageTitlePage => 'Page';
+
+  @override
   String get imageTitleBanner => 'బ్యానర్';
 
   @override
@@ -5199,6 +5202,13 @@ class AppLocalizationsTe extends AppLocalizations {
   @override
   String get readerCropBordersDesc =>
       'పేజీల్లో ఖాళీ తెలుపు లేదా నలుపు మార్జిన్లు కత్తిరించు';
+
+  @override
+  String get readerLongPressSave => 'Hold a page to save it';
+
+  @override
+  String get readerLongPressSaveDesc =>
+      'Long press a page to open save, share and copy options';
 
   @override
   String get readerVolumeKeys => 'వాల్యూమ్ కీలతో పేజీలు తిప్పు';

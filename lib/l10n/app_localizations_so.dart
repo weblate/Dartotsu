@@ -708,6 +708,9 @@ class AppLocalizationsSo extends AppLocalizations {
   String get imageTitleCover => 'Dabool';
 
   @override
+  String get imageTitlePage => 'Page';
+
+  @override
   String get imageTitleBanner => 'Banner';
 
   @override
@@ -5207,6 +5210,13 @@ class AppLocalizationsSo extends AppLocalizations {
   @override
   String get readerCropBordersDesc =>
       'Ka jar baaxadaha madhan ee cad ama madow boggaga';
+
+  @override
+  String get readerLongPressSave => 'Hold a page to save it';
+
+  @override
+  String get readerLongPressSaveDesc =>
+      'Long press a page to open save, share and copy options';
 
   @override
   String get readerVolumeKeys => 'Furayaasha codku wuxuu rogaa boggaga';

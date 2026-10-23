@@ -1433,6 +1433,12 @@ abstract class AppLocalizations {
   /// **'Cover'**
   String get imageTitleCover;
 
+  /// No description provided for @imageTitlePage.
+  ///
+  /// In en, this message translates to:
+  /// **'Page'**
+  String get imageTitlePage;
+
   /// No description provided for @imageTitleBanner.
   ///
   /// In en, this message translates to:
@@ -9478,6 +9484,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Trim blank white or black margins from pages'**
   String get readerCropBordersDesc;
+
+  /// No description provided for @readerLongPressSave.
+  ///
+  /// In en, this message translates to:
+  /// **'Hold a page to save it'**
+  String get readerLongPressSave;
+
+  /// No description provided for @readerLongPressSaveDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Long press a page to open save, share and copy options'**
+  String get readerLongPressSaveDesc;
 
   /// No description provided for @readerVolumeKeys.
   ///

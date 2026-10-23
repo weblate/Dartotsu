@@ -704,6 +704,9 @@ class AppLocalizationsMl extends AppLocalizations {
   String get imageTitleCover => 'കവർ';
 
   @override
+  String get imageTitlePage => 'Page';
+
+  @override
   String get imageTitleBanner => 'ബാനർ';
 
   @override
@@ -5223,6 +5226,13 @@ class AppLocalizationsMl extends AppLocalizations {
   @override
   String get readerCropBordersDesc =>
       'പേജുകളിലെ ശൂന്യമായ വെള്ളയോ കറുപ്പോ മാർജിനുകൾ വെട്ടിമാറ്റൂ';
+
+  @override
+  String get readerLongPressSave => 'Hold a page to save it';
+
+  @override
+  String get readerLongPressSaveDesc =>
+      'Long press a page to open save, share and copy options';
 
   @override
   String get readerVolumeKeys => 'വോളിയം കീകൾ കൊണ്ട് പേജ് മറിക്കൂ';

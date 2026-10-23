@@ -680,6 +680,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get imageTitleCover => '封面';
 
   @override
+  String get imageTitlePage => 'Page';
+
+  @override
   String get imageTitleBanner => '横幅';
 
   @override
@@ -5053,6 +5056,13 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get readerCropBordersDesc => '裁掉页面上空白的白边或黑边';
+
+  @override
+  String get readerLongPressSave => 'Hold a page to save it';
+
+  @override
+  String get readerLongPressSaveDesc =>
+      'Long press a page to open save, share and copy options';
 
   @override
   String get readerVolumeKeys => '音量键翻页';

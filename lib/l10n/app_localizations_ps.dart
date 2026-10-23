@@ -694,6 +694,9 @@ class AppLocalizationsPs extends AppLocalizations {
   String get imageTitleCover => 'پوښ';
 
   @override
+  String get imageTitlePage => 'Page';
+
+  @override
   String get imageTitleBanner => 'بینر';
 
   @override
@@ -5166,6 +5169,13 @@ class AppLocalizationsPs extends AppLocalizations {
   @override
   String get readerCropBordersDesc =>
       'له پاڼو څخه خالي سپین یا تور حاشیې پرې کړه';
+
+  @override
+  String get readerLongPressSave => 'Hold a page to save it';
+
+  @override
+  String get readerLongPressSaveDesc =>
+      'Long press a page to open save, share and copy options';
 
   @override
   String get readerVolumeKeys => 'د غږ کیلي پاڼې اړوي';

@@ -698,6 +698,9 @@ class AppLocalizationsId extends AppLocalizations {
   String get imageTitleCover => 'Sampul';
 
   @override
+  String get imageTitlePage => 'Page';
+
+  @override
   String get imageTitleBanner => 'Banner';
 
   @override
@@ -5183,6 +5186,13 @@ class AppLocalizationsId extends AppLocalizations {
   @override
   String get readerCropBordersDesc =>
       'Pangkas margin putih atau hitam kosong dari halaman';
+
+  @override
+  String get readerLongPressSave => 'Hold a page to save it';
+
+  @override
+  String get readerLongPressSaveDesc =>
+      'Long press a page to open save, share and copy options';
 
   @override
   String get readerVolumeKeys => 'Tombol volume ganti halaman';

@@ -698,6 +698,9 @@ class AppLocalizationsSa extends AppLocalizations {
   String get imageTitleCover => 'आवरणम्';
 
   @override
+  String get imageTitlePage => 'Page';
+
+  @override
   String get imageTitleBanner => 'बैनर्';
 
   @override
@@ -5181,6 +5184,13 @@ class AppLocalizationsSa extends AppLocalizations {
   @override
   String get readerCropBordersDesc =>
       'पृष्ठेभ्यः रिक्तान् श्वेतान् कृष्णान् वा प्रान्तान् कर्तय';
+
+  @override
+  String get readerLongPressSave => 'Hold a page to save it';
+
+  @override
+  String get readerLongPressSaveDesc =>
+      'Long press a page to open save, share and copy options';
 
   @override
   String get readerVolumeKeys => 'ध्वनि-कुञ्जिकाभिः पृष्ठं परिवर्तय';

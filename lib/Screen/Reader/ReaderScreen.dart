@@ -154,6 +154,7 @@ class _ReaderScreenState extends State<ReaderScreen>
     final scoped = ReaderCropScope(
       enabled: settings.cropBorders,
       quality: settings.filterQuality,
+      onLongPress: settings.longPressSave ? state.openPageSheet : null,
       child: view,
     );
     return filter == null

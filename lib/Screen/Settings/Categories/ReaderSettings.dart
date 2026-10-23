@@ -148,6 +148,13 @@ List<Setting> mangaReaderRows(
       (v) => update((x) => x.cropBorders = v),
     ),
     switchSetting(
+      getString.readerLongPressSave,
+      getString.readerLongPressSaveDesc,
+      Icons.touch_app_rounded,
+      s.longPressSave,
+      (v) => update((x) => x.longPressSave = v),
+    ),
+    switchSetting(
       getString.readerAutoNext,
       getString.readerAutoNextDesc,
       Icons.skip_next_rounded,

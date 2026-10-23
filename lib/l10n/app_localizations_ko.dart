@@ -680,6 +680,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get imageTitleCover => '커버';
 
   @override
+  String get imageTitlePage => 'Page';
+
+  @override
   String get imageTitleBanner => '배너';
 
   @override
@@ -5063,6 +5066,13 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get readerCropBordersDesc => '페이지의 빈 흰색·검은색 여백을 잘라내요';
+
+  @override
+  String get readerLongPressSave => 'Hold a page to save it';
+
+  @override
+  String get readerLongPressSaveDesc =>
+      'Long press a page to open save, share and copy options';
 
   @override
   String get readerVolumeKeys => '볼륨 키로 페이지 넘기기';

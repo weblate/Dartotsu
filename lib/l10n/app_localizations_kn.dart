@@ -700,6 +700,9 @@ class AppLocalizationsKn extends AppLocalizations {
   String get imageTitleCover => 'ಕವರ್';
 
   @override
+  String get imageTitlePage => 'Page';
+
+  @override
   String get imageTitleBanner => 'ಬ್ಯಾನರ್';
 
   @override
@@ -5187,6 +5190,13 @@ class AppLocalizationsKn extends AppLocalizations {
   @override
   String get readerCropBordersDesc =>
       'ಪುಟಗಳ ಖಾಲಿ ಬಿಳಿ ಅಥವಾ ಕಪ್ಪು ಅಂಚುಗಳನ್ನು ಟ್ರಿಮ್ ಮಾಡು';
+
+  @override
+  String get readerLongPressSave => 'Hold a page to save it';
+
+  @override
+  String get readerLongPressSaveDesc =>
+      'Long press a page to open save, share and copy options';
 
   @override
   String get readerVolumeKeys => 'ವಾಲ್ಯೂಮ್ ಕೀಗಳಿಂದ ಪುಟ ತಿರುಗಿಸು';

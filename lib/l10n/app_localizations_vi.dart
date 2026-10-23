@@ -698,6 +698,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get imageTitleCover => 'Ảnh bìa';
 
   @override
+  String get imageTitlePage => 'Page';
+
+  @override
   String get imageTitleBanner => 'Banner';
 
   @override
@@ -5165,6 +5168,13 @@ class AppLocalizationsVi extends AppLocalizations {
   @override
   String get readerCropBordersDesc =>
       'Cắt bỏ lề trắng hoặc đen trống ở các trang';
+
+  @override
+  String get readerLongPressSave => 'Hold a page to save it';
+
+  @override
+  String get readerLongPressSaveDesc =>
+      'Long press a page to open save, share and copy options';
 
   @override
   String get readerVolumeKeys => 'Phím âm lượng lật trang';

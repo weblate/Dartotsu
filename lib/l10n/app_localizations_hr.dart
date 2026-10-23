@@ -702,6 +702,9 @@ class AppLocalizationsHr extends AppLocalizations {
   String get imageTitleCover => 'Naslovnica';
 
   @override
+  String get imageTitlePage => 'Page';
+
+  @override
   String get imageTitleBanner => 'Banner';
 
   @override
@@ -5204,6 +5207,13 @@ class AppLocalizationsHr extends AppLocalizations {
   @override
   String get readerCropBordersDesc =>
       'Odreži prazne bijele ili crne rubove sa stranica';
+
+  @override
+  String get readerLongPressSave => 'Hold a page to save it';
+
+  @override
+  String get readerLongPressSaveDesc =>
+      'Long press a page to open save, share and copy options';
 
   @override
   String get readerVolumeKeys => 'Tipke za glasnoću okreću stranice';

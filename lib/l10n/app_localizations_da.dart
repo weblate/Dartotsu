@@ -697,6 +697,9 @@ class AppLocalizationsDa extends AppLocalizations {
   String get imageTitleCover => 'Cover';
 
   @override
+  String get imageTitlePage => 'Page';
+
+  @override
   String get imageTitleBanner => 'Banner';
 
   @override
@@ -5189,6 +5192,13 @@ class AppLocalizationsDa extends AppLocalizations {
   @override
   String get readerCropBordersDesc =>
       'Fjern tomme hvide eller sorte marginer fra siderne';
+
+  @override
+  String get readerLongPressSave => 'Hold a page to save it';
+
+  @override
+  String get readerLongPressSaveDesc =>
+      'Long press a page to open save, share and copy options';
 
   @override
   String get readerVolumeKeys => 'Lydstyrketaster vender sider';

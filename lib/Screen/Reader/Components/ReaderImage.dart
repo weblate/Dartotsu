@@ -14,13 +14,21 @@ import '../../../Utils/Extensions/ContextExtensions.dart';
 class ReaderCropScope extends InheritedWidget {
   final bool enabled;
   final String quality;
+  final void Function(BuildContext context, PageUrl page)? onLongPress;
 
   const ReaderCropScope({
     super.key,
     required this.enabled,
     this.quality = 'medium',
+    this.onLongPress,
     required super.child,
   });
+
+  static void Function(BuildContext context, PageUrl page)? longPressOf(
+    BuildContext context,
+  ) => context
+      .dependOnInheritedWidgetOfExactType<ReaderCropScope>()
+      ?.onLongPress;
 
   static bool of(BuildContext context) =>
       context.dependOnInheritedWidgetOfExactType<ReaderCropScope>()?.enabled ??
@@ -32,7 +40,9 @@ class ReaderCropScope extends InheritedWidget {
 
   @override
   bool updateShouldNotify(ReaderCropScope old) =>
-      old.enabled != enabled || old.quality != quality;
+      old.enabled != enabled ||
+      old.quality != quality ||
+      (old.onLongPress == null) != (onLongPress == null);
 }
 
 class ReaderImage extends StatefulWidget {
@@ -231,22 +241,34 @@ class _ReaderImageState extends State<ReaderImage> {
         );
       },
     );
-    if (rect == null) return image;
+    if (rect == null) return _press(image);
     final wf = rect.width;
     final hf = rect.height;
-    return FittedBox(
-      fit: widget.fit,
-      child: ClipRect(
-        child: Align(
-          alignment: Alignment(
-            wf >= 1 ? 0 : -1 + 2 * rect.left / (1 - wf),
-            hf >= 1 ? 0 : -1 + 2 * rect.top / (1 - hf),
+    return _press(
+      FittedBox(
+        fit: widget.fit,
+        child: ClipRect(
+          child: Align(
+            alignment: Alignment(
+              wf >= 1 ? 0 : -1 + 2 * rect.left / (1 - wf),
+              hf >= 1 ? 0 : -1 + 2 * rect.top / (1 - hf),
+            ),
+            widthFactor: wf,
+            heightFactor: hf,
+            child: image,
           ),
-          widthFactor: wf,
-          heightFactor: hf,
-          child: image,
         ),
       ),
+    );
+  }
+
+  Widget _press(Widget child) {
+    final handler = ReaderCropScope.longPressOf(context);
+    if (handler == null) return child;
+    return GestureDetector(
+      behavior: HitTestBehavior.deferToChild,
+      onLongPress: () => handler(context, widget.page),
+      child: child,
     );
   }
 

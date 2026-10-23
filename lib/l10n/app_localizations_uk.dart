@@ -698,6 +698,9 @@ class AppLocalizationsUk extends AppLocalizations {
   String get imageTitleCover => 'Обкладинка';
 
   @override
+  String get imageTitlePage => 'Page';
+
+  @override
   String get imageTitleBanner => 'Банер';
 
   @override
@@ -5206,6 +5209,13 @@ class AppLocalizationsUk extends AppLocalizations {
   @override
   String get readerCropBordersDesc =>
       'Прибирати порожні білі чи чорні поля зі сторінок';
+
+  @override
+  String get readerLongPressSave => 'Hold a page to save it';
+
+  @override
+  String get readerLongPressSaveDesc =>
+      'Long press a page to open save, share and copy options';
 
   @override
   String get readerVolumeKeys => 'Гучність гортає сторінки';

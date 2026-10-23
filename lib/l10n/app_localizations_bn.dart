@@ -692,6 +692,9 @@ class AppLocalizationsBn extends AppLocalizations {
   String get imageTitleCover => 'কভার';
 
   @override
+  String get imageTitlePage => 'Page';
+
+  @override
   String get imageTitleBanner => 'ব্যানার';
 
   @override
@@ -5155,6 +5158,13 @@ class AppLocalizationsBn extends AppLocalizations {
   @override
   String get readerCropBordersDesc =>
       'পাতা থেকে ফাঁকা সাদা বা কালো মার্জিন ছেঁটে ফেলো';
+
+  @override
+  String get readerLongPressSave => 'Hold a page to save it';
+
+  @override
+  String get readerLongPressSaveDesc =>
+      'Long press a page to open save, share and copy options';
 
   @override
   String get readerVolumeKeys => 'ভলিউম কী দিয়ে পাতা ওল্টাও';

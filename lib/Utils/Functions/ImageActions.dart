@@ -26,8 +26,19 @@ Future<File> downloadImage(String url, {required String name}) async {
   return part.rename(target.path);
 }
 
-Future<File> saveImage(String url, {required String name}) async {
-  final source = await downloadImage(url, name: name);
+Future<File> saveImage(String url, {required String name}) async =>
+    saveImageFile(await downloadImage(url, name: name), name: name);
+
+Future<File> namedImageCopy(File source, {required String name}) async {
+  final temp = (await StorageManager.getTmpDirectory())!;
+  final head = await source.openRead(0, 16).expand((b) => b).toList();
+  final ext = sniffImageExtension(head) ?? 'jpg';
+  final target = File(p.join(temp.path, '${imageFileName(name)}.$ext'));
+  if (await target.exists()) await target.delete();
+  return source.copy(target.path);
+}
+
+Future<File> saveImageFile(File source, {required String name}) async {
   final dir = await StorageManager.getDirectory(subPath: 'images');
   if (dir == null) throw const FileSystemException('No storage available');
   final ext = p.extension(source.path);

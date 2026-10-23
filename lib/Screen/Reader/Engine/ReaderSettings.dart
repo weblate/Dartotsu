@@ -84,6 +84,8 @@ class ReaderSettings {
   set orientation(String v) => _v['orientation'] = v;
   bool get cropBorders => _get('cropBorders', false);
   set cropBorders(bool v) => _v['cropBorders'] = v;
+  bool get longPressSave => _get('longPressSave', true);
+  set longPressSave(bool v) => _v['longPressSave'] = v;
   bool get volumeKeys => _get('volumeKeys', false);
   set volumeKeys(bool v) => _v['volumeKeys'] = v;
   int get autoScrollSpeed => _get('autoScrollSpeed', 4);

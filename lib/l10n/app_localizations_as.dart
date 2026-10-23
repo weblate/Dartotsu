@@ -690,6 +690,9 @@ class AppLocalizationsAs extends AppLocalizations {
   String get imageTitleCover => 'কভাৰ';
 
   @override
+  String get imageTitlePage => 'Page';
+
+  @override
   String get imageTitleBanner => 'বেনাৰ';
 
   @override
@@ -5154,6 +5157,13 @@ class AppLocalizationsAs extends AppLocalizations {
   @override
   String get readerCropBordersDesc =>
       'পৃষ্ঠাৰ পৰা খালী বগা বা ক’লা মাৰ্জিন কাটি পেলোৱা';
+
+  @override
+  String get readerLongPressSave => 'Hold a page to save it';
+
+  @override
+  String get readerLongPressSaveDesc =>
+      'Long press a page to open save, share and copy options';
 
   @override
   String get readerVolumeKeys => 'ভলিউম কীৰে পৃষ্ঠা লুটিওৱা';

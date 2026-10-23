@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:io';
 
 import 'package:flutter/material.dart';
 
@@ -20,9 +21,20 @@ void showImageSheet(
   required String? url,
   required String name,
   String? title,
+  Future<File?> Function()? file,
 }) {
-  if (url == null || url.isEmpty || !url.startsWith('http')) return;
+  final remote = url != null && url.startsWith('http');
+  if (file == null && !remote) return;
   final busy = false.live;
+
+  Future<File> source() async {
+    if (file != null) {
+      final found = await file();
+      if (found == null) throw const FileSystemException('Image unavailable');
+      return namedImageCopy(found, name: name);
+    }
+    return downloadImage(url!, name: name);
+  }
 
   Future<void> run(Future<void> Function() job) async {
     if (busy.value) return;
@@ -50,7 +62,9 @@ void showImageSheet(
               constraints: const BoxConstraints(maxHeight: 280),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(16),
-                child: cachedNetworkImage(imageUrl: url, fit: BoxFit.contain),
+                child: file != null
+                    ? _FileImage(file)
+                    : cachedNetworkImage(imageUrl: url!, fit: BoxFit.contain),
               ),
             ),
             const SizedBox(height: 12),
@@ -59,7 +73,7 @@ void showImageSheet(
                 children: [
                   SheetTile(
                     tinted: true,
-                    radius: groupedRadius(0, 4),
+                    radius: groupedRadius(0, remote ? 4 : 2),
                     enabled: !busy.value,
                     leading: busy.value
                         ? const SizedBox(
@@ -71,10 +85,13 @@ void showImageSheet(
                     title: Text(getString.imageSave),
                     onTap: () => unawaited(
                       run(() async {
-                        final file = await saveImage(url, name: name);
+                        final saved = await saveImageFile(
+                          await source(),
+                          name: name,
+                        );
                         snackString(
-                          getString.imageSavedTo(file.path),
-                          clipboard: file.path,
+                          getString.imageSavedTo(saved.path),
+                          clipboard: saved.path,
                         );
                         if (sheet.mounted) popPage(sheet);
                       }),
@@ -82,37 +99,39 @@ void showImageSheet(
                   ),
                   SheetTile(
                     tinted: true,
-                    radius: groupedRadius(1, 4),
+                    radius: groupedRadius(1, remote ? 4 : 2),
                     enabled: !busy.value,
                     leading: const Icon(Icons.share_rounded),
                     title: Text(getString.share),
                     onTap: () => unawaited(
                       run(() async {
-                        final file = await downloadImage(url, name: name);
-                        shareFile(file.path, name);
+                        final shared = await source();
+                        shareFile(shared.path, name);
                       }),
                     ),
                   ),
-                  SheetTile(
-                    tinted: true,
-                    radius: groupedRadius(2, 4),
-                    leading: const Icon(Icons.link_rounded),
-                    title: Text(getString.copyLink),
-                    onTap: () {
-                      copyToClipboard(url, message: getString.linkCopied);
-                      popPage(sheet);
-                    },
-                  ),
-                  SheetTile(
-                    tinted: true,
-                    radius: groupedRadius(3, 4),
-                    leading: const Icon(Icons.open_in_browser_rounded),
-                    title: Text(getString.openInBrowser),
-                    onTap: () {
-                      unawaited(openLinkInBrowser(url));
-                      popPage(sheet);
-                    },
-                  ),
+                  if (remote)
+                    SheetTile(
+                      tinted: true,
+                      radius: groupedRadius(2, 4),
+                      leading: const Icon(Icons.link_rounded),
+                      title: Text(getString.copyLink),
+                      onTap: () {
+                        copyToClipboard(url, message: getString.linkCopied);
+                        popPage(sheet);
+                      },
+                    ),
+                  if (remote)
+                    SheetTile(
+                      tinted: true,
+                      radius: groupedRadius(3, 4),
+                      leading: const Icon(Icons.open_in_browser_rounded),
+                      title: Text(getString.openInBrowser),
+                      onTap: () {
+                        unawaited(openLinkInBrowser(url));
+                        popPage(sheet);
+                      },
+                    ),
                 ],
               ),
             ),
@@ -120,5 +139,30 @@ void showImageSheet(
         ),
       ),
     ),
+  );
+}
+
+class _FileImage extends StatelessWidget {
+  final Future<File?> Function() load;
+
+  const _FileImage(this.load);
+
+  @override
+  Widget build(BuildContext context) => FutureBuilder<File?>(
+    future: load(),
+    builder: (context, snap) {
+      final found = snap.data;
+      if (found == null) {
+        return SizedBox(
+          height: 160,
+          child: Center(
+            child: snap.connectionState == ConnectionState.done
+                ? const Icon(Icons.broken_image_rounded)
+                : const CircularProgressIndicator(strokeWidth: 2),
+          ),
+        );
+      }
+      return Image.file(found, fit: BoxFit.contain);
+    },
   );
 }

@@ -693,6 +693,9 @@ class AppLocalizationsFa extends AppLocalizations {
   String get imageTitleCover => 'کاور';
 
   @override
+  String get imageTitlePage => 'Page';
+
+  @override
   String get imageTitleBanner => 'بنر';
 
   @override
@@ -5154,6 +5157,13 @@ class AppLocalizationsFa extends AppLocalizations {
   @override
   String get readerCropBordersDesc =>
       'حاشیه‌های خالی سفید یا مشکی صفحه‌ها رو ببر';
+
+  @override
+  String get readerLongPressSave => 'Hold a page to save it';
+
+  @override
+  String get readerLongPressSaveDesc =>
+      'Long press a page to open save, share and copy options';
 
   @override
   String get readerVolumeKeys => 'ورق زدن با کلید صدا';
