@@ -392,6 +392,13 @@ class PlayerEngine {
     }
   }
 
+  static bool _blankFrame(Uint8List? png) {
+    if (png == null || png.length < 33) return true;
+    final data = ByteData.sublistView(png);
+    final pixels = data.getUint32(16) * data.getUint32(20);
+    return png.length < pixels / 64;
+  }
+
   Future<Uint8List?> captureFrame() async {
     Uint8List? shot;
     try {
@@ -399,16 +406,29 @@ class PlayerEngine {
     } catch (e) {
       logger('mpv screenshot failed: $e', tag: 'MPV');
     }
-    final blank = shot == null || shot.length < 6000;
+    final blank = _blankFrame(shot);
+    logger(
+      'Frame capture: ${shot?.length ?? 0} bytes, ${blank ? 'blank' : 'ok'}',
+      tag: 'MPV',
+    );
     final mpv = native;
     if (!blank || !Platform.isAndroid || mpv == null) return shot;
     final decoder = decoderValue(settings.decoder);
+    final at = position.value.inMilliseconds / 1000;
     try {
       await mpv.setProperty('hwdec', 'mediacodec-copy');
-      await mpv.command(['seek', '0', 'relative+exact']);
-      await Future<void>.delayed(const Duration(milliseconds: 600));
+      await mpv.command(['seek', '$at', 'absolute+exact']);
+      await Future<void>.delayed(const Duration(milliseconds: 800));
       final copy = await player.screenshot(format: 'image/png');
-      if (copy != null && copy.length >= 6000) shot = copy;
+      logger(
+        'Copy-decoded frame capture: ${copy?.length ?? 0} bytes, '
+        '${_blankFrame(copy) ? 'blank' : 'ok'}',
+        tag: 'MPV',
+      );
+      if (copy != null &&
+          (!_blankFrame(copy) || shot == null || copy.length > shot.length)) {
+        shot = copy;
+      }
     } catch (e) {
       logger('mpv copy screenshot failed: $e', tag: 'MPV');
     } finally {
