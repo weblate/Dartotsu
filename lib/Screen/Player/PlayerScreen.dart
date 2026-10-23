@@ -26,6 +26,7 @@ import 'Components/PlayerEpisodes.dart';
 import 'Components/PlayerIndicators.dart';
 import '../Together/TogetherRoomView.dart';
 import 'Components/PlayerSheets.dart';
+import 'Components/SkipSubmitSheet.dart';
 import 'Components/PlayerSubtitleView.dart';
 import 'PlayerState.dart';
 
@@ -460,6 +461,12 @@ class _PlayerScreenState extends State<PlayerScreen>
               Icons.list_alt_rounded,
               getString.playerChapters,
               () => showChaptersSheet(context, state),
+            ),
+          if (state.canSubmitSkips)
+            chip(
+              Icons.cloud_upload_rounded,
+              getString.playerSkipSubmit,
+              () => showSkipSubmitSheet(context, state),
             ),
           Watch(() {
             final together = state.together;

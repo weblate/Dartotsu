@@ -2848,6 +2848,30 @@
   "@playerAddAudio": {},
   "playerChapters": "Chapters",
   "@playerChapters": {},
+  "playerSkipSubmit": "Submit skip times",
+  "@playerSkipSubmit": {},
+  "playerSkipSubmitDesc": "Mark where the opening, ending or recap starts and ends in this episode and share it with AniSkip, so everyone gets the skip button.",
+  "@playerSkipSubmitDesc": {},
+  "playerSkipStart": "Start",
+  "@playerSkipStart": {},
+  "playerSkipEnd": "End",
+  "@playerSkipEnd": {},
+  "playerSkipUseNow": "Use current position",
+  "@playerSkipUseNow": {},
+  "playerSkipSend": "Submit to AniSkip",
+  "@playerSkipSend": {},
+  "playerSkipSent": "Skip times submitted to AniSkip, thank you",
+  "@playerSkipSent": {},
+  "playerSkipFailed": "AniSkip refused the skip times: {error}",
+  "@playerSkipFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "playerSkipNoMal": "This title has no MyAnimeList id, AniSkip can't take it",
+  "@playerSkipNoMal": {},
   "playerNoChapters": "No chapters",
   "@playerNoChapters": {},
   "playerTimestamp": "Timestamp",

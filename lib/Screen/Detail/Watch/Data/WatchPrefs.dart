@@ -27,6 +27,8 @@ const watchMarkOnLongPressPref = Pref(
 
 const watchResumeShelfPref = Pref('watchResumeShelf', true, PrefLocation.OTHER);
 
+const aniSkipSubmitterPref = Pref('aniSkipSubmitter', '', PrefLocation.OTHER);
+
 const trackAnimePref = Pref('trackProgressAnime', 'ask', PrefLocation.OTHER);
 const trackMangaPref = Pref('trackProgressManga', 'ask', PrefLocation.OTHER);
 

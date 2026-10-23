@@ -10523,6 +10523,60 @@ abstract class AppLocalizations {
   /// **'Chapters'**
   String get playerChapters;
 
+  /// No description provided for @playerSkipSubmit.
+  ///
+  /// In en, this message translates to:
+  /// **'Submit skip times'**
+  String get playerSkipSubmit;
+
+  /// No description provided for @playerSkipSubmitDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Mark where the opening, ending or recap starts and ends in this episode and share it with AniSkip, so everyone gets the skip button.'**
+  String get playerSkipSubmitDesc;
+
+  /// No description provided for @playerSkipStart.
+  ///
+  /// In en, this message translates to:
+  /// **'Start'**
+  String get playerSkipStart;
+
+  /// No description provided for @playerSkipEnd.
+  ///
+  /// In en, this message translates to:
+  /// **'End'**
+  String get playerSkipEnd;
+
+  /// No description provided for @playerSkipUseNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Use current position'**
+  String get playerSkipUseNow;
+
+  /// No description provided for @playerSkipSend.
+  ///
+  /// In en, this message translates to:
+  /// **'Submit to AniSkip'**
+  String get playerSkipSend;
+
+  /// No description provided for @playerSkipSent.
+  ///
+  /// In en, this message translates to:
+  /// **'Skip times submitted to AniSkip, thank you'**
+  String get playerSkipSent;
+
+  /// No description provided for @playerSkipFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'AniSkip refused the skip times: {error}'**
+  String playerSkipFailed(String error);
+
+  /// No description provided for @playerSkipNoMal.
+  ///
+  /// In en, this message translates to:
+  /// **'This title has no MyAnimeList id, AniSkip can\'t take it'**
+  String get playerSkipNoMal;
+
   /// No description provided for @playerNoChapters.
   ///
   /// In en, this message translates to:

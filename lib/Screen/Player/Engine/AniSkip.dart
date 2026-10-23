@@ -1,6 +1,15 @@
+import 'dart:convert';
+import 'dart:math';
+
+import '../../../Core/NetworkManager/NetworkManager.dart';
+import '../../../Core/State/State.dart';
+import '../../../Logger.dart';
 import '../../Detail/Watch/Data/Providers/MetaHttp.dart';
+import '../../Detail/Watch/Data/WatchPrefs.dart';
 
 enum SkipKind { opening, ending, recap, other }
+
+const aniSkipTypes = ['op', 'ed', 'mixed-op', 'mixed-ed', 'recap'];
 
 class SkipStamp {
   final String name;
@@ -66,5 +75,69 @@ class AniSkip {
       tag: 'ANISKIP',
     );
     return parseAniSkip(body);
+  }
+
+  static String _submitter() {
+    var id = aniSkipSubmitterPref.value;
+    if (id.isNotEmpty) return id;
+    final random = Random.secure();
+    final bytes = List<int>.generate(16, (_) => random.nextInt(256));
+    bytes[6] = (bytes[6] & 0x0f) | 0x40;
+    bytes[8] = (bytes[8] & 0x3f) | 0x80;
+    final hex = [for (final b in bytes) b.toRadixString(16).padLeft(2, '0')];
+    id =
+        '${hex.sublist(0, 4).join()}-${hex.sublist(4, 6).join()}-'
+        '${hex.sublist(6, 8).join()}-${hex.sublist(8, 10).join()}-'
+        '${hex.sublist(10).join()}';
+    aniSkipSubmitterPref.value = id;
+    return id;
+  }
+
+  static Future<String?> submit({
+    required int malId,
+    required int episode,
+    required String type,
+    required double start,
+    required double end,
+    required double lengthSeconds,
+  }) async {
+    try {
+      final res = await find<NetworkManager>()
+          .post(
+            'https://api.aniskip.com/v2/skip-times/$malId/$episode',
+            data: {
+              'skipType': type,
+              'providerName': 'Dartotsu',
+              'startTime': double.parse(start.toStringAsFixed(3)),
+              'endTime': double.parse(end.toStringAsFixed(3)),
+              'episodeLength': double.parse(lengthSeconds.toStringAsFixed(3)),
+              'submitterId': _submitter(),
+            },
+            decodeJson: false,
+          )
+          .timeout(const Duration(seconds: 20));
+      if (res.statusCode == 200) return null;
+      final data = res.data;
+      var message = 'HTTP ${res.statusCode}';
+      try {
+        final json = data is String ? jsonDecode(data) : data;
+        if (json is Map && json['message'] is String) {
+          message = json['message'] as String;
+        }
+      } catch (_) {}
+      logger(
+        'AniSkip submit -> $message',
+        logLevel: LogLevel.error,
+        tag: 'ANISKIP',
+      );
+      return message;
+    } catch (e) {
+      logger(
+        'AniSkip submit failed: $e',
+        logLevel: LogLevel.error,
+        tag: 'ANISKIP',
+      );
+      return '$e';
+    }
   }
 }

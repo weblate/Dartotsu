@@ -1389,6 +1389,9 @@ class PlayerState extends ScreenState {
 
   void openNext() {
     if (hasNext) unawaited(loadItem(index.value + 1));
+  bool get canSubmitSkips =>
+      request.media?.isAnime == true && request.service != null;
+
   }
 
   void openPrevious() {

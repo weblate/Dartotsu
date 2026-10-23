@@ -5726,6 +5726,37 @@ class AppLocalizationsNe extends AppLocalizations {
   String get playerChapters => 'च्याप्टर';
 
   @override
+  String get playerSkipSubmit => 'Submit skip times';
+
+  @override
+  String get playerSkipSubmitDesc =>
+      'Mark where the opening, ending or recap starts and ends in this episode and share it with AniSkip, so everyone gets the skip button.';
+
+  @override
+  String get playerSkipStart => 'Start';
+
+  @override
+  String get playerSkipEnd => 'End';
+
+  @override
+  String get playerSkipUseNow => 'Use current position';
+
+  @override
+  String get playerSkipSend => 'Submit to AniSkip';
+
+  @override
+  String get playerSkipSent => 'Skip times submitted to AniSkip, thank you';
+
+  @override
+  String playerSkipFailed(String error) {
+    return 'AniSkip refused the skip times: $error';
+  }
+
+  @override
+  String get playerSkipNoMal =>
+      'This title has no MyAnimeList id, AniSkip can\'t take it';
+
+  @override
   String get playerNoChapters => 'च्याप्टर छैन';
 
   @override

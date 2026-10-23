@@ -10,6 +10,7 @@ import '../Engine/Pip.dart';
 import '../PlayerState.dart';
 import 'PlayerSeekBar.dart';
 import 'PlayerSheets.dart';
+import 'SkipSubmitSheet.dart';
 
 class PlayerControls extends StatelessWidget {
   final PlayerState state;
@@ -481,6 +482,12 @@ class PlayerControls extends StatelessWidget {
                   _icon(
                     Icons.fit_screen_rounded,
                     state.cycleFit,
+                  if (state.canSubmitSkips)
+                    _icon(
+                      Icons.cloud_upload_rounded,
+                      () => showSkipSubmitSheet(context, state),
+                      tooltip: getString.playerSkipSubmit,
+                    ),
                     tooltip: getString.playerResize,
                   ),
                   _icon(
