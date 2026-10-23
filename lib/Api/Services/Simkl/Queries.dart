@@ -92,7 +92,6 @@ class SimklSection {
 List<SimklSection> simklSections(MediaType type) {
   if (type != MediaType.anime) {
     return const [
-      SimklSection('Trending Movies Today', 'movies/today_100'),
       SimklSection('Trending Shows Today', 'tv/today_100'),
       SimklSection('Trending Movies This Week', 'movies/week_100'),
       SimklSection('Trending Shows This Week', 'tv/week_100'),
@@ -110,6 +109,7 @@ List<SimklSection> simklSections(MediaType type) {
       SimklSection.country('Thai Dramas', 'th'),
       SimklSection.country('Turkish Dramas', 'tr'),
       SimklSection.tvGenre('Mini Series', 'Mini-Series'),
+      SimklSection('Trending Movies Today', 'movies/today_100'),
     ];
   }
   return const [

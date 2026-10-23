@@ -20,7 +20,6 @@ const kSimklAnimeSections = <String, bool>{
 };
 
 const kSimklMovieSections = <String, bool>{
-  'Trending Movies Today': true,
   'Trending Shows Today': true,
   'Trending Movies This Week': false,
   'Trending Shows This Week': false,
@@ -34,6 +33,7 @@ const kSimklMovieSections = <String, bool>{
   'Thai Dramas': true,
   'Turkish Dramas': false,
   'Mini Series': false,
+  'Trending Movies Today': true,
 };
 
 class SimklPref {
