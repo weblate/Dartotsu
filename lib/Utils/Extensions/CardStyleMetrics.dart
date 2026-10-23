@@ -18,8 +18,8 @@ extension CardStyleMetrics on CardStyle {
       ? 20
       : 0;
 
-  /// bodyLarge renders at a 24px line height (Material3 default, Poppins has no
-  /// override).
+  /// bodyLarge reserves 24px per line, an upper bound for the font's own line
+  /// height.
   double get _titleHeight => lines * 24;
 
   /// Height a horizontal shelf must reserve for one card in this style.

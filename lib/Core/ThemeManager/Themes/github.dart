@@ -46,7 +46,7 @@ final ThemeData githubLightTheme = ThemeData(
     ),
     bodyLarge: TextStyle(color: Color(0xFF1F2328)),
   ),
-  fontFamily: 'Poppins',
+  fontFamily: 'Manrope',
 );
 
 // GitHub Dark — https://github.com/primer/github-vscode-theme
@@ -95,5 +95,5 @@ final ThemeData githubDarkTheme = ThemeData(
     ),
     bodyLarge: TextStyle(color: Color(0xFFC9D1D9)),
   ),
-  fontFamily: 'Poppins',
+  fontFamily: 'Manrope',
 );

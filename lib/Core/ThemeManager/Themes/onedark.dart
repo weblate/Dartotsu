@@ -46,7 +46,7 @@ final ThemeData oneDarkLightTheme = ThemeData(
     ),
     bodyLarge: TextStyle(color: Color(0xFF383A42)),
   ),
-  fontFamily: 'Poppins',
+  fontFamily: 'Manrope',
 );
 
 // Atom One Dark
@@ -95,5 +95,5 @@ final ThemeData oneDarkDarkTheme = ThemeData(
     ),
     bodyLarge: TextStyle(color: Color(0xFFABB2BF)),
   ),
-  fontFamily: 'Poppins',
+  fontFamily: 'Manrope',
 );

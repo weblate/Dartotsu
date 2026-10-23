@@ -146,8 +146,8 @@ class PlayerEngine {
         logLevel: MPVLogLevel.warn,
         bufferSize: settings.bufferMb * 1024 * 1024,
         libass: true,
-        libassAndroidFontName: 'Poppins',
-        libassAndroidFont: 'assets/fonts/poppins.ttf',
+        libassAndroidFontName: 'Manrope',
+        libassAndroidFont: 'assets/fonts/manrope_medium.ttf',
       ),
     );
     video = VideoController(

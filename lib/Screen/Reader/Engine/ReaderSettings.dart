@@ -1,4 +1,5 @@
 import '../../../Core/Preferences/PrefManager.dart';
+import '../../../Core/Fonts/AppFonts.dart';
 import '../../../Core/State/State.dart';
 
 const _globalKey = 'readerSettings';
@@ -95,7 +96,7 @@ class ReaderSettings {
 
   int get novelSize => _get('novelSize', 18);
   set novelSize(int v) => _v['novelSize'] = v;
-  String get novelFont => _get('novelFont', 'Poppins');
+  String get novelFont => migrateFont(_get('novelFont', bundledFont));
   set novelFont(String v) => _v['novelFont'] = v;
   double get novelLineHeight => _get('novelLineHeight', 1.7);
   set novelLineHeight(double v) => _v['novelLineHeight'] = v;

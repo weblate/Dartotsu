@@ -46,7 +46,7 @@ final ThemeData monokaiLightTheme = ThemeData(
     ),
     bodyLarge: TextStyle(color: Color(0xFF272822)),
   ),
-  fontFamily: 'Poppins',
+  fontFamily: 'Manrope',
 );
 
 // Monokai Classic — https://monokai.pro/
@@ -95,5 +95,5 @@ final ThemeData monokaiDarkTheme = ThemeData(
     ),
     bodyLarge: TextStyle(color: Color(0xFFF8F8F2)),
   ),
-  fontFamily: 'Poppins',
+  fontFamily: 'Manrope',
 );

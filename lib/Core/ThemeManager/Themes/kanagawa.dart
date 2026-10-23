@@ -46,7 +46,7 @@ final ThemeData kanagawaLightTheme = ThemeData(
     ),
     bodyLarge: TextStyle(color: Color(0xFF545464)),
   ),
-  fontFamily: 'Poppins',
+  fontFamily: 'Manrope',
 );
 
 // Kanagawa Wave — https://github.com/rebelot/kanagawa.nvim
@@ -95,5 +95,5 @@ final ThemeData kanagawaDarkTheme = ThemeData(
     ),
     bodyLarge: TextStyle(color: Color(0xFFDCD7BA)),
   ),
-  fontFamily: 'Poppins',
+  fontFamily: 'Manrope',
 );

@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import '../../../Core/Preferences/PrefManager.dart';
+import '../../../Core/Fonts/AppFonts.dart';
 import '../../../Core/State/State.dart';
 import 'ColorPresets.dart';
 
@@ -90,7 +91,7 @@ class PlayerSettings {
   set subtitleSize(int v) => _v['subtitleSize'] = v;
   int get subtitleColor => _get('subtitleColor', 0xFFFFFFFF);
   set subtitleColor(int v) => _v['subtitleColor'] = v;
-  String get subtitleFont => _get('subtitleFont', 'Poppins');
+  String get subtitleFont => migrateFont(_get('subtitleFont', bundledFont));
   set subtitleFont(String v) => _v['subtitleFont'] = v;
   int get subtitleBackgroundColor =>
       _get('subtitleBackgroundColor', 0x00000000);

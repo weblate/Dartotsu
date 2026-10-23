@@ -24,7 +24,7 @@ ThemeData getCustomLightTheme(int color) {
       ),
       bodyLarge: TextStyle(color: theme.onSurface),
     ),
-    fontFamily: 'Poppins',
+    fontFamily: 'Manrope',
   );
 }
 
@@ -51,7 +51,7 @@ ThemeData getCustomDarkTheme(int color) {
       ),
       bodyLarge: TextStyle(color: theme.onSurface),
     ),
-    fontFamily: 'Poppins',
+    fontFamily: 'Manrope',
   );
 }
 

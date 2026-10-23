@@ -46,7 +46,7 @@ final ThemeData draculaLightTheme = ThemeData(
     ),
     bodyLarge: TextStyle(color: Color(0xFF282A36)),
   ),
-  fontFamily: 'Poppins',
+  fontFamily: 'Manrope',
 );
 
 // Dracula — https://draculatheme.com/contribute
@@ -95,5 +95,5 @@ final ThemeData draculaDarkTheme = ThemeData(
     ),
     bodyLarge: TextStyle(color: Color(0xFFF8F8F2)),
   ),
-  fontFamily: 'Poppins',
+  fontFamily: 'Manrope',
 );

@@ -46,7 +46,7 @@ final ThemeData solarizedLightTheme = ThemeData(
     ),
     bodyLarge: TextStyle(color: Color(0xFF586E75)),
   ),
-  fontFamily: 'Poppins',
+  fontFamily: 'Manrope',
 );
 
 // Solarized Dark — https://ethanschoonover.com/solarized/
@@ -95,5 +95,5 @@ final ThemeData solarizedDarkTheme = ThemeData(
     ),
     bodyLarge: TextStyle(color: Color(0xFF93A1A1)),
   ),
-  fontFamily: 'Poppins',
+  fontFamily: 'Manrope',
 );

@@ -197,18 +197,15 @@ flutter:
   generate: true
   # Fonts
   fonts:
-    - family: Poppins
+    - family: Manrope
       fonts:
-        - asset: assets/fonts/poppins.ttf
-        - asset: assets/fonts/poppins_bold.ttf
-          weight: 700
-        - asset: assets/fonts/poppins_semi_bold.ttf
+        - asset: assets/fonts/manrope.ttf
+        - asset: assets/fonts/manrope_medium.ttf
+          weight: 500
+        - asset: assets/fonts/manrope_semi_bold.ttf
           weight: 600
-        - asset: assets/fonts/poppins_thin.ttf
-          weight: 100
-    - family: Poppins-SemiBold
-      fonts:
-        - asset: assets/fonts/poppins_semi_bold.ttf
+        - asset: assets/fonts/manrope_bold.ttf
+          weight: 700
 
   # Assets
   assets:

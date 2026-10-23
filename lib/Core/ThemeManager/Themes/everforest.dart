@@ -46,7 +46,7 @@ final ThemeData everforestLightTheme = ThemeData(
     ),
     bodyLarge: TextStyle(color: Color(0xFF5C6A72)),
   ),
-  fontFamily: 'Poppins',
+  fontFamily: 'Manrope',
 );
 
 // Everforest Dark (medium) — https://github.com/sainnhe/everforest
@@ -95,5 +95,5 @@ final ThemeData everforestDarkTheme = ThemeData(
     ),
     bodyLarge: TextStyle(color: Color(0xFFD3C6AA)),
   ),
-  fontFamily: 'Poppins',
+  fontFamily: 'Manrope',
 );

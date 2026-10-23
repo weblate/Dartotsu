@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:path/path.dart' as p;
 
 import '../../../Core/ThemeManager/LanguageSwitcher.dart';
+import '../../../Core/Fonts/AppFonts.dart';
 import '../../../Core/ThemeManager/ThemeController.dart';
 import '../../../Utils/Extensions/ContextExtensions.dart';
 import '../../../Utils/Functions/NavigateToScreen.dart';
@@ -96,7 +97,7 @@ class _FontPickerSheetState extends State<_FontPickerSheet> {
                           context,
                           icon: Icons.text_fields_rounded,
                           title: getString.defaultFont,
-                          subtitle: 'Poppins',
+                          subtitle: bundledFont,
                           selected: !_t.useCustomFont.value,
                           onTap: () {
                             _t.clearCustomFont();

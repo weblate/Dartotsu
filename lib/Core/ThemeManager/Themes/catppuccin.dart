@@ -46,7 +46,7 @@ final ThemeData catppuccinLightTheme = ThemeData(
     ),
     bodyLarge: TextStyle(color: Color(0xFF4C4F69)),
   ),
-  fontFamily: 'Poppins',
+  fontFamily: 'Manrope',
 );
 
 // Catppuccin Mocha — https://catppuccin.com/palette
@@ -95,5 +95,5 @@ final ThemeData catppuccinDarkTheme = ThemeData(
     ),
     bodyLarge: TextStyle(color: Color(0xFFCDD6F4)),
   ),
-  fontFamily: 'Poppins',
+  fontFamily: 'Manrope',
 );

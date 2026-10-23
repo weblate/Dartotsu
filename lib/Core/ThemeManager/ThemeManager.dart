@@ -260,7 +260,7 @@ Color deriveCardColor({
   );
 }
 
-const _defaultFontFamily = 'Poppins';
+const _defaultFontFamily = 'Manrope';
 
 TextTheme _buildTextTheme(String fontFamily) => TextTheme(
   displayLarge: TextStyle(

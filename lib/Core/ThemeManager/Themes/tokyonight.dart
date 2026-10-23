@@ -46,7 +46,7 @@ final ThemeData tokyonightLightTheme = ThemeData(
     ),
     bodyLarge: TextStyle(color: Color(0xFF343B58)),
   ),
-  fontFamily: 'Poppins',
+  fontFamily: 'Manrope',
 );
 
 // Tokyo Night — https://github.com/folke/tokyonight.nvim
@@ -95,5 +95,5 @@ final ThemeData tokyonightDarkTheme = ThemeData(
     ),
     bodyLarge: TextStyle(color: Color(0xFFC0CAF5)),
   ),
-  fontFamily: 'Poppins',
+  fontFamily: 'Manrope',
 );

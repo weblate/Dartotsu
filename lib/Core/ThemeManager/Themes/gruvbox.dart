@@ -46,7 +46,7 @@ final ThemeData gruvboxLightTheme = ThemeData(
     ),
     bodyLarge: TextStyle(color: Color(0xFF3C3836)),
   ),
-  fontFamily: 'Poppins',
+  fontFamily: 'Manrope',
 );
 
 // Gruvbox Dark (hard) — https://github.com/morhetz/gruvbox
@@ -95,5 +95,5 @@ final ThemeData gruvboxDarkTheme = ThemeData(
     ),
     bodyLarge: TextStyle(color: Color(0xFFEBDBB2)),
   ),
-  fontFamily: 'Poppins',
+  fontFamily: 'Manrope',
 );

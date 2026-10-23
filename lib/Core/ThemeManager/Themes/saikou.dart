@@ -38,7 +38,7 @@ final ThemeData saikouLightTheme = ThemeData(
     ),
     bodyLarge: TextStyle(color: Color(0xFF1C1B20)),
   ),
-  fontFamily: 'Poppins',
+  fontFamily: 'Manrope',
 );
 
 // Dark Theme
@@ -79,5 +79,5 @@ final ThemeData saikouDarkTheme = ThemeData(
     ),
     bodyLarge: TextStyle(color: Color(0xFFEEEEEE)),
   ),
-  fontFamily: 'Poppins',
+  fontFamily: 'Manrope',
 );

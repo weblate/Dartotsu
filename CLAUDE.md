@@ -177,7 +177,7 @@ Local reactive UI uses `Live` + `Watch`; `appContext` / `appOverlayContext` give
   tuple keeps them reactive inside `Watch`). `themeMode` / `isDarkModeActive` derive from `mode`.
   Guarded combo setters (`setTheme`, `setOled`, `setMaterialYou`, …).
 - **`Core/ThemeManager/ThemeManager.dart`** — pure builders: `buildAppTheme(base, {isOled,
-  glass})` applies the (colour-independent, built-once) Poppins `TextTheme` plus the
+  glass})` applies the (colour-independent, built-once) Manrope `TextTheme` plus the
   **M3-expressive component themes** — pill buttons (`StadiumBorder`, 48px min), rounded icon
   buttons, 20px FAB, connected `SegmentedButton` group on `secondaryContainer`, stadium chips,
   28px cards/dialogs/sheets, 16px menus/inputs/snackbars, filled inputs, `InkSparkle`, and the

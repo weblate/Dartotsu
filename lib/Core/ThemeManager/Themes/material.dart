@@ -4,7 +4,7 @@ ThemeData materialThemeLight(ColorScheme theme) {
   return ThemeData(
     primaryColor: theme.primary,
     colorScheme: theme,
-    fontFamily: 'Poppins',
+    fontFamily: 'Manrope',
   );
 }
 
@@ -13,6 +13,6 @@ ThemeData materialThemeDark(ColorScheme theme) {
     primaryColor: theme.primary,
     colorScheme: theme,
     scaffoldBackgroundColor: theme.surface,
-    fontFamily: 'Poppins',
+    fontFamily: 'Manrope',
   );
 }

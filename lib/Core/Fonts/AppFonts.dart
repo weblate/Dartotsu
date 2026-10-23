@@ -8,7 +8,9 @@ import 'package:path/path.dart' as p;
 import '../State/State.dart';
 import '../ThemeManager/CustomFontLoader.dart';
 
-const bundledFont = 'Poppins';
+const bundledFont = 'Manrope';
+
+String migrateFont(String value) => value == 'Poppins' ? bundledFont : value;
 
 final fontsTick = 0.live;
 

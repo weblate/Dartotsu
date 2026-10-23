@@ -45,7 +45,7 @@ final ThemeData oriaxLightTheme = ThemeData(
     ),
     bodyLarge: TextStyle(color: Color(0xFF201A19)),
   ),
-  fontFamily: 'Poppins',
+  fontFamily: 'Manrope',
 );
 
 // Dark Theme 9
@@ -93,5 +93,5 @@ final ThemeData oriaxDarkTheme = ThemeData(
     ),
     bodyLarge: TextStyle(color: Color(0xFFEDE0DE)),
   ),
-  fontFamily: 'Poppins',
+  fontFamily: 'Manrope',
 );

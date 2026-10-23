@@ -46,7 +46,7 @@ final ThemeData nordLightTheme = ThemeData(
     ),
     bodyLarge: TextStyle(color: Color(0xFF2E3440)),
   ),
-  fontFamily: 'Poppins',
+  fontFamily: 'Manrope',
 );
 
 // Nord Dark (Polar Night) — https://www.nordtheme.com/
@@ -95,5 +95,5 @@ final ThemeData nordDarkTheme = ThemeData(
     ),
     bodyLarge: TextStyle(color: Color(0xFFE5E9F0)),
   ),
-  fontFamily: 'Poppins',
+  fontFamily: 'Manrope',
 );

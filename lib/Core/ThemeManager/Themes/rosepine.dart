@@ -46,7 +46,7 @@ final ThemeData rosePineLightTheme = ThemeData(
     ),
     bodyLarge: TextStyle(color: Color(0xFF575279)),
   ),
-  fontFamily: 'Poppins',
+  fontFamily: 'Manrope',
 );
 
 // Rosé Pine (main) — https://rosepinetheme.com/palette/
@@ -95,5 +95,5 @@ final ThemeData rosePineDarkTheme = ThemeData(
     ),
     bodyLarge: TextStyle(color: Color(0xFFE0DEF4)),
   ),
-  fontFamily: 'Poppins',
+  fontFamily: 'Manrope',
 );

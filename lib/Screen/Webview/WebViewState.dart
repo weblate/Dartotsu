@@ -100,7 +100,7 @@ class WebViewState extends ScreenState {
 
   Future<void> _injectFont() async {
     try {
-      final fontData = await rootBundle.load('assets/fonts/poppins.ttf');
+      final fontData = await rootBundle.load('assets/fonts/manrope.ttf');
       final base64Font = base64Encode(fontData.buffer.asUint8List());
       await controller.addUserScript(
         WebViewUserScript(
