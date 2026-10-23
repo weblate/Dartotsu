@@ -65,7 +65,7 @@ class SimklSettingsView extends SettingsScreenView {
         description: getString.repullProfileLibrary,
         icon: Icons.refresh_rounded,
         onClick: () async {
-          simklAuth.queries.clearLibrary();
+          simklAuth.queries.invalidateLibrary();
           await simklAuth.refreshUser();
           snackString(getString.refreshed);
         },

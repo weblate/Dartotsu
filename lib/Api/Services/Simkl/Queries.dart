@@ -175,6 +175,22 @@ Map<String, Media> parseSimklLibrary(String body) {
   return out;
 }
 
+Set<String> parseSimklIds(String body) {
+  final data = body.isEmpty ? null : jsonDecode(body);
+  final out = <String>{};
+  if (data is! Map<String, dynamic>) return out;
+  for (final kind in SimklKind.values) {
+    for (final e in (data[kind.syncKey] as List?) ?? const []) {
+      if (e is! Map) continue;
+      final node = e['show'] ?? e['movie'] ?? e['anime'];
+      if (node is! Map) continue;
+      final id = (node['ids'] as Map?)?['simkl'];
+      if (id != null) out.add(simklMediaId(kind, id));
+    }
+  }
+  return out;
+}
+
 Map<String, dynamic> _encodeLibrary(Map<String, Object> args) => {
   'all': args['all'],
   'removed': args['removed'],
@@ -198,7 +214,10 @@ class SimklQueries extends Queries {
 
   _Activity? _seen;
 
-  late final _library = LibraryCache<Map<String, Media>>(load: _sync);
+  late final _library = LibraryCache<Map<String, Media>>(
+    load: _sync,
+    ttl: const Duration(minutes: 15),
+  );
 
   static const _diskKey = 'simklLibrary';
 
@@ -254,23 +273,38 @@ class SimklQueries extends Queries {
     final previous = first ?? await _readDisk();
     final now = await _activity();
     final before = _seen;
-    if (previous != null && before != null) {
-      if (now.all == before.all) return _publish(previous, persist: false);
-      if (now.removed == before.removed) {
-        final delta = await client.getBody(
+    if (previous == null || before == null) return _fullSync(now);
+    if (now.all == before.all) return _publish(previous, persist: false);
+    var library = previous;
+    if (now.removed != before.removed) {
+      final ids = await compute(
+        parseSimklIds,
+        await client.getBody(
           '/sync/all-items',
-          query: {'date_from': before.all},
-        );
-        _seen = now;
-        return _publish({
-          ...previous,
-          ...await compute(parseSimklLibrary, delta),
-        });
-      }
+          query: {'extended': 'simkl_ids_only'},
+        ),
+      );
+      library = {
+        for (final e in library.entries)
+          if (ids.contains(e.key)) e.key: e.value,
+      };
     }
-    final full = await client.getBody('/sync/all-items/all/all');
+    final delta = await client.getBody(
+      '/sync/all-items',
+      query: {'date_from': before.all},
+    );
     _seen = now;
-    return _publish(await compute(parseSimklLibrary, full));
+    return _publish({...library, ...await compute(parseSimklLibrary, delta)});
+  }
+
+  Future<Map<String, Media>> _fullSync(_Activity now) async {
+    final library = <String, Media>{};
+    for (final type in const ['shows', 'movies', 'anime']) {
+      final body = await client.getBody('/sync/all-items/$type');
+      library.addAll(await compute(parseSimklLibrary, body));
+    }
+    _seen = now;
+    return _publish(library);
   }
 
   Map<String, Media> _publish(
