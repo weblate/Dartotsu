@@ -1,4 +1,5 @@
 import '../../Core/Downloads/DownloadEngine.dart';
+import '../../Utils/Functions/DisplayMode.dart';
 import 'dart:async';
 import 'dart:io';
 
@@ -87,6 +88,8 @@ class PlayerState extends ScreenState {
   late final perTitle = (record?.player.isNotEmpty ?? false).live;
   final scrubbing = false.live;
   final scrubPosition = Duration.zero.live;
+  Duration heldPosition = Duration.zero;
+  Duration heldBuffer = Duration.zero;
   final previewAt = Live<Duration?>(null);
   late final seekPreview = SeekPreview(
     () => engine.player,
@@ -354,12 +357,21 @@ class PlayerState extends ScreenState {
     });
     _rateSub?.dispose();
     _rateSub = engine.rate.listen((_) => _anchorPresence());
+    _fpsSub?.dispose();
+    _fpsSub = engine.videoHeight.listen((h) {
+      if (h != null) unawaited(_matchDisplay());
+    });
     _playingSub = engine.playing.listen((playing) {
       _anchorPresence();
       _scheduleHide();
       unawaited(PlayerPip.setAuto(playing && settings.autoPip));
     });
     mediaSession.rebind();
+  }
+
+  Future<void> _matchDisplay() async {
+    final fps = await engine.videoFps();
+    if (fps != null) await matchRefreshRate(fps);
   }
 
   Future<void> _watchRender(int generation) async {
@@ -421,6 +433,8 @@ class PlayerState extends ScreenState {
     _playingSub?.dispose();
     _errorSub?.dispose();
     _rateSub?.dispose();
+    _fpsSub?.dispose();
+    if (Platform.isAndroid) unawaited(applyRefreshRate());
     _saveProgress(force: true);
     _commitWatched();
     unawaited(PlayerPip.setAuto(false));
@@ -762,6 +776,7 @@ class PlayerState extends ScreenState {
 
   Disposer? _errorSub;
   Disposer? _rateSub;
+  Disposer? _fpsSub;
   final presenceClock = Live<(int, int)>((0, 0));
   Duration _lastGood = Duration.zero;
   int _recoveries = 0;
@@ -1374,6 +1389,9 @@ class PlayerState extends ScreenState {
     flashOsd(name.isEmpty ? getString.playerShadersOff : name);
   }
 
+  bool get canSubmitSkips =>
+      request.media?.isAnime == true && request.service != null;
+
   bool get hasChapters => engine.chapters.value.isNotEmpty || stamps.isNotEmpty;
 
   Future<void> setColor(ColorValues values) async {
@@ -1389,9 +1407,6 @@ class PlayerState extends ScreenState {
 
   void openNext() {
     if (hasNext) unawaited(loadItem(index.value + 1));
-  bool get canSubmitSkips =>
-      request.media?.isAnime == true && request.service != null;
-
   }
 
   void openPrevious() {

@@ -419,6 +419,18 @@ class PlayerEngine {
     return shot;
   }
 
+  Future<double?> videoFps() async {
+    final mpv = native;
+    if (mpv == null || _disposed) return null;
+    try {
+      for (final name in const ['container-fps', 'estimated-vf-fps']) {
+        final fps = double.tryParse(await mpv.getProperty(name));
+        if (fps != null && fps > 0) return fps;
+      }
+    } catch (_) {}
+    return null;
+  }
+
   Timer? _redrawTimer;
 
   Future<void> redraw() async {

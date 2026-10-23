@@ -25,7 +25,10 @@ class PlayerControls extends StatelessWidget {
     final locked = state.locked.value;
     final engine = state.engine;
     final stamp = state.activeStamp.value;
-    final position = state.shownPosition;
+    final awake = state.controlsVisible.value || state.scrubbing.value;
+    final position = awake
+        ? (state.heldPosition = state.shownPosition)
+        : state.heldPosition;
     final duration = engine.duration.value;
     final chapters = engine.chapters.value;
     final chapterText =
@@ -414,7 +417,9 @@ class PlayerControls extends StatelessWidget {
               ignoring: locked,
               child: PlayerSeekBar(
                 position: position,
-                buffer: engine.buffer.value,
+                buffer: state.controlsVisible.value
+                    ? (state.heldBuffer = engine.buffer.value)
+                    : state.heldBuffer,
                 duration: duration,
                 stamps: state.stamps.toList(),
                 chapters: engine.chapters.value,
@@ -477,17 +482,17 @@ class PlayerControls extends StatelessWidget {
                       () => showChaptersSheet(context, state),
                       tooltip: getString.playerChapters,
                     ),
-                  const Spacer(),
-                  if (PlayerPip.supported) _pipButton(),
-                  _icon(
-                    Icons.fit_screen_rounded,
-                    state.cycleFit,
                   if (state.canSubmitSkips)
                     _icon(
                       Icons.cloud_upload_rounded,
                       () => showSkipSubmitSheet(context, state),
                       tooltip: getString.playerSkipSubmit,
                     ),
+                  const Spacer(),
+                  if (PlayerPip.supported) _pipButton(),
+                  _icon(
+                    Icons.fit_screen_rounded,
+                    state.cycleFit,
                     tooltip: getString.playerResize,
                   ),
                   _icon(
