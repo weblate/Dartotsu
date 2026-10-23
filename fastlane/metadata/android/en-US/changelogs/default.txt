@@ -1,0 +1,60 @@
+-: feat: long press a manga page to save, share or copy it, with a reader setting to turn it off
+-: feat: submit skip times to AniSkip from the player
+-: feat: remember the save progress choice for a single series
+-: feat: compact playback speed sheet and remember the last used speed
+-: feat: discord presence shows real playback position and a paused state in the player
+-: feat: progress bar thumb with press feedback
+-: feat: build seek previews from the buffered video and drop the live screenshots
+-: feat(reader): port Rust image processing (vips-rs & SIMD) & add selectable image filter quality (#159)
+-: feat: send desktop analytics to GA4 so Linux and Windows users show up
+-: feat: optional app passcode lock with a one-minute grace period
+-: feat: include extension bridge settings in backups
+-: feat: open player fullscreen and pause when the app loses focus, fold player settings sections
+-: feat: player tracks sheet tabs for subtitle settings
+-: feat: add strings for app lock, player options and updater messages, translate them
+### 🛠️ Bug Fixes & Improvements
+-: fix: simkl trending movies row goes last
+-: fix: detect blank android frame captures by size so the shader preview gets a real frame
+-: fix: start the app when libmpv can't load on old android and disable only the player
+-: fix: remove invisible characters from fastlane paths
+-: fix: simkl country and mini-series rows built from trending files
+-: fix: detail title fits 3-4 lines within the cover height
+-: fix: match display refresh rate to the video and idle the hidden player controls
+-: fix: seek pill no longer flashes +0s while fading out
+-: fix: bottom sheets focus the drag handle first for keyboard navigation
+-: fix: save progress choice can only be remembered per series
+-: fix: shader and seek previews use the same android video output setup as the player
+-: fix: dns resolver never throws so the app no longer aborts without internet
+-: fix: remove button backgrounds from the manga reader controls
+-: fix: crop border listener removed twice from a disposed image stream
+-: fix: resume opens the saved episode and shows the main series name
+-: fix: skip stream recovery when playback is still alive after an error log
+-: fix: reload the detail page from the api after editing the list instead of using the cache
+-: fix: clear the list entry on the series after it is removed from MAL, Kitsu, Simkl, MangaBaka and local lists
+-: fix: novel reader rendered at zero size, drop icon backgrounds in its bars
+-: fix: delay and shrink cover colour extraction so opening a series does not lag
+-: fix: reopen the stream at the last position when playback errors after a long pause
+-: fix: send a plain Accept header when gradle downloads the libmpv jars [build.all] [ping]
+-: fix: record native crashes and previous exit reasons, flush logcat promptly and drop its noise
+-: fix: finish mobile OAuth logins from the deep link when the browser session is dropped
+-: fix: let long reply code blocks scroll without trapping the page
+-: fix: report APK install failures and cancellation instead of crashing
+-: fix: smoother scrolling and no replayed entrance animation in the continue watching shelf
+-: fix: lift bottom sheets above the keyboard
+-: fix: only show libass subtitles for ass tracks, swap gesture indicators and ignore top-edge swipes
+### 🧹 Chores & Documentation
+-: chore: bump version to 1.1.1
+-: chore: pub upgrade [build.all] [ping]
+-: chore: consistency pass with shared spinner, chips and sheet padding, and remove dead code
+-: chore: bump nix channels.json
+-: chore: trigger build [build.all] [ping]
+-: chore: pub upgrade [build.all] [ping]
+-: chore: pub upgrade [build.all] [ping]
+-: chore: trigger build [build.all] [ping]
+-: chore: trigger build [build.all] [ping]
+-: chore: regenerate localizations for the reader filter strings
+-: chore: bump nix channels.json
+-: chore: trigger build [build.all] [ping]
+-: chore: use precompiled cargokit binaries [build.all]
+-: chore: bump nix channels.json
+-: chore: bump nix channels.json
