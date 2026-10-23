@@ -161,7 +161,6 @@ class SimklClient {
 
   Future<void> _postTurn() async {
     final wait = _nextPost.difference(DateTime.now());
-    _nextPost = DateTime.now().add(const Duration(milliseconds: 1100));
     if (!wait.isNegative && wait.inMilliseconds > 0) {
       await Future<void>.delayed(wait);
     }
@@ -178,6 +177,8 @@ class SimklClient {
         done.complete(await _send(path, body));
       } catch (e, s) {
         done.completeError(e, s);
+      } finally {
+        _nextPost = DateTime.now().add(const Duration(milliseconds: 1100));
       }
     });
     return done.future;
