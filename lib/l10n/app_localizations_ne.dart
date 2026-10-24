@@ -31,6 +31,9 @@ class AppLocalizationsNe extends AppLocalizations {
   String get mangaBaka => 'MangaBaka';
 
   @override
+  String get mangaUpdates => 'MangaUpdates';
+
+  @override
   String get discord => 'Discord';
 
   @override
@@ -1085,6 +1088,37 @@ class AppLocalizationsNe extends AppLocalizations {
 
   @override
   String get refreshFromMangaBaka => 'MangaBaka बाट रिफ्रेस गर';
+
+  @override
+  String get mangaUpdatesLoginTitle => 'Sign in to MangaUpdates';
+
+  @override
+  String get mangaUpdatesLoginFailed =>
+      'MangaUpdates login failed. Check your username and password.';
+
+  @override
+  String get mangaUpdatesProfile => 'MangaUpdates profile';
+
+  @override
+  String get mangaUpdatesAnimeStart => 'Anime adaptation starts';
+
+  @override
+  String get mangaUpdatesAnimeEnd => 'Anime adaptation ends';
+
+  @override
+  String get refreshFromMangaUpdates => 'Refresh from MangaUpdates';
+
+  @override
+  String get mangaUpdatesAccountOptions => 'MangaUpdates account options';
+
+  @override
+  String get usernameOnly => 'Username';
+
+  @override
+  String get releases => 'Releases';
+
+  @override
+  String get scanlationGroups => 'Scanlation Groups';
 
   @override
   String get artistsLabel => 'कलाकार';

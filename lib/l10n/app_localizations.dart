@@ -221,6 +221,12 @@ abstract class AppLocalizations {
   /// **'MangaBaka'**
   String get mangaBaka;
 
+  /// No description provided for @mangaUpdates.
+  ///
+  /// In en, this message translates to:
+  /// **'MangaUpdates'**
+  String get mangaUpdates;
+
   /// No description provided for @discord.
   ///
   /// In en, this message translates to:
@@ -2188,6 +2194,66 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Refresh from MangaBaka'**
   String get refreshFromMangaBaka;
+
+  /// No description provided for @mangaUpdatesLoginTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in to MangaUpdates'**
+  String get mangaUpdatesLoginTitle;
+
+  /// No description provided for @mangaUpdatesLoginFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'MangaUpdates login failed. Check your username and password.'**
+  String get mangaUpdatesLoginFailed;
+
+  /// No description provided for @mangaUpdatesProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'MangaUpdates profile'**
+  String get mangaUpdatesProfile;
+
+  /// No description provided for @mangaUpdatesAnimeStart.
+  ///
+  /// In en, this message translates to:
+  /// **'Anime adaptation starts'**
+  String get mangaUpdatesAnimeStart;
+
+  /// No description provided for @mangaUpdatesAnimeEnd.
+  ///
+  /// In en, this message translates to:
+  /// **'Anime adaptation ends'**
+  String get mangaUpdatesAnimeEnd;
+
+  /// No description provided for @refreshFromMangaUpdates.
+  ///
+  /// In en, this message translates to:
+  /// **'Refresh from MangaUpdates'**
+  String get refreshFromMangaUpdates;
+
+  /// No description provided for @mangaUpdatesAccountOptions.
+  ///
+  /// In en, this message translates to:
+  /// **'MangaUpdates account options'**
+  String get mangaUpdatesAccountOptions;
+
+  /// No description provided for @usernameOnly.
+  ///
+  /// In en, this message translates to:
+  /// **'Username'**
+  String get usernameOnly;
+
+  /// No description provided for @releases.
+  ///
+  /// In en, this message translates to:
+  /// **'Releases'**
+  String get releases;
+
+  /// No description provided for @scanlationGroups.
+  ///
+  /// In en, this message translates to:
+  /// **'Scanlation Groups'**
+  String get scanlationGroups;
 
   /// No description provided for @artistsLabel.
   ///
