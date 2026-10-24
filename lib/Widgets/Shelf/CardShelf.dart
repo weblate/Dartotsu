@@ -179,33 +179,27 @@ class _CardShelfState extends State<CardShelf> {
             children: [
               Watch(() {
                 final list = state.items;
+                // No findChildIndexCallback: re-sorting (Hidden Media) moves
+                // children and leaves layoutOffset null, which paint then crashes on.
                 return SliverList(
-                  delegate: SliverChildBuilderDelegate(
-                    (context, index) {
-                      if (index == list.length) return _loadMoreTrailer();
+                  delegate: SliverChildBuilderDelegate((context, index) {
+                    if (index == list.length) return _loadMoreTrailer();
 
-                      final item = list[index];
-                      return RepaintBoundary(
-                        key: ValueKey('item:${item.id}'),
-                        child: Align(
-                          alignment: Alignment.topCenter,
-                          child: Padding(
-                            padding: _horizontalPadding(
-                              index,
-                              list.length,
-                            ).add(const EdgeInsets.only(top: _pop)),
-                            child: _cardFor(index, item),
-                          ),
+                    final item = list[index];
+                    return RepaintBoundary(
+                      key: ValueKey('item:${item.id}'),
+                      child: Align(
+                        alignment: Alignment.topCenter,
+                        child: Padding(
+                          padding: _horizontalPadding(
+                            index,
+                            list.length,
+                          ).add(const EdgeInsets.only(top: _pop)),
+                          child: _cardFor(index, item),
                         ),
-                      );
-                    },
-                    childCount: list.length + 1,
-                    findChildIndexCallback: (key) {
-                      final id = (key as ValueKey<String>).value.substring(5);
-                      final i = list.indexWhere((it) => it.id == id);
-                      return i < 0 ? null : i;
-                    },
-                  ),
+                      ),
+                    );
+                  }, childCount: list.length + 1),
                 );
               }),
             ],

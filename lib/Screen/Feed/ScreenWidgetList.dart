@@ -192,15 +192,26 @@ class _ScreenWidgetListState extends State<ScreenWidgetList>
   }
 
   List<Widget> _sections(List<ScreenWidget> sections) {
+    final hidden = <ScreenWidget>[];
+    final rest = <ScreenWidget>[];
+    for (final item in sections) {
+      (state.isHidden(item.title) ? hidden : rest).add(item);
+    }
+
     final out = <Widget>[];
+    if (hidden.isNotEmpty) {
+      out.add(_sectionList(hidden, key: const ValueKey('hidden-sections')));
+    }
     var chunk = <ScreenWidget>[];
+    var chunkIndex = 0;
     void flush() {
       if (chunk.isEmpty) return;
-      out.add(_sectionList(chunk));
+      out.add(_sectionList(chunk, key: ValueKey('feed-sections-$chunkIndex')));
+      chunkIndex++;
       chunk = [];
     }
 
-    for (final item in sections) {
+    for (final item in rest) {
       if (state.isPaged(item)) {
         flush();
         out.addAll(_paged(item));
@@ -294,25 +305,24 @@ class _ScreenWidgetListState extends State<ScreenWidgetList>
     );
   }
 
-  Widget _sectionList(List<ScreenWidget> sections) {
+  Widget _sectionList(List<ScreenWidget> sections, {required Key key}) {
     String keyOf(int i) =>
         sections[i].isMedia ? 'section-${sections[i].title}' : 'extra-$i';
-    final indexByKey = {for (var i = 0; i < sections.length; i++) keyOf(i): i};
+    // No findChildIndexCallback. Remapping a child to a new index nulls its
+    // layoutOffset, and the viewport paints that child before layout fills it
+    // back in. Hidden Media is its own sliver so revealing it does not shift
+    // the shelves below.
     return SliverList(
-      delegate: SliverChildBuilderDelegate(
-        (context, i) {
-          final item = sections[i];
-          return item.isMedia
-              ? _section(i, item)
-              : KeyedSubtree(
-                  key: ValueKey(keyOf(i)),
-                  child: ScreenWidgetView(item),
-                );
-        },
-        childCount: sections.length,
-        findChildIndexCallback: (key) =>
-            key is ValueKey<String> ? indexByKey[key.value] : null,
-      ),
+      key: key,
+      delegate: SliverChildBuilderDelegate((context, i) {
+        final item = sections[i];
+        return item.isMedia
+            ? _section(i, item)
+            : KeyedSubtree(
+                key: ValueKey(keyOf(i)),
+                child: ScreenWidgetView(item),
+              );
+      }, childCount: sections.length),
     );
   }
 
@@ -338,11 +348,11 @@ class _ScreenWidgetListState extends State<ScreenWidgetList>
         state.sectionBuilders[title]?.call(data) ?? MediaSection(data: data);
     return KeyedSubtree(
       key: ValueKey('section-$title'),
-      child: section,
-    ).animateFadeUp(
-      begin: firstSeen ? 0.15 : 0.0,
-      delay: firstSeen ? Duration(milliseconds: 40 * index) : Duration.zero,
-      duration: firstSeen ? 400 : 0,
+      child: section.animateFadeUp(
+        begin: firstSeen ? 0.15 : 0.0,
+        delay: firstSeen ? Duration(milliseconds: 40 * index) : Duration.zero,
+        duration: firstSeen ? 400 : 0,
+      ),
     );
   }
 
