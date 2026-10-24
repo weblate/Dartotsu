@@ -1,3 +1,4 @@
+import 'dart:async';
 import '../../../Logger.dart';
 import 'dart:typed_data';
 
@@ -503,48 +504,51 @@ Future<void> showChaptersSheet(BuildContext context, PlayerState state) async {
   if (picked != null) state.seekTo(Duration(seconds: picked.toInt()));
 }
 
-Future<void> showPictureSheet(BuildContext context, PlayerState state) async {
-  Uint8List? frame;
-  try {
-    frame = await state.engine.captureFrame();
-  } catch (e, st) {
-    logError('PlayerSheets', e, st);
-  }
-  if (!context.mounted) return;
-  await state.whilePaused<void>(
-    () => showCustomBottomDialog<void>(
-      context,
-      Builder(
-        builder: (sheet) => PictureSheet(
-          settings: () => state.settings,
-          frame: frame,
-          onColor: state.setColor,
-          problem: state.engine.shaderProblem,
-          onPick: (profile, name, custom) =>
-              state.setShaderMode(profile, name, custom: custom),
-          onPreview: () async {
-            final shot = frame;
-            if (shot == null || !sheet.mounted) {
-              snackString(getString.playerShadersPreviewFailed);
-              return;
-            }
-            await navigateToPage<void>(
-              sheet,
-              ShaderPreview(
-                frame: shot,
-                settings: state.settings,
-                onUse: (profile, name, custom) =>
-                    state.setShaderMode(profile, name, custom: custom),
-                onColor: state.setColor,
-                onManage: () => popPage(sheet),
-              ),
-            );
-          },
+Future<void> showPictureSheet(BuildContext context, PlayerState state) =>
+    state.whilePaused<void>(() {
+      final frame = Live<Uint8List?>(null);
+      final capturing = true.live;
+      unawaited(() async {
+        try {
+          frame.value = await state.engine.captureFrame();
+        } catch (e, st) {
+          logError('PlayerSheets', e, st);
+        }
+        capturing.value = false;
+      }());
+      return showCustomBottomDialog<void>(
+        context,
+        Builder(
+          builder: (sheet) => PictureSheet(
+            settings: () => state.settings,
+            frame: frame,
+            capturing: capturing,
+            onColor: state.setColor,
+            problem: state.engine.shaderProblem,
+            onPick: (profile, name, custom) =>
+                state.setShaderMode(profile, name, custom: custom),
+            onPreview: () async {
+              final shot = frame.value;
+              if (shot == null || !sheet.mounted) {
+                snackString(getString.playerShadersPreviewFailed);
+                return;
+              }
+              await navigateToPage<void>(
+                sheet,
+                ShaderPreview(
+                  frame: shot,
+                  settings: state.settings,
+                  onUse: (profile, name, custom) =>
+                      state.setShaderMode(profile, name, custom: custom),
+                  onColor: state.setColor,
+                  onManage: () => popPage(sheet),
+                ),
+              );
+            },
+          ),
         ),
-      ),
-    ),
-  );
-}
+      );
+    });
 
 Future<void> showPlayerOptions(BuildContext context, PlayerState state) =>
     state.whilePaused<void>(

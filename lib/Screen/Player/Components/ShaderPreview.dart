@@ -25,9 +25,16 @@ import '../../../Utils/Extensions/ContextExtensions.dart';
 import '../../../Widgets/Components/AppControls.dart';
 
 Uint8List _pngToJpeg(Uint8List png) {
-  final decoded = img.decodePng(png);
+  var decoded = img.decodePng(png);
   if (decoded == null) throw StateError('png');
-  return img.encodeJpg(decoded, quality: 95);
+  if (decoded.width >= 640) {
+    decoded = img.copyResize(
+      decoded,
+      width: decoded.width ~/ 2,
+      interpolation: img.Interpolation.average,
+    );
+  }
+  return img.encodeJpg(decoded, quality: 92);
 }
 
 Future<Uint8List> _stillForMpv(Uint8List frame) async {
@@ -71,6 +78,8 @@ class _ShaderPreviewState extends State<ShaderPreview> {
   late final _color = widget.settings.color.live;
   final _ready = false.live;
   final _processed = Live<Uint8List?>(null);
+  final _plain = Live<Uint8List?>(null);
+  bool _sized = false;
   final _controls = true.live;
   final _adjust = false.live;
   Timer? _colorTimer;
@@ -132,6 +141,7 @@ class _ShaderPreviewState extends State<ShaderPreview> {
           await StorageManager.getDirectory(subPath: 'cache/mpv-preview') ??
           Directory.systemTemp;
       final still = await _stillForMpv(widget.frame);
+      _plain.value = still;
       final file = File(
         p.join(
           dir.path,
@@ -197,17 +207,22 @@ class _ShaderPreviewState extends State<ShaderPreview> {
   }
 
   Future<void> _presentSoon(int serial) async {
+    // The surface is replaced once the image size is known, so only the first
+    // open needs the second present. A reload of the same still keeps its size
+    // and the second pass runs only when the first grab came back blank.
+    final resized = _sized;
     await _present(serial);
-    final first = await _grab(serial);
-    await Future<void>.delayed(const Duration(milliseconds: 450));
+    var shown = await _grab(serial);
+    if (!resized || !shown) {
+      await Future<void>.delayed(const Duration(milliseconds: 450));
+      if (!mounted || serial != _presentSerial) return;
+      await _present(serial);
+      shown = await _grab(serial) || shown;
+    }
     if (!mounted || serial != _presentSerial) return;
-    // The surface is replaced once the image size is known. The first present
-    // can land on the old 1x1 surface, so present again after that resize.
-    await _present(serial);
-    final second = await _grab(serial);
-    if (!mounted || serial != _presentSerial) return;
+    _sized = _player.state.width != null && _player.state.width! > 1;
     _ready.value = true;
-    if (!first && !second && _processed.value == null) {
+    if (!shown && _processed.value == null) {
       _problem.value = getString.playerShadersPreviewFailed;
     }
   }
@@ -355,6 +370,7 @@ class _ShaderPreviewState extends State<ShaderPreview> {
               child: Watch(() {
                 final at = _split.value;
                 final processed = _processed.value;
+                final plain = _plain.value ?? widget.frame;
                 return Stack(
                   fit: StackFit.expand,
                   children: [
@@ -379,7 +395,7 @@ class _ShaderPreviewState extends State<ShaderPreview> {
                     ClipRect(
                       clipper: _LeftClip(at),
                       child: Image.memory(
-                        widget.frame,
+                        plain,
                         fit: BoxFit.contain,
                         width: box.maxWidth,
                         height: box.maxHeight,

@@ -461,9 +461,23 @@ class PlayerEngine {
     final seconds = at.inMilliseconds / 1000;
     final nudge = seconds > 0.08 ? seconds - 0.05 : seconds + 0.05;
     await mpv.command(['seek', nudge.toStringAsFixed(3), 'absolute+exact']);
-    await Future<void>.delayed(const Duration(milliseconds: 350));
+    await _seekSettled(mpv);
     await mpv.command(['seek', seconds.toStringAsFixed(3), 'absolute+exact']);
-    await Future<void>.delayed(const Duration(milliseconds: 450));
+    await _seekSettled(mpv);
+  }
+
+  Future<void> _seekSettled(NativePlayer mpv) async {
+    await Future<void>.delayed(const Duration(milliseconds: 60));
+    final end = DateTime.now().add(const Duration(milliseconds: 1500));
+    while (DateTime.now().isBefore(end)) {
+      try {
+        if (await mpv.getProperty('seeking') == 'no') break;
+      } catch (_) {
+        break;
+      }
+      await Future<void>.delayed(const Duration(milliseconds: 40));
+    }
+    await Future<void>.delayed(const Duration(milliseconds: 80));
   }
 
   Future<double?> videoFps() async {

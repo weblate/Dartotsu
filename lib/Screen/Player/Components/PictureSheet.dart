@@ -8,6 +8,7 @@ import '../../../Core/State/State.dart';
 import '../../../Core/ThemeManager/LanguageSwitcher.dart';
 import '../../../Widgets/Components/AppControls.dart';
 import '../../../Widgets/Components/AppSheet.dart';
+import '../../../Widgets/Components/AppSpinner.dart';
 import 'ColorSheet.dart';
 import 'ShaderSheet.dart';
 
@@ -15,7 +16,8 @@ class PictureSheet extends StatefulWidget {
   final PlayerSettings Function() settings;
   final ShaderPick onPick;
   final Future<void> Function() onPreview;
-  final Uint8List? frame;
+  final Live<Uint8List?> frame;
+  final Live<bool> capturing;
   final Future<void> Function(ColorValues values) onColor;
   final Live<String?>? problem;
 
@@ -25,6 +27,7 @@ class PictureSheet extends StatefulWidget {
     required this.onPick,
     required this.onPreview,
     required this.frame,
+    required this.capturing,
     required this.onColor,
     this.problem,
   });
@@ -60,8 +63,10 @@ class _PictureSheetState extends State<PictureSheet> {
             child: SizedBox(
               width: double.infinity,
               child: FilledButton.tonalIcon(
-                onPressed: widget.onPreview,
-                icon: const Icon(Icons.preview_rounded),
+                onPressed: widget.capturing.value ? null : widget.onPreview,
+                icon: widget.capturing.value
+                    ? const AppSpinner()
+                    : const Icon(Icons.preview_rounded),
                 label: Text(getString.playerShadersPreview),
               ),
             ),
@@ -79,7 +84,7 @@ class _PictureSheetState extends State<PictureSheet> {
                     key: const ValueKey('picture-colors'),
                     embedded: true,
                     initial: widget.settings().color,
-                    frame: widget.frame,
+                    frame: widget.frame.value,
                     onChange: widget.onColor,
                   ),
           ),
