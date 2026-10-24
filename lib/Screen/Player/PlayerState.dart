@@ -42,6 +42,7 @@ import '../../Utils/Functions/SnackBar.dart';
 import '../../Widgets/Components/ScreenState.dart';
 import 'PlayerMediaSession.dart';
 import '../Together/TogetherController.dart';
+import '../../Utils/Functions/DesktopFullscreen.dart';
 import '../../Utils/Functions/Wakelock.dart';
 
 const resizeFits = [BoxFit.contain, BoxFit.cover, BoxFit.fill];
@@ -453,7 +454,7 @@ class PlayerState extends ScreenState {
     }
     if (!keepOrientation) unawaited(setWakelock(false));
     if (!isMobilePlatform && fullscreen.value) {
-      unawaited(windowManager.setFullScreen(false));
+      unawaited(setDesktopFullscreen(false));
     }
   }
 
@@ -1217,7 +1218,7 @@ class PlayerState extends ScreenState {
       }
       await SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
     } else {
-      await windowManager.setFullScreen(true);
+      await setDesktopFullscreen(true);
     }
     showControls();
   }
@@ -1240,7 +1241,7 @@ class PlayerState extends ScreenState {
         }
       }
     } else {
-      await windowManager.setFullScreen(false);
+      await setDesktopFullscreen(false);
     }
     showControls();
   }

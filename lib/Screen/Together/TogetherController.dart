@@ -556,7 +556,7 @@ class TogetherController extends AppController {
     final stream = _myStream;
     final tag = TogetherTag(
       host: isHost,
-      id: stream?.id ?? TogetherStream.idOf('${player!.itemKey}'),
+      id: stream?.id ?? TogetherStream.idOf(player!.itemKey),
     );
     final announced = '$name${tag.text}';
     if (name != null && _sentFile != announced) {

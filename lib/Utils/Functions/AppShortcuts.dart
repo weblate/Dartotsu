@@ -1,8 +1,8 @@
 import 'package:flutter/services.dart';
-import 'package:window_manager/window_manager.dart';
 
 import '../../Core/ThemeManager/ThemeController.dart';
 import '../Nav/DpadLayers.dart';
+import 'DesktopFullscreen.dart';
 import 'SnackBar.dart';
 import '../../Core/State/State.dart';
 import '../../Core/ThemeManager/LanguageSwitcher.dart';
@@ -22,10 +22,7 @@ bool appShortcuts(KeyEvent event) {
   final isShift = HardwareKeyboard.instance.isShiftPressed;
   final isAlt = HardwareKeyboard.instance.isAltPressed;
 
-  Future<void> toggleFullscreen() async {
-    final isFull = await windowManager.isFullScreen();
-    await windowManager.setFullScreen(!isFull);
-  }
+  Future<void> toggleFullscreen() => toggleDesktopFullscreen();
 
   switch (event.logicalKey) {
     case LogicalKeyboardKey.escape:
