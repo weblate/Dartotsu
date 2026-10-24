@@ -375,13 +375,28 @@ class NovelState extends ScreenState {
     }
   }
 
+  Object? _countedKey;
+  int _words = 0;
+
   int get wordsLeft {
-    var words = 0;
-    for (final b in blocks) {
-      if (b is NovelParagraph) words += b.text.split(RegExp(r'\s+')).length;
+    final list = blocks;
+    final key = (
+      list,
+      list.length,
+      list.isEmpty ? null : list.first,
+      list.isEmpty ? null : list.last,
+    );
+    if (key != _countedKey) {
+      _countedKey = key;
+      _words = 0;
+      for (final b in list) {
+        if (b is NovelParagraph) _words += b.text.split(_space).length;
+      }
     }
-    return (words * (1 - fraction.value)).round();
+    return (_words * (1 - fraction.value)).round();
   }
+
+  static final _space = RegExp(r'\s+');
 
   void toggleAutoScroll() => setAutoScroll(!autoScrolling.value);
 

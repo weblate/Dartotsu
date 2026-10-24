@@ -47,10 +47,27 @@ class MainScreenState extends BaseScreen<MainScreen>
     );
   });
 
+  final _pages = <String, Widget>{};
+
+  Widget _page(MediaService service, int i, FeedTab t) {
+    final key = '${service.id}-$i-${t.type?.name}';
+    return _pages.putIfAbsent(
+      key,
+      () => KeyedSubtree(
+        key: ValueKey(key),
+        child: Watch(() {
+          find<CardStyleController>().epoch.value;
+          return t.build(service);
+        }),
+      ),
+    );
+  }
+
   @override
   Widget buildContent(BuildContext context) {
     final body = Watch(() {
       final service = _services.currentService.value;
+      _pages.removeWhere((k, _) => !k.startsWith('${service.id}-'));
       final tabs = feedTabsFor(service);
       final index = state.tab.value.clamp(0, tabs.length - 1);
       return IndexedStack(
@@ -58,13 +75,7 @@ class MainScreenState extends BaseScreen<MainScreen>
         children: [
           for (final (i, t) in tabs.indexed)
             state.built.contains(i)
-                ? KeyedSubtree(
-                    key: ValueKey('${service.id}-$i-${t.type?.name}'),
-                    child: Watch(() {
-                      if (i == index) find<CardStyleController>().epoch.value;
-                      return t.build(service);
-                    }),
-                  )
+                ? _page(service, i, t)
                 : const SizedBox.shrink(),
         ],
       );

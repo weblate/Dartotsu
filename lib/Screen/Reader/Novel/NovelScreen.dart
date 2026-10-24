@@ -125,9 +125,9 @@ class _NovelScreenState extends State<NovelScreen>
                     ),
                   ),
                 ),
-              _bar(context, background, foreground, top: true),
-              _bar(context, background, foreground, top: false),
-              _audioBar(context, background, foreground),
+              Watch(() => _bar(context, background, foreground, top: true)),
+              Watch(() => _bar(context, background, foreground, top: false)),
+              Watch(() => _audioBar(context, background, foreground)),
             ],
           ),
         ),
@@ -186,20 +186,21 @@ class _NovelScreenState extends State<NovelScreen>
                   ],
                 )
               : _block(context, blocks[i - 1], base, s);
-          final active = state.speakingAt.value == i - 1;
           return KeyedSubtree(
             key: key,
-            child: active
-                ? DecoratedBox(
-                    decoration: BoxDecoration(
-                      color: context.colorScheme.primary.withValues(
-                        alpha: 0.18,
+            child: Watch(
+              () => state.speakingAt.value == i - 1
+                  ? DecoratedBox(
+                      decoration: BoxDecoration(
+                        color: context.colorScheme.primary.withValues(
+                          alpha: 0.18,
+                        ),
+                        borderRadius: Dimens.borderSm,
                       ),
-                      borderRadius: Dimens.borderSm,
-                    ),
-                    child: block,
-                  )
-                : block,
+                      child: block,
+                    )
+                  : block,
+            ),
           );
         },
       ),
@@ -457,7 +458,6 @@ class _NovelScreenState extends State<NovelScreen>
   );
 
   Widget _bottomRow(BuildContext context, Color foreground) {
-    final minutes = (state.wordsLeft / 230).ceil();
     final controls = state.controlsVisible.value;
     return Column(
       mainAxisSize: MainAxisSize.min,
@@ -482,23 +482,34 @@ class _NovelScreenState extends State<NovelScreen>
                 state.hasPrevious ? state.previous : null,
                 tooltip: getString.readerPreviousChapter,
               ),
-              Text(
-                '${(state.fraction.value * 100).round()}%',
-                style: context.textTheme.labelLarge,
-              ),
               Expanded(
-                child: SeekProgressBar(
-                  value: state.fraction.value.clamp(0.0, 1.0),
-                  activeColor: foreground,
-                  trackColor: foreground.withValues(alpha: 0.2),
-                  onChanged: state.seekTo,
-                ),
-              ),
-              Text(
-                getString.novelMinutesLeft(minutes),
-                style: context.textTheme.labelLarge?.copyWith(
-                  color: foreground.withValues(alpha: 0.7),
-                ),
+                child: Watch(() {
+                  final fraction = state.fraction.value;
+                  return Row(
+                    children: [
+                      Text(
+                        '${(fraction * 100).round()}%',
+                        style: context.textTheme.labelLarge,
+                      ),
+                      Expanded(
+                        child: SeekProgressBar(
+                          value: fraction.clamp(0.0, 1.0),
+                          activeColor: foreground,
+                          trackColor: foreground.withValues(alpha: 0.2),
+                          onChanged: state.seekTo,
+                        ),
+                      ),
+                      Text(
+                        getString.novelMinutesLeft(
+                          (state.wordsLeft / 230).ceil(),
+                        ),
+                        style: context.textTheme.labelLarge?.copyWith(
+                          color: foreground.withValues(alpha: 0.7),
+                        ),
+                      ),
+                    ],
+                  );
+                }),
               ),
               _icon(
                 foreground,

@@ -129,7 +129,10 @@ class _ReaderScreenState extends State<ReaderScreen>
                   ),
                 ),
               if (!state.loading.value && settings.pageNumber)
-                _pageNumber(context),
+                Watch(
+                  key: const ValueKey('reader-number'),
+                  () => _pageNumber(context),
+                ),
               Positioned.fill(
                 key: const ValueKey('reader-controls'),
                 child: ReaderControls(state: state),

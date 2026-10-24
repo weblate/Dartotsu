@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:media_kit_video/media_kit_video.dart';
 
-import '../Engine/AniSkip.dart';
 import '../../../Core/State/State.dart';
 import '../../../Core/ThemeManager/LanguageSwitcher.dart';
 import '../../../Utils/Extensions/ContextExtensions.dart';
@@ -24,20 +23,6 @@ class PlayerControls extends StatelessWidget {
 
   Widget _build(BuildContext context) {
     final locked = state.locked.value;
-    final engine = state.engine;
-    final stamp = state.activeStamp.value;
-    final awake = state.controlsVisible.value || state.scrubbing.value;
-    final position = awake
-        ? (state.heldPosition = state.shownPosition)
-        : state.heldPosition;
-    final duration = engine.duration.value;
-    final chapters = engine.chapters.value;
-    final chapterText =
-        chapters
-            .where((c) => c.start <= position.inSeconds)
-            .lastOrNull
-            ?.title ??
-        '';
     return Stack(
       children: [
         const Positioned.fill(
@@ -63,24 +48,24 @@ class PlayerControls extends StatelessWidget {
           top: 0,
           start: 0,
           end: 0,
-          child: _top(context, locked),
+          child: Watch(() => _top(context, locked)),
         ),
-        if (!locked) Positioned.fill(child: _center(context)),
+        if (!locked) Positioned.fill(child: Watch(() => _center(context))),
         PositionedDirectional(
           start: 0,
           end: 0,
           bottom: 0,
-          child: _bottom(
-            context,
-            locked,
-            stamp,
-            position,
-            duration,
-            chapterText,
-          ),
+          child: _bottom(context, locked),
         ),
       ],
     );
+  }
+
+  Duration _position() {
+    final awake = state.controlsVisible.value || state.scrubbing.value;
+    return awake
+        ? (state.heldPosition = state.shownPosition)
+        : state.heldPosition;
   }
 
   Widget? _preview(BuildContext context, PlayerState state) {
@@ -104,13 +89,13 @@ class PlayerControls extends StatelessWidget {
             ),
             clipBehavior: Clip.antiAlias,
             child: Video(
-                    controller: controller,
-                    controls: null,
-                    fit: BoxFit.cover,
-                    subtitleViewConfiguration: const SubtitleViewConfiguration(
-                      visible: false,
-                    ),
-                  ),
+              controller: controller,
+              controls: null,
+              fit: BoxFit.cover,
+              subtitleViewConfiguration: const SubtitleViewConfiguration(
+                visible: false,
+              ),
+            ),
           ),
         const SizedBox(height: 4),
         Container(
@@ -171,31 +156,31 @@ class PlayerControls extends StatelessWidget {
               child: locked || compact
                   ? const SizedBox(height: 40)
                   : Padding(
-                padding: const EdgeInsets.only(top: 6),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      item.title,
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                      style: context.textTheme.titleSmall?.copyWith(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w700,
+                      padding: const EdgeInsets.only(top: 6),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            item.title,
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                            style: context.textTheme.titleSmall?.copyWith(
+                              color: Colors.white,
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                          if ((media?.mainName ?? item.subtitle) != null)
+                            Text(
+                              media?.mainName ?? item.subtitle!,
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                              style: context.textTheme.bodySmall?.copyWith(
+                                color: Colors.white70,
+                              ),
+                            ),
+                        ],
                       ),
                     ),
-                    if ((media?.mainName ?? item.subtitle) != null)
-                      Text(
-                        media?.mainName ?? item.subtitle!,
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                        style: context.textTheme.bodySmall?.copyWith(
-                          color: Colors.white70,
-                        ),
-                      ),
-                  ],
-                ),
-              ),
             ),
             if (!locked)
               Column(
@@ -206,29 +191,28 @@ class PlayerControls extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       if (compact &&
-                          (state.videos.length > 1 ||
-                              state.request.tracked))
+                          (state.videos.length > 1 || state.request.tracked))
                         _icon(
                           Icons.source_rounded,
-                              () => _streams(context),
+                          () => _streams(context),
                           tooltip: getString.playerStreams,
                         ),
                       if (state.engine.videoVariants.value.length > 1)
                         _icon(
                           Icons.hd_rounded,
-                              () => showQualitySheet(context, state),
+                          () => showQualitySheet(context, state),
                           tooltip: getString.playerQuality,
                         ),
                       if (!compact) ...[
                         if (state.items.length > 1)
                           _icon(
                             Icons.video_collection_rounded,
-                                () => state.panel.value = !state.panel.value,
+                            () => state.panel.value = !state.panel.value,
                             tooltip: getString.playerEpisodes,
                           ),
                         _icon(
                           Icons.slow_motion_video_rounded,
-                              () => showSpeedSheet(context, state),
+                          () => showSpeedSheet(context, state),
                           tooltip: getString.playerSpeed,
                         ),
                         _icon(
@@ -254,7 +238,6 @@ class PlayerControls extends StatelessWidget {
     );
   }
 
-
   Widget _qualityTag(BuildContext context) {
     final height = state.engine.videoHeight.value;
     if (height == null || height <= 0) return const SizedBox.shrink();
@@ -271,10 +254,7 @@ class PlayerControls extends StatelessWidget {
       ),
     );
     return several
-        ? Clickable(
-            onTap: () => showQualitySheet(context, state),
-            child: tag,
-          )
+        ? Clickable(onTap: () => showQualitySheet(context, state), child: tag)
         : tag;
   }
 
@@ -341,17 +321,9 @@ class PlayerControls extends StatelessWidget {
     );
   }
 
-  Widget _bottom(
-    BuildContext context,
-    bool locked,
-    SkipStamp? stamp,
-    Duration position,
-    Duration duration,
-    String chapterText,
-  ) {
+  Widget _bottom(BuildContext context, bool locked) {
     final scheme = context.colorScheme;
     final engine = state.engine;
-    final label = stamp?.name ?? chapterText;
     return SafeArea(
       top: false,
       left: false,
@@ -361,147 +333,165 @@ class PlayerControls extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                Expanded(
-                  child: Text.rich(
-                    TextSpan(
-                      children: [
-                        TextSpan(text: formatClock(position.inSeconds)),
-                        TextSpan(
-                          text: ' / ${formatClock(duration.inSeconds)}',
-                          style: context.textTheme.bodySmall?.copyWith(
-                            color: Colors.white54,
+            Watch(() {
+              final stamp = state.activeStamp.value;
+              final position = _position();
+              final duration = engine.duration.value;
+              final label =
+                  stamp?.name ??
+                  engine.chapters.value
+                      .where((c) => c.start <= position.inSeconds)
+                      .lastOrNull
+                      ?.title ??
+                  '';
+              return Row(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  Expanded(
+                    child: Text.rich(
+                      TextSpan(
+                        children: [
+                          TextSpan(text: formatClock(position.inSeconds)),
+                          TextSpan(
+                            text: ' / ${formatClock(duration.inSeconds)}',
+                            style: context.textTheme.bodySmall?.copyWith(
+                              color: Colors.white54,
+                            ),
                           ),
-                        ),
-                        if (label.isNotEmpty) TextSpan(text: '  •  $label'),
-                      ],
+                          if (label.isNotEmpty) TextSpan(text: '  •  $label'),
+                        ],
+                      ),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: context.textTheme.labelLarge?.copyWith(
+                        color: Colors.white,
+                      ),
                     ),
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    style: context.textTheme.labelLarge?.copyWith(
-                      color: Colors.white,
+                  ),
+                  if (!locked && (!compact || stamp != null))
+                    FilledButton.tonalIcon(
+                      onPressed: state.skipStamp,
+                      onLongPress: stamp != null && state.canRememberSkip
+                          ? () => state.toggleRememberedSkip(stamp)
+                          : null,
+                      style: FilledButton.styleFrom(
+                        backgroundColor: Colors.black.withValues(alpha: 0.35),
+                        foregroundColor: Colors.white,
+                        side: BorderSide(color: scheme.primary),
+                      ),
+                      icon: Icon(
+                        stamp != null && state.skipRemembered(stamp)
+                            ? Icons.autorenew_rounded
+                            : Icons.fast_forward_rounded,
+                      ),
+                      label: Text(
+                        stamp?.name ?? '+${state.settings.skipDuration}s',
+                      ),
                     ),
+                  if (compact && PlayerPip.supported) _pipButton(),
+                  if (compact)
+                    _icon(
+                      Icons.fullscreen_rounded,
+                      state.toggleFullscreen,
+                      tooltip: getString.playerFullscreen,
+                    ),
+                ],
+              );
+            }),
+            RepaintBoundary(
+              child: Watch(
+                () => IgnorePointer(
+                  ignoring: locked,
+                  child: PlayerSeekBar(
+                    position: _position(),
+                    buffer: state.controlsVisible.value
+                        ? (state.heldBuffer = engine.buffer.value)
+                        : state.heldBuffer,
+                    duration: engine.duration.value,
+                    stamps: state.stamps.toList(),
+                    chapters: engine.chapters.value,
+                    thumbless: state.settings.thumbLessSeekBar,
+                    enabled: !locked,
+                    previewAt: state.previewAt.value,
+                    preview: _preview(context, state),
+                    onHover: (d) {
+                      if (!state.scrubbing.value) state.previewTo(d);
+                    },
+                    onScrubStart: () {
+                      state.holdControls();
+                      state.scrubbing.value = true;
+                      state.scrubPosition.value = engine.position.value;
+                    },
+                    onScrub: (d) {
+                      state.scrubPosition.value = d;
+                      state.previewTo(d);
+                    },
+                    onSeek: (d) {
+                      state.scrubbing.value = false;
+                      state.previewTo(null);
+                      state.seekTo(d);
+                      state.showControls();
+                    },
                   ),
                 ),
-                if (!locked && (!compact || stamp != null))
-                  FilledButton.tonalIcon(
-                    onPressed: state.skipStamp,
-                    onLongPress: stamp != null && state.canRememberSkip
-                        ? () => state.toggleRememberedSkip(stamp)
-                        : null,
-                    style: FilledButton.styleFrom(
-                      backgroundColor: Colors.black.withValues(alpha: 0.35),
-                      foregroundColor: Colors.white,
-                      side: BorderSide(color: scheme.primary),
-                    ),
-                    icon: Icon(
-                      stamp != null && state.skipRemembered(stamp)
-                          ? Icons.autorenew_rounded
-                          : Icons.fast_forward_rounded,
-                    ),
-                    label: Text(
-                      stamp?.name ?? '+${state.settings.skipDuration}s',
-                    ),
-                  ),
-                if (compact && PlayerPip.supported) _pipButton(),
-                if (compact)
-                  _icon(
-                    Icons.fullscreen_rounded,
-                    state.toggleFullscreen,
-                    tooltip: getString.playerFullscreen,
-                  ),
-              ],
-            ),
-            IgnorePointer(
-              ignoring: locked,
-              child: PlayerSeekBar(
-                position: position,
-                buffer: state.controlsVisible.value
-                    ? (state.heldBuffer = engine.buffer.value)
-                    : state.heldBuffer,
-                duration: duration,
-                stamps: state.stamps.toList(),
-                chapters: engine.chapters.value,
-                thumbless: state.settings.thumbLessSeekBar,
-                enabled: !locked,
-                previewAt: state.previewAt.value,
-                preview: _preview(context, state),
-                onHover: (d) {
-                  if (!state.scrubbing.value) state.previewTo(d);
-                },
-                onScrubStart: () {
-                  state.holdControls();
-                  state.scrubbing.value = true;
-                  state.scrubPosition.value = engine.position.value;
-                },
-                onScrub: (d) {
-                  state.scrubPosition.value = d;
-                  state.previewTo(d);
-                },
-                onSeek: (d) {
-                  state.scrubbing.value = false;
-                  state.previewTo(null);
-                  state.seekTo(d);
-                  state.showControls();
-                },
               ),
             ),
             if (!locked && !compact)
-              Row(
-                children: [
-                  _icon(
-                    Icons.video_settings_rounded,
-                    () => showPlayerOptions(context, state),
-                    tooltip: getString.playerSettingsTitle,
-                  ),
-                  if (state.videos.length > 1 || state.request.tracked)
+              Watch(
+                () => Row(
+                  children: [
                     _icon(
-                      Icons.source_rounded,
-                      () => _streams(context),
-                      tooltip: getString.playerStreams,
+                      Icons.video_settings_rounded,
+                      () => showPlayerOptions(context, state),
+                      tooltip: getString.playerSettingsTitle,
                     ),
-                  _icon(
-                    Icons.subtitles_rounded,
-                    () => showTracksSheet(context, state, audio: false),
-                    tooltip: getString.playerSubtitles,
-                  ),
-                  _icon(
-                    Icons.audiotrack_rounded,
-                    () => showTracksSheet(context, state, audio: true),
-                    tooltip: getString.playerAudio,
-                  ),
-                  _icon(
-                    Icons.photo_filter_rounded,
-                    () => showPictureSheet(context, state),
-                    tooltip: getString.playerPicture,
-                  ),
-                  if (state.hasChapters)
+                    if (state.videos.length > 1 || state.request.tracked)
+                      _icon(
+                        Icons.source_rounded,
+                        () => _streams(context),
+                        tooltip: getString.playerStreams,
+                      ),
                     _icon(
-                      Icons.list_alt_rounded,
-                      () => showChaptersSheet(context, state),
-                      tooltip: getString.playerChapters,
+                      Icons.subtitles_rounded,
+                      () => showTracksSheet(context, state, audio: false),
+                      tooltip: getString.playerSubtitles,
                     ),
-                  if (state.canSubmitSkips)
                     _icon(
-                      Icons.cloud_upload_rounded,
-                      () => showSkipSubmitSheet(context, state),
-                      tooltip: getString.playerSkipSubmit,
+                      Icons.audiotrack_rounded,
+                      () => showTracksSheet(context, state, audio: true),
+                      tooltip: getString.playerAudio,
                     ),
-                  const Spacer(),
-                  if (PlayerPip.supported) _pipButton(),
-                  _icon(
-                    Icons.fit_screen_rounded,
-                    state.cycleFit,
-                    tooltip: getString.playerResize,
-                  ),
-                  _icon(
-                    Icons.fullscreen_exit_rounded,
-                    state.toggleFullscreen,
-                    tooltip: getString.playerFullscreen,
-                  ),
-                ],
+                    _icon(
+                      Icons.photo_filter_rounded,
+                      () => showPictureSheet(context, state),
+                      tooltip: getString.playerPicture,
+                    ),
+                    if (state.hasChapters)
+                      _icon(
+                        Icons.list_alt_rounded,
+                        () => showChaptersSheet(context, state),
+                        tooltip: getString.playerChapters,
+                      ),
+                    if (state.canSubmitSkips)
+                      _icon(
+                        Icons.cloud_upload_rounded,
+                        () => showSkipSubmitSheet(context, state),
+                        tooltip: getString.playerSkipSubmit,
+                      ),
+                    const Spacer(),
+                    if (PlayerPip.supported) _pipButton(),
+                    _icon(
+                      Icons.fit_screen_rounded,
+                      state.cycleFit,
+                      tooltip: getString.playerResize,
+                    ),
+                    _icon(
+                      Icons.fullscreen_exit_rounded,
+                      state.toggleFullscreen,
+                      tooltip: getString.playerFullscreen,
+                    ),
+                  ],
+                ),
               ),
           ],
         ),

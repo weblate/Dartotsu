@@ -107,22 +107,24 @@ class _PlayerScreenState extends State<PlayerScreen>
       ),
     );
     if (media == null) return wrapped;
-    return PresenceScope(
-      presence: DiscordPresence.consuming(
-        media,
-        number: item.number,
-        total: media.totalUnits,
-        thumbnail: item.unit?.thumbnail,
-        positionSeconds: state.presenceClock.value.$1,
-        anchorMs: state.presenceClock.value.$2,
-        durationSeconds: state.engine.duration.value.inSeconds > 0
-            ? state.engine.duration.value.inSeconds
-            : null,
-        rate: state.engine.rate.value,
-        paused: !state.engine.playing.value,
-      ),
-      child: wrapped,
-    );
+    return Watch(() {
+      final (positionSeconds, anchorMs) = state.presenceClock.value;
+      final duration = state.engine.duration.value.inSeconds;
+      return PresenceScope(
+        presence: DiscordPresence.consuming(
+          media,
+          number: item.number,
+          total: media.totalUnits,
+          thumbnail: item.unit?.thumbnail,
+          positionSeconds: positionSeconds,
+          anchorMs: anchorMs,
+          durationSeconds: duration > 0 ? duration : null,
+          rate: state.engine.rate.value,
+          paused: !state.engine.playing.value,
+        ),
+        child: wrapped,
+      );
+    });
   }
 
   Widget _pip(BuildContext context) {
@@ -140,12 +142,15 @@ class _PlayerScreenState extends State<PlayerScreen>
               visible: false,
             ),
           ),
-          if (!engine.assActive.value)
-            PlayerSubtitleView(
-              lines: engine.subtitleLines.value,
-              settings: state.settings,
-              controlsVisible: false,
-            ),
+          Watch(
+            () => engine.assActive.value
+                ? const SizedBox.shrink()
+                : PlayerSubtitleView(
+                    lines: engine.subtitleLines.value,
+                    settings: state.settings,
+                    controlsVisible: false,
+                  ),
+          ),
           GestureDetector(
             behavior: HitTestBehavior.translucent,
             onTap: () => unawaited(state.engine.toggle()),
@@ -180,19 +185,24 @@ class _PlayerScreenState extends State<PlayerScreen>
     }),
   );
 
-  Widget _stage(BuildContext context, {required bool compact}) => MouseRegion(
-    onHover: (_) => state.showControls(),
-    cursor: state.controlsVisible.value
-        ? SystemMouseCursors.basic
-        : SystemMouseCursors.none,
-    child: KeyedSubtree(
+  Widget _stage(BuildContext context, {required bool compact}) {
+    final video = KeyedSubtree(
       key: _videoKey,
       child: LayoutBuilder(
         builder: (context, box) =>
             Watch(() => _video(context, box.maxWidth, compact: compact)),
       ),
-    ),
-  );
+    );
+    return Watch(
+      () => MouseRegion(
+        onHover: (_) => state.showControls(),
+        cursor: state.controlsVisible.value
+            ? SystemMouseCursors.basic
+            : SystemMouseCursors.none,
+        child: video,
+      ),
+    );
+  }
 
   Widget _page(BuildContext context) {
     final scheme = context.colorScheme;
@@ -568,83 +578,110 @@ class _PlayerScreenState extends State<PlayerScreen>
   Widget _video(BuildContext context, double width, {required bool compact}) {
     state.engineTick.value;
     final engine = state.engine;
-    final visible = state.controlsVisible.value;
-    final error = state.loadError.value;
+    final controls = RepaintBoundary(
+      child: PlayerControls(state: state, compact: compact),
+    );
     return Stack(
       alignment: Alignment.center,
       children: [
-        _tinted(
-          Video(
-            controller: engine.video,
-            controls: null,
-            fit: state.fit.value,
-            filterQuality: FilterQuality.medium,
-            subtitleViewConfiguration: const SubtitleViewConfiguration(
-              visible: false,
+        Watch(
+          () => _tinted(
+            Video(
+              controller: engine.video,
+              controls: null,
+              fit: state.fit.value,
+              filterQuality: FilterQuality.medium,
+              subtitleViewConfiguration: const SubtitleViewConfiguration(
+                visible: false,
+              ),
             ),
           ),
         ),
-        if (!engine.assActive.value)
-          PlayerSubtitleView(
-            lines: engine.subtitleLines.value,
-            settings: state.settings,
-            controlsVisible: visible,
-          ),
-        Positioned.fill(child: _gestures(context, width)),
+        Watch(
+          () => engine.assActive.value
+              ? const SizedBox.shrink()
+              : PlayerSubtitleView(
+                  lines: engine.subtitleLines.value,
+                  settings: state.settings,
+                  controlsVisible: state.controlsVisible.value,
+                ),
+        ),
+        Positioned.fill(child: Watch(() => _gestures(context, width))),
         Positioned.fill(
-          child: AnimatedOpacity(
-            opacity: visible ? 1 : 0,
-            duration: animDuration(220),
-            child: IgnorePointer(
-              ignoring: !visible,
-              child: PlayerControls(state: state, compact: compact),
-            ),
+          child: Watch(() {
+            final visible = state.controlsVisible.value;
+            return AnimatedOpacity(
+              opacity: visible ? 1 : 0,
+              duration: animDuration(220),
+              child: IgnorePointer(ignoring: !visible, child: controls),
+            );
+          }),
+        ),
+        Watch(
+          () => PlayerSeekRipple(
+            seconds: state.seekLabelBackward.value,
+            forward: false,
           ),
         ),
-        PlayerSeekRipple(
-          seconds: state.seekLabelBackward.value,
-          forward: false,
-        ),
-        PlayerSeekRipple(seconds: state.seekLabelForward.value, forward: true),
-        if (state.hasNext)
-          PlayerNextCard(
-            seconds: state.nextCountdown.value,
-            title: state.items[state.index.value + 1].title,
-            onCancel: state.cancelCountdown,
-            onPlay: state.playNextNow,
+        Watch(
+          () => PlayerSeekRipple(
+            seconds: state.seekLabelForward.value,
+            forward: true,
           ),
-        PlayerLevelIndicator(
-          value: state.volume.value,
-          icon: Icons.volume_up_rounded,
-          shown: state.volumeShown.value,
-          left: state.settings.swapGestures,
+        ),
+        Watch(
+          () => state.hasNext
+              ? PlayerNextCard(
+                  seconds: state.nextCountdown.value,
+                  title: state.items[state.index.value + 1].title,
+                  onCancel: state.cancelCountdown,
+                  onPlay: state.playNextNow,
+                )
+              : const SizedBox.shrink(),
+        ),
+        Watch(
+          () => PlayerLevelIndicator(
+            value: state.volume.value,
+            icon: Icons.volume_up_rounded,
+            shown: state.volumeShown.value,
+            left: state.settings.swapGestures,
+          ),
         ),
         if (supportsBrightness)
-          PlayerLevelIndicator(
-            value: state.brightness.value,
-            icon: Icons.brightness_6_rounded,
-            shown: state.brightnessShown.value,
-            left: !state.settings.swapGestures,
+          Watch(
+            () => PlayerLevelIndicator(
+              value: state.brightness.value,
+              icon: Icons.brightness_6_rounded,
+              shown: state.brightnessShown.value,
+              left: !state.settings.swapGestures,
+            ),
           ),
-        PlayerChip(
-          text: state.holdActive.value
-              ? '${state.holdSpeedValue.value}x'
-              : null,
-          icon: Icons.fast_forward_rounded,
+        Watch(
+          () => PlayerChip(
+            text: state.holdActive.value
+                ? '${state.holdSpeedValue.value}x'
+                : null,
+            icon: Icons.fast_forward_rounded,
+          ),
         ),
-        PlayerChip(
-          text: state.shaderOsd.value,
-          icon: Icons.photo_filter_rounded,
-          alignment: AlignmentDirectional.topEnd,
-          margin: const EdgeInsetsDirectional.only(top: 72, end: 24),
+        Watch(
+          () => PlayerChip(
+            text: state.shaderOsd.value,
+            icon: Icons.photo_filter_rounded,
+            alignment: AlignmentDirectional.topEnd,
+            margin: const EdgeInsetsDirectional.only(top: 72, end: 24),
+          ),
         ),
-        if (state.loading.value && error == null)
-          const IgnorePointer(
+        Watch(() {
+          final error = state.loadError.value;
+          if (error != null) return _failure(context, error);
+          if (!state.loading.value) return const SizedBox.shrink();
+          return const IgnorePointer(
             child: Center(
               child: CircularProgressIndicator(color: Colors.white),
             ),
-          ),
-        if (error != null) _failure(context, error),
+          );
+        }),
       ],
     );
   }
