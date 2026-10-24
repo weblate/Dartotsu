@@ -7,6 +7,7 @@ import '../../../Utils/Functions/SnackBar.dart';
 import 'Client.dart';
 import 'Data/Mapper.dart';
 import '../../../Core/ThemeManager/LanguageSwitcher.dart';
+import '../../../Core/Services/Api/Progress.dart';
 
 class MalMutations extends Mutations {
   final MalClient client;
@@ -76,8 +77,7 @@ class MalMutations extends Mutations {
     final ref = parseMalMediaId(media.id);
     if (ref == null) return;
     final (anime, id) = ref;
-    final total = media.totalUnits;
-    final done = total != null && total > 0 && progress >= total;
+    final done = reachesEnd(media, progress);
     final form = <String, String>{
       anime ? 'num_watched_episodes' : 'num_chapters_read': '$progress',
       'status': done

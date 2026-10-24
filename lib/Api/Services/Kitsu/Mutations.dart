@@ -7,6 +7,7 @@ import '../../../Utils/Functions/RefreshController.dart';
 import '../../../Utils/Functions/SnackBar.dart';
 import 'Client.dart';
 import 'Data/Mapper.dart';
+import '../../../Core/Services/Api/Progress.dart';
 
 class KitsuMutations extends Mutations {
   final KitsuClient client;
@@ -67,8 +68,7 @@ class KitsuMutations extends Mutations {
   @override
   Future<void> setProgress(Media media, int progress) async {
     if (incognitoBlocksEdits) return;
-    final total = media.totalUnits;
-    final done = total != null && total > 0 && progress >= total;
+    final done = reachesEnd(media, progress);
     await _save(media, {
       'progress': progress,
       'status': done

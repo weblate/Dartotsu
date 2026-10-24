@@ -8,6 +8,7 @@ import '../../../Utils/Functions/SnackBar.dart';
 import 'Client.dart';
 import 'Data/Mapper.dart';
 import 'Queries.dart';
+import '../../../Core/Services/Api/Progress.dart';
 
 class MangaBakaMutations extends Mutations {
   final MangaBakaClient client;
@@ -62,8 +63,7 @@ class MangaBakaMutations extends Mutations {
   @override
   Future<void> setProgress(Media media, int progress) async {
     if (incognitoBlocksEdits) return;
-    final total = media.totalUnits;
-    final done = total != null && total > 0 && progress >= total;
+    final done = reachesEnd(media, progress);
     final status = media.userStatus;
     await _save(media, {
       'progress_chapter': progress,

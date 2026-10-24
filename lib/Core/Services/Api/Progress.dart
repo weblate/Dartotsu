@@ -6,9 +6,16 @@ Date currentDate() {
   return Date(year: now.year, month: now.month, day: now.day);
 }
 
-bool applyProgress(Media media, int progress) {
+bool reachesEnd(Media media, int progress) {
   final total = media.totalUnits;
-  final completed = total != null && total > 0 && progress >= total;
+  if (total == null || total <= 0 || progress < total) return false;
+  return !const {'RELEASING', 'HIATUS', 'NOT_YET_RELEASED'}.contains(
+    media.status,
+  );
+}
+
+bool applyProgress(Media media, int progress) {
+  final completed = reachesEnd(media, progress);
   final rewatch =
       media.userStatus == 'REPEATING' ||
       (media.userStatus == 'COMPLETED' && progress < (media.userProgress ?? 0));
