@@ -10,14 +10,29 @@ import '../../../../Core/State/State.dart';
 import 'SyncModels.dart';
 import '../../../../Logger.dart';
 
-const _source =
+const _animeSource =
     'https://raw.githubusercontent.com/Fribb/anime-lists/master/anime-list-mini.json';
+const _mangaSource =
+    'https://raw.githubusercontent.com/itsmechinmoy/dartotsu_manga_mapper/main/manga-list-mini.json';
 
-const _columns = [SyncKey.anilist, SyncKey.mal, SyncKey.kitsu, SyncKey.simkl];
+const _animeColumns = [
+  SyncKey.anilist,
+  SyncKey.mal,
+  SyncKey.kitsu,
+  SyncKey.simkl,
+];
+
+const _mangaColumns = [
+  SyncKey.mangabaka,
+  SyncKey.anilist,
+  SyncKey.mal,
+  SyncKey.mangaupdates,
+  SyncKey.kitsu,
+];
 
 const _maxAge = Duration(days: 7);
 
-List<int> _compact(String raw) {
+List<int> _compactAnime(String raw) {
   final rows = jsonDecode(raw) as List;
   final out = <int>[];
   for (final r in rows) {
@@ -32,15 +47,39 @@ List<int> _compact(String raw) {
   return out;
 }
 
+List<int> compactMangaIndex(String raw) {
+  final rows = jsonDecode(raw) as List;
+  final out = <int>[];
+  for (final r in rows) {
+    if (r is! Map) continue;
+    final row = [
+      for (final c in const [
+        'mangabaka_id',
+        'anilist_id',
+        'mal_id',
+        'mangaupdates_id',
+        'kitsu_id',
+      ])
+        r[c] is int ? r[c] as int : 0,
+    ];
+    if (row.where((v) => v > 0).length < 2) continue;
+    out.addAll(row);
+  }
+  return out;
+}
+
 List<int> _decodeFlat(String raw) => (jsonDecode(raw) as List).cast<int>();
 
 class SyncIdIndex {
   final List<int> _flat;
+  final List<String> _columns;
   late final Map<String, Map<int, int>> _by = _build();
 
-  SyncIdIndex(this._flat);
+  SyncIdIndex(this._flat, {List<String>? columns, bool anime = true})
+    : _columns = columns ?? (anime ? _animeColumns : _mangaColumns);
 
   List<int> get flat => _flat;
+  List<String> get columns => _columns;
 
   int get rows => _flat.length ~/ _columns.length;
 
@@ -75,41 +114,53 @@ class SyncIdIndex {
     return ids;
   }
 
-  static SyncIdIndex? _cached;
+  static final _cache = <bool, SyncIdIndex>{};
 
-  static Future<File> _file() async {
+  static Future<File> _file({required bool anime}) async {
     final dir = await StorageManager.getDirectory(subPath: 'sync');
-    return File(p.join(dir!.path, 'anime-ids.json'));
+    final name = anime ? 'anime-ids.json' : 'manga-ids.json';
+    return File(p.join(dir!.path, name));
   }
 
-  static Future<SyncIdIndex> load({bool force = false}) async {
-    final cached = _cached;
+  static Future<SyncIdIndex> load({
+    bool anime = true,
+    bool force = false,
+  }) async {
+    final cached = _cache[anime];
     if (cached != null && !force) return cached;
-    final file = await _file();
+    final file = await _file(anime: anime);
     final stale =
         !await file.exists() ||
         DateTime.now().difference(await file.lastModified()) > _maxAge;
     if (stale || force) {
       try {
         final res = await find<NetworkManager>().get(
-          _source,
+          anime ? _animeSource : _mangaSource,
           decodeJson: false,
         );
         if (res.statusCode == 200 && res.data is String) {
-          final flat = await compute(_compact, res.data as String);
+          final flat = await compute(
+            anime ? _compactAnime : compactMangaIndex,
+            res.data as String,
+          );
           if (flat.isNotEmpty) {
             await file.writeAsString(jsonEncode(flat));
-            return _cached = SyncIdIndex(flat);
+            return _cache[anime] = SyncIdIndex(flat, anime: anime);
           }
         }
       } catch (e) {
-        logger('SyncIdIndex download failed: $e', logLevel: LogLevel.error);
+        logger(
+          'SyncIdIndex (${anime ? 'anime' : 'manga'}) download failed: $e',
+          logLevel: LogLevel.error,
+        );
       }
     }
     if (await file.exists()) {
       final flat = await compute(_decodeFlat, await file.readAsString());
-      return _cached = SyncIdIndex(flat);
+      return _cache[anime] = SyncIdIndex(flat, anime: anime);
     }
-    throw SyncFatal('Could not download the anime ID mapping');
+    throw SyncFatal(
+      'Could not download the ${anime ? 'anime' : 'manga'} ID mapping',
+    );
   }
 }

@@ -236,14 +236,17 @@ class SyncController extends AppController {
     error.value = null;
     targetError.clear();
     fetchDone.value = 0;
-    fetchTotal.value = targets.length + (ahead ? 0 : 1) + (isAnime ? 1 : 0);
+    fetchTotal.value = targets.length + (ahead ? 0 : 1) + 1;
     try {
+      fetchLabel.value = getString.syncLoadingMap;
       List<int>? flat;
-      if (isAnime) {
-        fetchLabel.value = getString.syncLoadingMap;
-        flat = (await SyncIdIndex.load()).flat;
-        fetchDone.value++;
+      try {
+        flat = (await SyncIdIndex.load(anime: isAnime)).flat;
+      } catch (e, st) {
+        if (isAnime) rethrow;
+        logError('SyncController', e, st);
       }
+      fetchDone.value++;
       final mainId = ahead ? syncAheadId : main!.id;
       final typeKey = SyncMemory.typeKey(mainId, isAnime);
       SyncPrepared? prepared;
@@ -253,6 +256,7 @@ class SyncController extends AppController {
           await adapter!.library(anime: isAnime),
           flat,
           adapter.key,
+          anime: isAnime,
         );
         fetchDone.value++;
         final lastFull = DateTime.fromMillisecondsSinceEpoch(
@@ -294,6 +298,7 @@ class SyncController extends AppController {
               libraries: libraries,
               flat: flat,
               failed: failed,
+              anime: isAnime,
             )
           : await syncPlanFromMain(
               main: prepared!.items,
@@ -303,6 +308,7 @@ class SyncController extends AppController {
               mainRepeat: adapter.syncsRepeat,
               onlyForward: PrefName.syncOnlyForward.value,
               failed: failed,
+              anime: isAnime,
             );
       final result = <String, SyncTargetPlan>{
         for (final t in targets)
@@ -402,16 +408,15 @@ class SyncController extends AppController {
     final targets = targetsFor(service.id, isAnime);
     if (targets.isEmpty) return;
     var ids = adapter.idsOf(media);
-    if (isAnime) {
-      try {
-        ids = await syncExpandIds(
-          ids,
-          (await SyncIdIndex.load()).flat,
-          adapter.key,
-        );
-      } catch (e, st) {
-        logError('SyncController', e, st);
-      }
+    try {
+      ids = await syncExpandIds(
+        ids,
+        (await SyncIdIndex.load(anime: isAnime)).flat,
+        adapter.key,
+        anime: isAnime,
+      );
+    } catch (e, st) {
+      logError('SyncController', e, st);
     }
     final want = SyncItem.fromMedia(media, ids);
     final done = <String>[];

@@ -24,11 +24,12 @@ typedef SyncLibrary = (SyncTarget, List<SyncItem>);
 Future<SyncPrepared> syncPrepareMain(
   List<SyncItem> items,
   List<int>? flat,
-  String key,
-) => Isolate.run(() {
+  String key, {
+  bool anime = true,
+}) => Isolate.run(() {
   final expanded = expandItems(
     items,
-    flat == null ? null : SyncIdIndex(flat),
+    flat == null ? null : SyncIdIndex(flat, anime: anime),
     key,
   );
   return SyncPrepared(expanded, syncFingerprint(expanded));
@@ -42,8 +43,9 @@ Future<SyncPlanned> syncPlanFromMain({
   required bool mainRepeat,
   required bool onlyForward,
   required Set<String> failed,
+  bool anime = true,
 }) => Isolate.run(() {
-  final index = flat == null ? null : SyncIdIndex(flat);
+  final index = flat == null ? null : SyncIdIndex(flat, anime: anime);
   final out = <String, SyncTargetPlan>{};
   for (final e in targets.entries) {
     if (failed.contains(e.key)) continue;
@@ -63,8 +65,9 @@ Future<SyncPlanned> syncPlanAhead({
   required Map<String, SyncLibrary> libraries,
   required List<int>? flat,
   required Set<String> failed,
+  bool anime = true,
 }) => Isolate.run(() {
-  final index = flat == null ? null : SyncIdIndex(flat);
+  final index = flat == null ? null : SyncIdIndex(flat, anime: anime);
   final expanded = {
     for (final e in libraries.entries)
       if (!failed.contains(e.key))
@@ -87,5 +90,8 @@ Future<SyncPlanned> syncPlanAhead({
 Future<Map<String, int>> syncExpandIds(
   Map<String, int> ids,
   List<int> flat,
-  String prefer,
-) => Isolate.run(() => SyncIdIndex(flat).expand(ids, prefer: prefer));
+  String prefer, {
+  bool anime = true,
+}) => Isolate.run(
+  () => SyncIdIndex(flat, anime: anime).expand(ids, prefer: prefer),
+);
