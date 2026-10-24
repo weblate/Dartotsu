@@ -3,15 +3,10 @@ import '../../../Core/Services/LayoutPref.dart';
 
 const kMangaUpdatesHomeSections = <String, bool>{
   'Continue Reading': true,
-  'Reading': true,
-  'Wish List': true,
-  'Complete': true,
+  'Planned Manga': true,
   'On Hold': true,
-  'Unfinished': true,
-  'Trending Now': true,
-  'Most Popular': true,
-  'Top Rated': true,
-  'Latest Releases': true,
+  'Dropped': true,
+  'Hidden Media': false,
 };
 
 const kMangaUpdatesFeedSections = <String, bool>{
@@ -29,7 +24,11 @@ class MangaUpdatesPref {
   static const token = Pref('mangaUpdatesToken', '', PrefLocation.PROTECTED);
   static const username = Pref('mangaUpdatesUsername', '', PrefLocation.OTHER);
 
-  static const hideNsfw = Pref('mangaUpdatesHideNsfw', true, PrefLocation.OTHER);
+  static const hideNsfw = Pref(
+    'mangaUpdatesHideNsfw',
+    true,
+    PrefLocation.OTHER,
+  );
 
   static final homeLayout = layoutPref(
     'mangaUpdatesHomeLayout',

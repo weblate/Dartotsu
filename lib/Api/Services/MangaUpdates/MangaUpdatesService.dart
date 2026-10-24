@@ -57,22 +57,17 @@ class MangaUpdatesService extends MediaService {
   SettingsScreenView get settingsView => MangaUpdatesSettingsView();
 
   @override
-  Set<String> get linkHosts => const {'mangaupdates.com', 'www.mangaupdates.com'};
+  Set<String> get linkHosts => const {
+    'mangaupdates.com',
+    'www.mangaupdates.com',
+  };
 
   @override
   AppLink? parseUri(Uri uri) {
-    if (uri.queryParameters.containsKey('id')) {
-      final id = uri.queryParameters['id'];
-      if (id != null && int.tryParse(id) != null) {
-        return AppLink(AppLinkKind.manga, id);
-      }
-    }
     final segments = uri.pathSegments.where((s) => s.isNotEmpty).toList();
     if (segments.length >= 2 && segments[0] == 'series') {
-      final id = int.tryParse(segments[1]);
-      if (id != null) {
-        return AppLink(AppLinkKind.manga, segments[1]);
-      }
+      final id = int.tryParse(segments[1], radix: 36);
+      if (id != null) return AppLink(AppLinkKind.manga, '$id');
     }
     return super.parseUri(uri);
   }

@@ -33,14 +33,8 @@ class MangaUpdatesFeedView extends FeedScreenView {
         ];
 
   @override
-  Future<List<Media>?> chipMedia(MediaType type, FeedChip chip) {
-    final formatName = chip.id[0].toUpperCase() + chip.id.substring(1).toLowerCase();
-    final section = MangaUpdatesSection('Top $formatName', {
-      'type': [formatName],
-      'orderby': 'score',
-    });
-    return mangaUpdatesAuth.queries.sectionPage(section);
-  }
+  Future<List<Media>?> chipMedia(MediaType type, FeedChip chip) =>
+      mangaUpdatesAuth.queries.sectionPage(mangaUpdatesTypeSection(chip.id));
 
   @override
   Stream<List<ScreenWidget>> screenStream(MediaType type) {

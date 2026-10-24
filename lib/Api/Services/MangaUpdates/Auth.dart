@@ -86,10 +86,7 @@ class MangaUpdatesAuth extends AppController
       return false;
     }
     try {
-      final sessionToken = await client.login(
-        credentials.$1,
-        credentials.$2,
-      );
+      final sessionToken = await client.login(credentials.$1, credentials.$2);
       token.value = sessionToken;
       MangaUpdatesPref.username.value = credentials.$1;
       await refreshUser();
@@ -154,8 +151,8 @@ class MangaUpdatesAuth extends AppController
     await client.logout();
     token.value = '';
     user.value = null;
-    PrefManager.deleteKey(_userCacheKey, location: PrefLocation.CACHE);
-    queries.invalidateLibrary();
+    PrefManager.removeCustomVal(_userCacheKey, location: PrefLocation.CACHE);
+    queries.clearLibrary();
   }
 
   @override
@@ -178,7 +175,8 @@ class MangaUpdatesAuth extends AppController
       user.value = u;
       PrefManager.setCustomType(
         _userCacheKey,
-        u.toJson(),
+        u,
+        (v) => v.toJson(),
         location: PrefLocation.CACHE,
       );
     } catch (e, st) {

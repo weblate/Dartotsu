@@ -31,12 +31,6 @@ class MangaUpdatesSearchView extends SearchScreenView {
       'DOUJINSHI',
       'ARTBOOK',
     ],
-    statuses: const [
-      'RELEASING',
-      'FINISHED',
-      'HIATUS',
-      'CANCELLED',
-    ],
     genres: mangaUpdatesGenres(),
     adult: true,
     onList: mangaUpdatesAuth.isLoggedIn,

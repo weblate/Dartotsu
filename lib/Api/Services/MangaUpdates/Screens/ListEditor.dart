@@ -18,10 +18,7 @@ class MangaUpdatesListEditorView extends ListEditorScreenView {
   @override
   List<ScreenWidget> build(Media media, ListEditorDraft draft) => [
     ScreenWidget.extra(
-      ListStatusField(
-        draft: draft,
-        statuses: statuses(anime: false),
-      ),
+      ListStatusField(draft: draft, statuses: statuses(anime: false)),
     ),
     ScreenWidget.extra(
       ListProgressField(draft: draft, total: media.totalUnits),

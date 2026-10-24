@@ -20,6 +20,7 @@ class MangaUpdatesException implements Exception {
 Map<String, dynamic> _body(NetworkResponse<dynamic> res) {
   final data = res.data;
   final body = data is String && data.isNotEmpty ? _tryJson(data) : data;
+  if (body is List) return {'data': body};
   return body is Map<String, dynamic> ? body : <String, dynamic>{};
 }
 
@@ -63,7 +64,8 @@ class MangaUpdatesClient {
       path.startsWith('http') ? path : '$mangaUpdatesApi$path';
 
   Future<NetworkResponse<dynamic>> _send(
-    Future<NetworkResponse<dynamic>> Function(Map<String, String> headers) call, {
+    Future<NetworkResponse<dynamic>> Function(Map<String, String> headers)
+    call, {
     bool json = false,
   }) async {
     var res = await call(_headers(json: json));
@@ -85,7 +87,10 @@ class MangaUpdatesClient {
   Map<String, dynamic> _checked(NetworkResponse<dynamic> res) {
     final body = _body(res);
     if (res.statusCode >= 400) {
-      throw MangaUpdatesException(_message(body, res.statusCode), res.statusCode);
+      throw MangaUpdatesException(
+        _message(body, res.statusCode),
+        res.statusCode,
+      );
     }
     return body;
   }
@@ -99,7 +104,9 @@ class MangaUpdatesClient {
       for (final e in (query ?? const <String, String>{}).entries)
         '${e.key}=${Uri.encodeQueryComponent(e.value)}',
     ];
-    final url = params.isEmpty ? _url(path) : '${_url(path)}?${params.join('&')}';
+    final url = params.isEmpty
+        ? _url(path)
+        : '${_url(path)}?${params.join('&')}';
     final key = '${hasToken ? 'u' : 'a'}|$url';
     if (cache > Duration.zero) {
       final hit = _cache[key];
@@ -107,12 +114,14 @@ class MangaUpdatesClient {
         return Future.value(hit.$2);
       }
     }
-    return _inflight[key] ??= _fetch(url).then((data) {
-      if (cache > Duration.zero) _cache[key] = (DateTime.now(), data);
-      return data;
-    }).whenComplete(() {
-      _inflight.remove(key);
-    });
+    return _inflight[key] ??= _fetch(url)
+        .then((data) {
+          if (cache > Duration.zero) _cache[key] = (DateTime.now(), data);
+          return data;
+        })
+        .whenComplete(() {
+          _inflight.remove(key);
+        });
   }
 
   Future<Map<String, dynamic>> _fetch(String url) async {
@@ -136,17 +145,13 @@ class MangaUpdatesClient {
     return _checked(res);
   }
 
-  Future<Map<String, dynamic>> delete(String path, [dynamic body]) async {
-    final res = await _send(
-      (h) => _net.delete(
-        _url(path),
-        data: body != null ? jsonEncode(body) : null,
-        headers: h,
-      ),
-      json: body != null,
-    );
+  Future<Map<String, dynamic>> delete(String path) async {
+    final res = await _send((h) => _net.delete(_url(path), headers: h));
     if (res.statusCode >= 400 && res.statusCode != 404) {
-      throw MangaUpdatesException(_message(_body(res), res.statusCode), res.statusCode);
+      throw MangaUpdatesException(
+        _message(_body(res), res.statusCode),
+        res.statusCode,
+      );
     }
     return _body(res);
   }

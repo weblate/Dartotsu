@@ -5,8 +5,10 @@ import '../../../../Core/Services/Model/Media.dart';
 import '../../../../Core/Services/Model/Review.dart';
 import '../../../../Core/Services/Model/User.dart';
 
-String mangaUpdatesShareLink(Object id) =>
-    'https://www.mangaupdates.com/series.html?id=$id';
+String mangaUpdatesShareLink(Object id) {
+  final number = int.tryParse('$id');
+  return 'https://www.mangaupdates.com/series/${number?.toRadixString(36) ?? id}';
+}
 
 const _listTypeToStatus = {
   'read': 'CURRENT',

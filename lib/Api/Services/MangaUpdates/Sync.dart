@@ -1,4 +1,3 @@
-import '../../../Core/Services/Api/MangaUpdates.dart' as mu_match;
 import '../../../Core/Services/Model/Media.dart';
 import '../../../Screen/Settings/Sync/Data/SyncAdapter.dart';
 import '../../../Screen/Settings/Sync/Data/SyncModels.dart';
@@ -19,7 +18,7 @@ class MangaUpdatesSync extends SyncAdapter {
   bool supports({required bool anime}) => !anime;
 
   @override
-  List<SyncLimit> get limits => const [SyncLimit(60, Duration(minutes: 1))];
+  List<SyncLimit> get limits => const [SyncLimit(10, Duration(minutes: 1))];
 
   @override
   Future<List<SyncItem>> library({required bool anime}) async {
@@ -29,9 +28,7 @@ class MangaUpdatesSync extends SyncAdapter {
       return [
         for (final m in media)
           if (int.tryParse(m.id) case final id?)
-            SyncItem.fromMedia(m, {
-              SyncKey.mangaupdates: id,
-            }),
+            SyncItem.fromMedia(m, {SyncKey.mangaupdates: id}),
       ];
     } on MangaUpdatesException catch (e) {
       throw syncError(e, status: e.status);
@@ -47,13 +44,14 @@ class MangaUpdatesSync extends SyncAdapter {
   @override
   Future<int> write(List<SyncOp> batch, {required bool anime}) async {
     try {
-      for (final op in batch) {
-        await mutations.saveEntry(
-          op.want.toMedia(anime: anime, idOverride: op.targetId)
-            ..userListId = op.have?.listId,
-          exists: op.exists,
-        );
-      }
+      await mutations.saveEntries([
+        for (final op in batch)
+          (
+            op.want.toMedia(anime: anime, idOverride: op.targetId)
+              ..userListId = op.have?.listId,
+            op.exists,
+          ),
+      ]);
     } on MangaUpdatesException catch (e) {
       throw syncError(e, status: e.status);
     }
@@ -64,29 +62,6 @@ class MangaUpdatesSync extends SyncAdapter {
   Map<String, int> idsOf(Media media) {
     final base = super.idsOf(media);
     final id = int.tryParse(media.id);
-    return {
-      ...base,
-      if (id != null) SyncKey.mangaupdates: id,
-    };
-  }
-
-  @override
-  bool get canResolve => true;
-
-  @override
-  List<String> get resolveKeys => const [SyncKey.mal, SyncKey.anilist];
-
-  @override
-  Future<(Map<int, int>, int)> resolve(List<int> mal, {required bool anime}) async {
-    return (const <int, int>{}, 0);
-  }
-
-  @override
-  Future<(Map<int, int>, int)> resolveBy(
-    String from,
-    List<int> ids, {
-    required bool anime,
-  }) async {
-    return (const <int, int>{}, 0);
+    return {...base, SyncKey.mangaupdates: ?id};
   }
 }

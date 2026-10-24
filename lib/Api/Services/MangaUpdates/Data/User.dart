@@ -34,7 +34,8 @@ class MangaUpdatesUser implements ServiceUser {
   @override
   ScoreFormat get scoreFormat => ScoreFormat.point10;
 
-  String get url => profileUrl ?? 'https://www.mangaupdates.com/members.html?id=$id';
+  String get url =>
+      profileUrl ?? 'https://www.mangaupdates.com/members.html?id=$id';
 
   MangaUpdatesUser copyWith({int? chaptersRead}) => MangaUpdatesUser(
     id: id,

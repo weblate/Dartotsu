@@ -24,11 +24,7 @@ class MangaUpdatesMutations extends Mutations {
     _ => 0,
   };
 
-  int? _idOf(Media media) {
-    final raw = media.id;
-    final clean = raw.contains('/') ? raw.split('/').last : raw;
-    return int.tryParse(clean);
-  }
+  int? _idOf(Media media) => MangaUpdatesQueries.cleanId(media.id);
 
   void _done() {
     queries.invalidateLibrary();
@@ -49,43 +45,77 @@ class MangaUpdatesMutations extends Mutations {
     }
   }
 
+  Map<String, Object?> _entry(Media media, int id) => {
+    'series': {'id': id},
+    'list_id': _listIdFor(media.userStatus),
+    'status': {'chapter': media.userProgress ?? 0},
+  };
+
+  Future<void> _rate(Media media, int id) async {
+    final score = media.userScore ?? 0;
+    if (score <= 0) return;
+    await client.put('/series/$id/rating', {
+      'rating': (score / 10).clamp(1.0, 10.0),
+    });
+  }
+
+  bool _missing(MangaUpdatesException e) => e.status == 400 || e.status == 404;
+
   @override
   Future<void> saveEntry(Media media, {bool? exists}) async {
     final id = _idOf(media);
     if (id == null) return;
-
-    final listId = _listIdFor(media.userStatus);
-    final chapter = media.userProgress ?? 0;
-
-    final entryBody = [
-      {
-        'series': {'id': id},
-        'list_id': listId,
-        'status': {
-          'chapter': chapter,
-        },
-        'priority': 0,
-      }
-    ];
-
-    try {
-      await client.post('/lists/series/update', entryBody);
-    } catch (_) {
+    final body = [_entry(media, id)];
+    if (exists == false) {
+      await client.post('/lists/series', body);
+    } else {
       try {
-        await client.post('/lists/series', entryBody);
-      } catch (e, st) {
-        logError('Mutations', e, st);
+        await client.post('/lists/series/update', body);
+      } on MangaUpdatesException catch (e) {
+        if (exists == true || !_missing(e)) rethrow;
+        await client.post('/lists/series', body);
       }
     }
+    await _rate(media, id);
+  }
 
-    final score = media.userScore ?? 0;
-    if (score > 0) {
-      final rating = (score / 10).round().clamp(1, 10);
-      try {
-        await client.put('/series/$id/rating', {'rating': rating});
-      } catch (e, st) {
-        logError('Mutations', e, st);
+  Future<void> saveEntries(List<(Media, bool?)> items) async {
+    final adds = <(Media, int)>[];
+    final updates = <(Media, int, bool?)>[];
+    for (final (media, exists) in items) {
+      final id = _idOf(media);
+      if (id == null) continue;
+      if (exists == false) {
+        adds.add((media, id));
+      } else {
+        updates.add((media, id, exists));
       }
+    }
+    if (adds.isNotEmpty) {
+      await client.post('/lists/series', [
+        for (final (media, id) in adds) _entry(media, id),
+      ]);
+    }
+    var updated = true;
+    if (updates.isNotEmpty) {
+      try {
+        await client.post('/lists/series/update', [
+          for (final (media, id, _) in updates) _entry(media, id),
+        ]);
+      } on MangaUpdatesException catch (e) {
+        if (!_missing(e)) rethrow;
+        updated = false;
+        for (final (media, _, exists) in updates) {
+          await saveEntry(media, exists: exists);
+        }
+      }
+    }
+    for (final (media, id) in adds) {
+      await _rate(media, id);
+    }
+    if (!updated) return;
+    for (final (media, id, _) in updates) {
+      await _rate(media, id);
     }
   }
 
@@ -95,9 +125,7 @@ class MangaUpdatesMutations extends Mutations {
     if (id == null) return;
     try {
       await client.post('/lists/series/delete', [id]);
-      try {
-        await client.delete('/series/$id/rating');
-      } catch (_) {}
+      await client.delete('/series/$id/rating');
       clearListEntry(media);
       _done();
     } on MangaUpdatesException catch (e) {
@@ -109,7 +137,11 @@ class MangaUpdatesMutations extends Mutations {
   Future<void> setProgress(Media media, int progress) async {
     if (incognitoBlocksEdits) return;
     final total = media.totalUnits;
-    final done = total != null && total > 0 && progress >= total;
+    final done =
+        media.status == 'FINISHED' &&
+        total != null &&
+        total > 0 &&
+        progress >= total;
     media.userProgress = progress;
     if (done) {
       media.userStatus = 'COMPLETED';

@@ -1,4 +1,3 @@
-import '../../../Logger.dart';
 import 'dart:async';
 
 import '../../../Core/Preferences/PrefManager.dart';
@@ -11,6 +10,7 @@ import '../../../Core/Services/Model/Media.dart';
 import '../../../Core/Services/Model/MediaListEntry.dart';
 import '../../../Core/Services/Model/Review.dart';
 import '../../../Core/ThemeManager/LanguageSwitcher.dart';
+import '../../../Logger.dart';
 import '../../../Model/MediaType.dart';
 import '../../../Model/SearchResults.dart';
 import 'Client.dart';
@@ -18,6 +18,19 @@ import 'Data/Mapper.dart';
 import 'Prefs.dart';
 
 const mangaUpdatesPageSize = 20;
+const _listsPerPage = 100;
+const _readingTypes = ['Manga', 'Manhwa', 'Manhua'];
+const _adultGenres = ['Adult', 'Hentai', 'Smut', 'Lolicon', 'Shotacon'];
+
+const _formatNames = {
+  'MANGA': 'Manga',
+  'NOVEL': 'Novel',
+  'MANHWA': 'Manhwa',
+  'MANHUA': 'Manhua',
+  'OEL': 'OEL',
+  'DOUJINSHI': 'Doujinshi',
+  'ARTBOOK': 'Artbook',
+};
 
 class MangaUpdatesSection {
   final String title;
@@ -27,31 +40,97 @@ class MangaUpdatesSection {
 }
 
 const mangaSections = [
-  MangaUpdatesSection('Trending Now', {'orderby': 'week_pos'}),
-  MangaUpdatesSection('Most Popular', {'orderby': 'score'}),
-  MangaUpdatesSection('Top Rated', {'orderby': 'rating'}),
-  MangaUpdatesSection('Latest Releases', {'orderby': 'date_added'}),
-  MangaUpdatesSection('Top Manhwa', {'type': ['Manhwa'], 'orderby': 'score'}),
-  MangaUpdatesSection('Top Manhua', {'type': ['Manhua'], 'orderby': 'score'}),
+  MangaUpdatesSection('Trending Now', {
+    'type': _readingTypes,
+    'orderby': 'week_pos',
+  }),
+  MangaUpdatesSection('Most Popular', {
+    'type': _readingTypes,
+    'orderby': 'year_pos',
+  }),
+  MangaUpdatesSection('Top Rated', {
+    'type': _readingTypes,
+    'orderby': 'rating',
+  }),
+  MangaUpdatesSection('Latest Releases', {
+    'type': _readingTypes,
+    'orderby': 'date_added',
+  }),
+  MangaUpdatesSection('Top Manhwa', {
+    'type': ['Manhwa'],
+    'orderby': 'year_pos',
+  }),
+  MangaUpdatesSection('Top Manhua', {
+    'type': ['Manhua'],
+    'orderby': 'year_pos',
+  }),
 ];
 
 const novelSections = [
-  MangaUpdatesSection('Trending Now', {'type': ['Novel'], 'orderby': 'week_pos'}),
-  MangaUpdatesSection('Most Popular', {'type': ['Novel'], 'orderby': 'score'}),
-  MangaUpdatesSection('Top Rated', {'type': ['Novel'], 'orderby': 'rating'}),
-  MangaUpdatesSection('Latest Releases', {'type': ['Novel'], 'orderby': 'date_added'}),
+  MangaUpdatesSection('Trending Now', {
+    'type': ['Novel'],
+    'orderby': 'week_pos',
+  }),
+  MangaUpdatesSection('Most Popular', {
+    'type': ['Novel'],
+    'orderby': 'year_pos',
+  }),
+  MangaUpdatesSection('Top Rated', {
+    'type': ['Novel'],
+    'orderby': 'rating',
+  }),
+  MangaUpdatesSection('Latest Releases', {
+    'type': ['Novel'],
+    'orderby': 'date_added',
+  }),
 ];
 
 List<MangaUpdatesSection> mangaUpdatesSectionsFor(MediaType type) =>
     type == MediaType.novel ? novelSections : mangaSections;
 
+MangaUpdatesSection mangaUpdatesTypeSection(String format) =>
+    MangaUpdatesSection('Top ${_formatNames[format.toUpperCase()] ?? format}', {
+      'type': [_formatNames[format.toUpperCase()] ?? format],
+      'orderby': 'year_pos',
+    });
+
 const _defaultGenres = [
-  'Action', 'Adult', 'Adventure', 'Comedy', 'Doujinshi', 'Drama', 'Ecchi',
-  'Fantasy', 'Gender Bender', 'Harem', 'Hentai', 'Historical', 'Horror',
-  'Josei', 'Lolicon', 'Martial Arts', 'Mature', 'Mecha', 'Mystery',
-  'Psychological', 'Romance', 'School Life', 'Sci-fi', 'Seinen', 'Shotacon',
-  'Shoujo', 'Shoujo Ai', 'Shounen', 'Shounen Ai', 'Slice of Life', 'Smut',
-  'Sports', 'Supernatural', 'Tragedy', 'Yaoi', 'Yuri'
+  'Action',
+  'Adult',
+  'Adventure',
+  'Comedy',
+  'Doujinshi',
+  'Drama',
+  'Ecchi',
+  'Fantasy',
+  'Gender Bender',
+  'Harem',
+  'Hentai',
+  'Historical',
+  'Horror',
+  'Josei',
+  'Lolicon',
+  'Martial Arts',
+  'Mature',
+  'Mecha',
+  'Mystery',
+  'Psychological',
+  'Romance',
+  'School Life',
+  'Sci-fi',
+  'Seinen',
+  'Shotacon',
+  'Shoujo',
+  'Shoujo Ai',
+  'Shounen',
+  'Shounen Ai',
+  'Slice of Life',
+  'Smut',
+  'Sports',
+  'Supernatural',
+  'Tragedy',
+  'Yaoi',
+  'Yuri',
 ];
 
 const _genreKey = 'mangaupdates_genres';
@@ -71,24 +150,23 @@ class MangaUpdatesQueries extends Queries {
   final Future<bool> Function() refreshUser;
   final void Function(int chapters)? onChapters;
 
-  MangaUpdatesQueries(this.client, {required this.refreshUser, this.onChapters});
+  MangaUpdatesQueries(
+    this.client, {
+    required this.refreshUser,
+    this.onChapters,
+  });
 
-  int? get _cleanId(String rawId) {
-    final cleaned = rawId.contains('/') ? rawId.split('/').last : rawId;
-    return int.tryParse(cleaned);
-  }
+  static int? cleanId(String rawId) =>
+      int.tryParse(rawId.contains('/') ? rawId.split('/').last : rawId);
 
-  List<Media> _parseResults(Map<String, dynamic> body) {
-    final results = body['results'] as List?;
-    if (results == null) return const [];
-    final list = <Media>[];
-    for (final r in results) {
-      if (r is Map && r['record'] is Map) {
-        list.add(mapMangaUpdatesSeries((r['record'] as Map).cast<String, dynamic>()));
-      }
-    }
-    return list;
-  }
+  Map<String, dynamic> _record(Object? raw) =>
+      raw is Map ? raw.cast<String, dynamic>() : const {};
+
+  List<Media> _parseResults(Map<String, dynamic> body) => [
+    for (final r in (body['results'] as List?) ?? const [])
+      if (r is Map && r['record'] is Map)
+        mapMangaUpdatesSeries(_record(r['record'])),
+  ];
 
   Future<List<Media>> _withList(List<Media> items) async {
     if (!client.hasToken || items.isEmpty) return items;
@@ -104,19 +182,23 @@ class MangaUpdatesQueries extends Queries {
     return items;
   }
 
+  Map<String, dynamic> _filters(Map<String, dynamic> body) => {
+    ...body,
+    if (MangaUpdatesPref.hideNsfw.value) 'exclude_genre': _adultGenres,
+  };
+
   Future<List<Media>> sectionPage(
     MangaUpdatesSection section, {
     int page = 1,
   }) async {
-    final body = <String, dynamic>{
-      ...section.request,
-      'perpage': mangaUpdatesPageSize,
-      'page': page,
-    };
-    if (MangaUpdatesPref.hideNsfw.value) {
-      body['exclude_genre'] = ['Adult', 'Hentai', 'Smut', 'Lolicon', 'Shotacon'];
-    }
-    final res = await client.post('/series/search', body);
+    final res = await client.post(
+      '/series/search',
+      _filters({
+        ...section.request,
+        'perpage': mangaUpdatesPageSize,
+        'page': page,
+      }),
+    );
     return _withList(_parseResults(res));
   }
 
@@ -130,85 +212,107 @@ class MangaUpdatesQueries extends Queries {
 
   void invalidateLibrary() => _library.expire();
 
-  Future<List<Media>> _loadLibrary() async {
-    if (!client.hasToken) return const [];
-    try {
-      final listsRes = await client.get('/lists');
-      final lists = (listsRes['results'] as List?) ?? (listsRes is List ? listsRes as List : null);
-      final rawLists = listsRes is Map ? (listsRes['data'] as List?) : null;
-      final allLists = lists ?? rawLists ?? const [];
+  void clearLibrary() => _library.clear();
 
-      final out = <Media>[];
-      var totalChapters = 0;
-
-      for (var listId = 0; listId <= 4; listId++) {
-        try {
-          final res = await client.post(
-            '/lists/$listId/search',
-            {'perpage': 100},
-          );
-          final results = res['results'] as List?;
-          for (final item in results ?? const []) {
-            if (item is Map && item['record'] is Map) {
-              final record = (item['record'] as Map).cast<String, dynamic>();
-              final metadata = item['metadata'] is Map
-                  ? (item['metadata'] as Map).cast<String, dynamic>()
-                  : null;
-              final seriesMap = metadata?['series'] as Map?;
-              final series = seriesMap != null
-                  ? mapMangaUpdatesSeries(seriesMap.cast<String, dynamic>())
-                  : Media(
-                      id: '${record['series']?['id'] ?? ''}',
-                      name: '${record['series']?['title'] ?? ''}',
-                    );
-              applyMangaUpdatesEntry(series, record, metadata: metadata);
-              out.add(series);
-              totalChapters += series.userProgress ?? 0;
-            }
-          }
-        } catch (_) {}
+  Future<List<Media>> _loadList(int listId) async {
+    final out = <Media>[];
+    var page = 1;
+    while (true) {
+      final res = await client.post('/lists/$listId/search', {
+        'page': page,
+        'perpage': _listsPerPage,
+      });
+      final results = (res['results'] as List?) ?? const [];
+      for (final item in results) {
+        if (item is! Map || item['record'] is! Map) continue;
+        final record = _record(item['record']);
+        final metadata = item['metadata'] is Map
+            ? _record(item['metadata'])
+            : null;
+        final seriesMap = metadata?['series'];
+        final ref = _record(record['series']);
+        final media = seriesMap is Map
+            ? mapMangaUpdatesSeries(_record(seriesMap))
+            : Media(
+                id: '${ref['id'] ?? ''}',
+                name: '${ref['title'] ?? ''}',
+                shareLink:
+                    (ref['url'] as String?) ??
+                    mangaUpdatesShareLink(ref['id'] ?? ''),
+              );
+        applyMangaUpdatesEntry(media, record, metadata: metadata);
+        out.add(media);
       }
-
-      onChapters?.call(totalChapters);
-      return out;
-    } catch (e, st) {
-      logError('Queries', e, st);
-      return const [];
+      final total = (res['total_hits'] as num?)?.toInt() ?? 0;
+      if (results.isEmpty || out.length >= total) break;
+      page++;
     }
+    return out;
+  }
+
+  Future<List<Media>> _loadLibrary() async {
+    final lists = await Future.wait([
+      for (var listId = 0; listId <= 4; listId++) _loadList(listId),
+    ]);
+    final seen = <String>{};
+    final out = [
+      for (final list in lists)
+        for (final m in list)
+          if (seen.add(m.id)) m,
+    ];
+    onChapters?.call(out.fold(0, (sum, m) => sum + (m.userProgress ?? 0)));
+    return out;
   }
 
   @override
-  Future<Media?> mediaDetails(Media media) async {
-    final id = _cleanId(media.id);
-    if (id == null) return null;
+  Future<Media?> getMedia(String id) async {
+    final series = cleanId(id);
+    if (series == null) return null;
     try {
-      final res = await client.get('/series/$id');
+      final res = await client.get(
+        '/series/$series',
+        cache: const Duration(minutes: 5),
+      );
       if (res['series_id'] == null) return null;
       final full = mapMangaUpdatesSeries(res);
-      final list = await library();
-      final mine = list.where((m) => m.id == '${full.id}').firstOrNull;
-      if (mine != null) full.takeListEntry(mine);
+      if (client.hasToken) {
+        final mine = (await library())
+            .where((m) => m.id == full.id)
+            .firstOrNull;
+        if (mine != null) full.takeListEntry(mine);
+      }
       return full;
+    } on MangaUpdatesException catch (e) {
+      if (e.status == 404) return null;
+      rethrow;
     } catch (e, st) {
       logError('Queries', e, st);
       return null;
     }
   }
 
-  Future<List<Review>> reviews(Media media) async {
-    final id = _cleanId(media.id);
+  @override
+  Future<Media?> mediaDetails(Media media) async {
+    final full = await getMedia(media.id);
+    return full == null
+        ? media
+        : (full..cameFromContinue = media.cameFromContinue);
+  }
+
+  @override
+  Future<List<Review>> getReviews(String mediaId, {int page = 1}) async {
+    final id = cleanId(mediaId);
     if (id == null) return const [];
     try {
       final res = await client.post('/reviews/search', {
         'series_id': id,
+        'page': page,
         'perpage': 20,
       });
-      final results = res['results'] as List?;
-      if (results == null) return const [];
       return [
-        for (final r in results)
+        for (final r in (res['results'] as List?) ?? const [])
           if (r is Map && r['record'] is Map)
-            mapMangaUpdatesReview((r['record'] as Map).cast<String, dynamic>()),
+            mapMangaUpdatesReview(_record(r['record'])),
       ];
     } catch (e, st) {
       logError('Queries', e, st);
@@ -216,8 +320,10 @@ class MangaUpdatesQueries extends Queries {
     }
   }
 
+  Future<List<Review>> reviews(Media media) => getReviews(media.id);
+
   Future<List<MangaUpdatesRelease>> releases(Media media) async {
-    final id = _cleanId(media.id);
+    final id = cleanId(media.id);
     if (id == null) return const [];
     try {
       final res = await client.post('/releases/search', {
@@ -225,12 +331,10 @@ class MangaUpdatesQueries extends Queries {
         'search_type': 'series',
         'perpage': 50,
       });
-      final results = res['results'] as List?;
-      if (results == null) return const [];
       return [
-        for (final r in results)
+        for (final r in (res['results'] as List?) ?? const [])
           if (r is Map && r['record'] is Map)
-            mapMangaUpdatesRelease((r['record'] as Map).cast<String, dynamic>()),
+            mapMangaUpdatesRelease(_record(r['record'])),
       ];
     } catch (e, st) {
       logError('Queries', e, st);
@@ -239,122 +343,150 @@ class MangaUpdatesQueries extends Queries {
   }
 
   @override
-  Future<SearchResults?> search(SearchResults query) async {
-    final search = query.search?.trim();
-    final body = <String, dynamic>{
-      'perpage': mangaUpdatesPageSize,
-      'page': query.page ?? 1,
+  Future<SearchResults?> search(SearchResults? results) async {
+    if (results == null) return null;
+    if (results.type != SearchType.MANGA && results.type != SearchType.NOVEL) {
+      return results
+        ..results = const []
+        ..hasNextPage = false;
+    }
+    if (results.onList == true) {
+      return searchLibrary(await library(), results);
+    }
+    final text = results.search?.trim() ?? '';
+    final perPage = (results.perPage ?? mangaUpdatesPageSize).clamp(1, 100);
+    final page = results.page ?? 1;
+    final format =
+        _formatNames[results.format?.toUpperCase().replaceAll(' ', '')];
+    final types = results.type == SearchType.NOVEL
+        ? const ['Novel']
+        : format != null
+        ? [format]
+        : [..._readingTypes, 'OEL'];
+    final year = results.seasonYear ?? results.startYear;
+    final orderby = switch (results.sort) {
+      'SCORE_DESC' => 'rating',
+      'START_DATE_DESC' => 'date_added',
+      'TITLE_ROMAJI' => 'title',
+      _ => text.isEmpty ? 'year_pos' : 'score',
     };
-    if (search != null && search.isNotEmpty) {
-      body['search'] = search;
-    }
-    final sort = query.sort;
-    if (sort != null) {
-      body['orderby'] = switch (sort) {
-        'POPULARITY_DESC' => 'score',
-        'SCORE_DESC' => 'rating',
-        'START_DATE_DESC' => 'date_added',
-        'TITLE_ROMAJI' => 'title',
-        _ => 'score',
-      };
-    }
-    final format = query.format;
-    if (format != null && format.isNotEmpty) {
-      body['type'] = [format[0].toUpperCase() + format.substring(1).toLowerCase()];
-    }
-    final genres = query.genres;
-    if (genres != null && genres.isNotEmpty) {
-      body['genre'] = genres;
-    }
-    if (query.year != null) {
-      body['year'] = '${query.year}';
-    }
-    if (MangaUpdatesPref.hideNsfw.value) {
-      body['exclude_genre'] = ['Adult', 'Hentai', 'Smut', 'Lolicon', 'Shotacon'];
-    }
-
-    try {
-      final res = await client.post('/series/search', body);
-      final items = await _withList(_parseResults(res));
-      final total = (res['total_hits'] as num?)?.toInt() ?? items.length;
-      return query.copyWith(
-        results: items,
-        hasNextPage: ((query.page ?? 1) * mangaUpdatesPageSize) < total,
-      );
-    } catch (e, st) {
-      logError('Queries', e, st);
-      return null;
-    }
+    final excluded = {
+      if (MangaUpdatesPref.hideNsfw.value && results.isAdult != true)
+        ..._adultGenres,
+      ...?results.excludedGenres,
+    };
+    final res = await client.post('/series/search', {
+      'search': ?(text.isEmpty ? null : text),
+      'type': types,
+      'orderby': orderby,
+      if ((results.genres ?? const []).isNotEmpty) 'genre': results.genres,
+      if (excluded.isNotEmpty) 'exclude_genre': excluded.toList(),
+      'year': ?(year == null ? null : '$year'),
+      'perpage': perPage,
+      'page': page,
+    });
+    final total = (res['total_hits'] as num?)?.toInt() ?? 0;
+    return results
+      ..results = await _withList(_parseResults(res))
+      ..hasNextPage = page * perPage < total;
   }
 
   @override
-  Future<void> getGenresAndTags() async {
+  Future<bool> getGenresAndTags() async {
+    if (loadCustomData<List<String>>(_genreKey) != null) return true;
     try {
-      final res = await client.get('/genres');
-      final list = res is List ? res : (res['data'] as List?);
-      if (list != null) {
-        final genres = <String>[
-          for (final g in list)
-            if (g is Map && g['genre'] is String) g['genre'] as String,
-        ];
-        if (genres.isNotEmpty) {
-          saveCustomData(_genreKey, genres);
-        }
-      }
+      final res = await client.get('/genres', cache: const Duration(days: 1));
+      final genres = <String>[
+        for (final g in (res['data'] as List?) ?? const [])
+          if (g is Map && g['genre'] is String) g['genre'] as String,
+      ]..sort();
+      if (genres.isNotEmpty) saveCustomData(_genreKey, genres);
     } catch (e, st) {
       logError('Queries', e, st);
     }
+    return true;
   }
 
-  List<SectionJob<List<Media>>> browseJobsFor(MediaType type) {
-    final sections = mangaUpdatesSectionsFor(type);
-    return [
-      for (final s in applyLayout(
-        sections,
-        (s) => s.title,
-        MangaUpdatesPref.feedLayout.value,
-      ))
-        SectionJob(s.title, () => sectionPage(s)),
+  @override
+  List<SectionJob> homeJobs() {
+    if (!client.hasToken) return const [];
+    final hide = MangaUpdatesPref.hideNsfw.value;
+    SectionJob job(String title, Set<String> statuses) => () async {
+      final items = [
+        for (final m in await library())
+          if (statuses.contains(m.userStatus) && !(hide && m.isAdult)) m,
+      ];
+      return items.isEmpty ? <String, List<Media>>{} : {title: items};
+    };
+    final jobs = <(String, SectionJob)>[
+      ('Continue Reading', job('Continue Reading', {'CURRENT', 'REPEATING'})),
+      ('Planned Manga', job('Planned Manga', {'PLANNING'})),
+      ('On Hold', job('On Hold', {'PAUSED'})),
+      ('Dropped', job('Dropped', {'DROPPED'})),
+      if (hide)
+        (
+          'Hidden Media',
+          () async {
+            final items = [
+              for (final m in await library())
+                if (m.isAdult) m,
+            ];
+            return items.isEmpty
+                ? <String, List<Media>>{}
+                : {'Hidden Media': items};
+          },
+        ),
     ];
-  }
-
-  List<SectionJob<List<Media>>> homeJobs() {
-    final sections = [
-      SectionJob('Continue Reading', () async {
-        final list = await library();
-        return list.where((m) => m.userStatus == 'CURRENT').take(12).toList();
-      }),
-      SectionJob('Reading', () async {
-        final list = await library();
-        return list.where((m) => m.userStatus == 'CURRENT').toList();
-      }),
-      SectionJob('Wish List', () async {
-        final list = await library();
-        return list.where((m) => m.userStatus == 'PLANNING').toList();
-      }),
-      SectionJob('Complete', () async {
-        final list = await library();
-        return list.where((m) => m.userStatus == 'COMPLETED').toList();
-      }),
-      SectionJob('On Hold', () async {
-        final list = await library();
-        return list.where((m) => m.userStatus == 'PAUSED').toList();
-      }),
-      SectionJob('Unfinished', () async {
-        final list = await library();
-        return list.where((m) => m.userStatus == 'DROPPED').toList();
-      }),
-      for (final s in mangaSections.take(4))
-        SectionJob(s.title, () => sectionPage(s)),
-    ];
-
     return [
       for (final j in applyLayout(
-        sections,
-        (s) => s.title,
+        jobs,
+        (j) => j.$1,
         MangaUpdatesPref.homeLayout.value,
       ))
-        j,
+        j.$2,
     ];
   }
+
+  List<SectionJob> browseJobsFor(MediaType type) => [
+    for (final section in applyLayout(
+      mangaUpdatesSectionsFor(type),
+      (s) => s.title,
+      MangaUpdatesPref.feedLayout.value,
+    ))
+      () async => {section.title: await sectionPage(section)},
+  ];
+
+  @override
+  List<SectionJob> browseJobs({required bool anime}) =>
+      anime ? const [] : browseJobsFor(MediaType.manga);
+
+  @override
+  Future<Map<String, List<Media>>> getMediaLists({
+    required bool anime,
+    int? userId,
+    String? sortOrder,
+  }) async {
+    if (anime) return {};
+    final all = await library();
+    final names = {
+      'CURRENT': getString.reading,
+      'PLANNING': getString.planning,
+      'COMPLETED': getString.completed,
+      'PAUSED': getString.paused,
+      'DROPPED': getString.dropped,
+    };
+    final out = <String, List<Media>>{};
+    for (final entry in names.entries) {
+      final items = [
+        for (final m in all)
+          if (m.userStatus == entry.key) m,
+      ];
+      if (items.isNotEmpty) out[entry.value] = items;
+    }
+    if (all.isNotEmpty) out['All'] = all;
+    return out;
+  }
+
+  @override
+  Future<List<Media>> getCalendarData() async => const [];
 }

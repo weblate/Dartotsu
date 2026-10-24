@@ -56,7 +56,8 @@ class MangaUpdatesDetailView extends DetailScreenView {
     final description = (m.description ?? '').trim().replaceAll('\n', '<br>');
 
     final releasesRows = <(String, String)>[
-      for (final rel in (extras?.releases ?? const <MangaUpdatesRelease>[]).take(10))
+      for (final rel
+          in (extras?.releases ?? const <MangaUpdatesRelease>[]).take(10))
         (
           rel.formattedNumber.isNotEmpty ? rel.formattedNumber : rel.title,
           [
@@ -100,7 +101,7 @@ class MangaUpdatesDetailView extends DetailScreenView {
       if ((m.meanScore ?? 0) > 0)
         (getString.score, (m.meanScore! / 10).toStringAsFixed(1)),
       if (extras?.ratingVotes != null)
-        ('Votes', DetailStats.compact(extras!.ratingVotes!)),
+        (getString.votes, DetailStats.compact(extras!.ratingVotes!)),
       if (extras?.latestChapter != null)
         (getString.chapters, DetailStats.compact(extras!.latestChapter!)),
     ];
@@ -120,11 +121,14 @@ class MangaUpdatesDetailView extends DetailScreenView {
       if (extras?.publishers.isNotEmpty ?? false)
         (getString.publishersLabel, join(extras!.publishers)),
       if (extras != null)
-        (getString.licensedLabel, extras.licensed ? getString.yesLabel : getString.noLabel),
+        (
+          getString.licensedLabel,
+          extras.licensed ? getString.yesLabel : getString.noLabel,
+        ),
       if (extras?.animeStart != null && extras!.animeStart!.isNotEmpty)
-        ('Anime Start', extras.animeStart!),
+        (getString.mangaUpdatesAnimeStart, extras.animeStart!),
       if (extras?.animeEnd != null && extras!.animeEnd!.isNotEmpty)
-        ('Anime End', extras.animeEnd!),
+        (getString.mangaUpdatesAnimeEnd, extras.animeEnd!),
     ];
   }
 }
