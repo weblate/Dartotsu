@@ -75,7 +75,7 @@ class MediaIdResolver {
         }
       }
       try {
-        map = (await SyncIdIndex.load()).expand(map, prefer: adapter.key);
+        map = (await SyncIdIndex.load(anime: anime)).expand(map, prefer: adapter.key);
       } catch (e) {
         logger(
           'Watch id index failed: $e',
