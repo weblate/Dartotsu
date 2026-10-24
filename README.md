@@ -26,7 +26,7 @@
         | <a href="https://openaitx.github.io/view.html?user=aayush2622&project=Dartotsu&lang=zh-TW">繁體中文</a>
       </div>
     </div>
-  </details>
+</details>
 </div>
 
 <p align="center">
