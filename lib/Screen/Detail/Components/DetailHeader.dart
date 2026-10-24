@@ -1,4 +1,3 @@
-import 'dart:ui' show ImageFilter;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -12,6 +11,7 @@ import '../../../Utils/Nav/DpadNav.dart';
 import '../../../Utils/Functions/NavigateToScreen.dart';
 import '../../../Widgets/Components/CachedNetworkImage.dart';
 import '../../../Widgets/Components/Clickable.dart';
+import '../../../Widgets/Components/GlassSurface.dart';
 import '../../../Widgets/Components/ImageSheet.dart';
 import 'StatusChip.dart';
 import '../../../Core/State/State.dart';
@@ -318,7 +318,7 @@ class DetailHeaderDelegate extends SliverPersistentHeaderDelegate {
       opacity: p,
       child: ClipRect(
         child: BackdropFilter(
-          filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
+          filter: GlassStyle.filter,
           child: DecoratedBox(
             decoration: BoxDecoration(
               color: scheme.surface.withValues(alpha: 0.4),

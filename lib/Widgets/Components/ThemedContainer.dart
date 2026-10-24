@@ -1,8 +1,8 @@
-import 'package:blurbox/blurbox.dart';
 import 'package:flutter/material.dart';
 
 import '../../Core/ThemeManager/ThemeController.dart';
 import '../../Core/State/State.dart';
+import 'GlassSurface.dart';
 
 class ThemedContainer extends StatelessWidget {
   final Widget child;
@@ -36,54 +36,17 @@ class ThemedContainer extends StatelessWidget {
     final pad = padding ?? const EdgeInsets.all(8);
 
     return Watch(() {
-      if (controller.useGlassMode.value && !blur) {
-        return Container(
+      if (controller.useGlassMode.value) {
+        return GlassSurface(
           margin: margin,
           padding: pad,
           alignment: alignment,
-          decoration: BoxDecoration(
-            color: scheme.surface.withValues(alpha: 0.28),
-            border:
-                border ??
-                Border.all(
-                  color: scheme.onSurface.withValues(alpha: 0.14),
-                  width: 0.75,
-                ),
-            borderRadius: radius,
-          ),
-          child: Material(
-            color: Colors.transparent,
-            child: glassChild ?? child,
-          ),
-        );
-      }
-      if (controller.useGlassMode.value) {
-        return Container(
-          margin: margin,
-          child: BlurBox(
-            blur: 12,
-            alignment: alignment,
-            padding: pad,
-            color: scheme.surface.withValues(alpha: 0.12),
-            border:
-                border ??
-                Border.all(
-                  color: scheme.onSurface.withValues(alpha: 0.14),
-                  width: 0.75,
-                ),
-            borderRadius: radius,
-            boxShadow: [
-              BoxShadow(
-                color: scheme.shadow.withValues(alpha: 0.16),
-                blurRadius: 24,
-                offset: const Offset(0, 8),
-              ),
-            ],
-            child: Material(
-              color: Colors.transparent,
-              child: glassChild ?? child,
-            ),
-          ),
+          tint: color,
+          border: border,
+          borderRadius: radius,
+          blur: blur,
+          shadow: blur,
+          child: glassChild ?? child,
         );
       }
 

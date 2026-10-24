@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../Core/ThemeManager/GlassTheme.dart';
 import '../../Utils/Nav/DpadNav.dart';
 
 class ConnectedPair extends StatelessWidget {
@@ -37,12 +38,13 @@ class ConnectedPair extends StatelessWidget {
       end: hasIcon ? _small : _big,
     );
     const side = BorderRadiusDirectional.horizontal(start: _small, end: _big);
+    final edge = GlassTheme.edgeOf(context) ?? BorderSide.none;
     return Row(
       children: [
         Expanded(
           child: Material(
             color: color,
-            borderRadius: main,
+            shape: RoundedRectangleBorder(borderRadius: main, side: edge),
             clipBehavior: Clip.antiAlias,
             child: DpadTap(
               onTap: onTap,
@@ -57,7 +59,7 @@ class ConnectedPair extends StatelessWidget {
             message: iconTooltip ?? '',
             child: Material(
               color: iconBackground ?? color,
-              borderRadius: side,
+              shape: RoundedRectangleBorder(borderRadius: side, side: edge),
               clipBehavior: Clip.antiAlias,
               child: DpadTap(
                 onTap: onIconTap,

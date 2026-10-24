@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../Utils/Extensions/ClickCursor.dart';
 import '../../Utils/Functions/AppShortcuts.dart';
+import 'GlassTheme.dart';
 import 'ThemeMode.dart';
 
 export 'AppTheme.dart';
@@ -47,13 +48,26 @@ ThemeData buildAppTheme(
     scheme.surface,
   );
 
+  final menuColor = tint(0.10);
+  Color layer(double amount, double alpha) =>
+      glass ? tint(amount).withValues(alpha: alpha) : tint(amount);
+
   scheme = scheme.copyWith(
-    surfaceContainerLowest: tint(0),
-    surfaceContainerLow: tint(0.04),
-    surfaceContainer: tint(0.07),
-    surfaceContainerHigh: tint(0.10),
-    surfaceContainerHighest: tint(0.13),
+    surfaceContainerLowest: layer(0, 0.30),
+    surfaceContainerLow: layer(0.04, 0.40),
+    surfaceContainer: layer(0.07, 0.46),
+    surfaceContainerHigh: layer(0.10, 0.52),
+    surfaceContainerHighest: layer(0.13, 0.58),
   );
+  if (glass) {
+    final tonal = dark ? 0.58 : 0.66;
+    scheme = scheme.copyWith(
+      primaryContainer: scheme.primaryContainer.withValues(alpha: tonal),
+      secondaryContainer: scheme.secondaryContainer.withValues(alpha: tonal),
+      tertiaryContainer: scheme.tertiaryContainer.withValues(alpha: tonal),
+      errorContainer: scheme.errorContainer.withValues(alpha: tonal),
+    );
+  }
 
   final scaffoldBg = glass
       ? Colors.transparent
@@ -62,32 +76,47 @@ ThemeData buildAppTheme(
       : base.scaffoldBackgroundColor;
 
   final cardColor = glass
-      ? scheme.surface.withValues(alpha: 0.14)
+      ? scheme.surface.withValues(alpha: 0.62)
       : deriveCardColor(surface: scheme.surface, isDark: dark, isOled: oled);
 
+  final edge = BorderSide(
+    color: Colors.white.withValues(alpha: dark ? 0.14 : 0.55),
+  );
   final focusRing = WidgetStateProperty.resolveWith<BorderSide?>(
     (s) => _keyFocus(s) ? BorderSide(color: scheme.onSurface, width: 2) : null,
+  );
+  final glassRing = WidgetStateProperty.resolveWith<BorderSide?>(
+    (s) => _keyFocus(s)
+        ? BorderSide(color: scheme.onSurface, width: 2)
+        : glass && !s.contains(WidgetState.disabled)
+        ? edge
+        : null,
   );
   final focusOverlay = WidgetStateProperty.resolveWith<Color?>(
     (s) => _keyFocus(s) ? scheme.primary.withValues(alpha: 0.24) : null,
   );
 
-  ButtonStyle button({EdgeInsetsGeometry? padding}) => ButtonStyle(
-    side: focusRing,
-    overlayColor: focusOverlay,
-    shape: const WidgetStatePropertyAll(_pill),
-    padding: WidgetStatePropertyAll(
-      padding ?? const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
-    ),
-    minimumSize: const WidgetStatePropertyAll(Size(0, 48)),
-    textStyle: WidgetStatePropertyAll(
-      appTextTheme.labelLarge?.copyWith(fontWeight: FontWeight.w700),
-    ),
-    animationDuration: Durations.short4,
-    mouseCursor: kClickCursor,
-  );
+  ButtonStyle button({EdgeInsetsGeometry? padding, bool rim = false}) =>
+      ButtonStyle(
+        side: rim ? glassRing : focusRing,
+        overlayColor: focusOverlay,
+        shape: const WidgetStatePropertyAll(_pill),
+        padding: WidgetStatePropertyAll(
+          padding ?? const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+        ),
+        minimumSize: const WidgetStatePropertyAll(Size(0, 48)),
+        textStyle: WidgetStatePropertyAll(
+          appTextTheme.labelLarge?.copyWith(fontWeight: FontWeight.w700),
+        ),
+        animationDuration: Durations.short4,
+        mouseCursor: kClickCursor,
+      );
 
   return base.copyWith(
+    extensions: [
+      ...base.extensions.values.where((e) => e is! GlassTheme),
+      if (glass) GlassTheme(edge: edge),
+    ],
     colorScheme: scheme,
     scaffoldBackgroundColor: scaffoldBg,
     canvasColor: glass ? Colors.transparent : base.canvasColor,
@@ -109,8 +138,8 @@ ThemeData buildAppTheme(
       ),
       clipBehavior: Clip.antiAlias,
     ),
-    filledButtonTheme: FilledButtonThemeData(style: button()),
-    elevatedButtonTheme: ElevatedButtonThemeData(style: button()),
+    filledButtonTheme: FilledButtonThemeData(style: button(rim: true)),
+    elevatedButtonTheme: ElevatedButtonThemeData(style: button(rim: true)),
     outlinedButtonTheme: OutlinedButtonThemeData(style: button()),
     textButtonTheme: TextButtonThemeData(
       style: button(
@@ -138,15 +167,19 @@ ThemeData buildAppTheme(
     ),
     chipTheme: base.chipTheme.copyWith(
       shape: _pill,
-      side: BorderSide.none,
+      side: glass ? edge : BorderSide.none,
       color: WidgetStateProperty.resolveWith(
-        (s) => _keyFocus(s) ? scheme.secondaryContainer : null,
+        (s) => _keyFocus(s)
+            ? scheme.secondaryContainer
+            : glass && !s.contains(WidgetState.selected)
+            ? scheme.surfaceContainerHighest
+            : null,
       ),
       elevation: 0,
       pressElevation: 0,
     ),
     dialogTheme: base.dialogTheme.copyWith(
-      backgroundColor: glass ? scheme.surface.withValues(alpha: 0.6) : null,
+      backgroundColor: glass ? scheme.surface.withValues(alpha: 0.84) : null,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(_shapeXl),
       ),
@@ -168,12 +201,21 @@ ThemeData buildAppTheme(
     ),
     menuTheme: MenuThemeData(
       style: MenuStyle(
+        backgroundColor: glass ? WidgetStatePropertyAll(menuColor) : null,
         shape: WidgetStatePropertyAll(
           RoundedRectangleBorder(borderRadius: BorderRadius.circular(_shapeMd)),
         ),
       ),
     ),
+    dropdownMenuTheme: glass
+        ? DropdownMenuThemeData(
+            menuStyle: MenuStyle(
+              backgroundColor: WidgetStatePropertyAll(menuColor),
+            ),
+          )
+        : base.dropdownMenuTheme,
     popupMenuTheme: base.popupMenuTheme.copyWith(
+      color: glass ? menuColor : null,
       mouseCursor: kClickCursor,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(_shapeMd),
@@ -187,14 +229,16 @@ ThemeData buildAppTheme(
     ),
     inputDecorationTheme: base.inputDecorationTheme.copyWith(
       filled: true,
-      fillColor: scheme.surfaceContainerHighest.withValues(alpha: 0.5),
+      fillColor: glass
+          ? scheme.surfaceContainerHighest
+          : scheme.surfaceContainerHighest.withValues(alpha: 0.5),
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(_shapeMd),
-        borderSide: BorderSide.none,
+        borderSide: glass ? edge : BorderSide.none,
       ),
       enabledBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(_shapeMd),
-        borderSide: BorderSide.none,
+        borderSide: glass ? edge : BorderSide.none,
       ),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(_shapeMd),

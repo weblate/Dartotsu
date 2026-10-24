@@ -165,54 +165,56 @@ class _DetailScreenState extends BaseScreen<DetailScreen>
       maintainState: true,
       sliver: sliver,
     );
+    final group = SliverMainAxisGroup(
+      slivers: [
+        SliverToBoxAdapter(child: SizedBox(height: Dimens.gapLg)),
+        keep(0, _infoSliver()),
+        if (visited.contains(1))
+          keep(
+            1,
+            WatchSection(
+              key: ValueKey('watch-${state.host.media.value.id}'),
+              service: state.view.service,
+              media: state.host.media,
+              mutations: state.mutations,
+            ),
+          ),
+        if (visited.contains(2))
+          keep(
+            2,
+            SliverToBoxAdapter(
+              child: CommentsSection(
+                key: ValueKey('comments-${state.host.media.value.id}'),
+                service: state.view.service,
+                media: state.host.media,
+                scroll: state.scroll,
+                focusId: state.commentId,
+              ),
+            ),
+          ),
+        SliverLayoutBuilder(
+          builder: (context, constraints) {
+            final base = context.isPhone ? 120.bottomBar() : Dimens.gapXl * 2;
+            final fill =
+                constraints.viewportMainAxisExtent +
+                detailHeaderCollapseRange() -
+                constraints.precedingScrollExtent;
+            return SliverToBoxAdapter(
+              child: SizedBox(height: fill > base ? fill : base),
+            );
+          },
+        ),
+      ],
+    );
+    if (glass) return group;
     return DecoratedSliver(
       decoration: BoxDecoration(
-        color: glass ? scheme.surface.withValues(alpha: 0.5) : scheme.surface,
+        color: scheme.surface,
         borderRadius: BorderRadius.vertical(
           top: Radius.circular(Dimens.radius),
         ),
       ),
-      sliver: SliverMainAxisGroup(
-        slivers: [
-          SliverToBoxAdapter(child: SizedBox(height: Dimens.gapLg)),
-          keep(0, _infoSliver()),
-          if (visited.contains(1))
-            keep(
-              1,
-              WatchSection(
-                key: ValueKey('watch-${state.host.media.value.id}'),
-                service: state.view.service,
-                media: state.host.media,
-                mutations: state.mutations,
-              ),
-            ),
-          if (visited.contains(2))
-            keep(
-              2,
-              SliverToBoxAdapter(
-                child: CommentsSection(
-                  key: ValueKey('comments-${state.host.media.value.id}'),
-                  service: state.view.service,
-                  media: state.host.media,
-                  scroll: state.scroll,
-                  focusId: state.commentId,
-                ),
-              ),
-            ),
-          SliverLayoutBuilder(
-            builder: (context, constraints) {
-              final base = context.isPhone ? 120.bottomBar() : Dimens.gapXl * 2;
-              final fill =
-                  constraints.viewportMainAxisExtent +
-                  detailHeaderCollapseRange() -
-                  constraints.precedingScrollExtent;
-              return SliverToBoxAdapter(
-                child: SizedBox(height: fill > base ? fill : base),
-              );
-            },
-          ),
-        ],
-      ),
+      sliver: group,
     );
   }
 

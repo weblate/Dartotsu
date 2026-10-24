@@ -185,15 +185,15 @@ Local reactive UI uses `Live` + `Watch`; `appContext` / `appOverlayContext` give
   and predictive-back transitions. **`glass`** makes the scaffold + app bars
   transparent and card/dialog/sheet surfaces translucent, so the blurred `GlassBackground`
   shows through the whole stack (not just cards); it's in `ThemeController`'s memo key so a
-  glass toggle is a normal `AnimatedTheme` lerp. `deriveCardColor`. Barrel-exports `AppTheme`,
+  glass toggle is a normal `AnimatedTheme` lerp. In glass every tonal role (`primary/secondary/tertiary/errorContainer`, the `surfaceContainer*` layers) is translucent, and the one glass edge (`GlassTheme` extension, `GlassTheme.edgeOf(context)`, a white hairline) is applied to chips, filled/elevated buttons, inputs and `ConnectedPair`, so bars, pills and buttons read as the same glass as `GlassSurface` cards. `deriveCardColor`. Barrel-exports `AppTheme`,
   `ThemeMode`, `Themes/DynamicThemes.dart` (`getCustom*Theme` seed themes, `getImage*Theme`),
   `Themes/material.dart`.
 - **`Widgets/Components/ThemedContainer.dart`** — `ThemedContainer` / `ThemedWidget` are real
-  `StatelessWidget`s (one `Watch`, no `context:` param) — glass-mode-aware card surfaces via
-  `blurbox`. `themeDropdown()` lives here too.
+  `StatelessWidget`s (one `Watch`, no `context:` param) — glass-mode-aware card surfaces: in glass mode they render a
+  `GlassSurface` (`Widgets/Components/GlassSurface.dart`: tinted gradient fill, lit edge, plus a grouped backdrop blur, saturation boost and soft outer shadow only when `blur` is true (floating surfaces) — list surfaces (`SectionCard`, `ShelfFrame`, `PosterCard`, settings rows, tiles) pass `blur: false` and sit on the already-blurred `GlassBackground`, which keeps scrolling cheap; `BaseScreen` provides the `BackdropGroup`, and high-contrast accessibility turns the blur off and the tint near-opaque). `themeDropdown()` lives here too.
 - **`Widgets/Components/BaseScreen.dart`** — `abstract class BaseScreen<T> extends State<T>`.
   Implement `buildContent(context)` instead of `build`. Provides `SafeArea` + `Scaffold` and,
-  in glass mode, a blurred `GlassBackground` behind the content (`buildContent` is built once
+  in glass mode, a `GlassBackground` (`BlurredImage`: the image is shrunk to 128 px on its short side, Gaussian-blurred and saturated once on the CPU in an isolate, cached in an LRU and drawn stretched — no GPU blur, which looked blocky under Impeller's downsampling — inside a `RepaintBoundary` under a surface scrim) behind the content (`buildContent` is built once
   and reused across glass toggles). `glassBackgroundUrl` getter is overridable
   (default `kFallbackGlassBackground`).
 
