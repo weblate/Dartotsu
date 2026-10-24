@@ -27,6 +27,7 @@ class ExtensionBrowserState extends ScreenState {
   final searchQuery = ''.live;
   final textController = TextEditingController();
   final currentIndex = 0.live;
+  final tabPosition = 0.0.live;
   final focusedTabIndex = Live<int?>(null);
   final appBarLaneKey = GlobalKey<DpadRegionState>();
   final tabsLaneKey = GlobalKey<DpadRegionState>();
@@ -45,6 +46,7 @@ class ExtensionBrowserState extends ScreenState {
   void onInit() {
     manager.initializeAvailable();
     tabs.addListener(() => currentIndex.value = tabs.index);
+    tabs.animation?.addListener(() => tabPosition.value = tabs.animation!.value);
   }
 
   @override

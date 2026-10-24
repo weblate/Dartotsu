@@ -196,25 +196,45 @@ class ExtensionScreenState extends BaseScreen<ExtensionScreen>
     for (final type in ExtensionBrowserState.tabOrder) {
       final installedIndex = index++;
       tabs.add(
-        Watch(
-          () => AppTab(
-            label: getString.installedType(type.name),
-            count: state.count(type, installed: true),
-            selected: state.currentIndex.value == installedIndex,
-            focused: kFocused(state.focusedTabIndex.value == installedIndex),
-          ),
-        ),
+        Watch(() {
+          final count = state.count(type, installed: true);
+          final focused = kFocused(state.focusedTabIndex.value == installedIndex);
+          return Watch(() {
+            final amount = tabAmount(
+              state.tabs,
+              installedIndex,
+              state.tabPosition.value,
+            );
+            return AppTab(
+              label: getString.installedType(type.name),
+              count: count,
+              selected: amount >= 0.5,
+              amount: amount,
+              focused: focused,
+            );
+          });
+        }),
       );
       final availableIndex = index++;
       tabs.add(
-        Watch(
-          () => AppTab(
-            label: getString.availableType(type.name),
-            count: state.count(type, installed: false),
-            selected: state.currentIndex.value == availableIndex,
-            focused: kFocused(state.focusedTabIndex.value == availableIndex),
-          ),
-        ),
+        Watch(() {
+          final count = state.count(type, installed: false);
+          final focused = kFocused(state.focusedTabIndex.value == availableIndex);
+          return Watch(() {
+            final amount = tabAmount(
+              state.tabs,
+              availableIndex,
+              state.tabPosition.value,
+            );
+            return AppTab(
+              label: getString.availableType(type.name),
+              count: count,
+              selected: amount >= 0.5,
+              amount: amount,
+              focused: focused,
+            );
+          });
+        }),
       );
     }
     return tabs;

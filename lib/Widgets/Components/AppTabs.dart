@@ -7,12 +7,20 @@ import 'ThemedContainer.dart';
 import '../../Core/State/State.dart';
 import '../../Utils/Nav/DpadLayers.dart';
 
+double tabAmount(TabController controller, int index, [double? position]) {
+  if (controller.indexIsChanging) return index == controller.index ? 1 : 0;
+  final at =
+      position ?? controller.animation?.value ?? controller.index.toDouble();
+  return (1 - (at - index).abs()).clamp(0.0, 1.0).toDouble();
+}
+
 class AppTab extends StatelessWidget {
   final String label;
   final int? count;
   final Widget Function(Color color)? icon;
   final bool selected;
   final bool focused;
+  final double? amount;
 
   const AppTab({
     super.key,
@@ -21,12 +29,15 @@ class AppTab extends StatelessWidget {
     this.count,
     this.icon,
     this.focused = false,
+    this.amount,
   });
 
   @override
   Widget build(BuildContext context) {
     final scheme = context.colorScheme;
-    final color = selected ? scheme.primary : scheme.onSurfaceVariant;
+    final fill = amount ?? (selected ? 1.0 : 0.0);
+    final on = fill >= 0.5;
+    final color = Color.lerp(scheme.onSurfaceVariant, scheme.primary, fill)!;
 
     return AnimatedContainer(
       duration: animDuration(200),
@@ -35,7 +46,7 @@ class AppTab extends StatelessWidget {
       child: ThemedContainer(
         color: focused
             ? scheme.secondaryContainer
-            : selected
+            : on
             ? scheme.surfaceContainerHigh
             : null,
         borderRadius: BorderRadius.circular(16),
@@ -57,7 +68,7 @@ class AppTab extends StatelessWidget {
                 duration: animDuration(200),
                 padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
                 decoration: BoxDecoration(
-                  color: selected
+                  color: on
                       ? scheme.primary.withValues(alpha: 0.15)
                       : scheme.surfaceContainerHighest,
                   borderRadius: BorderRadius.circular(100),
@@ -156,9 +167,10 @@ class _AppTabsState extends State<AppTabs> {
   Widget build(BuildContext context) => Watch(() => _build(context));
 
   Widget _build(BuildContext context) {
+    final controller = widget.controller;
     return DpadRow(
       child: AnimatedBuilder(
-        animation: widget.controller,
+        animation: Listenable.merge([controller, controller.animation]),
         builder: (_, _) => AppTabBar(
           controller: widget.controller,
           onFocusChange: _onFocus,
@@ -168,7 +180,8 @@ class _AppTabsState extends State<AppTabs> {
                 label: item.label,
                 count: item.count,
                 icon: item.icon,
-                selected: widget.controller.index == i,
+                selected: tabAmount(controller, i) >= 0.5,
+                amount: tabAmount(controller, i),
                 focused: kFocused(_focused.value == i),
               ),
           ],
