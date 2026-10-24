@@ -43,7 +43,9 @@ class CommentsTarget {
     final anime = media.isAnime || media.id.startsWith('anime/');
     if (ids[SyncKey.anilist] == null) {
       try {
-        ids = (await SyncIdIndex.load(anime: anime)).expand(ids, prefer: adapter.key);
+        ids = (await SyncIdIndex.load(
+          anime: anime,
+        )).expand(ids, prefer: adapter.key);
       } catch (e) {
         logger('Comments id index failed: $e', logLevel: LogLevel.error);
       }

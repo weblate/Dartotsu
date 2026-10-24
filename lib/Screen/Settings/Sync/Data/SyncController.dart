@@ -239,7 +239,13 @@ class SyncController extends AppController {
     fetchTotal.value = targets.length + (ahead ? 0 : 1) + 1;
     try {
       fetchLabel.value = getString.syncLoadingMap;
-      final flat = (await SyncIdIndex.load(anime: isAnime)).flat;
+      List<int>? flat;
+      try {
+        flat = (await SyncIdIndex.load(anime: isAnime)).flat;
+      } catch (e, st) {
+        if (isAnime) rethrow;
+        logError('SyncController', e, st);
+      }
       fetchDone.value++;
       final mainId = ahead ? syncAheadId : main!.id;
       final typeKey = SyncMemory.typeKey(mainId, isAnime);

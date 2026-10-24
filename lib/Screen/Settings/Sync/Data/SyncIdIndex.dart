@@ -47,7 +47,7 @@ List<int> _compactAnime(String raw) {
   return out;
 }
 
-List<int> _compactManga(String raw) {
+List<int> compactMangaIndex(String raw) {
   final rows = jsonDecode(raw) as List;
   final out = <int>[];
   for (final r in rows) {
@@ -76,7 +76,7 @@ class SyncIdIndex {
   late final Map<String, Map<int, int>> _by = _build();
 
   SyncIdIndex(this._flat, {List<String>? columns, bool anime = true})
-      : _columns = columns ?? (anime ? _animeColumns : _mangaColumns);
+    : _columns = columns ?? (anime ? _animeColumns : _mangaColumns);
 
   List<int> get flat => _flat;
   List<String> get columns => _columns;
@@ -114,8 +114,7 @@ class SyncIdIndex {
     return ids;
   }
 
-  static SyncIdIndex? _cachedAnime;
-  static SyncIdIndex? _cachedManga;
+  static final _cache = <bool, SyncIdIndex>{};
 
   static Future<File> _file({required bool anime}) async {
     final dir = await StorageManager.getDirectory(subPath: 'sync');
@@ -127,8 +126,8 @@ class SyncIdIndex {
     bool anime = true,
     bool force = false,
   }) async {
-    if (anime && _cachedAnime != null && !force) return _cachedAnime!;
-    if (!anime && _cachedManga != null && !force) return _cachedManga!;
+    final cached = _cache[anime];
+    if (cached != null && !force) return cached;
     final file = await _file(anime: anime);
     final stale =
         !await file.exists() ||
@@ -141,18 +140,12 @@ class SyncIdIndex {
         );
         if (res.statusCode == 200 && res.data is String) {
           final flat = await compute(
-            anime ? _compactAnime : _compactManga,
+            anime ? _compactAnime : compactMangaIndex,
             res.data as String,
           );
           if (flat.isNotEmpty) {
             await file.writeAsString(jsonEncode(flat));
-            final index = SyncIdIndex(flat, anime: anime);
-            if (anime) {
-              _cachedAnime = index;
-            } else {
-              _cachedManga = index;
-            }
-            return index;
+            return _cache[anime] = SyncIdIndex(flat, anime: anime);
           }
         }
       } catch (e) {
@@ -164,13 +157,7 @@ class SyncIdIndex {
     }
     if (await file.exists()) {
       final flat = await compute(_decodeFlat, await file.readAsString());
-      final index = SyncIdIndex(flat, anime: anime);
-      if (anime) {
-        _cachedAnime = index;
-      } else {
-        _cachedManga = index;
-      }
-      return index;
+      return _cache[anime] = SyncIdIndex(flat, anime: anime);
     }
     throw SyncFatal(
       'Could not download the ${anime ? 'anime' : 'manga'} ID mapping',

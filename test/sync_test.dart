@@ -329,6 +329,16 @@ void main() {
       expect(out.containsKey(SyncKey.kitsu), isFalse);
     });
 
+    test('manga index rows keep only integer ids and need two of them', () {
+      final flat = compactMangaIndex(
+        '[{"mangabaka_id":1,"anilist_id":10,"mal_id":100,'
+        '"mangaupdates_id":60085561294,"kitsu_id":"x"},'
+        '{"mangabaka_id":2},'
+        '{"mangabaka_id":3,"anilist_id":30,"kitsu_id":300}]',
+      );
+      expect(flat, [1, 10, 100, 60085561294, 0, 3, 30, 0, 0, 300]);
+    });
+
     test('supports manga ID mapping index', () {
       final mangaIndex = SyncIdIndex(
         [10748, 30001, 1, 72274276213, 4],
