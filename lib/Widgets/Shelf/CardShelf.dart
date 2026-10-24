@@ -179,8 +179,6 @@ class _CardShelfState extends State<CardShelf> {
             children: [
               Watch(() {
                 final list = state.items;
-                // No findChildIndexCallback: re-sorting (Hidden Media) moves
-                // children and leaves layoutOffset null, which paint then crashes on.
                 return SliverList(
                   delegate: SliverChildBuilderDelegate((context, index) {
                     if (index == list.length) return _loadMoreTrailer();

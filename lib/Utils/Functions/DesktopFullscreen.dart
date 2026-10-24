@@ -31,8 +31,8 @@ Future<void> _setWindowsFullscreen(bool value) async {
     }
     return;
   }
-  if (await windowManager.isMaximized()) {
-    _wasMaximized = true;
+  final wasMaximized = await windowManager.isMaximized();
+  if (wasMaximized) {
     await windowManager.unmaximize();
     final restored = await _waitUntilNotMaximized();
     if (!restored) {
@@ -40,6 +40,7 @@ Future<void> _setWindowsFullscreen(bool value) async {
     }
   }
   await windowManager.setFullScreen(true);
+  _wasMaximized = wasMaximized;
 }
 
 Future<bool> _waitUntilNotMaximized() async {
