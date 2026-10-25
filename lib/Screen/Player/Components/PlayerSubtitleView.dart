@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import '../../../Core/Fonts/AppFonts.dart';
@@ -41,11 +40,11 @@ class PlayerSubtitleView extends StatelessWidget {
   }
 
   Widget _positioned(
-      BuildContext context,
-      String text,
-      String? family,
-      Color outline,
-      ) {
+    BuildContext context,
+    String text,
+    String? family,
+    Color outline,
+  ) {
     return AnimatedPositioned(
       duration: animDuration(200),
       left: 16,
@@ -56,8 +55,7 @@ class PlayerSubtitleView extends StatelessWidget {
           : settings.subtitleBottomPadding.toDouble(),
       child: LayoutBuilder(
         builder: (context, box) {
-          final scale = ((box.maxWidth + 32) / 720)
-              .clamp(0.55, 1.0);
+          final scale = ((box.maxWidth + 32) / 720).clamp(0.55, 1.0);
 
           return RepaintBoundary(
             child: IgnorePointer(
@@ -72,36 +70,41 @@ class PlayerSubtitleView extends StatelessWidget {
                     color: Color(settings.subtitleBackgroundColor),
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  child: Text.rich(
-                    TextSpan(children: subtitleSpans(text)),
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: settings.subtitleSize * scale,
-                      fontWeight: FontWeight.values[
-                      settings.subtitleWeight.clamp(0, 8)
-                      ],
-                      fontFamily: family,
-                      color: Color(settings.subtitleColor),
-                      shadows: [
-                        Shadow(
-                          offset: const Offset(1, 1),
-                          blurRadius: 6,
-                          color: outline,
-                        ),
-                        Shadow(
-                          offset: const Offset(-1, -1),
-                          blurRadius: 6,
-                          color: outline,
-                        ),
-                      ],
-                    ),
-                  ),
+                  child: _outlined(text, family, outline, scale),
                 ),
               ),
             ),
           );
         },
       ),
+    );
+  }
+
+  Widget _outlined(String text, String? family, Color outline, double scale) {
+    final size = settings.subtitleSize * scale;
+    final base = TextStyle(
+      fontSize: size,
+      fontWeight: FontWeight.values[settings.subtitleWeight.clamp(0, 8)],
+      fontFamily: family,
+    );
+    final stroke = Paint()
+      ..style = PaintingStyle.stroke
+      ..strokeJoin = StrokeJoin.round
+      ..strokeWidth = (size * 0.16).clamp(2.0, 6.0)
+      ..color = outline;
+    return Stack(
+      children: [
+        Text.rich(
+          TextSpan(children: subtitleSpans(text, stroke: stroke)),
+          textAlign: TextAlign.center,
+          style: base.copyWith(foreground: stroke),
+        ),
+        Text.rich(
+          TextSpan(children: subtitleSpans(text)),
+          textAlign: TextAlign.center,
+          style: base.copyWith(color: Color(settings.subtitleColor)),
+        ),
+      ],
     );
   }
 }

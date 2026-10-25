@@ -40,7 +40,7 @@ Color? _parseColour(String raw) {
   return hex.length == 6 && value != null ? Color(0xFF000000 | value) : null;
 }
 
-List<InlineSpan> subtitleSpans(String source) {
+List<InlineSpan> subtitleSpans(String source, {Paint? stroke}) {
   final text = cleanSubtitle(
     source,
   ).replaceAll(RegExp(r'<br\s*/?>', caseSensitive: false), '\n');
@@ -55,7 +55,8 @@ List<InlineSpan> subtitleSpans(String source) {
     fontStyle: italic > 0 ? FontStyle.italic : null,
     fontWeight: bold > 0 ? FontWeight.w800 : null,
     decoration: underline > 0 ? TextDecoration.underline : null,
-    color: colours.whereType<Color>().lastOrNull,
+    color: stroke == null ? colours.whereType<Color>().lastOrNull : null,
+    foreground: stroke,
   );
 
   void add(String chunk) {
