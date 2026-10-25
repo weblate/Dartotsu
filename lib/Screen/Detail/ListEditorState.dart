@@ -1,3 +1,4 @@
+import '../../Core/SourceAlerts/SourceSubscriptions.dart';
 import '../../Logger.dart';
 import 'dart:async';
 
@@ -56,6 +57,7 @@ class ListEditorSession {
       media,
       customList: view.advanced ? draft.selectedCustomLists : null,
     );
+    find<SourceSubscriptions>().noteMedia(view.service, media);
     final sync = find<SyncController>();
     if (sync.instant && sync.canPush(view.service, media.isAnime)) {
       unawaited(sync.pushEdit(view.service, media));

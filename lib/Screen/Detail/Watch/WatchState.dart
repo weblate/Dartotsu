@@ -1,4 +1,9 @@
+import '../../../Core/NotificationManager/NotificationManager.dart';
 import '../../../Core/Offline/OfflineMode.dart';
+import '../../../Core/SourceAlerts/SourcePrefs.dart';
+import '../../../Core/SourceAlerts/SourceSchedule.dart';
+import '../../../Core/SourceAlerts/SourceSub.dart';
+import '../../../Core/SourceAlerts/SourceSubscriptions.dart';
 import '../../../Core/Downloads/DownloadEngine.dart';
 import '../../../Core/Downloads/DownloadSnapshots.dart';
 import 'dart:async';
@@ -66,6 +71,7 @@ class WatchState extends ScreenState {
   int _generation = 0;
   final _tried = <String>{};
   bool _canFallback = false;
+  bool _explicitPick = false;
   int _metaGeneration = 0;
   Disposer? _progressSub;
   Disposer? _prefsSub;
@@ -195,6 +201,7 @@ class WatchState extends ScreenState {
   }) async {
     final generation = ++_generation;
     _canFallback = fallback;
+    _explicitPick = remember;
     if (!fallback) _tried.clear();
     source.value = next;
     if (remember) {
@@ -255,6 +262,7 @@ class WatchState extends ScreenState {
     final src = source.value;
     if (src == null) return;
     final generation = ++_generation;
+    _explicitPick = true;
     SourceMatcher.save(service, src, current, picked);
     match.value = picked;
     status.value = getString.watchSelected(picked.title ?? '');
@@ -268,6 +276,87 @@ class WatchState extends ScreenState {
     if (src == null || fixedSource) return;
     SourceMatcher.forget(service, src, current);
     await selectSource(src, remember: false);
+  }
+
+  int get _localProgress => effectiveProgress(0, units, record.playback);
+
+  SourceSub? get subscription =>
+      find<SourceSubscriptions>().of(service, current);
+
+  DMedia? get _subscribeTarget =>
+      fixedSource ? DMedia.withUrl(current.shareLink) : match.value;
+
+  bool get canSubscribe =>
+      phase.value == WatchPhase.ready &&
+      !_offlineList &&
+      source.value != null &&
+      _subscribeTarget != null &&
+      episodes.isNotEmpty;
+
+  void _noteSubscription(Source src, DMedia target, List<DEpisode> normalized) {
+    final explicit = _explicitPick;
+    _explicitPick = false;
+    if (find<SourceSubscriptions>().of(service, current) == null) return;
+    final manager = extensionServiceFor(itemType);
+    final latest = latestOf(normalized, season: season.value, anime: anime);
+    if (manager == null || latest == null) return;
+    find<SourceSubscriptions>().noteEpisodes(
+      service: service,
+      media: current,
+      source: src,
+      manager: manager,
+      target: target,
+      latest: latest,
+      localProgress: _localProgress,
+      explicit: explicit,
+    );
+  }
+
+  Future<void> toggleSubscription() async {
+    final store = find<SourceSubscriptions>();
+    final existing = store.of(service, current);
+    if (existing != null) {
+      store.remove(existing);
+      snackString(getString.sourceNotifyOff);
+      return;
+    }
+    final src = source.value;
+    final target = _subscribeTarget;
+    final manager = extensionServiceFor(itemType);
+    final latest = latestOf(
+      episodes.toList(),
+      season: season.value,
+      anime: anime,
+    );
+    if (src == null || target == null || manager == null || latest == null) {
+      snackString(getString.sourceNotifyNeedsSource);
+      return;
+    }
+    final result = store.subscribe(
+      service: service,
+      media: current,
+      source: src,
+      manager: manager,
+      type: itemType,
+      target: target,
+      latest: latest,
+      localProgress: _localProgress,
+      season: season.value,
+    );
+    switch (result) {
+      case SubscribeResult.noTarget:
+        snackString(getString.sourceNotifyNeedsSource);
+      case SubscribeResult.complete:
+        snackString(
+          getString.sourceNotifyAllOut(
+            current.totalUnits ?? latest.values.length,
+          ),
+        );
+      case SubscribeResult.added:
+        sourceAlertsPref.rx.value = true;
+        unawaited(find<NotificationManager>().requestPermission());
+        snackString(getString.sourceNotifyOn(src.name ?? ''));
+    }
   }
 
   Future<void> _loadEpisodes(DMedia target, int generation) async {
@@ -299,6 +388,7 @@ class WatchState extends ScreenState {
       _chunkPinned = false;
       _derive();
       phase.value = WatchPhase.ready;
+      _noteSubscription(src, target, normalized);
       final downloads = find<DownloadEngine>();
       if (downloads.hasDownloads(service.id, current.id)) {
         unawaited(
@@ -326,6 +416,7 @@ class WatchState extends ScreenState {
 
   void afterSession() {
     localTick.value++;
+    find<SourceSubscriptions>().noteLocal(service, current, _localProgress);
     if (!_chunkPinned) _pickChunk();
     media.refresh();
     unawaited(_refreshProgress());

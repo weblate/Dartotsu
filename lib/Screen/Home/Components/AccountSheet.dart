@@ -1,3 +1,4 @@
+import '../../../Core/SourceAlerts/SourceSubscriptions.dart';
 import 'dart:async';
 import '../../../Core/Offline/OfflineMode.dart';
 import 'package:flutter/material.dart';
@@ -161,9 +162,14 @@ class _Profile extends StatelessWidget {
                   openActivityFeed(context, service);
                 },
               ),
-            if (user != null && service.notificationView != null)
+            if ((user != null && service.notificationView != null) ||
+                find<SourceSubscriptions>().subs.isNotEmpty)
               BellButton(
-                unread: user.unreadNotifications,
+                unread:
+                    (service.notificationView == null
+                        ? 0
+                        : user?.unreadNotifications ?? 0) +
+                    find<SourceSubscriptions>().unread,
                 onOpen: () {
                   popPage(sheet);
                   openNotifications(context, service);

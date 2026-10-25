@@ -6740,4 +6740,211 @@ class AppLocalizationsEl extends AppLocalizations {
 
   @override
   String get onboardingServices => 'Δουλεύει με';
+
+  @override
+  String sourceNotifyOn(String source) {
+    return 'You\'ll be told when $source has something new';
+  }
+
+  @override
+  String get sourceNotifyOff => 'Release notifications off';
+
+  @override
+  String get sourceNotifyNeedsSource => 'Pick a source with a match first';
+
+  @override
+  String sourceNotifyAllOut(int count) {
+    return 'Everything ($count) is already out, nothing to wait for';
+  }
+
+  @override
+  String get sourceNotifyTooltipOn => 'Stop release notifications';
+
+  @override
+  String get sourceNotifyTooltipOff => 'Notify me about new releases';
+
+  @override
+  String sourceFoundEpisode(String number, String source) {
+    return 'Episode $number is out on $source';
+  }
+
+  @override
+  String sourceFoundEpisodes(String from, String to, String source) {
+    return 'Episodes $from–$to are out on $source';
+  }
+
+  @override
+  String sourceFoundChapter(String number, String source) {
+    return 'Chapter $number is out on $source';
+  }
+
+  @override
+  String sourceFoundChapters(String from, String to, String source) {
+    return 'Chapters $from–$to are out on $source';
+  }
+
+  @override
+  String sourceFoundSummary(int count) {
+    return '$count titles have something new';
+  }
+
+  @override
+  String get navSources => 'Sources';
+
+  @override
+  String sourceInactiveOpen(String manager) {
+    return 'This source belongs to $manager, which isn\'t the active extension service';
+  }
+
+  @override
+  String get sourceAlertsHeader => 'Release notifications';
+
+  @override
+  String get sourceAlertsSwitch => 'Check subscribed titles';
+
+  @override
+  String get sourceAlertsSwitchDesc =>
+      'Once each time the app opens, for titles you turned the bell on';
+
+  @override
+  String get sourceSkipUnstarted => 'Skip titles you haven\'t started';
+
+  @override
+  String get sourceSkipUnstartedDesc =>
+      'Nothing watched or read yet, but episodes already exist';
+
+  @override
+  String get sourceSkipUnseen => 'Skip while you have unseen episodes';
+
+  @override
+  String get sourceSkipUnseenDesc =>
+      'You still have released episodes to catch up on';
+
+  @override
+  String get sourceManage => 'Subscriptions';
+
+  @override
+  String sourceManageDesc(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count titles',
+      one: '1 title',
+      zero: 'No titles',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get sourceCheckNow => 'Check now';
+
+  @override
+  String get sourceCheckNowDesc => 'Ignores the schedule and the skip rules';
+
+  @override
+  String get sourceChecking => 'Checking…';
+
+  @override
+  String sourceCheckResult(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count titles have something new',
+      one: '1 title has something new',
+      zero: 'Nothing new',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get sourceEmpty => 'No subscriptions yet';
+
+  @override
+  String get sourceEmptyMessage =>
+      'Tap the bell above a title\'s episodes to be told about new ones';
+
+  @override
+  String get sourceAll => 'All';
+
+  @override
+  String sourceInactive(String manager) {
+    return 'Inactive: $manager';
+  }
+
+  @override
+  String get sourceMissing => 'Source not found';
+
+  @override
+  String sourceMissingDesc(String source) {
+    return '$source isn\'t installed in this extension service';
+  }
+
+  @override
+  String get sourceUnreachable => 'Source isn\'t responding';
+
+  @override
+  String get sourceFinished => 'Finished';
+
+  @override
+  String get sourceSkippedCompleted => 'Skipped: completed';
+
+  @override
+  String get sourceSkippedUnstarted => 'Skipped: not started';
+
+  @override
+  String get sourceSkippedUnseen => 'Skipped: unseen episodes';
+
+  @override
+  String get sourceWaiting => 'Waiting for the next release';
+
+  @override
+  String sourceNextCheck(String when) {
+    return 'Next check $when';
+  }
+
+  @override
+  String get sourceSoon => 'soon';
+
+  @override
+  String sourceInHours(int count) {
+    return 'in ${count}h';
+  }
+
+  @override
+  String sourceInDays(int count) {
+    return 'in ${count}d';
+  }
+
+  @override
+  String sourceLatest(String number) {
+    return 'Latest: $number';
+  }
+
+  @override
+  String get sourceMute => 'Mute';
+
+  @override
+  String get sourceUnmute => 'Unmute';
+
+  @override
+  String get sourceMuted => 'Muted';
+
+  @override
+  String get sourceUnsubscribe => 'Unsubscribe';
+
+  @override
+  String get sourcePickAnother => 'Pick another source';
+
+  @override
+  String get sourceOpenExtensions => 'Open extensions';
+
+  @override
+  String get sourceNoticesEmpty => 'No release notices yet';
+
+  @override
+  String get sourceNoticesEmptyMessage =>
+      'New episodes and chapters from your subscribed titles show up here';
+
+  @override
+  String get sourceOpenTitle => 'Open title';
 }

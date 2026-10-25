@@ -55,6 +55,8 @@ bool _linuxBacklight = false;
 bool get supportsBrightness => !Platform.isLinux || _linuxBacklight;
 
 class PlayerState extends ScreenState {
+  static int openCount = 0;
+
   final PlayRequest request;
 
   PlayerState(this.request);
@@ -273,6 +275,7 @@ class PlayerState extends ScreenState {
 
   @override
   void onInit() {
+    openCount++;
     settings = _effective();
     engine = PlayerEngine(settings);
     unawaited(SeekPreview.sweep());
@@ -438,6 +441,7 @@ class PlayerState extends ScreenState {
 
   @override
   void onClose() {
+    openCount--;
     _closed = true;
     if (cast.active) unawaited(cast.stop());
     _blurTimer?.cancel();

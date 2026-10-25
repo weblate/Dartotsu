@@ -1,3 +1,4 @@
+import '../../Core/SourceAlerts/SourceSubscriptions.dart';
 import '../../Core/Offline/OfflineMode.dart';
 import '../../Core/Downloads/DownloadEngine.dart';
 import '../../Core/Downloads/DownloadSnapshots.dart';
@@ -223,6 +224,7 @@ class DetailState extends ScreenState {
           );
         }
         DetailCache.put(cacheKey, host.media.value);
+        find<SourceSubscriptions>().noteMedia(view.service, host.media.value);
         unawaited(_loadFavourite());
         ResumeStore.noteProgress(
           view.service,

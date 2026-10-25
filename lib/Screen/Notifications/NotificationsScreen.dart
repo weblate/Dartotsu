@@ -23,6 +23,9 @@ import '../../Widgets/Components/EmptyState.dart';
 import '../../Widgets/Components/ScreenState.dart';
 import '../../Widgets/Components/ScrollConfig.dart';
 import '../Navbar.dart';
+import '../../Core/SourceAlerts/SourceAlerts.dart';
+import '../../Core/SourceAlerts/SourceSub.dart';
+import '../../Core/SourceAlerts/SourceSubscriptions.dart';
 import 'Components/NotificationTile.dart';
 import '../../Utils/Functions/NavigateToScreen.dart';
 import 'NotificationSettingsScreen.dart';
@@ -48,8 +51,8 @@ class _NotificationsScreenState extends BaseScreen<NotificationsScreen>
 
   @override
   Widget buildContent(BuildContext context) {
-    final onNotices = state.section.value == 1;
-    final hasTabs = !onNotices && state.feeds.isNotEmpty;
+    final section = state.section.value;
+    final hasTabs = section == 0 && state.feeds.isNotEmpty;
     final content = Scaffold(
       backgroundColor: Colors.transparent,
       appBar: AppScreenBar(
@@ -80,8 +83,12 @@ class _NotificationsScreenState extends BaseScreen<NotificationsScreen>
         onRefresh: state.refresh,
         child: AppSwitcher(
           child: KeyedSubtree(
-            key: ValueKey(onNotices),
-            child: onNotices ? _notices(context) : _service(context),
+            key: ValueKey(section),
+            child: switch (section) {
+              1 => _notices(context),
+              2 => _sources(context),
+              _ => _service(context),
+            },
           ),
         ),
       ),
@@ -104,6 +111,11 @@ class _NotificationsScreenState extends BaseScreen<NotificationsScreen>
             index: 1,
             icon: Icons.chat_bubble_rounded,
             label: getString.navComments,
+          ),
+          NavItem(
+            index: 2,
+            icon: Icons.bookmark_added_rounded,
+            label: getString.navSources,
           ),
         ],
       ),
@@ -289,6 +301,55 @@ class _NotificationsScreenState extends BaseScreen<NotificationsScreen>
       ),
     ),
   );
+
+  Widget _sources(BuildContext context) => Watch(() {
+    final store = find<SourceSubscriptions>();
+    final notices = store.notices.toList();
+    if (notices.isEmpty) {
+      return ScrollConfig(
+        context,
+        child: ListView(
+          physics: const AlwaysScrollableScrollPhysics(),
+          children: [
+            SizedBox(
+              height: 320,
+              child: EmptyState(
+                icon: Icons.notifications_none_rounded,
+                title: getString.sourceNoticesEmpty,
+                message: getString.sourceNoticesEmptyMessage,
+              ),
+            ),
+          ],
+        ),
+      );
+    }
+    return ScrollConfig(
+      context,
+      child: ListView(
+        physics: const AlwaysScrollableScrollPhysics(),
+        padding: _padding,
+        children: [
+          for (final (i, n) in notices.indexed) _sourceNotice(store, n, i),
+        ],
+      ),
+    );
+  });
+
+  Widget _sourceNotice(SourceSubscriptions store, SourceNotice n, int index) {
+    final sub = store.byKey(n.subKey);
+    final tile = NotificationTile(
+      key: ValueKey('source${n.id}'),
+      item: ServiceNotification(
+        id: n.id,
+        text: '${n.title}\n${n.body}',
+        imageUrl: n.cover,
+        createdAt: DateTime.fromMillisecondsSinceEpoch(n.at),
+      ),
+      icon: Icons.notifications_active_rounded,
+      onTap: sub == null ? null : () => find<SourceAlerts>().openSub(sub),
+    );
+    return index < 12 ? tile.animateStagger(index) : tile;
+  }
 
   Widget _notices(BuildContext context) => Watch(() {
     final phase = state.noticePhase.value;

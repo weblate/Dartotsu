@@ -12052,6 +12052,318 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Works with'**
   String get onboardingServices;
+
+  /// No description provided for @sourceNotifyOn.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'ll be told when {source} has something new'**
+  String sourceNotifyOn(String source);
+
+  /// No description provided for @sourceNotifyOff.
+  ///
+  /// In en, this message translates to:
+  /// **'Release notifications off'**
+  String get sourceNotifyOff;
+
+  /// No description provided for @sourceNotifyNeedsSource.
+  ///
+  /// In en, this message translates to:
+  /// **'Pick a source with a match first'**
+  String get sourceNotifyNeedsSource;
+
+  /// No description provided for @sourceNotifyAllOut.
+  ///
+  /// In en, this message translates to:
+  /// **'Everything ({count}) is already out, nothing to wait for'**
+  String sourceNotifyAllOut(int count);
+
+  /// No description provided for @sourceNotifyTooltipOn.
+  ///
+  /// In en, this message translates to:
+  /// **'Stop release notifications'**
+  String get sourceNotifyTooltipOn;
+
+  /// No description provided for @sourceNotifyTooltipOff.
+  ///
+  /// In en, this message translates to:
+  /// **'Notify me about new releases'**
+  String get sourceNotifyTooltipOff;
+
+  /// No description provided for @sourceFoundEpisode.
+  ///
+  /// In en, this message translates to:
+  /// **'Episode {number} is out on {source}'**
+  String sourceFoundEpisode(String number, String source);
+
+  /// No description provided for @sourceFoundEpisodes.
+  ///
+  /// In en, this message translates to:
+  /// **'Episodes {from}–{to} are out on {source}'**
+  String sourceFoundEpisodes(String from, String to, String source);
+
+  /// No description provided for @sourceFoundChapter.
+  ///
+  /// In en, this message translates to:
+  /// **'Chapter {number} is out on {source}'**
+  String sourceFoundChapter(String number, String source);
+
+  /// No description provided for @sourceFoundChapters.
+  ///
+  /// In en, this message translates to:
+  /// **'Chapters {from}–{to} are out on {source}'**
+  String sourceFoundChapters(String from, String to, String source);
+
+  /// No description provided for @sourceFoundSummary.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} titles have something new'**
+  String sourceFoundSummary(int count);
+
+  /// No description provided for @navSources.
+  ///
+  /// In en, this message translates to:
+  /// **'Sources'**
+  String get navSources;
+
+  /// No description provided for @sourceInactiveOpen.
+  ///
+  /// In en, this message translates to:
+  /// **'This source belongs to {manager}, which isn\'t the active extension service'**
+  String sourceInactiveOpen(String manager);
+
+  /// No description provided for @sourceAlertsHeader.
+  ///
+  /// In en, this message translates to:
+  /// **'Release notifications'**
+  String get sourceAlertsHeader;
+
+  /// No description provided for @sourceAlertsSwitch.
+  ///
+  /// In en, this message translates to:
+  /// **'Check subscribed titles'**
+  String get sourceAlertsSwitch;
+
+  /// No description provided for @sourceAlertsSwitchDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Once each time the app opens, for titles you turned the bell on'**
+  String get sourceAlertsSwitchDesc;
+
+  /// No description provided for @sourceSkipUnstarted.
+  ///
+  /// In en, this message translates to:
+  /// **'Skip titles you haven\'t started'**
+  String get sourceSkipUnstarted;
+
+  /// No description provided for @sourceSkipUnstartedDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Nothing watched or read yet, but episodes already exist'**
+  String get sourceSkipUnstartedDesc;
+
+  /// No description provided for @sourceSkipUnseen.
+  ///
+  /// In en, this message translates to:
+  /// **'Skip while you have unseen episodes'**
+  String get sourceSkipUnseen;
+
+  /// No description provided for @sourceSkipUnseenDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'You still have released episodes to catch up on'**
+  String get sourceSkipUnseenDesc;
+
+  /// No description provided for @sourceManage.
+  ///
+  /// In en, this message translates to:
+  /// **'Subscriptions'**
+  String get sourceManage;
+
+  /// No description provided for @sourceManageDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =0{No titles} =1{1 title} other{{count} titles}}'**
+  String sourceManageDesc(int count);
+
+  /// No description provided for @sourceCheckNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Check now'**
+  String get sourceCheckNow;
+
+  /// No description provided for @sourceCheckNowDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Ignores the schedule and the skip rules'**
+  String get sourceCheckNowDesc;
+
+  /// No description provided for @sourceChecking.
+  ///
+  /// In en, this message translates to:
+  /// **'Checking…'**
+  String get sourceChecking;
+
+  /// No description provided for @sourceCheckResult.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =0{Nothing new} =1{1 title has something new} other{{count} titles have something new}}'**
+  String sourceCheckResult(int count);
+
+  /// No description provided for @sourceEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No subscriptions yet'**
+  String get sourceEmpty;
+
+  /// No description provided for @sourceEmptyMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap the bell above a title\'s episodes to be told about new ones'**
+  String get sourceEmptyMessage;
+
+  /// No description provided for @sourceAll.
+  ///
+  /// In en, this message translates to:
+  /// **'All'**
+  String get sourceAll;
+
+  /// No description provided for @sourceInactive.
+  ///
+  /// In en, this message translates to:
+  /// **'Inactive: {manager}'**
+  String sourceInactive(String manager);
+
+  /// No description provided for @sourceMissing.
+  ///
+  /// In en, this message translates to:
+  /// **'Source not found'**
+  String get sourceMissing;
+
+  /// No description provided for @sourceMissingDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'{source} isn\'t installed in this extension service'**
+  String sourceMissingDesc(String source);
+
+  /// No description provided for @sourceUnreachable.
+  ///
+  /// In en, this message translates to:
+  /// **'Source isn\'t responding'**
+  String get sourceUnreachable;
+
+  /// No description provided for @sourceFinished.
+  ///
+  /// In en, this message translates to:
+  /// **'Finished'**
+  String get sourceFinished;
+
+  /// No description provided for @sourceSkippedCompleted.
+  ///
+  /// In en, this message translates to:
+  /// **'Skipped: completed'**
+  String get sourceSkippedCompleted;
+
+  /// No description provided for @sourceSkippedUnstarted.
+  ///
+  /// In en, this message translates to:
+  /// **'Skipped: not started'**
+  String get sourceSkippedUnstarted;
+
+  /// No description provided for @sourceSkippedUnseen.
+  ///
+  /// In en, this message translates to:
+  /// **'Skipped: unseen episodes'**
+  String get sourceSkippedUnseen;
+
+  /// No description provided for @sourceWaiting.
+  ///
+  /// In en, this message translates to:
+  /// **'Waiting for the next release'**
+  String get sourceWaiting;
+
+  /// No description provided for @sourceNextCheck.
+  ///
+  /// In en, this message translates to:
+  /// **'Next check {when}'**
+  String sourceNextCheck(String when);
+
+  /// No description provided for @sourceSoon.
+  ///
+  /// In en, this message translates to:
+  /// **'soon'**
+  String get sourceSoon;
+
+  /// No description provided for @sourceInHours.
+  ///
+  /// In en, this message translates to:
+  /// **'in {count}h'**
+  String sourceInHours(int count);
+
+  /// No description provided for @sourceInDays.
+  ///
+  /// In en, this message translates to:
+  /// **'in {count}d'**
+  String sourceInDays(int count);
+
+  /// No description provided for @sourceLatest.
+  ///
+  /// In en, this message translates to:
+  /// **'Latest: {number}'**
+  String sourceLatest(String number);
+
+  /// No description provided for @sourceMute.
+  ///
+  /// In en, this message translates to:
+  /// **'Mute'**
+  String get sourceMute;
+
+  /// No description provided for @sourceUnmute.
+  ///
+  /// In en, this message translates to:
+  /// **'Unmute'**
+  String get sourceUnmute;
+
+  /// No description provided for @sourceMuted.
+  ///
+  /// In en, this message translates to:
+  /// **'Muted'**
+  String get sourceMuted;
+
+  /// No description provided for @sourceUnsubscribe.
+  ///
+  /// In en, this message translates to:
+  /// **'Unsubscribe'**
+  String get sourceUnsubscribe;
+
+  /// No description provided for @sourcePickAnother.
+  ///
+  /// In en, this message translates to:
+  /// **'Pick another source'**
+  String get sourcePickAnother;
+
+  /// No description provided for @sourceOpenExtensions.
+  ///
+  /// In en, this message translates to:
+  /// **'Open extensions'**
+  String get sourceOpenExtensions;
+
+  /// No description provided for @sourceNoticesEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No release notices yet'**
+  String get sourceNoticesEmpty;
+
+  /// No description provided for @sourceNoticesEmptyMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'New episodes and chapters from your subscribed titles show up here'**
+  String get sourceNoticesEmptyMessage;
+
+  /// No description provided for @sourceOpenTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Open title'**
+  String get sourceOpenTitle;
 }
 
 class _AppLocalizationsDelegate

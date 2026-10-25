@@ -25,6 +25,8 @@ import 'Screen/Detail/Comments/Data/CommentsApi.dart';
 import 'Core/NetworkManager/NetworkManager.dart';
 import 'Core/NotificationManager/NotificationManager.dart';
 import 'Core/Services/ActivityAlerts.dart';
+import 'Core/SourceAlerts/SourceAlerts.dart';
+import 'Core/SourceAlerts/SourceSubscriptions.dart';
 import 'Core/Services/MediaServiceController.dart';
 import 'Screen/Settings/Sync/Data/SyncController.dart';
 import 'Core/ThemeManager/CardStyleController.dart';
@@ -73,6 +75,8 @@ class DI {
     lazyPut<CommentAlerts>(CommentAlerts.new);
     lazyPut<RefreshController>(RefreshController.new);
     lazyPut<ActivityAlerts>(ActivityAlerts.new);
+    lazyPut<SourceSubscriptions>(SourceSubscriptions.new);
+    lazyPut<SourceAlerts>(SourceAlerts.new);
     lazyPut<AppUpdater>(AppUpdater.new);
     lazyPut<NetStatus>(NetStatus.new);
     lazyPut<PendingWrites>(PendingWrites.new);

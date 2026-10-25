@@ -10,6 +10,7 @@ import '../../../../../Core/Preferences/StorageManager.dart';
 import '../../../../../Core/Preferences/PrefManager.dart';
 import '../../../../../Core/Services/MediaService.dart';
 import '../../../../../Core/Services/Model/Media.dart';
+import '../../../../../Core/SourceAlerts/SourceSubscriptions.dart';
 import '../../../../../Core/State/State.dart';
 
 enum ResumeKind { watch, read }
@@ -196,6 +197,8 @@ class ResumeStore {
     });
   }
 
+  static Map<String, Object?> slim(Media media) => _slim(media);
+
   static Map<String, Object?> _slim(Media media) {
     final json = Map<String, Object?>.from(
       jsonDecode(jsonEncode(media.toJson())) as Map,
@@ -325,6 +328,7 @@ class ResumeStore {
 
   static void noteProgress(MediaService service, Media media, int? progress) {
     _load();
+    find<SourceSubscriptions>().noteProgress(service, media, progress);
     if (progress == null) return;
     var changed = false;
     final next = <ResumeEntry>[];

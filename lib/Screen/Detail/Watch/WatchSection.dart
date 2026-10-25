@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import '../../../Widgets/Components/ChoiceSheet.dart';
 import '../../../Core/Offline/OfflineMode.dart';
 import '../../../Utils/Functions/SnackBar.dart';
@@ -173,6 +175,23 @@ class _WatchSectionState extends State<WatchSection>
             padding: const EdgeInsetsDirectional.only(end: 8),
             child: AppSpinner(size: 16, color: scheme.primary),
           ),
+        Watch(() {
+          final subscribed = state.subscription != null;
+          return IconButton(
+            tooltip: subscribed
+                ? getString.sourceNotifyTooltipOn
+                : getString.sourceNotifyTooltipOff,
+            onPressed: state.canSubscribe || subscribed
+                ? () => unawaited(state.toggleSubscription())
+                : null,
+            icon: Icon(
+              subscribed
+                  ? Icons.notifications_active_rounded
+                  : Icons.notifications_none_rounded,
+              color: subscribed ? scheme.primary : null,
+            ),
+          );
+        }),
         IconButton(
           tooltip: getString.downloadTitle,
           onPressed: () => downloadMenu(context, state),

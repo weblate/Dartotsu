@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import '../../Api/Discord/DiscordPresence.dart';
 import '../Detail/Comments/Data/CommentAlerts.dart';
 import '../../Core/Services/ActivityAlerts.dart';
+import '../../Core/SourceAlerts/SourceSubscriptions.dart';
 import '../../Logger.dart';
 import '../../Utils/Functions/SnackBar.dart';
 import '../Detail/Comments/Data/CommentModels.dart';
@@ -156,10 +157,12 @@ class NotificationsState extends ScreenState {
   void selectSection(int index) {
     section.value = index;
     if (index == 1 && !_noticesLoaded) unawaited(loadNotices());
+    if (index == 2) find<SourceSubscriptions>().markRead();
   }
 
   Future<void> refresh() async {
     if (section.value == 1) return loadNotices();
+    if (section.value == 2) return;
     await feed?.load();
   }
 
