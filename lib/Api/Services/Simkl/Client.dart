@@ -2,16 +2,29 @@ import '../../../Utils/Lru.dart';
 import 'dart:async';
 import 'dart:convert';
 
+import 'package:package_info_plus/package_info_plus.dart';
 import 'package:rhttp/rhttp.dart';
 
 import '../../../Core/NetworkManager/NetworkManager.dart';
 import '../../../Core/State/State.dart';
+import '../../../Logger.dart';
 
 const simklApi = 'https://api.simkl.com';
 const simklData = 'https://data.simkl.in';
 const simklWeb = 'https://simkl.com';
 const simklAppName = 'dartotsu';
-const simklAppVersion = '1.0';
+
+String _appVersion = '';
+
+Future<String> simklAppVersion() async {
+  if (_appVersion.isNotEmpty) return _appVersion;
+  try {
+    _appVersion = (await PackageInfo.fromPlatform()).version;
+  } catch (e, st) {
+    logError('Simkl', e, st);
+  }
+  return _appVersion.isEmpty ? '1.0' : _appVersion;
+}
 
 class SimklException implements Exception {
   final String message;
@@ -42,7 +55,9 @@ class SimklClient {
   final String Function() _token;
   final Future<bool> Function() _refresh;
 
-  SimklClient(this._clientId, this._token, this._refresh);
+  SimklClient(this._clientId, this._token, this._refresh) {
+    unawaited(simklAppVersion());
+  }
 
   NetworkManager get _net => find();
 
@@ -51,12 +66,12 @@ class SimklClient {
   Future<Map<String, String>> _query(Map<String, String>? extra) async => {
     'client_id': await _clientId(),
     'app-name': simklAppName,
-    'app-version': simklAppVersion,
+    'app-version': await simklAppVersion(),
     ...?extra,
   };
 
   Map<String, String> _headers({required bool auth, bool json = false}) => {
-    'User-Agent': '$simklAppName/$simklAppVersion',
+    'User-Agent': '$simklAppName/${_appVersion.isEmpty ? '1.0' : _appVersion}',
     if (json) 'Content-Type': 'application/json',
     if (auth && hasToken) 'Authorization': 'Bearer ${_token()}',
   };
