@@ -117,6 +117,19 @@ class AppLocalizationsKo extends AppLocalizations {
   String get appLockDesc => '앱을 열거나 한참 뒤에 돌아올 때 비밀번호를 물어봐요';
 
   @override
+  String get appLockBiometric => 'Unlock with biometrics';
+
+  @override
+  String get appLockBiometricDesc =>
+      'Use your fingerprint or face instead of typing the passcode';
+
+  @override
+  String get appLockBiometricReason => 'Unlock Dartotsu';
+
+  @override
+  String get appLockUseBiometric => 'Use biometrics';
+
+  @override
   String get appLockUnlock => '비밀번호를 입력하세요';
 
   @override
@@ -4828,6 +4841,35 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get playerQuality => '화질';
+
+  @override
+  String get streamGroupSub => 'Sub';
+
+  @override
+  String get streamGroupHardSub => 'Hard Sub';
+
+  @override
+  String get streamGroupSoftSub => 'Soft Sub';
+
+  @override
+  String get streamGroupDub => 'Dub';
+
+  @override
+  String get streamGroupRaw => 'Raw';
+
+  @override
+  String get streamGroupOther => 'Other';
+
+  @override
+  String streamsCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count streams',
+      one: '1 stream',
+    );
+    return '$_temp0';
+  }
 
   @override
   String get playerStreams => '스트림';

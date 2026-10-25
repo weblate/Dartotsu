@@ -371,6 +371,30 @@ abstract class AppLocalizations {
   /// **'Ask for a passcode when the app opens or comes back after a while'**
   String get appLockDesc;
 
+  /// No description provided for @appLockBiometric.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlock with biometrics'**
+  String get appLockBiometric;
+
+  /// No description provided for @appLockBiometricDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Use your fingerprint or face instead of typing the passcode'**
+  String get appLockBiometricDesc;
+
+  /// No description provided for @appLockBiometricReason.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlock Dartotsu'**
+  String get appLockBiometricReason;
+
+  /// No description provided for @appLockUseBiometric.
+  ///
+  /// In en, this message translates to:
+  /// **'Use biometrics'**
+  String get appLockUseBiometric;
+
   /// No description provided for @appLockUnlock.
   ///
   /// In en, this message translates to:
@@ -9010,6 +9034,48 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Quality'**
   String get playerQuality;
+
+  /// No description provided for @streamGroupSub.
+  ///
+  /// In en, this message translates to:
+  /// **'Sub'**
+  String get streamGroupSub;
+
+  /// No description provided for @streamGroupHardSub.
+  ///
+  /// In en, this message translates to:
+  /// **'Hard Sub'**
+  String get streamGroupHardSub;
+
+  /// No description provided for @streamGroupSoftSub.
+  ///
+  /// In en, this message translates to:
+  /// **'Soft Sub'**
+  String get streamGroupSoftSub;
+
+  /// No description provided for @streamGroupDub.
+  ///
+  /// In en, this message translates to:
+  /// **'Dub'**
+  String get streamGroupDub;
+
+  /// No description provided for @streamGroupRaw.
+  ///
+  /// In en, this message translates to:
+  /// **'Raw'**
+  String get streamGroupRaw;
+
+  /// No description provided for @streamGroupOther.
+  ///
+  /// In en, this message translates to:
+  /// **'Other'**
+  String get streamGroupOther;
+
+  /// No description provided for @streamsCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 stream} other{{count} streams}}'**
+  String streamsCount(int count);
 
   /// No description provided for @playerStreams.
   ///

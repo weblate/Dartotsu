@@ -120,6 +120,19 @@ class AppLocalizationsBn extends AppLocalizations {
       'অ্যাপ খোলার সময় বা কিছুক্ষণ পর ফিরে এলে পাসকোড চাইবে';
 
   @override
+  String get appLockBiometric => 'Unlock with biometrics';
+
+  @override
+  String get appLockBiometricDesc =>
+      'Use your fingerprint or face instead of typing the passcode';
+
+  @override
+  String get appLockBiometricReason => 'Unlock Dartotsu';
+
+  @override
+  String get appLockUseBiometric => 'Use biometrics';
+
+  @override
   String get appLockUnlock => 'পাসকোড দিন';
 
   @override
@@ -4916,6 +4929,35 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get playerQuality => 'কোয়ালিটি';
+
+  @override
+  String get streamGroupSub => 'Sub';
+
+  @override
+  String get streamGroupHardSub => 'Hard Sub';
+
+  @override
+  String get streamGroupSoftSub => 'Soft Sub';
+
+  @override
+  String get streamGroupDub => 'Dub';
+
+  @override
+  String get streamGroupRaw => 'Raw';
+
+  @override
+  String get streamGroupOther => 'Other';
+
+  @override
+  String streamsCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count streams',
+      one: '1 stream',
+    );
+    return '$_temp0';
+  }
 
   @override
   String get playerStreams => 'স্ট্রিম';

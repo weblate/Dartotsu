@@ -121,6 +121,19 @@ class AppLocalizationsNl extends AppLocalizations {
       'Vraagt om een code als je de app opent of er na een tijdje terugkomt';
 
   @override
+  String get appLockBiometric => 'Unlock with biometrics';
+
+  @override
+  String get appLockBiometricDesc =>
+      'Use your fingerprint or face instead of typing the passcode';
+
+  @override
+  String get appLockBiometricReason => 'Unlock Dartotsu';
+
+  @override
+  String get appLockUseBiometric => 'Use biometrics';
+
+  @override
   String get appLockUnlock => 'Voer je code in';
 
   @override
@@ -4957,6 +4970,35 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get playerQuality => 'Kwaliteit';
+
+  @override
+  String get streamGroupSub => 'Sub';
+
+  @override
+  String get streamGroupHardSub => 'Hard Sub';
+
+  @override
+  String get streamGroupSoftSub => 'Soft Sub';
+
+  @override
+  String get streamGroupDub => 'Dub';
+
+  @override
+  String get streamGroupRaw => 'Raw';
+
+  @override
+  String get streamGroupOther => 'Other';
+
+  @override
+  String streamsCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count streams',
+      one: '1 stream',
+    );
+    return '$_temp0';
+  }
 
   @override
   String get playerStreams => 'Streams';
