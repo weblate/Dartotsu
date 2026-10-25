@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 
 import '../../../Core/Services/Model/Media.dart';
 import '../../../Core/Services/MediaServiceController.dart';
+import '../../../Utils/Animation/WidgetAnimations.dart';
 import '../../../Utils/Extensions/ContextExtensions.dart';
 import '../../../Utils/Extensions/Responsive.dart';
 import '../../../Utils/Function.dart';
@@ -110,6 +111,7 @@ class DetailHeaderDelegate extends SliverPersistentHeaderDelegate {
     final width = MediaQuery.sizeOf(context).width;
     final slideP = (t * 1.6).clamp(0.0, 1.0);
     final labelP = ((t - 0.5) * 2).clamp(0.0, 1.0);
+    final collapsed = t > 0.75;
 
     return Watch(() {
       final m = host.media.value;
@@ -213,7 +215,7 @@ class DetailHeaderDelegate extends SliverPersistentHeaderDelegate {
               ),
               PositionedDirectional(
                 start: 56,
-                end: 140,
+                end: collapsed ? 56 : 140,
                 top: top,
                 height: _toolbarHeight,
                 child: IgnorePointer(
@@ -254,27 +256,41 @@ class DetailHeaderDelegate extends SliverPersistentHeaderDelegate {
                         guardedBack,
                       ),
                       const Spacer(),
-                      _reloadButton(context),
-                      const SizedBox(width: 6),
-                      if (onFavourite != null) ...[
-                        _iconButton(
-                          context,
-                          m.isFav
-                              ? Icons.favorite_rounded
-                              : Icons.favorite_border_rounded,
-                          favouriteBusy?.value == true ? null : onFavourite,
-                          loading: favouriteBusy?.value == true,
-                          color: m.isFav ? context.colorScheme.error : null,
-                        ),
-                        const SizedBox(width: 6),
-                      ],
-                      _iconButton(
-                        context,
-                        Icons.share_rounded,
-                        () => shareLink(m.shareLink),
+                      AnimatedSize(
+                        duration: animDuration(180),
+                        child: collapsed
+                            ? const SizedBox.shrink()
+                            : Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  _reloadButton(context),
+                                  const SizedBox(width: 6),
+                                  if (onFavourite != null) ...[
+                                    _iconButton(
+                                      context,
+                                      m.isFav
+                                          ? Icons.favorite_rounded
+                                          : Icons.favorite_border_rounded,
+                                      favouriteBusy?.value == true
+                                          ? null
+                                          : onFavourite,
+                                      loading: favouriteBusy?.value == true,
+                                      color: m.isFav
+                                          ? context.colorScheme.error
+                                          : null,
+                                    ),
+                                    const SizedBox(width: 6),
+                                  ],
+                                  _iconButton(
+                                    context,
+                                    Icons.share_rounded,
+                                    () => shareLink(m.shareLink),
+                                  ),
+                                  const SizedBox(width: 6),
+                                ],
+                              ),
                       ),
-                      const SizedBox(width: 6),
-                      _menuButton(context, m),
+                      _menuButton(context, m, collapsed),
                     ],
                   ),
                 ),
@@ -493,76 +509,119 @@ class DetailHeaderDelegate extends SliverPersistentHeaderDelegate {
     visualDensity: VisualDensity.compact,
   );
 
-  Widget _menuButton(BuildContext context, Media m) => PopupMenuButton<String>(
-    style: IconButton.styleFrom(
-      backgroundColor: context.colorScheme.secondaryContainer,
-      foregroundColor: context.colorScheme.onSecondaryContainer,
-      visualDensity: VisualDensity.compact,
-    ),
-    icon: const Icon(Icons.more_vert_rounded, size: 20),
-    onSelected: (v) {
-      if (v == 'browser') openLinkInBrowser(m.shareLink);
-      if (v == 'copyTitle') {
-        copyToClipboard(m.mainName, message: getString.titleCopied);
-      }
-      if (v == 'copyLink') {
-        copyToClipboard(m.shareLink, message: getString.linkCopied);
-      }
-      if (v == 'trailer' && m.trailer != null) openLinkInBrowser(m.trailer!);
-      if (v == 'shareCard') onShareCard?.call();
-    },
-    itemBuilder: (_) => [
-      if (m.trailer != null)
-        PopupMenuItem(
-          value: 'trailer',
-          child: ListTile(
-            dense: true,
-            contentPadding: EdgeInsets.zero,
-            leading: const Icon(Icons.play_circle_outline_rounded),
-            title: Text(getString.watchTrailer),
+  Widget _menuButton(BuildContext context, Media m, bool collapsed) =>
+      PopupMenuButton<String>(
+        style: IconButton.styleFrom(
+          backgroundColor: context.colorScheme.secondaryContainer,
+          foregroundColor: context.colorScheme.onSecondaryContainer,
+          visualDensity: VisualDensity.compact,
+        ),
+        icon: const Icon(Icons.more_vert_rounded, size: 20),
+        onSelected: (v) {
+          if (v == 'reload') host.refresh();
+          if (v == 'favourite') onFavourite?.call();
+          if (v == 'share') shareLink(m.shareLink);
+          if (v == 'browser') openLinkInBrowser(m.shareLink);
+          if (v == 'copyTitle') {
+            copyToClipboard(m.mainName, message: getString.titleCopied);
+          }
+          if (v == 'copyLink') {
+            copyToClipboard(m.shareLink, message: getString.linkCopied);
+          }
+          if (v == 'trailer' && m.trailer != null) {
+            openLinkInBrowser(m.trailer!);
+          }
+          if (v == 'shareCard') onShareCard?.call();
+        },
+        itemBuilder: (_) => [
+          if (collapsed) ...[
+            PopupMenuItem(
+              value: 'reload',
+              enabled: !host.loading.value,
+              child: ListTile(
+                dense: true,
+                contentPadding: EdgeInsets.zero,
+                leading: const Icon(Icons.refresh_rounded),
+                title: Text(getString.refresh),
+              ),
+            ),
+            if (onFavourite != null)
+              PopupMenuItem(
+                value: 'favourite',
+                enabled: favouriteBusy?.value != true,
+                child: ListTile(
+                  dense: true,
+                  contentPadding: EdgeInsets.zero,
+                  leading: Icon(
+                    m.isFav
+                        ? Icons.favorite_rounded
+                        : Icons.favorite_border_rounded,
+                    color: m.isFav ? context.colorScheme.error : null,
+                  ),
+                  title: Text(getString.favourite),
+                ),
+              ),
+            PopupMenuItem(
+              value: 'share',
+              child: ListTile(
+                dense: true,
+                contentPadding: EdgeInsets.zero,
+                leading: const Icon(Icons.share_rounded),
+                title: Text(getString.share),
+              ),
+            ),
+          ],
+          if (m.trailer != null)
+            PopupMenuItem(
+              value: 'trailer',
+              child: ListTile(
+                dense: true,
+                contentPadding: EdgeInsets.zero,
+                leading: const Icon(Icons.play_circle_outline_rounded),
+                title: Text(getString.watchTrailer),
+              ),
+            ),
+          if (onShareCard != null)
+            PopupMenuItem(
+              value: 'shareCard',
+              child: ListTile(
+                dense: true,
+                contentPadding: EdgeInsets.zero,
+                leading: const Icon(Icons.ios_share_rounded),
+                title: Text(getString.shareCard),
+              ),
+            ),
+          PopupMenuItem(
+            value: 'copyTitle',
+            child: ListTile(
+              dense: true,
+              contentPadding: EdgeInsets.zero,
+              leading: const Icon(Icons.title_rounded),
+              title: Text(getString.copyTitle),
+            ),
           ),
-        ),
-      if (onShareCard != null)
-        PopupMenuItem(
-          value: 'shareCard',
-          child: ListTile(
-            dense: true,
-            contentPadding: EdgeInsets.zero,
-            leading: const Icon(Icons.ios_share_rounded),
-            title: Text(getString.shareCard),
+          PopupMenuItem(
+            value: 'copyLink',
+            child: ListTile(
+              dense: true,
+              contentPadding: EdgeInsets.zero,
+              leading: const Icon(Icons.link_rounded),
+              title: Text(getString.copyLink),
+            ),
           ),
-        ),
-      PopupMenuItem(
-        value: 'copyTitle',
-        child: ListTile(
-          dense: true,
-          contentPadding: EdgeInsets.zero,
-          leading: const Icon(Icons.title_rounded),
-          title: Text(getString.copyTitle),
-        ),
-      ),
-      PopupMenuItem(
-        value: 'copyLink',
-        child: ListTile(
-          dense: true,
-          contentPadding: EdgeInsets.zero,
-          leading: const Icon(Icons.link_rounded),
-          title: Text(getString.copyLink),
-        ),
-      ),
-      PopupMenuItem(
-        value: 'browser',
-        child: ListTile(
-          dense: true,
-          contentPadding: EdgeInsets.zero,
-          leading: const Icon(Icons.open_in_new_rounded),
-          title: Text(
-            sourceName == null
-                ? getString.openInBrowser
-                : getString.viewOnSource(sourceName!),
+          PopupMenuItem(
+            value: 'browser',
+            child: ListTile(
+              dense: true,
+              contentPadding: EdgeInsets.zero,
+              leading: const Icon(Icons.open_in_new_rounded),
+              title: Text(
+                sourceName == null
+                    ? getString.openInBrowser
+                    : getString.viewOnSource(sourceName!),
+              ),
+            ),
           ),
-        ),
-      ),
-    ],
-  );
+        ],
+      );
 }
