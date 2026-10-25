@@ -29,10 +29,10 @@ packages:
     dependency: transitive
     description:
       name: android_file_picker
-      sha256: e94229cc41c4bb5fb6a2254146340a8b650664c99b5c93b9001f66c3375d0060
+      sha256: "03d3dd3cb578ab26b1e528aeea27bf6b976942f5a24e3da82d270369b8e161a8"
       url: "https://pub.dev"
     source: hosted
-    version: "2.1.1"
+    version: "2.1.2"
   antlr4:
     dependency: transitive
     description:
@@ -335,7 +335,7 @@ packages:
     description:
       path: "."
       ref: master
-      resolved-ref: "847dfae6910bda18852e98a4af0769b7fa7cdc62"
+      resolved-ref: a1dead787458628d8dcf603ce2644bdb467b5fc7
       url: "https://github.com/aayush2622/DartotsuExtensionBridge.git"
     source: git
     version: "0.0.5"
@@ -473,10 +473,10 @@ packages:
     dependency: transitive
     description:
       name: file_picker_darwin
-      sha256: bd172f8ddec522f9bd9a26365545320f130a6ab7839eb2a634051fab4ced7eb7
+      sha256: "13e731433fb3e59c1aff5a1197e41c5c5f930fad16342d101579086271a70d7b"
       url: "https://pub.dev"
     source: hosted
-    version: "2.3.4"
+    version: "2.4.0"
   file_picker_linux:
     dependency: transitive
     description:
@@ -1480,10 +1480,10 @@ packages:
     dependency: transitive
     description:
       name: posix
-      sha256: bc1bad54ad2b735816e31f8d4600cfde6c7839975085ddfbca48b6c9f7c4044e
+      sha256: "6312deb534ce3812a1b454143740ffe721a17dc3a33bfc978f3a6d7bc5833edf"
       url: "https://pub.dev"
     source: hosted
-    version: "6.5.2"
+    version: "6.5.3"
   precached_network_image:
     dependency: "direct main"
     description:
@@ -2152,66 +2152,66 @@ packages:
     dependency: "direct main"
     description:
       name: webview_all
-      sha256: "8d1fb0b725b0620e55f0a6ded742b922c41febf0c37cdfacb74308463d4c4594"
+      sha256: d6190ae475c7fdb4d1b1c0afda64d788172b2fbc367dfb72b9be2c704629984d
       url: "https://pub.dev"
     source: hosted
-    version: "1.4.6"
+    version: "1.4.7"
   webview_all_android:
     dependency: transitive
     description:
       name: webview_all_android
-      sha256: a9b1e36e572beddc0cf6d73ad05ba7c0b86322cc1c85509e6ce4b162a6a1ac73
+      sha256: "34243b07dfed6c6e28ebdba9cd9353f4653ae393e23745aff6001115600a2e30"
       url: "https://pub.dev"
     source: hosted
-    version: "1.4.6"
+    version: "1.4.7"
   webview_all_linux:
     dependency: transitive
     description:
       name: webview_all_linux
-      sha256: c009f3ac350be13923bc918bc8d3ea859265cd94be394f7f0ae35e8e17fcba04
+      sha256: e85f0b52d34ff0439acdf1f07602b44f58987046d4241aeb217059a68176d95a
       url: "https://pub.dev"
     source: hosted
-    version: "1.4.6"
+    version: "1.4.7"
   webview_all_ohos:
     dependency: transitive
     description:
       name: webview_all_ohos
-      sha256: "773a591b2c68fe4c3d6eba45902bf41d13d6699f611caac603b8ec24652423ba"
+      sha256: e86b77b6725264fc17cad1a13d34167bc0d3e19ce36280262b69e2f6db21ac40
       url: "https://pub.dev"
     source: hosted
-    version: "1.4.6"
+    version: "1.4.7"
   webview_all_web:
     dependency: transitive
     description:
       name: webview_all_web
-      sha256: "50956cfabebe5e5cc9e90d30784a0c4cdf47709d66f40d8a25432e5693d3b5ca"
+      sha256: cd274c08500246d02704c2658c832543aebe80b51dfbf801f5d085378f96097c
       url: "https://pub.dev"
     source: hosted
-    version: "1.4.6"
+    version: "1.4.7"
   webview_all_windows:
     dependency: transitive
     description:
       name: webview_all_windows
-      sha256: "63fce396ab64333ca8c9638784a07a74098e370a01e02329b6de9cc4768c828f"
+      sha256: cd1d7723d6028515427a072bed119513e7fe1b3f69b70339cf04c11b4add15b9
       url: "https://pub.dev"
     source: hosted
-    version: "1.4.6"
+    version: "1.4.7"
   webview_all_wkwebview:
     dependency: transitive
     description:
       name: webview_all_wkwebview
-      sha256: "74a837e53d750a425a25e84ff796fa12ef27647122eebeeff6720bfdb0562c12"
+      sha256: "56c7f30cee7f782f392fd05d1d1c856e0a70577075da257a454f695489c428a3"
       url: "https://pub.dev"
     source: hosted
-    version: "1.4.6"
+    version: "1.4.7"
   webview_platform_interface:
     dependency: transitive
     description:
       name: webview_platform_interface
-      sha256: "56f7c12d241023795a3d9308334229bef5690db9968a25fb5dd941b0165c2eab"
+      sha256: aa452be6b70044d95597b7e92830fbac7c18c301e3c5eae391496415d0256fd9
       url: "https://pub.dev"
     source: hosted
-    version: "1.4.6"
+    version: "1.4.7"
   win32:
     dependency: "direct main"
     description:
