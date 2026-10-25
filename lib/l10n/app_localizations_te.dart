@@ -342,6 +342,13 @@ class AppLocalizationsTe extends AppLocalizations {
   String get loadExtensionsIcon => 'ఎక్స్టెన్షన్ ఐకాన్లు లోడ్ చెయ్యి';
 
   @override
+  String get autoUpdateRuntimes => 'Update extension runtimes automatically';
+
+  @override
+  String get autoUpdateRuntimesDesc =>
+      'Download new Aniyomi, CloudStream and other runtime versions in the background. Off, an update icon appears next to the manager instead.';
+
+  @override
   String get loadExtensionsIconDesc =>
       'ఎక్స్టెన్షన్ లిస్ట్‌లలో సోర్స్ ఐకాన్లు చూపించు';
 
@@ -2220,6 +2227,16 @@ class AppLocalizationsTe extends AppLocalizations {
 
   @override
   String get readingTabDesc => 'మూడో ట్యాబ్ ఏ ఎక్స్టెన్షన్లు చూపించాలి';
+
+  @override
+  String get firstTab => 'First tab';
+
+  @override
+  String get firstTabDesc =>
+      'Which extensions the first tab shows. Pick manga here and novel on the reading tab to drop anime from the bar';
+
+  @override
+  String get novelExtensions => 'Novel Extensions';
 
   @override
   String get defaultFeed => 'డిఫాల్ట్ ఫీడ్';
@@ -5412,6 +5429,60 @@ class AppLocalizationsTe extends AppLocalizations {
   String trackProgressManga(String name) {
     return 'నువ్వు చాప్టర్ పూర్తి చేసినప్పుడు $nameని నీ లిస్ట్‌లో ట్రాక్ చేయాలా? లోకల్‌గా ఉంచడానికి \"ఈ డివైస్ మాత్రమే\", ఏమీ సేవ్ చేయకూడదంటే \"కాదు\" ఎంచుకో.';
   }
+
+  @override
+  String trackProgressAnimeLocal(String name) {
+    return 'Save your progress on $name to your list on this device as you watch?';
+  }
+
+  @override
+  String trackProgressMangaLocal(String name) {
+    return 'Save your progress on $name to your list on this device when you finish a chapter?';
+  }
+
+  @override
+  String get downloadClearQueue => 'Clear queue';
+
+  @override
+  String downloadClearQueueConfirm(int count) {
+    return 'Cancel all $count downloads in the queue? What was already downloaded is deleted.';
+  }
+
+  @override
+  String get castTitle => 'Cast to device';
+
+  @override
+  String get castSearching => 'Looking for devices on your network…';
+
+  @override
+  String get castNoDevices =>
+      'No devices found. Make sure the TV or Chromecast is on the same Wi-Fi, then search again.';
+
+  @override
+  String get castRefresh => 'Search again';
+
+  @override
+  String get castFailed => 'Could not start casting';
+
+  @override
+  String get castStop => 'Stop casting';
+
+  @override
+  String castNowCasting(String name) {
+    return 'Casting to $name';
+  }
+
+  @override
+  String get castProtocolChromecast => 'Chromecast';
+
+  @override
+  String get castProtocolDlna => 'DLNA / Smart TV';
+
+  @override
+  String get castProtocolRoku => 'Roku';
+
+  @override
+  String get castRokuNote => 'Roku can\'t report or change the position';
 
   @override
   String get trackProgressRemember => 'నా ఎంపిక గుర్తుంచుకో';

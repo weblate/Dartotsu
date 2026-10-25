@@ -335,6 +335,13 @@ class AppLocalizationsZh extends AppLocalizations {
   String get loadExtensionsIcon => '加载扩展图标';
 
   @override
+  String get autoUpdateRuntimes => 'Update extension runtimes automatically';
+
+  @override
+  String get autoUpdateRuntimesDesc =>
+      'Download new Aniyomi, CloudStream and other runtime versions in the background. Off, an update icon appears next to the manager instead.';
+
+  @override
   String get loadExtensionsIconDesc => '在扩展列表中显示源图标';
 
   @override
@@ -2159,6 +2166,16 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get readingTabDesc => '第三个标签页显示哪些扩展';
+
+  @override
+  String get firstTab => 'First tab';
+
+  @override
+  String get firstTabDesc =>
+      'Which extensions the first tab shows. Pick manga here and novel on the reading tab to drop anime from the bar';
+
+  @override
+  String get novelExtensions => 'Novel Extensions';
 
   @override
   String get defaultFeed => '默认信息流';
@@ -5263,6 +5280,60 @@ class AppLocalizationsZh extends AppLocalizations {
   String trackProgressManga(String name) {
     return '读完一话后要在你的列表里追踪 $name 吗？选“仅此设备”则只保存在本地，选“否”则什么都不保存。';
   }
+
+  @override
+  String trackProgressAnimeLocal(String name) {
+    return 'Save your progress on $name to your list on this device as you watch?';
+  }
+
+  @override
+  String trackProgressMangaLocal(String name) {
+    return 'Save your progress on $name to your list on this device when you finish a chapter?';
+  }
+
+  @override
+  String get downloadClearQueue => 'Clear queue';
+
+  @override
+  String downloadClearQueueConfirm(int count) {
+    return 'Cancel all $count downloads in the queue? What was already downloaded is deleted.';
+  }
+
+  @override
+  String get castTitle => 'Cast to device';
+
+  @override
+  String get castSearching => 'Looking for devices on your network…';
+
+  @override
+  String get castNoDevices =>
+      'No devices found. Make sure the TV or Chromecast is on the same Wi-Fi, then search again.';
+
+  @override
+  String get castRefresh => 'Search again';
+
+  @override
+  String get castFailed => 'Could not start casting';
+
+  @override
+  String get castStop => 'Stop casting';
+
+  @override
+  String castNowCasting(String name) {
+    return 'Casting to $name';
+  }
+
+  @override
+  String get castProtocolChromecast => 'Chromecast';
+
+  @override
+  String get castProtocolDlna => 'DLNA / Smart TV';
+
+  @override
+  String get castProtocolRoku => 'Roku';
+
+  @override
+  String get castRokuNote => 'Roku can\'t report or change the position';
 
   @override
   String get trackProgressRemember => '记住我的选择';

@@ -791,6 +791,18 @@ abstract class AppLocalizations {
   /// **'Load extension icons'**
   String get loadExtensionsIcon;
 
+  /// No description provided for @autoUpdateRuntimes.
+  ///
+  /// In en, this message translates to:
+  /// **'Update extension runtimes automatically'**
+  String get autoUpdateRuntimes;
+
+  /// No description provided for @autoUpdateRuntimesDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Download new Aniyomi, CloudStream and other runtime versions in the background. Off, an update icon appears next to the manager instead.'**
+  String get autoUpdateRuntimesDesc;
+
   /// No description provided for @loadExtensionsIconDesc.
   ///
   /// In en, this message translates to:
@@ -4274,8 +4286,26 @@ abstract class AppLocalizations {
   /// No description provided for @readingTabDesc.
   ///
   /// In en, this message translates to:
-  /// **'Which extensions the third tab shows'**
+  /// **'Which extensions the last tab shows'**
   String get readingTabDesc;
+
+  /// No description provided for @firstTab.
+  ///
+  /// In en, this message translates to:
+  /// **'First tab'**
+  String get firstTab;
+
+  /// No description provided for @firstTabDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Which extensions the first tab shows. Pick manga here and novel on the reading tab to drop anime from the bar'**
+  String get firstTabDesc;
+
+  /// No description provided for @novelExtensions.
+  ///
+  /// In en, this message translates to:
+  /// **'Novel Extensions'**
+  String get novelExtensions;
 
   /// No description provided for @defaultFeed.
   ///
@@ -9862,6 +9892,96 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Track {name} on your list when you finish a chapter? Choose \"This device only\" to keep it local, or No to save nothing.'**
   String trackProgressManga(String name);
+
+  /// No description provided for @trackProgressAnimeLocal.
+  ///
+  /// In en, this message translates to:
+  /// **'Save your progress on {name} to your list on this device as you watch?'**
+  String trackProgressAnimeLocal(String name);
+
+  /// No description provided for @trackProgressMangaLocal.
+  ///
+  /// In en, this message translates to:
+  /// **'Save your progress on {name} to your list on this device when you finish a chapter?'**
+  String trackProgressMangaLocal(String name);
+
+  /// No description provided for @downloadClearQueue.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear queue'**
+  String get downloadClearQueue;
+
+  /// No description provided for @downloadClearQueueConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel all {count} downloads in the queue? What was already downloaded is deleted.'**
+  String downloadClearQueueConfirm(int count);
+
+  /// No description provided for @castTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Cast to device'**
+  String get castTitle;
+
+  /// No description provided for @castSearching.
+  ///
+  /// In en, this message translates to:
+  /// **'Looking for devices on your network…'**
+  String get castSearching;
+
+  /// No description provided for @castNoDevices.
+  ///
+  /// In en, this message translates to:
+  /// **'No devices found. Make sure the TV or Chromecast is on the same Wi-Fi, then search again.'**
+  String get castNoDevices;
+
+  /// No description provided for @castRefresh.
+  ///
+  /// In en, this message translates to:
+  /// **'Search again'**
+  String get castRefresh;
+
+  /// No description provided for @castFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not start casting'**
+  String get castFailed;
+
+  /// No description provided for @castStop.
+  ///
+  /// In en, this message translates to:
+  /// **'Stop casting'**
+  String get castStop;
+
+  /// No description provided for @castNowCasting.
+  ///
+  /// In en, this message translates to:
+  /// **'Casting to {name}'**
+  String castNowCasting(String name);
+
+  /// No description provided for @castProtocolChromecast.
+  ///
+  /// In en, this message translates to:
+  /// **'Chromecast'**
+  String get castProtocolChromecast;
+
+  /// No description provided for @castProtocolDlna.
+  ///
+  /// In en, this message translates to:
+  /// **'DLNA / Smart TV'**
+  String get castProtocolDlna;
+
+  /// No description provided for @castProtocolRoku.
+  ///
+  /// In en, this message translates to:
+  /// **'Roku'**
+  String get castProtocolRoku;
+
+  /// No description provided for @castRokuNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Roku can\'t report or change the position'**
+  String get castRokuNote;
 
   /// No description provided for @trackProgressRemember.
   ///
