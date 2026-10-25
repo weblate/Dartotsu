@@ -50,7 +50,7 @@ class KitsuSync extends SyncAdapter {
         await mutations.saveEntry(
           op.want.toMedia(anime: anime, idOverride: op.targetId)
             ..userListId = op.have?.listId,
-          exists: op.exists,
+          exists: op.existsHint,
         );
         used += op.exists && op.have?.listId != null ? 1 : 2;
       }

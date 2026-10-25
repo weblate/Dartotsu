@@ -21,7 +21,7 @@ import '../../Widgets/Components/ScreenState.dart';
 import '../Detail/DetailScreen.dart';
 import '../Feed/FeedNavigation.dart';
 import '../Social/SocialNavigation.dart';
-import '../Settings/Sync/Data/SyncIdIndex.dart';
+import '../../Core/Services/Api/IdMapper.dart';
 import '../Settings/Sync/Data/SyncModels.dart';
 import '../../Api/Services/Anilist/AnilistService.dart';
 import '../../Utils/Functions/SnackBar.dart';
@@ -106,11 +106,7 @@ class SearchState extends ScreenState {
         SyncKey.anilist: hit.anilistId,
         if (hit.malId != null) SyncKey.mal: hit.malId!,
       };
-      try {
-        ids = (await SyncIdIndex.load()).expand(ids, prefer: SyncKey.anilist);
-      } catch (e, st) {
-        logError('SearchState', e, st);
-      }
+      ids = await IdMapper.expand(ids, anime: true, prefer: SyncKey.anilist);
       final native = ids[adapter.key];
       if (native != null) id = adapter.targetId(native, anime: true);
     }

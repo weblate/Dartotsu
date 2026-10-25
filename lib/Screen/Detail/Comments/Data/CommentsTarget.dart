@@ -1,10 +1,8 @@
 import '../../../../Api/Services/Anilist/AnilistService.dart';
-import '../../../../Logger.dart';
+import '../../../../Core/Services/Api/IdMapper.dart';
 import '../../Watch/Data/Media/MediaRecord.dart';
 import '../../../../Core/Services/MediaServiceController.dart';
 import '../../../../Core/Services/Model/Media.dart';
-import '../../../../Core/State/State.dart';
-import '../../../Settings/Sync/Data/SyncIdIndex.dart';
 import '../../../Settings/Sync/Data/SyncModels.dart';
 
 class CommentsTarget {
@@ -30,42 +28,8 @@ class CommentsTarget {
   }
 
   static Future<int?> _lookup(MediaService service, Media media) async {
-    final adapter = service.syncAdapter;
-    if (adapter == null) return null;
-    var ids = adapter.idsOf(media);
-    if (ids[SyncKey.anilist] == null) {
-      try {
-        ids = {...ids, ...await adapter.foreignIds(media)};
-      } catch (e) {
-        logger('Comments foreignIds failed: $e', logLevel: LogLevel.error);
-      }
-    }
-    final anime = media.isAnime || media.id.startsWith('anime/');
-    if (ids[SyncKey.anilist] == null) {
-      try {
-        ids = (await SyncIdIndex.load(
-          anime: anime,
-        )).expand(ids, prefer: adapter.key);
-      } catch (e) {
-        logger('Comments id index failed: $e', logLevel: LogLevel.error);
-      }
-    }
-    var id = ids[SyncKey.anilist];
-    final mal = ids[SyncKey.mal];
-    if (id == null && mal != null) {
-      final anilist = find<MediaServiceController>().services.firstWhere(
-        (s) => s.id == anilistServiceId,
-      );
-      try {
-        final (found, _) =
-            await anilist.syncAdapter?.resolve([mal], anime: anime) ??
-            (const <int, int>{}, 0);
-        id = found[mal];
-      } catch (e) {
-        logger('Comments AniList lookup failed: $e', logLevel: LogLevel.error);
-      }
-    }
-    logger('Comments target ${service.id}/${media.id} -> $ids -> $id');
+    if (service.syncAdapter == null) return null;
+    final id = await IdMapper.resolveKey(service, media, SyncKey.anilist);
     if (id != null) {
       MediaRecords.of(service, media).commentsId = id;
       MediaRecords.save(service, media);

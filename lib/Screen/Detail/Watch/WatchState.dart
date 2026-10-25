@@ -20,7 +20,7 @@ import 'Data/EpisodeMetaService.dart';
 import 'Data/EpisodeUnits.dart';
 import 'Data/LocalProgress.dart';
 import 'Data/UnitLoader.dart';
-import 'Data/MediaIdResolver.dart';
+import '../../../Core/Services/Api/IdMapper.dart';
 import 'Data/SourceMatcher.dart';
 import 'Data/WatchPrefs.dart';
 import '../../../Logger.dart';
@@ -360,7 +360,7 @@ class WatchState extends ScreenState {
     }
     metaLoading.value = true;
     try {
-      final ids = await MediaIdResolver.resolve(service, current);
+      final ids = await IdMapper.resolve(service, current);
       if (generation != _metaGeneration) return;
       final stream = EpisodeMetaService.load(ids, only: choice);
       final done = Completer<void>();

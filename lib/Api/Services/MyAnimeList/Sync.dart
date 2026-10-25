@@ -47,7 +47,7 @@ class MalSync extends SyncAdapter {
       for (final op in batch) {
         await mutations.saveEntry(
           op.want.toMedia(anime: anime, idOverride: op.targetId),
-          exists: op.exists,
+          exists: op.existsHint,
         );
       }
     } on MalException catch (e) {

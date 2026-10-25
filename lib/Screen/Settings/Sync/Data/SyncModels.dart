@@ -407,7 +407,11 @@ class SyncOp {
   final SyncItem? have;
   final String targetId;
 
-  const SyncOp(this.want, this.have, this.targetId);
+  final bool unknown;
+
+  const SyncOp(this.want, this.have, this.targetId, {this.unknown = false});
 
   bool get exists => have != null;
+
+  bool? get existsHint => unknown ? null : exists;
 }

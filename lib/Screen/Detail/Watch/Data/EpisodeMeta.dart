@@ -36,6 +36,7 @@ class MetaIds {
   int? kitsu;
   int? simkl;
   int? mangabaka;
+  int? mangaupdates;
   int? tvdb;
   int? tmdb;
   String? imdb;
@@ -47,6 +48,7 @@ class MetaIds {
     this.kitsu,
     this.simkl,
     this.mangabaka,
+    this.mangaupdates,
     this.tvdb,
     this.tmdb,
     this.imdb,
@@ -56,12 +58,67 @@ class MetaIds {
   bool get known =>
       anilist != null || mal != null || tvdb != null || imdb != null;
 
+  int? operator [](String key) => switch (key) {
+    'anilist' => anilist,
+    'mal' => mal,
+    'kitsu' => kitsu,
+    'simkl' => simkl,
+    'mangabaka' => mangabaka,
+    'mangaupdates' => mangaupdates,
+    'tvdb' => tvdb,
+    'tmdb' => tmdb,
+    _ => null,
+  };
+
+  void operator []=(String key, int? value) {
+    switch (key) {
+      case 'anilist':
+        anilist = value;
+      case 'mal':
+        mal = value;
+      case 'kitsu':
+        kitsu = value;
+      case 'simkl':
+        simkl = value;
+      case 'mangabaka':
+        mangabaka = value;
+      case 'mangaupdates':
+        mangaupdates = value;
+      case 'tvdb':
+        tvdb = value;
+      case 'tmdb':
+        tmdb = value;
+    }
+  }
+
+  static const syncKeys = [
+    'anilist',
+    'mal',
+    'kitsu',
+    'simkl',
+    'mangabaka',
+    'mangaupdates',
+  ];
+
+  Map<String, int> syncIds() => {
+    for (final k in syncKeys)
+      if (this[k] != null) k: this[k]!,
+  };
+
+  void merge(Map<String, int> ids) {
+    for (final k in syncKeys) {
+      final v = ids[k];
+      if (v != null && this[k] == null) this[k] = v;
+    }
+  }
+
   MetaIds copy() => MetaIds(
     anilist: anilist,
     mal: mal,
     kitsu: kitsu,
     simkl: simkl,
     mangabaka: mangabaka,
+    mangaupdates: mangaupdates,
     tvdb: tvdb,
     tmdb: tmdb,
     imdb: imdb,
@@ -74,6 +131,7 @@ class MetaIds {
     'kitsu': kitsu,
     'simkl': simkl,
     if (mangabaka != null) 'mangabaka': mangabaka,
+    if (mangaupdates != null) 'mangaupdates': mangaupdates,
     if (tvdb != null) 'tvdb': tvdb,
     if (tmdb != null) 'tmdb': tmdb,
     if (imdb != null) 'imdb': imdb,
@@ -86,6 +144,7 @@ class MetaIds {
         kitsu: (json['kitsu'] as num?)?.toInt(),
         simkl: (json['simkl'] as num?)?.toInt(),
         mangabaka: (json['mangabaka'] as num?)?.toInt(),
+        mangaupdates: (json['mangaupdates'] as num?)?.toInt(),
         tvdb: (json['tvdb'] as num?)?.toInt(),
         tmdb: (json['tmdb'] as num?)?.toInt(),
         imdb: json['imdb'] as String?,

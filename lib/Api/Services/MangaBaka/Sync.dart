@@ -53,7 +53,7 @@ class MangaBakaSync extends SyncAdapter {
         await mutations.saveEntry(
           op.want.toMedia(anime: anime, idOverride: op.targetId)
             ..userListId = op.have?.listId,
-          exists: op.exists,
+          exists: op.existsHint,
         );
       }
     } on MangaBakaException catch (e) {

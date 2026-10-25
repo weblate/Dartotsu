@@ -15,7 +15,7 @@ import '../Detail/Watch/Data/Media/MediaRecord.dart';
 import '../Detail/Watch/Data/EpisodeMeta.dart';
 import '../Detail/Watch/Data/EpisodeMetaService.dart';
 import '../Detail/Watch/Data/EpisodeUnits.dart';
-import '../Detail/Watch/Data/MediaIdResolver.dart';
+import '../../Core/Services/Api/IdMapper.dart';
 import '../Detail/Watch/Data/UnitLoader.dart';
 import '../Detail/Watch/Data/TrackConfirm.dart';
 import '../Detail/Watch/Data/WatchPrefs.dart';
@@ -179,7 +179,7 @@ class PlayerState extends ScreenState {
     }
     metaLoading.value = true;
     try {
-      final ids = await MediaIdResolver.resolve(service, media);
+      final ids = await IdMapper.resolve(service, media);
       if (generation != _metaGeneration || _closed) return;
       final done = Completer<void>();
       _metaSub = EpisodeMetaService.load(ids, only: choice).listen(
@@ -730,7 +730,7 @@ class PlayerState extends ScreenState {
         skipMedia != null &&
         skipService != null &&
         skipMedia.isAnime) {
-      malId = (await MediaIdResolver.resolve(skipService, skipMedia)).mal;
+      malId = (await IdMapper.resolve(skipService, skipMedia)).mal;
       if (generation != _generation) return;
     }
     if (own.isEmpty && malId != null && skipMedia!.isAnime) {
@@ -746,7 +746,7 @@ class PlayerState extends ScreenState {
       final media = request.media;
       final service = request.service;
       if (media != null && service != null) {
-        final ids = await MediaIdResolver.resolve(service, media);
+        final ids = await IdMapper.resolve(service, media);
         if (generation != _generation) return;
         final introStamps = await IntroDb.fetch(
           imdbId: ids.imdb,

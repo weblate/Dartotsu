@@ -1,3 +1,4 @@
+import 'Core/Services/Api/IdMapper.dart';
 import 'Screen/Together/TogetherLink.dart';
 import 'dart:async';
 import 'dart:io';
@@ -234,6 +235,7 @@ void applySystemBarStyle({required bool isDark}) {
 /// Work that can safely run after the first frame.
 Future<void> _postInit(List<String> args) async {
   installDownloadLinks();
+  IdMapper.warm();
   find<OfflineMode>();
   find<DownloadEngine>();
   find<ActivityAlerts>().start();

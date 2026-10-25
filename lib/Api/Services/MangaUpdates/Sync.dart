@@ -49,7 +49,7 @@ class MangaUpdatesSync extends SyncAdapter {
           (
             op.want.toMedia(anime: anime, idOverride: op.targetId)
               ..userListId = op.have?.listId,
-            op.exists,
+            op.existsHint,
           ),
       ]);
     } on MangaUpdatesException catch (e) {

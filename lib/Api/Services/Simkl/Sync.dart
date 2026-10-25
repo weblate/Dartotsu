@@ -1,5 +1,7 @@
 import '../../../Screen/Settings/Sync/Data/SyncAdapter.dart';
 import '../../../Screen/Settings/Sync/Data/SyncModels.dart';
+import '../../../Core/Services/Model/Media.dart';
+import '../../../Screen/Detail/Watch/Data/EpisodeMeta.dart';
 import 'Client.dart';
 import 'Data/Mapper.dart';
 import 'IdLookup.dart';
@@ -67,6 +69,17 @@ class SimklSync extends SyncAdapter {
       throw syncError(e, status: e.status);
     }
     return requests.length;
+  }
+
+  @override
+  void contributeIds(Media media, MetaIds ids) {
+    final extras = simklExtras[media];
+    if (extras == null) return;
+    ids
+      ..tvdb ??= extras.tvdbId
+      ..tmdb ??= extras.tmdbId
+      ..imdb ??= extras.imdbId
+      ..mal ??= extras.malId;
   }
 
   @override

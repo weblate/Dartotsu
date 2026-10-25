@@ -9,7 +9,7 @@ import '../../../Widgets/Components/AlertDialogBuilder.dart';
 import '../../../Widgets/Components/AppControls.dart';
 import '../../../Widgets/Components/AppSheet.dart';
 import '../../../Widgets/Components/CustomBottomDialog.dart';
-import '../../Detail/Watch/Data/MediaIdResolver.dart';
+import '../../../Core/Services/Api/IdMapper.dart';
 import '../Engine/AniSkip.dart';
 import '../PlayerState.dart';
 import 'PlayerSeekBar.dart';
@@ -136,7 +136,7 @@ class _SkipSubmitPanelState extends State<_SkipSubmitPanel> {
     sending.value = true;
     try {
       var malId = media.malId;
-      malId ??= (await MediaIdResolver.resolve(service, media)).mal;
+      malId ??= (await IdMapper.resolve(service, media)).mal;
       if (malId == null) {
         snackString(getString.playerSkipNoMal);
         return;

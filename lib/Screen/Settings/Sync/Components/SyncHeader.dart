@@ -167,8 +167,10 @@ class SyncHeader extends StatelessWidget {
           contentPadding: EdgeInsets.zero,
           title: Text(getString.syncOnEdit),
           subtitle: Text(getString.syncOnEditDesc),
-          value: PrefName.syncOnEdit.rx.value,
-          onChanged: (v) => PrefName.syncOnEdit.rx.value = v,
+          value: PrefName.syncOnEdit.rx.value || PrefName.syncAuto.rx.value,
+          onChanged: PrefName.syncAuto.rx.value
+              ? null
+              : (v) => PrefName.syncOnEdit.rx.value = v,
         ),
         SwitchListTile(
           contentPadding: EdgeInsets.zero,

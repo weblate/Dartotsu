@@ -1,3 +1,4 @@
+import '../../../Detail/Watch/Data/EpisodeMeta.dart';
 import '../../../../Core/Services/Model/Media.dart';
 import 'SyncModels.dart';
 
@@ -30,6 +31,8 @@ abstract class SyncAdapter {
     key: ?nativeId(media.id),
     SyncKey.mal: ?media.malId,
   };
+
+  void contributeIds(Media media, MetaIds ids) {}
 
   Future<Map<String, int>> foreignIds(Media media) async => const {};
 

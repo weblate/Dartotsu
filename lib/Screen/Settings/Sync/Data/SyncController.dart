@@ -21,7 +21,7 @@ import 'SyncAdapter.dart';
 import 'SyncAhead.dart';
 import 'SyncCompute.dart';
 import 'SyncBudget.dart';
-import 'SyncIdIndex.dart';
+import '../../../../Core/Services/Api/IdMapper.dart';
 import 'SyncMemory.dart';
 import 'SyncModels.dart';
 import 'SyncPlanner.dart';
@@ -105,6 +105,8 @@ class SyncController extends AppController {
     changes.fire();
   }
 
+  static const _autoMaxWait = Duration(minutes: 2);
+
   bool get busy => phase.value != SyncPhase.idle;
 
   @override
@@ -186,7 +188,7 @@ class SyncController extends AppController {
 
   void startAuto() {
     OfflineMutations.onProgressSaved = (service, media) {
-      if (PrefName.syncOnEdit.value && canPush(service, media.isAnime)) {
+      if (instant && canPush(service, media.isAnime)) {
         unawaited(pushEdit(service, media));
       }
     };
@@ -205,8 +207,12 @@ class SyncController extends AppController {
         if (!isAhead && !mainService!.syncAdapter!.supports(anime: isAnime)) {
           continue;
         }
-        await fetch(anime: isAnime, auto: true);
-        if (plan.value?.hasPending == true) await start();
+        try {
+          await fetch(anime: isAnime, auto: true);
+          if (plan.value?.hasPending == true) await start(auto: true);
+        } catch (e, st) {
+          logError('SyncController', e, st);
+        }
       }
     } finally {
       _autoBusy = false;
@@ -241,7 +247,7 @@ class SyncController extends AppController {
       fetchLabel.value = getString.syncLoadingMap;
       List<int>? flat;
       try {
-        flat = (await SyncIdIndex.load(anime: isAnime)).flat;
+        flat = (await IdMapper.index(anime: isAnime)).flat;
       } catch (e, st) {
         if (isAnime) rethrow;
         logError('SyncController', e, st);
@@ -252,8 +258,10 @@ class SyncController extends AppController {
       SyncPrepared? prepared;
       if (!ahead) {
         fetchLabel.value = main!.name;
+        final mainItems = await adapter!.library(anime: isAnime);
+        IdMapper.learnItems(mainItems, anime: isAnime);
         prepared = await syncPrepareMain(
-          await adapter!.library(anime: isAnime),
+          mainItems,
           flat,
           adapter.key,
           anime: isAnime,
@@ -350,7 +358,9 @@ class SyncController extends AppController {
     bool isAnime,
   ) async {
     try {
-      return (await service.syncAdapter!.library(anime: isAnime), null);
+      final items = await service.syncAdapter!.library(anime: isAnime);
+      IdMapper.learnItems(items, anime: isAnime);
+      return (items, null);
     } catch (e) {
       return (null, '$e');
     } finally {
@@ -359,7 +369,7 @@ class SyncController extends AppController {
     }
   }
 
-  Future<void> start({String? only}) async {
+  Future<void> start({String? only, bool auto = false}) async {
     final current = plan.value;
     if (busy || current == null) return;
     if (incognitoBlocksEdits) {
@@ -377,7 +387,7 @@ class SyncController extends AppController {
     try {
       await Future.wait([
         for (final id in current.targets.keys)
-          if (only == null || only == id) _work(id, current),
+          if (only == null || only == id) _work(id, current, auto),
       ]);
     } finally {
       for (final id in current.targets.keys) {
@@ -396,6 +406,8 @@ class SyncController extends AppController {
 
   void stop() => _stop = true;
 
+  bool get instant => PrefName.syncAuto.value || PrefName.syncOnEdit.value;
+
   bool canPush(MediaService service, bool anime) =>
       (service.id == mainId || isAhead) &&
       service.syncAdapter != null &&
@@ -407,17 +419,22 @@ class SyncController extends AppController {
     final isAnime = media.isAnime;
     final targets = targetsFor(service.id, isAnime);
     if (targets.isEmpty) return;
-    var ids = adapter.idsOf(media);
+    var ids = await IdMapper.expand(
+      adapter.idsOf(media),
+      anime: isAnime,
+      prefer: adapter.key,
+    );
     try {
-      ids = await syncExpandIds(
-        ids,
-        (await SyncIdIndex.load(anime: isAnime)).flat,
-        adapter.key,
-        anime: isAnime,
+      final resolved = await IdMapper.resolve(
+        service,
+        media,
+        need: {for (final t in targets) t.syncAdapter!.key},
       );
+      ids = {...resolved.syncIds(), ...ids};
     } catch (e, st) {
       logError('SyncController', e, st);
     }
+    IdMapper.learn(ids, anime: isAnime);
     final want = SyncItem.fromMedia(media, ids);
     final done = <String>[];
     for (final target in targets) {
@@ -443,7 +460,13 @@ class SyncController extends AppController {
           }
           if (native != null) targetId = other.targetId(native, anime: isAnime);
         }
-        if (targetId == null) continue;
+        if (targetId == null) {
+          logger(
+            'Instant sync: no ${target.name} id for ${media.id} ($ids)',
+            tag: 'SYNC',
+          );
+          continue;
+        }
         final wait = _waitFor(target.id, other);
         if (wait > const Duration(seconds: 20)) {
           snackString(
@@ -453,7 +476,7 @@ class SyncController extends AppController {
         }
         if (wait > Duration.zero) await Future<void>.delayed(wait);
         final used = await other.write([
-          SyncOp(want, null, targetId),
+          SyncOp(want, null, targetId, unknown: true),
         ], anime: isAnime);
         _budget.stamp(target.id, used);
         await other.finish();
@@ -548,12 +571,12 @@ class SyncController extends AppController {
       (p.state == SyncStatus.outdated ||
           PrefName.syncAddMissing.rx.value && p.state == SyncStatus.missing);
 
-  Future<void> _work(String id, SyncPlan current) async {
+  Future<void> _work(String id, SyncPlan current, bool auto) async {
     final service = _services.firstWhereOrNull((s) => s.id == id);
     final adapter = service?.syncAdapter;
     if (service == null || adapter == null) return;
     final pairs = current.targets[id]!.pairs.where(isWanted).toList();
-    await _resolve(id, service, adapter, pairs, current.anime);
+    await _resolve(id, service, adapter, pairs, current.anime, auto);
     while (!_stop) {
       final todo = pairs
           .where((p) => isWanted(p) && p.op != SyncOpState.failed)
@@ -561,6 +584,7 @@ class SyncController extends AppController {
           .toList();
       if (todo.isEmpty) break;
       final wait = _waitFor(id, adapter);
+      if (auto && wait > _autoMaxWait) break;
       if (wait > Duration.zero) {
         await _sleep(id, wait);
         continue;
@@ -585,6 +609,7 @@ class SyncController extends AppController {
     SyncAdapter adapter,
     List<SyncPair> pairs,
     bool isAnime,
+    bool auto,
   ) async {
     if (!adapter.canResolve) return;
     for (final from in adapter.resolveKeys) {
@@ -603,6 +628,7 @@ class SyncController extends AppController {
       var at = 0;
       while (at < open.length && !_stop) {
         final wait = _waitFor(id, adapter);
+        if (auto && wait > _autoMaxWait) break;
         if (wait > Duration.zero) {
           await _sleep(id, wait);
           continue;
