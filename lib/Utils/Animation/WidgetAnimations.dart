@@ -345,6 +345,11 @@ extension WidgetAnimations on Widget {
   Widget animatePageTransition(double animation) {
     if (_disabled) return this;
 
+    if (PrefName.useGlassMode.value) {
+      return animate(
+        adapter: ValueAdapter(animation),
+      ).slideX(begin: 0.12, end: 0, curve: Curves.easeOutExpo);
+    }
     return animate(adapter: ValueAdapter(animation))
         .fade(begin: 0, end: 1, curve: Curves.easeOutExpo)
         .slideX(begin: 0.12, end: 0, curve: Curves.easeOutExpo);

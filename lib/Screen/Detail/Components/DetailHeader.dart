@@ -120,7 +120,11 @@ class DetailHeaderDelegate extends SliverPersistentHeaderDelegate {
             children: [
               Positioned.fill(
                 child: glass
-                    ? _glassBar(scheme, ((t - 0.85) * 6.7).clamp(0.0, 1.0))
+                    ? _glassBar(
+                        context,
+                        scheme,
+                        ((t - 0.85) * 6.7).clamp(0.0, 1.0),
+                      )
                     : ColoredBox(color: scheme.surface.withValues(alpha: t)),
               ),
               if (!glass)
@@ -174,7 +178,8 @@ class DetailHeaderDelegate extends SliverPersistentHeaderDelegate {
                                   child: SizedBox(
                                     height: _coverH,
                                     child: Align(
-                                      alignment: AlignmentDirectional.bottomStart,
+                                      alignment:
+                                          AlignmentDirectional.bottomStart,
                                       child: _title(context, m),
                                     ),
                                   ),
@@ -312,13 +317,15 @@ class DetailHeaderDelegate extends SliverPersistentHeaderDelegate {
     );
   }
 
-  Widget _glassBar(ColorScheme scheme, double p) {
+  Widget _glassBar(BuildContext context, ColorScheme scheme, double p) {
     if (p <= 0) return const SizedBox.shrink();
     return Opacity(
       opacity: p,
       child: ClipRect(
-        child: BackdropFilter(
-          filter: GlassStyle.filter,
+        child: GlassPane(
+          radius: BorderRadius.zero,
+          scrim: scheme.surface.withValues(alpha: 0.30),
+          window: MediaQuery.sizeOf(context),
           child: DecoratedBox(
             decoration: BoxDecoration(
               color: scheme.surface.withValues(alpha: 0.4),
@@ -481,9 +488,7 @@ class DetailHeaderDelegate extends SliverPersistentHeaderDelegate {
     bool loading = false,
     Color? color,
   }) => IconButton.filledTonal(
-    icon: loading
-        ? const AppSpinner()
-        : Icon(icon, size: 20, color: color),
+    icon: loading ? const AppSpinner() : Icon(icon, size: 20, color: color),
     onPressed: onTap,
     visualDensity: VisualDensity.compact,
   );

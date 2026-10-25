@@ -1,6 +1,9 @@
+import 'dart:math' as math;
 import 'dart:ui' as ui;
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 class GlassStyle {
   GlassStyle._();
@@ -14,6 +17,8 @@ class GlassStyle {
     outer: ColorFilter.matrix(saturate(saturation)),
     inner: ui.ImageFilter.blur(sigmaX: sigma, sigmaY: sigma),
   );
+
+  static final paneSaturation = ColorFilter.matrix(saturate(1.18));
 
   static List<Color> scrim(ColorScheme scheme) => [
     scheme.surface.withValues(alpha: 0.30),
@@ -30,6 +35,116 @@ class GlassStyle {
       r, g, b + s, 0, 0, //
       0, 0, 0, 1, 0,
     ];
+  }
+}
+
+class GlassField extends ChangeNotifier {
+  GlassField._();
+
+  static final instance = GlassField._();
+
+  static ui.Image? image;
+
+  static void show(ui.Image next) {
+    if (identical(image, next)) return;
+    image = next;
+    instance.notifyListeners();
+  }
+}
+
+class GlassPane extends SingleChildRenderObjectWidget {
+  final BorderRadius radius;
+  final Color scrim;
+  final Size window;
+
+  const GlassPane({
+    super.key,
+    required this.radius,
+    required this.scrim,
+    required this.window,
+    super.child,
+  });
+
+  @override
+  RenderObject createRenderObject(BuildContext context) =>
+      _RenderGlassPane(radius, scrim, window);
+
+  @override
+  void updateRenderObject(BuildContext context, RenderProxyBox renderObject) {
+    (renderObject as _RenderGlassPane)
+      ..radius = radius
+      ..scrim = scrim
+      ..window = window;
+  }
+}
+
+class _RenderGlassPane extends RenderProxyBox {
+  _RenderGlassPane(this._radius, this._scrim, this._window);
+
+  BorderRadius _radius;
+  Color _scrim;
+  Size _window;
+
+  final _paint = Paint()
+    ..colorFilter = GlassStyle.paneSaturation
+    ..filterQuality = FilterQuality.low;
+  final _scrimPaint = Paint();
+
+  set radius(BorderRadius v) {
+    if (v == _radius) return;
+    _radius = v;
+    markNeedsPaint();
+  }
+
+  set scrim(Color v) {
+    if (v == _scrim) return;
+    _scrim = v;
+    markNeedsPaint();
+  }
+
+  set window(Size v) {
+    if (v == _window) return;
+    _window = v;
+    markNeedsPaint();
+  }
+
+  @override
+  void attach(PipelineOwner owner) {
+    super.attach(owner);
+    GlassField.instance.addListener(markNeedsPaint);
+  }
+
+  @override
+  void detach() {
+    GlassField.instance.removeListener(markNeedsPaint);
+    super.detach();
+  }
+
+  @override
+  void paint(PaintingContext context, Offset offset) {
+    final image = GlassField.image;
+    if (image != null && !size.isEmpty && !_window.isEmpty) {
+      final iw = image.width.toDouble();
+      final ih = image.height.toDouble();
+      final scale = math.max(_window.width / iw, _window.height / ih);
+      final dx = (_window.width - iw * scale) / 2;
+      final dy = (_window.height - ih * scale) / 2;
+      final origin = localToGlobal(Offset.zero);
+      final w = math.min(size.width / scale, iw);
+      final h = math.min(size.height / scale, ih);
+      final left = ((origin.dx - dx) / scale).clamp(0.0, iw - w);
+      final top = ((origin.dy - dy) / scale).clamp(0.0, ih - h);
+      final dst = offset & size;
+      final canvas = context.canvas
+        ..save()
+        ..clipRRect(_radius.toRRect(dst))
+        ..drawImageRect(image, Rect.fromLTWH(left, top, w, h), dst, _paint);
+      _scrimPaint.color = _scrim;
+      canvas
+        ..drawRect(dst, _scrimPaint)
+        ..restore();
+    }
+    super.paint(context, offset);
   }
 }
 
@@ -117,41 +232,35 @@ class GlassSurface extends StatelessWidget {
     final top = contrast ? 0.97 : (dark ? 0.52 : 0.62) * strength;
     final bottom = contrast ? 0.97 : (dark ? 0.38 : 0.48) * strength;
 
-    Widget body = DecoratedBox(
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-          colors: [
-            lift.withValues(alpha: top.clamp(0.0, 1.0)),
-            base.withValues(alpha: bottom.clamp(0.0, 1.0)),
-          ],
-        ),
+    final direction = Directionality.of(context);
+    final highlight = dark ? 0.10 : 0.32;
+    final topColor = Color.alphaBlend(
+      Colors.white.withValues(alpha: highlight),
+      lift.withValues(alpha: top.clamp(0.0, 1.0)),
+    );
+    final midColor = Color.lerp(
+      lift.withValues(alpha: top.clamp(0.0, 1.0)),
+      base.withValues(alpha: bottom.clamp(0.0, 1.0)),
+      0.45,
+    )!;
+    final bottomColor = base.withValues(alpha: bottom.clamp(0.0, 1.0));
+
+    Widget body = CustomPaint(
+      painter: _FillPainter(
+        radius: radius,
+        colors: [topColor, midColor, bottomColor],
       ),
-      child: DecoratedBox(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [
-              Colors.white.withValues(alpha: dark ? 0.10 : 0.32),
-              Colors.white.withValues(alpha: 0),
-            ],
-            stops: const [0, 0.45],
-          ),
-        ),
-        child: Container(
-          alignment: alignment,
-          padding: padding,
-          child: Material(color: Colors.transparent, child: child),
-        ),
+      child: Container(
+        alignment: alignment,
+        padding: padding,
+        child: Material(color: Colors.transparent, child: child),
       ),
     );
 
     body = CustomPaint(
       foregroundPainter: _EdgePainter(
         radius: radius,
-        direction: Directionality.of(context),
+        direction: direction,
         dark: dark,
         show: _edge,
         flat: border != null && border!.isUniform && _edge ? border!.top : null,
@@ -161,12 +270,14 @@ class GlassSurface extends StatelessWidget {
 
     Widget clipped = ClipRRect(borderRadius: radius, child: body);
     if (!contrast && blur) {
-      final group = BackdropGroup.of(context);
       clipped = ClipRRect(
         borderRadius: radius,
-        child: group != null
-            ? BackdropFilter.grouped(filter: GlassStyle.filter, child: body)
-            : BackdropFilter(filter: GlassStyle.filter, child: body),
+        child: GlassPane(
+          radius: radius,
+          scrim: scheme.surface.withValues(alpha: dark ? 0.34 : 0.40),
+          window: MediaQuery.sizeOf(context),
+          child: body,
+        ),
       );
     }
 
@@ -181,6 +292,33 @@ class GlassSurface extends StatelessWidget {
     }
     return margin == null ? clipped : Padding(padding: margin!, child: clipped);
   }
+}
+
+class _FillPainter extends CustomPainter {
+  final BorderRadius radius;
+  final List<Color> colors;
+
+  const _FillPainter({required this.radius, required this.colors});
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    if (size.isEmpty) return;
+    final rect = Offset.zero & size;
+    canvas.drawRRect(
+      radius.toRRect(rect),
+      Paint()
+        ..shader = ui.Gradient.linear(
+          rect.topCenter,
+          rect.bottomCenter,
+          colors,
+          const [0, 0.45, 1],
+        ),
+    );
+  }
+
+  @override
+  bool shouldRepaint(_FillPainter old) =>
+      old.radius != radius || !listEquals(old.colors, colors);
 }
 
 class _EdgePainter extends CustomPainter {
@@ -244,21 +382,18 @@ class _ShadowPainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     if (size.isEmpty) return;
     final rrect = radius.toRRect(Offset.zero & size);
-    final outside = Path.combine(
-      PathOperation.difference,
-      Path()..addRect(
-        Rect.fromLTRB(-120, -120, size.width + 120, size.height + 160),
-      ),
-      Path()..addRRect(rrect),
-    );
+    final outside = Path()
+      ..fillType = PathFillType.evenOdd
+      ..addRect(Rect.fromLTRB(-120, -120, size.width + 120, size.height + 160))
+      ..addRRect(rrect);
     canvas
       ..save()
       ..clipPath(outside)
       ..drawRRect(
-        rrect.shift(const Offset(0, 6)),
+        rrect.shift(const Offset(0, 4)),
         Paint()
           ..color = color
-          ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 20),
+          ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 8),
       )
       ..restore();
   }
