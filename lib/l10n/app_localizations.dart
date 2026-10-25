@@ -8531,6 +8531,48 @@ abstract class AppLocalizations {
   /// **'Download Anime4K'**
   String get playerShadersDownload;
 
+  /// No description provided for @playerPictureSave.
+  ///
+  /// In en, this message translates to:
+  /// **'Save this frame'**
+  String get playerPictureSave;
+
+  /// No description provided for @playerPictureOriginal.
+  ///
+  /// In en, this message translates to:
+  /// **'Original'**
+  String get playerPictureOriginal;
+
+  /// No description provided for @playerPictureOriginalDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'The frame as the video has it, without shaders or colors'**
+  String get playerPictureOriginalDesc;
+
+  /// No description provided for @playerPictureProcessed.
+  ///
+  /// In en, this message translates to:
+  /// **'With shaders and colors'**
+  String get playerPictureProcessed;
+
+  /// No description provided for @playerPictureProcessedDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'The frame as you see it now'**
+  String get playerPictureProcessedDesc;
+
+  /// No description provided for @playerPictureSaved.
+  ///
+  /// In en, this message translates to:
+  /// **'Frame saved'**
+  String get playerPictureSaved;
+
+  /// No description provided for @playerPictureSaveFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not save the frame'**
+  String get playerPictureSaveFailed;
+
   /// No description provided for @playerShadersPreview.
   ///
   /// In en, this message translates to:

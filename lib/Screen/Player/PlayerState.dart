@@ -6,6 +6,7 @@ import 'dart:io';
 
 import 'package:dartotsu_extension_bridge/Models/Video.dart' as v;
 import 'package:dartotsu_extension_bridge/dartotsu_extension_bridge.dart';
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:screen_brightness/screen_brightness.dart';
@@ -1092,6 +1093,28 @@ class PlayerState extends ScreenState {
     if (!ok) {
       snackString(cast.failure.value ?? getString.castFailed);
       await engine.play();
+    }
+  }
+
+  Future<void> saveFrame(Uint8List? original, {required bool processed}) async {
+    try {
+      final bytes = processed ? await engine.captureFrame() : original;
+      if (bytes == null) throw StateError('no frame');
+      final at = engine.position.value.inSeconds;
+      final name = '${item.title} ${at}s'.replaceAll(
+        RegExp(r'[\\/:*?"<>|]'),
+        '',
+      );
+      final saved = await FilePicker.saveFile(
+        fileName: '$name.png',
+        bytes: bytes,
+        mimeType: 'image/png',
+        type: FileType.image,
+      );
+      if (saved != null) snackString(getString.playerPictureSaved);
+    } catch (e, st) {
+      logError('PlayerState', e, st);
+      snackString(getString.playerPictureSaveFailed);
     }
   }
 

@@ -9,6 +9,10 @@ import '../../../Core/ThemeManager/LanguageSwitcher.dart';
 import '../../../Widgets/Components/AppControls.dart';
 import '../../../Widgets/Components/AppSheet.dart';
 import '../../../Widgets/Components/AppSpinner.dart';
+import '../../../Widgets/Components/CustomBottomDialog.dart';
+import '../../../Widgets/Components/SheetTile.dart';
+import '../../../Utils/Extensions/Responsive.dart';
+import '../../../Utils/Functions/NavigateToScreen.dart';
 import 'ColorSheet.dart';
 import 'ShaderSheet.dart';
 
@@ -19,6 +23,7 @@ class PictureSheet extends StatefulWidget {
   final Live<Uint8List?> frame;
   final Live<bool> capturing;
   final Future<void> Function(ColorValues values) onColor;
+  final Future<void> Function(bool processed) onSave;
   final Live<String?>? problem;
 
   const PictureSheet({
@@ -29,6 +34,7 @@ class PictureSheet extends StatefulWidget {
     required this.frame,
     required this.capturing,
     required this.onColor,
+    required this.onSave,
     this.problem,
   });
 
@@ -38,6 +44,68 @@ class PictureSheet extends StatefulWidget {
 
 class _PictureSheetState extends State<PictureSheet> {
   final _tab = 0.live;
+  final _saving = false.live;
+
+  Future<void> _save() async {
+    if (_saving.value || widget.frame.value == null) return;
+    final processed = await showCustomBottomDialog<bool>(
+      context,
+      AppSheet(
+        title: getString.playerPictureSave,
+        child: Padding(
+          padding: Dimens.sheetInsets,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              SheetTile(
+                tinted: true,
+                leading: const Icon(Icons.image_outlined),
+                title: Text(getString.playerPictureOriginal),
+                subtitle: Text(getString.playerPictureOriginalDesc),
+                onTap: () => popPage(context, false),
+              ),
+              SheetTile(
+                tinted: true,
+                leading: const Icon(Icons.auto_fix_high_rounded),
+                title: Text(getString.playerPictureProcessed),
+                subtitle: Text(getString.playerPictureProcessedDesc),
+                onTap: () => popPage(context, true),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+    if (processed == null) return;
+    _saving.value = true;
+    try {
+      await widget.onSave(processed);
+    } finally {
+      _saving.value = false;
+    }
+  }
+
+  Widget _still() {
+    final frame = widget.frame.value;
+    if (frame == null) return const SizedBox.shrink();
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(16, 0, 16, 8),
+      child: ConstrainedBox(
+        constraints: const BoxConstraints(maxHeight: 160),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(16),
+          child: AspectRatio(
+            aspectRatio: 16 / 9,
+            child: Image.memory(
+              frame,
+              fit: BoxFit.cover,
+              gaplessPlayback: true,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) => AppSheet(
@@ -60,17 +128,32 @@ class _PictureSheetState extends State<PictureSheet> {
           ),
           Padding(
             padding: const EdgeInsets.fromLTRB(16, 0, 16, 8),
-            child: SizedBox(
-              width: double.infinity,
-              child: FilledButton.tonalIcon(
-                onPressed: widget.capturing.value ? null : widget.onPreview,
-                icon: widget.capturing.value
-                    ? const AppSpinner()
-                    : const Icon(Icons.preview_rounded),
-                label: Text(getString.playerShadersPreview),
-              ),
+            child: Row(
+              children: [
+                Expanded(
+                  child: FilledButton.tonalIcon(
+                    onPressed: widget.capturing.value ? null : widget.onPreview,
+                    icon: widget.capturing.value
+                        ? const AppSpinner()
+                        : const Icon(Icons.preview_rounded),
+                    label: Text(getString.playerShadersPreview),
+                  ),
+                ),
+                const SizedBox(width: 8),
+                IconButton.filledTonal(
+                  tooltip: getString.playerPictureSave,
+                  onPressed:
+                      widget.capturing.value || widget.frame.value == null
+                      ? null
+                      : _save,
+                  icon: _saving.value
+                      ? const AppSpinner()
+                      : const Icon(Icons.download_rounded),
+                ),
+              ],
             ),
           ),
+          if (tab == 0) _still(),
           Expanded(
             child: tab == 0
                 ? ShaderSheet(

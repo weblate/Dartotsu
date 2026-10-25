@@ -401,7 +401,29 @@ class PlayerEngine {
     return png.length < pixels / 64;
   }
 
-  Future<Uint8List?> captureFrame() async {
+  Future<Uint8List?> captureFrame({bool plain = false}) async {
+    final mpv = native;
+    if (!plain || mpv == null) return _capture();
+    String active = '';
+    try {
+      active = await mpv.getProperty('glsl-shaders');
+      if (active.isNotEmpty) {
+        await mpv.setProperty('glsl-shaders', '');
+        await Future<void>.delayed(const Duration(milliseconds: 80));
+      }
+      return await _capture();
+    } finally {
+      if (active.isNotEmpty) {
+        try {
+          await mpv.setProperty('glsl-shaders', active);
+        } catch (e) {
+          logger('mpv glsl-shaders restore failed: $e', tag: 'MPV');
+        }
+      }
+    }
+  }
+
+  Future<Uint8List?> _capture() async {
     Uint8List? shot;
     try {
       shot = await player.screenshot(format: 'image/png');

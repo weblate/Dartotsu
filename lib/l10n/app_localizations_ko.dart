@@ -4589,6 +4589,28 @@ class AppLocalizationsKo extends AppLocalizations {
   String get playerShadersDownload => 'Anime4K 다운로드';
 
   @override
+  String get playerPictureSave => 'Save this frame';
+
+  @override
+  String get playerPictureOriginal => 'Original';
+
+  @override
+  String get playerPictureOriginalDesc =>
+      'The frame as the video has it, without shaders or colors';
+
+  @override
+  String get playerPictureProcessed => 'With shaders and colors';
+
+  @override
+  String get playerPictureProcessedDesc => 'The frame as you see it now';
+
+  @override
+  String get playerPictureSaved => 'Frame saved';
+
+  @override
+  String get playerPictureSaveFailed => 'Could not save the frame';
+
+  @override
   String get playerShadersPreview => '이 프레임으로 미리보기';
 
   @override

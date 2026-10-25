@@ -501,7 +501,7 @@ Future<void> showPictureSheet(BuildContext context, PlayerState state) =>
       final capturing = true.live;
       unawaited(() async {
         try {
-          frame.value = await state.engine.captureFrame();
+          frame.value = await state.engine.captureFrame(plain: true);
         } catch (e, st) {
           logError('PlayerSheets', e, st);
         }
@@ -515,6 +515,10 @@ Future<void> showPictureSheet(BuildContext context, PlayerState state) =>
             frame: frame,
             capturing: capturing,
             onColor: state.setColor,
+            onSave: (processed) => state.saveFrame(
+              processed ? null : frame.value,
+              processed: processed,
+            ),
             problem: state.engine.shaderProblem,
             onPick: (profile, name, custom) =>
                 state.setShaderMode(profile, name, custom: custom),
