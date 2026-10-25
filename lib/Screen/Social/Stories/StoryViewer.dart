@@ -235,12 +235,21 @@ class _StoryGroupPageState extends State<_StoryGroupPage>
     );
   }
 
+  double _lastTapX = 0;
+
   Widget _tapZones(double width) {
+    bool middle(double x) => x >= width / 3 && x <= width * 2 / 3;
     return GestureDetector(
       behavior: HitTestBehavior.opaque,
-      onTapUp: (d) =>
-          d.localPosition.dx < width / 3 ? state.previous() : state.next(),
-      onDoubleTap: state.doubleTapLike,
+      onTapUp: (d) {
+        final x = d.localPosition.dx;
+        if (middle(x)) return;
+        x < width / 3 ? state.previous() : state.next();
+      },
+      onDoubleTapDown: (d) => _lastTapX = d.localPosition.dx,
+      onDoubleTap: () {
+        if (middle(_lastTapX)) state.doubleTapLike();
+      },
       onLongPressStart: (_) => state.holdNow(),
       onLongPressEnd: (_) => state.release(),
       child: MouseRegion(
