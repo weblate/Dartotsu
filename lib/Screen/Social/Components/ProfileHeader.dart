@@ -283,6 +283,7 @@ class ProfileHeaderDelegate extends SliverPersistentHeaderDelegate {
                     IconButton(
                       tooltip: getString.accountOptions,
                       icon: const Icon(Icons.settings_rounded),
+                      color: context.colorScheme.onSurfaceVariant,
                       onPressed: onSettings,
                     ),
                   if (url != null) _menu(context, url, u),
@@ -400,6 +401,7 @@ class ProfileHeaderDelegate extends SliverPersistentHeaderDelegate {
   Widget _menu(BuildContext context, String url, SocialUser? u) {
     return PopupMenuButton<String>(
       icon: const Icon(Icons.more_vert_rounded),
+      iconColor: context.colorScheme.onSurfaceVariant,
       onSelected: (v) {
         if (v == 'share') shareLink(url);
         if (v == 'browser') openLinkInBrowser(url);
