@@ -376,6 +376,12 @@ class DownloadEngine extends AppController {
     }
   }
 
+  Future<void> clearQueue() async {
+    for (final t in tasks.toList()) {
+      if (!t.isDone) await remove(t);
+    }
+  }
+
   void reorderQueue(List<DownloadTask> queue, int from, int to) {
     tasks.value = reorderWithin(tasks.toList(), queue, from, to);
     _persist(now: true);

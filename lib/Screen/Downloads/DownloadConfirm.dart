@@ -39,3 +39,16 @@ Future<bool> confirmRemove(
   );
   return done.future;
 }
+
+void confirmClearQueue(
+  BuildContext context,
+  DownloadEngine engine,
+  int count,
+) => unawaited(
+  AlertDialogBuilder(context)
+      .setTitle(getString.downloadClearQueue)
+      .setMessage(getString.downloadClearQueueConfirm(count))
+      .setPositiveButton(getString.delete, () => unawaited(engine.clearQueue()))
+      .setNegativeButton(getString.cancel, null)
+      .show<void>(),
+);

@@ -187,7 +187,7 @@ class DownloadRow extends StatelessWidget {
               ),
               if (canMoveUp)
                 _button(
-                  Icons.vertical_align_top_rounded,
+                  Icons.keyboard_double_arrow_up_rounded,
                   getString.downloadMoveToTop,
                   () => engine.moveToTop(task),
                 ),

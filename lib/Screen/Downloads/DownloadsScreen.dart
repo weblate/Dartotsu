@@ -16,6 +16,7 @@ import '../../Widgets/Components/ScreenState.dart';
 import '../../Widgets/Components/ScrollConfig.dart';
 import 'Components/DownloadRow.dart';
 import 'Components/PendingSyncCard.dart';
+import 'DownloadConfirm.dart';
 import 'DownloadsState.dart';
 
 class DownloadsScreen extends StatefulWidget {
@@ -50,6 +51,16 @@ class _DownloadsScreenState extends BaseScreen<DownloadsScreen>
             onPressed: engine.resumeAll,
             icon: const Icon(Icons.play_circle_outline_rounded),
           ),
+          Watch(() {
+            final count = state.queue.length + state.failed.length;
+            return IconButton(
+              tooltip: getString.downloadClearQueue,
+              onPressed: count == 0
+                  ? null
+                  : () => confirmClearQueue(context, engine, count),
+              icon: const Icon(Icons.delete_sweep_outlined),
+            );
+          }),
         ],
       ),
       body: Watch(() {
