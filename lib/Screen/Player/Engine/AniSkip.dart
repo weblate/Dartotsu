@@ -139,7 +139,7 @@ class AniSkip {
             decodeJson: false,
           )
           .timeout(const Duration(seconds: 20));
-      if (res.statusCode == 200) return null;
+      if (res.statusCode >= 200 && res.statusCode < 300) return null;
       final data = res.data;
       var message = 'HTTP ${res.statusCode}';
       try {

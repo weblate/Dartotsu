@@ -722,8 +722,18 @@ class PlayerState extends ScreenState {
     stamps.value = own;
     await _pickDefaultSubtitle(chosen);
     _syncPipRatio();
-    final malId = request.media?.malId;
-    if (own.isEmpty && malId != null && request.media!.isAnime) {
+    final skipMedia = request.media;
+    final skipService = request.service;
+    var malId = skipMedia?.malId;
+    if (own.isEmpty &&
+        malId == null &&
+        skipMedia != null &&
+        skipService != null &&
+        skipMedia.isAnime) {
+      malId = (await MediaIdResolver.resolve(skipService, skipMedia)).mal;
+      if (generation != _generation) return;
+    }
+    if (own.isEmpty && malId != null && skipMedia!.isAnime) {
       final stamp = await AniSkip.fetch(
         malId: malId,
         episode: item.number.floor(),
