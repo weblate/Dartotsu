@@ -83,6 +83,7 @@ Future<void> showPasscodeRemove(BuildContext context) {
           ),
           child: PinPad(
             message: message.value,
+            matches: find<AppLock>().verify,
             onSubmit: (pin) {
               final lock = find<AppLock>();
               if (!lock.verify(pin)) {

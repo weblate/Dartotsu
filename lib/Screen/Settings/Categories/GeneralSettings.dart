@@ -4,6 +4,7 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 
 import '../../../Core/Preferences/PrefManager.dart';
+import '../../../Core/Security/Biometric.dart';
 import '../../../Core/ThemeManager/LanguageSwitcher.dart';
 import '../../../Core/ThemeManager/LocaleController.dart';
 import '../../../Core/ThemeManager/language.dart';
@@ -23,6 +24,24 @@ List<Setting> generalSettings(BuildContext context) => [
     isChecked: PrefName.appLockHash.rx.value.isNotEmpty,
     onSwitchChange: (on) =>
         on ? showPasscodeSetup(context) : showPasscodeRemove(context),
+  ),
+  Setting.switchType(
+    name: getString.appLockBiometric,
+    description: getString.appLockBiometricDesc,
+    icon: Icons.fingerprint_rounded,
+    isVisible:
+        Biometric.available.value && PrefName.appLockHash.rx.value.isNotEmpty,
+    isChecked: PrefName.appLockBiometric.rx.value,
+    onSwitchChange: (on) async {
+      if (on &&
+          !await Biometric.authenticate(
+            reason: getString.appLockBiometricReason,
+            cancel: getString.cancel,
+          )) {
+        return;
+      }
+      PrefName.appLockBiometric.rx.value = on;
+    },
   ),
   Setting.normal(
     name: getString.linkOpenInApp,

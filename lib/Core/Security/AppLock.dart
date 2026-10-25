@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 import 'dart:math';
 
@@ -6,6 +7,7 @@ import 'package:flutter/widgets.dart';
 
 import '../Preferences/PrefManager.dart';
 import '../State/State.dart';
+import 'Biometric.dart';
 
 class AppLock extends AppController {
   static const minLength = 4;
@@ -29,6 +31,7 @@ class AppLock extends AppController {
   @override
   void onInit() {
     locked.value = enabled;
+    unawaited(Biometric.probe());
     _lifecycle = AppLifecycleListener(
       onHide: () => _leftAt ??= DateTime.now(),
       onShow: _returned,
@@ -72,6 +75,7 @@ class AppLock extends AppController {
 
   void clear() {
     PrefName.appLockHash.value = '';
+    PrefName.appLockBiometric.value = false;
     locked.value = false;
   }
 
@@ -86,6 +90,19 @@ class AppLock extends AppController {
       }
       return false;
     }
+    _open();
+    return true;
+  }
+
+  bool get biometricReady =>
+      enabled && PrefName.appLockBiometric.value && Biometric.available.value;
+
+  void unlockWithBiometric() {
+    if (!biometricReady) return;
+    _open();
+  }
+
+  void _open() {
     _failures = 0;
     locked.value = false;
     final pending = List<VoidCallback>.of(_queue);
@@ -93,6 +110,5 @@ class AppLock extends AppController {
     for (final action in pending) {
       action();
     }
-    return true;
   }
 }

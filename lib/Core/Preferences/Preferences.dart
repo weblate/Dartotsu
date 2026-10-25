@@ -139,6 +139,11 @@ class PrefName {
   static const syncMain = Pref('syncMain', '', PrefLocation.COMMON);
   static const sauceNaoKey = Pref('sauceNaoKey', '', PrefLocation.PROTECTED);
   static const appLockHash = Pref('appLockHash', '', PrefLocation.PROTECTED);
+  static const appLockBiometric = Pref(
+    'appLockBiometric',
+    false,
+    PrefLocation.PROTECTED,
+  );
   static const syncOnEdit = Pref('syncOnEdit', false, PrefLocation.COMMON);
   static const syncAuto = Pref('syncAuto', false, PrefLocation.COMMON);
   static const syncConfirm = Pref('syncConfirm', true, PrefLocation.COMMON);

@@ -129,6 +129,7 @@ dependencies:
   flutter_displaymode: ^0.7.0
   flutter_tts: ^4.2.5
   mobile_scanner: ^7.4.2
+  local_auth: ^3.0.2
 
 # Development dependencies
 dev_dependencies:

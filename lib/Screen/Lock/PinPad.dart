@@ -1,19 +1,24 @@
+import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../../Core/Security/AppLock.dart';
 import '../../Core/State/State.dart';
+import '../../Utils/Animation/WidgetAnimations.dart';
 import '../../Utils/Extensions/ContextExtensions.dart';
 import '../../Utils/Extensions/Responsive.dart';
 
 class PinPad extends StatefulWidget {
   final bool Function(String pin) onSubmit;
+  final bool Function(String pin)? matches;
   final String? message;
   final bool autofocus;
 
   const PinPad({
     super.key,
     required this.onSubmit,
+    this.matches,
     this.message,
     this.autofocus = true,
   });
@@ -24,11 +29,15 @@ class PinPad extends StatefulWidget {
 
 class _PinPadState extends State<PinPad> {
   final _pin = ''.live;
-  final _shake = false.live;
+  final _shake = 0.live;
 
   void _add(String digit) {
     if (_pin.value.length >= AppLock.maxLength) return;
     _pin.value += digit;
+    final pin = _pin.value;
+    final check = widget.matches;
+    if (check == null || pin.length < AppLock.minLength) return;
+    if (check(pin) || pin.length >= AppLock.maxLength) _submit();
   }
 
   void _back() {
@@ -41,11 +50,8 @@ class _PinPadState extends State<PinPad> {
     final ok = widget.onSubmit(_pin.value);
     if (ok) return;
     _pin.value = '';
-    _shake.value = true;
+    _shake.value++;
     HapticFeedback.heavyImpact();
-    Future<void>.delayed(const Duration(milliseconds: 400), () {
-      if (mounted) _shake.value = false;
-    });
   }
 
   KeyEventResult _key(FocusNode node, KeyEvent event) {
@@ -71,33 +77,52 @@ class _PinPadState extends State<PinPad> {
   Widget _dots(BuildContext context) {
     final scheme = context.colorScheme;
     final length = _pin.value.length;
-    return AnimatedContainer(
-      duration: const Duration(milliseconds: 80),
-      transform: Matrix4.translationValues(_shake.value ? 10 : 0, 0, 0),
-      height: 28,
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          for (
-            var i = 0;
-            i < (length < AppLock.minLength ? AppLock.minLength : length);
-            i++
-          )
-            AnimatedContainer(
-              duration: const Duration(milliseconds: 120),
-              margin: EdgeInsets.symmetric(horizontal: Dimens.gapXs + 2),
-              width: 14,
-              height: 14,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: i < length ? scheme.primary : Colors.transparent,
-                border: Border.all(
-                  color: i < length ? scheme.primary : scheme.outline,
-                  width: 2,
+    final count = length < AppLock.minLength ? AppLock.minLength : length;
+    return TweenAnimationBuilder<double>(
+      key: ValueKey(_shake.value),
+      tween: Tween(begin: _shake.value == 0 ? 0 : 1, end: 0),
+      duration: const Duration(milliseconds: 420),
+      builder: (context, t, child) => Transform.translate(
+        offset: Offset(math.sin(t * math.pi * 6) * 12 * t, 0),
+        child: child,
+      ),
+      child: SizedBox(
+        height: 32,
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            for (var i = 0; i < count; i++)
+              AnimatedScale(
+                scale: i < length ? 1.15 : 1,
+                duration: const Duration(milliseconds: 140),
+                curve: Curves.easeOutBack,
+                child: AnimatedContainer(
+                  duration: const Duration(milliseconds: 160),
+                  margin: EdgeInsets.symmetric(horizontal: Dimens.gapXs + 3),
+                  width: 16,
+                  height: 16,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: i < length ? scheme.primary : Colors.transparent,
+                    border: Border.all(
+                      color: i < length
+                          ? scheme.primary
+                          : scheme.outline.withValues(alpha: 0.7),
+                      width: 2,
+                    ),
+                    boxShadow: i < length
+                        ? [
+                            BoxShadow(
+                              color: scheme.primary.withValues(alpha: 0.35),
+                              blurRadius: 8,
+                            ),
+                          ]
+                        : null,
+                  ),
                 ),
               ),
-            ),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -112,11 +137,17 @@ class _PinPadState extends State<PinPad> {
     return Padding(
       padding: EdgeInsets.all(Dimens.gapXs),
       child: SizedBox(
-        width: 72,
-        height: 72,
+        width: 76,
+        height: 76,
         child: Material(
-          color: filled ? scheme.primaryContainer : scheme.surfaceContainerHigh,
-          shape: const CircleBorder(),
+          color: filled
+              ? scheme.primaryContainer
+              : scheme.surfaceContainerHigh.withValues(alpha: 0.7),
+          shape: CircleBorder(
+            side: BorderSide(
+              color: scheme.outlineVariant.withValues(alpha: 0.5),
+            ),
+          ),
           clipBehavior: Clip.antiAlias,
           child: InkWell(
             onTap: onTap,
@@ -157,15 +188,15 @@ class _PinPadState extends State<PinPad> {
             ),
           ),
           SizedBox(height: Dimens.gap),
-          for (final row in const [
+          for (final (r, row) in const [
             ['1', '2', '3'],
             ['4', '5', '6'],
             ['7', '8', '9'],
-          ])
+          ].indexed)
             Row(
               mainAxisSize: MainAxisSize.min,
               children: [for (final d in row) _digit(context, d)],
-            ),
+            ).animateStagger(r),
           Row(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -182,7 +213,7 @@ class _PinPadState extends State<PinPad> {
                 filled: ready,
               ),
             ],
-          ),
+          ).animateStagger(3),
         ],
       ),
     );
