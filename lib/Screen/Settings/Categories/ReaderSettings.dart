@@ -490,16 +490,18 @@ List<Setting> novelReaderRows(
   ];
 }
 
-List<Setting> readerSettings(BuildContext context) =>
-    foldSections(context, _globalReaderRows, [
-      SettingSection(getString.readerSectionDisplay, Icons.palette_outlined),
-      SettingSection(getString.readerSectionNovel, Icons.menu_book_rounded),
-      SettingSection(getString.novelSectionTranslate, Icons.translate_rounded),
-      SettingSection(
-        getString.novelSectionSpeech,
-        Icons.record_voice_over_rounded,
-      ),
-    ]);
+List<Setting> readerSettings(BuildContext context) => foldSections(
+  context,
+  _globalReaderRows,
+  [
+    SettingSection(getString.readerSectionDisplay, Icons.palette_outlined),
+    SettingSection(
+      getString.readerSectionNovel,
+      Icons.menu_book_rounded,
+      includes: [getString.novelSectionTranslate, getString.novelSectionSpeech],
+    ),
+  ],
+);
 
 List<Setting> _globalReaderRows(BuildContext context) {
   final s = ReaderPrefs.global.value;
