@@ -13,31 +13,25 @@ import '../SourceBrowseScreen.dart';
 import '../../../Core/State/State.dart';
 import '../../../Core/ThemeManager/LanguageSwitcher.dart';
 
-class ExtensionSourcesRail extends StatefulWidget {
+class ExtensionSourcesRail extends StatelessWidget {
   const ExtensionSourcesRail({super.key});
 
-  @override
-  State<ExtensionSourcesRail> createState() => _ExtensionSourcesRailState();
-}
+  String _title(ItemType type) => switch (type) {
+    ItemType.anime => getString.animeExtensions,
+    ItemType.manga => getString.mangaExtensions,
+    ItemType.novel => getString.novelExtensions,
+  };
 
-class _ExtensionSourcesRailState extends State<ExtensionSourcesRail> {
   @override
-  void initState() {
-    super.initState();
-    for (final type in const [ItemType.anime, ItemType.manga]) {
+  Widget build(BuildContext context) => Watch(() {
+    final types = [for (final t in extensionTabTypes()) itemTypeOf(t)];
+    for (final type in types) {
       ensureSourcesReady(type);
     }
-  }
-
-  @override
-  Widget build(BuildContext context) {
     return Column(
-      children: [
-        _rail(context, ItemType.anime, getString.animeExtensions),
-        _rail(context, ItemType.manga, getString.mangaExtensions),
-      ],
+      children: [for (final type in types) _rail(context, type, _title(type))],
     );
-  }
+  });
 
   Widget _rail(BuildContext context, ItemType type, String title) {
     return Watch(() {

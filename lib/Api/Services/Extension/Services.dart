@@ -38,6 +38,21 @@ const extensionReadTypePref = Pref(
   PrefLocation.OTHER,
 );
 
+const extensionFirstTypePref = Pref(
+  'extensionFirstType',
+  'anime',
+  PrefLocation.OTHER,
+);
+
+MediaType extensionFirstType() => switch (extensionFirstTypePref.rx.value) {
+  'manga' => MediaType.manga,
+  'novel' => MediaType.novel,
+  _ => MediaType.anime,
+};
+
+List<MediaType> extensionTabTypes() =>
+    {extensionFirstType(), extensionReadType()}.toList();
+
 MediaType extensionReadType() => extensionReadTypePref.rx.value == 'novel'
     ? MediaType.novel
     : MediaType.manga;

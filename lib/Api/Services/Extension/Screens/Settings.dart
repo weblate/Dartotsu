@@ -57,6 +57,19 @@ class ExtensionSettingsView extends SettingsScreenView {
     ),
     Setting.header(getString.sectionBrowse),
     segmentedSetting<String>(
+      name: getString.firstTab,
+      description: getString.firstTabDesc,
+      icon: Icons.view_carousel_rounded,
+      label: getString.firstTab,
+      value: extensionFirstTypePref.rx.value,
+      segments: [
+        AppSegment('anime', label: getString.anime),
+        AppSegment('manga', label: getString.manga),
+        AppSegment('novel', label: getString.novel),
+      ],
+      onChanged: (v) => extensionFirstTypePref.rx.value = v,
+    ),
+    segmentedSetting<String>(
       name: getString.readingTab,
       description: getString.readingTabDesc,
       icon: Icons.menu_book_rounded,
