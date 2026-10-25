@@ -787,9 +787,7 @@ class PlayerState extends ScreenState {
       priority,
       avoidSigns: true,
     );
-    if (embedded != null && embedded.id != engine.activeSubtitle.value) {
-      await engine.setSubtitle(embedded.id);
-    }
+    if (embedded != null) await engine.setSubtitle(embedded.id);
   }
 
   Future<void> _pickDefaultAudio() async {
@@ -801,12 +799,10 @@ class PlayerState extends ScreenState {
     }
     if (tracks.isEmpty) return;
     final pick = priority.isEmpty ? null : pickTrack(tracks, priority);
-    final active = engine.activeAudio.value;
-    if (pick != null && pick.id != active) {
-      await engine.setAudio(pick.id);
-    } else if (active == null) {
-      await engine.setAudio(tracks.first.id);
-    }
+    final current = tracks
+        .where((t) => t.id == engine.activeAudio.value)
+        .firstOrNull;
+    await engine.setAudio((pick ?? current ?? tracks.first).id);
   }
 
   Disposer? _errorSub;
