@@ -23,7 +23,7 @@ Future<String> simklAppVersion() async {
   } catch (e, st) {
     logError('Simkl', e, st);
   }
-  return _appVersion.isEmpty ? '1.0' : _appVersion;
+  return _appVersion;
 }
 
 class SimklException implements Exception {
@@ -63,15 +63,22 @@ class SimklClient {
 
   bool get hasToken => _token().isNotEmpty;
 
+  Future<Map<String, String>> _version() async {
+    final version = await simklAppVersion();
+    return version.isEmpty ? const {} : {'app-version': version};
+  }
+
   Future<Map<String, String>> _query(Map<String, String>? extra) async => {
     'client_id': await _clientId(),
     'app-name': simklAppName,
-    'app-version': await simklAppVersion(),
+    ...await _version(),
     ...?extra,
   };
 
   Map<String, String> _headers({required bool auth, bool json = false}) => {
-    'User-Agent': '$simklAppName/${_appVersion.isEmpty ? '1.0' : _appVersion}',
+    'User-Agent': _appVersion.isEmpty
+        ? simklAppName
+        : '$simklAppName/$_appVersion',
     if (json) 'Content-Type': 'application/json',
     if (auth && hasToken) 'Authorization': 'Bearer ${_token()}',
   };
