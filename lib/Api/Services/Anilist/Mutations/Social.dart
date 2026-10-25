@@ -63,7 +63,7 @@ mutation ($id: Int, $subscribe: Boolean) {
 mutation ($id: Int, $text: String) {
   SaveTextActivity(id: $id, text: $text) { id }
 }''',
-    {'id': ?_int(edit), 'text': text},
+    {'id': ?_int(edit), 'text': anilistSafeText(text)},
   );
 
   Future<bool> _postMessage(
@@ -79,7 +79,7 @@ mutation ($id: Int, $recipient: Int, $message: String, $private: Boolean) {
     {
       'id': ?_int(edit),
       'recipient': int.parse(userId),
-      'message': text,
+      'message': anilistSafeText(text),
       'private': isPrivate,
     },
   );
@@ -89,7 +89,11 @@ mutation ($id: Int, $recipient: Int, $message: String, $private: Boolean) {
 mutation ($id: Int, $activityId: Int, $text: String) {
   SaveActivityReply(id: $id, activityId: $activityId, text: $text) { id }
 }''',
-    {'id': ?_int(edit), 'activityId': int.parse(activityId), 'text': text},
+    {
+      'id': ?_int(edit),
+      'activityId': int.parse(activityId),
+      'text': anilistSafeText(text),
+    },
   );
 
   Future<bool> _deleteActivity(String id) => _run(

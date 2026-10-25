@@ -7,6 +7,7 @@ import '../../../Utils/Functions/RefreshController.dart';
 import '../../../Utils/Functions/SnackBar.dart';
 import 'Client.dart';
 import 'AnilistService.dart';
+import 'Data/Sanitize.dart';
 import '../../../Core/State/State.dart';
 import '../../../Core/ThemeManager/LanguageSwitcher.dart';
 

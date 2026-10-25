@@ -28,7 +28,7 @@ mutation (
       if (media.userScore != null && media.userScore != 0)
         'scoreRaw': media.userScore,
       if (media.userRepeat != 0) 'repeat': media.userRepeat,
-      if (media.notes != null) 'notes': media.notes,
+      if (media.notes != null) 'notes': anilistSafeText(media.notes!),
       if (media.userStatus != null) 'status': media.userStatus,
       'customLists': ?customList,
       if (start?.year != null) 'startedAt': _fuzzy(start!),
