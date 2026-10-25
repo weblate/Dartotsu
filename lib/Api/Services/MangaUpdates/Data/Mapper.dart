@@ -5,7 +5,8 @@ import '../../../../Core/Services/Model/Media.dart';
 import '../../../../Core/Services/Model/Review.dart';
 import '../../../../Core/Services/Model/User.dart';
 
-String mangaUpdatesShareLink(Object id) {
+String mangaUpdatesShareLink(Object? id) {
+  if (id == null) return 'https://www.mangaupdates.com';
   final number = int.tryParse('$id');
   return 'https://www.mangaupdates.com/series/${number?.toRadixString(36) ?? id}';
 }
@@ -103,7 +104,7 @@ Date? _parseYear(Object? year) {
 }
 
 Media mapMangaUpdatesSeries(Map<String, dynamic> s) {
-  final id = s['series_id'] ?? s['id'];
+  final id = s['series_id'] ?? s['id'] ?? '';
   final title = '${s['title'] ?? ''}';
   final type = (s['type'] as String?) ?? 'Manga';
   final desc = s['description'] as String?;

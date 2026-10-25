@@ -232,7 +232,11 @@ class MangaUpdatesQueries extends Queries {
         final seriesMap = metadata?['series'];
         final ref = _record(record['series']);
         final media = seriesMap is Map
-            ? mapMangaUpdatesSeries(_record(seriesMap))
+            ? mapMangaUpdatesSeries({
+                ...ref,
+                for (final e in _record(seriesMap).entries)
+                  if (e.value != null) e.key: e.value,
+              })
             : Media(
                 id: '${ref['id'] ?? ''}',
                 name: '${ref['title'] ?? ''}',
