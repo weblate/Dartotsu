@@ -531,6 +531,13 @@ class AppLocalizationsTh extends AppLocalizations {
   String get followCoverDesc => 'สีจะตามพื้นหลัง และตามปกในหน้ารายละเอียด';
 
   @override
+  String get followCoverMediaOnly => 'Only for media';
+
+  @override
+  String get followCoverMediaOnlyDesc =>
+      'Only follow the cover on media pages, everywhere else keeps the normal colors';
+
+  @override
   String get cardStyle => 'สไตล์การ์ด';
 
   @override

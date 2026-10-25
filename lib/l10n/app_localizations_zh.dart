@@ -523,6 +523,13 @@ class AppLocalizationsZh extends AppLocalizations {
   String get followCoverDesc => '颜色跟随背景，详情页则跟随封面';
 
   @override
+  String get followCoverMediaOnly => 'Only for media';
+
+  @override
+  String get followCoverMediaOnlyDesc =>
+      'Only follow the cover on media pages, everywhere else keeps the normal colors';
+
+  @override
   String get cardStyle => '卡片样式';
 
   @override

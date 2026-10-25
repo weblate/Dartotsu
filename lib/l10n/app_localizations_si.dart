@@ -541,6 +541,13 @@ class AppLocalizationsSi extends AppLocalizations {
       'පාට බැක්ග්‍රවුන්ඩ් එකත්, ඩිටේල් පේජ් වල කවර් එකත් අනුගමනය කරනවා';
 
   @override
+  String get followCoverMediaOnly => 'Only for media';
+
+  @override
+  String get followCoverMediaOnlyDesc =>
+      'Only follow the cover on media pages, everywhere else keeps the normal colors';
+
+  @override
   String get cardStyle => 'කාඩ් ස්ටයිල්';
 
   @override

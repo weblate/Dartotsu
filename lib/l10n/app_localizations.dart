@@ -1139,6 +1139,18 @@ abstract class AppLocalizations {
   /// **'Colors follow the background, and the cover on detail pages'**
   String get followCoverDesc;
 
+  /// No description provided for @followCoverMediaOnly.
+  ///
+  /// In en, this message translates to:
+  /// **'Only for media'**
+  String get followCoverMediaOnly;
+
+  /// No description provided for @followCoverMediaOnlyDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Only follow the cover on media pages, everywhere else keeps the normal colors'**
+  String get followCoverMediaOnlyDesc;
+
   /// No description provided for @cardStyle.
   ///
   /// In en, this message translates to:

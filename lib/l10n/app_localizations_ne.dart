@@ -530,6 +530,13 @@ class AppLocalizationsNe extends AppLocalizations {
       'रङहरू ब्याकग्राउन्डलाई पछ्याउँछन्, र डिटेल पेजमा कभरलाई';
 
   @override
+  String get followCoverMediaOnly => 'Only for media';
+
+  @override
+  String get followCoverMediaOnlyDesc =>
+      'Only follow the cover on media pages, everywhere else keeps the normal colors';
+
+  @override
   String get cardStyle => 'कार्ड शैली';
 
   @override

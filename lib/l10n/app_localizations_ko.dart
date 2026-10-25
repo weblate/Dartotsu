@@ -523,6 +523,13 @@ class AppLocalizationsKo extends AppLocalizations {
   String get followCoverDesc => '색상이 배경을 따라가고, 상세 페이지에서는 커버를 따라가요';
 
   @override
+  String get followCoverMediaOnly => 'Only for media';
+
+  @override
+  String get followCoverMediaOnlyDesc =>
+      'Only follow the cover on media pages, everywhere else keeps the normal colors';
+
+  @override
   String get cardStyle => '카드 스타일';
 
   @override

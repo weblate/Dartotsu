@@ -535,6 +535,13 @@ class AppLocalizationsFa extends AppLocalizations {
       'رنگ‌ها پس‌زمینه رو دنبال می‌کنن و تو صفحه‌های جزئیات، کاور رو';
 
   @override
+  String get followCoverMediaOnly => 'Only for media';
+
+  @override
+  String get followCoverMediaOnlyDesc =>
+      'Only follow the cover on media pages, everywhere else keeps the normal colors';
+
+  @override
   String get cardStyle => 'سبک کارت';
 
   @override

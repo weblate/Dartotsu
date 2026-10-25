@@ -537,6 +537,13 @@ class AppLocalizationsDa extends AppLocalizations {
       'Farverne følger baggrunden, og coveret på detaljesider';
 
   @override
+  String get followCoverMediaOnly => 'Only for media';
+
+  @override
+  String get followCoverMediaOnlyDesc =>
+      'Only follow the cover on media pages, everywhere else keeps the normal colors';
+
+  @override
   String get cardStyle => 'Kortstil';
 
   @override

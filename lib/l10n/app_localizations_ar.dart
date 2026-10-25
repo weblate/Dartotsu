@@ -534,6 +534,13 @@ class AppLocalizationsAr extends AppLocalizations {
       'الألوان تتبع الخلفية، وفي صفحات التفاصيل تتبع الغلاف';
 
   @override
+  String get followCoverMediaOnly => 'Only for media';
+
+  @override
+  String get followCoverMediaOnlyDesc =>
+      'Only follow the cover on media pages, everywhere else keeps the normal colors';
+
+  @override
   String get cardStyle => 'شكل البطاقة';
 
   @override

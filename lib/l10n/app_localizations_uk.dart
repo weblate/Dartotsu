@@ -540,6 +540,13 @@ class AppLocalizationsUk extends AppLocalizations {
       'Кольори залежать від тла, а на сторінках тайтлів — від обкладинки';
 
   @override
+  String get followCoverMediaOnly => 'Only for media';
+
+  @override
+  String get followCoverMediaOnlyDesc =>
+      'Only follow the cover on media pages, everywhere else keeps the normal colors';
+
+  @override
   String get cardStyle => 'Стиль карток';
 
   @override

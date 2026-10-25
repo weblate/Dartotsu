@@ -37,6 +37,11 @@ class PrefName {
     PrefLocation.THEME,
   );
   static const followCover = Pref('followCover', false, PrefLocation.THEME);
+  static const followCoverMediaOnly = Pref(
+    'followCoverMediaOnly',
+    false,
+    PrefLocation.THEME,
+  );
   static const useJsonTheme = Pref('useJsonTheme', false, PrefLocation.THEME);
 
   static final themeMode = enumPref(

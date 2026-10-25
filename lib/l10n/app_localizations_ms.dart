@@ -537,6 +537,13 @@ class AppLocalizationsMs extends AppLocalizations {
       'Warna ikut latar belakang, dan muka depan pada halaman butiran';
 
   @override
+  String get followCoverMediaOnly => 'Only for media';
+
+  @override
+  String get followCoverMediaOnlyDesc =>
+      'Only follow the cover on media pages, everywhere else keeps the normal colors';
+
+  @override
   String get cardStyle => 'Gaya kad';
 
   @override

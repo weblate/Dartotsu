@@ -525,6 +525,13 @@ class AppLocalizationsAm extends AppLocalizations {
   String get followCoverDesc => 'ቀለሞች ዳራውን ይከተላሉ፣ በዝርዝር ገጾች ደግሞ ሽፋኑን';
 
   @override
+  String get followCoverMediaOnly => 'Only for media';
+
+  @override
+  String get followCoverMediaOnlyDesc =>
+      'Only follow the cover on media pages, everywhere else keeps the normal colors';
+
+  @override
   String get cardStyle => 'የካርድ ዘይቤ';
 
   @override

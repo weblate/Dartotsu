@@ -523,6 +523,13 @@ class AppLocalizationsJa extends AppLocalizations {
   String get followCoverDesc => '色は背景に、詳細ページではカバーに合わせるよ';
 
   @override
+  String get followCoverMediaOnly => 'Only for media';
+
+  @override
+  String get followCoverMediaOnlyDesc =>
+      'Only follow the cover on media pages, everywhere else keeps the normal colors';
+
+  @override
   String get cardStyle => 'カードスタイル';
 
   @override

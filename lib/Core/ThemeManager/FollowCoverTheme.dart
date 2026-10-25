@@ -11,6 +11,7 @@ import '../State/State.dart';
 
 class FollowCoverTheme {
   final enabled = PrefName.followCover.rx;
+  final mediaOnly = PrefName.followCoverMediaOnly.rx;
   final tick = 0.live;
 
   final _glassBackgroundUrl = PrefName.glassBackgroundUrl.rx;
@@ -26,7 +27,9 @@ class FollowCoverTheme {
       enabled.value ? (brightness == Brightness.dark ? _dark : _light) : null;
 
   void init() {
-    _subs.add(onAnyChange([enabled, _glassBackgroundUrl, _coverUrl], _sync));
+    _subs.add(
+      onAnyChange([enabled, mediaOnly, _glassBackgroundUrl, _coverUrl], _sync),
+    );
     final services = tryFind<MediaServiceController>();
     if (services != null) {
       _subs.add(onChange(services.currentService, (_) => _bindUser()));
@@ -77,7 +80,8 @@ class FollowCoverTheme {
   }
 
   Future<void> _sync() async {
-    if (!enabled.value) {
+    final cover = _coverUrl.value;
+    if (!enabled.value || (mediaOnly.value && cover == null)) {
       if (_imageUrl != null) {
         _imageUrl = null;
         _light = null;
@@ -86,7 +90,7 @@ class FollowCoverTheme {
       }
       return;
     }
-    final url = _coverUrl.value ?? resolveGlassBackground();
+    final url = cover ?? resolveGlassBackground();
     if (url == _imageUrl) return;
     _imageUrl = url;
     final schemes =

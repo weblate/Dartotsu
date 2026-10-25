@@ -545,6 +545,13 @@ class AppLocalizationsIt extends AppLocalizations {
       'I colori seguono lo sfondo, e la copertina nelle pagine di dettaglio';
 
   @override
+  String get followCoverMediaOnly => 'Only for media';
+
+  @override
+  String get followCoverMediaOnlyDesc =>
+      'Only follow the cover on media pages, everywhere else keeps the normal colors';
+
+  @override
   String get cardStyle => 'Stile delle card';
 
   @override

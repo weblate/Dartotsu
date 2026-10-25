@@ -52,6 +52,14 @@ List<Setting> appearanceRows(BuildContext context) {
       isChecked: t.cover.enabled.value,
       onSwitchChange: (v) => t.cover.enabled.value = v,
     ),
+    if (t.cover.enabled.value)
+      Setting.switchType(
+        name: getString.followCoverMediaOnly,
+        description: getString.followCoverMediaOnlyDesc,
+        icon: Icons.movie_filter_outlined,
+        isChecked: t.cover.mediaOnly.value,
+        onSwitchChange: (v) => t.cover.mediaOnly.value = v,
+      ),
     if (Platform.isLinux)
       Setting.switchType(
         name: getString.jsonTheme,

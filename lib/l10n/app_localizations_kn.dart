@@ -540,6 +540,13 @@ class AppLocalizationsKn extends AppLocalizations {
       'ಬಣ್ಣಗಳು ಹಿನ್ನೆಲೆಯನ್ನು ಅನುಸರಿಸುತ್ತವೆ, ವಿವರ ಪುಟಗಳಲ್ಲಿ ಕವರ್ ಅನ್ನು';
 
   @override
+  String get followCoverMediaOnly => 'Only for media';
+
+  @override
+  String get followCoverMediaOnlyDesc =>
+      'Only follow the cover on media pages, everywhere else keeps the normal colors';
+
+  @override
   String get cardStyle => 'ಕಾರ್ಡ್ ಸ್ಟೈಲ್';
 
   @override

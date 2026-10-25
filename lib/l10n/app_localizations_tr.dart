@@ -541,6 +541,13 @@ class AppLocalizationsTr extends AppLocalizations {
       'Renkler arka planı, detay sayfalarında ise kapağı takip eder';
 
   @override
+  String get followCoverMediaOnly => 'Only for media';
+
+  @override
+  String get followCoverMediaOnlyDesc =>
+      'Only follow the cover on media pages, everywhere else keeps the normal colors';
+
+  @override
   String get cardStyle => 'Kart stili';
 
   @override

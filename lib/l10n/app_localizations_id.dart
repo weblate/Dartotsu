@@ -539,6 +539,13 @@ class AppLocalizationsId extends AppLocalizations {
       'Warna mengikuti latar, dan sampul di halaman detail';
 
   @override
+  String get followCoverMediaOnly => 'Only for media';
+
+  @override
+  String get followCoverMediaOnlyDesc =>
+      'Only follow the cover on media pages, everywhere else keeps the normal colors';
+
+  @override
   String get cardStyle => 'Gaya kartu';
 
   @override

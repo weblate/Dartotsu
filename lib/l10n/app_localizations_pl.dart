@@ -544,6 +544,13 @@ class AppLocalizationsPl extends AppLocalizations {
       'Kolory podążają za tłem, a na stronach szczegółów za okładką';
 
   @override
+  String get followCoverMediaOnly => 'Only for media';
+
+  @override
+  String get followCoverMediaOnlyDesc =>
+      'Only follow the cover on media pages, everywhere else keeps the normal colors';
+
+  @override
   String get cardStyle => 'Styl kart';
 
   @override

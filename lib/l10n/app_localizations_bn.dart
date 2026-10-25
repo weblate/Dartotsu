@@ -534,6 +534,13 @@ class AppLocalizationsBn extends AppLocalizations {
       'রঙ ব্যাকগ্রাউন্ডকে অনুসরণ করে, আর ডিটেইল পেজে কভারকে';
 
   @override
+  String get followCoverMediaOnly => 'Only for media';
+
+  @override
+  String get followCoverMediaOnlyDesc =>
+      'Only follow the cover on media pages, everywhere else keeps the normal colors';
+
+  @override
   String get cardStyle => 'কার্ড স্টাইল';
 
   @override

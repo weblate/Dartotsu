@@ -543,6 +543,13 @@ class AppLocalizationsTa extends AppLocalizations {
       'கலர்ஸ் பேக்ரவுண்டை ஃபாலோ பண்ணும், டிடெயில் பேஜ்ல கவரை';
 
   @override
+  String get followCoverMediaOnly => 'Only for media';
+
+  @override
+  String get followCoverMediaOnlyDesc =>
+      'Only follow the cover on media pages, everywhere else keeps the normal colors';
+
+  @override
   String get cardStyle => 'கார்டு ஸ்டைல்';
 
   @override

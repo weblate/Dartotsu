@@ -542,6 +542,13 @@ class AppLocalizationsTe extends AppLocalizations {
       'రంగులు బ్యాక్‌గ్రౌండ్‌ని ఫాలో అవుతాయి, డీటెయిల్ పేజీల్లో కవర్‌ని';
 
   @override
+  String get followCoverMediaOnly => 'Only for media';
+
+  @override
+  String get followCoverMediaOnlyDesc =>
+      'Only follow the cover on media pages, everywhere else keeps the normal colors';
+
+  @override
   String get cardStyle => 'కార్డ్ స్టైల్';
 
   @override

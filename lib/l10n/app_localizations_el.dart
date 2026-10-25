@@ -547,6 +547,13 @@ class AppLocalizationsEl extends AppLocalizations {
       'Τα χρώματα ακολουθούν το φόντο και, στις σελίδες λεπτομερειών, το εξώφυλλο';
 
   @override
+  String get followCoverMediaOnly => 'Only for media';
+
+  @override
+  String get followCoverMediaOnlyDesc =>
+      'Only follow the cover on media pages, everywhere else keeps the normal colors';
+
+  @override
   String get cardStyle => 'Στυλ κάρτας';
 
   @override

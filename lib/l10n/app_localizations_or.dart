@@ -540,6 +540,13 @@ class AppLocalizationsOr extends AppLocalizations {
       'ରଙ୍ଗ ପୃଷ୍ଠଭୂମି ଅନୁସରଣ କରେ, ଓ ବିବରଣୀ ପୃଷ୍ଠାରେ କଭର୍';
 
   @override
+  String get followCoverMediaOnly => 'Only for media';
+
+  @override
+  String get followCoverMediaOnlyDesc =>
+      'Only follow the cover on media pages, everywhere else keeps the normal colors';
+
+  @override
   String get cardStyle => 'କାର୍ଡ ଷ୍ଟାଇଲ୍';
 
   @override
