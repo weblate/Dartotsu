@@ -22,6 +22,12 @@ import '../../../Widgets/Components/AppSpinner.dart';
 
 void showExtensionManagerSheet(BuildContext context, ItemType type) {
   final manager = find<ExtensionManager>();
+  for (final m in manager.managers) {
+    final plugin = m.plugin;
+    if (plugin != null && plugin.installed.value) {
+      unawaited(plugin.checkForUpdate(forceRefresh: true));
+    }
+  }
   showCustomBottomDialog(
     context,
     AppSheet(
@@ -126,9 +132,26 @@ Widget? _serviceTrailing(
   if (m.plugin == null) return null;
 
   if (installed) {
-    return IconButton(
+    final plugin = m.plugin as DownloadablePlugin;
+    final remove = IconButton(
       icon: const Icon(Icons.delete, size: 18),
-      onPressed: () => showDeleteDialog(context, m.plugin!, m.name),
+      onPressed: () => showDeleteDialog(context, plugin, m.name),
+    );
+    if (!plugin.updateAvailable.value) return remove;
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        IconButton(
+          tooltip: getString.update,
+          icon: Icon(
+            Icons.system_update_alt_rounded,
+            size: 18,
+            color: context.colorScheme.primary,
+          ),
+          onPressed: () => showInstallDialog(context, plugin, m.name),
+        ),
+        remove,
+      ],
     );
   }
 

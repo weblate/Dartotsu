@@ -1,3 +1,4 @@
+import 'package:dartotsu_extension_bridge/Extensions/DownloadablePlugin.dart';
 import 'package:dartotsu_extension_bridge/dartotsu_extension_bridge.dart';
 import 'package:flutter/material.dart';
 
@@ -42,6 +43,13 @@ List<Setting> extensionSettings(BuildContext context) {
       icon: Icons.image_outlined,
       isChecked: PrefName.loadExtensionIcon.rx.value,
       onSwitchChange: (v) => PrefName.loadExtensionIcon.rx.value = v,
+    ),
+    Setting.switchType(
+      name: getString.autoUpdateRuntimes,
+      description: getString.autoUpdateRuntimesDesc,
+      icon: Icons.system_update_alt_rounded,
+      isChecked: DownloadablePlugin.autoUpdateEnabled.value,
+      onSwitchChange: (v) => DownloadablePlugin.autoUpdateEnabled.value = v,
     ),
     ...addonSettings(context),
   ];

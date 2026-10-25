@@ -198,7 +198,9 @@ class ExtensionScreenState extends BaseScreen<ExtensionScreen>
       tabs.add(
         Watch(() {
           final count = state.count(type, installed: true);
-          final focused = kFocused(state.focusedTabIndex.value == installedIndex);
+          final focused = kFocused(
+            state.focusedTabIndex.value == installedIndex,
+          );
           return Watch(() {
             final amount = tabAmount(
               state.tabs,
@@ -219,7 +221,9 @@ class ExtensionScreenState extends BaseScreen<ExtensionScreen>
       tabs.add(
         Watch(() {
           final count = state.count(type, installed: false);
-          final focused = kFocused(state.focusedTabIndex.value == availableIndex);
+          final focused = kFocused(
+            state.focusedTabIndex.value == availableIndex,
+          );
           return Watch(() {
             final amount = tabAmount(
               state.tabs,
@@ -463,7 +467,17 @@ Future<void> showInstallDialog(
 
           if (plugin.downloading.value) return;
 
-          await plugin.download();
+          try {
+            if (plugin.installed.value) {
+              await plugin.update();
+            } else {
+              await plugin.download();
+            }
+          } catch (e, st) {
+            logError('ExtensionScreen', e, st);
+            snackString('$name: $e');
+            return;
+          }
           if (!context.mounted) return;
           if (plugin.installed.value) {
             popPage(context);
