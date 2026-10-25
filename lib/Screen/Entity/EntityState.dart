@@ -71,7 +71,9 @@ class EntityState extends ScreenState {
       search: (q) => openSearch(context, service, query: q),
     );
     scroll.addListener(_scheduleSnap);
-    find<ThemeController>().cover.set(this, host.profile.value.image);
+    find<ThemeController>().cover
+      ..set(this, host.profile.value.image)
+      ..track(this, context);
     unawaited(load());
   }
 

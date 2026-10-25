@@ -127,7 +127,9 @@ class DetailState extends ScreenState {
     FocusManager.instance.addListener(_keepFocusVisible);
     scroll.addListener(_scheduleSnap);
     final theme = find<ThemeController>();
-    theme.cover.set(this, host.media.value.cover);
+    theme.cover
+      ..set(this, host.media.value.cover)
+      ..track(this, context);
     _coverSub = onChange(host.media, (m) => theme.cover.set(this, m.cover));
     _sessionSub = onChange(ResumeStore.sessionTick, (_) {
       if (ResumeStore.sessionKey == '${view.service.id}/${media.id}') {
