@@ -9,6 +9,7 @@ import '../../../Core/Fonts/AppFonts.dart';
 import '../Engine/NovelText.dart';
 import '../Engine/ReaderRequest.dart';
 import '../Engine/ReaderSettings.dart';
+import '../Components/ReadingPresence.dart';
 import '../../../Core/State/State.dart';
 import '../../../Core/ThemeManager/LanguageSwitcher.dart';
 import '../../../Model/Setting.dart';
@@ -49,8 +50,15 @@ class _NovelScreenState extends State<NovelScreen>
     super.dispose();
   }
 
+  final _since = DateTime.now().millisecondsSinceEpoch;
+
   @override
-  Widget build(BuildContext context) => Watch(() => _build(context));
+  Widget build(BuildContext context) => ReadingPresence(
+    media: state.request.media,
+    number: () => state.unit.number,
+    since: _since,
+    child: Watch(() => _build(context)),
+  );
 
   (Color, Color) _colors(BuildContext context, String id) => switch (id) {
     'light' => (const Color(0xFFFAFAFA), const Color(0xFF1E1E1E)),

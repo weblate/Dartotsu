@@ -1,18 +1,26 @@
 package ani.aayush262.dartotsu
 
+import android.content.ContentValues
 import android.content.Context
 import android.content.Intent
 import android.net.ConnectivityManager
+import android.content.pm.PackageManager
 import android.content.pm.verify.domain.DomainVerificationManager
 import android.content.pm.verify.domain.DomainVerificationUserState
 import android.net.Uri
 import android.os.Build
+import android.hardware.biometrics.BiometricManager
+import android.hardware.biometrics.BiometricPrompt
 import android.os.Bundle
+import android.os.CancellationSignal
+import android.os.Environment
+import android.provider.MediaStore
 import android.provider.Settings
 import android.view.KeyEvent
 import fl.pip.FlPiPActivity
 import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.plugin.common.MethodChannel
+import java.io.File
 
 class MainActivity : FlPiPActivity() {
     private var volumeChannel: MethodChannel? = null
@@ -56,6 +64,34 @@ class MainActivity : FlPiPActivity() {
                     else -> result.notImplemented()
                 }
             }
+        MethodChannel(flutterEngine.dartExecutor.binaryMessenger, "dartotsu/biometric")
+            .setMethodCallHandler { call, result ->
+                when (call.method) {
+                    "available" -> result.success(biometricAvailable())
+                    "authenticate" -> authenticate(
+                        call.argument<String>("title") ?: "",
+                        call.argument<String>("cancel") ?: "Cancel",
+                        result,
+                    )
+                    else -> result.notImplemented()
+                }
+            }
+        MethodChannel(flutterEngine.dartExecutor.binaryMessenger, "dartotsu/media")
+            .setMethodCallHandler { call, result ->
+                if (call.method != "saveToDownloads") return@setMethodCallHandler result.notImplemented()
+                val path = call.argument<String>("path")
+                val name = call.argument<String>("name")
+                val mime = call.argument<String>("mime") ?: "application/octet-stream"
+                if (path == null || name == null) return@setMethodCallHandler result.error("args", "path and name required", null)
+                Thread {
+                    try {
+                        val saved = saveToDownloads(File(path), name, mime)
+                        runOnUiThread { result.success(saved) }
+                    } catch (e: Exception) {
+                        runOnUiThread { result.error("save", e.message, null) }
+                    }
+                }.start()
+            }
         MethodChannel(flutterEngine.dartExecutor.binaryMessenger, "dartotsu/links")
             .setMethodCallHandler { call, result ->
                 if (call.method == "isLinkHandlingEnabled") {
@@ -78,6 +114,81 @@ class MainActivity : FlPiPActivity() {
                     }
                 }
             }
+    }
+
+    private fun biometricAvailable(): Boolean {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.P) return false
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.Q) {
+            return packageManager.hasSystemFeature(PackageManager.FEATURE_FINGERPRINT)
+        }
+        val manager = getSystemService(BiometricManager::class.java) ?: return false
+        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            manager.canAuthenticate(BiometricManager.Authenticators.BIOMETRIC_WEAK) ==
+                BiometricManager.BIOMETRIC_SUCCESS
+        } else {
+            @Suppress("DEPRECATION")
+            manager.canAuthenticate() == BiometricManager.BIOMETRIC_SUCCESS
+        }
+    }
+
+    private fun authenticate(title: String, cancel: String, result: MethodChannel.Result) {
+        if (!biometricAvailable()) return result.success(false)
+        var replied = false
+        fun reply(ok: Boolean) {
+            if (replied) return
+            replied = true
+            result.success(ok)
+        }
+        val builder = BiometricPrompt.Builder(this)
+            .setTitle(title)
+            .setNegativeButton(cancel, mainExecutor) { _, _ -> reply(false) }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            builder.setAllowedAuthenticators(BiometricManager.Authenticators.BIOMETRIC_WEAK)
+        }
+        builder.build().authenticate(
+            CancellationSignal(),
+            mainExecutor,
+            object : BiometricPrompt.AuthenticationCallback() {
+                override fun onAuthenticationSucceeded(r: BiometricPrompt.AuthenticationResult?) = reply(true)
+                override fun onAuthenticationError(code: Int, message: CharSequence?) = reply(false)
+            },
+        )
+    }
+
+    private fun saveToDownloads(source: File, name: String, mime: String): String {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            val values = ContentValues().apply {
+                put(MediaStore.MediaColumns.DISPLAY_NAME, name)
+                put(MediaStore.MediaColumns.MIME_TYPE, mime)
+                put(MediaStore.MediaColumns.RELATIVE_PATH, "${Environment.DIRECTORY_DOWNLOADS}/Dartotsu")
+                put(MediaStore.MediaColumns.IS_PENDING, 1)
+            }
+            val resolver = contentResolver
+            val uri = resolver.insert(MediaStore.Downloads.EXTERNAL_CONTENT_URI, values)
+                ?: throw IllegalStateException("MediaStore insert failed")
+            try {
+                resolver.openOutputStream(uri)!!.use { out -> source.inputStream().use { it.copyTo(out) } }
+                values.clear()
+                values.put(MediaStore.MediaColumns.IS_PENDING, 0)
+                resolver.update(uri, values, null, null)
+            } catch (e: Exception) {
+                resolver.delete(uri, null, null)
+                throw e
+            }
+            val shown = resolver.query(uri, arrayOf(MediaStore.MediaColumns.DISPLAY_NAME), null, null, null)
+                ?.use { if (it.moveToFirst()) it.getString(0) else null } ?: name
+            return "${Environment.DIRECTORY_DOWNLOADS}/Dartotsu/$shown"
+        }
+        val dir = File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), "Dartotsu")
+        dir.mkdirs()
+        var target = File(dir, name)
+        var i = 2
+        while (target.exists()) {
+            target = File(dir, "${name.substringBeforeLast('.')} ($i).${name.substringAfterLast('.', "")}")
+            i++
+        }
+        source.copyTo(target)
+        return target.absolutePath
     }
 
     private fun isLinkHandlingEnabled(): Boolean {

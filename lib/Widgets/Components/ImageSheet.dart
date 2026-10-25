@@ -87,8 +87,8 @@ void showImageSheet(
                           name: name,
                         );
                         snackString(
-                          getString.imageSavedTo(saved.path),
-                          clipboard: saved.path,
+                          getString.imageSavedTo(saved),
+                          clipboard: saved,
                         );
                         if (sheet.mounted) popPage(sheet);
                       }),

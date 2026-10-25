@@ -104,6 +104,32 @@ class DiscordPresence {
     ],
   );
 
+  factory DiscordPresence.reading(
+    Media media, {
+    required String number,
+    required int since,
+    int? total,
+  }) => DiscordPresence(
+    type: PresenceType.watching,
+    sensitive: true,
+    details: media.mainName,
+    state: 'Chapter $number/${total ?? '?'}',
+    largeImage: media.cover ?? _logo,
+    largeText: media.mainName,
+    smallImage: _logo,
+    smallText: 'Dartotsu',
+    start: since,
+    live: true,
+    buttons: [
+      if (media.shareLink.startsWith('http'))
+        PresenceButton(
+          'View ${media.format?.toLowerCase() == 'novel' ? 'novel' : 'manga'}',
+          media.shareLink,
+        ),
+      const PresenceButton('Open Dartotsu', _repo),
+    ],
+  );
+
   factory DiscordPresence.consuming(
     Media media, {
     required num number,

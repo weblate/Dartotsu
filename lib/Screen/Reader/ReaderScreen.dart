@@ -6,6 +6,7 @@ import 'package:flutter/services.dart';
 import 'Engine/ReaderItems.dart';
 import 'Engine/ReaderRequest.dart';
 import 'Engine/ReaderSettings.dart';
+import 'Components/ReadingPresence.dart';
 import '../../Core/State/State.dart';
 import '../../Core/ThemeManager/LanguageSwitcher.dart';
 import '../../Utils/Extensions/ContextExtensions.dart';
@@ -40,8 +41,15 @@ class _ReaderScreenState extends State<ReaderScreen>
     super.dispose();
   }
 
+  final _since = DateTime.now().millisecondsSinceEpoch;
+
   @override
-  Widget build(BuildContext context) => Watch(() => _build(context));
+  Widget build(BuildContext context) => ReadingPresence(
+    media: state.request.media,
+    number: () => state.unit.number,
+    since: _since,
+    child: Watch(() => _build(context)),
+  );
 
   Color _background(BuildContext context, String id) => switch (id) {
     'gray' => const Color(0xFF3A3A3A),
