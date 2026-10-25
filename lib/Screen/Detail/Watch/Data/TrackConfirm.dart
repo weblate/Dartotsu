@@ -41,6 +41,7 @@ Future<TrackChoice> confirmTracking(
     _TrackSheet(
       anime: anime,
       name: name,
+      signedIn: service?.isLoggedIn ?? true,
       remember: record == null ? null : remember,
     ),
   );
@@ -55,11 +56,13 @@ Future<TrackChoice> confirmTracking(
 class _TrackSheet extends StatelessWidget {
   final bool anime;
   final String name;
+  final bool signedIn;
   final Live<bool>? remember;
 
   const _TrackSheet({
     required this.anime,
     required this.name,
+    required this.signedIn,
     required this.remember,
   });
 
@@ -104,9 +107,13 @@ class _TrackSheet extends StatelessWidget {
             ),
             SizedBox(height: Dimens.gapXs),
             Text(
-              anime
-                  ? getString.trackProgressAnime(name)
-                  : getString.trackProgressManga(name),
+              signedIn
+                  ? (anime
+                        ? getString.trackProgressAnime(name)
+                        : getString.trackProgressManga(name))
+                  : (anime
+                        ? getString.trackProgressAnimeLocal(name)
+                        : getString.trackProgressMangaLocal(name)),
               textAlign: TextAlign.center,
               style: context.textTheme.bodyMedium?.copyWith(
                 color: scheme.onSurfaceVariant,
@@ -136,11 +143,13 @@ class _TrackSheet extends StatelessWidget {
               onPressed: () => popPage(context, TrackChoice.service),
               child: Text(getString.trackProgressYes),
             ),
-            SizedBox(height: Dimens.gapSm),
-            FilledButton.tonal(
-              onPressed: () => popPage(context, TrackChoice.local),
-              child: Text(getString.trackProgressLocal),
-            ),
+            if (signedIn) ...[
+              SizedBox(height: Dimens.gapSm),
+              FilledButton.tonal(
+                onPressed: () => popPage(context, TrackChoice.local),
+                child: Text(getString.trackProgressLocal),
+              ),
+            ],
             SizedBox(height: Dimens.gapXs),
             TextButton(
               onPressed: () => popPage(context, TrackChoice.none),
