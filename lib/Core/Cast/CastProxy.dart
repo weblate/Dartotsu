@@ -1,0 +1,377 @@
+import 'dart:async';
+import 'dart:convert';
+import 'dart:io';
+
+const _agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)';
+
+class CastProxy {
+  HttpServer? _server;
+  String? _video;
+  String? _subtitle;
+  String _subtitleLabel = 'English';
+  Map<String, String> _headers = const {};
+  String _host = '127.0.0.1';
+  final _client = HttpClient()..autoUncompress = false;
+
+  String? videoUrl;
+  String? subtitleUrl;
+
+  bool get running => _server != null;
+
+  Future<void> start({
+    required String video,
+    Map<String, String>? headers,
+    String? subtitle,
+    String? subtitleLabel,
+  }) async {
+    await stop();
+    _video = video;
+    _subtitle = subtitle;
+    _subtitleLabel = subtitleLabel ?? 'English';
+    _headers = {...?headers};
+    final server = _server = await HttpServer.bind(InternetAddress.anyIPv4, 0);
+    _host = await _localIp();
+    final base = 'http://$_host:${server.port}';
+    videoUrl = _isHls(video) ? '$base/hls/master.m3u8' : '$base/video';
+    subtitleUrl = subtitle == null || subtitle.isEmpty
+        ? null
+        : '$base/subtitles.vtt';
+    server.listen(_handle);
+  }
+
+  Future<void> stop() async {
+    final server = _server;
+    _server = null;
+    videoUrl = null;
+    subtitleUrl = null;
+    _video = null;
+    _subtitle = null;
+    try {
+      await server?.close(force: true);
+    } catch (_) {}
+  }
+
+  void dispose() {
+    unawaited(stop());
+    _client.close(force: true);
+  }
+
+  String get _base => 'http://$_host:${_server?.port}';
+
+  static bool _isHls(String url) => url.contains('.m3u8');
+
+  static bool _isLocal(String url) =>
+      url.startsWith('/') || url.startsWith('file://');
+
+  static Future<String> _localIp() async {
+    final interfaces = await NetworkInterface.list(
+      type: InternetAddressType.IPv4,
+    );
+    const likely = ['wlan', 'eth', 'ap', 'rndis', 'en', 'wl'];
+    for (final pass in [true, false]) {
+      for (final iface in interfaces) {
+        final name = iface.name.toLowerCase();
+        if (pass && !likely.any(name.contains)) continue;
+        for (final addr in iface.addresses) {
+          if (!addr.isLoopback) return addr.address;
+        }
+      }
+    }
+    return '127.0.0.1';
+  }
+
+  Future<void> _handle(HttpRequest request) async {
+    final response = request.response;
+    response.headers
+      ..set('Access-Control-Allow-Origin', '*')
+      ..set('Access-Control-Allow-Methods', 'GET, HEAD, OPTIONS')
+      ..set('Access-Control-Allow-Headers', '*')
+      ..set('Access-Control-Expose-Headers', '*');
+    try {
+      if (request.method == 'OPTIONS') {
+        response.statusCode = HttpStatus.ok;
+        await response.close();
+        return;
+      }
+      switch (request.uri.path) {
+        case '/video':
+          await _serveVideo(request);
+        case '/hls/master.m3u8':
+          await _serveMaster(request);
+        case '/hls/variant.m3u8':
+          await _serveVariant(request);
+        case '/hls/segment':
+          await _serveSegment(request);
+        case '/hls/subtitles.m3u8':
+          await _serveSubtitlePlaylist(request);
+        case '/subtitles.vtt':
+          await _serveSubtitle(request);
+        default:
+          response.statusCode = HttpStatus.notFound;
+          await response.close();
+      }
+    } catch (_) {
+      try {
+        response.statusCode = HttpStatus.internalServerError;
+        await response.close();
+      } catch (_) {}
+    }
+  }
+
+  Map<String, String> get _upstream {
+    final out = {..._headers};
+    if (!out.keys.any((k) => k.toLowerCase() == 'user-agent')) {
+      out['User-Agent'] = _agent;
+    }
+    return out;
+  }
+
+  Map<String, String> _outgoing(HttpRequest request) {
+    final out = _upstream;
+    final range = request.headers.value('range');
+    if (range != null) out['range'] = range;
+    return out;
+  }
+
+  Future<void> _pipe(
+    HttpRequest request,
+    String url, {
+    String method = 'GET',
+    ContentType? fallback,
+  }) async {
+    final upstream = await _client.openUrl(method, Uri.parse(url));
+    _outgoing(request).forEach(upstream.headers.set);
+    final reply = await upstream.close();
+    final response = request.response..statusCode = reply.statusCode;
+    reply.headers.forEach((name, values) {
+      final lower = name.toLowerCase();
+      if (lower == 'transfer-encoding' ||
+          lower.startsWith('access-control-') ||
+          lower == 'connection') {
+        return;
+      }
+      for (final value in values) {
+        response.headers.set(name, value);
+      }
+    });
+    if (fallback != null && response.headers.contentType == null) {
+      response.headers.contentType = fallback;
+    }
+    await reply.pipe(response);
+  }
+
+  Future<String?> _text(String url) async {
+    final upstream = await _client.getUrl(Uri.parse(url));
+    _upstream.forEach(upstream.headers.set);
+    final reply = await upstream.close();
+    if (reply.statusCode != 200) {
+      await reply.drain<void>();
+      return null;
+    }
+    return reply.transform(utf8.decoder).join();
+  }
+
+  Future<void> _serveVideo(HttpRequest request) async {
+    final video = _video;
+    if (video == null) {
+      request.response.statusCode = HttpStatus.notFound;
+      await request.response.close();
+      return;
+    }
+    if (_isLocal(video)) {
+      await _serveFile(request, video);
+    } else {
+      await _pipe(
+        request,
+        video,
+        method: request.method == 'HEAD' ? 'HEAD' : 'GET',
+        fallback: ContentType('video', 'mp4'),
+      );
+    }
+  }
+
+  Future<void> _serveFile(HttpRequest request, String path) async {
+    final file = File(
+      path.startsWith('file://') ? Uri.parse(path).toFilePath() : path,
+    );
+    final response = request.response;
+    if (!await file.exists()) {
+      response.statusCode = HttpStatus.notFound;
+      await response.close();
+      return;
+    }
+    final total = await file.length();
+    response.headers
+      ..set('Accept-Ranges', 'bytes')
+      ..contentType = ContentType('video', 'mp4');
+    final range = request.headers.value('range');
+    if (range != null && range.startsWith('bytes=')) {
+      final parts = range.substring(6).split('-');
+      final start = int.tryParse(parts[0]) ?? 0;
+      final end = parts.length > 1 && parts[1].isNotEmpty
+          ? int.tryParse(parts[1]) ?? total - 1
+          : total - 1;
+      if (start >= total || end >= total || start > end) {
+        response.statusCode = HttpStatus.requestedRangeNotSatisfiable;
+        response.headers.set('Content-Range', 'bytes */$total');
+        await response.close();
+        return;
+      }
+      response
+        ..statusCode = HttpStatus.partialContent
+        ..headers.contentLength = end - start + 1
+        ..headers.set('Content-Range', 'bytes $start-$end/$total');
+      await file.openRead(start, end + 1).pipe(response);
+      return;
+    }
+    response
+      ..statusCode = HttpStatus.ok
+      ..headers.contentLength = total;
+    await file.openRead().pipe(response);
+  }
+
+  Future<void> _serveManifest(HttpRequest request, String body) async {
+    final response = request.response
+      ..statusCode = HttpStatus.ok
+      ..headers.contentType = ContentType(
+        'application',
+        'vnd.apple.mpegurl',
+        charset: 'utf-8',
+      );
+    response.write(body);
+    await response.close();
+  }
+
+  Future<void> _serveMaster(HttpRequest request) async {
+    final video = _video;
+    final body = video == null ? null : await _text(video);
+    if (body == null) {
+      request.response.statusCode = HttpStatus.badGateway;
+      await request.response.close();
+      return;
+    }
+    await _serveManifest(request, _rewriteMaster(body, Uri.parse(video!)));
+  }
+
+  String _rewriteMaster(String manifest, Uri base) {
+    final withSubs = subtitleUrl != null;
+    final out = <String>[];
+    final lines = manifest.split('\n').map((l) => l.trim()).toList();
+    String variant(String line) =>
+        '$_base/hls/variant.m3u8?url=${Uri.encodeComponent(base.resolve(line).toString())}';
+    for (var i = 0; i < lines.length; i++) {
+      final line = lines[i];
+      if (line.isEmpty) continue;
+      if (line.startsWith('#EXTM3U')) {
+        out.add(line);
+        if (withSubs) {
+          out.add(
+            '#EXT-X-MEDIA:TYPE=SUBTITLES,GROUP-ID="subs",NAME="$_subtitleLabel",DEFAULT=YES,AUTOSELECT=YES,FORCED=NO,LANGUAGE="en",URI="$_base/hls/subtitles.m3u8"',
+          );
+        }
+      } else if (line.startsWith('#EXT-X-STREAM-INF')) {
+        out.add(
+          withSubs && !line.contains('SUBTITLES=')
+              ? '$line,SUBTITLES="subs"'
+              : line,
+        );
+        if (i + 1 < lines.length &&
+            lines[i + 1].isNotEmpty &&
+            !lines[i + 1].startsWith('#')) {
+          out.add(variant(lines[++i]));
+        }
+      } else if (!line.startsWith('#')) {
+        out.add(variant(line));
+      } else {
+        out.add(line);
+      }
+    }
+    return out.join('\n');
+  }
+
+  Future<void> _serveVariant(HttpRequest request) async {
+    final target = request.uri.queryParameters['url'];
+    final body = target == null ? null : await _text(target);
+    if (body == null) {
+      request.response.statusCode = target == null
+          ? HttpStatus.badRequest
+          : HttpStatus.badGateway;
+      await request.response.close();
+      return;
+    }
+    final base = Uri.parse(target!);
+    String segment(String url) =>
+        '$_base/hls/segment?url=${Uri.encodeComponent(base.resolve(url).toString())}';
+    final out = <String>[];
+    for (final raw in body.split('\n')) {
+      final line = raw.trim();
+      if (line.isEmpty) continue;
+      if (line.startsWith('#EXT-X-KEY:') || line.startsWith('#EXT-X-MAP:')) {
+        final uri = RegExp(r'URI="([^"]+)"').firstMatch(line)?.group(1);
+        out.add(
+          uri == null
+              ? line
+              : line.replaceFirst('URI="$uri"', 'URI="${segment(uri)}"'),
+        );
+      } else if (!line.startsWith('#')) {
+        out.add(segment(line));
+      } else {
+        out.add(line);
+      }
+    }
+    await _serveManifest(request, out.join('\n'));
+  }
+
+  Future<void> _serveSegment(HttpRequest request) async {
+    final target = request.uri.queryParameters['url'];
+    if (target == null) {
+      request.response.statusCode = HttpStatus.badRequest;
+      await request.response.close();
+      return;
+    }
+    await _pipe(request, target);
+  }
+
+  Future<void> _serveSubtitlePlaylist(HttpRequest request) => _serveManifest(
+    request,
+    '#EXTM3U\n#EXT-X-TARGETDURATION:7200\n#EXT-X-VERSION:3\n#EXT-X-MEDIA-SEQUENCE:0\n#EXTINF:7200.0,\n$_base/subtitles.vtt\n#EXT-X-ENDLIST\n',
+  );
+
+  Future<void> _serveSubtitle(HttpRequest request) async {
+    final source = _subtitle;
+    String? content;
+    if (source != null && source.isNotEmpty) {
+      if (_isLocal(source)) {
+        final file = File(
+          source.startsWith('file://')
+              ? Uri.parse(source).toFilePath()
+              : source,
+        );
+        if (await file.exists()) content = await file.readAsString();
+      } else {
+        content = await _text(source);
+      }
+    }
+    if (content == null || content.isEmpty) {
+      request.response.statusCode = HttpStatus.notFound;
+      await request.response.close();
+      return;
+    }
+    final response = request.response
+      ..statusCode = HttpStatus.ok
+      ..headers.contentType = ContentType('text', 'vtt', charset: 'utf-8');
+    response.write(_toVtt(content));
+    await response.close();
+  }
+
+  static String _toVtt(String raw) {
+    final text = raw.trim();
+    if (text.startsWith('WEBVTT')) return text;
+    final time = RegExp(r'(\d{2}:\d{2}:\d{2}),(\d{3})');
+    final body = text
+        .replaceAll('\r\n', '\n')
+        .replaceAll('\r', '\n')
+        .replaceAllMapped(time, (m) => '${m[1]}.${m[2]}');
+    return 'WEBVTT\n\n$body';
+  }
+}

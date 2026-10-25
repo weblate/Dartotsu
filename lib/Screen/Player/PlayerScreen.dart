@@ -27,6 +27,7 @@ import 'Components/PlayerIndicators.dart';
 import '../Together/TogetherRoomView.dart';
 import 'Components/PlayerSheets.dart';
 import 'Components/SkipSubmitSheet.dart';
+import 'Components/CastSheet.dart';
 import 'Components/PlayerSubtitleView.dart';
 import 'PlayerState.dart';
 
@@ -497,6 +498,17 @@ class _PlayerScreenState extends State<PlayerScreen>
               },
             );
           }),
+          Watch(
+            () => chip(
+              state.cast.active
+                  ? Icons.cast_connected_rounded
+                  : Icons.cast_rounded,
+              state.cast.active
+                  ? getString.castNowCasting(state.cast.device.value!.name)
+                  : getString.castTitle,
+              () => showCastSheet(context, state),
+            ),
+          ),
           chip(
             Icons.fit_screen_rounded,
             getString.playerResize,
@@ -656,6 +668,16 @@ class _PlayerScreenState extends State<PlayerScreen>
               left: !state.settings.swapGestures,
             ),
           ),
+        Watch(
+          () => PlayerChip(
+            text: state.cast.active
+                ? getString.castNowCasting(state.cast.device.value!.name)
+                : null,
+            icon: Icons.cast_connected_rounded,
+            alignment: AlignmentDirectional.bottomCenter,
+            margin: const EdgeInsets.only(bottom: 96),
+          ),
+        ),
         Watch(
           () => PlayerChip(
             text: state.holdActive.value

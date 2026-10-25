@@ -1,3 +1,4 @@
+import 'Core/Cast/CastService.dart';
 import 'Screen/Together/TogetherController.dart';
 import 'dart:async';
 import 'dart:io';
@@ -61,6 +62,7 @@ class DI {
     lazyPut<MediaServiceController>(MediaServiceController.new);
     lazyPut<SyncController>(SyncController.new);
     lazyPut<TogetherController>(TogetherController.new);
+    lazyPut<CastService>(CastService.new);
     lazyPut<AnilistAuth>(AnilistAuth.new);
     lazyPut<MalAuth>(MalAuth.new);
     lazyPut<SimklAuth>(SimklAuth.new);

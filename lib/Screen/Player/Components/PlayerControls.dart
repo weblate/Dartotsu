@@ -7,6 +7,7 @@ import '../../../Utils/Extensions/ContextExtensions.dart';
 import '../../../Utils/Functions/NavigateToScreen.dart';
 import '../Engine/Pip.dart';
 import '../PlayerState.dart';
+import 'CastSheet.dart';
 import 'PlayerSeekBar.dart';
 import 'PlayerSheets.dart';
 import 'SkipSubmitSheet.dart';
@@ -451,6 +452,13 @@ class PlayerControls extends StatelessWidget {
                         () => _streams(context),
                         tooltip: getString.playerStreams,
                       ),
+                    _icon(
+                      state.cast.active
+                          ? Icons.cast_connected_rounded
+                          : Icons.cast_rounded,
+                      () => showCastSheet(context, state),
+                      tooltip: getString.castTitle,
+                    ),
                     _icon(
                       Icons.subtitles_rounded,
                       () => showTracksSheet(context, state, audio: false),

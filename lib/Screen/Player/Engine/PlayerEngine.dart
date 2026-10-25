@@ -707,6 +707,43 @@ class PlayerEngine {
     if (track != null) await player.setAudioTrack(track);
   }
 
+  Future<Map<String, String>> audioProbe() async {
+    final mpv = native;
+    if (mpv == null || _disposed) return const {};
+    final out = <String, String>{};
+    for (final key in const [
+      'aid',
+      'sid',
+      'mute',
+      'volume',
+      'current-ao',
+      'audio-params/format',
+      'audio-params/channel-count',
+      'af',
+    ]) {
+      try {
+        out[key] = await mpv.getProperty(key);
+      } catch (_) {
+        out[key] = '';
+      }
+    }
+    return out;
+  }
+
+  Future<void> reselectAudio(String id) async {
+    final mpv = native;
+    if (mpv == null || _disposed) return;
+    try {
+      if (await mpv.getProperty('mute') == 'yes') {
+        await mpv.setProperty('mute', 'no');
+      }
+      await mpv.setProperty('aid', 'no');
+      await mpv.setProperty('aid', id);
+    } catch (e, st) {
+      logError('PlayerEngine', e, st, 'mpv audio reselect failed');
+    }
+  }
+
   Future<void> addAudio(String uri, String title) =>
       player.setAudioTrack(AudioTrack.uri(uri, title: title));
 

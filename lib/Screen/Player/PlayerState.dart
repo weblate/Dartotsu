@@ -1,3 +1,4 @@
+import '../../Core/Cast/CastService.dart';
 import '../../Core/Downloads/DownloadEngine.dart';
 import '../../Utils/Functions/DisplayMode.dart';
 import 'dart:async';
@@ -61,6 +62,7 @@ class PlayerState extends ScreenState {
   late final colorValues = settings.color.live;
   late PlayerEngine engine;
   final engineTick = 0.live;
+  final cast = find<CastService>();
 
   final index = 0.live;
   final videos = <v.Video>[].liveList;
@@ -436,6 +438,7 @@ class PlayerState extends ScreenState {
   @override
   void onClose() {
     _closed = true;
+    if (cast.active) unawaited(cast.stop());
     _blurTimer?.cancel();
     _lifecycle?.dispose();
     together.detach(this);
@@ -721,6 +724,7 @@ class PlayerState extends ScreenState {
     ];
     stamps.value = own;
     await _pickDefaultSubtitle(chosen);
+    unawaited(_verifyAudio(generation));
     _syncPipRatio();
     final skipMedia = request.media;
     final skipService = request.service;
@@ -769,25 +773,64 @@ class PlayerState extends ScreenState {
       return;
     }
     final priority = languageList(settings.subtitleLanguage);
-    final tracks = chosen.subtitles ?? const <v.Track>[];
-    for (final wanted in priority) {
-      final key = wanted.toLowerCase();
-      final external = tracks.where((t) {
-        final label = (t.label ?? '').toLowerCase();
-        return label.isNotEmpty &&
-            (label == key || titleRatio(label, key) >= 80);
-      }).firstOrNull;
-      if (external?.file != null) {
-        await engine.addSubtitle(external!.file!, external.label ?? wanted);
-        return;
-      }
+    final external = _externalSubtitle(chosen);
+    if (external?.file != null) {
+      await engine.addSubtitle(
+        external!.file!,
+        external.label ?? (priority.firstOrNull ?? ''),
+      );
+      return;
     }
     final embedded = pickTrack(
       engine.subtitleTracks.value,
       priority,
       avoidSigns: true,
     );
-    if (embedded != null) await engine.setSubtitle(embedded.id);
+    if (embedded != null) {
+      await engine.setSubtitle(embedded.id);
+    } else if (engine.activeSubtitle.value == null &&
+        engine.subtitleTracks.value.isNotEmpty) {
+      await engine.setSubtitle(engine.subtitleTracks.value.first.id);
+    }
+  }
+
+  Future<void> _verifyAudio(int generation) async {
+    for (var attempt = 0; attempt < 3; attempt++) {
+      await Future<void>.delayed(const Duration(milliseconds: 2000));
+      if (_closed || generation != _generation) return;
+      final tracks = engine.audioTracks.value;
+      if (tracks.isEmpty || !engine.playing.value) continue;
+      final probe = await engine.audioProbe();
+      final aid = probe['aid'] ?? '';
+      final silent =
+          aid == 'no' ||
+          aid == 'false' ||
+          aid.isEmpty ||
+          (probe['current-ao'] ?? '').isEmpty ||
+          (probe['audio-params/format'] ?? '').isEmpty ||
+          probe['mute'] == 'yes';
+      logger(
+        'Audio check ${attempt + 1}: $probe tracks=${tracks.map((t) => t.id).toList()} silent=$silent',
+        tag: 'PLAYER',
+      );
+      if (!silent) return;
+      final wanted = tracks.where((t) => t.id == aid).followedBy(tracks).first;
+      await engine.reselectAudio(wanted.id);
+    }
+  }
+
+  v.Track? _externalSubtitle(v.Video chosen) {
+    final tracks = chosen.subtitles ?? const <v.Track>[];
+    for (final wanted in languageList(settings.subtitleLanguage)) {
+      final key = wanted.toLowerCase();
+      final match = tracks.where((t) {
+        final label = (t.label ?? '').toLowerCase();
+        return label.isNotEmpty &&
+            (label == key || titleRatio(label, key) >= 80);
+      }).firstOrNull;
+      if (match?.file != null) return match;
+    }
+    return null;
   }
 
   Future<void> _pickDefaultAudio() async {
@@ -1020,9 +1063,48 @@ class PlayerState extends ScreenState {
     await engine.dispose();
   }
 
+  Duration get _watchPosition =>
+      cast.active ? cast.position.value : engine.position.value;
+
+  Duration get _watchDuration =>
+      cast.active ? cast.duration.value : engine.duration.value;
+
+  Future<void> castTo(CastDevice target) async {
+    final list = videos.toList();
+    final at = videoIndex.value;
+    final chosen = at >= 0 && at < list.length ? list[at] : null;
+    final url = engine.previewTarget ?? chosen?.url;
+    if (url == null) return;
+    final start = engine.position.value;
+    await engine.pause();
+    final sub = settings.showSubtitle && chosen != null
+        ? _externalSubtitle(chosen)
+        : null;
+    final ok = await cast.cast(
+      target: target,
+      url: url,
+      title: item.title,
+      headers: engine.previewHeaders,
+      subtitle: sub?.file,
+      subtitleLabel: sub?.label,
+      start: start,
+    );
+    if (!ok) {
+      snackString(cast.failure.value ?? getString.castFailed);
+      await engine.play();
+    }
+  }
+
+  Future<void> stopCasting() async {
+    final at = await cast.stop();
+    if (_closed) return;
+    if (at > const Duration(seconds: 1)) await engine.seek(at);
+    await engine.play();
+  }
+
   void _saveProgress({bool force = false}) {
-    final position = engine.position.value.inSeconds;
-    final total = engine.duration.value.inSeconds;
+    final position = _watchPosition.inSeconds;
+    final total = _watchDuration.inSeconds;
     if (total <= 0 || position <= 0 || !_localSave) return;
     if (!force && position == _lastSave) return;
     _lastSave = position;
@@ -1080,9 +1162,9 @@ class PlayerState extends ScreenState {
 
   void _commitWatched() {
     if (_watchedMarked) return;
-    final total = engine.duration.value.inSeconds;
+    final total = _watchDuration.inSeconds;
     if (total <= 0) return;
-    final fraction = engine.position.value.inSeconds / total;
+    final fraction = _watchPosition.inSeconds / total;
     if (fraction * 100 < settings.watchedAt) return;
     _watchedMarked = true;
     final svc = request.service;

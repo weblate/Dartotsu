@@ -1,0 +1,129 @@
+import 'package:xml/xml.dart';
+
+import 'CastHttp.dart';
+
+const _service = 'urn:schemas-upnp-org:service:AVTransport:1';
+
+String xmlEscape(String input) => input
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&apos;');
+
+String clock(Duration d) {
+  String two(int v) => v.toString().padLeft(2, '0');
+  return '${two(d.inHours)}:${two(d.inMinutes.remainder(60))}:${two(d.inSeconds.remainder(60))}';
+}
+
+Duration? _parseClock(String? text) {
+  if (text == null) return null;
+  final parts = text.split(':');
+  if (parts.length != 3) return null;
+  final h = int.tryParse(parts[0]);
+  final m = int.tryParse(parts[1]);
+  final s = double.tryParse(parts[2]);
+  if (h == null || m == null || s == null) return null;
+  return Duration(seconds: h * 3600 + m * 60 + s.floor());
+}
+
+class DlnaPosition {
+  final Duration position;
+  final Duration duration;
+  final String state;
+
+  const DlnaPosition(this.position, this.duration, this.state);
+}
+
+class DlnaClient {
+  final String controlUrl;
+
+  const DlnaClient(this.controlUrl);
+
+  Future<String?> _call(String action, [String arguments = '']) => castPost(
+    controlUrl,
+    headers: {
+      'Content-Type': 'text/xml; charset="utf-8"',
+      'SOAPACTION': '"$_service#$action"',
+    },
+    body:
+        '<?xml version="1.0" encoding="utf-8"?>'
+        '<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/" '
+        's:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">'
+        '<s:Body><u:$action xmlns:u="$_service">'
+        '<InstanceID>0</InstanceID>$arguments'
+        '</u:$action></s:Body></s:Envelope>',
+  );
+
+  String _didl({
+    required String url,
+    required String title,
+    required bool hls,
+    String? subtitle,
+  }) {
+    final mime = hls ? 'application/vnd.apple.mpegurl' : 'video/mp4';
+    final sub = subtitle == null
+        ? ''
+        : '<res protocolInfo="http-get:*:text/vtt:*">${xmlEscape(subtitle)}</res>'
+              '<sec:CaptionInfoEx xmlns:sec="http://www.sec.co.kr/" sec:type="vtt">${xmlEscape(subtitle)}</sec:CaptionInfoEx>';
+    return '<DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" '
+        'xmlns:dc="http://purl.org/dc/elements/1.1/" '
+        'xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/" '
+        'xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/" '
+        'xmlns:sec="http://www.sec.co.kr/">'
+        '<item id="1" parentID="0" restricted="1">'
+        '<dc:title>${xmlEscape(title)}</dc:title>'
+        '<upnp:class>object.item.videoItem</upnp:class>'
+        '<res protocolInfo="http-get:*:$mime:*">${xmlEscape(url)}</res>'
+        '$sub</item></DIDL-Lite>';
+  }
+
+  Future<bool> load({
+    required String url,
+    required String title,
+    required bool hls,
+    String? subtitle,
+  }) async {
+    final meta = _didl(url: url, title: title, hls: hls, subtitle: subtitle);
+    final set = await _call(
+      'SetAVTransportURI',
+      '<CurrentURI>${xmlEscape(url)}</CurrentURI>'
+          '<CurrentURIMetaData>${xmlEscape(meta)}</CurrentURIMetaData>',
+    );
+    return set != null;
+  }
+
+  Future<bool> play() async => await _call('Play', '<Speed>1</Speed>') != null;
+
+  Future<bool> pause() async => await _call('Pause') != null;
+
+  Future<bool> stop() async => await _call('Stop') != null;
+
+  Future<bool> seek(Duration to) async =>
+      await _call(
+        'Seek',
+        '<Unit>REL_TIME</Unit><Target>${clock(to)}</Target>',
+      ) !=
+      null;
+
+  Future<DlnaPosition?> poll() async {
+    final info = await _call('GetPositionInfo');
+    if (info == null) return null;
+    final transport = await _call('GetTransportInfo');
+    try {
+      final doc = XmlDocument.parse(info);
+      String? text(XmlDocument d, String tag) =>
+          d.findAllElements(tag).firstOrNull?.innerText;
+      final state = transport == null
+          ? ''
+          : text(XmlDocument.parse(transport), 'CurrentTransportState') ?? '';
+      return DlnaPosition(
+        _parseClock(text(doc, 'RelTime')) ?? Duration.zero,
+        _parseClock(text(doc, 'TrackDuration')) ?? Duration.zero,
+        state,
+      );
+    } catch (_) {
+      return null;
+    }
+  }
+}
