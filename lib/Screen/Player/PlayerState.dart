@@ -75,6 +75,18 @@ class PlayerState extends ScreenState {
   final panelWidth = 0.0.live;
   final fit = BoxFit.contain.live;
   final stamps = <SkipStamp>[].liveList;
+  SkipDraft? _skipDraft;
+
+  SkipDraft skipDraft() {
+    final draft = _skipDraft;
+    if (draft != null && draft.key == item.key) return draft;
+    return _skipDraft = SkipDraft(
+      item.key,
+      engine.position.value.inMilliseconds.toDouble(),
+    );
+  }
+
+  void clearSkipDraft() => _skipDraft = null;
   final activeStamp = Live<SkipStamp?>(null);
   final holdActive = false.live;
   final holdSpeedValue = 2.0.live;
@@ -290,15 +302,26 @@ class PlayerState extends ScreenState {
   AppLifecycleListener? _lifecycle;
   bool _pausedByBlur = false;
 
+  Timer? _blurTimer;
+
   void _blur() {
-    if (_closed || !settings.pauseOnBlur || pip.value || _pausedByBlur) return;
-    if (Platform.isAndroid && settings.autoPip) return;
+    if (_closed || !settings.pauseOnBlur || _pausedByBlur) return;
+    final wait = Platform.isAndroid && settings.autoPip
+        ? const Duration(milliseconds: 300)
+        : Duration.zero;
+    _blurTimer?.cancel();
+    _blurTimer = Timer(wait, _pauseForBlur);
+  }
+
+  void _pauseForBlur() {
+    if (_closed || pip.value || _pausedByBlur) return;
     if (!engine.playing.value) return;
     _pausedByBlur = true;
     unawaited(engine.pause());
   }
 
   void _focusBack() {
+    _blurTimer?.cancel();
     if (!_pausedByBlur) return;
     _pausedByBlur = false;
     if (!_closed && !engine.playing.value) unawaited(engine.play());
@@ -413,6 +436,7 @@ class PlayerState extends ScreenState {
   @override
   void onClose() {
     _closed = true;
+    _blurTimer?.cancel();
     _lifecycle?.dispose();
     together.detach(this);
     find<DownloadEngine>().sweepFinished();
@@ -1292,8 +1316,8 @@ class PlayerState extends ScreenState {
     }
   }
 
-  void changeVolume(double delta) {
-    if (!settings.adjustVolume) return;
+  void changeVolume(double delta, {bool keyboard = false}) {
+    if (!keyboard && !settings.adjustVolume) return;
     final next = (volume.value + delta).clamp(0.0, 1.0);
     volume.value = next;
     volumeShown.value = true;
@@ -1312,6 +1336,17 @@ class PlayerState extends ScreenState {
       const Duration(milliseconds: 700),
       () => volumeShown.value = false,
     );
+  }
+
+  double _beforeMute = 1;
+
+  void toggleMute() {
+    if (volume.value > 0) {
+      _beforeMute = volume.value;
+      changeVolume(-volume.value, keyboard: true);
+    } else {
+      changeVolume(_beforeMute, keyboard: true);
+    }
   }
 
   void changeBrightness(double delta) {

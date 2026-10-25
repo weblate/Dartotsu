@@ -5,6 +5,7 @@ import '../../../Core/ThemeManager/LanguageSwitcher.dart';
 import '../../../Utils/Extensions/ContextExtensions.dart';
 import '../../../Utils/Functions/NavigateToScreen.dart';
 import '../../../Utils/Functions/SnackBar.dart';
+import '../../../Widgets/Components/AlertDialogBuilder.dart';
 import '../../../Widgets/Components/AppControls.dart';
 import '../../../Widgets/Components/AppSheet.dart';
 import '../../../Widgets/Components/CustomBottomDialog.dart';
@@ -36,11 +37,10 @@ class _SkipSubmitPanel extends StatefulWidget {
 }
 
 class _SkipSubmitPanelState extends State<_SkipSubmitPanel> {
-  late final type = 'op'.live;
-  late final start = widget.state.engine.position.value.inMilliseconds
-      .toDouble()
-      .live;
-  late final end = 0.0.live;
+  late final draft = widget.state.skipDraft();
+  late final type = draft.type;
+  late final start = draft.start;
+  late final end = draft.end;
   final sending = false.live;
 
   double get _length =>
@@ -69,14 +69,21 @@ class _SkipSubmitPanelState extends State<_SkipSubmitPanel> {
           icon: const Icon(Icons.remove_rounded),
         ),
         Expanded(
-          child: Text(
-            value <= 0 && label == getString.playerSkipEnd
-                ? '--:--'
-                : formatClock(value.floor()),
-            textAlign: TextAlign.center,
-            style: context.textTheme.titleMedium?.copyWith(
-              color: scheme.primary,
-              fontWeight: FontWeight.w700,
+          child: InkWell(
+            borderRadius: BorderRadius.circular(8),
+            onTap: () => _edit(label, value, set),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 10),
+              child: Text(
+                value <= 0 && label == getString.playerSkipEnd
+                    ? '--:--'
+                    : formatClock(value.floor()),
+                textAlign: TextAlign.center,
+                style: context.textTheme.titleMedium?.copyWith(
+                  color: scheme.primary,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
             ),
           ),
         ),
@@ -91,6 +98,34 @@ class _SkipSubmitPanelState extends State<_SkipSubmitPanel> {
         ),
       ],
     );
+  }
+
+  void _edit(String label, double value, ValueChanged<double> set) {
+    final controller = TextEditingController(
+      text: value <= 0 ? '' : formatClock(value.floor()),
+    );
+    void apply() {
+      final parsed = parseClock(controller.text);
+      if (parsed != null) set(parsed.clamp(0, _length));
+    }
+
+    AlertDialogBuilder(context)
+        .setTitle(label)
+        .setCustomView(
+          TextField(
+            controller: controller,
+            autofocus: true,
+            keyboardType: TextInputType.datetime,
+            decoration: const InputDecoration(hintText: 'mm:ss'),
+            onSubmitted: (_) {
+              apply();
+              Navigator.of(context, rootNavigator: true).maybePop();
+            },
+          ),
+        )
+        .setPositiveButton(getString.save, apply)
+        .setNegativeButton(getString.cancel, null)
+        .show<void>();
   }
 
   Future<void> _send() async {
@@ -126,6 +161,7 @@ class _SkipSubmitPanelState extends State<_SkipSubmitPanel> {
           end.value / 1000,
         ),
       );
+      state.clearSkipDraft();
       snackString(getString.playerSkipSent);
       if (mounted) popPage(context);
     } finally {
@@ -151,7 +187,9 @@ class _SkipSubmitPanelState extends State<_SkipSubmitPanel> {
           AppChoiceChips<String>(
             value: type.value,
             onChanged: (t) => type.value = t,
-            options: [for (final t in aniSkipTypes) AppSegment(t, label: skipName(t))],
+            options: [
+              for (final t in aniSkipTypes) AppSegment(t, label: skipName(t)),
+            ],
           ),
           const SizedBox(height: 8),
           _time(

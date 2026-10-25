@@ -824,13 +824,10 @@ class _PlayerScreenState extends State<PlayerScreen>
       }
     } else if (key == LogicalKeyboardKey.arrowUp ||
         key == LogicalKeyboardKey.arrowDown) {
-      final next =
-          (engine.player.state.volume +
-                  (key == LogicalKeyboardKey.arrowUp ? 5 : -5))
-              .clamp(0.0, 100.0);
-      state.volume.value = next / 100;
-      state.volumeShown.value = true;
-      unawaited(engine.player.setVolume(next));
+      state.changeVolume(
+        key == LogicalKeyboardKey.arrowUp ? 0.05 : -0.05,
+        keyboard: true,
+      );
     } else if (key == LogicalKeyboardKey.keyF) {
       unawaited(state.toggleFullscreen());
     } else if (key == LogicalKeyboardKey.keyN) {
@@ -840,8 +837,7 @@ class _PlayerScreenState extends State<PlayerScreen>
     } else if (key == LogicalKeyboardKey.keyS) {
       state.skipStamp();
     } else if (key == LogicalKeyboardKey.keyM) {
-      final muted = engine.player.state.volume == 0;
-      unawaited(engine.player.setVolume(muted ? 100 : 0));
+      state.toggleMute();
     } else if (key == LogicalKeyboardKey.enter) {
       state.panel.value = !state.panel.value;
     } else {

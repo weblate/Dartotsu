@@ -9,6 +9,29 @@ import '../../Detail/Watch/Data/WatchPrefs.dart';
 
 enum SkipKind { opening, ending, recap, other }
 
+class SkipDraft {
+  final String key;
+  final Live<String> type = 'op'.live;
+  final Live<double> start;
+  final Live<double> end = 0.0.live;
+
+  SkipDraft(this.key, double startMs) : start = startMs.live;
+}
+
+double? parseClock(String input) {
+  final text = input.trim();
+  if (text.isEmpty) return null;
+  final parts = text.split(':');
+  if (parts.length > 3) return null;
+  var total = 0.0;
+  for (final part in parts) {
+    final value = double.tryParse(part.trim());
+    if (value == null || value < 0) return null;
+    total = total * 60 + value;
+  }
+  return total;
+}
+
 const aniSkipTypes = ['op', 'ed', 'mixed-op', 'mixed-ed', 'recap'];
 
 class SkipStamp {
