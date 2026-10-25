@@ -19,6 +19,7 @@ Future<List<WatchUnit>?> loadUnits({
   required MediaService service,
   required Media media,
   required Source source,
+  String? season,
 }) async {
   try {
     final target = media.sourceData != null
@@ -32,13 +33,20 @@ Future<List<WatchUnit>?> loadUnits({
     final normalized = !anime
         ? prepareChapters(raw, media.mainName)
         : raw.length < 50
-        ? normalizeEpisodes(raw)
+        ? normalizeAll(raw)
         : await compute(normalizeIsolate, raw);
+    final seasoned = anime && seasonNames(normalized).isNotEmpty;
     return buildUnits(
-      normalized,
+      seasoned && season != null
+          ? [
+              for (final e in normalized)
+                if (seasonOf(e) == season.trim()) e,
+            ]
+          : normalized,
       const {},
       fallbackThumb: media.banner ?? media.cover ?? '',
       anime: anime,
+      seasoned: seasoned,
     );
   } catch (e) {
     logger('Resume units failed: $e', tag: 'RESUME');

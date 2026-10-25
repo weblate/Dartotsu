@@ -22,6 +22,7 @@ import '../../Player/PlayerLauncher.dart';
 import '../../Reader/ReaderLauncher.dart';
 import 'Components/ContinueCard.dart';
 import 'Components/RangeBar.dart';
+import 'Components/SourcePickerSheet.dart';
 import 'Components/SourceBar.dart';
 import 'Components/SourceToolsSheet.dart';
 import '../../../Core/Downloads/DownloadEngine.dart';
@@ -239,6 +240,16 @@ class _WatchSectionState extends State<WatchSection>
               ),
               SizedBox(height: Dimens.gap),
             ],
+            if (state.seasons.length > 1) ...[
+              RangeBar(
+                selected: state.seasons
+                    .indexOf(state.season.value ?? '')
+                    .clamp(0, state.seasons.length - 1),
+                onChanged: (i) => state.selectSeason(state.seasons[i]),
+                labels: state.seasons.toList(),
+              ),
+              SizedBox(height: Dimens.gapSm),
+            ],
             if (chunks.length > 1) ...[
               RangeBar(
                 selected: index,
@@ -395,32 +406,15 @@ class _WatchSectionState extends State<WatchSection>
   }
 
   Future<void> _pickSource() async {
-    final list = state.sources.toList();
     final current = state.source.value;
-    if (list.isEmpty) return;
-    final names = <String, int>{};
-    for (final s in list) {
-      names[s.name ?? ''] = (names[s.name ?? ''] ?? 0) + 1;
-    }
-    final picked = await showChoiceSheet<String>(
+    final picked = await showSourcePicker(
       context,
-      title: getString.watchSource,
-      icon: Icons.extension_rounded,
-      selected: current?.id ?? '',
-      options: [
-        for (final s in list)
-          ChoiceOption(
-            s.id ?? '',
-            (names[s.name ?? ''] ?? 0) > 1
-                ? '${s.name} (${(s.lang ?? '').toUpperCase()})'
-                : (s.name ?? ''),
-            imageUrl: s.iconUrl,
-          ),
-      ],
+      type: state.itemType,
+      current: current,
     );
-    if (picked == null || picked == current?.id) return;
-    final next = list.where((s) => s.id == picked).firstOrNull;
-    if (next != null) await state.selectSource(next);
+    state.refreshSources();
+    if (picked == null || picked.id == current?.id) return;
+    await state.selectSource(picked);
   }
 
   Future<void> _pickMeta() async {

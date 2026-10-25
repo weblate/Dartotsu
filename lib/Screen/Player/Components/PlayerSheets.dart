@@ -7,7 +7,7 @@ import 'package:dartotsu_extension_bridge/Models/Video.dart' as v;
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 
-import '../Engine/PlayRequest.dart';
+import '../../Detail/Watch/Components/StreamGroups.dart';
 import '../Engine/PlayerPlaylist.dart';
 import '../Engine/PlayerSettings.dart';
 import '../../Detail/Watch/Data/Media/MediaRecord.dart';
@@ -163,21 +163,12 @@ Widget _streamList(
             },
           ),
         ),
-      for (final (i, video) in list.indexed)
-        SheetTile(
-          tinted: true,
-          radius: BorderRadius.vertical(
-            top: Radius.circular(i == 0 ? 20 : 6),
-            bottom: Radius.circular(i == list.length - 1 ? 20 : 6),
-          ),
-          leading: const Icon(Icons.play_circle_outline_rounded),
-          title: Text(streamLabel(video)),
-          subtitle: video.quality.isNotEmpty && video.quality != video.title
-              ? Text(video.quality)
-              : null,
-          selected: i == selected,
-          onTap: () => popPage(context, i),
-        ),
+      GroupedStreams(
+        list: list,
+        icon: Icons.play_circle_outline_rounded,
+        selected: selected,
+        onPick: (i) => popPage(context, i),
+      ),
     ],
   );
 }

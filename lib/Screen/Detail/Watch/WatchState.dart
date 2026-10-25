@@ -60,6 +60,8 @@ class WatchState extends ScreenState {
   final metaLoading = false.live;
   final units = <WatchUnit>[].liveList;
   final scanlators = <String>[].liveList;
+  final seasons = <String>[].liveList;
+  final season = Live<String?>(null);
   final chunk = 0.live;
   int _generation = 0;
   final _tried = <String>{};
@@ -92,7 +94,7 @@ class WatchState extends ScreenState {
 
   Playback? playbackOf(WatchUnit unit) {
     localTick.value;
-    return record.playback[unit.number];
+    return record.playback[unit.slot];
   }
 
   String get title => anime ? getString.episodes : getString.chapters;
@@ -159,11 +161,7 @@ class WatchState extends ScreenState {
     if (offline) source.value = id == null ? null : installedSourceById(id);
     if (offline) sources.value = [?source.value];
     _offlineList = true;
-    episodes.value = snapshot.episodes;
-    scanlators.value = {
-      for (final e in snapshot.episodes)
-        if (e.scanlator?.isNotEmpty ?? false) e.scanlator!,
-    }.toList();
+    _setEpisodes(snapshot.episodes);
     failure.value = null;
     _chunkPinned = false;
     _derive();
@@ -293,14 +291,10 @@ class WatchState extends ScreenState {
       final normalized = !anime
           ? prepareChapters(raw, current.mainName)
           : raw.length < 50
-          ? normalizeEpisodes(raw)
+          ? normalizeAll(raw)
           : await compute(normalizeIsolate, raw);
       if (generation != _generation) return;
-      episodes.value = normalized;
-      scanlators.value = {
-        for (final e in normalized)
-          if (e.scanlator?.isNotEmpty ?? false) e.scanlator!,
-      }.toList();
+      _setEpisodes(normalized);
       failure.value = null;
       _chunkPinned = false;
       _derive();
@@ -413,18 +407,52 @@ class WatchState extends ScreenState {
 
   bool get offlineList => _offlineList;
 
+  void refreshSources() {
+    if (fixedSource) return;
+    sources.value = watchSources(itemType);
+  }
+
+  void _setEpisodes(List<DEpisode> list) {
+    episodes.value = list;
+    scanlators.value = {
+      for (final e in list)
+        if (e.scanlator?.isNotEmpty ?? false) e.scanlator!,
+    }.toList();
+    seasons.value = anime ? seasonNames(list) : const [];
+    final saved = settings.value.season;
+    season.value = seasons.isEmpty
+        ? null
+        : seasons.contains(saved)
+        ? saved
+        : seasons.first;
+  }
+
+  void selectSeason(String name) {
+    if (season.value == name) return;
+    season.value = name;
+    settings.value = settings.value.copy()..season = name;
+    _saveSettings();
+    _chunkPinned = false;
+    _derive();
+  }
+
   void _derive() {
     if (episodes.isEmpty) return;
     final hidden = settings.value.hiddenScanlators.toSet();
+    final seasoned = seasons.isNotEmpty;
     final visible = [
       for (final e in episodes)
-        if (e.scanlator == null || !hidden.contains(e.scanlator)) e,
+        if (seasoned
+            ? seasonOf(e) == season.value
+            : e.scanlator == null || !hidden.contains(e.scanlator))
+          e,
     ];
     final built = buildUnits(
       visible,
       meta.value,
       fallbackThumb: current.banner ?? current.cover ?? '',
       anime: anime,
+      seasoned: seasoned,
     );
     final shown = !_offlineList
         ? built
@@ -514,7 +542,7 @@ class WatchState extends ScreenState {
       return;
     }
     final target = (unit.value.floor() - 1).clamp(0, 1 << 30);
-    final byNumber = {for (final u in units) u.number: u.value};
+    final byNumber = {for (final u in units) u.slot: u.value};
     record.playback.removeWhere(
       (key, saved) => saved.finished && (byNumber[key] ?? 0) >= unit.value,
     );
@@ -554,7 +582,7 @@ class WatchState extends ScreenState {
   List<PlayItem> get playItems => [
     for (final u in units)
       PlayItem(
-        key: u.number,
+        key: u.slot,
         title: playTitleOf(u),
         number: u.value,
         episode: u.raw,

@@ -77,12 +77,13 @@ Future<void> openResume(
                   service: service,
                   media: media,
                   source: src,
+                  season: seasonOf(episode),
                 );
                 if (units == null) return null;
                 return [
                   for (final u in units)
                     PlayItem(
-                      key: u.number,
+                      key: u.slot,
                       title: playTitleOf(u),
                       number: u.value,
                       episode: u.raw,

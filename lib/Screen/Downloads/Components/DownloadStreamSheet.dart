@@ -9,7 +9,7 @@ import '../../../Utils/Extensions/ContextExtensions.dart';
 import '../../../Utils/Functions/NavigateToScreen.dart';
 import '../../../Widgets/Components/AppSheet.dart';
 import '../../../Widgets/Components/EmptyState.dart';
-import '../../../Widgets/Components/SheetTile.dart';
+import '../../Detail/Watch/Components/StreamGroups.dart';
 import '../../Detail/Watch/Data/EpisodeUnits.dart';
 import '../../Player/Engine/PlayRequest.dart';
 
@@ -104,21 +104,11 @@ class _DownloadStreamSheetState extends State<DownloadStreamSheet> {
           shrinkWrap: true,
           padding: const EdgeInsets.fromLTRB(16, 0, 16, 24),
           children: [
-            for (final (i, video) in list.indexed)
-              SheetTile(
-                tinted: true,
-                radius: BorderRadius.vertical(
-                  top: Radius.circular(i == 0 ? 20 : 6),
-                  bottom: Radius.circular(i == list.length - 1 ? 20 : 6),
-                ),
-                leading: const Icon(Icons.download_rounded),
-                title: Text(streamLabel(video)),
-                subtitle:
-                    video.quality.isNotEmpty && video.quality != video.title
-                    ? Text(video.quality)
-                    : null,
-                onTap: () => popPage(context, StreamPick(list, i)),
-              ),
+            GroupedStreams(
+              list: list,
+              icon: Icons.download_rounded,
+              onPick: (i) => popPage(context, StreamPick(list, i)),
+            ),
           ],
         );
       }),

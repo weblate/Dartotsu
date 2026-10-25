@@ -15,7 +15,7 @@ int effectiveProgress(
 ) {
   var best = service;
   for (final unit in units) {
-    final saved = playback[unit.number];
+    final saved = playback[unit.slot];
     if (saved == null || !saved.finished) continue;
     final value = unit.value.floor();
     if (value > best) best = value;

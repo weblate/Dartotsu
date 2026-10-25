@@ -75,7 +75,7 @@ class WatchOptionsSheet extends StatelessWidget {
                 ),
               ),
             ],
-            if (scanlators.length > 1) ...[
+            if (scanlators.length > 1 && state.seasons.isEmpty) ...[
               SizedBox(height: Dimens.gap),
               LabeledField(
                 label: getString.watchScanlators,

@@ -90,7 +90,7 @@ class PlayerEpisodes extends StatelessWidget {
             anime: true,
             view: view,
             watched: u.isWatched(progress),
-            progress: partialFraction(record.playback[u.number]),
+            progress: partialFraction(record.playback[u.slot]),
             next: identical(u, playing),
             blur: blur,
             showDescription: description,

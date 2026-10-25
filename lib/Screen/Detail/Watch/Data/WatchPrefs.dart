@@ -40,6 +40,7 @@ class MediaWatchSettings {
   List<String> hiddenScanlators;
   String? matchMode;
   String? metaSource;
+  String? season;
 
   MediaWatchSettings({
     this.viewType,
@@ -49,6 +50,7 @@ class MediaWatchSettings {
     List<String>? hiddenScanlators,
     this.matchMode,
     this.metaSource,
+    this.season,
   }) : hiddenScanlators = hiddenScanlators ?? [];
 
   int get view => viewType ?? watchDefaultViewPref.rx.value;
@@ -63,6 +65,7 @@ class MediaWatchSettings {
     'hiddenScanlators': hiddenScanlators,
     'matchMode': matchMode,
     'metaSource': metaSource,
+    'season': season,
   };
 
   factory MediaWatchSettings.fromJson(Map<dynamic, dynamic> json) =>
@@ -76,6 +79,7 @@ class MediaWatchSettings {
         ],
         matchMode: json['matchMode'] as String?,
         metaSource: json['metaSource'] as String?,
+        season: json['season'] as String?,
       );
 
   MediaWatchSettings copy() => MediaWatchSettings.fromJson(toJson());

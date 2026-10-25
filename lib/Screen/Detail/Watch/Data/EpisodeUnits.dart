@@ -8,6 +8,7 @@ class WatchUnit {
   String key;
   final double value;
   final String? scanlator;
+  String? season;
   String title;
   String? description;
   String? thumbnail;
@@ -36,6 +37,8 @@ class WatchUnit {
   }) : key = key ?? number;
 
   DateTime? get date => aired ?? uploaded;
+
+  String get slot => season == null ? number : key;
 
   bool isWatched(int progress) => value <= progress;
 }
@@ -134,8 +137,56 @@ List<DEpisode> prepareChapters(List<DEpisode> input, String title) {
   return out;
 }
 
-List<DEpisode> normalizeIsolate(List<DEpisode> input) =>
-    normalizeEpisodes(input);
+List<DEpisode> normalizeIsolate(List<DEpisode> input) => normalizeAll(input);
+
+int _naturalCompare(String a, String b) {
+  final x = int.tryParse(RegExp(r'\d+').firstMatch(a)?.group(0) ?? '');
+  final y = int.tryParse(RegExp(r'\d+').firstMatch(b)?.group(0) ?? '');
+  if (x != null && y != null && x != y) return x.compareTo(y);
+  return a.toLowerCase().compareTo(b.toLowerCase());
+}
+
+Map<String, List<DEpisode>>? _seasonGroups(
+  List<DEpisode> input,
+  double Function(DEpisode e, int index) numberOf,
+) {
+  final groups = <String, List<DEpisode>>{};
+  for (final e in input) {
+    final name = e.scanlator?.trim() ?? '';
+    if (name.isEmpty) return null;
+    (groups[name] ??= []).add(e);
+  }
+  if (groups.length < 2) return null;
+  final seen = <double>{};
+  var overlap = false;
+  for (final group in groups.values) {
+    final numbers = {
+      for (final (i, e) in group.reversed.indexed) numberOf(e, i),
+    };
+    if (numbers.any(seen.contains)) overlap = true;
+    seen.addAll(numbers);
+  }
+  return overlap ? groups : null;
+}
+
+String? seasonOf(DEpisode e) => e.scanlator?.trim();
+
+List<DEpisode> normalizeAll(List<DEpisode> input) {
+  final groups = _seasonGroups(
+    input,
+    (e, i) => double.tryParse(e.episodeNumber) ?? (i + 1).toDouble(),
+  );
+  if (groups == null) return normalizeEpisodes(input);
+  final names = groups.keys.toList()..sort(_naturalCompare);
+  return [for (final name in names) ...normalizeEpisodes(groups[name]!)];
+}
+
+List<String> seasonNames(List<DEpisode> normalized) =>
+    _seasonGroups(
+      normalized,
+      (e, i) => double.tryParse(e.episodeNumber) ?? (i + 1).toDouble(),
+    )?.keys.toList() ??
+    const [];
 
 DateTime? parseUploadDate(String? raw) {
   if (raw == null || raw.isEmpty) return null;
@@ -153,11 +204,20 @@ List<WatchUnit> buildUnits(
   Map<String, EpisodeMeta> meta, {
   required String fallbackThumb,
   required bool anime,
+  bool seasoned = false,
 }) {
   final units = [
     for (final ep in episodes)
       _unit(ep, meta[episodeKey(ep.episodeNumber)], fallbackThumb, anime),
   ];
+  if (seasoned) {
+    for (final u in units) {
+      final name = u.scanlator?.trim() ?? '';
+      u.season = name;
+      u.key = '${u.number}~${_fnv(name)}';
+    }
+    return units;
+  }
   final groups = <String, List<WatchUnit>>{};
   for (final u in units) {
     (groups[u.number] ??= []).add(u);

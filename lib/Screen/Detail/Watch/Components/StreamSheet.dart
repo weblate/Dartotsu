@@ -11,8 +11,8 @@ import '../../../../Utils/Extensions/ContextExtensions.dart';
 import '../../../../Utils/Functions/NavigateToScreen.dart';
 import '../../../../Widgets/Components/AppSheet.dart';
 import '../../../../Widgets/Components/EmptyState.dart';
-import '../../../../Widgets/Components/SheetTile.dart';
 import '../WatchState.dart';
+import 'StreamGroups.dart';
 import 'UnitTile.dart';
 
 class StreamSheet extends StatefulWidget {
@@ -118,21 +118,11 @@ class _StreamSheetState extends State<StreamSheet> {
                 widget.state.saveRecord();
               },
             ),
-            for (final (i, video) in list.indexed)
-              SheetTile(
-                tinted: true,
-                radius: BorderRadius.vertical(
-                  top: Radius.circular(i == 0 ? 20 : 6),
-                  bottom: Radius.circular(i == list.length - 1 ? 20 : 6),
-                ),
-                leading: const Icon(Icons.play_circle_outline_rounded),
-                title: Text(streamLabel(video)),
-                subtitle:
-                    video.quality.isNotEmpty && video.quality != video.title
-                    ? Text(video.quality)
-                    : null,
-                onTap: () => popPage(context, StreamPick(list, i)),
-              ),
+            GroupedStreams(
+              list: list,
+              icon: Icons.play_circle_outline_rounded,
+              onPick: (i) => popPage(context, StreamPick(list, i)),
+            ),
           ],
         );
       }),
