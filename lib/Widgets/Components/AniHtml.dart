@@ -1125,6 +1125,17 @@ class _SpoilerBlockState extends State<_SpoilerBlock> {
   }
 }
 
+final _svgPrologue = RegExp(
+  r'^(?:\s+|<\?[\s\S]*?\?>|<!--[\s\S]*?-->|<!DOCTYPE[^>\[]*(?:\[[\s\S]*?\])?\s*>)*',
+  caseSensitive: false,
+);
+
+bool _isSvgDocument(String text) {
+  final body = text.replaceFirst(RegExp('^\uFEFF'), '');
+  final rest = body.substring(_svgPrologue.firstMatch(body)?.end ?? 0);
+  return rest.startsWith(RegExp(r'<svg[\s>/]'));
+}
+
 class _RemoteSvg extends StatefulWidget {
   final String url;
   final double? width;
@@ -1147,9 +1158,8 @@ class _RemoteSvgState extends State<_RemoteSvg> {
       final text = raw is String
           ? raw
           : (res.rawBytes == null ? null : utf8.decode(res.rawBytes!));
-      if (text == null || !text.contains('<svg')) return null;
+      if (text == null || !_isSvgDocument(text)) return null;
       if (text.contains('<foreignObject')) return null;
-      await vg.loadPicture(SvgStringLoader(text), null);
       return text;
     } catch (e, st) {
       logError('AniHtml', e, st);
