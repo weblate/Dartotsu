@@ -258,8 +258,10 @@ class ListEditorScreenView {
     ),
     ScreenWidget.extra(ListScoreField(draft: draft)),
     if (advanced) ScreenWidget.extra(ListDatesField(draft: draft)),
-    ScreenWidget.extra(ListPrivateField(draft: draft)),
-    if (advanced) ScreenWidget.extra(ListOtherSection(draft: draft)),
+    if (advanced) ...[
+      ScreenWidget.extra(ListPrivateField(draft: draft)),
+      ScreenWidget.extra(ListOtherSection(draft: draft)),
+    ],
   ];
 }
 
