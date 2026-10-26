@@ -38,6 +38,7 @@ import 'Screen/MainScreen.dart';
 import 'Screen/Onboarding/OnboardingScreen.dart';
 import 'Screen/Splash/SplashApp.dart';
 import 'Utils/Functions/AppShortcuts.dart';
+import 'Utils/Functions/AppRouteLinks.dart';
 import 'Utils/Functions/DeepLink.dart';
 import 'Utils/Functions/DisplayMode.dart';
 import 'Utils/Functions/LinkSettings.dart';
@@ -246,6 +247,7 @@ Future<void> _postInit(List<String> args) async {
   installPlayerLinks();
   installReaderLinks();
   DeepLink.register(TogetherLinks());
+  DeepLink.register(AppRouteLinks());
   DeepLink.init();
   unawaited(refreshLinkHandling());
   if (Platform.isWindows || Platform.isLinux || Platform.isMacOS) {

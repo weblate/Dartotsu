@@ -80,6 +80,10 @@
                 <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
             </intent-filter>
 
+            <meta-data
+                android:name="android.app.shortcuts"
+                android:resource="@xml/shortcuts" />
+
             <intent-filter android:label="Add Repo">
                 <action android:name="android.intent.action.VIEW" />
 
@@ -153,6 +157,16 @@
                 <data android:scheme="dartotsu" />
                 <data android:pathPattern="/..*" />
 
+            </intent-filter>
+
+            <intent-filter android:label="Watch together">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="dartotsu" />
+                <data android:host="together" />
             </intent-filter>
 
             <intent-filter android:label="Add Repo">
