@@ -925,6 +925,23 @@ class AppLocalizationsZh extends AppLocalizations {
   String get calendarFailed => '无法加载时间表';
 
   @override
+  String calendarChapter(int n) {
+    return 'Chapter $n';
+  }
+
+  @override
+  String get calendarExpected => 'Expected';
+
+  @override
+  String get castReceiverFailed => 'The Chromecast did not start its player';
+
+  @override
+  String get castPlaybackFailed => 'The device could not play this stream';
+
+  @override
+  String get shortcutNothingToContinue => 'Nothing to continue yet';
+
+  @override
   String calendarEpisode(int n) {
     return '第 $n 集';
   }
@@ -2855,6 +2872,11 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get repoLinksAdded => '已成功添加仓库链接！';
+
+  @override
+  String repoLinkConfirm(String url) {
+    return 'Add this repository?\n\n$url\n\nOnly add repositories from sources you trust.';
+  }
 
   @override
   String get errorGettingAnilistData => '从 AniList 获取数据出错。';
@@ -5583,6 +5605,14 @@ class AppLocalizationsZh extends AppLocalizations {
   String get togetherCopyInvite => '复制邀请';
 
   @override
+  String get togetherShareInvite => 'Share invite';
+
+  @override
+  String togetherShareText(String link) {
+    return 'Watch with me on Dartotsu: $link';
+  }
+
+  @override
   String get togetherInviteCopied => '已复制服务器和房间';
 
   @override
@@ -6044,6 +6074,62 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get downloadsTitle => '下载';
+
+  @override
+  String get downloadStorageTitle => 'Storage';
+
+  @override
+  String downloadStorageSummary(int count, String size) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count downloads',
+      one: '1 download',
+    );
+    return '$_temp0 · $size';
+  }
+
+  @override
+  String downloadStorageWatched(String size) {
+    return '$size already watched or read';
+  }
+
+  @override
+  String get downloadFreeUp => 'Free up space';
+
+  @override
+  String downloadFreeUpConfirm(int count, String size) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count watched downloads',
+      one: '1 watched download',
+    );
+    return 'Delete $_temp0 and free $size?';
+  }
+
+  @override
+  String downloadFreed(String size) {
+    return 'Freed $size';
+  }
+
+  @override
+  String get downloadDeleteWatched => 'Delete watched';
+
+  @override
+  String get downloadDeleteAll => 'Delete all';
+
+  @override
+  String downloadDeleteAllConfirm(String title) {
+    return 'Delete every download of $title?';
+  }
+
+  @override
+  String get downloadNothingWatched =>
+      'Nothing you have finished is downloaded';
+
+  @override
+  String get downloadStorageEmpty => 'No downloads are using space';
 
   @override
   String get downloadsOpenDesc => '查看队列以及这台设备上保存的所有内容';

@@ -172,3 +172,49 @@ SkipReason? skipReason(
 
 bool reachedTotal(double max, int? total) =>
     total != null && total > 0 && max >= total;
+
+class SubRelease {
+  final int at;
+  final double? episode;
+  final bool expected;
+
+  const SubRelease(this.at, {this.episode, this.expected = false});
+}
+
+List<SubRelease> subReleases(
+  SourceSub s,
+  int now, {
+  int back = _day,
+  int ahead = 6 * _day,
+}) {
+  final out = <SubRelease>[];
+  for (final at in s.releases) {
+    if (at < now - back || at > now) continue;
+    out.add(
+      SubRelease(
+        at,
+        episode: at == s.lastReleaseAt && s.lastValue > 0 ? s.lastValue : null,
+      ),
+    );
+  }
+  final interval = releaseInterval(s.releases);
+  var next = s.airingAt != null && s.airingAt! > now ? s.airingAt : null;
+  next ??= interval != null && s.lastReleaseAt > 0
+      ? s.lastReleaseAt + interval
+      : null;
+  var number = s.lastValue + 1;
+  var guard = 0;
+  while (next != null && next > now && next <= now + ahead && guard++ < 8) {
+    out.add(
+      SubRelease(
+        next,
+        episode: s.lastValue > 0 ? number : null,
+        expected: true,
+      ),
+    );
+    if (interval == null) break;
+    next += interval;
+    number += 1;
+  }
+  return out;
+}

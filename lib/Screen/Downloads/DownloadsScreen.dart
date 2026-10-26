@@ -7,6 +7,7 @@ import '../../Core/ThemeManager/LanguageSwitcher.dart';
 import '../../Utils/Extensions/ContextExtensions.dart';
 import '../../Utils/Extensions/Responsive.dart';
 import '../../Utils/Function.dart';
+import '../../Utils/Functions/NavigateToScreen.dart';
 import '../../Widgets/Components/AppBars.dart';
 import '../../Widgets/Components/AppTabs.dart';
 import '../../Widgets/Components/BaseScreen.dart';
@@ -17,6 +18,7 @@ import '../../Widgets/Components/ScrollConfig.dart';
 import 'Components/DownloadRow.dart';
 import 'Components/PendingSyncCard.dart';
 import 'DownloadConfirm.dart';
+import 'DownloadStorageScreen.dart';
 import 'DownloadsState.dart';
 
 class DownloadsScreen extends StatefulWidget {
@@ -94,14 +96,30 @@ class _DownloadsScreenState extends BaseScreen<DownloadsScreen>
                   if (state.bytes.value > 0)
                     Align(
                       alignment: AlignmentDirectional.centerStart,
-                      child: Padding(
-                        padding: EdgeInsets.only(top: Dimens.gapXs),
-                        child: Text(
-                          getString.downloadStorage(
-                            formatBytes(state.bytes.value),
-                          ),
-                          style: context.textTheme.labelMedium?.copyWith(
-                            color: context.colorScheme.onSurfaceVariant,
+                      child: Clickable(
+                        onTap: () => navigateToPage(
+                          context,
+                          const DownloadStorageScreen(),
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.only(top: Dimens.gapXs),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Text(
+                                getString.downloadStorage(
+                                  formatBytes(state.bytes.value),
+                                ),
+                                style: context.textTheme.labelMedium?.copyWith(
+                                  color: context.colorScheme.primary,
+                                ),
+                              ),
+                              Icon(
+                                Icons.chevron_right_rounded,
+                                size: 18,
+                                color: context.colorScheme.primary,
+                              ),
+                            ],
                           ),
                         ),
                       ),

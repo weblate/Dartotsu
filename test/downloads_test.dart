@@ -5,6 +5,7 @@ import 'package:dartotsu/Core/Downloads/DownloadCancel.dart';
 import 'package:dartotsu/Core/Downloads/DownloadPaths.dart';
 import 'package:dartotsu/Core/Downloads/DownloadQueue.dart';
 import 'package:dartotsu/Core/Downloads/DownloadTask.dart';
+import 'package:dartotsu/Core/Downloads/DownloadUsage.dart';
 import 'package:dartotsu/Core/Downloads/Hls.dart';
 import 'package:dartotsu/Core/Downloads/HlsFetcher.dart';
 import 'package:dartotsu/Core/Downloads/NameMatch.dart';
@@ -34,6 +35,7 @@ DownloadTask task({double number = 1, DownloadState? state}) {
 }
 
 void main() {
+  usageTests();
   group('names', () {
     test('safeName strips illegal characters', () {
       expect(safeName('Re:Zero / Season 2?'), 'Re Zero Season 2');
@@ -418,6 +420,51 @@ c.ts
     test('moving to the top', () {
       expect(moveBefore([9, 1, 2, 3], 3, 1), [9, 3, 1, 2]);
       expect(moveBefore([1, 2, 3], 1, 1), [1, 2, 3]);
+    });
+  });
+}
+
+void usageTests() {
+  group('downloadUsage', () {
+    DownloadTask done(String media, double n) {
+      final t = DownloadTask(
+        id: DownloadTask.idOf('anilist', media, '$n'),
+        kind: DownloadKind.video,
+        serviceId: 'anilist',
+        mediaId: media,
+        mediaTitle: 'Show $media',
+        cover: null,
+        sourceId: 'src',
+        unitKey: '$n',
+        number: n,
+        title: '',
+        media: {'id': media},
+        episode: null,
+        profile: null,
+        createdAt: 1,
+      );
+      t.state.value = DownloadState.done;
+      return t;
+    }
+
+    test('groups by title, biggest first, and counts watched bytes', () {
+      final a1 = done('1', 1), a2 = done('1', 2), b1 = done('2', 1);
+      final sizes = {a1.id: 100, a2.id: 50, b1.id: 400};
+      final usage = downloadUsage([a1, a2, b1], sizes, (t) => t.number == 1);
+      expect(usage.map((u) => u.slot), ['anilist/2', 'anilist/1']);
+      expect(usage[0].bytes, 400);
+      expect(usage[0].watchedBytes, 400);
+      expect(usage[1].bytes, 150);
+      expect(usage[1].watchedBytes, 100);
+      expect(usage[1].watchedTasks.single, a1);
+    });
+
+    test('progress reached compares against the floored number', () {
+      final t = done('1', 3);
+      expect(progressReached(t, 3), isTrue);
+      expect(progressReached(t, 2), isFalse);
+      expect(progressReached(t, null), isFalse);
+      expect(progressReached(t, 0), isFalse);
     });
   });
 }

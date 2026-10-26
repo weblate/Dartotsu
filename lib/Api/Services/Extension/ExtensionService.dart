@@ -1,6 +1,7 @@
 import '../../../Core/Services/MediaService.dart';
 import 'Queries.dart';
 import 'Services.dart';
+import 'Screens/Calendar.dart';
 import 'Screens/Detail.dart';
 import 'Screens/Feed.dart';
 import 'Screens/Home.dart';
@@ -33,6 +34,9 @@ class ExtensionService extends MediaService {
 
   @override
   DetailScreenView get detailView => ExtensionDetailView(this, _queries);
+
+  @override
+  CalendarScreenView get calendarView => ExtensionCalendarView();
 
   @override
   SettingsScreenView get settingsView => ExtensionSettingsView();

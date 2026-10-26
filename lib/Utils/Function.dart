@@ -23,6 +23,9 @@ void shareLink(String link) => SharePlus.instance.share(
   ShareParams(uri: Uri.parse(link), downloadFallbackEnabled: true),
 );
 
+void shareText(String text) =>
+    SharePlus.instance.share(ShareParams(text: text));
+
 void shareFile(String path, String text) => SharePlus.instance.share(
   ShareParams(text: text, files: [XFile(path)], downloadFallbackEnabled: true),
 );

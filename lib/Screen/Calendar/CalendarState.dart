@@ -25,12 +25,13 @@ class CalendarState extends ScreenState {
   MediaService get service =>
       find<MediaServiceController>().currentService.value;
 
-  List<DateTime> get days => [
-    for (var i = -1; i <= 5; i++) today.add(Duration(days: i)),
-  ];
+  DateTime _day(int offset) =>
+      DateTime(today.year, today.month, today.day + offset);
+
+  List<DateTime> get days => [for (var i = -1; i <= 5; i++) _day(i)];
 
   List<CalendarEntry> get selectedEntries {
-    final selected = today.add(Duration(days: day.value));
+    final selected = _day(day.value);
     return [
       for (final e in entries)
         if (dayOf(e.airingAt) == selected) e,

@@ -239,4 +239,62 @@ void main() {
     expect(reachedTotal(99, null), isFalse);
     expect(reachedTotal(99, 0), isFalse);
   });
+
+  group('subReleases', () {
+    test('a release from today is listed with its episode', () {
+      final s = sub(
+        releases: [now - 14 * day, now - 7 * day, now - 3 * hour],
+        released: now - 3 * hour,
+        last: 5,
+      );
+      final past = subReleases(s, now).where((r) => !r.expected).toList();
+      expect(past.map((r) => r.episode).toList(), [5]);
+    });
+
+    test('a weekly rhythm expects the next one a week after the last', () {
+      final s = sub(
+        releases: [now - 17 * day, now - 10 * day, now - 3 * day],
+        released: now - 3 * day,
+        last: 5,
+      );
+      final out = subReleases(s, now);
+      expect(out.where((r) => !r.expected), isEmpty);
+      final next = out.single;
+      expect(next.expected, isTrue);
+      expect(next.episode, 6);
+      expect(next.at, now + 4 * day);
+    });
+
+    test('a published airing time wins over the median gap', () {
+      final s = sub(
+        releases: [now - 14 * day, now - 7 * day],
+        released: now - 7 * day,
+        airingAt: now + 2 * day,
+        last: 3,
+      );
+      final next = subReleases(s, now).where((r) => r.expected).single;
+      expect(next.at, now + 2 * day);
+      expect(next.episode, 4);
+    });
+
+    test('daily releases project several days ahead', () {
+      final s = sub(
+        releases: [
+          now - 3 * day + 3 * hour,
+          now - 2 * day + 3 * hour,
+          now - day + 3 * hour,
+        ],
+        released: now - day + 3 * hour,
+        last: 9,
+      );
+      final next = subReleases(s, now).where((r) => r.expected).toList();
+      expect(next.length, greaterThan(2));
+      expect(next.map((r) => r.episode).toList().take(2), [10, 11]);
+    });
+
+    test('nothing is predicted without a rhythm or airing time', () {
+      final s = sub(releases: [now - 30 * day], released: now - 30 * day);
+      expect(subReleases(s, now), isEmpty);
+    });
+  });
 }

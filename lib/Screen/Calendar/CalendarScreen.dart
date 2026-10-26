@@ -135,7 +135,9 @@ class _CalendarScreenState extends BaseScreen<CalendarScreen>
           clipBehavior: Clip.antiAlias,
           child: DpadTap(
             borderRadius: Dimens.border,
-            onTap: () => openDetail(context, service, e.media),
+            onTap: () => e.open != null
+                ? e.open!()
+                : openDetail(context, service, e.media),
             child: Padding(
               padding: EdgeInsets.all(Dimens.gapSm + 2),
               child: Row(
@@ -163,9 +165,15 @@ class _CalendarScreenState extends BaseScreen<CalendarScreen>
                           overflow: TextOverflow.ellipsis,
                         ),
                         const SizedBox(height: 4),
-                        if (e.episode != null)
+                        if (e.episode != null || e.source != null)
                           Text(
-                            getString.calendarEpisode(e.episode!),
+                            [
+                              if (e.episode != null)
+                                e.chapter
+                                    ? getString.calendarChapter(e.episode!)
+                                    : getString.calendarEpisode(e.episode!),
+                              ?e.source,
+                            ].join(' · '),
                             style: context.textTheme.bodySmall?.copyWith(
                               color: scheme.onSurfaceVariant,
                             ),
@@ -188,7 +196,14 @@ class _CalendarScreenState extends BaseScreen<CalendarScreen>
                               : scheme.primary,
                         ),
                       ),
-                      if (aired)
+                      if (e.expected)
+                        Text(
+                          getString.calendarExpected,
+                          style: context.textTheme.labelSmall?.copyWith(
+                            color: scheme.onSurfaceVariant,
+                          ),
+                        )
+                      else if (aired)
                         Icon(
                           Icons.check_circle_rounded,
                           size: 16,

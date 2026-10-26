@@ -1889,6 +1889,36 @@ abstract class AppLocalizations {
   /// **'Couldn\'t load the schedule'**
   String get calendarFailed;
 
+  /// No description provided for @calendarChapter.
+  ///
+  /// In en, this message translates to:
+  /// **'Chapter {n}'**
+  String calendarChapter(int n);
+
+  /// No description provided for @calendarExpected.
+  ///
+  /// In en, this message translates to:
+  /// **'Expected'**
+  String get calendarExpected;
+
+  /// No description provided for @castReceiverFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'The Chromecast did not start its player'**
+  String get castReceiverFailed;
+
+  /// No description provided for @castPlaybackFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'The device could not play this stream'**
+  String get castPlaybackFailed;
+
+  /// No description provided for @shortcutNothingToContinue.
+  ///
+  /// In en, this message translates to:
+  /// **'Nothing to continue yet'**
+  String get shortcutNothingToContinue;
+
   /// No description provided for @calendarEpisode.
   ///
   /// In en, this message translates to:
@@ -5482,6 +5512,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Added Repo Links Successfully!'**
   String get repoLinksAdded;
+
+  /// No description provided for @repoLinkConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Add this repository?\n\n{url}\n\nOnly add repositories from sources you trust.'**
+  String repoLinkConfirm(String url);
 
   /// No description provided for @errorGettingAnilistData.
   ///
@@ -10445,6 +10481,18 @@ abstract class AppLocalizations {
   /// **'Copy invite'**
   String get togetherCopyInvite;
 
+  /// No description provided for @togetherShareInvite.
+  ///
+  /// In en, this message translates to:
+  /// **'Share invite'**
+  String get togetherShareInvite;
+
+  /// No description provided for @togetherShareText.
+  ///
+  /// In en, this message translates to:
+  /// **'Watch with me on Dartotsu: {link}'**
+  String togetherShareText(String link);
+
   /// No description provided for @togetherInviteCopied.
   ///
   /// In en, this message translates to:
@@ -11242,6 +11290,72 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Downloads'**
   String get downloadsTitle;
+
+  /// No description provided for @downloadStorageTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Storage'**
+  String get downloadStorageTitle;
+
+  /// No description provided for @downloadStorageSummary.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 download} other{{count} downloads}} · {size}'**
+  String downloadStorageSummary(int count, String size);
+
+  /// No description provided for @downloadStorageWatched.
+  ///
+  /// In en, this message translates to:
+  /// **'{size} already watched or read'**
+  String downloadStorageWatched(String size);
+
+  /// No description provided for @downloadFreeUp.
+  ///
+  /// In en, this message translates to:
+  /// **'Free up space'**
+  String get downloadFreeUp;
+
+  /// No description provided for @downloadFreeUpConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete {count, plural, =1{1 watched download} other{{count} watched downloads}} and free {size}?'**
+  String downloadFreeUpConfirm(int count, String size);
+
+  /// No description provided for @downloadFreed.
+  ///
+  /// In en, this message translates to:
+  /// **'Freed {size}'**
+  String downloadFreed(String size);
+
+  /// No description provided for @downloadDeleteWatched.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete watched'**
+  String get downloadDeleteWatched;
+
+  /// No description provided for @downloadDeleteAll.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete all'**
+  String get downloadDeleteAll;
+
+  /// No description provided for @downloadDeleteAllConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete every download of {title}?'**
+  String downloadDeleteAllConfirm(String title);
+
+  /// No description provided for @downloadNothingWatched.
+  ///
+  /// In en, this message translates to:
+  /// **'Nothing you have finished is downloaded'**
+  String get downloadNothingWatched;
+
+  /// No description provided for @downloadStorageEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No downloads are using space'**
+  String get downloadStorageEmpty;
 
   /// No description provided for @downloadsOpenDesc.
   ///

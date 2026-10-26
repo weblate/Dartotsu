@@ -6,6 +6,7 @@ import '../../Core/State/State.dart';
 import '../../Core/ThemeManager/LanguageSwitcher.dart';
 import '../../Utils/Extensions/ContextExtensions.dart';
 import '../../Utils/Extensions/Responsive.dart';
+import '../../Utils/Function.dart';
 import '../../Utils/Functions/CopyToClip.dart';
 import 'TogetherBackend.dart';
 import 'TogetherChat.dart';
@@ -38,6 +39,12 @@ class TogetherRoomView extends StatelessWidget {
   void _invite() => copyToClipboard(
     roomLink(s.room, s.serverLabel, s.client.defaultServer),
     message: getString.togetherInviteCopied,
+  );
+
+  void _share() => shareText(
+    getString.togetherShareText(
+      roomLink(s.room, s.serverLabel, s.client.defaultServer),
+    ),
   );
 
   @override
@@ -118,6 +125,11 @@ class TogetherRoomView extends StatelessWidget {
                 tooltip: getString.togetherCopyInvite,
                 icon: const Icon(Icons.link_rounded),
                 onPressed: _invite,
+              ),
+              IconButton.filledTonal(
+                tooltip: getString.togetherShareInvite,
+                icon: const Icon(Icons.share_rounded),
+                onPressed: _share,
               ),
               IconButton(
                 tooltip: getString.togetherLeave,

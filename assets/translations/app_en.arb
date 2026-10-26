@@ -628,6 +628,18 @@
   "calendarToday": "Today",
   "calendarEmpty": "Nothing airs this day",
   "calendarFailed": "Couldn't load the schedule",
+  "calendarChapter": "Chapter {n}",
+  "@calendarChapter": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "calendarExpected": "Expected",
+  "castReceiverFailed": "The Chromecast did not start its player",
+  "castPlaybackFailed": "The device could not play this stream",
+  "shortcutNothingToContinue": "Nothing to continue yet",
   "calendarEpisode": "Episode {n}",
   "@calendarEpisode": {
     "placeholders": {
@@ -1449,6 +1461,14 @@
   "trendingThisWeek": "Trending This Week",
   "mostWatchedThisMonth": "Most Watched This Month",
   "repoLinksAdded": "Added Repo Links Successfully!",
+  "repoLinkConfirm": "Add this repository?\n\n{url}\n\nOnly add repositories from sources you trust.",
+  "@repoLinkConfirm": {
+    "placeholders": {
+      "url": {
+        "type": "String"
+      }
+    }
+  },
   "errorGettingAnilistData": "Error getting data from AniList.",
   "navInfo": "INFO",
   "navComments": "COMMENTS",
@@ -2820,6 +2840,15 @@
   "@togetherChatHint": {},
   "togetherCopyInvite": "Copy invite",
   "@togetherCopyInvite": {},
+  "togetherShareInvite": "Share invite",
+  "togetherShareText": "Watch with me on Dartotsu: {link}",
+  "@togetherShareText": {
+    "placeholders": {
+      "link": {
+        "type": "String"
+      }
+    }
+  },
   "togetherInviteCopied": "Server and room copied",
   "@togetherInviteCopied": {},
   "togetherFileMismatch": "Different file or length",
@@ -3075,6 +3104,22 @@
   "@settingsDownloadsDesc": {},
   "downloadsTitle": "Downloads",
   "@downloadsTitle": {},
+  "downloadStorageTitle": "Storage",
+  "downloadStorageSummary": "{count, plural, =1{1 download} other{{count} downloads}} · {size}",
+  "@downloadStorageSummary": {"placeholders": {"count": {"type": "int"}, "size": {"type": "String"}}},
+  "downloadStorageWatched": "{size} already watched or read",
+  "@downloadStorageWatched": {"placeholders": {"size": {"type": "String"}}},
+  "downloadFreeUp": "Free up space",
+  "downloadFreeUpConfirm": "Delete {count, plural, =1{1 watched download} other{{count} watched downloads}} and free {size}?",
+  "@downloadFreeUpConfirm": {"placeholders": {"count": {"type": "int"}, "size": {"type": "String"}}},
+  "downloadFreed": "Freed {size}",
+  "@downloadFreed": {"placeholders": {"size": {"type": "String"}}},
+  "downloadDeleteWatched": "Delete watched",
+  "downloadDeleteAll": "Delete all",
+  "downloadDeleteAllConfirm": "Delete every download of {title}?",
+  "@downloadDeleteAllConfirm": {"placeholders": {"title": {"type": "String"}}},
+  "downloadNothingWatched": "Nothing you have finished is downloaded",
+  "downloadStorageEmpty": "No downloads are using space",
   "downloadsOpenDesc": "See the queue and everything saved on this device",
   "@downloadsOpenDesc": {},
   "downloadTitle": "Download",
