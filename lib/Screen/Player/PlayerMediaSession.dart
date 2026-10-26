@@ -5,13 +5,15 @@ import 'package:flutter_media_session/flutter_media_session.dart';
 
 import '../../Core/State/State.dart';
 import '../../Logger.dart';
+import 'PlayerMpris.dart';
 import 'PlayerState.dart';
 
 bool get mediaSessionSupported =>
     Platform.isAndroid ||
     Platform.isIOS ||
     Platform.isMacOS ||
-    Platform.isWindows;
+    Platform.isWindows ||
+    Platform.isLinux;
 
 class PlayerMediaSession implements MediaSessionAdapter {
   final PlayerState state;
@@ -23,10 +25,18 @@ class PlayerMediaSession implements MediaSessionAdapter {
   Duration _lastReported = Duration.zero;
   DateTime _lastReportedAt = DateTime.now();
 
+  PlayerMpris? _mpris;
+
   PlayerMediaSession(this.state);
 
   Future<void> start() async {
     if (_active || !mediaSessionSupported) return;
+    if (Platform.isLinux) {
+      final mpris = _mpris = PlayerMpris(state);
+      await mpris.start();
+      _active = true;
+      return;
+    }
     try {
       if (Platform.isAndroid) {
         await FlutterMediaSessionPlatform.instance
@@ -57,6 +67,7 @@ class PlayerMediaSession implements MediaSessionAdapter {
 
   void rebind() {
     if (!_active) return;
+    if (_mpris != null) return _mpris!.rebind();
     for (final s in _subs) {
       s.dispose();
     }
@@ -197,6 +208,12 @@ class PlayerMediaSession implements MediaSessionAdapter {
   Future<void> dispose() async {
     final was = _active;
     _active = false;
+    final mpris = _mpris;
+    _mpris = null;
+    if (mpris != null) {
+      await mpris.dispose();
+      return;
+    }
     for (final s in _subs) {
       s.dispose();
     }
