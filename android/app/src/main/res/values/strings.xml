@@ -8,4 +8,7 @@
     <string name="shortcut_downloads_long">Downloads</string>
     <string name="shortcut_calendar_short">Calendar</string>
     <string name="shortcut_calendar_long">Release calendar</string>
+    <string name="widget_name">Dartotsu</string>
+    <string name="widget_description">Continue where you left off and see what releases soon</string>
+    <string name="widget_play">Continue</string>
 </resources>

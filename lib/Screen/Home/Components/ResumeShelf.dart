@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 import '../../Detail/Watch/Data/Media/ResumeStore.dart';
+import 'ResumeText.dart';
 import '../../../Core/Services/MediaService.dart';
 import '../../../Core/State/State.dart';
 import '../../../Core/ThemeManager/LanguageSwitcher.dart';
@@ -12,7 +13,6 @@ import '../../../Widgets/Components/Clickable.dart';
 import '../../../Widgets/Shelf/CardShelf.dart';
 import '../../../Widgets/Shelf/CardShelfState.dart';
 import '../../Feed/ResumeLauncher.dart';
-import '../../Player/Components/PlayerSeekBar.dart';
 
 class ResumeShelf extends StatefulWidget {
   final MediaService service;
@@ -53,19 +53,12 @@ class _ResumeShelfState extends State<ResumeShelf> {
   }
 
   ShelfCardItem _item(ResumeEntry entry) {
-    final number = entry.number == entry.number.roundToDouble()
-        ? '${entry.number.toInt()}'
-        : '${entry.number}';
-    final unit = entry.isWatch
-        ? getString.watchEpisodeNumber(number)
-        : getString.watchChapterNumber(number);
-    final left = entry.isWatch
-        ? getString.resumeAt(formatClock(entry.duration - entry.position))
-        : getString.resumePage(entry.position + 1, entry.duration);
+    final left = resumeLeft(entry);
+    final subtitle = resumeDetail(entry);
     return ShelfCardItem(
       id: entry.slot.toString(),
       title: entry.mediaTitle,
-      subtitle: '$unit • $left',
+      subtitle: subtitle,
       imageUrl: entry.thumbnail,
       progress: entry.fraction.clamp(0.0, 1.0),
       progressText: left,

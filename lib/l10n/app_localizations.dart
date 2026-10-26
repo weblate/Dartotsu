@@ -11291,6 +11291,24 @@ abstract class AppLocalizations {
   /// **'Downloads'**
   String get downloadsTitle;
 
+  /// No description provided for @widgetContinue.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue'**
+  String get widgetContinue;
+
+  /// No description provided for @widgetReleases.
+  ///
+  /// In en, this message translates to:
+  /// **'Releasing soon'**
+  String get widgetReleases;
+
+  /// No description provided for @widgetNothing.
+  ///
+  /// In en, this message translates to:
+  /// **'Nothing to continue yet'**
+  String get widgetNothing;
+
   /// No description provided for @downloadStorageTitle.
   ///
   /// In en, this message translates to:

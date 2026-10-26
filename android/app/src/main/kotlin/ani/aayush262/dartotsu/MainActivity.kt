@@ -42,6 +42,21 @@ class MainActivity : FlPiPActivity() {
                 val manager = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
                 result.success(manager.isActiveNetworkMetered)
             }
+        MethodChannel(flutterEngine.dartExecutor.binaryMessenger, "dartotsu/widget")
+            .setMethodCallHandler { call, result ->
+                if (call.method != "update") return@setMethodCallHandler result.notImplemented()
+                val json = call.arguments as? String
+                    ?: return@setMethodCallHandler result.error("args", "payload required", null)
+                val context = applicationContext
+                DartotsuWidget.store(context, json)
+                Thread {
+                    try {
+                        DartotsuWidget.refresh(context)
+                    } catch (_: Exception) {
+                    }
+                }.start()
+                result.success(null)
+            }
         MethodChannel(flutterEngine.dartExecutor.binaryMessenger, "dartotsu/downloads")
             .setMethodCallHandler { call, result ->
                 when (call.method) {

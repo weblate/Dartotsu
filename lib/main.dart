@@ -45,6 +45,7 @@ import 'Utils/Functions/LinkSettings.dart';
 import 'Api/Discord/DiscordPresenceController.dart';
 import 'Screen/Detail/Comments/Data/CommentAlerts.dart';
 import 'Core/Services/ActivityAlerts.dart';
+import 'Core/HomeWidget/HomeWidgetSync.dart';
 import 'Core/SourceAlerts/SourceAlerts.dart';
 import 'Screen/Player/Engine/PlayerSupport.dart';
 import 'Screen/Player/PlayerLauncher.dart';
@@ -244,6 +245,7 @@ Future<void> _postInit(List<String> args) async {
   find<ActivityAlerts>().start();
   find<CommentAlerts>().start();
   find<SourceAlerts>().start();
+  HomeWidgetSync.start();
   installPlayerLinks();
   installReaderLinks();
   DeepLink.register(TogetherLinks());

@@ -6249,6 +6249,15 @@ class AppLocalizationsTe extends AppLocalizations {
   String get downloadsTitle => 'డౌన్‌లోడ్లు';
 
   @override
+  String get widgetContinue => 'Continue';
+
+  @override
+  String get widgetReleases => 'Releasing soon';
+
+  @override
+  String get widgetNothing => 'Nothing to continue yet';
+
+  @override
   String get downloadStorageTitle => 'Storage';
 
   @override

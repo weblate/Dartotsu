@@ -6254,6 +6254,15 @@ class AppLocalizationsUk extends AppLocalizations {
   String get downloadsTitle => 'Завантаження';
 
   @override
+  String get widgetContinue => 'Continue';
+
+  @override
+  String get widgetReleases => 'Releasing soon';
+
+  @override
+  String get widgetNothing => 'Nothing to continue yet';
+
+  @override
   String get downloadStorageTitle => 'Storage';
 
   @override
