@@ -2,7 +2,9 @@ import 'package:dartotsu_extension_bridge/dartotsu_extension_bridge.dart';
 import 'package:flutter/material.dart';
 
 import '../../../Utils/Animation/WidgetAnimations.dart';
+import '../../../Core/State/State.dart';
 import 'ReaderImage.dart';
+import 'ReaderPinch.dart';
 
 class ReaderZoom extends StatefulWidget {
   final PageUrl page;
@@ -29,6 +31,7 @@ class _ReaderZoomState extends State<ReaderZoom>
   Animation<Matrix4>? _tween;
   Offset _tapAt = Offset.zero;
   bool _zoomed = false;
+  final _pinching = false.live;
 
   @override
   void initState() {
@@ -49,11 +52,21 @@ class _ReaderZoomState extends State<ReaderZoom>
   }
 
   void _report() {
-    final zoomed = _transform.value.getMaxScaleOnAxis() > 1.02;
+    final zoomed = (_transform.value.getMaxScaleOnAxis() - 1).abs() > 0.02;
     if (zoomed != _zoomed) {
       _zoomed = zoomed;
       widget.onZoom(zoomed);
     }
+  }
+
+  void _release() {
+    _report();
+    if (_transform.value.getMaxScaleOnAxis() >= 1) return;
+    _tween = Matrix4Tween(
+      begin: _transform.value,
+      end: Matrix4.identity(),
+    ).animate(CurvedAnimation(parent: _anim, curve: Curves.easeOutCubic));
+    _anim.forward(from: 0).whenComplete(_report);
   }
 
   void _toggle() {
@@ -84,6 +97,19 @@ class _ReaderZoomState extends State<ReaderZoom>
     _anim.forward(from: 0).whenComplete(_report);
   }
 
+  Widget _pinch(Axis axis, Widget image) => ReaderPinch(
+    pinching: _pinching,
+    onZoom: widget.onZoom,
+    pan: axis == Axis.vertical,
+    child: Watch(
+      () => SingleChildScrollView(
+        scrollDirection: axis,
+        physics: _pinching.value ? const NeverScrollableScrollPhysics() : null,
+        child: image,
+      ),
+    ),
+  );
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.sizeOf(context);
@@ -92,18 +118,15 @@ class _ReaderZoomState extends State<ReaderZoom>
         ? (portrait ? 'width' : 'fit')
         : widget.scale;
     if (scale == 'width') {
-      return SingleChildScrollView(
-        child: ReaderImage(
-          page: widget.page,
-          fit: BoxFit.fitWidth,
-          width: size.width,
-        ),
+      return _pinch(
+        Axis.vertical,
+        ReaderImage(page: widget.page, fit: BoxFit.fitWidth, width: size.width),
       );
     }
     if (scale == 'height') {
-      return SingleChildScrollView(
-        scrollDirection: Axis.horizontal,
-        child: ReaderImage(
+      return _pinch(
+        Axis.horizontal,
+        ReaderImage(
           page: widget.page,
           fit: BoxFit.fitHeight,
           height: size.height,
@@ -123,9 +146,10 @@ class _ReaderZoomState extends State<ReaderZoom>
       onDoubleTap: widget.doubleTap ? _toggle : null,
       child: InteractiveViewer(
         transformationController: _transform,
-        minScale: 1,
+        minScale: 0.5,
         maxScale: 5,
-        onInteractionEnd: (_) => _report(),
+        onInteractionUpdate: (_) => _report(),
+        onInteractionEnd: (_) => _release(),
         child: SizedBox.expand(child: image),
       ),
     );

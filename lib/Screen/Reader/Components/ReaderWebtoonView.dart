@@ -11,6 +11,7 @@ import '../ReaderState.dart';
 import 'OverscrollNext.dart';
 import 'ReaderGapView.dart';
 import 'ReaderImage.dart';
+import 'ReaderPinch.dart';
 
 class ReaderWebtoonView extends StatefulWidget {
   final ReaderState state;
@@ -31,6 +32,7 @@ class _ReaderWebtoonViewState extends State<ReaderWebtoonView> {
   String? _anchorId;
   double _anchorTop = 0;
   double? _lastPixels;
+  final _pinching = false.live;
 
   ReaderState get state => widget.state;
 
@@ -255,27 +257,32 @@ class _ReaderWebtoonViewState extends State<ReaderWebtoonView> {
       return KeyedSubtree(key: _key(item), child: child);
     }
 
-    return OverscrollNext(
-      state: state,
-      child: CustomScrollView(
-        controller: _controller,
-        center: _center,
-        cacheExtent: MediaQuery.sizeOf(context).height * 1.5,
-        slivers: [
-          SliverList(
-            delegate: SliverChildBuilderDelegate(
-              (context, i) => tile(before[before.length - 1 - i]),
-              childCount: before.length,
+    final pinching = _pinching.value;
+    return ReaderPinch(
+      pinching: _pinching,
+      child: OverscrollNext(
+        state: state,
+        child: CustomScrollView(
+          controller: _controller,
+          physics: pinching ? const NeverScrollableScrollPhysics() : null,
+          center: _center,
+          cacheExtent: MediaQuery.sizeOf(context).height * 1.5,
+          slivers: [
+            SliverList(
+              delegate: SliverChildBuilderDelegate(
+                (context, i) => tile(before[before.length - 1 - i]),
+                childCount: before.length,
+              ),
             ),
-          ),
-          SliverList(
-            key: _center,
-            delegate: SliverChildBuilderDelegate(
-              (context, i) => tile(after[i]),
-              childCount: after.length,
+            SliverList(
+              key: _center,
+              delegate: SliverChildBuilderDelegate(
+                (context, i) => tile(after[i]),
+                childCount: after.length,
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
