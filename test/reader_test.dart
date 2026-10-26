@@ -67,12 +67,8 @@ void main() {
 
   group('tapActionFor top to bottom', () {
     test('top scrolls up, bottom scrolls down, the middle opens the menu', () {
-      TapAction at(double x, double y, {bool invert = false}) => tapActionFor(
-        'default',
-        Offset(x, y),
-        invert: invert,
-        topDown: true,
-      );
+      TapAction at(double x, double y, {bool invert = false}) =>
+          tapActionFor('default', Offset(x, y), invert: invert, topDown: true);
       expect(at(0.1, 0.1), TapAction.previous);
       expect(at(0.9, 0.9), TapAction.next);
       expect(at(0.1, 0.5), TapAction.menu);
@@ -225,5 +221,43 @@ void main() {
       ..writeAsBytesSync([1, 2, 3]);
     expect(ReaderImageLoader.providerFor(PageUrl(file.path)), isA<FileImage>());
     file.deleteSync();
+  });
+
+  group('reader image retries', () {
+    test(
+      'rate limits and gateway errors are retried, other errors are not',
+      () {
+        for (final code in [429, 502, 503, 504]) {
+          expect(readerRetryable(code), isTrue);
+        }
+        for (final code in [400, 401, 403, 404, 500]) {
+          expect(readerRetryable(code), isFalse);
+        }
+      },
+    );
+
+    test('the wait grows with each attempt and honours Retry-After', () {
+      expect(readerRetryDelay(1), const Duration(milliseconds: 1200));
+      expect(readerRetryDelay(2), const Duration(milliseconds: 2400));
+      expect(readerRetryDelay(3), const Duration(milliseconds: 4800));
+      expect(readerRetryDelay(9), const Duration(seconds: 10));
+      expect(readerRetryDelay(1, retryAfter: 3), const Duration(seconds: 3));
+      expect(readerRetryDelay(1, retryAfter: 600), const Duration(seconds: 15));
+    });
+
+    test('the gap between requests widens on 429 and relaxes on success', () {
+      const base = Duration(milliseconds: 180);
+      var gap = base;
+      gap = readerSlowerGap(gap, base);
+      expect(gap, greaterThan(base));
+      for (var i = 0; i < 10; i++) {
+        gap = readerSlowerGap(gap, base);
+      }
+      expect(gap, const Duration(milliseconds: 1500));
+      for (var i = 0; i < 60; i++) {
+        gap = readerFasterGap(gap, base);
+      }
+      expect(gap, base);
+    });
   });
 }

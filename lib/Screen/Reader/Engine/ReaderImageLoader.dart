@@ -105,12 +105,34 @@ class ReaderImageLoader {
   }
 }
 
+const readerRetryLimit = 4;
+
+bool readerRetryable(int code) =>
+    code == 429 || code == 502 || code == 503 || code == 504;
+
+Duration readerRetryDelay(int attempt, {int? retryAfter}) {
+  if (retryAfter != null) return Duration(seconds: retryAfter.clamp(1, 15));
+  final ms = 1200 * (1 << (attempt - 1));
+  return Duration(milliseconds: ms.clamp(1200, 10000));
+}
+
+Duration readerSlowerGap(Duration gap, Duration base) {
+  final next = Duration(milliseconds: (gap.inMilliseconds * 1.6).round());
+  const ceiling = Duration(milliseconds: 1500);
+  return next > ceiling ? ceiling : (next < base ? base : next);
+}
+
+Duration readerFasterGap(Duration gap, Duration base) {
+  final next = Duration(milliseconds: (gap.inMilliseconds * 0.9).round());
+  return next < base ? base : next;
+}
+
 class _PagedFileService extends FileService {
   static const _spacing = Duration(milliseconds: 180);
-  static const _maxCooldown = Duration(seconds: 5);
 
   final _cooldown = <String, DateTime>{};
   final _lastStart = <String, DateTime>{};
+  final _gap = <String, Duration>{};
 
   _PagedFileService() {
     concurrentFetches = 2;
@@ -119,12 +141,24 @@ class _PagedFileService extends FileService {
   Future<void> _pace(String host) async {
     final now = DateTime.now();
     final cool = _cooldown[host];
-    final next = (_lastStart[host] ?? now).add(_spacing);
+    final next = (_lastStart[host] ?? now).add(_gap[host] ?? _spacing);
     var until = next.isAfter(now) ? next : now;
     if (cool != null && cool.isAfter(until)) until = cool;
     _lastStart[host] = until;
     final wait = until.difference(now);
     if (wait > Duration.zero) await Future<void>.delayed(wait);
+  }
+
+  void _throttled(String host, Duration wait) {
+    final until = DateTime.now().add(wait);
+    final cool = _cooldown[host];
+    if (cool == null || until.isAfter(cool)) _cooldown[host] = until;
+    _gap[host] = readerSlowerGap(_gap[host] ?? _spacing, _spacing);
+  }
+
+  void _served(String host) {
+    final gap = _gap[host];
+    if (gap != null) _gap[host] = readerFasterGap(gap, _spacing);
   }
 
   @override
@@ -141,35 +175,47 @@ class _PagedFileService extends FileService {
 
     ensureOpen();
     final host = Uri.tryParse(url)?.host ?? '';
-    await _pace(host);
-    ensureOpen();
     try {
-      final res = await find<NetworkManager>().client.getBytes(
-        url,
-        headers: headers == null ? null : rhttp.HttpHeaders.rawMap(headers),
-        onReceiveProgress: (count, total) =>
-            ReaderImageLoader._report(url, count, total),
-      );
-      ensureOpen();
-      final code = res.statusCode;
-      if (code >= 200 && code < 300 && res.body.isNotEmpty) {
-        ReaderImageLoader._errors.remove(url);
-        final process = ReaderImageLoader._processors[url];
-        if (process == null) {
-          return _BytesResponse(res.body, res.headerMap['content-type'], url);
-        }
-        final processed = await process(Uint8List.fromList(res.body));
+      for (var attempt = 1; ; attempt++) {
+        await _pace(host);
         ensureOpen();
-        return _BytesResponse(processed, 'image/png', url);
-      }
-      if (code == 429) {
-        final after = int.tryParse(res.headerMap['retry-after'] ?? '');
-        final wait = Duration(seconds: after ?? 2);
-        _cooldown[host] = DateTime.now().add(
-          wait > _maxCooldown ? _maxCooldown : wait,
+        final res = await find<NetworkManager>().client.getBytes(
+          url,
+          headers: headers == null ? null : rhttp.HttpHeaders.rawMap(headers),
+          onReceiveProgress: (count, total) =>
+              ReaderImageLoader._report(url, count, total),
         );
+        ensureOpen();
+        final code = res.statusCode;
+        if (code >= 200 && code < 300 && res.body.isNotEmpty) {
+          _served(host);
+          ReaderImageLoader._errors.remove(url);
+          final process = ReaderImageLoader._processors[url];
+          if (process == null) {
+            return _BytesResponse(res.body, res.headerMap['content-type'], url);
+          }
+          final processed = await process(Uint8List.fromList(res.body));
+          ensureOpen();
+          return _BytesResponse(processed, 'image/png', url);
+        }
+        if (readerRetryable(code)) {
+          final wait = readerRetryDelay(
+            attempt,
+            retryAfter: int.tryParse(res.headerMap['retry-after'] ?? ''),
+          );
+          _throttled(host, wait);
+          if (attempt < readerRetryLimit) {
+            logger(
+              'Reader image HTTP $code, retry $attempt in ${wait.inMilliseconds} ms $url',
+              tag: 'READER',
+            );
+            await Future<void>.delayed(wait);
+            ensureOpen();
+            continue;
+          }
+        }
+        throw HttpException('HTTP $code', uri: Uri.tryParse(url));
       }
-      throw HttpException('HTTP $code', uri: Uri.tryParse(url));
     } catch (e) {
       if (epoch == ReaderImageLoader._epoch) {
         ReaderImageLoader._errors[url] = e is HttpException ? e.message : '$e';
