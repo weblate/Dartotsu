@@ -89,8 +89,7 @@ class SourceAlerts extends AppController {
     final due = <SourceSub>[];
     for (final s in store.subs.toList()) {
       if (s.health == SubHealth.finished || s.muted) continue;
-      final type = ItemType.values.asNameMap()[s.type];
-      if (type == null || manager.current[type]?.id != s.managerId) continue;
+      if (_extensionOf(manager, s) == null) continue;
       if (!force && skipReason(s, now, rules) != null) continue;
       due.add(s);
     }
@@ -101,11 +100,11 @@ class SourceAlerts extends AppController {
       'Source check: ${picked.length} of ${store.subs.length} subscriptions',
       tag: 'SOURCE',
     );
-    for (final type in {
-      for (final s in picked) ItemType.values.byName(s.type),
-    }) {
-      await _ready(type);
-    }
+    final backends = <(Extension, ItemType)>{
+      for (final s in picked)
+        (_extensionOf(manager, s)!, ItemType.values.byName(s.type)),
+    };
+    await Future.wait([for (final (e, t) in backends) _ready(e, t)]);
     final groups = <String, List<SourceSub>>{};
     for (final s in picked) {
       groups.putIfAbsent(s.dedupe, () => []).add(s);
@@ -126,10 +125,18 @@ class SourceAlerts extends AppController {
     return found.length;
   }
 
-  Future<void> _ready(ItemType type) async {
-    await ensureSourcesReady(type);
-    final state = extensionServiceFor(type)?.state(type);
-    if (state == null) return;
+  Extension? _extensionOf(ExtensionManager manager, SourceSub sub) {
+    final type = ItemType.values.asNameMap()[sub.type];
+    if (type == null) return null;
+    for (final e in manager.managers) {
+      if (e.id == sub.managerId && e.supports(type)) return e;
+    }
+    return null;
+  }
+
+  Future<void> _ready(Extension extension, ItemType type) async {
+    await extension.initializeInstalled(type);
+    final state = extension.state(type);
     for (var i = 0; i < 40; i++) {
       if (!state.loadingInstalled.value && state.installed.value.isNotEmpty) {
         return;
@@ -163,8 +170,8 @@ class SourceAlerts extends AppController {
   ) async {
     final lead = group.first;
     final type = ItemType.values.byName(lead.type);
-    final extension = manager.current[type];
-    if (extension == null || extension.id != lead.managerId) return null;
+    final extension = _extensionOf(manager, lead);
+    if (extension == null) return null;
     final now = DateTime.now().millisecondsSinceEpoch;
     final source = extension
         .state(type)
