@@ -43,6 +43,13 @@ bool isHlsUrl(String url) {
   return lower.contains('.m3u8') || lower.contains('.mpd');
 }
 
+Future<bool> isHlsStream(String url, Map<String, String>? headers) async {
+  if (isHlsUrl(url)) return true;
+  if (isTorrentSource(url)) return false;
+  if (videoExtensions.contains(extensionOf(url, fallback: ''))) return false;
+  return probeHls(url, headers: headers);
+}
+
 class DownloadEngine extends AppController {
   static const _key = 'downloads';
 
@@ -573,7 +580,7 @@ class DownloadEngine extends AppController {
     }
   }
 
-  Future<void> _fetchHls(
+  Future<bool> _fetchHls(
     DownloadTask task,
     Directory dir,
     String base,
@@ -593,6 +600,13 @@ class DownloadEngine extends AppController {
     var attempt = 0;
     while (true) {
       final video = task.chosenVideo!;
+      final audioFile = task.chosenAudio?.file;
+      final audioUrl =
+          audioFile != null &&
+              audioFile.isNotEmpty &&
+              await isHlsStream(audioFile, video.headers)
+          ? audioFile
+          : null;
       final job = FfmpegCancel();
       _ffmpegCancels[task.id] = job;
       try {
@@ -605,6 +619,7 @@ class DownloadEngine extends AppController {
           headers: video.headers,
           height: task.height ?? task.profile?.height,
           audioLabel: task.chosenAudio?.label ?? task.profile?.audio,
+          audioUrl: audioUrl,
           onProgress: (done, total) {
             task.received.value = done;
             task.total.value = total;
@@ -612,7 +627,7 @@ class DownloadEngine extends AppController {
           },
           onFinishing: () => task.finishing.value = true,
         );
-        return;
+        return audioUrl != null;
       } catch (e) {
         if (_stopped.containsKey(task.id)) rethrow;
         final status = e is DownloadHttpError ? e.status : 0;
@@ -733,6 +748,7 @@ class DownloadEngine extends AppController {
     _cancels[task.id] = cancel;
     task.error.value = null;
     var reResolved = false;
+    var audioMerged = false;
     try {
       if (task.kind == DownloadKind.chapter) {
         await _fetchChapter(task, cancel);
@@ -761,8 +777,8 @@ class DownloadEngine extends AppController {
       final base = unitBaseName(task);
       if (isTorrentSource(video.url)) {
         await _fetchTorrent(task, video, dir, base, cancel);
-      } else if (isHlsUrl(video.url)) {
-        await _fetchHls(task, dir, base, cancel);
+      } else if (await isHlsStream(video.url, video.headers)) {
+        audioMerged = await _fetchHls(task, dir, base, cancel);
       } else {
         var attempt = 0;
         var tick = DateTime.now();
@@ -820,7 +836,7 @@ class DownloadEngine extends AppController {
         }
       }
       await _fetchSubtitle(task, dir, base, cancel);
-      await _fetchAudio(task, dir, base, cancel);
+      if (!audioMerged) await _fetchAudio(task, dir, base, cancel);
       if (downloadInfoFilePref.value) await _writeInfo(task, dir, base);
       task.speed.value = 0;
       task

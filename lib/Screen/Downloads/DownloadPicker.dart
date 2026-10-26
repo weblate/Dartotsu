@@ -84,7 +84,8 @@ Future<void> downloadUnits(
     if (chosen == null) return;
     if (chosen != torrentFileAuto) torrentFile = chosen;
   }
-  if (isHlsUrl(video.url)) {
+  final hls = await isHlsStream(video.url, video.headers);
+  if (hls) {
     final mode = await chooseHlsMode(live());
     if (mode == HlsMode.cancel) return;
     folder = mode == HlsMode.folder;
@@ -143,7 +144,7 @@ Future<void> downloadUnits(
     final required = hlsAudios.isNotEmpty;
     final defaultIndex = required
         ? max(0, hlsAudios.indexWhere((a) => a.isDefault))
-        : -1;
+        : (hls && video.audios?.isNotEmpty == true ? 0 : -1);
     final picked = await showChoiceSheet<int>(
       live(),
       title: getString.downloadPickAudio,

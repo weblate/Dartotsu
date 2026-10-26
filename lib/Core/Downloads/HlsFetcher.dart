@@ -1,5 +1,6 @@
 import 'DownloadCancel.dart';
 import 'dart:async';
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:dartotsu_extension_bridge/dartotsu_extension_bridge.dart';
@@ -27,6 +28,41 @@ Future<String> fetchText(
   );
   if (res.statusCode >= 400) throw DownloadHttpError(res.statusCode);
   return '${res.data}';
+}
+
+bool isHlsResponse(String? contentType, List<int> head) {
+  if ((contentType ?? '').toLowerCase().contains('mpegurl')) return true;
+  final text = utf8
+      .decode(head, allowMalformed: true)
+      .replaceFirst('\uFEFF', '')
+      .trimLeft();
+  return text.startsWith('#EXTM3U');
+}
+
+Future<bool> probeHls(String url, {Map<String, String>? headers}) async {
+  try {
+    final res = await find<NetworkManager>().stream(
+      url,
+      headers: {...?headers, 'Range': 'bytes=0-255'},
+    );
+    if (res.statusCode >= 400) {
+      await res.body.listen((_) {}).cancel();
+      return false;
+    }
+    final type = res.headerMap['content-type'];
+    if ((type ?? '').toLowerCase().contains('mpegurl')) {
+      await res.body.listen((_) {}).cancel();
+      return true;
+    }
+    final head = <int>[];
+    await for (final chunk in res.body.timeout(const Duration(seconds: 20))) {
+      head.addAll(chunk);
+      if (head.length >= 256) break;
+    }
+    return isHlsResponse(type, head);
+  } catch (_) {
+    return false;
+  }
 }
 
 class HlsMaster {
@@ -59,6 +95,7 @@ Future<void> downloadHls({
   Map<String, String>? headers,
   int? height,
   String? audioLabel,
+  String? audioUrl,
   int workers = 4,
   Future<String> Function(String url)? getText,
   Future<void> Function(Uri uri, File target)? getFile,
@@ -76,6 +113,14 @@ Future<void> downloadHls({
     playlistUrl = variant.uri.toString();
     audio = pickAudio(parseAudios(text, base), variant, audioLabel);
     text = await text0(playlistUrl);
+  } else if (audioUrl != null && audioUrl.isNotEmpty) {
+    audio = HlsAudio(
+      Uri.parse(audioUrl),
+      audioLabel ?? '',
+      null,
+      'audio',
+      true,
+    );
   }
   final media = parseMedia(text, Uri.parse(playlistUrl));
   final audioMedia = audio == null

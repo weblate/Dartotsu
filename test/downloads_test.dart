@@ -326,6 +326,82 @@ c.ts
     expect(File('${dir.path}/Episode 001/index.m3u8').existsSync(), isTrue);
   });
 
+  group('hls without an m3u8 url', () {
+    test('a playlist is recognised by its type or its first line', () {
+      expect(
+        isHlsResponse('application/vnd.apple.mpegurl; charset=utf-8', []),
+        isTrue,
+      );
+      expect(isHlsResponse('audio/x-mpegURL', []), isTrue);
+      expect(
+        isHlsResponse(null, '#EXTM3U\n#EXT-X-VERSION:3'.codeUnits),
+        isTrue,
+      );
+      expect(
+        isHlsResponse('text/plain', [
+          0xEF,
+          0xBB,
+          0xBF,
+          ...'  #EXTM3U'.codeUnits,
+        ]),
+        isTrue,
+      );
+    });
+
+    test('a video file or a page is not a playlist', () {
+      expect(
+        isHlsResponse('video/mp4', [0, 0, 0, 24, 102, 116, 121, 112]),
+        isFalse,
+      );
+      expect(isHlsResponse('text/html', '<html>'.codeUnits), isFalse);
+      expect(isHlsResponse(null, const []), isFalse);
+    });
+
+    test(
+      'a variant playlist and its own audio playlist are both downloaded',
+      () async {
+        final dir = Directory.systemTemp.createTempSync('hls');
+        addTearDown(() => dir.deleteSync(recursive: true));
+        String playlist(String name) {
+          final out = StringBuffer('#EXTM3U\n#EXT-X-TARGETDURATION:5\n');
+          for (var i = 0; i < 3; i++) {
+            out.write('#EXTINF:5,\nhttps://cdn/$name$i\n');
+          }
+          return '$out#EXT-X-ENDLIST\n';
+        }
+
+        final fetched = <String>[];
+        await downloadHls(
+          url: 'https://cdn/object/video-token',
+          audioUrl: 'https://cdn/object/audio-token',
+          audioLabel: 'Japanese',
+          output: File('${dir.path}/Episode 001.mp4'),
+          ffmpeg: null,
+          cancel: DownloadCancel(),
+          ffmpegCancel: FfmpegCancel(),
+          onProgress: (_, _) {},
+          onFinishing: () {},
+          workers: 1,
+          getText: (url) async =>
+              url.endsWith('audio-token') ? playlist('a') : playlist('v'),
+          getFile: (uri, target) async {
+            fetched.add(uri.path);
+            await target.writeAsString('x');
+          },
+        );
+
+        expect(fetched.where((p) => p.startsWith('/v')).length, 3);
+        expect(fetched.where((p) => p.startsWith('/a')).length, 3);
+        final root = '${dir.path}/Episode 001';
+        expect(File('$root/audio/audio.m3u8').existsSync(), isTrue);
+        expect(File('$root/video.m3u8').existsSync(), isTrue);
+        final master = File('$root/index.m3u8').readAsStringSync();
+        expect(master, contains('NAME="Japanese"'));
+        expect(master, contains('URI="audio/audio.m3u8"'));
+      },
+    );
+  });
+
   group('queue order', () {
     test('dragging down puts the item after the target', () {
       expect(reorderWithin([1, 2, 3, 4], [1, 2, 3, 4], 0, 3), [2, 3, 1, 4]);
