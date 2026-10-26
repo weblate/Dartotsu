@@ -12,6 +12,7 @@ import '../../Core/State/State.dart';
 import '../../Core/ThemeManager/LanguageSwitcher.dart';
 import '../../Widgets/Components/ScreenState.dart';
 import '../Feed/FeedNavigation.dart';
+import 'Data/SourceSearchFilters.dart';
 import 'SourceFilterSheet.dart';
 
 enum SourceFeed { saved, popular, latest }
@@ -57,8 +58,12 @@ class SourceBrowseState extends ScreenState {
     try {
       final list = await source.methods.getFilterList();
       _pristine = jsonEncode([for (final f in list) f.toJson()]);
-      _applied = copyFilters(list);
+      final saved = SourceSearchFilters.saved(source);
+      _applied = saved == null ? copyFilters(list) : copyFilters(saved);
+      filtering.value =
+          jsonEncode([for (final f in _applied) f.toJson()]) != _pristine;
       filters.value = list;
+      if (filtering.value) reload();
     } catch (_) {}
   }
 
@@ -68,12 +73,18 @@ class SourceBrowseState extends ScreenState {
     _applied = next;
     filtering.value =
         jsonEncode([for (final f in next) f.toJson()]) != _pristine;
+    if (filtering.value) {
+      SourceSearchFilters.save(source, next);
+    } else {
+      SourceSearchFilters.clear(source);
+    }
     reload();
   }
 
   void resetFilters() {
     _applied = copyFilters(filters.value);
     filtering.value = false;
+    SourceSearchFilters.clear(source);
     reload();
   }
 

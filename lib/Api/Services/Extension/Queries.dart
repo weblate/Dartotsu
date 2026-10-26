@@ -1,3 +1,4 @@
+import '../../../Screen/Extension/Data/SourceSearchFilters.dart';
 import '../../../Logger.dart';
 import 'package:collection/collection.dart';
 import 'package:dartotsu_extension_bridge/dartotsu_extension_bridge.dart';
@@ -163,7 +164,11 @@ class ExtensionQueries extends Queries {
     bool anime,
   ) async {
     try {
-      final pages = await source.methods.search(term, page, const []);
+      final pages = await source.methods.search(
+        term,
+        page,
+        SourceSearchFilters.json(source),
+      );
       return (pages.hasNextPage, pages.toMedia(isAnime: anime, source: source));
     } catch (e, st) {
       logError('Queries', e, st);

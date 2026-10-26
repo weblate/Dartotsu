@@ -1,3 +1,4 @@
+import '../../../Extension/Data/SourceSearchFilters.dart';
 import 'package:dartotsu_extension_bridge/dartotsu_extension_bridge.dart';
 
 import 'Media/MediaRecord.dart';
@@ -66,7 +67,11 @@ class SourceMatcher {
     String term,
     List<String> names,
   ) async {
-    final pages = await source.methods.search(term, 1, const []);
+    final pages = await source.methods.search(
+      term,
+      1,
+      SourceSearchFilters.json(source),
+    );
     final list = [
       for (final m in pages.list)
         if (m.url != null && (m.title?.isNotEmpty ?? false))

@@ -46,7 +46,9 @@ class ExtensionBrowserState extends ScreenState {
   void onInit() {
     manager.initializeAvailable();
     tabs.addListener(() => currentIndex.value = tabs.index);
-    tabs.animation?.addListener(() => tabPosition.value = tabs.animation!.value);
+    tabs.animation?.addListener(
+      () => tabPosition.value = tabs.animation!.value,
+    );
   }
 
   @override

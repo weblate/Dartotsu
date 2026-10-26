@@ -1,9 +1,14 @@
 import 'dart:async';
+import 'dart:convert';
 
+import 'package:dartotsu_extension_bridge/Models/SourceFilter.dart';
+import 'package:dartotsu_extension_bridge/dartotsu_extension_bridge.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../Core/State/State.dart';
 import '../../../../Core/ThemeManager/LanguageSwitcher.dart';
+import '../../../Extension/Data/SourceSearchFilters.dart';
+import '../../../Extension/SourceFilterSheet.dart';
 import '../Data/SourceMatcher.dart';
 import '../../../../Utils/Extensions/Responsive.dart';
 import '../../../../Utils/Functions/NavigateToScreen.dart';
@@ -29,11 +34,55 @@ class _WrongTitleSheetState extends State<WrongTitleSheet> {
   final _results = <SourceMatch>[].liveList;
   final _loading = false.live;
   final _error = Live<String?>(null);
+  final _filters = <SourceFilter>[].liveList;
+  final _filtering = false.live;
+  List<SourceFilter> _applied = const [];
+  String _pristine = '[]';
   int _run = 0;
 
   @override
   void initState() {
     super.initState();
+    unawaited(_loadFilters().whenComplete(_search));
+  }
+
+  Future<void> _loadFilters() async {
+    final source = widget.state.source.value;
+    if (source == null) return;
+    try {
+      final list = await source.methods.getFilterList();
+      _pristine = jsonEncode([for (final f in list) f.toJson()]);
+      final saved = SourceSearchFilters.saved(source);
+      _applied = copyFilters(saved ?? list);
+      _filtering.value = _signature(_applied) != _pristine;
+      _filters.value = list;
+    } catch (_) {}
+  }
+
+  static String _signature(List<SourceFilter> list) =>
+      jsonEncode([for (final f in list) f.toJson()]);
+
+  Future<void> _openFilters() async {
+    final source = widget.state.source.value;
+    if (source == null) return;
+    final picked = await showSourceFilters(
+      context,
+      _applied,
+      onReset: () {
+        _applied = copyFilters(_filters.toList());
+        _filtering.value = false;
+        SourceSearchFilters.clear(source);
+        unawaited(_search());
+      },
+    );
+    if (picked == null) return;
+    _applied = picked;
+    _filtering.value = _signature(picked) != _pristine;
+    if (_filtering.value) {
+      SourceSearchFilters.save(source, picked);
+    } else {
+      SourceSearchFilters.clear(source);
+    }
     unawaited(_search());
   }
 
@@ -91,9 +140,26 @@ class _WrongTitleSheetState extends State<WrongTitleSheet> {
                   widget.state.source.value?.name ?? '',
                 ),
                 prefixIcon: const Icon(Icons.search_rounded),
-                suffixIcon: IconButton(
-                  icon: const Icon(Icons.arrow_forward_rounded),
-                  onPressed: _search,
+                suffixIcon: Watch(
+                  () => Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      if (_filters.isNotEmpty)
+                        IconButton(
+                          tooltip: getString.filters,
+                          icon: Badge(
+                            isLabelVisible: _filtering.value,
+                            smallSize: 8,
+                            child: const Icon(Icons.tune_rounded),
+                          ),
+                          onPressed: _openFilters,
+                        ),
+                      IconButton(
+                        icon: const Icon(Icons.arrow_forward_rounded),
+                        onPressed: _search,
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
