@@ -1,9 +1,12 @@
+import 'dart:async';
+
 import 'package:collection/collection.dart';
 import 'package:dartotsu_extension_bridge/ExtensionManager.dart';
 import 'package:flutter/widgets.dart';
 
 import '../../Core/Services/MediaServiceController.dart';
 import '../../Screen/Social/SocialNavigation.dart';
+import '../../Widgets/Components/AlertDialogBuilder.dart';
 import 'SnackBar.dart';
 import '../../Core/State/State.dart';
 import '../../Core/ThemeManager/LanguageSwitcher.dart';
@@ -29,6 +32,24 @@ class ExtensionRepoLinks extends DeepLinkHandler {
     final handler = find<ExtensionManager>().managers.firstWhere(
       (m) => m.schemes.contains(uri.scheme.toLowerCase()),
     );
+    final target = uri.queryParameters['url'] ?? uri.toString();
+    final accepted = Completer<bool>();
+    unawaited(
+      AlertDialogBuilder(context)
+          .setTitle(getString.addRepository)
+          .setMessage(getString.repoLinkConfirm(target))
+          .setPositiveButton(getString.addRepository, () {
+            if (!accepted.isCompleted) accepted.complete(true);
+          })
+          .setNegativeButton(getString.cancel, () {
+            if (!accepted.isCompleted) accepted.complete(false);
+          })
+          .setOnDismissListener(() {
+            if (!accepted.isCompleted) accepted.complete(false);
+          })
+          .show<void>(),
+    );
+    if (!await accepted.future) return;
     handler.handleSchemes(uri);
     snackString(getString.repoLinksAdded);
   }

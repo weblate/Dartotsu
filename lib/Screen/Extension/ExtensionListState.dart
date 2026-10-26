@@ -143,7 +143,7 @@ class ExtensionListState extends ScreenState {
       updatingAll.value = false;
     }
     snackString(getString.extensionsUpdated(done, todo.length));
-    if (conflicts.isNotEmpty) offerReinstall(conflicts);
+    if (conflicts.isNotEmpty && mounted) offerReinstall(conflicts);
   }
 
   void offerReinstall(List<Source> sources) {

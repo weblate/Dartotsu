@@ -1,6 +1,8 @@
 import 'dart:async';
 import 'dart:convert';
 
+import 'package:collection/collection.dart';
+
 import '../../Logger.dart';
 import '../NotificationManager/NotificationManager.dart';
 import '../Preferences/PrefManager.dart';
@@ -98,9 +100,10 @@ class ActivityAlerts extends AppController {
       final data =
           jsonDecode(payload.substring(_payload.length))
               as Map<String, dynamic>;
-      final service = find<MediaServiceController>().services.firstWhere(
+      final service = find<MediaServiceController>().services.firstWhereOrNull(
         (s) => s.id == data['s'],
       );
+      if (service == null) return;
       final context = appContext;
       if (context == null || !context.mounted) return;
       openNotification(

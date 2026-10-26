@@ -50,6 +50,9 @@ class _ActivityHeatmapState extends State<ActivityHeatmap> {
 
   static DateTime _day(DateTime d) => DateTime(d.year, d.month, d.day);
 
+  static DateTime _shift(DateTime d, int days) =>
+      DateTime(d.year, d.month, d.day + days);
+
   late final Map<DateTime, ActivityDay> _byDay = {
     for (final d in widget.days) _day(d.date): d,
   };
@@ -58,18 +61,25 @@ class _ActivityHeatmapState extends State<ActivityHeatmap> {
 
   DateTime get _start {
     final earliest = widget.days.isEmpty
-        ? _today.subtract(const Duration(days: 180))
+        ? _shift(_today, -180)
         : _day(
             widget.days
                 .map((d) => d.date)
                 .reduce((a, b) => a.isBefore(b) ? a : b),
           );
-    final from = _today.subtract(const Duration(days: 365));
+    final from = _shift(_today, -365);
     final first = earliest.isBefore(from) ? from : earliest;
-    return first.subtract(Duration(days: first.weekday % 7));
+    return _shift(first, -(first.weekday % 7));
   }
 
-  int get _weeks => (_today.difference(_start).inDays / 7).floor() + 1;
+  int get _weeks {
+    final span = DateTime.utc(
+      _today.year,
+      _today.month,
+      _today.day,
+    ).difference(DateTime.utc(_start.year, _start.month, _start.day));
+    return (span.inDays / 7).floor() + 1;
+  }
 
   ({int total, int active, int longest, int current}) _summary() {
     var total = 0;
@@ -87,16 +97,16 @@ class _ActivityHeatmapState extends State<ActivityHeatmap> {
       } else {
         run = 0;
       }
-      cursor = cursor.add(const Duration(days: 1));
+      cursor = _shift(cursor, 1);
     }
     var current = 0;
     var back = _today;
     if ((_byDay[back]?.amount ?? 0) == 0) {
-      back = back.subtract(const Duration(days: 1));
+      back = _shift(back, -1);
     }
     while ((_byDay[back]?.amount ?? 0) > 0) {
       current++;
-      back = back.subtract(const Duration(days: 1));
+      back = _shift(back, -1);
     }
     return (total: total, active: active, longest: longest, current: current);
   }
@@ -108,7 +118,7 @@ class _ActivityHeatmapState extends State<ActivityHeatmap> {
     final col = (x / _step).floor();
     final row = (y / _step).floor();
     if (col >= _weeks || row > 6) return null;
-    final date = _start.add(Duration(days: col * 7 + row));
+    final date = _shift(_start, col * 7 + row);
     return date.isAfter(_today) ? null : date;
   }
 
@@ -304,7 +314,7 @@ class _HeatPainter extends CustomPainter {
     int? lastMonth;
     var lastLabelX = -100.0;
     for (var col = 0; col < weeks; col++) {
-      final weekStart = start.add(Duration(days: col * 7));
+      final weekStart = DateTime(start.year, start.month, start.day + col * 7);
       if (weekStart.month != lastMonth) {
         lastMonth = weekStart.month;
         final x = left + col * step;
@@ -318,9 +328,13 @@ class _HeatPainter extends CustomPainter {
         }
       }
       for (var row = 0; row < 7; row++) {
-        final date = start.add(Duration(days: col * 7 + row));
+        final date = DateTime(
+          start.year,
+          start.month,
+          start.day + col * 7 + row,
+        );
         if (date.isAfter(today)) continue;
-        final day = byDay[DateTime(date.year, date.month, date.day)];
+        final day = byDay[date];
         final level = day?.level ?? 0;
         final order = (col / weeks);
         final reveal = ((progress * 1.4) - order * 0.4).clamp(0.0, 1.0);

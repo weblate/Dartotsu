@@ -26,6 +26,7 @@ class _ReaderWebtoonViewState extends State<ReaderWebtoonView> {
   final _controller = ScrollController();
   final _keys = <String, GlobalKey>{};
   final _center = GlobalKey();
+  final _view = GlobalKey();
   late final String _anchor;
   String? _lastId;
   bool _jumping = false;
@@ -58,17 +59,17 @@ class _ReaderWebtoonViewState extends State<ReaderWebtoonView> {
       _lastPixels = null;
       return;
     }
-    final box = context.findRenderObject();
+    final box = _view.currentContext?.findRenderObject();
     if (box is! RenderBox || !box.hasSize) return;
     final position = _controller.position;
-    final viewTop = box.localToGlobal(Offset.zero).dy;
     if (_lastPixels != null && position.pixels == _lastPixels) {
       final id = _anchorId;
       final rb = id == null
           ? null
           : _keys[id]?.currentContext?.findRenderObject();
       if (rb is RenderBox && rb.attached && rb.hasSize) {
-        final delta = rb.localToGlobal(Offset.zero).dy - viewTop - _anchorTop;
+        final delta =
+            rb.localToGlobal(Offset.zero, ancestor: box).dy - _anchorTop;
         if (delta.abs() > 0.5) {
           final target = (position.pixels + delta).clamp(
             position.minScrollExtent,
@@ -85,7 +86,7 @@ class _ReaderWebtoonViewState extends State<ReaderWebtoonView> {
       final id = _id(item);
       final rb = _keys[id]?.currentContext?.findRenderObject();
       if (rb is! RenderBox || !rb.attached || !rb.hasSize) continue;
-      final top = rb.localToGlobal(Offset.zero).dy - viewTop;
+      final top = rb.localToGlobal(Offset.zero, ancestor: box).dy;
       if (top + rb.size.height > 1) {
         _anchorId = id;
         _anchorTop = top;
@@ -132,15 +133,15 @@ class _ReaderWebtoonViewState extends State<ReaderWebtoonView> {
     final view = position.viewportDimension;
     if (position.extentAfter < view * 2) state.nearEnd();
     if (position.extentBefore < view * 2) state.nearStart();
-    final box = context.findRenderObject();
+    final box = _view.currentContext?.findRenderObject();
     if (box is! RenderBox || !box.hasSize) return;
-    final center = box.localToGlobal(Offset(0, box.size.height / 2)).dy;
+    final center = box.size.height / 2;
     final items = state.items;
     int? found;
     for (var i = 0; i < items.length; i++) {
       final rb = _ctxAt(i)?.findRenderObject();
       if (rb is! RenderBox || !rb.attached || !rb.hasSize) continue;
-      final top = rb.localToGlobal(Offset.zero).dy;
+      final top = rb.localToGlobal(Offset.zero, ancestor: box).dy;
       if (top <= center && top + rb.size.height > center) {
         found = i;
         break;
@@ -263,6 +264,7 @@ class _ReaderWebtoonViewState extends State<ReaderWebtoonView> {
       child: OverscrollNext(
         state: state,
         child: CustomScrollView(
+          key: _view,
           controller: _controller,
           physics: pinching ? const NeverScrollableScrollPhysics() : null,
           center: _center,

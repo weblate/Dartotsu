@@ -180,7 +180,7 @@ class SourceAlerts extends AppController {
         .where((s) => s.id == lead.sourceId)
         .firstOrNull;
     if (source == null) {
-      if (extension.isReady) {
+      if (extension.isReady && !extension.state(type).loadingInstalled.value) {
         for (final s in group) {
           s
             ..health = SubHealth.missing

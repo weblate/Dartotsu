@@ -199,8 +199,8 @@ class SourceSubTile extends StatelessWidget {
                         ),
                       ),
                       if (missing)
-                        Positioned(
-                          right: -6,
+                        PositionedDirectional(
+                          end: -6,
                           bottom: -6,
                           child: Container(
                             width: 22,

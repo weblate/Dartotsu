@@ -24,7 +24,8 @@ class NotificationManager extends AppController {
   final tapped = Live<String?>(null);
 
   bool _ready = false;
-  int _nextId = 1000;
+  int _nextId =
+      10000 + DateTime.now().millisecondsSinceEpoch ~/ 1000 % 1000000000;
 
   Future<void> initialize() async {
     if (_ready) return;

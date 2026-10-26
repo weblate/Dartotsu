@@ -77,6 +77,7 @@ class TogetherStream {
       final video = v.Video.fromJson(
         Map<String, dynamic>.from(json['v'] as Map),
       );
+      if ('${json['i']}' != idOf(video.url.trim())) return null;
       return TogetherStream('${json['i']}', '${json['n']}', video);
     } catch (_) {
       return null;

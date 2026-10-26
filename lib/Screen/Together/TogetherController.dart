@@ -75,6 +75,7 @@ class TogetherController extends AppController {
   Disposer? _engineBinding;
   bool _needSync = false;
   bool _slowed = false;
+  double _baseRate = 1.0;
   bool? _lastPaused;
   double _lastPos = 0;
   DateTime _lastAt = DateTime.now();
@@ -451,8 +452,11 @@ class TogetherController extends AppController {
           snackString('${event.user}: ${event.message}', simple: true);
         }
       case TogetherData(:final user, :final payload):
+        final fromHost = _fromHost(user);
         if (payload.startsWith('S:')) {
-          final stream = TogetherStream.decode(payload.substring(2));
+          final stream = fromHost
+              ? TogetherStream.decode(payload.substring(2))
+              : null;
           if (stream != null) {
             _streams[stream.id] = stream;
             _checkFollow();
@@ -472,7 +476,7 @@ class TogetherController extends AppController {
             snackString(getString.togetherFollowFailed, simple: true);
           }
         } else if (payload == 'X:close') {
-          if (isGuest) _closeFromHost();
+          if (isGuest && fromHost) _closeFromHost();
         } else if (payload.startsWith('R:') && isHost) {
           final text = payload == 'R:pause'
               ? getString.togetherWantsPause(user)
@@ -483,6 +487,12 @@ class TogetherController extends AppController {
         error.value = event.message;
         _system(event.message);
     }
+  }
+
+  bool _fromHost(String user) {
+    if (user == client.username) return false;
+    final host = hostUser?.name ?? _hostName;
+    return host == null || host == user;
   }
 
   void _onUserEvent(TogetherUserEvent event) {
@@ -702,7 +712,8 @@ class TogetherController extends AppController {
       }
     } else if (!s.paused && diff > _slowdown && !_slowed) {
       _slowed = true;
-      unawaited(engine.setRate(_slowRate));
+      _baseRate = engine.rate.value;
+      unawaited(engine.setRate(_baseRate * _slowRate));
     } else if (_slowed && diff < 0.1) {
       _resetRate();
     }
@@ -711,6 +722,6 @@ class TogetherController extends AppController {
   void _resetRate() {
     if (!_slowed) return;
     _slowed = false;
-    unawaited(_engine?.setRate(1.0));
+    unawaited(_engine?.setRate(_baseRate));
   }
 }

@@ -59,9 +59,10 @@ class DlnaClient {
     required String url,
     required String title,
     required bool hls,
+    String? mime,
     String? subtitle,
   }) {
-    final mime = hls ? 'application/vnd.apple.mpegurl' : 'video/mp4';
+    final type = hls ? 'application/vnd.apple.mpegurl' : (mime ?? 'video/mp4');
     final sub = subtitle == null
         ? ''
         : '<res protocolInfo="http-get:*:text/vtt:*">${xmlEscape(subtitle)}</res>'
@@ -74,7 +75,7 @@ class DlnaClient {
         '<item id="1" parentID="0" restricted="1">'
         '<dc:title>${xmlEscape(title)}</dc:title>'
         '<upnp:class>object.item.videoItem</upnp:class>'
-        '<res protocolInfo="http-get:*:$mime:*">${xmlEscape(url)}</res>'
+        '<res protocolInfo="http-get:*:$type:*">${xmlEscape(url)}</res>'
         '$sub</item></DIDL-Lite>';
   }
 
@@ -82,9 +83,16 @@ class DlnaClient {
     required String url,
     required String title,
     required bool hls,
+    String? mime,
     String? subtitle,
   }) async {
-    final meta = _didl(url: url, title: title, hls: hls, subtitle: subtitle);
+    final meta = _didl(
+      url: url,
+      title: title,
+      hls: hls,
+      mime: mime,
+      subtitle: subtitle,
+    );
     final set = await _call(
       'SetAVTransportURI',
       '<CurrentURI>${xmlEscape(url)}</CurrentURI>'

@@ -27,6 +27,7 @@ class CastV2Client {
   final SecureSocket _socket;
   final String sessionId;
   String? _transportId;
+  final _transportReady = Completer<String>();
   int _requestId = 1;
 
   final _messageController = StreamController<Map<String, dynamic>>.broadcast();
@@ -73,6 +74,12 @@ class CastV2Client {
 
     return client;
   }
+
+  Future<String?> awaitTransport({
+    Duration timeout = const Duration(seconds: 20),
+  }) => _transportReady.future
+      .then<String?>((id) => id)
+      .timeout(timeout, onTimeout: () => null);
 
   void _onData(List<int> chunk) {
     _buffer.addAll(chunk);
@@ -121,6 +128,9 @@ class CastV2Client {
         final newTransportId = app['transportId'] as String?;
         if (newTransportId != null && newTransportId != _transportId) {
           _transportId = newTransportId;
+          if (!_transportReady.isCompleted) {
+            _transportReady.complete(newTransportId);
+          }
           sendMessage(
             namespace: kNamespaceConnection,
             destinationId: newTransportId,

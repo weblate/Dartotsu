@@ -2,6 +2,7 @@ import 'dart:async';
 
 import '../../Logger.dart';
 import '../State/State.dart';
+import '../ThemeManager/LanguageSwitcher.dart';
 import 'CastDevice.dart';
 import 'CastDiscovery.dart';
 import 'CastHttp.dart';
@@ -131,7 +132,9 @@ class CastService extends AppController {
       namespace: CastV2Client.kNamespaceReceiver,
       payload: {'type': 'LAUNCH', 'appId': 'CC1AD845', 'requestId': 1},
     );
-    await Future<void>.delayed(const Duration(milliseconds: 1500));
+    if (await client.awaitTransport() == null) {
+      throw StateError(getString.castReceiverFailed);
+    }
     final subtitle = _proxy.subtitleUrl;
     client.sendMessage(
       namespace: CastV2Client.kNamespaceMedia,
@@ -192,6 +195,10 @@ class CastService extends AppController {
       if (state == 'IDLE' && status['idleReason'] == 'FINISHED') {
         playing.value = false;
       }
+      if (state == 'IDLE' && status['idleReason'] == 'ERROR') {
+        playing.value = false;
+        failure.value = getString.castPlaybackFailed;
+      }
     }
     final now = (status['currentTime'] as num?)?.toDouble();
     if (now != null) {
@@ -215,6 +222,7 @@ class CastService extends AppController {
       url: media,
       title: title,
       hls: hls,
+      mime: _proxy.contentType,
       subtitle: _proxy.subtitleUrl,
     );
     if (!loaded) throw StateError('The TV refused the stream');
