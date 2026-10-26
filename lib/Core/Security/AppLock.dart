@@ -12,7 +12,7 @@ import 'Biometric.dart';
 class AppLock extends AppController {
   static const minLength = 4;
   static const maxLength = 8;
-  static const _grace = Duration(minutes: 1);
+  static const never = -1;
 
   final locked = false.live;
   final _queue = <VoidCallback>[];
@@ -45,7 +45,11 @@ class AppLock extends AppController {
     final left = _leftAt;
     _leftAt = null;
     if (left == null || !enabled) return;
-    if (DateTime.now().difference(left) >= _grace) locked.value = true;
+    final minutes = PrefName.appLockDelay.value;
+    if (minutes == never) return;
+    if (DateTime.now().difference(left) >= Duration(minutes: minutes)) {
+      locked.value = true;
+    }
   }
 
   void run(VoidCallback action) {

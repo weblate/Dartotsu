@@ -20,7 +20,11 @@ class Biometric {
       Platform.isMacOS ||
       Platform.isWindows;
 
-  static Future<void> probe() async {
+  static Future<void>? _probing;
+
+  static Future<void> probe() => _probing ??= _probe();
+
+  static Future<void> _probe() async {
     if (!_supported) return;
     try {
       available.value = _native

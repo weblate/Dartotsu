@@ -133,6 +133,30 @@ class AppLocalizationsRu extends AppLocalizations {
   String get appLockBiometricReason => 'Unlock Dartotsu';
 
   @override
+  String get appLockDelay => 'Lock when idle';
+
+  @override
+  String get appLockDelayDesc =>
+      'How long Dartotsu can stay in the background before asking again';
+
+  @override
+  String get appLockDelayAlways => 'Always';
+
+  @override
+  String get appLockDelayNever => 'Never';
+
+  @override
+  String appLockDelayAfter(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count minutes',
+      one: '1 minute',
+    );
+    return 'After $_temp0';
+  }
+
+  @override
   String get appLockUseBiometric => 'Use biometrics';
 
   @override
@@ -551,6 +575,17 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get logFileDesc =>
       'Поделись логом приложения или скопируй путь к нему в Linux';
+
+  @override
+  String get logDelete => 'Delete log files';
+
+  @override
+  String get logDeleteDesc => 'Clear the saved app logs to free up space';
+
+  @override
+  String logDeleted(String size) {
+    return 'Deleted $size of logs';
+  }
 
   @override
   String get logFileCopied => 'Путь к логу скопирован';

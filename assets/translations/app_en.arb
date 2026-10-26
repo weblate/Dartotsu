@@ -84,6 +84,22 @@
   "@appLockBiometricDesc": {},
   "appLockBiometricReason": "Unlock Dartotsu",
   "@appLockBiometricReason": {},
+  "appLockDelay": "Lock when idle",
+  "@appLockDelay": {},
+  "appLockDelayDesc": "How long Dartotsu can stay in the background before asking again",
+  "@appLockDelayDesc": {},
+  "appLockDelayAlways": "Always",
+  "@appLockDelayAlways": {},
+  "appLockDelayNever": "Never",
+  "@appLockDelayNever": {},
+  "appLockDelayAfter": "After {count, plural, =1{1 minute} other{{count} minutes}}",
+  "@appLockDelayAfter": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "appLockUseBiometric": "Use biometrics",
   "@appLockUseBiometric": {},
   "appLockUnlock": "Enter your passcode",
@@ -362,6 +378,18 @@
   "@logFile": {},
   "logFileDesc": "Share the app log, or copy its path on Linux",
   "@logFileDesc": {},
+  "logDelete": "Delete log files",
+  "@logDelete": {},
+  "logDeleteDesc": "Clear the saved app logs to free up space",
+  "@logDeleteDesc": {},
+  "logDeleted": "Deleted {size} of logs",
+  "@logDeleted": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
   "logFileCopied": "Log path copied",
   "@logFileCopied": {},
   "donateSheetTitle": "Enjoying Dartotsu?",

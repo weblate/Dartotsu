@@ -389,6 +389,36 @@ abstract class AppLocalizations {
   /// **'Unlock Dartotsu'**
   String get appLockBiometricReason;
 
+  /// No description provided for @appLockDelay.
+  ///
+  /// In en, this message translates to:
+  /// **'Lock when idle'**
+  String get appLockDelay;
+
+  /// No description provided for @appLockDelayDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'How long Dartotsu can stay in the background before asking again'**
+  String get appLockDelayDesc;
+
+  /// No description provided for @appLockDelayAlways.
+  ///
+  /// In en, this message translates to:
+  /// **'Always'**
+  String get appLockDelayAlways;
+
+  /// No description provided for @appLockDelayNever.
+  ///
+  /// In en, this message translates to:
+  /// **'Never'**
+  String get appLockDelayNever;
+
+  /// No description provided for @appLockDelayAfter.
+  ///
+  /// In en, this message translates to:
+  /// **'After {count, plural, =1{1 minute} other{{count} minutes}}'**
+  String appLockDelayAfter(int count);
+
   /// No description provided for @appLockUseBiometric.
   ///
   /// In en, this message translates to:
@@ -1132,6 +1162,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Share the app log, or copy its path on Linux'**
   String get logFileDesc;
+
+  /// No description provided for @logDelete.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete log files'**
+  String get logDelete;
+
+  /// No description provided for @logDeleteDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear the saved app logs to free up space'**
+  String get logDeleteDesc;
+
+  /// No description provided for @logDeleted.
+  ///
+  /// In en, this message translates to:
+  /// **'Deleted {size} of logs'**
+  String logDeleted(String size);
 
   /// No description provided for @logFileCopied.
   ///

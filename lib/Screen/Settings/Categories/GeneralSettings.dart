@@ -4,6 +4,7 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 
 import '../../../Core/Preferences/PrefManager.dart';
+import '../../../Core/Security/AppLock.dart';
 import '../../../Core/Security/Biometric.dart';
 import '../../../Core/ThemeManager/LanguageSwitcher.dart';
 import '../../../Core/ThemeManager/LocaleController.dart';
@@ -14,6 +15,7 @@ import '../../../Utils/Functions/LinkSettings.dart';
 import '../../../Widgets/Components/CustomBottomDialog.dart';
 import '../../Lock/PasscodeSheets.dart';
 import '../Widgets/Backup/BackupSheet.dart';
+import '../Widgets/SettingRows.dart';
 import '../../../Core/State/State.dart';
 
 List<Setting> generalSettings(BuildContext context) => [
@@ -42,6 +44,20 @@ List<Setting> generalSettings(BuildContext context) => [
       }
       PrefName.appLockBiometric.rx.value = on;
     },
+  ),
+  choiceSetting<int>(
+    context,
+    name: getString.appLockDelay,
+    icon: Icons.timer_outlined,
+    value: PrefName.appLockDelay.rx.value,
+    values: const [0, 1, 2, 5, 10, AppLock.never],
+    label: (v) => switch (v) {
+      0 => getString.appLockDelayAlways,
+      AppLock.never => getString.appLockDelayNever,
+      _ => getString.appLockDelayAfter(v),
+    },
+    onPick: (v) => PrefName.appLockDelay.rx.value = v,
+    isVisible: PrefName.appLockHash.rx.value.isNotEmpty,
   ),
   Setting.normal(
     name: getString.linkOpenInApp,

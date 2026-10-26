@@ -149,6 +149,7 @@ class PrefName {
     false,
     PrefLocation.PROTECTED,
   );
+  static const appLockDelay = Pref('appLockDelay', 1, PrefLocation.PROTECTED);
   static const syncOnEdit = Pref('syncOnEdit', false, PrefLocation.COMMON);
   static const syncAuto = Pref('syncAuto', false, PrefLocation.COMMON);
   static const syncConfirm = Pref('syncConfirm', true, PrefLocation.COMMON);

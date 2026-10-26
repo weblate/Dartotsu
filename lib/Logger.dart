@@ -208,6 +208,41 @@ class Logger {
     });
   }
 
+  static Future<int> clearFiles() async {
+    final current = _logFile;
+    if (current == null) return 0;
+    final backup = File('${current.path}.old');
+    var freed = 0;
+    final sink = _sink;
+    _sink = null;
+    try {
+      await sink?.flush();
+      await sink?.close();
+      if (await backup.exists()) {
+        freed += await backup.length();
+        await backup.delete();
+      }
+      if (await current.exists()) {
+        freed += await current.length();
+        await current.writeAsString('');
+      }
+    } catch (e) {
+      _bufferPreInit(
+        _formatLog(
+          time: DateTime.now(),
+          level: LogLevel.warning,
+          message: 'Clearing the log files failed: $e',
+        ),
+      );
+    }
+    try {
+      _sink = current.openWrite(mode: FileMode.append);
+    } catch (_) {
+      _sink = null;
+    }
+    return freed;
+  }
+
   static void _bufferPreInit(String log) {
     if (_preInitBuffer.length >= _maxPreInitLogs) {
       _preInitBuffer.removeAt(0);

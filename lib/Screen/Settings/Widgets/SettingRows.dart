@@ -15,10 +15,12 @@ Setting choiceSetting<T>(
   required List<T> values,
   required String Function(T) label,
   required ValueChanged<T> onPick,
+  bool isVisible = true,
 }) => Setting.normal(
   name: name,
   description: label(value),
   icon: icon,
+  isVisible: isVisible,
   isActivity: true,
   onClick: () async {
     final picked = await showChoiceSheet<T>(

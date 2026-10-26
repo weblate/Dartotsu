@@ -65,9 +65,14 @@ class _LockScreenState extends State<_LockScreen> {
   @override
   void initState() {
     super.initState();
-    if (find<AppLock>().biometricReady) {
-      WidgetsBinding.instance.addPostFrameCallback((_) => _biometric());
-    }
+    unawaited(_autoBiometric());
+  }
+
+  Future<void> _autoBiometric() async {
+    await Biometric.probe();
+    if (!mounted) return;
+    await WidgetsBinding.instance.endOfFrame;
+    unawaited(_biometric());
   }
 
   bool _asking = false;

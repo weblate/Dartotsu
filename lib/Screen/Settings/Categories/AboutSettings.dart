@@ -8,6 +8,7 @@ import '../../../Logger.dart';
 import '../../../Utils/Function.dart';
 import '../../../Utils/Functions/CopyToClip.dart';
 import '../../../Utils/Functions/NavigateToScreen.dart';
+import '../../../Utils/Functions/SnackBar.dart';
 import '../Developer/DeveloperPage.dart';
 import '../Forks/ForksPage.dart';
 import '../../../Core/State/State.dart';
@@ -41,6 +42,12 @@ List<Setting> aboutSettings(BuildContext context) => [
     icon: Icons.description_outlined,
     onClick: _shareLog,
   ),
+  Setting.normal(
+    name: getString.logDelete,
+    description: getString.logDeleteDesc,
+    icon: Icons.delete_sweep_outlined,
+    onClick: _deleteLogs,
+  ),
   Setting.header(getString.sectionCommunity),
   Setting.normal(
     name: getString.gitHub,
@@ -64,6 +71,11 @@ List<Setting> aboutSettings(BuildContext context) => [
     onClick: () => openLinkInBrowser(kDonateUrl),
   ),
 ];
+
+Future<void> _deleteLogs() async {
+  final freed = await Logger.clearFiles();
+  snackString(getString.logDeleted(formatBytes(freed)));
+}
 
 void _shareLog() {
   final path = Logger.filePath;

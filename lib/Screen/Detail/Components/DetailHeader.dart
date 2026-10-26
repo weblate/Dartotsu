@@ -365,7 +365,13 @@ class DetailHeaderDelegate extends SliverPersistentHeaderDelegate {
 
   Widget _title(BuildContext context, Media m) {
     final scheme = context.colorScheme;
-    return SelectionArea(
+    return Clickable(
+      press: false,
+      behavior: HitTestBehavior.translucent,
+      onLongPress: () {
+        HapticFeedback.mediumImpact();
+        copyToClipboard(m.mainName);
+      },
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
