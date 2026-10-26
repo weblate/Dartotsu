@@ -10,6 +10,42 @@ import 'Queries.dart';
 import '../../../Core/State/State.dart';
 import '../../../Core/ThemeManager/LanguageSwitcher.dart';
 
+List<(int, int)> parseSimklTvEpisodes(Object? body) {
+  if (body is! List) return const [];
+  final out = <(int, int)>[
+    for (final e in body)
+      if (e is Map &&
+          e['type'] == 'episode' &&
+          e['season'] is num &&
+          e['episode'] is num &&
+          (e['season'] as num) > 0)
+        ((e['season'] as num).toInt(), (e['episode'] as num).toInt()),
+  ];
+  out.sort(
+    (a, b) => a.$1 != b.$1 ? a.$1.compareTo(b.$1) : a.$2.compareTo(b.$2),
+  );
+  return out;
+}
+
+Map<String, Object> simklShowEpisodes(int id, List<(int, int)> episodes) {
+  final seasons = <int, List<int>>{};
+  for (final (season, episode) in episodes) {
+    (seasons[season] ??= []).add(episode);
+  }
+  return {
+    'ids': {'simkl': id},
+    'seasons': [
+      for (final e in seasons.entries)
+        {
+          'number': e.key,
+          'episodes': [
+            for (final n in e.value) {'number': n},
+          ],
+        },
+    ],
+  };
+}
+
 class SimklMutations extends Mutations {
   final SimklClient client;
   final SimklQueries queries;
@@ -52,6 +88,14 @@ class SimklMutations extends Mutations {
     });
   }
 
+  Future<List<(int, int)>> _tvEpisodes(int id) async => parseSimklTvEpisodes(
+    await client.get(
+      '/tv/episodes/$id',
+      query: {'extended': 'full'},
+      auth: false,
+    ),
+  );
+
   @override
   Future<void> editList(Media media, {List<String>? customList}) async {
     if (incognitoBlocksEdits) {
@@ -70,10 +114,25 @@ class SimklMutations extends Mutations {
       final oldScore = ((before?.userScore ?? 0) / 10).round();
       final rate = score > 0 && score != oldScore;
 
+      var logged = false;
+      if (kind == SimklKind.tv && progress != old) {
+        final all = await _tvEpisodes(id);
+        final from = (progress < old ? progress : old).clamp(0, all.length);
+        final to = (progress < old ? old : progress).clamp(0, all.length);
+        if (to > from) {
+          await client.post(
+            progress < old ? '/sync/history/remove' : '/sync/history',
+            {
+              'shows': [simklShowEpisodes(id, all.sublist(from, to))],
+            },
+          );
+        }
+      }
       if (kind == SimklKind.anime && progress < old) {
         await _episodes(kind, id, progress + 1, old, add: false);
       }
       if (kind == SimklKind.anime && progress > old) {
+        logged = true;
         await client.post('/sync/history', {
           kind.syncKey: [
             _entry(kind, id, {
@@ -85,7 +144,8 @@ class SimklMutations extends Mutations {
             }),
           ],
         });
-      } else {
+      }
+      if (!logged) {
         if (status != null &&
             status != simklStatusOut(before?.userStatus, kind)) {
           await client.post(

@@ -49,6 +49,8 @@ abstract class MediaService {
 
   LocalListStore localStore({required bool anime}) => LocalListStore(id);
 
+  bool get seriesProgress => false;
+
   ServiceAuth? get auth => null;
 
   bool get isLoggedIn => auth?.isLoggedIn ?? false;

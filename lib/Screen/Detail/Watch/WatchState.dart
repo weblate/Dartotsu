@@ -134,6 +134,8 @@ class WatchState extends ScreenState {
     if (anime) unawaited(_loadMeta());
     if (fixedSource) {
       final fixed = current.sourceData!;
+      await ensureSourcesReady(itemType);
+      if (generation != _generation) return;
       if (!isSourceInstalled(fixed)) {
         phase.value = WatchPhase.noSource;
         return;
@@ -544,6 +546,9 @@ class WatchState extends ScreenState {
       fallbackThumb: current.banner ?? current.cover ?? '',
       anime: anime,
       seasoned: seasoned,
+      seasonOffsets: seasoned && service.seriesProgress
+          ? seasonOffsets(episodes.toList(), seasons.toList())
+          : const {},
     );
     final shown = !_offlineList
         ? built

@@ -6,7 +6,7 @@ class WatchUnit {
   final DEpisode raw;
   final String number;
   String key;
-  final double value;
+  double value;
   final String? scanlator;
   String? season;
   String title;
@@ -181,6 +181,26 @@ List<DEpisode> normalizeAll(List<DEpisode> input) {
   return [for (final name in names) ...normalizeEpisodes(groups[name]!)];
 }
 
+Map<String, double> seasonOffsets(
+  List<DEpisode> normalized,
+  List<String> order,
+) {
+  final counts = <String, Set<double>>{};
+  for (final e in normalized) {
+    final name = seasonOf(e);
+    final number = double.tryParse(e.episodeNumber);
+    if (name == null || number == null) continue;
+    (counts[name] ??= {}).add(number);
+  }
+  final out = <String, double>{};
+  var total = 0.0;
+  for (final name in order) {
+    out[name] = total;
+    total += counts[name]?.length ?? 0;
+  }
+  return out;
+}
+
 List<String> seasonNames(List<DEpisode> normalized) =>
     _seasonGroups(
       normalized,
@@ -205,6 +225,7 @@ List<WatchUnit> buildUnits(
   required String fallbackThumb,
   required bool anime,
   bool seasoned = false,
+  Map<String, double> seasonOffsets = const {},
 }) {
   final units = [
     for (final ep in episodes)
@@ -215,6 +236,7 @@ List<WatchUnit> buildUnits(
       final name = u.scanlator?.trim() ?? '';
       u.season = name;
       u.key = '${u.number}~${_fnv(name)}';
+      u.value += seasonOffsets[name] ?? 0;
     }
     return units;
   }

@@ -6919,4 +6919,7 @@ class AppLocalizationsTe extends AppLocalizations {
 
   @override
   String get sourceOpenTitle => 'Open title';
+
+  @override
+  String get extensionsLoading => 'Loading extensions…';
 }

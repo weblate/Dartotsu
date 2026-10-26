@@ -47,6 +47,9 @@ Future<List<WatchUnit>?> loadUnits({
       fallbackThumb: media.banner ?? media.cover ?? '',
       anime: anime,
       seasoned: seasoned,
+      seasonOffsets: seasoned && service.seriesProgress
+          ? seasonOffsets(normalized, seasonNames(normalized))
+          : const {},
     );
   } catch (e) {
     logger('Resume units failed: $e', tag: 'RESUME');

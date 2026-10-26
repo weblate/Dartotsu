@@ -110,6 +110,28 @@ class _SourcePickerState extends State<_SourcePicker> {
       for (final s in all)
         if (term.isEmpty || (s.name ?? '').toLowerCase().contains(term)) s,
     ];
+    final preparing =
+        extensionServiceFor(
+          widget.type,
+        )?.state(widget.type).loadingInstalled.value ??
+        false;
+    if (sources.isEmpty && preparing) {
+      return Center(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const AppSpinner(),
+            SizedBox(height: Dimens.gap),
+            Text(
+              getString.extensionsLoading,
+              style: context.textTheme.bodyMedium?.copyWith(
+                color: scheme.onSurfaceVariant,
+              ),
+            ),
+          ],
+        ),
+      );
+    }
     if (sources.isEmpty) {
       return Center(
         child: Padding(

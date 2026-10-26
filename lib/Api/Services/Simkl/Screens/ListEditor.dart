@@ -34,7 +34,7 @@ class SimklListEditorView extends ListEditorScreenView {
               : statuses(anime: media.isAnime),
         ),
       ),
-      if (kind == SimklKind.anime)
+      if (kind == SimklKind.anime || kind == SimklKind.tv)
         ScreenWidget.extra(
           ListProgressField(draft: draft, total: media.totalUnits),
         ),

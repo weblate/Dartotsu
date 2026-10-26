@@ -3448,5 +3448,7 @@
   "sourceNoticesEmptyMessage": "New episodes and chapters from your subscribed titles show up here",
   "@sourceNoticesEmptyMessage": {},
   "sourceOpenTitle": "Open title",
-  "@sourceOpenTitle": {}
+  "@sourceOpenTitle": {},
+  "extensionsLoading": "Loading extensions…",
+  "@extensionsLoading": {}
 }

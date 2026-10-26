@@ -40,6 +40,9 @@ class SimklService extends MediaService {
   ServiceAuth get auth => _auth;
 
   @override
+  bool get seriesProgress => true;
+
+  @override
   List<MediaType> get feedTypes => const [MediaType.anime, MediaType.movie];
 
   @override

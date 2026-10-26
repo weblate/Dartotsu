@@ -12364,6 +12364,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Open title'**
   String get sourceOpenTitle;
+
+  /// No description provided for @extensionsLoading.
+  ///
+  /// In en, this message translates to:
+  /// **'Loading extensions…'**
+  String get extensionsLoading;
 }
 
 class _AppLocalizationsDelegate
