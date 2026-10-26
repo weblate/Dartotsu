@@ -38,7 +38,7 @@ class OnboardingState extends ScreenState {
   Future<void> grant(Permission p) async {
     final status = await p.request();
     granted[p] = status.isGranted;
-    if (!status.isGranted && status.isPermanentlyDenied) await openAppSettings();
+    if (status.isPermanentlyDenied) await openAppSettings();
   }
 
   ThemeController get theme => find();

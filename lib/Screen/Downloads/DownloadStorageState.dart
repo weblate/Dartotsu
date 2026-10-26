@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'dart:isolate';
 
-
 import '../../Core/Downloads/DownloadEngine.dart';
 import '../../Core/Downloads/DownloadPaths.dart';
 import '../../Core/Downloads/DownloadScanner.dart';

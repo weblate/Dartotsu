@@ -9,9 +9,11 @@ Date currentDate() {
 bool reachesEnd(Media media, int progress) {
   final total = media.totalUnits;
   if (total == null || total <= 0 || progress < total) return false;
-  return !const {'RELEASING', 'HIATUS', 'NOT_YET_RELEASED'}.contains(
-    media.status,
-  );
+  return !const {
+    'RELEASING',
+    'HIATUS',
+    'NOT_YET_RELEASED',
+  }.contains(media.status);
 }
 
 bool applyProgress(Media media, int progress) {

@@ -48,7 +48,8 @@ class NetworkManager extends AppController implements BridgeNetwork {
   Future<void> setCookies(String url, List<String> cookies) async {
     final uri = Uri.parse(url);
     cookieManager.setCookies([
-      for (final header in cookies) ?cookieManager.parseSingleCookie(header, uri),
+      for (final header in cookies)
+        ?cookieManager.parseSingleCookie(header, uri),
     ]);
   }
 
@@ -88,7 +89,6 @@ class NetworkManager extends AppController implements BridgeNetwork {
     unawaited(_captureWebViewUserAgent());
     super.onInit();
   }
-
 
   Future<void> _captureWebViewUserAgent() async {
     if (PrefName.fetchedUserAgent.value.isNotEmpty) return;

@@ -2,7 +2,6 @@ import 'dart:ui';
 
 import 'package:flutter/widgets.dart';
 
-
 const _dragDevices = {
   PointerDeviceKind.touch,
   PointerDeviceKind.stylus,

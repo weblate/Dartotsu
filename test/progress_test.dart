@@ -32,12 +32,15 @@ void main() {
   });
 
   group('applyProgress', () {
-    test('reading the latest chapter of an ongoing series keeps it current', () {
-      final media = manga('RELEASING', 100)..userStatus = 'CURRENT';
-      applyProgress(media, 100);
-      expect(media.userStatus, 'CURRENT');
-      expect(media.userCompletedAt?.year, isNull);
-    });
+    test(
+      'reading the latest chapter of an ongoing series keeps it current',
+      () {
+        final media = manga('RELEASING', 100)..userStatus = 'CURRENT';
+        applyProgress(media, 100);
+        expect(media.userStatus, 'CURRENT');
+        expect(media.userCompletedAt?.year, isNull);
+      },
+    );
 
     test('finishing a finished series completes it', () {
       final media = manga('FINISHED', 100)..userStatus = 'CURRENT';

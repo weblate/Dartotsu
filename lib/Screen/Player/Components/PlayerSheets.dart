@@ -113,7 +113,9 @@ class _SpeedPanelState extends State<_SpeedPanel> {
               orElse: () => -1,
             ),
             onChanged: _set,
-            options: [for (final s in list) AppSegment(s, label: speedLabel(s))],
+            options: [
+              for (final s in list) AppSegment(s, label: speedLabel(s)),
+            ],
           ),
         ],
       ),

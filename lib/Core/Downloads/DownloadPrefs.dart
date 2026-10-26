@@ -29,4 +29,8 @@ const downloadSpeedLimitPref = Pref(
   PrefLocation.OTHER,
 );
 
-const repoToolsUnlockedPref = Pref('repoToolsUnlocked', false, PrefLocation.OTHER);
+const repoToolsUnlockedPref = Pref(
+  'repoToolsUnlocked',
+  false,
+  PrefLocation.OTHER,
+);

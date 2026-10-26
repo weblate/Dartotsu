@@ -9,7 +9,6 @@ import 'PrefManager.dart';
 import '../../Logger.dart';
 
 class StorageManager {
-
   static Future<Directory?> getDirectory({
     String? subPath,
     bool useCustomPath = false,
@@ -46,7 +45,6 @@ class StorageManager {
         }
 
         final emulatedRoot = await getEmulatedRoot();
-
 
         final basePath = customPath.isNotEmpty
             ? withAppRoot(customPath)
@@ -85,7 +83,6 @@ class StorageManager {
     return Directory(dbDir);
   }
 
-
   static Future<String> getEmulatedRoot() async {
     try {
       final dir = await getExternalStorageDirectory();
@@ -120,7 +117,6 @@ class StorageManager {
     final manageStorageStatus = await manageStoragePermission.request();
     return manageStorageStatus.isGranted;
   }
-
 
   static Future<bool> hasStoragePermission() async {
     if (!Platform.isAndroid) return true;

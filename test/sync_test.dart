@@ -340,10 +340,13 @@ void main() {
     });
 
     test('supports manga ID mapping index', () {
-      final mangaIndex = SyncIdIndex(
-        [10748, 30001, 1, 72274276213, 4],
-        anime: false,
-      );
+      final mangaIndex = SyncIdIndex([
+        10748,
+        30001,
+        1,
+        72274276213,
+        4,
+      ], anime: false);
       expect(mangaIndex.expand({SyncKey.anilist: 30001}), {
         SyncKey.anilist: 30001,
         SyncKey.mangabaka: 10748,

@@ -1175,9 +1175,7 @@ class _RemoteSvgState extends State<_RemoteSvg> {
         return const SizedBox(
           width: 48,
           height: 48,
-          child: Center(
-            child: AppSpinner(),
-          ),
+          child: Center(child: AppSpinner()),
         );
       }
       final svg = snap.data;

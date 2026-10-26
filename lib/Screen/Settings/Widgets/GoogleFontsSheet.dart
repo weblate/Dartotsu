@@ -114,9 +114,7 @@ class _GoogleFontsSheetState extends State<_GoogleFontsSheet> {
                         selected: isActive,
                         onTap: () => _apply(family),
                         title: Text(family),
-                        trailing: isBusy
-                            ? const AppSpinner()
-                            : null,
+                        trailing: isBusy ? const AppSpinner() : null,
                       );
                     },
                   );

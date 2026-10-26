@@ -23,9 +23,7 @@ class BackupActionButton extends StatelessWidget {
         width: double.infinity,
         child: FilledButton.icon(
           onPressed: busy.value ? null : onPressed,
-          icon: busy.value
-              ? const AppSpinner()
-              : Icon(icon),
+          icon: busy.value ? const AppSpinner() : Icon(icon),
           label: Text(label),
         ),
       ),

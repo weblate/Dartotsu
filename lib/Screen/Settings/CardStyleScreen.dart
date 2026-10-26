@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 import '../../Model/CardStyle.dart';
 import '../../Utils/Extensions/CardStyleMetrics.dart';
 import '../../Utils/Extensions/ContextExtensions.dart';
@@ -131,7 +130,8 @@ class _CardStyleScreenState extends BaseScreen<CardStyleScreen>
           if (id != 'custom') state.set(CardStyle.presetById(id));
         },
         options: [
-          for (final id in CardStyle.presetIds) AppSegment(id, label: names[id]!),
+          for (final id in CardStyle.presetIds)
+            AppSegment(id, label: names[id]!),
           if (s.preset == 'custom')
             AppSegment('custom', label: getString.colorPickerCustom),
         ],
