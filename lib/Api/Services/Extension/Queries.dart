@@ -31,9 +31,9 @@ class ExtensionQueries extends Queries {
   Future<Media?> mediaDetails(Media media) async {
     final source = media.sourceData;
     if (source == null) return media;
-    final detail = await source.methods.getDetail(
-      DMedia.withUrl(media.shareLink),
-    );
+    final detail = await liveSource(
+      source,
+    ).methods.getDetail(DMedia.withUrl(media.shareLink));
     if (detail.description?.isNotEmpty == true) {
       media.description = detail.description;
     }

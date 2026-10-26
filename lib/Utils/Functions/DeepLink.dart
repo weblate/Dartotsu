@@ -138,12 +138,26 @@ class DeepLink {
     );
   }
 
+  static String? _lastLink;
+  static DateTime _lastLinkAt = DateTime.fromMillisecondsSinceEpoch(0);
+
+  static bool _duplicate(Uri uri) {
+    final now = DateTime.now();
+    final same =
+        _lastLink == uri.toString() &&
+        now.difference(_lastLinkAt) < const Duration(seconds: 2);
+    _lastLink = uri.toString();
+    _lastLinkAt = now;
+    return same;
+  }
+
   static Future<void> _dispatch(Uri uri) async {
     if (completeAuthLink(uri)) return;
     if (find<AppLock>().locked.value) {
       find<AppLock>().run(() => unawaited(_dispatch(uri)));
       return;
     }
+    if (_duplicate(uri)) return;
     for (var i = 0; i < 50 && appContext == null; i++) {
       await Future<void>.delayed(const Duration(milliseconds: 100));
     }

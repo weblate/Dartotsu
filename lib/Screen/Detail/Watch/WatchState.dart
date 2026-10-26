@@ -133,8 +133,8 @@ class WatchState extends ScreenState {
     if (find<OfflineMode>().isOffline.value && await _startOffline()) return;
     if (anime) unawaited(_loadMeta());
     if (fixedSource) {
-      final fixed = current.sourceData!;
       await ensureSourcesReady(itemType);
+      final fixed = liveSource(current.sourceData!);
       if (generation != _generation) return;
       if (!isSourceInstalled(fixed)) {
         phase.value = WatchPhase.noSource;

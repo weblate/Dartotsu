@@ -212,6 +212,13 @@ Future<void> ensureSourcesReady(ItemType type) async {
   await extensionServiceFor(type)?.initializeInstalled(type);
 }
 
+Source liveSource(Source source) {
+  final id = source.id;
+  if (id == null) return source;
+  final type = source.itemType ?? ItemType.anime;
+  return installedSources(type).firstWhereOrNull((s) => s.id == id) ?? source;
+}
+
 bool isSourceInstalled(Source source) {
   final type = source.itemType ?? ItemType.anime;
   final id = source.id;
