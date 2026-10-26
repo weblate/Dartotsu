@@ -15,6 +15,8 @@ class CastProxy {
 
   String? videoUrl;
   String? subtitleUrl;
+  bool isHls = false;
+  String contentType = 'video/mp4';
 
   bool get running => _server != null;
 
@@ -32,7 +34,10 @@ class CastProxy {
     final server = _server = await HttpServer.bind(InternetAddress.anyIPv4, 0);
     _host = await _localIp();
     final base = 'http://$_host:${server.port}';
-    videoUrl = _isHls(video) ? '$base/hls/master.m3u8' : '$base/video';
+    final sniffed = await _sniff(video);
+    isHls = sniffed.hls;
+    contentType = isHls ? 'application/x-mpegURL' : sniffed.type;
+    videoUrl = isHls ? '$base/hls/master.m3u8' : '$base/video';
     subtitleUrl = subtitle == null || subtitle.isEmpty
         ? null
         : '$base/subtitles.vtt';
@@ -44,6 +49,8 @@ class CastProxy {
     _server = null;
     videoUrl = null;
     subtitleUrl = null;
+    isHls = false;
+    contentType = 'video/mp4';
     _video = null;
     _subtitle = null;
     try {
@@ -58,7 +65,74 @@ class CastProxy {
 
   String get _base => 'http://$_host:${_server?.port}';
 
-  static bool _isHls(String url) => url.contains('.m3u8');
+  static String _typeByName(String url) {
+    final path = Uri.tryParse(url)?.path.toLowerCase() ?? url.toLowerCase();
+    if (path.endsWith('.webm')) return 'video/webm';
+    if (path.endsWith('.mkv')) return 'video/x-matroska';
+    if (path.endsWith('.mp3')) return 'audio/mpeg';
+    if (path.endsWith('.m4a') || path.endsWith('.aac')) return 'audio/mp4';
+    return 'video/mp4';
+  }
+
+  static bool _isMediaType(String? type) {
+    final lower = (type ?? '').toLowerCase();
+    return lower.startsWith('video/') ||
+        lower.startsWith('audio/') ||
+        lower.contains('mpegurl') ||
+        lower.startsWith('text/vtt') ||
+        lower == 'application/mp4';
+  }
+
+  static String _segmentType(String url) {
+    final path = Uri.tryParse(url)?.path.toLowerCase() ?? '';
+    if (path.endsWith('.m4s') ||
+        path.endsWith('.mp4') ||
+        path.endsWith('.cmfv') ||
+        path.endsWith('.cmfa')) {
+      return 'video/mp4';
+    }
+    if (path.endsWith('.aac')) return 'audio/aac';
+    if (path.endsWith('.vtt') || path.endsWith('.webvtt')) return 'text/vtt';
+    return 'video/mp2t';
+  }
+
+  Future<({bool hls, String type})> _sniff(String url) async {
+    if (_isLocal(url)) return (hls: false, type: _typeByName(url));
+    if (url.toLowerCase().contains('.m3u8')) {
+      return (hls: true, type: 'application/x-mpegURL');
+    }
+    try {
+      final request = await _client
+          .getUrl(Uri.parse(url))
+          .timeout(const Duration(seconds: 15));
+      _upstream.forEach(request.headers.set);
+      request.headers.set('range', 'bytes=0-255');
+      final reply = await request.close().timeout(const Duration(seconds: 15));
+      if (reply.statusCode >= 400) {
+        await reply.drain<void>();
+        return (hls: false, type: _typeByName(url));
+      }
+      final type = reply.headers.value('content-type');
+      final head = <int>[];
+      await for (final chunk in reply.timeout(const Duration(seconds: 15))) {
+        head.addAll(chunk);
+        if (head.length >= 256) break;
+      }
+      final text = utf8.decode(head, allowMalformed: true).trimLeft();
+      final bom = text.startsWith('\uFEFF') ? text.substring(1) : text;
+      if ((type ?? '').toLowerCase().contains('mpegurl') ||
+          bom.startsWith('#EXTM3U')) {
+        return (hls: true, type: 'application/x-mpegURL');
+      }
+      final plain = type?.split(';').first.trim().toLowerCase();
+      if (plain != null &&
+          (plain.startsWith('video/') || plain.startsWith('audio/')) &&
+          plain != 'video/mp2t') {
+        return (hls: false, type: plain);
+      }
+    } catch (_) {}
+    return (hls: false, type: _typeByName(url));
+  }
 
   static bool _isLocal(String url) =>
       url.startsWith('/') || url.startsWith('file://');
@@ -137,7 +211,7 @@ class CastProxy {
     HttpRequest request,
     String url, {
     String method = 'GET',
-    ContentType? fallback,
+    String? mediaType,
   }) async {
     final upstream = await _client.openUrl(method, Uri.parse(url));
     _outgoing(request).forEach(upstream.headers.set);
@@ -154,8 +228,9 @@ class CastProxy {
         response.headers.set(name, value);
       }
     });
-    if (fallback != null && response.headers.contentType == null) {
-      response.headers.contentType = fallback;
+    if (mediaType != null &&
+        !_isMediaType(response.headers.value('content-type'))) {
+      response.headers.set('content-type', mediaType);
     }
     await reply.pipe(response);
   }
@@ -185,7 +260,7 @@ class CastProxy {
         request,
         video,
         method: request.method == 'HEAD' ? 'HEAD' : 'GET',
-        fallback: ContentType('video', 'mp4'),
+        mediaType: contentType,
       );
     }
   }
@@ -203,7 +278,7 @@ class CastProxy {
     final total = await file.length();
     response.headers
       ..set('Accept-Ranges', 'bytes')
-      ..contentType = ContentType('video', 'mp4');
+      ..set('content-type', contentType);
     final range = request.headers.value('range');
     if (range != null && range.startsWith('bytes=')) {
       final parts = range.substring(6).split('-');
@@ -250,7 +325,13 @@ class CastProxy {
       await request.response.close();
       return;
     }
-    await _serveManifest(request, _rewriteMaster(body, Uri.parse(video!)));
+    final base = Uri.parse(video!);
+    await _serveManifest(
+      request,
+      body.contains('#EXT-X-STREAM-INF')
+          ? _rewriteMaster(body, base)
+          : _rewriteMedia(body, base),
+    );
   }
 
   String _rewriteMaster(String manifest, Uri base) {
@@ -280,6 +361,15 @@ class CastProxy {
             !lines[i + 1].startsWith('#')) {
           out.add(variant(lines[++i]));
         }
+      } else if (line.startsWith('#EXT-X-I-FRAME-STREAM-INF')) {
+        continue;
+      } else if (line.startsWith('#EXT-X-MEDIA:')) {
+        final uri = RegExp(r'URI="([^"]+)"').firstMatch(line)?.group(1);
+        out.add(
+          uri == null
+              ? line
+              : line.replaceFirst('URI="$uri"', 'URI="${variant(uri)}"'),
+        );
       } else if (!line.startsWith('#')) {
         out.add(variant(line));
       } else {
@@ -299,7 +389,10 @@ class CastProxy {
       await request.response.close();
       return;
     }
-    final base = Uri.parse(target!);
+    await _serveManifest(request, _rewriteMedia(body, Uri.parse(target!)));
+  }
+
+  String _rewriteMedia(String body, Uri base) {
     String segment(String url) =>
         '$_base/hls/segment?url=${Uri.encodeComponent(base.resolve(url).toString())}';
     final out = <String>[];
@@ -319,7 +412,7 @@ class CastProxy {
         out.add(line);
       }
     }
-    await _serveManifest(request, out.join('\n'));
+    return out.join('\n');
   }
 
   Future<void> _serveSegment(HttpRequest request) async {
@@ -329,7 +422,7 @@ class CastProxy {
       await request.response.close();
       return;
     }
-    await _pipe(request, target);
+    await _pipe(request, target, mediaType: _segmentType(target));
   }
 
   Future<void> _serveSubtitlePlaylist(HttpRequest request) => _serveManifest(

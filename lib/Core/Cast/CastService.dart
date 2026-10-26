@@ -82,7 +82,7 @@ class CastService extends AppController {
         subtitleLabel: subtitleLabel,
       );
       final media = _proxy.videoUrl!;
-      final hls = media.endsWith('.m3u8');
+      final hls = _proxy.isHls;
       device.value = target;
       position.value = start;
       duration.value = Duration.zero;
@@ -141,7 +141,7 @@ class CastService extends AppController {
         'currentTime': start.inMilliseconds / 1000.0,
         'media': {
           'contentId': media,
-          'contentType': hls ? 'application/x-mpegURL' : 'video/mp4',
+          'contentType': _proxy.contentType,
           'streamType': 'BUFFERED',
           'metadata': {'type': 0, 'metadataType': 0, 'title': title},
           if (subtitle != null)
