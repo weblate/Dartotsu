@@ -335,7 +335,7 @@ packages:
     description:
       path: "."
       ref: master
-      resolved-ref: "7f284e715a4adcd2db2ff118bd871d6561a6a20f"
+      resolved-ref: "4568e26f3b183839149e8f545420cfa07cd330b6"
       url: "https://github.com/aayush2622/DartotsuExtensionBridge.git"
     source: git
     version: "0.0.5"
@@ -1568,10 +1568,10 @@ packages:
     dependency: transitive
     description:
       name: safe_local_storage
-      sha256: "494b982d5edb71030650ea463d939670e91b232b588323dc75229d2c5f23e7b7"
+      sha256: "76288b689a3e1fddccb377177feed85d73fdfc64c9c3c52991e2d9aba35c4857"
       url: "https://pub.dev"
     source: hosted
-    version: "2.0.6"
+    version: "2.0.7"
   screen_brightness:
     dependency: "direct main"
     description:
