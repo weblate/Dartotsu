@@ -3,6 +3,7 @@ import 'dart:io';
 
 import 'package:archive/archive.dart';
 import 'package:dartotsu/Core/Downloads/Archives.dart';
+import 'package:dartotsu/Core/Downloads/BookText.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 ArchiveFile file(String name, List<int> bytes) =>
@@ -83,4 +84,40 @@ void main() {
     final src = RegExp(r'src="([^"]+)"').firstMatch(out)!.group(1)!;
     expect(File(src).existsSync(), isTrue);
   });
+
+  test(
+    'a book picked from the files is read once and then from its cache',
+    () async {
+      final archive = Archive()
+        ..add(
+          text(
+            'META-INF/container.xml',
+            '<container><rootfiles><rootfile full-path="c.opf"/></rootfiles></container>',
+          ),
+        )
+        ..add(
+          text(
+            'c.opf',
+            '<package><manifest><item id="a" href="a.xhtml"/></manifest>'
+                '<spine><itemref idref="a"/></spine></package>',
+          ),
+        )
+        ..add(text('a.xhtml', '<html><body><p>Chapter text</p></body></html>'));
+      final epub = File('${dir.path}/Picked.epub')
+        ..writeAsBytesSync(ZipEncoder().encode(archive));
+      final cache = '${dir.path}/cache/book';
+
+      final first = await readBookText(epub.path, cacheDir: cache);
+      expect(first, contains('Chapter text'));
+      final cached = File('$cache/book.html');
+      expect(cached.existsSync(), isTrue);
+
+      cached.writeAsStringSync('from the cache');
+      expect(await readBookText(epub.path, cacheDir: cache), 'from the cache');
+
+      final plain = File('${dir.path}/note.html')
+        ..writeAsStringSync('<p>x</p>');
+      expect(await readBookText(plain.path), '<p>x</p>');
+    },
+  );
 }

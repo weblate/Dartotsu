@@ -18,6 +18,7 @@ import '../Services/Model/Media.dart';
 import '../State/State.dart';
 import '../ThemeManager/LanguageSwitcher.dart';
 import 'Archives.dart';
+import 'BookText.dart';
 import 'ChapterFetcher.dart';
 import 'DownloadPaths.dart';
 import 'DownloadPrefs.dart';
@@ -260,15 +261,7 @@ class DownloadEngine extends AppController {
     }
     final file = File(path);
     if (!file.existsSync()) return null;
-    if (!isBookFile(path)) return file.readAsString();
-    final cache = File(p.join(archiveCache(path), 'book.html'));
-    if (cache.existsSync() &&
-        cache.lastModifiedSync().isAfter(file.lastModifiedSync())) {
-      return cache.readAsString();
-    }
-    final html = await epubToHtml(path, archiveCache(path));
-    await cache.writeAsString(html);
-    return html;
+    return readBookText(path);
   }
 
   bool hasLocalUnit(String serviceId, String mediaId, String unitKey) =>

@@ -27,6 +27,7 @@ class DeepLink {
   ];
 
   static void Function(List<String> paths)? playFiles;
+  static void Function(List<String> paths)? readFiles;
 
   static void register(DeepLinkHandler handler) => handlers.insert(0, handler);
 
@@ -38,14 +39,24 @@ class DeepLink {
   static void openFiles(List<String> paths) {
     if (paths.isEmpty) return;
     find<AppLock>().run(() {
+      final books = paths.where((a) => a.toLowerCase().endsWith('.epub'));
+      final rest = paths.where((a) => !a.toLowerCase().endsWith('.epub'));
+      if (books.isNotEmpty) readFiles?.call(books.toList());
+      if (rest.isEmpty) return;
       final play = playFiles;
       if (play == null) return snackString(getString.playerNotAvailable);
-      play(paths);
+      play(rest.toList());
     });
   }
 
   static void initVideoIntentListener(List<String> args) => openFiles(
-    args.where((a) => File(a).existsSync() && a.isMediaVideo()).toList(),
+    args
+        .where(
+          (a) =>
+              File(a).existsSync() &&
+              (a.isMediaVideo() || a.toLowerCase().endsWith('.epub')),
+        )
+        .toList(),
   );
 
   static void _initIntentListener() async {

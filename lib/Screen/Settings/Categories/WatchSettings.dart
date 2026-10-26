@@ -16,6 +16,7 @@ import '../Widgets/SegmentedSetting.dart';
 import '../../Together/TogetherSheet.dart';
 import 'PlayerSettings.dart';
 import 'ReaderSettings.dart';
+import '../../Reader/LocalBook.dart';
 
 String metaProviderDescription(EpisodeMetaProvider provider) =>
     switch (provider.id) {
@@ -59,6 +60,13 @@ List<Setting> watchRows(BuildContext context) => [
         settings: readerSettings,
       ),
     ),
+  ),
+  Setting.normal(
+    name: getString.readerOpenBook,
+    description: getString.readerOpenBookDesc,
+    icon: Icons.auto_stories_rounded,
+    isActivity: true,
+    onClick: () => pickAndReadBook(context: context),
   ),
   Setting.normal(
     name: getString.togetherTitle,

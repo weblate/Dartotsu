@@ -169,6 +169,36 @@ class AppLocalizationsDe extends AppLocalizations {
   String get updateFailed => 'Update fehlgeschlagen';
 
   @override
+  String extensionUpdates(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count updates available',
+      one: '1 update available',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get updateAll => 'Update all';
+
+  @override
+  String extensionsUpdated(int done, int total) {
+    return '$done of $total extensions updated';
+  }
+
+  @override
+  String get updateConflictTitle => 'Update not installed';
+
+  @override
+  String updateConflictBody(String names) {
+    return '$names could not be installed over the existing version. This usually means the installed copy was signed differently. Uninstall it and install the new version?';
+  }
+
+  @override
+  String get updateConflictAction => 'Uninstall and reinstall';
+
+  @override
   String get noSourceSettings => 'Die Quelle hat keine Einstellungen';
 
   @override
@@ -5139,6 +5169,13 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get readerFailed => 'Dieses Kapitel konnte nicht geöffnet werden';
+
+  @override
+  String get readerOpenBook => 'Open a book';
+
+  @override
+  String get readerOpenBookDesc =>
+      'Read an epub from your files in the novel reader';
 
   @override
   String get readerNoText => 'Dieses Kapitel hat keinen Text';

@@ -461,6 +461,42 @@ abstract class AppLocalizations {
   /// **'Update failed'**
   String get updateFailed;
 
+  /// No description provided for @extensionUpdates.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 update available} other{{count} updates available}}'**
+  String extensionUpdates(int count);
+
+  /// No description provided for @updateAll.
+  ///
+  /// In en, this message translates to:
+  /// **'Update all'**
+  String get updateAll;
+
+  /// No description provided for @extensionsUpdated.
+  ///
+  /// In en, this message translates to:
+  /// **'{done} of {total} extensions updated'**
+  String extensionsUpdated(int done, int total);
+
+  /// No description provided for @updateConflictTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Update not installed'**
+  String get updateConflictTitle;
+
+  /// No description provided for @updateConflictBody.
+  ///
+  /// In en, this message translates to:
+  /// **'{names} could not be installed over the existing version. This usually means the installed copy was signed differently. Uninstall it and install the new version?'**
+  String updateConflictBody(String names);
+
+  /// No description provided for @updateConflictAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Uninstall and reinstall'**
+  String get updateConflictAction;
+
   /// No description provided for @noSourceSettings.
   ///
   /// In en, this message translates to:
@@ -9298,6 +9334,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Couldn\'t open this chapter'**
   String get readerFailed;
+
+  /// No description provided for @readerOpenBook.
+  ///
+  /// In en, this message translates to:
+  /// **'Open a book'**
+  String get readerOpenBook;
+
+  /// No description provided for @readerOpenBookDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Read an epub from your files in the novel reader'**
+  String get readerOpenBookDesc;
 
   /// No description provided for @readerNoText.
   ///

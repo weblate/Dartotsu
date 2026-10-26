@@ -47,6 +47,7 @@ import 'Core/Services/ActivityAlerts.dart';
 import 'Core/SourceAlerts/SourceAlerts.dart';
 import 'Screen/Player/Engine/PlayerSupport.dart';
 import 'Screen/Player/PlayerLauncher.dart';
+import 'Screen/Reader/LocalBook.dart';
 import 'Utils/Functions/SnackBar.dart';
 import 'Widgets/Components/ScrollConfig.dart';
 import 'l10n/app_localizations.dart';
@@ -243,6 +244,7 @@ Future<void> _postInit(List<String> args) async {
   find<CommentAlerts>().start();
   find<SourceAlerts>().start();
   installPlayerLinks();
+  installReaderLinks();
   DeepLink.register(TogetherLinks());
   DeepLink.init();
   unawaited(refreshLinkHandling());

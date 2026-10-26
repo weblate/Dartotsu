@@ -13,6 +13,7 @@ class ReaderRequest {
   final List<PageUrl>? pages;
   final Future<List<WatchUnit>?> Function()? loadUnits;
   final bool online;
+  final String? file;
 
   ReaderRequest({
     required this.service,
@@ -23,6 +24,7 @@ class ReaderRequest {
     this.pages,
     this.loadUnits,
     this.online = false,
+    this.file,
   });
 
   ReaderRequest withPages(List<PageUrl> loaded) => ReaderRequest(
@@ -34,6 +36,7 @@ class ReaderRequest {
     pages: loaded,
     loadUnits: loadUnits,
     online: online,
+    file: file,
   );
 
   bool get novel => media.format?.toLowerCase() == 'novel';

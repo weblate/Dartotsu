@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:dartotsu_extension_bridge/dartotsu_extension_bridge.dart';
 import 'package:flutter/material.dart';
 import 'package:skeletonizer/skeletonizer.dart';
@@ -13,6 +15,7 @@ import '../../Utils/Functions/NavigateToScreen.dart';
 import 'SourcePreferenceScreen.dart';
 import '../../Utils/Nav/DpadNav.dart';
 import '../../Widgets/Components/CachedNetworkImage.dart';
+import '../../Widgets/Components/SectionCard.dart';
 import '../../Core/State/State.dart';
 import '../../Widgets/Components/ScreenState.dart';
 import 'ExtensionListState.dart';
@@ -89,12 +92,79 @@ class _ExtensionListState extends State<ExtensionList>
     ),
   );
 
+  Widget _updatesSection(List<Source> updates) {
+    final updating = state.updatingAll.value;
+
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 8),
+      child: SectionCard(
+        title: getString.extensionUpdates(updates.length),
+        trailing: FilledButton.tonalIcon(
+          onPressed: updating ? null : () => unawaited(state.updateAll()),
+          icon: updating
+              ? const SizedBox(
+                  width: 16,
+                  height: 16,
+                  child: CircularProgressIndicator(strokeWidth: 2),
+                )
+              : const Icon(Icons.system_update_alt_rounded),
+          label: Text(getString.updateAll),
+        ),
+        child: Column(
+          children: [for (final source in updates) _updateRow(source)],
+        ),
+      ),
+    );
+  }
+
+  Widget _updateRow(Source source) {
+    final latest = source.versionLast;
+    final changed = (latest ?? '').isNotEmpty && latest != source.version;
+
+    return ListTile(
+      dense: true,
+      contentPadding: EdgeInsets.zero,
+      leading: ClipRRect(
+        borderRadius: BorderRadius.circular(64),
+        child: SizedBox(width: 36, height: 36, child: _buildIcon(source)),
+      ),
+      title: Text(
+        source.name ?? getString.unknownSource,
+        maxLines: 1,
+        overflow: TextOverflow.ellipsis,
+      ),
+      subtitle: Text(
+        changed ? 'v${source.version} → v$latest' : 'v${source.version}',
+        maxLines: 1,
+        overflow: TextOverflow.ellipsis,
+      ),
+      trailing: Watch(() {
+        final progress = source.id == null
+            ? null
+            : state.bridgeState.installProgress[source.id];
+        if (progress != null) return _installProgressIndicator(progress);
+        return IconButton(
+          icon: const Icon(Icons.update_rounded),
+          tooltip: getString.update,
+          onPressed: () => state.runProgressOp(
+            () => manager[source.itemType ?? widget.itemType].updateSource(
+              source,
+            ),
+            getString.updateFailed,
+          ),
+        );
+      }),
+    );
+  }
+
   Widget _buildInstalledList() {
     final installed = state.filteredInstalled();
+    final updates = state.updatable();
 
     return ReorderableListView.builder(
       scrollController: state.controller,
       padding: const EdgeInsets.all(8),
+      header: updates.isEmpty ? null : _updatesSection(updates),
       itemCount: installed.length,
       buildDefaultDragHandles: false,
       onReorder: (oldIndex, newIndex) =>

@@ -1,3 +1,4 @@
+import '../../../Core/Downloads/BookText.dart';
 import '../../../Core/Downloads/DownloadEngine.dart';
 import 'dart:async';
 
@@ -131,7 +132,10 @@ class NovelState extends ScreenState {
     _marked = false;
     fraction.value = 0;
     try {
-      final local = request.online
+      final file = request.file;
+      final local = file != null
+          ? await readBookText(file, cacheDir: await bookCacheDir(file))
+          : request.online
           ? null
           : await find<DownloadEngine>().localNovel(
               request.service.id,

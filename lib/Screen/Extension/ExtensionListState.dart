@@ -1,9 +1,14 @@
+import 'dart:async';
+
 import 'package:dartotsu_extension_bridge/dartotsu_extension_bridge.dart';
 import 'package:flutter/material.dart';
 
 import '../../Core/Preferences/PrefManager.dart';
+import '../../Logger.dart';
+import '../../Core/ThemeManager/LanguageSwitcher.dart';
 import '../../Core/State/State.dart';
 import '../../Utils/Functions/SnackBar.dart';
+import '../../Widgets/Components/AlertDialogBuilder.dart';
 import '../../Utils/Nav/DpadNav.dart';
 import '../../Widgets/Components/ScreenState.dart';
 
@@ -59,12 +64,20 @@ class ExtensionListState extends ScreenState {
   @override
   void onClose() => controller.dispose();
 
-  void reorder(List<Source> installed, int oldIndex, int newIndex) {
+  final updatingAll = false.live;
+
+  void reorder(List<Source> rows, int oldIndex, int newIndex) {
     if (newIndex > oldIndex) newIndex--;
-    final item = installed.removeAt(oldIndex);
-    installed.insert(newIndex, item);
-    bridgeState.installed.value = List<Source>.from(installed);
-    saveOrder(installed);
+    final item = rows.removeAt(oldIndex);
+    rows.insert(newIndex, item);
+    final shown = {for (final s in rows) s.id};
+    final all = applySavedOrder(dedupeById(bridgeState.installed.value));
+    var next = 0;
+    final merged = [
+      for (final s in all) shown.contains(s.id) ? rows[next++] : s,
+    ];
+    bridgeState.installed.value = merged;
+    saveOrder(merged);
   }
 
   Future<void> refreshData() async {
@@ -99,10 +112,72 @@ class ExtensionListState extends ScreenState {
     }
   }
 
+  static bool hasUpdate(Source source) => source.hasUpdate ?? false;
+
+  List<Source> updatable() => [
+    for (final s in applySavedOrder(dedupeById(bridgeState.installed.value)))
+      if (hasUpdate(s)) s,
+  ];
+
+  Future<void> updateAll() async {
+    if (updatingAll.value) return;
+    final todo = updatable();
+    if (todo.isEmpty) return;
+    updatingAll.value = true;
+    var done = 0;
+    final conflicts = <Source>[];
+    try {
+      for (final source in todo) {
+        try {
+          await manager[source.itemType ?? itemType]
+              .updateSource(source)
+              .drain<void>();
+          done++;
+        } on ExtensionUpdateConflict {
+          conflicts.add(source);
+        } catch (e) {
+          logger('Update of ${source.name} failed: $e', tag: 'EXTENSIONS');
+        }
+      }
+    } finally {
+      updatingAll.value = false;
+    }
+    snackString(getString.extensionsUpdated(done, todo.length));
+    if (conflicts.isNotEmpty) offerReinstall(conflicts);
+  }
+
+  void offerReinstall(List<Source> sources) {
+    final names = sources.map((s) => s.name ?? s.id ?? '').join(', ');
+    unawaited(
+      AlertDialogBuilder(context)
+          .setTitle(getString.updateConflictTitle)
+          .setMessage(getString.updateConflictBody(names))
+          .setPositiveButton(
+            getString.updateConflictAction,
+            () => unawaited(_reinstall(sources)),
+          )
+          .setNegativeButton(getString.cancel, null)
+          .show<void>(),
+    );
+  }
+
+  Future<void> _reinstall(List<Source> sources) async {
+    for (final source in sources) {
+      try {
+        await manager[source.itemType ?? itemType]
+            .reinstallSource(source)
+            .drain<void>();
+      } catch (e) {
+        snackString('${getString.installFailed}: $e');
+      }
+    }
+  }
+
   List<Source> filteredInstalled() {
     final installed = applySavedOrder(dedupeById(bridgeState.installed.value));
 
     return installed.where((source) {
+      if (hasUpdate(source)) return false;
       final matchesSearch =
           source.name?.toLowerCase().contains(searchTerm) ?? false;
 
@@ -180,7 +255,11 @@ class ExtensionListState extends ScreenState {
   }
 
   void runProgressOp(Stream<double> Function() op, String failureLabel) {
-    op().drain<void>().catchError((e) {
+    op().drain<void>().catchError((Object e) {
+      if (e is ExtensionUpdateConflict) {
+        offerReinstall([e.source]);
+        return;
+      }
       snackString('$failureLabel: $e');
     });
   }
