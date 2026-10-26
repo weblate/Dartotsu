@@ -135,6 +135,11 @@ class SourcePreferenceState extends ScreenState {
             TextFormField(
               initialValue: value,
               obscureText: secret,
+              keyboardType: secret
+                  ? TextInputType.visiblePassword
+                  : TextInputType.multiline,
+              minLines: 1,
+              maxLines: secret ? 1 : 8,
               onChanged: (v) => value = v,
             ),
           )
