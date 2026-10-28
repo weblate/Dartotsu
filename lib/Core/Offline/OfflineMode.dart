@@ -4,6 +4,7 @@ import '../../Utils/Functions/SnackBar.dart';
 import '../State/State.dart';
 import '../ThemeManager/LanguageSwitcher.dart';
 import 'NetStatus.dart';
+import 'OfflineGate.dart';
 import 'OfflinePrefs.dart';
 import 'PendingWrites.dart';
 
@@ -14,9 +15,11 @@ class OfflineMode extends AppController {
   late final NetStatus _net = find<NetStatus>();
   bool _autoOffline = false;
   Disposer? _watch;
+  Disposer? _gate;
 
   @override
   void onInit() {
+    _gate = onChange(isOffline, (offline) => OfflineGate.on = offline);
     unawaited(_start());
   }
 
@@ -70,6 +73,8 @@ class OfflineMode extends AppController {
 
   @override
   void onClose() {
+    OfflineGate.on = false;
+    _gate?.dispose();
     _watch?.dispose();
     isOffline.close();
     mode.close();

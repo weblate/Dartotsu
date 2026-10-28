@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:rhttp/rhttp.dart';
 import 'package:webview_all/webview_all.dart' show OffscreenWebViewSession;
 
+import '../Offline/OfflineGate.dart';
 import '../Preferences/PrefManager.dart';
 import 'CookieManager.dart';
 import 'DnsManager.dart';
@@ -173,7 +174,7 @@ class NetworkManager extends AppController implements BridgeNetwork {
       proxySettings: proxyUrl == null ? null : _buildProxySettings(proxyUrl!),
     );
     return RhttpClient.createSync(
-      interceptors: [LogInterceptor(), cookieManager],
+      interceptors: [OfflineGate(), LogInterceptor(), cookieManager],
       settings: settings,
     );
   }
