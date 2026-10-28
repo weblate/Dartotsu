@@ -151,8 +151,14 @@ class ReaderState extends ScreenState {
   ReaderSettings _effective() {
     final base = ReaderPrefs.global.value;
     final overrides = record.reader;
-    return overrides.isEmpty ? base.copy() : base.merged(overrides);
+    final settings = overrides.isEmpty ? base.copy() : base.merged(overrides);
+    return settings..autoMode = _autoMode;
   }
+
+  String get _autoMode => autoReaderMode(
+    format: request.media.format,
+    country: request.media.countryOfOrigin,
+  );
 
   @override
   void onInit() {
@@ -637,7 +643,7 @@ class ReaderState extends ScreenState {
       if (record.reader.isEmpty) record.reader = {'mode': settings.mode};
     } else {
       record.reader = {};
-      settings = ReaderPrefs.global.value.copy();
+      settings = ReaderPrefs.global.value.copy()..autoMode = _autoMode;
     }
     MediaRecords.save(request.service, request.media);
     _applySystem();

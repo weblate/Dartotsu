@@ -13,6 +13,7 @@ import '../Widgets/SettingSections.dart';
 typedef ReaderUpdate = void Function(void Function(ReaderSettings s) change);
 
 String readerModeLabel(String id) => switch (id) {
+  'auto' => getString.readerModeAuto,
   'ltr' => getString.readerModeLtr,
   'vertical' => getString.readerModeVertical,
   'webtoon' => getString.readerModeWebtoon,

@@ -4,7 +4,7 @@ import '../../../Core/State/State.dart';
 
 const _globalKey = 'readerSettings';
 
-const readerModes = ['rtl', 'ltr', 'vertical', 'webtoon', 'continuous'];
+const readerModes = ['auto', 'rtl', 'ltr', 'vertical', 'webtoon', 'continuous'];
 const readerTapZones = ['default', 'lshaped', 'kindle', 'edge', 'off'];
 const readerScales = ['fit', 'width', 'height', 'original', 'smart'];
 const readerBackgrounds = ['black', 'gray', 'white', 'theme'];
@@ -16,17 +16,26 @@ const novelThemes = ['theme', 'light', 'sepia', 'dark', 'black'];
 bool isScrollMode(String mode) =>
     mode == 'webtoon' || mode == 'continuous' || mode == 'vertical-scroll';
 
+String autoReaderMode({String? format, String? country}) {
+  final kind = (format ?? '').toUpperCase();
+  if (kind == 'MANHWA' || kind == 'MANHUA') return 'webtoon';
+  final origin = (country ?? '').toUpperCase();
+  return origin == 'KR' || origin == 'CN' ? 'webtoon' : 'rtl';
+}
+
 class ReaderSettings {
   final Map<String, Object?> _v;
+  String autoMode;
 
-  ReaderSettings([Map<String, Object?>? values]) : _v = {...?values};
+  ReaderSettings([Map<String, Object?>? values, this.autoMode = 'rtl'])
+    : _v = {...?values};
 
   Map<String, Object?> toJson() => {..._v};
 
-  ReaderSettings copy() => ReaderSettings(_v);
+  ReaderSettings copy() => ReaderSettings(_v, autoMode);
 
   ReaderSettings merged(Map<String, Object?> overrides) =>
-      ReaderSettings({..._v, ...overrides});
+      ReaderSettings({..._v, ...overrides}, autoMode);
 
   Map<String, Object?> diff(ReaderSettings base) => {
     for (final e in _v.entries)
@@ -43,9 +52,10 @@ class ReaderSettings {
 
   String get mode => _get('mode', 'ltr');
   set mode(String v) => _v['mode'] = v;
-  bool get scrolls => isScrollMode(mode);
-  bool get reversed => mode == 'rtl';
-  bool get vertical => mode == 'vertical';
+  String get effectiveMode => mode == 'auto' ? autoMode : mode;
+  bool get scrolls => isScrollMode(effectiveMode);
+  bool get reversed => effectiveMode == 'rtl';
+  bool get vertical => effectiveMode == 'vertical';
 
   String get tapZones => _get('tapZones', 'default');
   set tapZones(String v) => _v['tapZones'] = v;
