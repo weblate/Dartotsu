@@ -647,7 +647,7 @@ defines `handleError(e, st, {softCrash})` (called from the zone handler in `main
 - `media_kit` (3 packages) and `flutter_discord_rpc_fork` are git deps; `flutter_web_auth_2`
   is a personal fork. `dependency_overrides` only pins `collection`. Treat `pubspec.yaml`
   changes as high-risk.
-- Tests: `flutter test` runs `test/core_state_test.dart` (the `Core/State` engine); there is no UI test suite.
+- Tests: the `test/` folder was deleted; there is no test suite (`flutter_test` is still a dev dependency).
 
 ## The `main` branch (current app — reference for porting)
 
