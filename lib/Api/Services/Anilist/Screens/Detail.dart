@@ -102,7 +102,9 @@ class AnilistDetailView extends DetailScreenView {
     final anime = m.anime;
     final airing = anime?.nextAiringEpisode;
     final total = m.totalUnits?.toString() ?? '~';
-    final count = airing != null && airing != -1 ? '$airing | $total' : total;
+    final count = airing != null && airing > 1
+        ? '${airing - 1} | $total'
+        : total;
     final studio = anime?.studio?.name;
     final author = (anime?.author ?? m.manga?.author)?.name;
     final season = anime?.season;

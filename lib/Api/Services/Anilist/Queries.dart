@@ -36,6 +36,7 @@ part 'Queries/GetGenresAndTags.dart';
 part 'Queries/GetHomePageData.dart';
 part 'Queries/GetMediaData.dart';
 part 'Queries/GetMediaDetails.dart';
+part 'Queries/GetMissingSequels.dart';
 part 'Queries/GetNotifications.dart';
 part 'Queries/GetReviews.dart';
 part 'Queries/GetSocialData.dart';

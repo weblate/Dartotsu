@@ -121,7 +121,7 @@ class _ScreenWidgetListState extends State<ScreenWidgetList>
 
   Widget _list(BuildContext context) {
     return RefreshIndicator(
-      onRefresh: state.refresh,
+      onRefresh: state.pull,
       child: Watch(() {
         final list = state.current;
         final empty = list.isEmpty;

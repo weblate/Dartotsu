@@ -1,4 +1,5 @@
 import '../../../Core/Preferences/PrefManager.dart';
+import '../../../Core/Services/LayoutPref.dart';
 
 enum QueryLoadMode { stacked, sequential }
 
@@ -10,6 +11,7 @@ const kAnilistHomeSections = <String, bool>{
   'Favourite Manga': true,
   'Planned Manga': true,
   'Recommended': true,
+  'Missing Sequel': false,
   'Hidden Media': false,
 };
 
@@ -55,14 +57,9 @@ class AnilistPref {
     PrefLocation.OTHER,
   );
 
-  static final homeLayout = Pref<Map<String, bool>>.coded(
+  static final homeLayout = layoutPref(
     'anilistHomeLayout',
     kAnilistHomeSections,
-    PrefLocation.OTHER,
-    encode: (v) => Map<String, dynamic>.from(v),
-    decode: (raw) => raw is Map
-        ? {for (final e in raw.entries) e.key.toString(): e.value == true}
-        : kAnilistHomeSections,
   );
 
   static final animeLayout = _layoutPref(

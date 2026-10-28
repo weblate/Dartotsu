@@ -8,6 +8,14 @@ typedef SectionMap = Map<String, List<Media>>;
 
 typedef SectionJob = Future<SectionMap> Function();
 
+/// True while the user's own pull-to-refresh is running, so a job that keeps
+/// its result for a while can fetch again.
+class SectionReload {
+  SectionReload._();
+
+  static bool manual = false;
+}
+
 /// Runs [jobs] and yields `(jobIndex, patch)` as each one finishes — in
 /// completion order when [parallel], so a slow source never blocks the fast
 /// ones behind it.

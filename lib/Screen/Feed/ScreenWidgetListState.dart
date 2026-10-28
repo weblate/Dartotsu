@@ -133,6 +133,15 @@ class ScreenWidgetListState extends ScreenState {
     ];
   }
 
+  Future<void> pull() async {
+    SectionReload.manual = true;
+    try {
+      await refresh();
+    } finally {
+      SectionReload.manual = false;
+    }
+  }
+
   Future<void> refresh() async {
     if (refreshing) {
       queued = true;
@@ -342,9 +351,16 @@ class ScreenWidgetListState extends ScreenState {
     }
   }
 
+  bool _scrollingDown = true;
+
   bool onScroll(ScrollNotification n) {
+    if (n is ScrollUpdateNotification && n.depth == 0) {
+      final delta = n.scrollDelta ?? 0;
+      if (delta != 0) _scrollingDown = delta > 0;
+    }
     final title = tailTitle;
     if (title != null &&
+        _scrollingDown &&
         n.depth == 0 &&
         n.metrics.extentAfter < 600 &&
         (n is ScrollUpdateNotification || n is ScrollEndNotification)) {

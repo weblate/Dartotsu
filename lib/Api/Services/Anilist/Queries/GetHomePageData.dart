@@ -11,7 +11,10 @@ extension on AnilistQueries {
         .map((e) => e.key)
         .where((s) => _homeFragments(s, id) != null)
         .toList();
-    if (sections.isEmpty) return const [];
+    final sequel = layout[_missingSequelTitle] == true
+        ? _missingSequelJob(id)
+        : null;
+    if (sections.isEmpty) return [?sequel];
 
     final hidden = <String, Media>{};
 
@@ -36,10 +39,11 @@ extension on AnilistQueries {
     };
 
     if (AnilistPref.queryLoadMode.value == QueryLoadMode.stacked) {
-      return [job(sections)];
+      return [job(sections), ?sequel];
     }
     return [
       for (final section in sections) job([section]),
+      ?sequel,
     ];
   }
 
