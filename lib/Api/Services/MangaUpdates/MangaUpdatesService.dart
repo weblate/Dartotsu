@@ -1,3 +1,5 @@
+import 'Prefs.dart';
+import '../../../Core/Services/Model/Media.dart';
 import '../../../Core/Services/MediaService.dart';
 import '../../../Core/State/State.dart';
 import '../../../Screen/Settings/Sync/Data/SyncAdapter.dart';
@@ -12,6 +14,10 @@ import 'Sync.dart';
 const mangaUpdatesServiceId = 'mangaupdates';
 
 class MangaUpdatesService extends MediaService {
+  @override
+  bool isHiddenMedia(Media media) =>
+      super.isHiddenMedia(media) || (media.isAdult && MangaUpdatesPref.hideNsfw.value);
+
   @override
   String get id => mangaUpdatesServiceId;
 

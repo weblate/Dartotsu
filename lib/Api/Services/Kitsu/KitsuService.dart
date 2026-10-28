@@ -1,3 +1,5 @@
+import 'Prefs.dart';
+import '../../../Core/Services/Model/Media.dart';
 import '../../../Core/Services/MediaService.dart';
 import '../../../Core/State/State.dart';
 import 'Auth.dart';
@@ -16,6 +18,10 @@ import 'Sync.dart';
 const kitsuServiceId = 'kitsu';
 
 class KitsuService extends MediaService {
+  @override
+  bool isHiddenMedia(Media media) =>
+      super.isHiddenMedia(media) || (media.isAdult && KitsuPref.hideNsfw.value);
+
   @override
   String get id => kitsuServiceId;
 

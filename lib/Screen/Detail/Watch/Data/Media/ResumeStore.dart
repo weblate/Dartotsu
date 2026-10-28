@@ -229,6 +229,10 @@ class ResumeStore {
   }) {
     _load();
     final slot = '${service.id}/${kind.name}/${media.id}';
+    if (service.isHiddenMedia(media)) {
+      _drop(slot);
+      return;
+    }
     final done = duration > 0 && position / duration >= _finished;
     final started = kind == ResumeKind.watch
         ? position >= _minSeconds
@@ -329,6 +333,10 @@ class ResumeStore {
   static void noteProgress(MediaService service, Media media, int? progress) {
     _load();
     find<SourceSubscriptions>().noteProgress(service, media, progress);
+    if (service.isHiddenMedia(media)) {
+      _drop('${service.id}/${ResumeKind.watch.name}/${media.id}');
+      _drop('${service.id}/${ResumeKind.read.name}/${media.id}');
+    }
     if (progress == null) return;
     var changed = false;
     final next = <ResumeEntry>[];
@@ -353,7 +361,10 @@ class ResumeStore {
     _load();
     return [
       for (final e in entries)
-        if (e.serviceId == service.id && !hides(e, e.progress)) e,
+        if (e.serviceId == service.id &&
+            !hides(e, e.progress) &&
+            !service.isHiddenMedia(e.buildMedia()))
+          e,
     ];
   }
 

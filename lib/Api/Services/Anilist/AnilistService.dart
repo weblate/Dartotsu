@@ -1,3 +1,5 @@
+import 'Prefs.dart';
+import '../../../Core/Services/Model/Media.dart';
 import '../../../Core/Services/MediaService.dart';
 import 'Auth.dart';
 import 'Screens/Calendar.dart';
@@ -18,6 +20,11 @@ const anilistServiceId = 'anilist';
 const anilistContinueOrder = ContinueOrder(anilistServiceId);
 
 class AnilistService extends MediaService {
+  @override
+  bool isHiddenMedia(Media media) =>
+      super.isHiddenMedia(media) ||
+      AnilistPref.removeList.value.contains(media.id);
+
   @override
   String get id => anilistServiceId;
 
