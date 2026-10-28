@@ -43,6 +43,9 @@ class BrowseFeed extends StatelessWidget {
                 service.calendarView != null
             ? () => openCalendar(context, service)
             : null,
+        onNews: service.newsView == null
+            ? null
+            : () => openNews(context, service),
         onCharts: type == MediaType.anime
             ? () => navigateToPage(context, ChartsScreen(service: service))
             : null,

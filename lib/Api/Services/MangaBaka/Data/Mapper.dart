@@ -70,11 +70,25 @@ String _titleCase(String s) => s
 String? _cover(Object? cover) {
   if (cover is! Map) return null;
   for (final size in const ['x350', 'x250']) {
-    final url = (cover[size] as Map?)?['x2'] ?? (cover[size] as Map?)?['x1'];
+    final value = cover[size];
+    final url = value is Map ? value['x2'] ?? value['x1'] : value;
     if (url is String && url.isNotEmpty) return url;
   }
-  final raw = (cover['raw'] as Map?)?['url'];
+  final value = cover['raw'];
+  final raw = value is Map ? value['url'] : value;
   return raw is String && raw.isNotEmpty ? raw : null;
+}
+
+String? _primary(List<dynamic> titles) {
+  for (final t in titles) {
+    if (t is Map && t['is_primary'] == true && t['title'] is String) {
+      return t['title'] as String;
+    }
+  }
+  for (final t in titles) {
+    if (t is Map && t['title'] is String) return t['title'] as String;
+  }
+  return null;
 }
 
 String? _english(List<dynamic> titles) {
@@ -116,7 +130,7 @@ bool isMangaBakaAdult(Map<String, dynamic> s) =>
 
 Media mapMangaBakaSeries(Map<String, dynamic> s) {
   final titles = (s['titles'] as List?) ?? const [];
-  final main = s['title'] as String?;
+  final main = (s['title'] as String?) ?? _primary(titles);
   final english = _english(titles) ?? main;
   final native = s['native_title'] as String?;
   final authors = [

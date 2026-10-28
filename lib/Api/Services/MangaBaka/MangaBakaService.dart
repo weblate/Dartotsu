@@ -1,9 +1,12 @@
+import 'Prefs.dart';
+import '../../../Core/Services/Model/Media.dart';
 import '../../../Core/Services/MediaService.dart';
 import '../../../Core/State/State.dart';
 import 'Auth.dart';
 import 'Screens/Detail.dart';
 import 'Screens/Feed.dart';
 import 'Screens/Home.dart';
+import 'Screens/News.dart';
 import 'Screens/Search.dart';
 import 'Screens/Settings.dart';
 import 'Screens/Social.dart';
@@ -13,6 +16,10 @@ import 'Sync.dart';
 const mangaBakaServiceId = 'mangabaka';
 
 class MangaBakaService extends MediaService {
+  @override
+  bool isHiddenMedia(Media media) =>
+      super.isHiddenMedia(media) || (media.isAdult && MangaBakaPref.hideNsfw.value);
+
   @override
   String get id => mangaBakaServiceId;
 
@@ -53,6 +60,9 @@ class MangaBakaService extends MediaService {
 
   @override
   DetailScreenView get detailView => MangaBakaDetailView(this);
+
+  @override
+  NewsScreenView get newsView => MangaBakaNewsView();
 
   @override
   SettingsScreenView get settingsView => MangaBakaSettingsView();

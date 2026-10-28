@@ -265,8 +265,13 @@ class _DateTile extends StatelessWidget {
 
 class ListPrivateField extends StatelessWidget {
   final ListEditorDraft draft;
+  final bool hideFromStatusLists;
 
-  const ListPrivateField({super.key, required this.draft});
+  const ListPrivateField({
+    super.key,
+    required this.draft,
+    this.hideFromStatusLists = true,
+  });
 
   @override
   Widget build(BuildContext context) => ListEditorPad(
@@ -280,13 +285,14 @@ class ListPrivateField extends StatelessWidget {
             value: draft.isPrivate.value,
             onChanged: (v) => draft.isPrivate.value = v,
           ),
-          SwitchListTile(
-            contentPadding: EdgeInsets.zero,
-            secondary: const Icon(Icons.visibility_off_outlined),
-            title: Text(getString.hideFromStatusLists),
-            value: draft.hiddenFromStatusLists.value,
-            onChanged: (v) => draft.hiddenFromStatusLists.value = v,
-          ),
+          if (hideFromStatusLists)
+            SwitchListTile(
+              contentPadding: EdgeInsets.zero,
+              secondary: const Icon(Icons.visibility_off_outlined),
+              title: Text(getString.hideFromStatusLists),
+              value: draft.hiddenFromStatusLists.value,
+              onChanged: (v) => draft.hiddenFromStatusLists.value = v,
+            ),
         ],
       ),
     ),

@@ -390,6 +390,84 @@
       }
     }
   },
+  "missingSequel": "Missing Sequel",
+  "@missingSequel": {},
+  "rising": "Rising",
+  "@rising": {},
+  "stacks": "Stacks",
+  "@stacks": {},
+  "stacksAll": "All",
+  "@stacksAll": {},
+  "stacksFeatured": "Featured",
+  "@stacksFeatured": {},
+  "stacksMine": "Yours",
+  "@stacksMine": {},
+  "stacksSaved": "Saved",
+  "@stacksSaved": {},
+  "stacksFollowing": "Following",
+  "@stacksFollowing": {},
+  "stacksEmpty": "No stacks here yet",
+  "@stacksEmpty": {},
+  "stacksSignIn": "Sign in to MangaBaka to see your stacks",
+  "@stacksSignIn": {},
+  "stacksScopeNeeded": "Your stacks need a new permission. Sign in to MangaBaka again to allow it.",
+  "@stacksScopeNeeded": {},
+  "stacksSignInAgain": "Sign in again",
+  "@stacksSignInAgain": {},
+  "stacksCouldntLoad": "Couldn't load the stacks",
+  "@stacksCouldntLoad": {},
+  "stackSeriesCount": "{count, plural, =1{1 series} other{{count} series}}",
+  "@stackSeriesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "stackSavesCount": "{count, plural, =1{1 save} other{{count} saves}}",
+  "@stackSavesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "stackBy": "by {name}",
+  "@stackBy": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "stackSpoilers": "Spoilers",
+  "@stackSpoilers": {},
+  "stackEmptyEntries": "This stack is empty",
+  "@stackEmptyEntries": {},
+  "stackSave": "Save stack",
+  "@stackSave": {},
+  "stackUnsave": "Remove from saved",
+  "@stackUnsave": {},
+  "stackSavedToast": "Saved to your stacks",
+  "@stackSavedToast": {},
+  "stackRemovedToast": "Removed from your saved stacks",
+  "@stackRemovedToast": {},
+  "userStacks": "Stacks by {name}",
+  "@userStacks": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "newsTitle": "News",
+  "@newsTitle": {},
+  "newsEmpty": "No news right now",
+  "@newsEmpty": {},
+  "newsCouldntLoad": "Couldn't load the news",
+  "@newsCouldntLoad": {},
+  "seeAll": "See all",
+  "@seeAll": {},
   "logFileCopied": "Log path copied",
   "@logFileCopied": {},
   "donateSheetTitle": "Enjoying Dartotsu?",
@@ -2520,6 +2598,8 @@
   "@readerSectionReset": {},
   "readerMode": "Reading mode",
   "@readerMode": {},
+  "readerModeAuto": "Auto (by series type)",
+  "@readerModeAuto": {},
   "readerModeRtl": "Right to left",
   "@readerModeRtl": {},
   "readerModeLtr": "Left to right",

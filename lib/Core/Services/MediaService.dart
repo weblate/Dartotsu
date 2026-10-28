@@ -1,6 +1,7 @@
 import 'package:collection/collection.dart';
 
 import 'Api/Mutations.dart';
+import 'Model/Media.dart';
 import 'Api/Queries.dart';
 import '../../Screen/Settings/Sync/Data/SyncAdapter.dart';
 import 'Local/LocalListStore.dart';
@@ -67,6 +68,9 @@ abstract class MediaService {
 
   bool get hasReading => feedTypes.isEmpty || feedTypes.any((t) => !t.isVideo);
 
+  bool isHiddenMedia(Media media) =>
+      media.isListPrivate || media.hiddenFromStatusLists == true;
+
   /// Serves every tab in [feedTypes].
   FeedScreenView? get feedView => null;
 
@@ -81,6 +85,8 @@ abstract class MediaService {
   SyncAdapter? get syncAdapter => null;
 
   CalendarScreenView? get calendarView => null;
+
+  NewsScreenView? get newsView => null;
 
   NotificationScreenView? get notificationView => null;
 

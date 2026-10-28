@@ -46,13 +46,24 @@ class MangaBakaSettingsView extends SettingsScreenView {
       ),
       Setting.normal(
         name: getString.labelSections(getString.manga),
-        description: _shown(MangaBakaPref.feedLayout),
+        description: _shown(MangaBakaPref.mangaLayout),
         icon: Icons.menu_book_rounded,
         isActivity: true,
         onClick: () => showHomeLayoutSheet(
           context,
           title: getString.labelSections(getString.manga),
-          pref: MangaBakaPref.feedLayout,
+          pref: MangaBakaPref.mangaLayout,
+        ),
+      ),
+      Setting.normal(
+        name: getString.labelSections(getString.novel),
+        description: _shown(MangaBakaPref.novelLayout),
+        icon: Icons.auto_stories_rounded,
+        isActivity: true,
+        onClick: () => showHomeLayoutSheet(
+          context,
+          title: getString.labelSections(getString.novel),
+          pref: MangaBakaPref.novelLayout,
         ),
       ),
       Setting.header(getString.account),
@@ -75,7 +86,7 @@ class MangaBakaSettingsView extends SettingsScreenView {
         icon: Icons.refresh_rounded,
         isVisible: mangaBakaAuth.isLoggedIn,
         onClick: () async {
-          mangaBakaAuth.queries.invalidateLibrary();
+          mangaBakaAuth.queries.resyncLibrary();
           await mangaBakaAuth.refreshUser();
           snackString(getString.refreshed);
         },

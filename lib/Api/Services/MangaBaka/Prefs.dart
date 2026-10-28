@@ -1,5 +1,6 @@
 import '../../../Core/Preferences/PrefManager.dart';
 import '../../../Core/Services/LayoutPref.dart';
+import '../../../Core/Services/MediaService.dart';
 
 const kMangaBakaHomeSections = <String, bool>{
   'Continue Reading': true,
@@ -9,12 +10,20 @@ const kMangaBakaHomeSections = <String, bool>{
   'Hidden Media': false,
 };
 
-const kMangaBakaFeedSections = <String, bool>{
+const kMangaBakaMangaSections = <String, bool>{
   'Trending Now': true,
+  'Rising': true,
   'Latest Releases': true,
   'Top Rated': true,
   'Upcoming': true,
   'Top Manga': true,
+};
+
+const kMangaBakaNovelSections = <String, bool>{
+  'Trending Now': true,
+  'Latest Releases': true,
+  'Top Rated': true,
+  'Upcoming': true,
   'Top Novels': true,
 };
 
@@ -39,8 +48,15 @@ class MangaBakaPref {
     'mangaBakaHomeLayout',
     kMangaBakaHomeSections,
   );
-  static final feedLayout = layoutPref(
-    'mangaBakaFeedLayout',
-    kMangaBakaFeedSections,
+  static final mangaLayout = layoutPref(
+    'mangaBakaMangaLayout',
+    kMangaBakaMangaSections,
   );
+  static final novelLayout = layoutPref(
+    'mangaBakaNovelLayout',
+    kMangaBakaNovelSections,
+  );
+
+  static Pref<Map<String, bool>> feedLayoutFor(MediaType type) =>
+      type == MediaType.novel ? novelLayout : mangaLayout;
 }

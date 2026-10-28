@@ -15,7 +15,9 @@ import '../../../Core/ThemeManager/LanguageSwitcher.dart';
 import '../../../Model/MediaType.dart';
 import '../../../Model/SearchResults.dart';
 import 'Client.dart';
+import 'Community.dart';
 import 'Data/Mapper.dart';
+import 'LibrarySync.dart';
 import 'Prefs.dart';
 
 const mangaBakaPageSize = 20;
@@ -23,8 +25,9 @@ const mangaBakaPageSize = 20;
 class MangaBakaSection {
   final String title;
   final Map<String, String> query;
+  final bool rising;
 
-  const MangaBakaSection(this.title, this.query);
+  const MangaBakaSection(this.title, this.query, {this.rising = false});
 }
 
 const mangaBakaSections = [
@@ -32,6 +35,7 @@ const mangaBakaSections = [
     'sort_by': 'popularity_asc',
     'status': 'releasing',
   }),
+  MangaBakaSection('Rising', {}, rising: true),
   MangaBakaSection('Latest Releases', {'sort_by': 'latest'}),
   MangaBakaSection('Top Rated', {'sort_by': 'score_desc'}),
   MangaBakaSection('Upcoming', {
@@ -54,8 +58,11 @@ List<MangaBakaSection> mangaBakaSectionsFor(MediaType type) {
   final novel = type == MediaType.novel;
   return [
     for (final s in mangaBakaSections)
-      if (s.title == (novel ? 'Top Manga' : 'Top Novels'))
+      if (s.title == (novel ? 'Top Manga' : 'Top Novels') ||
+          (novel && s.rising))
         ...const <MangaBakaSection>[]
+      else if (s.rising)
+        s
       else
         MangaBakaSection(s.title, {
           ...s.query,
@@ -130,6 +137,8 @@ class MangaBakaQueries extends Queries {
 
   MangaBakaQueries(this.client, {required this.refreshUser, this.onChapters});
 
+  late final MangaBakaCommunity community = MangaBakaCommunity(client);
+
   int ratingScale = 10;
 
   Map<String, List<String>> get _nsfwFilter => MangaBakaPref.hideNsfw.value
@@ -165,6 +174,9 @@ class MangaBakaQueries extends Queries {
     MangaBakaSection section, {
     int page = 1,
   }) async {
+    if (section.rising) {
+      return page > 1 ? const [] : _withList(await community.rising());
+    }
     final types = section.query['type']?.split(',');
     final body = await client.get(
       '/series/search',
@@ -198,11 +210,49 @@ class MangaBakaQueries extends Queries {
   Future<List<Media>> library() =>
       client.hasToken ? _library.get() : Future.value(const []);
 
+  static const _storeKey = 'mangabaka/library';
+
+  late final _store = MangaBakaLibraryStore(
+    get: client.get,
+    read: () => loadCustomData<Map<String, dynamic>>(
+      _storeKey,
+      location: PrefLocation.CACHE,
+    ),
+    write: (value) => saveCustomData<Map<String, dynamic>>(
+      _storeKey,
+      value,
+      location: PrefLocation.CACHE,
+    ),
+    erase: () => removeCustomData(_storeKey, location: PrefLocation.CACHE),
+  );
+
   void invalidateLibrary() => _library.expire();
 
-  void clearLibrary() => _library.clear();
+  void clearLibrary() {
+    _library.clear();
+    _store.forget();
+  }
+
+  void resyncLibrary() {
+    _library.expire();
+    _store.forget();
+  }
 
   Future<List<Media>> _loadLibrary() async {
+    List<Map<String, dynamic>> rows;
+    try {
+      rows = await _store.rows();
+    } catch (e, st) {
+      logError('Queries', e, st);
+      rows = await _pagedLibrary();
+    }
+    final mapped = await compute(_mapLibrary, rows);
+    ratingScale = mapped.scale;
+    onChapters?.call(mapped.chapters);
+    return mapped.media;
+  }
+
+  Future<List<Map<String, dynamic>>> _pagedLibrary() async {
     final rows = <Map<String, dynamic>>[];
     String? next;
     var first = true;
@@ -218,10 +268,7 @@ class MangaBakaQueries extends Queries {
       rows.addAll(page);
       next = link;
     }
-    final mapped = await compute(_mapLibrary, rows);
-    ratingScale = mapped.scale;
-    onChapters?.call(mapped.chapters);
-    return mapped.media;
+    return rows;
   }
 
   Future<void> _overlayEntry(Media media) async {
@@ -366,7 +413,7 @@ class MangaBakaQueries extends Queries {
     for (final section in applyLayout(
       mangaBakaSectionsFor(type),
       (s) => s.title,
-      MangaBakaPref.feedLayout.value,
+      MangaBakaPref.feedLayoutFor(type).value,
     ))
       () async => {section.title: await sectionPage(section)},
   ];
@@ -376,9 +423,9 @@ class MangaBakaQueries extends Queries {
       ? const []
       : [
           for (final section in applyLayout(
-            mangaBakaSections,
+            mangaBakaSectionsFor(MediaType.manga),
             (s) => s.title,
-            MangaBakaPref.feedLayout.value,
+            MangaBakaPref.mangaLayout.value,
           ))
             () async => {section.title: await sectionPage(section)},
         ];

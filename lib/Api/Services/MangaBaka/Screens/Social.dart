@@ -8,6 +8,8 @@ import '../../../../Core/ThemeManager/LanguageSwitcher.dart';
 import '../../../../Model/Setting.dart';
 import '../../../../Utils/Function.dart';
 import '../../../../Utils/Functions/SnackBar.dart';
+import '../../../../Screen/MangaBaka/StacksScreen.dart';
+import '../../../../Utils/Functions/NavigateToScreen.dart';
 import '../Auth.dart';
 import '../Data/User.dart';
 
@@ -136,6 +138,12 @@ class MangaBakaSocialView extends SocialScreenView {
         onClick: () => openLinkInBrowser(user.profileUrl),
       ),
       Setting.normal(
+        name: getString.stacks,
+        icon: Icons.collections_bookmark_rounded,
+        isActivity: true,
+        onClick: () => navigateToPage(context, const StacksScreen()),
+      ),
+      Setting.normal(
         name: getString.ratingSteps,
         description: '${user.ratingSteps}',
         icon: Icons.star_rounded,
@@ -153,7 +161,7 @@ class MangaBakaSocialView extends SocialScreenView {
         description: getString.repullProfileCounts,
         icon: Icons.refresh_rounded,
         onClick: () async {
-          mangaBakaAuth.queries.invalidateLibrary();
+          mangaBakaAuth.queries.resyncLibrary();
           await mangaBakaAuth.refreshUser();
           snackString(getString.refreshed);
         },

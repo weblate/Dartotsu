@@ -35,6 +35,9 @@ class MangaBakaListEditorView extends ListEditorScreenView {
         label: media.isAnime ? getString.timesRewatched : getString.timesReread,
       ),
     ),
+    ScreenWidget.extra(
+      ListPrivateField(draft: draft, hideFromStatusLists: false),
+    ),
     ScreenWidget.extra(ListNotesField(draft: draft, label: getString.comments)),
   ];
 }

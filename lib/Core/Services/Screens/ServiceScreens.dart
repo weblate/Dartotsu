@@ -9,6 +9,7 @@ import '../../../Widgets/Components/ListEditorFields.dart';
 import '../../../Screen/Detail/DetailWidgets.dart';
 import '../../Preferences/Pref.dart';
 import '../Model/Media.dart';
+import '../Model/News.dart';
 import '../MediaService.dart';
 import '../../ThemeManager/LanguageSwitcher.dart';
 
@@ -267,6 +268,10 @@ class ListEditorScreenView {
 
 abstract class CalendarScreenView {
   Stream<List<CalendarEntry>> schedule();
+}
+
+abstract class NewsScreenView {
+  Future<NewsPage> news({int page = 1});
 }
 
 abstract class NotificationScreenView {

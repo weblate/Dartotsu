@@ -41,6 +41,7 @@ class MangaBakaMutations extends Mutations {
       'note': media.notes ?? '',
       'start_date': mangaBakaDateOut(media.userStartedAt),
       'finish_date': mangaBakaDateOut(media.userCompletedAt),
+      if (exists != true) 'is_private': media.isListPrivate,
     };
     if (exists == true) {
       body.removeWhere((k, v) => v == null || v == '');

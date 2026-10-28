@@ -2,6 +2,7 @@ import '../../../../Core/Services/LayoutPref.dart';
 import '../../../../Core/Services/MediaService.dart';
 import '../../../../Core/Services/Model/Media.dart';
 import '../../../../Core/ThemeManager/LanguageSwitcher.dart';
+import '../../../../Screen/MangaBaka/Components/CommunityShelves.dart';
 import '../Auth.dart';
 import '../Prefs.dart';
 import '../Queries.dart';
@@ -18,7 +19,7 @@ class MangaBakaFeedView extends FeedScreenView {
     for (final s in applyLayout(
       mangaBakaSectionsFor(type),
       (s) => s.title,
-      MangaBakaPref.feedLayout.value,
+      MangaBakaPref.feedLayoutFor(type).value,
     ))
       sectionType(type, s.title),
   ];
@@ -39,6 +40,9 @@ class MangaBakaFeedView extends FeedScreenView {
   @override
   Stream<List<ScreenWidget>> screenStream(MediaType type) {
     final queries = mangaBakaAuth.queries;
+    final extras = type == MediaType.manga
+        ? [const ScreenWidget.extra(CommunityShelves())]
+        : const <ScreenWidget>[];
     return sectionWidgets(
       queries.browseJobsFor(type),
       build: (title, media) {
@@ -52,6 +56,6 @@ class MangaBakaFeedView extends FeedScreenView {
           onLoadMore: (page) => queries.sectionPage(section, page: page),
         );
       },
-    );
+    ).map((widgets) => [...widgets, ...extras]);
   }
 }

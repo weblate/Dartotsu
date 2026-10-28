@@ -8,7 +8,8 @@ import '../../../Core/NetworkManager/NetworkManager.dart';
 import '../../../Core/State/State.dart';
 import '../../../Utils/Lru.dart';
 
-const mangaBakaApi = 'https://api.mangabaka.org/v1';
+const mangaBakaHost = 'https://api.mangabaka.org';
+const mangaBakaApi = '$mangaBakaHost/v1';
 const mangaBakaOAuth = 'https://mangabaka.org/auth/oauth2';
 
 class MangaBakaException implements Exception {
@@ -64,8 +65,11 @@ class MangaBakaClient {
     if (hasToken) 'Authorization': 'Bearer ${_token()}',
   };
 
-  String _url(String path) =>
-      path.startsWith('http') ? path : '$mangaBakaApi$path';
+  String _url(String path) => path.startsWith('http')
+      ? path
+      : path.startsWith('/v2/')
+      ? '$mangaBakaHost$path'
+      : '$mangaBakaApi$path';
 
   Future<NetworkResponse<dynamic>> _send(
     Future<NetworkResponse<dynamic>> Function(Map<String, String> headers)

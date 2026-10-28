@@ -1181,6 +1181,168 @@ abstract class AppLocalizations {
   /// **'Deleted {size} of logs'**
   String logDeleted(String size);
 
+  /// No description provided for @missingSequel.
+  ///
+  /// In en, this message translates to:
+  /// **'Missing Sequel'**
+  String get missingSequel;
+
+  /// No description provided for @rising.
+  ///
+  /// In en, this message translates to:
+  /// **'Rising'**
+  String get rising;
+
+  /// No description provided for @stacks.
+  ///
+  /// In en, this message translates to:
+  /// **'Stacks'**
+  String get stacks;
+
+  /// No description provided for @stacksAll.
+  ///
+  /// In en, this message translates to:
+  /// **'All'**
+  String get stacksAll;
+
+  /// No description provided for @stacksFeatured.
+  ///
+  /// In en, this message translates to:
+  /// **'Featured'**
+  String get stacksFeatured;
+
+  /// No description provided for @stacksMine.
+  ///
+  /// In en, this message translates to:
+  /// **'Yours'**
+  String get stacksMine;
+
+  /// No description provided for @stacksSaved.
+  ///
+  /// In en, this message translates to:
+  /// **'Saved'**
+  String get stacksSaved;
+
+  /// No description provided for @stacksFollowing.
+  ///
+  /// In en, this message translates to:
+  /// **'Following'**
+  String get stacksFollowing;
+
+  /// No description provided for @stacksEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No stacks here yet'**
+  String get stacksEmpty;
+
+  /// No description provided for @stacksSignIn.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in to MangaBaka to see your stacks'**
+  String get stacksSignIn;
+
+  /// No description provided for @stacksScopeNeeded.
+  ///
+  /// In en, this message translates to:
+  /// **'Your stacks need a new permission. Sign in to MangaBaka again to allow it.'**
+  String get stacksScopeNeeded;
+
+  /// No description provided for @stacksSignInAgain.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in again'**
+  String get stacksSignInAgain;
+
+  /// No description provided for @stacksCouldntLoad.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t load the stacks'**
+  String get stacksCouldntLoad;
+
+  /// No description provided for @stackSeriesCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 series} other{{count} series}}'**
+  String stackSeriesCount(int count);
+
+  /// No description provided for @stackSavesCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 save} other{{count} saves}}'**
+  String stackSavesCount(int count);
+
+  /// No description provided for @stackBy.
+  ///
+  /// In en, this message translates to:
+  /// **'by {name}'**
+  String stackBy(String name);
+
+  /// No description provided for @stackSpoilers.
+  ///
+  /// In en, this message translates to:
+  /// **'Spoilers'**
+  String get stackSpoilers;
+
+  /// No description provided for @stackEmptyEntries.
+  ///
+  /// In en, this message translates to:
+  /// **'This stack is empty'**
+  String get stackEmptyEntries;
+
+  /// No description provided for @stackSave.
+  ///
+  /// In en, this message translates to:
+  /// **'Save stack'**
+  String get stackSave;
+
+  /// No description provided for @stackUnsave.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove from saved'**
+  String get stackUnsave;
+
+  /// No description provided for @stackSavedToast.
+  ///
+  /// In en, this message translates to:
+  /// **'Saved to your stacks'**
+  String get stackSavedToast;
+
+  /// No description provided for @stackRemovedToast.
+  ///
+  /// In en, this message translates to:
+  /// **'Removed from your saved stacks'**
+  String get stackRemovedToast;
+
+  /// No description provided for @userStacks.
+  ///
+  /// In en, this message translates to:
+  /// **'Stacks by {name}'**
+  String userStacks(String name);
+
+  /// No description provided for @newsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'News'**
+  String get newsTitle;
+
+  /// No description provided for @newsEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No news right now'**
+  String get newsEmpty;
+
+  /// No description provided for @newsCouldntLoad.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t load the news'**
+  String get newsCouldntLoad;
+
+  /// No description provided for @seeAll.
+  ///
+  /// In en, this message translates to:
+  /// **'See all'**
+  String get seeAll;
+
   /// No description provided for @logFileCopied.
   ///
   /// In en, this message translates to:
@@ -9484,6 +9646,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Reading mode'**
   String get readerMode;
+
+  /// No description provided for @readerModeAuto.
+  ///
+  /// In en, this message translates to:
+  /// **'Auto (by series type)'**
+  String get readerModeAuto;
 
   /// No description provided for @readerModeRtl.
   ///

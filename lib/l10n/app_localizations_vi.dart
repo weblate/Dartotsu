@@ -581,6 +581,108 @@ class AppLocalizationsVi extends AppLocalizations {
   }
 
   @override
+  String get missingSequel => 'Missing Sequel';
+
+  @override
+  String get rising => 'Rising';
+
+  @override
+  String get stacks => 'Stacks';
+
+  @override
+  String get stacksAll => 'All';
+
+  @override
+  String get stacksFeatured => 'Featured';
+
+  @override
+  String get stacksMine => 'Yours';
+
+  @override
+  String get stacksSaved => 'Saved';
+
+  @override
+  String get stacksFollowing => 'Following';
+
+  @override
+  String get stacksEmpty => 'No stacks here yet';
+
+  @override
+  String get stacksSignIn => 'Sign in to MangaBaka to see your stacks';
+
+  @override
+  String get stacksScopeNeeded =>
+      'Your stacks need a new permission. Sign in to MangaBaka again to allow it.';
+
+  @override
+  String get stacksSignInAgain => 'Sign in again';
+
+  @override
+  String get stacksCouldntLoad => 'Couldn\'t load the stacks';
+
+  @override
+  String stackSeriesCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count series',
+      one: '1 series',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String stackSavesCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count saves',
+      one: '1 save',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String stackBy(String name) {
+    return 'by $name';
+  }
+
+  @override
+  String get stackSpoilers => 'Spoilers';
+
+  @override
+  String get stackEmptyEntries => 'This stack is empty';
+
+  @override
+  String get stackSave => 'Save stack';
+
+  @override
+  String get stackUnsave => 'Remove from saved';
+
+  @override
+  String get stackSavedToast => 'Saved to your stacks';
+
+  @override
+  String get stackRemovedToast => 'Removed from your saved stacks';
+
+  @override
+  String userStacks(String name) {
+    return 'Stacks by $name';
+  }
+
+  @override
+  String get newsTitle => 'News';
+
+  @override
+  String get newsEmpty => 'No news right now';
+
+  @override
+  String get newsCouldntLoad => 'Couldn\'t load the news';
+
+  @override
+  String get seeAll => 'See all';
+
+  @override
   String get logFileCopied => 'Đã sao chép đường dẫn log';
 
   @override
@@ -5206,6 +5308,9 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get readerMode => 'Chế độ đọc';
+
+  @override
+  String get readerModeAuto => 'Auto (by series type)';
 
   @override
   String get readerModeRtl => 'Phải sang trái';

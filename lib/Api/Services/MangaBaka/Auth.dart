@@ -14,6 +14,7 @@ import '../../../Core/State/State.dart';
 import '../../../Core/ThemeManager/LanguageSwitcher.dart';
 import '../../../Utils/Functions/SnackBar.dart';
 import 'Client.dart';
+import 'Community.dart';
 import 'Data/User.dart';
 import 'Mutations.dart';
 import 'Prefs.dart';
@@ -62,6 +63,8 @@ class MangaBakaAuth extends AppController
     },
   );
 
+  MangaBakaCommunity get community => queries.community;
+
   late final MangaBakaMutations mutations = MangaBakaMutations(client, queries);
 
   Completer<bool>? _refreshing;
@@ -109,7 +112,7 @@ class MangaBakaAuth extends AppController
                 'code_challenge': challenge,
                 'code_challenge_method': 'S256',
                 'scope':
-                    'openid profile library.read library.write offline_access',
+                    'openid profile library.read library.write stack.read stack.write offline_access',
                 'state': state,
                 'prompt': 'consent',
               },

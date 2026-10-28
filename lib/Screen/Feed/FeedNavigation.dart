@@ -7,6 +7,7 @@ import '../../Widgets/Components/NotImplemented.dart';
 import '../Calendar/CalendarScreen.dart';
 import '../Detail/DetailScreen.dart';
 import '../Entity/EntityScreen.dart';
+import '../News/NewsScreen.dart';
 import '../Notifications/NotificationsScreen.dart';
 import '../Search/SearchScreen.dart';
 
@@ -62,6 +63,16 @@ void openCalendar(BuildContext context, MediaService service) {
     view == null
         ? NotImplemented(service: service.name, area: 'Calendar')
         : CalendarScreen(view: view),
+  );
+}
+
+void openNews(BuildContext context, MediaService service) {
+  final view = service.newsView;
+  navigateToPage(
+    context,
+    view == null
+        ? NotImplemented(service: service.name, area: 'News')
+        : NewsScreen(view: view),
   );
 }
 
