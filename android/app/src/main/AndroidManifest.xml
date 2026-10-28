@@ -358,6 +358,10 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/dartotsu_widget_info" />
         </receiver>
+        <service
+            android:name=".DartotsuWidgetService"
+            android:exported="false"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
     </application>
     <queries>
         <intent>

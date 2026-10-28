@@ -19,7 +19,8 @@ class HomeWidgetSync {
   HomeWidgetSync._();
 
   static const _channel = MethodChannel('dartotsu/widget');
-  static const _releases = 3;
+  static const _releases = 6;
+  static const _more = 9;
   static const _past = Duration(hours: 6);
 
   static Timer? _debounce;
@@ -45,12 +46,14 @@ class HomeWidgetSync {
   static Future<void> push() async {
     try {
       final service = find<MediaServiceController>().currentService.value;
-      final entry = ResumeStore.visible(service).firstOrNull;
+      final all = ResumeStore.visible(service);
+      final entry = all.firstOrNull;
       final cutoff = DateTime.now().subtract(_past);
       final entries = await ExtensionCalendarView().schedule().first;
       final time = DateFormat('EEE HH:mm');
       final payload = {
         'heading': getString.widgetContinue,
+        'moreHeading': getString.widgetMore,
         'releasesHeading': getString.widgetReleases,
         'empty': getString.widgetNothing,
         'continue': entry == null
@@ -61,6 +64,16 @@ class HomeWidgetSync {
                 'progress': (entry.fraction.clamp(0.0, 1.0) * 100).round(),
                 'cover': entry.media['cover'] ?? entry.thumbnail,
               },
+        'resume': [
+          for (final e in all.skip(1).take(_more))
+            {
+              'slot': e.slot,
+              'title': e.mediaTitle,
+              'detail': resumeDetail(e),
+              'progress': (e.fraction.clamp(0.0, 1.0) * 100).round(),
+              'cover': e.media['cover'] ?? e.thumbnail,
+            },
+        ],
         'releases': [
           for (final e
               in entries

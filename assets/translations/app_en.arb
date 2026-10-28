@@ -3214,6 +3214,7 @@
   "@downloadsTitle": {},
   "widgetContinue": "Continue",
   "widgetReleases": "Releasing soon",
+  "widgetMore": "Also in progress",
   "widgetNothing": "Nothing to continue yet",
   "downloadStorageTitle": "Storage",
   "downloadStorageSummary": "{count, plural, =1{1 download} other{{count} downloads}} · {size}",

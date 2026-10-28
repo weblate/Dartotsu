@@ -54,11 +54,8 @@ class DartotsuWidget : AppWidgetProvider() {
         private const val PREFS = "dartotsu_widget"
         private const val KEY = "payload"
         private const val CONTINUE_LINK = "dartotsu://app/continue"
-        private const val CALENDAR_LINK = "dartotsu://app/calendar"
         private const val COVER_W = 56
         private const val COVER_H = 80
-        private const val ROW_SIZE = 36
-        private const val MAX_ROWS = 3
 
         fun store(context: Context, json: String) {
             context.getSharedPreferences(PREFS, Context.MODE_PRIVATE).edit().putString(KEY, json).apply()
@@ -85,6 +82,7 @@ class DartotsuWidget : AppWidgetProvider() {
                 }
                 manager.updateAppWidget(id, views)
             }
+            manager.notifyAppWidgetViewDataChanged(ids, R.id.list)
         }
 
         private fun build(
@@ -120,39 +118,25 @@ class DartotsuWidget : AppWidgetProvider() {
             val open = link(context, CONTINUE_LINK, 1)
             views.setOnClickPendingIntent(R.id.card, open)
             views.setOnClickPendingIntent(R.id.play, open)
-            if (withRows) fillRows(context, views, data, covers, density)
+            if (withRows) attachList(context, views)
             return views
         }
 
-        private fun fillRows(
-            context: Context,
-            views: RemoteViews,
-            data: JSONObject?,
-            covers: Covers,
-            density: Float,
-        ) {
-            val list = data?.optJSONArray("releases")
-            val count = minOf(list?.length() ?: 0, MAX_ROWS)
-            views.removeAllViews(R.id.rows)
-            if (count == 0) {
-                views.setViewVisibility(R.id.releases, View.GONE)
-                return
-            }
-            views.setViewVisibility(R.id.releases, View.VISIBLE)
-            views.setTextViewText(R.id.releasesHeading, data?.optString("releasesHeading").orEmpty())
-            val calendar = link(context, CALENDAR_LINK, 2)
-            views.setOnClickPendingIntent(R.id.releases, calendar)
-            for (i in 0 until count) {
-                val item = list!!.getJSONObject(i)
-                val row = RemoteViews(context.packageName, R.layout.widget_row)
-                row.setTextViewText(R.id.rowTitle, item.optString("title"))
-                row.setTextViewText(R.id.rowDetail, item.optString("detail"))
-                covers.bitmap(item.optString("cover"), ROW_SIZE, ROW_SIZE, 10 * density)
-                    ?.let { row.setImageViewBitmap(R.id.rowCover, it) }
-                row.setOnClickPendingIntent(R.id.row, calendar)
-                views.addView(R.id.rows, row)
-            }
+        private fun attachList(context: Context, views: RemoteViews) {
+            val adapter = Intent(context, DartotsuWidgetService::class.java)
+                .setData(Uri.parse("dartotsu-widget://list"))
+            views.setRemoteAdapter(R.id.list, adapter)
+            val template = Intent(Intent.ACTION_VIEW)
+                .setClassName(context.packageName, "${context.packageName}.MainActivity")
+                .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP)
+            val flags = PendingIntent.FLAG_UPDATE_CURRENT or
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) PendingIntent.FLAG_MUTABLE else 0
+            views.setPendingIntentTemplate(R.id.list, PendingIntent.getActivity(context, 3, template, flags))
         }
+
+        fun payload(context: Context): JSONObject? =
+            context.getSharedPreferences(PREFS, Context.MODE_PRIVATE).getString(KEY, null)
+                ?.let { runCatching { JSONObject(it) }.getOrNull() }
 
         private fun link(context: Context, uri: String, code: Int): PendingIntent {
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse(uri))
@@ -167,7 +151,7 @@ class DartotsuWidget : AppWidgetProvider() {
         }
     }
 
-    private class Covers(private val context: Context) {
+    internal class Covers(private val context: Context) {
         private val cache = HashMap<String, Bitmap?>()
         private val dir = File(context.cacheDir, "widget").also { it.mkdirs() }
 

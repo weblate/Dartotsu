@@ -11519,6 +11519,12 @@ abstract class AppLocalizations {
   /// **'Releasing soon'**
   String get widgetReleases;
 
+  /// No description provided for @widgetMore.
+  ///
+  /// In en, this message translates to:
+  /// **'Also in progress'**
+  String get widgetMore;
+
   /// No description provided for @widgetNothing.
   ///
   /// In en, this message translates to:

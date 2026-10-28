@@ -40,7 +40,11 @@ class AppRouteLinks extends DeepLinkHandler {
     final service = services.currentService.value;
     switch (_route(uri)) {
       case 'continue':
-        final entry = ResumeStore.visible(service).firstOrNull;
+        final visible = ResumeStore.visible(service);
+        final slot = uri.queryParameters['slot'];
+        final entry =
+            visible.where((e) => e.slot == slot).firstOrNull ??
+            visible.firstOrNull;
         if (entry == null) {
           return snackString(getString.shortcutNothingToContinue);
         }

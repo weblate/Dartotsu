@@ -6410,6 +6410,9 @@ class AppLocalizationsFil extends AppLocalizations {
   String get widgetReleases => 'Releasing soon';
 
   @override
+  String get widgetMore => 'Also in progress';
+
+  @override
   String get widgetNothing => 'Nothing to continue yet';
 
   @override
