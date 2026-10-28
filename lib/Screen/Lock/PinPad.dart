@@ -27,9 +27,49 @@ class PinPad extends StatefulWidget {
   State<PinPad> createState() => _PinPadState();
 }
 
+final _digitKeys = {
+  LogicalKeyboardKey.digit0: '0',
+  LogicalKeyboardKey.digit1: '1',
+  LogicalKeyboardKey.digit2: '2',
+  LogicalKeyboardKey.digit3: '3',
+  LogicalKeyboardKey.digit4: '4',
+  LogicalKeyboardKey.digit5: '5',
+  LogicalKeyboardKey.digit6: '6',
+  LogicalKeyboardKey.digit7: '7',
+  LogicalKeyboardKey.digit8: '8',
+  LogicalKeyboardKey.digit9: '9',
+  LogicalKeyboardKey.numpad0: '0',
+  LogicalKeyboardKey.numpad1: '1',
+  LogicalKeyboardKey.numpad2: '2',
+  LogicalKeyboardKey.numpad3: '3',
+  LogicalKeyboardKey.numpad4: '4',
+  LogicalKeyboardKey.numpad5: '5',
+  LogicalKeyboardKey.numpad6: '6',
+  LogicalKeyboardKey.numpad7: '7',
+  LogicalKeyboardKey.numpad8: '8',
+  LogicalKeyboardKey.numpad9: '9',
+};
+
 class _PinPadState extends State<PinPad> {
   final _pin = ''.live;
   final _shake = 0.live;
+  final _focus = FocusNode(debugLabel: 'PinPad');
+
+  @override
+  void initState() {
+    super.initState();
+    if (widget.autofocus) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted) _focus.requestFocus();
+      });
+    }
+  }
+
+  @override
+  void dispose() {
+    _focus.dispose();
+    super.dispose();
+  }
 
   void _add(String digit) {
     if (_pin.value.length >= AppLock.maxLength) return;
@@ -58,8 +98,11 @@ class _PinPadState extends State<PinPad> {
     if (event is! KeyDownEvent) return KeyEventResult.ignored;
     final key = event.logicalKey;
     final label = event.character;
-    if (label != null && RegExp(r'^[0-9]$').hasMatch(label)) {
-      _add(label);
+    final digit =
+        _digitKeys[key] ??
+        (label != null && RegExp(r'^[0-9]$').hasMatch(label) ? label : null);
+    if (digit != null) {
+      _add(digit);
       return KeyEventResult.handled;
     }
     if (key == LogicalKeyboardKey.backspace) {
@@ -171,50 +214,53 @@ class _PinPadState extends State<PinPad> {
     final scheme = context.colorScheme;
     final ready = _pin.value.length >= AppLock.minLength;
     return Focus(
-      autofocus: widget.autofocus,
+      focusNode: _focus,
       onKeyEvent: _key,
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          _dots(context),
-          SizedBox(height: Dimens.gap),
-          SizedBox(
-            height: 20,
-            child: Text(
-              widget.message ?? '',
-              style: context.textTheme.bodyMedium?.copyWith(
-                color: scheme.error,
+      child: Listener(
+        onPointerDown: (_) => _focus.requestFocus(),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            _dots(context),
+            SizedBox(height: Dimens.gap),
+            SizedBox(
+              height: 20,
+              child: Text(
+                widget.message ?? '',
+                style: context.textTheme.bodyMedium?.copyWith(
+                  color: scheme.error,
+                ),
               ),
             ),
-          ),
-          SizedBox(height: Dimens.gap),
-          for (final (r, row) in const [
-            ['1', '2', '3'],
-            ['4', '5', '6'],
-            ['7', '8', '9'],
-          ].indexed)
+            SizedBox(height: Dimens.gap),
+            for (final (r, row) in const [
+              ['1', '2', '3'],
+              ['4', '5', '6'],
+              ['7', '8', '9'],
+            ].indexed)
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [for (final d in row) _digit(context, d)],
+              ).animateStagger(r),
             Row(
               mainAxisSize: MainAxisSize.min,
-              children: [for (final d in row) _digit(context, d)],
-            ).animateStagger(r),
-          Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              _key_(
-                context,
-                const Icon(Icons.backspace_outlined),
-                _pin.value.isEmpty ? null : _back,
-              ),
-              _digit(context, '0'),
-              _key_(
-                context,
-                Icon(Icons.check_rounded, color: scheme.onPrimaryContainer),
-                ready ? _submit : null,
-                filled: ready,
-              ),
-            ],
-          ).animateStagger(3),
-        ],
+              children: [
+                _key_(
+                  context,
+                  const Icon(Icons.backspace_outlined),
+                  _pin.value.isEmpty ? null : _back,
+                ),
+                _digit(context, '0'),
+                _key_(
+                  context,
+                  Icon(Icons.check_rounded, color: scheme.onPrimaryContainer),
+                  ready ? _submit : null,
+                  filled: ready,
+                ),
+              ],
+            ).animateStagger(3),
+          ],
+        ),
       ),
     );
   }
