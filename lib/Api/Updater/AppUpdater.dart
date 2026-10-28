@@ -5,25 +5,45 @@ import 'dart:io';
 
 import 'package:archive/archive_io.dart';
 import 'package:device_info_plus/device_info_plus.dart';
-import '../../Utils/Nav/DpadNav.dart';
-import 'package:flutter/material.dart';
 import 'package:install_plugin/install_plugin.dart';
-import 'package:markdown_widget/config/configs.dart';
-import 'package:markdown_widget/widget/blocks/leaf/heading.dart';
-import 'package:markdown_widget/widget/blocks/leaf/link.dart';
-import 'package:markdown_widget/widget/markdown.dart';
 import 'package:path/path.dart' as path;
 import 'package:rhttp/rhttp.dart';
 
 import '../../Core/NetworkManager/NetworkManager.dart';
 import '../../Core/Preferences/PrefManager.dart';
 import '../../Core/Preferences/StorageManager.dart';
-import '../../Utils/Extensions/ContextExtensions.dart';
 import '../../Utils/Function.dart';
 import '../../Utils/Functions/SnackBar.dart';
+import '../../Screen/Update/UpdateSheet.dart';
 import '../../Widgets/Components/CustomBottomDialog.dart';
 import '../../Core/State/State.dart';
 import '../../Core/ThemeManager/LanguageSwitcher.dart';
+
+enum UpdatePhase { idle, preparing, downloading, installing, failed }
+
+class UpdateInfo {
+  final String tag;
+  final String name;
+  final String body;
+  final DateTime? published;
+  final num? size;
+
+  const UpdateInfo({
+    required this.tag,
+    required this.name,
+    required this.body,
+    this.published,
+    this.size,
+  });
+
+  factory UpdateInfo.fromRelease(Map data, {num? size}) => UpdateInfo(
+    tag: '${data['tag_name'] ?? ''}',
+    name: '${data['name'] ?? ''}',
+    body: '${data['body'] ?? ''}',
+    published: DateTime.tryParse('${data['published_at'] ?? ''}')?.toLocal(),
+    size: size,
+  );
+}
 
 class AppUpdater extends AppController {
   static const _mainRepo = 'aayush2622/Dartotsu';
@@ -65,7 +85,7 @@ class AppUpdater extends AppController {
     final release = data["tag_name"];
 
     if (release == hash) {
-      if (force) snackString("Latest version is already installed");
+      if (force) snackString(getString.updateUpToDate);
       return;
     }
 
@@ -77,7 +97,7 @@ class AppUpdater extends AppController {
     final compareData = compare.data;
     final isUpdate = compareData is Map && compareData['status'] == 'behind';
     if (!isUpdate) {
-      if (force) snackString("No Update Available");
+      if (force) snackString(getString.updateUpToDate);
       return;
     }
 
@@ -128,215 +148,173 @@ class AppUpdater extends AppController {
     return response.data as Map;
   }
 
-  Future<void> _showUpdateBottomSheet(dynamic data) async {
-    final context = appContext!;
-    final scheme = context.colorScheme;
-    final textStyle = Theme.of(context).textTheme.labelMedium;
+  Map? _release;
+  bool _sheetOpen = false;
+  bool _cancelled = false;
 
-    final skipUpdate = false.live;
+  final phase = UpdatePhase.idle.live;
+  final error = Live<String?>(null);
+  final progress = (-1.0).live;
+  final receivedBytes = 0.live;
+  final totalBytes = 0.live;
+  final speed = 0.0.live;
+  CancelToken? _cancelToken;
+  DateTime? _sampleAt;
+  int _sampleBytes = 0;
 
+  bool get busy =>
+      phase.value == UpdatePhase.preparing ||
+      phase.value == UpdatePhase.downloading ||
+      phase.value == UpdatePhase.installing;
+
+  Future<void> _showUpdateBottomSheet(Map data) async {
+    final context = appContext;
+    if (_sheetOpen || context == null) return;
+    _sheetOpen = true;
+    _release = data;
+    _cancelled = false;
+    _resetDownloadState();
+    phase.value = UpdatePhase.idle;
+    error.value = null;
+    final asset = await _pickAsset((data['assets'] as List?) ?? const []);
+    final info = UpdateInfo.fromRelease(data, size: asset?['size'] as num?);
+    final skip = false.live;
+    if (!context.mounted) {
+      _sheetOpen = false;
+      return;
+    }
     unawaited(
       showCustomBottomDialog(
         context,
-        CustomBottomDialog(
-          title: "Update Available",
-          viewList: [
-            const SizedBox(height: 12),
-            Center(
-              child: Container(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 12,
-                  vertical: 6,
-                ),
-                decoration: BoxDecoration(
-                  color: context.cardColor.withValues(alpha: .4),
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Text(
-                  data["tag_name"] ?? "",
-                  style: textStyle?.copyWith(color: scheme.primary),
-                ),
-              ),
-            ),
-            const SizedBox(height: 20),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text("Change Logs: ", style: textStyle),
-                  const SizedBox(height: 8),
-                  Container(
-                    constraints: const BoxConstraints(maxHeight: 260),
-                    padding: const EdgeInsets.all(16),
-                    decoration: BoxDecoration(
-                      color: context.cardColor.withValues(alpha: .4),
-                      borderRadius: BorderRadius.circular(14),
-                    ),
-                    child: Watch(() {
-                      if (_downloadProgress.value >= 0) {
-                        return Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            LinearProgressIndicator(
-                              value: _downloadProgress.value / 100,
-                            ),
-                            const SizedBox(height: 8),
-                            Text(
-                              "${_downloadedBytes.value ~/ (1024 * 1024)} MB / "
-                              "${_totalBytes.value ~/ (1024 * 1024)} MB "
-                              "${_downloadProgress.value.toStringAsFixed(1)}%",
-                              style: textStyle,
-                            ),
-                          ],
-                        );
-                      }
-
-                      return DpadFocusable(
-                        enabled: false,
-                        child: FocusTraversalGroup(
-                          descendantsAreFocusable: false,
-                          child: MarkdownWidget(
-                            data: data["body"] ?? "",
-                            shrinkWrap: true,
-                            config: MarkdownConfig(
-                              configs: [
-                                LinkConfig(
-                                  onTap: openLinkInBrowser,
-                                  style: textStyle!.copyWith(
-                                    color: scheme.primary,
-                                  ),
-                                ),
-                                H1Config(
-                                  style: textStyle.copyWith(
-                                    fontWeight: FontWeight.bold,
-                                    color: scheme.primary,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      );
-                    }),
-                  ),
-                ],
-              ),
-            ),
-            const SizedBox(height: 16),
-            Watch(() {
-              if (_downloadProgress.value >= 0) {
-                return const SizedBox.shrink();
-              }
-
-              return Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 24),
-                child: Row(
-                  children: [
-                    Checkbox(
-                      value: skipUpdate.value,
-                      visualDensity: VisualDensity.compact,
-                      onChanged: (v) => skipUpdate.value = v ?? false,
-                    ),
-                    const SizedBox(width: 6),
-                    Text(
-                      "Skip this update",
-                      style: textStyle?.copyWith(
-                        fontSize: 13,
-                        color: scheme.onSurface.withValues(alpha: 0.7),
-                      ),
-                    ),
-                  ],
-                ),
-              );
-            }),
-            const SizedBox(height: 8),
-          ],
-          negativeText: "Later",
-          positiveText: "Update",
-          negativeCallback: () {
-            final tag = data["tag_name"];
-            if (skipUpdate.value && tag is String) {
+        UpdateSheet(
+          updater: this,
+          info: info,
+          skip: skip,
+          onLater: () {
+            if (skip.value && info.tag.isNotEmpty) {
               PrefName.skippedUpdates.value = [
                 ...PrefName.skippedUpdates.value,
-                tag,
+                info.tag,
               ];
             }
             appNavigator?.pop();
           },
-          positiveCallback: () async {
-            if (Platform.isAndroid) {
-              final assets = data['assets'] as List;
-              final downloadUrl = await _getAssetDownloadUrl(assets);
-              if (downloadUrl == null) return;
-              unawaited(_downloadAndInstallApk(downloadUrl));
-              return;
-            }
-
-            if (Platform.isIOS) {
-              final releasePage = data['html_url'] as String?;
-              if (releasePage != null) {
-                unawaited(openLinkInBrowser(releasePage));
-              }
-              snackString(
-                "iOS builds aren't on the App Store — grab the .ipa from "
-                "the release page and sideload it with AltStore or SideStore",
-              );
-              return;
-            }
-
-            if (_isNixManaged) {
-              snackString(getString.nixManagedUpdate);
-              return;
-            }
-
-            final assets = data['assets'] as List;
-            final downloadUrl = await _getAssetDownloadUrl(assets);
-            if (downloadUrl == null) return;
-
-            if (Platform.isLinux || Platform.isWindows || Platform.isMacOS) {
-              unawaited(_selfUpdateDesktop(downloadUrl));
-            } else {
-              unawaited(openLinkInBrowser(downloadUrl));
-              snackString("Check your browser");
-            }
-          },
         ),
         onDismissed: () {
-          if (_cancelToken != null && !_cancelToken!.isCancelled) {
-            _cancelToken!.cancel();
-          }
-          _resetDownloadState();
+          _sheetOpen = false;
+          cancel();
         },
       ),
     );
   }
 
+  Future<void> start() async {
+    final data = _release;
+    if (data == null || busy) return;
+    _cancelled = false;
+    error.value = null;
+    _resetDownloadState();
+    phase.value = UpdatePhase.preparing;
+    try {
+      await _run(data);
+    } catch (e, st) {
+      if (_cancelled) return;
+      logError('AppUpdater', e, st);
+      _fail('$e');
+    }
+  }
+
+  void cancel() {
+    _cancelled = true;
+    final token = _cancelToken;
+    if (token != null && !token.isCancelled) token.cancel();
+    _resetDownloadState();
+    phase.value = UpdatePhase.idle;
+  }
+
+  Future<void> _run(Map data) async {
+    if (Platform.isIOS) {
+      final page = data['html_url'];
+      if (page is String) unawaited(openLinkInBrowser(page));
+      snackString(getString.updateIosHint);
+      _finish();
+      return;
+    }
+    if (!Platform.isAndroid && _isNixManaged) {
+      snackString(getString.nixManagedUpdate);
+      _finish();
+      return;
+    }
+    final asset = await _pickAsset((data['assets'] as List?) ?? const []);
+    final url = asset?['browser_download_url'] as String?;
+    if (_cancelled) return;
+    if (url == null) {
+      _fail(getString.updateNoAsset);
+      return;
+    }
+    if (Platform.isAndroid) return _downloadAndInstallApk(url);
+    if (Platform.isLinux || Platform.isWindows || Platform.isMacOS) {
+      return _selfUpdateDesktop(url);
+    }
+    unawaited(openLinkInBrowser(url));
+    snackString(getString.updateOpenedBrowser);
+    _finish();
+  }
+
+  void _finish() {
+    _resetDownloadState();
+    phase.value = UpdatePhase.idle;
+  }
+
+  void _fail(String message) {
+    _resetDownloadState();
+    error.value = message;
+    phase.value = UpdatePhase.failed;
+  }
+
   void _resetDownloadState() {
-    _downloadProgress.value = -1;
-    _downloadedBytes.value = 0;
-    _totalBytes.value = 0;
+    progress.value = -1;
+    receivedBytes.value = 0;
+    totalBytes.value = 0;
+    speed.value = 0;
+    _sampleAt = null;
+    _sampleBytes = 0;
     _cancelToken = null;
   }
 
-  Future<String?> _getAssetDownloadUrl(List a) async {
-    var assets = a.cast<Map<String, dynamic>>();
+  void _onProgress(int received, int total) {
+    if (total <= 0) return;
+    receivedBytes.value = received;
+    totalBytes.value = total;
+    progress.value = (received / total) * 100;
+    final now = DateTime.now();
+    final at = _sampleAt;
+    if (at == null) {
+      _sampleAt = now;
+      _sampleBytes = received;
+      return;
+    }
+    final elapsed = now.difference(at).inMilliseconds;
+    if (elapsed < 700) return;
+    final rate = (received - _sampleBytes) * 1000 / elapsed;
+    speed.value = speed.value == 0 ? rate : speed.value * 0.6 + rate * 0.4;
+    _sampleAt = now;
+    _sampleBytes = received;
+  }
+
+  Future<Map<String, dynamic>?> _pickAsset(List a) async {
+    final assets = a.cast<Map<String, dynamic>>();
     if (Platform.isAndroid) {
       final abi = await _getDeviceABI();
-
       if (abi != null) {
-        final match = assets.firstWhere(
+        final match = assets.firstWhereOrNull(
           (a) => (a['name'] as String).contains('Android_$abi'),
-          orElse: () => {},
         );
-        if (match.isNotEmpty) return match['browser_download_url'];
+        if (match != null) return match;
       }
-      final fallbackApk = assets.firstWhere(
+      return assets.firstWhereOrNull(
         (a) => (a['name'] as String).endsWith('.apk'),
-        orElse: () => {},
       );
-      if (fallbackApk.isNotEmpty) return fallbackApk['browser_download_url'];
-      return null;
     }
     final platformExtensions = {
       Platform.isWindows: ['.exe', '.msi'],
@@ -346,14 +324,12 @@ class AppUpdater extends AppController {
     };
 
     for (final entry in platformExtensions.entries) {
-      if (entry.key) {
-        for (final ext in entry.value) {
-          final match = assets.firstWhere(
-            (a) => (a['name'] as String).endsWith(ext),
-            orElse: () => {},
-          );
-          if (match.isNotEmpty) return match['browser_download_url'];
-        }
+      if (!entry.key) continue;
+      for (final ext in entry.value) {
+        final match = assets.firstWhereOrNull(
+          (a) => (a['name'] as String).endsWith(ext),
+        );
+        if (match != null) return match;
       }
     }
     return null;
@@ -369,32 +345,23 @@ class AppUpdater extends AppController {
     return preferred.firstWhereOrNull((abi) => abis.contains(abi));
   }
 
-  final Live<double> _downloadProgress = (-1.0).live;
-  final Live<int> _downloadedBytes = 0.live;
-  final Live<int> _totalBytes = 0.live;
-  CancelToken? _cancelToken;
   Future<void> _downloadAndInstallApk(String apkUrl) async {
     try {
       final packageName = path.basenameWithoutExtension(apkUrl);
-
-      _resetDownloadState();
-
       final tempDir = await StorageManager.getTmpDirectory();
       final filePath = '${tempDir!.path}/$packageName.apk';
       final file = File(filePath);
       _cancelToken = _network.newCancelToken();
+      phase.value = UpdatePhase.downloading;
       await _network.download(
         apkUrl,
         filePath,
         cancelToken: _cancelToken,
-        onProgress: (received, total) {
-          if (total <= 0) return;
-          _downloadedBytes.value = received;
-          _totalBytes.value = total;
-          _downloadProgress.value = (received / total) * 100;
-        },
+        onProgress: _onProgress,
       );
+      if (_cancelled) return;
 
+      phase.value = UpdatePhase.installing;
       final result = await InstallPlugin.installApk(
         file.path,
         appId: packageName,
@@ -404,7 +371,7 @@ class AppUpdater extends AppController {
         final message = '${result['errorMessage'] ?? 'APK install failed'}';
         if (message.toLowerCase().contains('cancel')) {
           logger('APK install cancelled by the user', tag: 'UPDATER');
-          _resetDownloadState();
+          _finish();
           snackString(getString.updateInstallCancelled);
           return;
         }
@@ -414,12 +381,11 @@ class AppUpdater extends AppController {
       if (await file.exists()) {
         await file.delete();
       }
+      _finish();
     } catch (e, st) {
-      final cancelled = _cancelToken?.isCancelled ?? false;
-      _resetDownloadState();
-      if (cancelled) return;
+      if (_cancelled) return;
       logError('AppUpdater', e, st);
-      snackString(getString.updateInstallFailed('$e'));
+      _fail(getString.updateInstallFailed('$e'));
     }
   }
 
@@ -428,16 +394,12 @@ class AppUpdater extends AppController {
     final ext = path.extension(Uri.parse(url).path);
     final filePath = path.join(tempDir!.path, 'dartotsu_update$ext');
     _cancelToken = _network.newCancelToken();
+    phase.value = UpdatePhase.downloading;
     await _network.download(
       url,
       filePath,
       cancelToken: _cancelToken,
-      onProgress: (received, total) {
-        if (total <= 0) return;
-        _downloadedBytes.value = received;
-        _totalBytes.value = total;
-        _downloadProgress.value = (received / total) * 100;
-      },
+      onProgress: _onProgress,
     );
     return filePath;
   }
@@ -464,8 +426,9 @@ class AppUpdater extends AppController {
 
   Future<void> _selfUpdateDesktop(String url) async {
     try {
-      _resetDownloadState();
       final filePath = await _downloadUpdateArchive(url);
+      if (_cancelled) return;
+      phase.value = UpdatePhase.installing;
       if (Platform.isLinux) {
         await _applyLinuxUpdate(filePath);
       } else if (Platform.isMacOS) {
@@ -474,8 +437,8 @@ class AppUpdater extends AppController {
         await _applyWindowsUpdate(filePath);
       }
     } catch (e) {
-      _resetDownloadState();
-      snackString(getString.autoUpdateFailed(e.toString()));
+      if (_cancelled) return;
+      _fail(getString.autoUpdateFailed(e.toString()));
       unawaited(openLinkInBrowser(url));
     }
   }

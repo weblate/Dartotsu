@@ -12772,6 +12772,90 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Loading extensions…'**
   String get extensionsLoading;
+
+  /// No description provided for @updateWhatsNew.
+  ///
+  /// In en, this message translates to:
+  /// **'What\'s new'**
+  String get updateWhatsNew;
+
+  /// No description provided for @updateLater.
+  ///
+  /// In en, this message translates to:
+  /// **'Later'**
+  String get updateLater;
+
+  /// No description provided for @updateSkipVersion.
+  ///
+  /// In en, this message translates to:
+  /// **'Skip this version'**
+  String get updateSkipVersion;
+
+  /// No description provided for @updatePreparing.
+  ///
+  /// In en, this message translates to:
+  /// **'Preparing…'**
+  String get updatePreparing;
+
+  /// No description provided for @updateDownloading.
+  ///
+  /// In en, this message translates to:
+  /// **'Downloading'**
+  String get updateDownloading;
+
+  /// No description provided for @updateInstalling.
+  ///
+  /// In en, this message translates to:
+  /// **'Installing…'**
+  String get updateInstalling;
+
+  /// No description provided for @updateSizeOf.
+  ///
+  /// In en, this message translates to:
+  /// **'{done} of {total}'**
+  String updateSizeOf(String done, String total);
+
+  /// No description provided for @updateSpeed.
+  ///
+  /// In en, this message translates to:
+  /// **'{speed}/s'**
+  String updateSpeed(String speed);
+
+  /// No description provided for @updateReleased.
+  ///
+  /// In en, this message translates to:
+  /// **'Released {date}'**
+  String updateReleased(String date);
+
+  /// No description provided for @updateNoAsset.
+  ///
+  /// In en, this message translates to:
+  /// **'This release has no download for your device'**
+  String get updateNoAsset;
+
+  /// No description provided for @updateUpToDate.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'re on the latest version'**
+  String get updateUpToDate;
+
+  /// No description provided for @updateIosHint.
+  ///
+  /// In en, this message translates to:
+  /// **'iOS builds aren\'t on the App Store. Grab the .ipa from the release page and sideload it with AltStore or SideStore'**
+  String get updateIosHint;
+
+  /// No description provided for @updateOpenedBrowser.
+  ///
+  /// In en, this message translates to:
+  /// **'Check your browser'**
+  String get updateOpenedBrowser;
+
+  /// No description provided for @updateTryAgain.
+  ///
+  /// In en, this message translates to:
+  /// **'Try again'**
+  String get updateTryAgain;
 }
 
 class _AppLocalizationsDelegate

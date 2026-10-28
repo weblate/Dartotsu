@@ -7205,4 +7205,53 @@ class AppLocalizationsHr extends AppLocalizations {
 
   @override
   String get extensionsLoading => 'Loading extensions…';
+
+  @override
+  String get updateWhatsNew => 'What\'s new';
+
+  @override
+  String get updateLater => 'Later';
+
+  @override
+  String get updateSkipVersion => 'Skip this version';
+
+  @override
+  String get updatePreparing => 'Preparing…';
+
+  @override
+  String get updateDownloading => 'Downloading';
+
+  @override
+  String get updateInstalling => 'Installing…';
+
+  @override
+  String updateSizeOf(String done, String total) {
+    return '$done of $total';
+  }
+
+  @override
+  String updateSpeed(String speed) {
+    return '$speed/s';
+  }
+
+  @override
+  String updateReleased(String date) {
+    return 'Released $date';
+  }
+
+  @override
+  String get updateNoAsset => 'This release has no download for your device';
+
+  @override
+  String get updateUpToDate => 'You\'re on the latest version';
+
+  @override
+  String get updateIosHint =>
+      'iOS builds aren\'t on the App Store. Grab the .ipa from the release page and sideload it with AltStore or SideStore';
+
+  @override
+  String get updateOpenedBrowser => 'Check your browser';
+
+  @override
+  String get updateTryAgain => 'Try again';
 }

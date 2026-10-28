@@ -157,7 +157,7 @@ renames `build` to `_build` and returns `Watch(() => _build(context))`). `ValueN
 | `LocaleController` | `lazyPut` | `PrefName.appLocale.rx`, watched by `AppRoot` |
 | `MediaServiceController` | `lazyPut` | current service + list of services |
 | `RefreshController` | `lazyPut` | pub/sub refresh flags (`getOrPut(key)` → `RxBool`, `.all()`); mutations signal it, screens `ever()`-subscribe. `routeObserver` (same file) is on `GetMaterialApp.navigatorObservers` |
-| `AppUpdater` | `lazyPut` | AppController; GitHub-release update check + APK install |
+| `AppUpdater` | `lazyPut` | AppController; GitHub-release update check + APK / desktop self-update. One `UpdatePhase` (`idle` / `preparing` / `downloading` / `installing` / `failed`) drives `Screen/Update/UpdateSheet` (changelog, progress with size and speed, Cancel, error + Try again); `start()` ignores a second tap while `busy` and only one sheet opens at a time |
 | `BaseDiscordRPC` | `lazyPut` | `MobileRPC` on Android/iOS, else `DesktopRPC` |
 
 Local reactive UI uses `Live` + `Watch`; `appContext` / `appOverlayContext` give context-free access
