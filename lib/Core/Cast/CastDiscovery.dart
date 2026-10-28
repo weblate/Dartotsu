@@ -17,8 +17,22 @@ class CastDiscovery {
 
   Future<void> run({Duration window = const Duration(seconds: 5)}) async {
     stop();
-    await Future.wait([_mdns(), _ssdp()]);
+    final resend = <void Function()>[];
+    await Future.wait([_mdns(resend), _ssdp(resend)]);
+    final rounds = <Timer>[
+      for (final delay in const [1200, 2600])
+        Timer(Duration(milliseconds: delay), () {
+          for (final send in resend) {
+            try {
+              send();
+            } catch (_) {}
+          }
+        }),
+    ];
     await Future<void>.delayed(window);
+    for (final timer in rounds) {
+      timer.cancel();
+    }
     stop();
   }
 
@@ -41,14 +55,16 @@ class CastDiscovery {
     }
   }
 
-  Future<void> _mdns() async {
+  Future<void> _mdns(List<void Function()> resend) async {
     final socket = await _socket();
     if (socket == null) return;
-    socket.send(
+    void ask() => socket.send(
       _mdnsQuery('_googlecast._tcp.local'),
       InternetAddress('224.0.0.251'),
       5353,
     );
+    ask();
+    resend.add(ask);
     socket.listen((event) {
       if (event != RawSocketEvent.read) return;
       final datagram = socket.receive();
@@ -93,21 +109,26 @@ class CastDiscovery {
     return out.toBytes();
   }
 
-  Future<void> _ssdp() async {
+  Future<void> _ssdp(List<void Function()> resend) async {
     final socket = await _socket();
     if (socket == null) return;
-    for (final target in const [
-      'roku:ecp',
-      'urn:schemas-upnp-org:device:MediaRenderer:1',
-    ]) {
-      socket.send(
-        utf8.encode(
-          'M-SEARCH * HTTP/1.1\r\nHOST: 239.255.255.250:1900\r\nMAN: "ssdp:discover"\r\nMX: 3\r\nST: $target\r\n\r\n',
-        ),
-        InternetAddress('239.255.255.250'),
-        1900,
-      );
+    void ask() {
+      for (final target in const [
+        'roku:ecp',
+        'urn:schemas-upnp-org:device:MediaRenderer:1',
+      ]) {
+        socket.send(
+          utf8.encode(
+            'M-SEARCH * HTTP/1.1\r\nHOST: 239.255.255.250:1900\r\nMAN: "ssdp:discover"\r\nMX: 3\r\nST: $target\r\n\r\n',
+          ),
+          InternetAddress('239.255.255.250'),
+          1900,
+        );
+      }
     }
+
+    ask();
+    resend.add(ask);
     socket.listen((event) {
       if (event != RawSocketEvent.read) return;
       final datagram = socket.receive();

@@ -63,6 +63,9 @@ class DlnaClient {
     String? subtitle,
   }) {
     final type = hls ? 'application/vnd.apple.mpegurl' : (mime ?? 'video/mp4');
+    final features = hls
+        ? '*'
+        : 'DLNA.ORG_OP=01;DLNA.ORG_CI=0;DLNA.ORG_FLAGS=01700000000000000000000000000000';
     final sub = subtitle == null
         ? ''
         : '<res protocolInfo="http-get:*:text/vtt:*">${xmlEscape(subtitle)}</res>'
@@ -75,7 +78,7 @@ class DlnaClient {
         '<item id="1" parentID="0" restricted="1">'
         '<dc:title>${xmlEscape(title)}</dc:title>'
         '<upnp:class>object.item.videoItem</upnp:class>'
-        '<res protocolInfo="http-get:*:$type:*">${xmlEscape(url)}</res>'
+        '<res protocolInfo="http-get:*:$type:$features">${xmlEscape(url)}</res>'
         '$sub</item></DIDL-Lite>';
   }
 
@@ -102,6 +105,31 @@ class DlnaClient {
   }
 
   Future<bool> play() async => await _call('Play', '<Speed>1</Speed>') != null;
+
+  Future<String> state() async {
+    final info = await _call('GetTransportInfo');
+    if (info == null) return '';
+    try {
+      return XmlDocument.parse(
+            info,
+          ).findAllElements('CurrentTransportState').firstOrNull?.innerText ??
+          '';
+    } catch (_) {
+      return '';
+    }
+  }
+
+  Future<bool> playWhenReady() async {
+    for (var i = 0; i < 12; i++) {
+      final now = await state();
+      if (now == 'PLAYING') return true;
+      if (now != 'TRANSITIONING' && now != 'NO_MEDIA_PRESENT') {
+        if (await play()) return true;
+      }
+      await Future<void>.delayed(const Duration(milliseconds: 500));
+    }
+    return false;
+  }
 
   Future<bool> pause() async => await _call('Pause') != null;
 

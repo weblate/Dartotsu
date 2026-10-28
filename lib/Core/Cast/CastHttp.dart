@@ -4,6 +4,21 @@ import 'dart:io';
 
 final _client = HttpClient()..connectionTimeout = const Duration(seconds: 3);
 
+Future<String?> localAddressToward(String host, int port) async {
+  try {
+    final socket = await Socket.connect(
+      host,
+      port,
+      timeout: const Duration(seconds: 2),
+    );
+    final address = socket.address.address;
+    socket.destroy();
+    return address;
+  } catch (_) {
+    return null;
+  }
+}
+
 Future<String?> castGet(String url, {Duration? timeout}) async {
   try {
     final request = await _client.getUrl(Uri.parse(url));

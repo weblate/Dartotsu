@@ -17,6 +17,17 @@ class CastV2Message {
   });
 }
 
+const kDefaultMediaReceiver = 'CC1AD845';
+
+Map<String, dynamic>? receiverApp(List<dynamic>? applications) {
+  for (final app in applications ?? const []) {
+    if (app is Map<String, dynamic> && app['appId'] == kDefaultMediaReceiver) {
+      return app;
+    }
+  }
+  return null;
+}
+
 class CastV2Client {
   static const kNamespaceConnection =
       'urn:x-cast:com.google.cast.tp.connection';
@@ -123,8 +134,8 @@ class CastV2Client {
     if (msg.namespace == kNamespaceReceiver && type == 'RECEIVER_STATUS') {
       final status = msg.payload['status'] as Map<String, dynamic>?;
       final applications = status?['applications'] as List<dynamic>?;
-      if (applications != null && applications.isNotEmpty) {
-        final app = applications.first as Map<String, dynamic>;
+      final app = receiverApp(applications);
+      if (app != null) {
         final newTransportId = app['transportId'] as String?;
         if (newTransportId != null && newTransportId != _transportId) {
           _transportId = newTransportId;

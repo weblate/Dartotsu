@@ -2,6 +2,8 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
+import 'CastHttp.dart';
+
 const _agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)';
 
 class CastProxy {
@@ -25,6 +27,7 @@ class CastProxy {
     Map<String, String>? headers,
     String? subtitle,
     String? subtitleLabel,
+    ({String host, int port})? towards,
   }) async {
     await stop();
     _video = video;
@@ -32,7 +35,7 @@ class CastProxy {
     _subtitleLabel = subtitleLabel ?? 'English';
     _headers = {...?headers};
     final server = _server = await HttpServer.bind(InternetAddress.anyIPv4, 0);
-    _host = await _localIp();
+    _host = await _localIp(towards);
     final base = 'http://$_host:${server.port}';
     final sniffed = await _sniff(video);
     isHls = sniffed.hls;
@@ -137,21 +140,54 @@ class CastProxy {
   static bool _isLocal(String url) =>
       url.startsWith('/') || url.startsWith('file://');
 
-  static Future<String> _localIp() async {
-    final interfaces = await NetworkInterface.list(
-      type: InternetAddressType.IPv4,
-    );
-    const likely = ['wlan', 'eth', 'ap', 'rndis', 'en', 'wl'];
-    for (final pass in [true, false]) {
-      for (final iface in interfaces) {
-        final name = iface.name.toLowerCase();
-        if (pass && !likely.any(name.contains)) continue;
-        for (final addr in iface.addresses) {
-          if (!addr.isLoopback) return addr.address;
+  static const _virtual = [
+    'veth',
+    'docker',
+    'br-',
+    'virbr',
+    'vmnet',
+    'vboxnet',
+    'tun',
+    'tap',
+    'wg',
+    'tailscale',
+    'zt',
+    'utun',
+    'awdl',
+    'llw',
+    'lo',
+  ];
+
+  static String pickLocalIp(Iterable<({String name, String address})> found) {
+    const likely = ['wlan', 'wlo', 'wlp', 'eth', 'ap', 'rndis', 'en', 'wl'];
+    final real = [
+      for (final f in found)
+        if (!_virtual.any(f.name.toLowerCase().startsWith)) f,
+    ];
+    for (final pool in [real, found.toList()]) {
+      for (final pass in [true, false]) {
+        for (final f in pool) {
+          if (pass && !likely.any(f.name.toLowerCase().contains)) continue;
+          return f.address;
         }
       }
     }
     return '127.0.0.1';
+  }
+
+  static Future<String> _localIp(({String host, int port})? towards) async {
+    if (towards != null) {
+      final reached = await localAddressToward(towards.host, towards.port);
+      if (reached != null && reached != '127.0.0.1') return reached;
+    }
+    final interfaces = await NetworkInterface.list(
+      type: InternetAddressType.IPv4,
+    );
+    return pickLocalIp([
+      for (final iface in interfaces)
+        for (final addr in iface.addresses)
+          if (!addr.isLoopback) (name: iface.name, address: addr.address),
+    ]);
   }
 
   Future<void> _handle(HttpRequest request) async {

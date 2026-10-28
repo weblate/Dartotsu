@@ -81,6 +81,7 @@ class CastService extends AppController {
         headers: headers,
         subtitle: subtitle,
         subtitleLabel: subtitleLabel,
+        towards: (host: target.host, port: target.port),
       );
       final media = _proxy.videoUrl!;
       final hls = _proxy.isHls;
@@ -130,7 +131,11 @@ class CastService extends AppController {
     _messages = client.messageStream.listen(_onCastMessage);
     client.sendMessage(
       namespace: CastV2Client.kNamespaceReceiver,
-      payload: {'type': 'LAUNCH', 'appId': 'CC1AD845', 'requestId': 1},
+      payload: {
+        'type': 'LAUNCH',
+        'appId': kDefaultMediaReceiver,
+        'requestId': 1,
+      },
     );
     if (await client.awaitTransport() == null) {
       throw StateError(getString.castReceiverFailed);
@@ -226,9 +231,11 @@ class CastService extends AppController {
       subtitle: _proxy.subtitleUrl,
     );
     if (!loaded) throw StateError('The TV refused the stream');
-    await client.play();
+    if (!await client.playWhenReady()) {
+      throw StateError('The TV did not start the stream');
+    }
     if (start > Duration.zero) {
-      await Future<void>.delayed(const Duration(seconds: 2));
+      await Future<void>.delayed(const Duration(seconds: 1));
       await client.seek(start);
     }
     _poll = Timer.periodic(const Duration(seconds: 1), (_) async {
