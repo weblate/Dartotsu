@@ -177,7 +177,6 @@ class ExtensionListState extends ScreenState {
     final installed = applySavedOrder(dedupeById(bridgeState.installed.value));
 
     return installed.where((source) {
-      if (hasUpdate(source)) return false;
       final matchesSearch =
           source.name?.toLowerCase().contains(searchTerm) ?? false;
 
@@ -190,8 +189,10 @@ class ExtensionListState extends ScreenState {
 
   List<ExtensionListItem> filteredAvailable() {
     final grouped = <String, List<Source>>{};
+    final installedIds = {for (final s in bridgeState.installed.value) ?s.id};
 
     for (final source in bridgeState.available.value) {
+      if (installedIds.contains(source.id)) continue;
       final lang = source.lang?.toLowerCase() ?? 'Unknown';
 
       if (selectedLanguages.isNotEmpty && !selectedLanguages.contains(lang)) {
