@@ -104,7 +104,7 @@ class SourceSubscriptions extends AppController {
     if (url == null || url.isEmpty || id == null) {
       return SubscribeResult.noTarget;
     }
-    if (reachedTotal(latest.max, media.totalUnits)) {
+    if (reachedTotal(latest.max, finalTotal(media))) {
       return SubscribeResult.complete;
     }
     final now = _now();
@@ -132,7 +132,7 @@ class SourceSubscriptions extends AppController {
       progress: _progressOf(service, media),
       localProgress: localProgress,
       listStatus: media.userStatus,
-      total: media.totalUnits,
+      total: finalTotal(media),
       airingAt: _airingMs(media),
       lastValue: latest.max,
       lastChecked: now,
@@ -161,8 +161,12 @@ class SourceSubscriptions extends AppController {
     sub.cover = media.cover ?? sub.cover;
     sub.banner = media.banner ?? sub.banner;
     sub.media = ResumeStore.slim(media);
-    final total = media.totalUnits;
-    if (total != null && total > 0) sub.total = total;
+    if (media.status != null) {
+      sub.total = finalTotal(media);
+      if (sub.total == null && sub.health == SubHealth.finished) {
+        sub.health = SubHealth.ok;
+      }
+    }
     final airing = _airingMs(media);
     if (media.status != null) {
       final moved = airing != sub.airingAt;

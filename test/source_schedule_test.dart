@@ -1,4 +1,6 @@
 import 'package:dartotsu_extension_bridge/dartotsu_extension_bridge.dart';
+import 'package:dartotsu/Core/Services/Model/Manga.dart';
+import 'package:dartotsu/Core/Services/Model/Media.dart';
 import 'package:dartotsu/Core/SourceAlerts/SourceSchedule.dart';
 import 'package:dartotsu/Core/SourceAlerts/SourceSub.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -238,6 +240,18 @@ void main() {
     expect(reachedTotal(11, 12), isFalse);
     expect(reachedTotal(99, null), isFalse);
     expect(reachedTotal(99, 0), isFalse);
+  });
+
+  test('a total only counts once the title is finished', () {
+    Media chapters(String? status) => Media(
+      id: '1',
+      shareLink: '',
+      status: status,
+      manga: Manga(totalChapters: 40),
+    );
+    expect(finalTotal(chapters('FINISHED')), 40);
+    expect(finalTotal(chapters('RELEASING')), isNull);
+    expect(finalTotal(chapters(null)), isNull);
   });
 
   group('subReleases', () {

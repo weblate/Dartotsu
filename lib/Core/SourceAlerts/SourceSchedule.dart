@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:dartotsu_extension_bridge/dartotsu_extension_bridge.dart';
 
 import '../../Screen/Detail/Watch/Data/EpisodeUnits.dart';
+import '../Services/Model/Media.dart';
 import 'SourceSub.dart';
 
 const _minute = 60000;
@@ -168,6 +169,13 @@ SkipReason? skipReason(
   }
   if (!ignoreWindow && now < s.nextCheckAt) return SkipReason.window;
   return null;
+}
+
+int? finalTotal(Media media) {
+  final total = media.totalUnits;
+  return media.status == 'FINISHED' && total != null && total > 0
+      ? total
+      : null;
 }
 
 bool reachedTotal(double max, int? total) =>
