@@ -1,3 +1,4 @@
+import '../../Logger.dart';
 import 'ScoreFormat.dart';
 import '../State/State.dart';
 
@@ -54,6 +55,8 @@ mixin SharedRefresh {
     next = () async {
       try {
         await run();
+      } catch (e, st) {
+        logError('Auth', e, st);
       } finally {
         if (identical(_inflight, next)) _inflight = null;
       }
