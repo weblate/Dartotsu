@@ -185,9 +185,8 @@ class PendingWrites extends AppController {
           continue;
         }
         try {
-          await _send(service, api, write);
+          if (await _send(service, api, write)) sent++;
           entries.remove(write);
-          sent++;
         } catch (e, st) {
           logError('PendingWrites', e, st);
           if (!await find<NetStatus>().check()) break;
@@ -209,7 +208,7 @@ class PendingWrites extends AppController {
     }
   }
 
-  Future<void> _send(
+  Future<bool> _send(
     MediaService service,
     Mutations api,
     PendingWrite write,
@@ -223,9 +222,11 @@ class PendingWrites extends AppController {
       case PendingKind.progress:
         final remote = await service.getQueries?.getMedia(media.id);
         final target = write.progress ?? 0;
-        if ((remote?.userProgress ?? 0) >= target) return;
-        await api.setProgress(media, target);
+        if ((remote?.userProgress ?? 0) >= target) return false;
+        final base = remote ?? (media..userProgress = null);
+        await api.setProgress(base, target);
     }
+    return true;
   }
 
   @override
