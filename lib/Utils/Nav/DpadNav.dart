@@ -10,7 +10,7 @@ import '../Extensions/ClickCursor.dart';
 import '../Extensions/ContextExtensions.dart';
 import '../Functions/AppShortcuts.dart';
 
-class DpadFocusable extends StatelessWidget {
+class DpadFocusable extends StatefulWidget {
   final Widget child;
   final List<DpadEffect>? effects;
   final DpadFocusableBuilder? builder;
@@ -53,30 +53,64 @@ class DpadFocusable extends StatelessWidget {
   });
 
   @override
+  State<DpadFocusable> createState() => _DpadFocusableState();
+}
+
+class _DpadFocusableState extends State<DpadFocusable> {
+  FocusNode? _own;
+
+  FocusNode get _node => widget.focusNode ?? (_own ??= FocusNode());
+
+  @override
+  void dispose() {
+    _own?.dispose();
+    super.dispose();
+  }
+
+  void _reveal() {
+    final node = _node;
+    final theme = DpadTheme.of(context);
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted || !node.hasFocus) return;
+      DpadScroll.ensureVisible(
+        node,
+        padding: widget.scrollPadding ?? theme.scrollPadding,
+        duration: widget.scrollDuration ?? theme.scrollDuration,
+        curve: widget.scrollCurve ?? theme.scrollCurve,
+      );
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     final clickable =
-        enabled && tapToSelect && (onSelect != null || onLongSelect != null);
+        widget.enabled &&
+        widget.tapToSelect &&
+        (widget.onSelect != null || widget.onLongSelect != null);
     return MouseRegion(
       cursor: clickable ? SystemMouseCursors.click : MouseCursor.defer,
       child: base.DpadFocusable(
-        effects: effects,
-        builder: builder,
-        onSelect: onSelect,
-        onLongSelect: onLongSelect,
-        onFocusChange: onFocusChange,
-        onDirection: onDirection,
-        autofocus: autofocus,
-        enabled: enabled,
-        entry: entry,
-        focusNode: focusNode,
-        debugLabel: debugLabel,
-        autoScroll: autoScroll,
-        scrollPadding: scrollPadding,
-        scrollDuration: scrollDuration,
-        scrollCurve: scrollCurve,
-        excludeChildFocus: excludeChildFocus,
-        tapToSelect: tapToSelect,
-        child: child,
+        effects: widget.effects,
+        builder: widget.builder,
+        onSelect: widget.onSelect,
+        onLongSelect: widget.onLongSelect,
+        onFocusChange: (focused) {
+          if (focused && widget.autoScroll && usingKeyboard) _reveal();
+          widget.onFocusChange?.call(focused);
+        },
+        onDirection: widget.onDirection,
+        autofocus: widget.autofocus,
+        enabled: widget.enabled,
+        entry: widget.entry,
+        focusNode: _node,
+        debugLabel: widget.debugLabel,
+        autoScroll: false,
+        scrollPadding: widget.scrollPadding,
+        scrollDuration: widget.scrollDuration,
+        scrollCurve: widget.scrollCurve,
+        excludeChildFocus: widget.excludeChildFocus,
+        tapToSelect: widget.tapToSelect,
+        child: widget.child,
       ),
     );
   }
