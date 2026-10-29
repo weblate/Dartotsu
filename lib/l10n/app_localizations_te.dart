@@ -4996,6 +4996,17 @@ class AppLocalizationsTe extends AppLocalizations {
       'ప్రివ్యూ కోసం ఫ్రేమ్ పట్టుకోలేకపోయాం';
 
   @override
+  String get playerShadersSoftware =>
+      'Shaders need hardware rendering, and the player is using software rendering. Turn Software rendering off in Player settings.';
+
+  @override
+  String get playerSoftwareRender => 'Software rendering';
+
+  @override
+  String get playerSoftwareRenderDesc =>
+      'Only for a black video. Shaders don\'t work with it. Applies the next time the player opens';
+
+  @override
   String get playerShadersCustomFiles => 'నీ షేడర్లు';
 
   @override

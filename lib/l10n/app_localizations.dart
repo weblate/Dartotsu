@@ -9005,6 +9005,24 @@ abstract class AppLocalizations {
   /// **'Couldn\'t grab a frame to preview'**
   String get playerShadersPreviewFailed;
 
+  /// No description provided for @playerShadersSoftware.
+  ///
+  /// In en, this message translates to:
+  /// **'Shaders need hardware rendering, and the player is using software rendering. Turn Software rendering off in Player settings.'**
+  String get playerShadersSoftware;
+
+  /// No description provided for @playerSoftwareRender.
+  ///
+  /// In en, this message translates to:
+  /// **'Software rendering'**
+  String get playerSoftwareRender;
+
+  /// No description provided for @playerSoftwareRenderDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Only for a black video. Shaders don\'t work with it. Applies the next time the player opens'**
+  String get playerSoftwareRenderDesc;
+
   /// No description provided for @playerShadersCustomFiles.
   ///
   /// In en, this message translates to:

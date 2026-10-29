@@ -11,6 +11,7 @@ import '../../../Core/Fonts/AppFonts.dart';
 import '../../../Core/Preferences/PrefManager.dart';
 import '../../../Core/Preferences/StorageManager.dart';
 import '../../../Core/State/State.dart';
+import '../../../Core/ThemeManager/LanguageSwitcher.dart';
 import 'MpvFiles.dart';
 import 'PlayerSettings.dart';
 import 'TorrentStream.dart';
@@ -563,6 +564,10 @@ class PlayerEngine {
   Future<void> _commitShaders() async {
     final mpv = native;
     if (mpv == null) return;
+    if (softwareRender && _shaderFiles.isNotEmpty) {
+      shaderProblem.value = getString.playerShadersSoftware;
+      logger('Shaders requested while software rendering is on', tag: 'PLAYER');
+    }
     final dir = await MpvFiles.shadersDir();
     final paths = shaderPaths(dir.path, _shaderFiles);
     try {

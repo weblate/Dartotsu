@@ -5016,6 +5016,17 @@ class AppLocalizationsDe extends AppLocalizations {
       'Es konnte kein Frame für die Vorschau geholt werden';
 
   @override
+  String get playerShadersSoftware =>
+      'Shaders need hardware rendering, and the player is using software rendering. Turn Software rendering off in Player settings.';
+
+  @override
+  String get playerSoftwareRender => 'Software rendering';
+
+  @override
+  String get playerSoftwareRenderDesc =>
+      'Only for a black video. Shaders don\'t work with it. Applies the next time the player opens';
+
+  @override
   String get playerShadersCustomFiles => 'Deine Shader';
 
   @override

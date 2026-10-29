@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 
+import '../../Player/Engine/PlayerEngine.dart';
 import '../../Player/Engine/PlayerSettings.dart';
 import '../../../Core/ThemeManager/LanguageSwitcher.dart';
 import '../../../Model/Setting.dart';
@@ -403,6 +404,17 @@ List<Setting> playerSettingsRows(
         label: decoderLabel,
         onPick: (v) => update((x) => x.decoder = v),
       ),
+      if (!Platform.isAndroid && !Platform.isIOS)
+        switchSetting(
+          getString.playerSoftwareRender,
+          getString.playerSoftwareRenderDesc,
+          Icons.developer_board_off_rounded,
+          PlayerEngine.softwareRender,
+          (v) {
+            PlayerEngine.softwareRender = v;
+            update((_) {});
+          },
+        ),
       if (Platform.isAndroid)
         choiceSetting<String>(
           context,

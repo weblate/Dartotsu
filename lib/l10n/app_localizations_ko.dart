@@ -4875,6 +4875,17 @@ class AppLocalizationsKo extends AppLocalizations {
   String get playerShadersPreviewFailed => '미리볼 프레임을 가져오지 못했어요';
 
   @override
+  String get playerShadersSoftware =>
+      'Shaders need hardware rendering, and the player is using software rendering. Turn Software rendering off in Player settings.';
+
+  @override
+  String get playerSoftwareRender => 'Software rendering';
+
+  @override
+  String get playerSoftwareRenderDesc =>
+      'Only for a black video. Shaders don\'t work with it. Applies the next time the player opens';
+
+  @override
   String get playerShadersCustomFiles => '내 셰이더';
 
   @override
