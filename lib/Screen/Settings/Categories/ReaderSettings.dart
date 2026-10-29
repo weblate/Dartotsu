@@ -365,6 +365,13 @@ List<Setting> novelReaderRows(
       (v) => update((x) => x.novelIndent = v),
     ),
     switchSetting(
+      getString.novelPaged,
+      getString.novelPagedDesc,
+      Icons.auto_stories_rounded,
+      s.novelPaged,
+      (v) => update((x) => x.novelPaged = v),
+    ),
+    switchSetting(
       getString.novelTapPaging,
       getString.novelTapPagingDesc,
       Icons.touch_app_rounded,

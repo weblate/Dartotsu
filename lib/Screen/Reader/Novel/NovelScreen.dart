@@ -6,10 +6,13 @@ import '../../../Widgets/Components/SeekProgressBar.dart';
 import 'package:flutter/services.dart';
 
 import '../../../Core/Fonts/AppFonts.dart';
+import '../Engine/NovelPaginate.dart';
+import '../Engine/NovelSpans.dart';
 import '../Engine/NovelText.dart';
 import '../Engine/ReaderRequest.dart';
 import '../Engine/ReaderSettings.dart';
 import '../Components/ReadingPresence.dart';
+import '../../Detail/Watch/Data/Media/MediaRecord.dart';
 import '../../../Core/State/State.dart';
 import '../../../Core/ThemeManager/LanguageSwitcher.dart';
 import '../../../Model/Setting.dart';
@@ -23,7 +26,7 @@ import '../../../Widgets/Components/EmptyState.dart';
 import '../../../Widgets/Components/ScreenState.dart';
 import '../../Settings/Categories/ReaderSettings.dart';
 import '../../Settings/Widgets/SettingsGroup.dart';
-import '../Components/BookmarksSheet.dart';
+import '../Components/NovelTools.dart';
 import '../Components/ReaderSheets.dart';
 import 'NovelState.dart';
 import '../../../Utils/Animation/WidgetAnimations.dart';
@@ -116,7 +119,16 @@ class _NovelScreenState extends State<NovelScreen>
                             return;
                           }
                         }
-                        if (!settings.novelTapPaging ||
+                        if (!state.controlsVisible.value) {
+                          final tapped = state.highlightAt(d.globalPosition);
+                          if (tapped != null) {
+                            unawaited(
+                              showHighlightSheet(context, state, tapped),
+                            );
+                            return;
+                          }
+                        }
+                        if (!(settings.novelTapPaging || state.paged) ||
                             state.controlsVisible.value) {
                           state.toggleControls();
                           return;
@@ -133,6 +145,7 @@ class _NovelScreenState extends State<NovelScreen>
                     ),
                   ),
                 ),
+              Watch(() => _searchPill(context, background, foreground)),
               Watch(() => _bar(context, background, foreground, top: true)),
               Watch(() => _bar(context, background, foreground, top: false)),
               Watch(() => _audioBar(context, background, foreground)),
@@ -144,7 +157,6 @@ class _NovelScreenState extends State<NovelScreen>
   }
 
   Widget _text(BuildContext context, ReaderSettings s, Color foreground) {
-    final blocks = state.blocks.toList();
     final base = TextStyle(
       fontFamily: fontFamilyOf(s.novelFont),
       fontSize: s.novelSize.toDouble(),
@@ -153,9 +165,58 @@ class _NovelScreenState extends State<NovelScreen>
       fontWeight: s.novelBold ? FontWeight.w600 : FontWeight.w400,
       letterSpacing: s.novelLetterSpacing / 10,
     );
+    return s.novelPaged
+        ? _pages(context, s, foreground, base)
+        : _scrolling(context, s, foreground, base);
+  }
+
+  Widget _selectable(Widget child) => SelectionArea(
+    onSelectionChanged: (content) =>
+        state.selectedText = content?.plainText ?? '',
+    contextMenuBuilder: (context, region) {
+      final items = [...region.contextMenuButtonItems];
+      if (state.translated.value == null) {
+        items.add(
+          ContextMenuButtonItem(
+            label: getString.novelHighlight,
+            onPressed: () {
+              state.addHighlightFromSelection();
+              region.hideToolbar();
+              region.clearSelection();
+            },
+          ),
+        );
+        items.add(
+          ContextMenuButtonItem(
+            label: getString.novelHighlightNote,
+            onPressed: () {
+              final h = state.addHighlightFromSelection();
+              region.hideToolbar();
+              region.clearSelection();
+              if (h != null) showHighlightSheet(this.context, state, h);
+            },
+          ),
+        );
+      }
+      return AdaptiveTextSelectionToolbar.buttonItems(
+        anchors: region.contextMenuAnchors,
+        buttonItems: items,
+      );
+    },
+    child: child,
+  );
+
+  Widget _scrolling(
+    BuildContext context,
+    ReaderSettings s,
+    Color foreground,
+    TextStyle base,
+  ) {
+    final blocks = state.blocks.toList();
     final margin = s.novelMargin.toDouble();
-    return SelectionArea(
-      child: ListView.builder(
+    return _selectable(
+      ListView.builder(
+        key: state.scrollKey,
         controller: state.scroll,
         padding: EdgeInsets.fromLTRB(
           margin,
@@ -167,51 +228,300 @@ class _NovelScreenState extends State<NovelScreen>
         itemBuilder: (context, i) {
           if (i == 0) return _heading(context, base);
           if (i == blocks.length + 1) return _end(context);
-          final key = state.blockKeys.putIfAbsent(i - 1, GlobalKey.new);
-          final source = state.original;
-          final bilingual =
-              s.translateBilingual &&
-              state.translated.value != null &&
-              source.length == blocks.length &&
-              source[i - 1] is NovelParagraph &&
-              blocks[i - 1] is NovelParagraph;
-          final block = bilingual
-              ? Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    _block(
-                      context,
-                      source[i - 1],
-                      base,
-                      s.copy()..novelParagraph = 4,
-                    ),
-                    _block(
-                      context,
-                      blocks[i - 1],
-                      base.copyWith(color: base.color?.withValues(alpha: 0.6)),
-                      s,
-                    ),
-                  ],
-                )
-              : _block(context, blocks[i - 1], base, s);
+          final at = i - 1;
+          final key = state.blockKeys.putIfAbsent(at, GlobalKey.new);
           return KeyedSubtree(
             key: key,
-            child: Watch(
-              () => state.speakingAt.value == i - 1
-                  ? DecoratedBox(
-                      decoration: BoxDecoration(
-                        color: context.colorScheme.primary.withValues(
-                          alpha: 0.18,
+            child: Watch(() {
+              final source = state.original;
+              final bilingual =
+                  s.translateBilingual &&
+                  state.translated.value != null &&
+                  source.length == blocks.length &&
+                  source[at] is NovelParagraph &&
+                  blocks[at] is NovelParagraph;
+              final block = bilingual
+                  ? Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        _block(
+                          context,
+                          source[at],
+                          at,
+                          base,
+                          s.copy()..novelParagraph = 4,
                         ),
-                        borderRadius: Dimens.borderSm,
-                      ),
-                      child: block,
+                        _block(
+                          context,
+                          blocks[at],
+                          at,
+                          base.copyWith(
+                            color: base.color?.withValues(alpha: 0.6),
+                          ),
+                          s,
+                        ),
+                      ],
                     )
-                  : block,
-            ),
+                  : _block(context, blocks[at], at, base, s);
+              return _tint(context, at, block);
+            }),
           );
         },
       ),
+    );
+  }
+
+  Widget _tint(BuildContext context, int block, Widget child) =>
+      state.speakingAt.value == block
+      ? DecoratedBox(
+          decoration: BoxDecoration(
+            color: context.colorScheme.primary.withValues(alpha: 0.18),
+            borderRadius: Dimens.borderSm,
+          ),
+          child: child,
+        )
+      : child;
+
+  Widget _pages(
+    BuildContext context,
+    ReaderSettings s,
+    Color foreground,
+    TextStyle base,
+  ) {
+    final list = state.pages.value;
+    final working = state.paginating.value;
+    final margin = s.novelMargin.toDouble();
+    final pad = MediaQuery.paddingOf(context);
+    final top = pad.top + 28;
+    final bottom = pad.bottom + 44;
+    final scaler = MediaQuery.textScalerOf(context);
+    return LayoutBuilder(
+      builder: (context, box) {
+        final layout = PageLayout(
+          base: base,
+          scaler: scaler,
+          width: (box.maxWidth - margin * 2).floorToDouble(),
+          height: (box.maxHeight - top - bottom).floorToDouble(),
+          gap: s.novelParagraph.toDouble(),
+          indent: s.novelIndent,
+        );
+        WidgetsBinding.instance.addPostFrameCallback(
+          (_) => state.ensurePages(layout),
+        );
+        if (list.isEmpty) {
+          return Center(
+            child: working
+                ? Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      const CircularProgressIndicator(),
+                      const SizedBox(height: 12),
+                      Text(
+                        getString.novelPaginating,
+                        style: base.copyWith(
+                          fontSize: 14,
+                          color: foreground.withValues(alpha: 0.7),
+                        ),
+                      ),
+                    ],
+                  )
+                : const SizedBox.shrink(),
+          );
+        }
+        return Stack(
+          fit: StackFit.expand,
+          children: [
+            PageView.builder(
+              controller: state.pageController,
+              itemCount: list.length + (working ? 0 : 1),
+              onPageChanged: state.onPage,
+              itemBuilder: (context, p) {
+                if (p >= list.length) {
+                  return Center(child: _end(context));
+                }
+                return Padding(
+                  padding: EdgeInsets.fromLTRB(margin, top, margin, bottom),
+                  child: _selectable(
+                    ClipRect(
+                      child: OverflowBox(
+                        alignment: Alignment.topCenter,
+                        minHeight: 0,
+                        maxHeight: double.infinity,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            for (final slice in list[p].slices)
+                              _slice(context, p, slice, base, s, layout),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                );
+              },
+            ),
+            PositionedDirectional(
+              start: 0,
+              end: 0,
+              bottom: pad.bottom + 12,
+              child: IgnorePointer(
+                child: Watch(
+                  () => Text(
+                    working
+                        ? getString.novelPaginating
+                        : getString.novelPageOf(
+                            (state.page.value + 1).clamp(1, list.length),
+                            list.length,
+                          ),
+                    textAlign: TextAlign.center,
+                    style: base.copyWith(
+                      fontSize: 12,
+                      height: 1,
+                      color: foreground.withValues(alpha: 0.5),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  Widget _slice(
+    BuildContext context,
+    int page,
+    PageSlice slice,
+    TextStyle base,
+    ReaderSettings s,
+    PageLayout layout,
+  ) {
+    final blocks = state.blocks;
+    if (slice.block >= blocks.length) return const SizedBox.shrink();
+    final block = blocks[slice.block];
+    final gap = s.novelParagraph.toDouble();
+    if (block is NovelParagraph) {
+      final slots = state.pageSlots.putIfAbsent(page, () => {});
+      var slot = slots[slice.block];
+      final prefix = slice.start == 0 && block.heading == 0 && s.novelIndent
+          ? novelIndent.length
+          : 0;
+      if (slot == null || slot.start != slice.start || slot.prefix != prefix) {
+        slot = (key: GlobalKey(), start: slice.start, prefix: prefix);
+        slots[slice.block] = slot;
+      }
+      return KeyedSubtree(
+        key: slot.key,
+        child: Watch(
+          () => _tint(
+            context,
+            slice.block,
+            Padding(
+              padding: EdgeInsets.only(
+                top: slice.start == 0 && block.heading > 0 ? gap : 0,
+                bottom: slice.end >= block.text.length ? gap : 0,
+              ),
+              child: _paragraphText(
+                context,
+                block,
+                slice.block,
+                paragraphStyle(base, block.heading),
+                s,
+                start: slice.start,
+                end: slice.end,
+              ),
+            ),
+          ),
+        ),
+      );
+    }
+    if (block is NovelPicture) {
+      return Padding(
+        padding: EdgeInsets.only(bottom: gap),
+        child: SizedBox(
+          height: layout.pictureHeight,
+          child: _picture(block, BoxFit.contain),
+        ),
+      );
+    }
+    return _block(context, block, slice.block, base, s);
+  }
+
+  Widget _picture(NovelPicture p, BoxFit fit) =>
+      !p.url.startsWith('http') && File(p.url).isAbsolute
+      ? Image.file(File(p.url), fit: fit, width: double.infinity)
+      : cachedNetworkImage(imageUrl: p.url, fit: fit, width: double.infinity);
+
+  List<TextMark> _marks(BuildContext context, int block) {
+    final scheme = context.colorScheme;
+    final out = <TextMark>[];
+    if (state.translated.value == null) {
+      for (final h in state.highlightsOf(block)) {
+        out.add(
+          TextMark(
+            h.start,
+            h.end,
+            1,
+            Color(highlightColors[h.color]).withValues(alpha: 0.5),
+            underline: h.note.isNotEmpty,
+          ),
+        );
+      }
+    }
+    final matches = state.searchMatches.value;
+    if (matches.isNotEmpty) {
+      final current = state.searchIndex.value;
+      for (var i = 0; i < matches.length; i++) {
+        final m = matches[i];
+        if (m.block != block) continue;
+        out.add(
+          TextMark(
+            m.start,
+            m.end,
+            i == current ? 3 : 2,
+            scheme.tertiary.withValues(alpha: i == current ? 0.7 : 0.35),
+          ),
+        );
+      }
+    }
+    if (state.speakingAt.value == block) {
+      final word = state.speakingWord.value;
+      if (word != null) {
+        out.add(
+          TextMark(word.$1, word.$2, 4, scheme.primary.withValues(alpha: 0.4)),
+        );
+      }
+    }
+    return out;
+  }
+
+  Widget _paragraphText(
+    BuildContext context,
+    NovelParagraph p,
+    int block,
+    TextStyle style,
+    ReaderSettings s, {
+    int start = 0,
+    int? end,
+  }) {
+    final prefix = start == 0 && p.heading == 0 && s.novelIndent
+        ? novelIndent
+        : '';
+    return Text.rich(
+      TextSpan(
+        style: style,
+        children: buildSpans(
+          p.text,
+          style,
+          _marks(context, block),
+          from: start,
+          to: end,
+          prefix: prefix,
+        ),
+      ),
+      textAlign: s.novelJustify ? TextAlign.justify : TextAlign.start,
     );
   }
 
@@ -229,53 +539,81 @@ class _NovelScreenState extends State<NovelScreen>
   Widget _block(
     BuildContext context,
     NovelBlock block,
+    int at,
     TextStyle base,
     ReaderSettings s,
   ) {
     final gap = s.novelParagraph.toDouble();
     switch (block) {
       case NovelParagraph p:
-        final scale = switch (p.heading) {
-          1 => 1.5,
-          2 => 1.35,
-          3 => 1.2,
-          0 => 1.0,
-          _ => 1.1,
-        };
         return Padding(
           padding: EdgeInsets.only(bottom: gap, top: p.heading > 0 ? gap : 0),
-          child: Text(
-            p.heading == 0 && s.novelIndent ? '\u2003\u2003${p.text}' : p.text,
-            textAlign: s.novelJustify ? TextAlign.justify : TextAlign.start,
-            style: p.heading > 0
-                ? base.copyWith(
-                    fontSize: base.fontSize! * scale,
-                    fontWeight: FontWeight.w700,
-                  )
-                : base,
+          child: _paragraphText(
+            context,
+            p,
+            at,
+            paragraphStyle(base, p.heading),
+            s,
           ),
         );
       case NovelPicture p:
         return Padding(
           padding: EdgeInsets.only(bottom: gap),
-          child: !p.url.startsWith('http') && File(p.url).isAbsolute
-              ? Image.file(
-                  File(p.url),
-                  fit: BoxFit.fitWidth,
-                  width: double.infinity,
-                )
-              : cachedNetworkImage(
-                  imageUrl: p.url,
-                  fit: BoxFit.fitWidth,
-                  width: double.infinity,
-                ),
+          child: _picture(p, BoxFit.fitWidth),
         );
       case NovelRule():
         return Padding(
           padding: EdgeInsets.symmetric(vertical: gap),
           child: Divider(color: base.color?.withValues(alpha: 0.3)),
         );
+      case NovelMark():
+        return const SizedBox.shrink();
     }
+  }
+
+  Widget _searchPill(BuildContext context, Color background, Color foreground) {
+    final matches = state.searchMatches.value;
+    if (matches.isEmpty || state.controlsVisible.value) {
+      return const SizedBox.shrink();
+    }
+    final at = state.searchIndex.value;
+    return PositionedDirectional(
+      top: MediaQuery.paddingOf(context).top + 8,
+      start: 0,
+      end: 0,
+      child: Center(
+        child: Material(
+          color: Color.alphaBlend(
+            foreground.withValues(alpha: 0.14),
+            background,
+          ),
+          elevation: 3,
+          borderRadius: BorderRadius.circular(28),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              _icon(
+                foreground,
+                Icons.keyboard_arrow_up_rounded,
+                () => state.stepMatch(-1),
+              ),
+              Text(
+                '${at < 0 ? '–' : at + 1} / ${matches.length}',
+                style: context.textTheme.labelLarge?.copyWith(
+                  color: foreground,
+                ),
+              ),
+              _icon(
+                foreground,
+                Icons.keyboard_arrow_down_rounded,
+                () => state.stepMatch(1),
+              ),
+              _icon(foreground, Icons.close_rounded, state.clearSearch),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 
   Widget _end(BuildContext context) => Padding(
@@ -431,20 +769,15 @@ class _NovelScreenState extends State<NovelScreen>
             ? getString.readerBookmarkRemove
             : getString.readerBookmarkAdd,
       ),
-      if (state.record.bookmarks.isNotEmpty)
-        _icon(
-          foreground,
-          Icons.bookmarks_outlined,
-          () => showBookmarks(
-            context,
-            record: state.record,
-            tick: state.bookmarkTick,
-            detail: (b) => '${(b.position * 100 / b.total).round()}%',
-            onOpen: state.openBookmark,
-            onRemove: state.removeBookmark,
-          ),
-          tooltip: getString.readerBookmarks,
-        ),
+      _icon(
+        foreground,
+        Icons.manage_search_rounded,
+        () => showNovelTools(context, state),
+        tooltip: getString.novelTools,
+        active:
+            state.searchMatches.value.isNotEmpty ||
+            state.record.highlights.isNotEmpty,
+      ),
       _icon(
         foreground,
         Icons.format_list_numbered_rounded,

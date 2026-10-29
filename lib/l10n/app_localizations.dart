@@ -11069,6 +11069,114 @@ abstract class AppLocalizations {
   /// **'Tap the left or right side to scroll a page, the middle shows the controls'**
   String get novelTapPagingDesc;
 
+  /// No description provided for @novelPaged.
+  ///
+  /// In en, this message translates to:
+  /// **'Page turning'**
+  String get novelPaged;
+
+  /// No description provided for @novelPagedDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Split the chapter into pages and swipe or tap to turn them instead of scrolling'**
+  String get novelPagedDesc;
+
+  /// No description provided for @novelPageOf.
+  ///
+  /// In en, this message translates to:
+  /// **'Page {current} of {total}'**
+  String novelPageOf(int current, int total);
+
+  /// No description provided for @novelPaginating.
+  ///
+  /// In en, this message translates to:
+  /// **'Laying out pages'**
+  String get novelPaginating;
+
+  /// No description provided for @novelTools.
+  ///
+  /// In en, this message translates to:
+  /// **'Contents, search and highlights'**
+  String get novelTools;
+
+  /// No description provided for @novelContents.
+  ///
+  /// In en, this message translates to:
+  /// **'Contents'**
+  String get novelContents;
+
+  /// No description provided for @novelContentsEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'This chapter has no headings'**
+  String get novelContentsEmpty;
+
+  /// No description provided for @novelSearch.
+  ///
+  /// In en, this message translates to:
+  /// **'Search'**
+  String get novelSearch;
+
+  /// No description provided for @novelSearchHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Search in this chapter'**
+  String get novelSearchHint;
+
+  /// No description provided for @novelSearchNone.
+  ///
+  /// In en, this message translates to:
+  /// **'No matches'**
+  String get novelSearchNone;
+
+  /// No description provided for @novelSearchCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 match} other{{count} matches}}'**
+  String novelSearchCount(int count);
+
+  /// No description provided for @novelHighlights.
+  ///
+  /// In en, this message translates to:
+  /// **'Highlights'**
+  String get novelHighlights;
+
+  /// No description provided for @novelHighlightsEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'Select some text and tap Highlight to keep it here'**
+  String get novelHighlightsEmpty;
+
+  /// No description provided for @novelHighlight.
+  ///
+  /// In en, this message translates to:
+  /// **'Highlight'**
+  String get novelHighlight;
+
+  /// No description provided for @novelHighlightNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Note'**
+  String get novelHighlightNote;
+
+  /// No description provided for @novelHighlightNoteHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Add a note'**
+  String get novelHighlightNoteHint;
+
+  /// No description provided for @novelHighlightRemove.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove highlight'**
+  String get novelHighlightRemove;
+
+  /// No description provided for @novelHighlightFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t match that selection to the text'**
+  String get novelHighlightFailed;
+
   /// No description provided for @novelMinutesLeft.
   ///
   /// In en, this message translates to:

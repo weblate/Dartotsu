@@ -6122,6 +6122,73 @@ class AppLocalizationsOr extends AppLocalizations {
       'ଏକ ପୃଷ୍ଠା ସ୍କ୍ରୋଲ୍ କରିବାକୁ ବାମ ବା ଡାହାଣ ପାଖ ଟ୍ୟାପ୍ କରନ୍ତୁ, ମଝି ନିୟନ୍ତ୍ରଣ ଦେଖାଏ';
 
   @override
+  String get novelPaged => 'Page turning';
+
+  @override
+  String get novelPagedDesc =>
+      'Split the chapter into pages and swipe or tap to turn them instead of scrolling';
+
+  @override
+  String novelPageOf(int current, int total) {
+    return 'Page $current of $total';
+  }
+
+  @override
+  String get novelPaginating => 'Laying out pages';
+
+  @override
+  String get novelTools => 'Contents, search and highlights';
+
+  @override
+  String get novelContents => 'Contents';
+
+  @override
+  String get novelContentsEmpty => 'This chapter has no headings';
+
+  @override
+  String get novelSearch => 'Search';
+
+  @override
+  String get novelSearchHint => 'Search in this chapter';
+
+  @override
+  String get novelSearchNone => 'No matches';
+
+  @override
+  String novelSearchCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count matches',
+      one: '1 match',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get novelHighlights => 'Highlights';
+
+  @override
+  String get novelHighlightsEmpty =>
+      'Select some text and tap Highlight to keep it here';
+
+  @override
+  String get novelHighlight => 'Highlight';
+
+  @override
+  String get novelHighlightNote => 'Note';
+
+  @override
+  String get novelHighlightNoteHint => 'Add a note';
+
+  @override
+  String get novelHighlightRemove => 'Remove highlight';
+
+  @override
+  String get novelHighlightFailed =>
+      'Couldn\'t match that selection to the text';
+
+  @override
   String novelMinutesLeft(int count) {
     return '$count ମିନିଟ୍ ବାକି';
   }

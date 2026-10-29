@@ -10,7 +10,7 @@ Future<String> readBookText(String path, {String? cacheDir}) async {
   final file = File(path);
   if (!isBookFile(path)) return file.readAsString();
   final dir = cacheDir ?? archiveCache(path);
-  final cache = File(p.join(dir, 'book.html'));
+  final cache = File(p.join(dir, 'book2.html'));
   if (cache.existsSync() &&
       cache.lastModifiedSync().isAfter(file.lastModifiedSync())) {
     return cache.readAsString();

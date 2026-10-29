@@ -22,6 +22,13 @@ class NovelRule extends NovelBlock {
   const NovelRule();
 }
 
+class NovelMark extends NovelBlock {
+  final String title;
+  final int level;
+
+  const NovelMark(this.title, {this.level = 1});
+}
+
 const _blockTags = {
   'p',
   'div',
@@ -60,6 +67,17 @@ List<NovelBlock> parseNovel(String source) {
     }
     if (node is! dom.Element) return;
     final tag = node.localName ?? '';
+    final mark = node.attributes['data-toc'];
+    if (mark != null && mark.trim().isNotEmpty) {
+      flush(heading);
+      out.add(
+        NovelMark(
+          mark.trim(),
+          level: int.tryParse(node.attributes['data-level'] ?? '') ?? 1,
+        ),
+      );
+      return;
+    }
     if (tag == 'script' || tag == 'style' || tag == 'head') return;
     if (tag == 'br') {
       flush(heading);

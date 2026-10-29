@@ -59,6 +59,7 @@ class NovelSpeech {
     required int pitch,
     String? language,
     String? voice,
+    void Function(int start, int end)? onWord,
   }) async {
     _stopped = false;
     final done = _done = Completer<void>();
@@ -67,6 +68,9 @@ class NovelSpeech {
         await _speakProcess(text, rate, pitch, language, voice);
       } else {
         final tts = await _engine();
+        tts.setProgressHandler((spoken, start, end, word) {
+          if (onWord != null && spoken == text) onWord(start, end);
+        });
         if (voice != null && voice.contains('|')) {
           final at = voice.lastIndexOf('|');
           await tts.setVoice({

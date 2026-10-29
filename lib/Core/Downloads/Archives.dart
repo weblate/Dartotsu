@@ -88,6 +88,92 @@ Future<List<String>> extractComic(String archive, String outDir) =>
       }
     });
 
+Map<String, (String, int)> _epubToc(
+  XmlDocument opf,
+  String base,
+  Map<String, ArchiveFile> files,
+  String Function(ArchiveFile) text,
+) {
+  final out = <String, (String, int)>{};
+  String resolve(String from, String href) => p.posix.normalize(
+    p.posix.join(p.posix.dirname(from), Uri.decodeFull(href.split('#').first)),
+  );
+  void add(String from, String? href, String? title, int level) {
+    if (href == null || title == null) return;
+    final label = title.replaceAll(RegExp(r'\s+'), ' ').trim();
+    if (label.isEmpty || href.startsWith('#')) return;
+    out.putIfAbsent(resolve(from, href), () => (label, level));
+  }
+
+  XmlElement? item(bool Function(XmlElement) test) {
+    for (final e in opf.findAllElements('item')) {
+      if (test(e)) return e;
+    }
+    return null;
+  }
+
+  try {
+    final nav = item(
+      (e) => (e.getAttribute('properties') ?? '').contains('nav'),
+    );
+    final navHref = nav?.getAttribute('href');
+    if (navHref != null) {
+      final path = p.posix.normalize(
+        p.posix.join(base, Uri.decodeFull(navHref)),
+      );
+      final file = files[path];
+      if (file != null) {
+        final doc = html.parse(text(file));
+        final navs = doc.querySelectorAll('nav');
+        final toc =
+            navs
+                .where((n) => (n.attributes['epub:type'] ?? '').contains('toc'))
+                .firstOrNull ??
+            navs.firstOrNull;
+        for (final a in toc?.querySelectorAll('a') ?? const <dom.Element>[]) {
+          var depth = 0;
+          for (dom.Element? e = a.parent; e != null && e != toc; e = e.parent) {
+            if (e.localName == 'ol') depth++;
+          }
+          add(path, a.attributes['href'], a.text, depth.clamp(1, 6));
+        }
+      }
+    }
+    if (out.isNotEmpty) return out;
+    final ncx = item(
+      (e) => e.getAttribute('media-type') == 'application/x-dtbncx+xml',
+    );
+    final ncxHref = ncx?.getAttribute('href');
+    if (ncxHref != null) {
+      final path = p.posix.normalize(
+        p.posix.join(base, Uri.decodeFull(ncxHref)),
+      );
+      final file = files[path];
+      if (file != null) {
+        for (final point in XmlDocument.parse(
+          text(file),
+        ).findAllElements('navPoint')) {
+          final label = point
+              .findElements('navLabel')
+              .firstOrNull
+              ?.findAllElements('text')
+              .firstOrNull
+              ?.innerText;
+          final src = point
+              .findElements('content')
+              .firstOrNull
+              ?.getAttribute('src');
+          final level = point.ancestorElements
+              .where((e) => e.name.local == 'navPoint')
+              .length;
+          add(path, src, label, level + 1);
+        }
+      }
+    }
+  } catch (_) {}
+  return out;
+}
+
 Future<String> epubToHtml(String epub, String outDir) => Isolate.run(() async {
   final input = InputFileStream(epub);
   try {
@@ -131,6 +217,8 @@ Future<String> epubToHtml(String epub, String outDir) => Isolate.run(() async {
       return extracted[zipPath] = target;
     }
 
+    final toc = _epubToc(doc, base, files, text);
+
     final out = StringBuffer();
     for (final id in spine) {
       final href = manifest[id];
@@ -142,6 +230,12 @@ Future<String> epubToHtml(String epub, String outDir) => Isolate.run(() async {
       if (page == null) continue;
       final body = html.parse(text(page)).body;
       if (body == null) continue;
+      final entry = toc[path];
+      if (entry != null) {
+        out.writeln(
+          '<div data-toc="${const HtmlEscape(HtmlEscapeMode.attribute).convert(entry.$1)}" data-level="${entry.$2}"></div>',
+        );
+      }
       body.querySelectorAll('script, style, link').forEach((e) {
         e.remove();
       });
