@@ -38,6 +38,7 @@
    <a href="https://github.com/aayush2622/Dartotsu/releases"><img src="https://img.shields.io/github/downloads/aayush2622/Dartotsu/total?label=Downloads&logo=android&logoColor=1a8fa6&style=for-the-badge&labelColor=00ffff&color=0d1117"></a>
 </p>
 
+
 <p align="center">
    <a href="https://www.codefactor.io/repository/github/aayush2622/Dartotsu"><img src="https://img.shields.io/codefactor/grade/github/aayush2622/Dartotsu?style=for-the-badge&label=Codefactor&labelColor=00ffff&color=0d1117" alt="CodeFactor"/></a>
    <a href="https://hosted.weblate.org/engage/dartotsu/"><img alt="Weblate project translated" src="https://img.shields.io/weblate/progress/dartotsu?label=Translated&labelColor=00ffff&color=0d1117&style=for-the-badge"></a>
@@ -46,9 +47,55 @@
 
 # Dartotsu
 
-**Dartotsu** is a Flutter rewrite of [Dantotsu](https://git.rebelonion.dev/rebelonion/Dantotsu/): one app to track and manage your anime, manga and novel lists, on Android, iOS, Windows, Linux and macOS.
+**All your anime, manga and novel lists in one beautiful app.**
 
-It tracks with [**AniList**](https://anilist.co/), [**MyAnimeList**](https://myanimelist.net/), [**Simkl**](https://simkl.com/), [**Kitsu**](https://kitsu.app/), [**MangaBaka**](https://mangabaka.org/) and [**MangaUpdates**](https://www.mangaupdates.com/).
+Keep track of what you are watching and reading, find your next favourite, and never lose your progress. Dartotsu works with the list sites you already use, on your phone, tablet or computer.
+
+## Take a look
+
+<p align="center">
+  <img src="docs/screenshots/anime-home.jpg" alt="Anime home with a featured title and recent updates" width="23%">
+  <img src="docs/screenshots/manga-home.jpg" alt="Manga home with trending shelves" width="23%">
+  <img src="docs/screenshots/search.jpg" alt="Search results with title cards and status chips" width="23%">
+  <img src="docs/screenshots/profile.jpg" alt="Profile with list shelves" width="23%">
+</p>
+
+<p align="center">
+  <img src="docs/screenshots/desktop-home.jpg" alt="Desktop home with a resume card and list shelves" width="100%">
+</p>
+
+<p align="center">
+  <img src="docs/screenshots/desktop-anime.jpg" alt="Desktop anime home with a featured title" width="49%">
+  <img src="docs/screenshots/desktop-title.jpg" alt="Title page with score, synopsis and details" width="49%">
+</p>
+
+## Why you'll like it
+
+**📚 One home for all your lists**
+Sign in to [AniList](https://anilist.co/), [MyAnimeList](https://myanimelist.net/), [Simkl](https://simkl.com/), [Kitsu](https://kitsu.app/), [MangaBaka](https://mangabaka.org/) or [MangaUpdates](https://www.mangaupdates.com/) and switch between them in a tap. Use one, use all, it is up to you.
+
+**🔄 Update once, everywhere**
+Change a score or an episode count in one place and Dartotsu can copy it to your other accounts, so your lists never drift apart.
+
+**🔍 Always something new to try**
+Browse what is trending and popular, search with filters, and even find an anime from a screenshot.
+
+**📅 Never miss a release**
+A calendar of what airs when, and notifications so you know the moment something new arrives.
+
+**👥 Share with friends**
+Profiles, activity feeds, stories, groups and a comment section on every title.
+
+**🎨 Make it yours**
+Colours that follow your phone's wallpaper, light, dark and pitch-black themes, a frosted-glass look, and card styles you can tweak until it feels right.
+
+**📴 Works without internet**
+Offline changes are saved and sent as soon as you are back online.
+
+**🌍 Speaks your language**
+Available in more than 40 languages.
+
+**And more:** backup and restore, move over from Dantotsu, show what you are up to on Discord, remote and keyboard friendly, and updates that install themselves.
 
 > [!WARNING]
 > **Dartotsu is a tracking and management tool only:** It does not host, provide, distribute, or maintain streaming content or extensions.
@@ -59,21 +106,8 @@ It tracks with [**AniList**](https://anilist.co/), [**MyAnimeList**](https://mya
 >
 > **Services:** Dartotsu integrates only with official APIs of supported services. Third-party extensions are the responsibility of their creators, not the Dartotsu developer.
 
-## Features
+## Get the app
 
-**Tracking**
-- Six services side by side, each with its own home, browse tabs, search, calendar, notifications and settings.
-- List editor, progress, scores and dates; offline edits are queued and sent when the connection returns.
-- List sync between services (one-way, or whichever entry is ahead), with rate-limit aware batching.
-- Profiles, activity feeds, stories, groups and Dantotsu comments on every title.
-- Trace.moe image search, episode metadata (filler, recap, thumbnails) and a Resume shelf on Home.
-
-**App**
-- Material 3 theming with dynamic colour, OLED, glass mode and card styles.
-- D-pad, keyboard and TV navigation.
-- 40+ languages, Discord Rich Presence, backup and restore, import from Dantotsu, self-update.
-
-## Downloads
 <p align="center">
 
   <a href="https://github.com/aayush2622/Dartotsu/releases/latest">
@@ -91,10 +125,20 @@ It tracks with [**AniList**](https://anilist.co/), [**MyAnimeList**](https://mya
 
 </p>
 
-> [!NOTE]
-> Download, test, and share feedback or issues on <a href="https://discord.gg/eyQdCpdubF" target="_blank">Discord</a>.
+1. Open the [**Releases page**](https://github.com/aayush2622/Dartotsu/releases/latest).
+2. Download the file for your device (Android, Windows, Linux or macOS).
+3. Open it and follow the prompts. That is all.
 
-### Nix / NixOS
+On Android you can also use [Obtainium](https://github.com/ImranR98/Obtainium) with the button above to get updates automatically.
+
+Want to try new things early? The **Beta** version gets features first and may be a little rougher.
+
+> [!NOTE]
+> Questions, feedback or a bug? Come say hi on <a href="https://discord.gg/eyQdCpdubF" target="_blank">Discord</a>.
+
+<details>
+<summary>Linux with Nix</summary>
+
 
 ```bash
 nix run github:aayush2622/Dartotsu/main#prerelease
@@ -119,38 +163,34 @@ Channels: `stable`, `prerelease` (WebKitGTK 4.1 build, recommended) and `alpha`.
 }
 ```
 
-`overlays.default` adds `pkgs.dartotsu`, `pkgs.dartotsu-prerelease` and `pkgs.dartotsu-alpha`. `nix develop` gives a shell with Flutter and every Linux build dependency; `nix flake check` builds all channels and evaluates the modules.
 
-## Building
+</details>
 
-```bash
-flutter pub get
-dart run build_runner build --delete-conflicting-outputs
-flutter run -d linux   # or android, windows, macos, ios
-flutter analyze
-flutter test
-```
+## Join the community
+Chat, get help and see what is coming next.
 
-Needs Flutter `>=3.44.0` and a `.env` file in the project root (a bundled asset; see `CLAUDE.md`). The extension bridge is a git dependency; for local work comment out the `git` entry in `pubspec.yaml` and enable the `path` one pointing at `../DartotsuExtensionBridge`.
+<a href="https://discord.gg/eyQdCpdubF" style="margin-right: 10px; display: inline-block;"><img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/discord-round-color-icon.png" alt="Discord" height="40" style="vertical-align: middle;"></a>
+<a href="https://www.reddit.com/r/dartotsu" style="display: inline-block;"><img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/reddit-icon.png" alt="Reddit" height="40" style="vertical-align: middle;"></a>
 
-Release builds: `flutter build apk --release --split-per-abi`, `flutter build linux|windows|macos --release`, `flutter build ipa --release`.
+## Curious how it works?
+The full project guide lives on **DeepWiki**.
 
-## Project layout
+<a href="https://deepwiki.com/aayush2622/Dartotsu" target="_blank" rel="noopener noreferrer">
+  <img src="https://img.shields.io/badge/DeepWiki-blueviolet?label=View%20on&style=for-the-badge&logo=read-the-docs&logoColor=white" alt="DeepWiki" />
+</a>
 
-| Path | Contents |
-|---|---|
-| `lib/Core/` | state engine, preferences, theme, networking, downloads, offline, services abstraction |
-| `lib/Api/Services/` | AniList, MyAnimeList, Simkl, Kitsu, MangaBaka, MangaUpdates, Extensions |
-| `lib/Screen/` | one folder per feature, each a `Screen` plus a `State` file |
-| `lib/Widgets/`, `lib/Utils/` | shared components, extensions, helpers |
-| `assets/translations/` | `app_*.arb` locale files |
+## Help translate
+Dartotsu is translated by volunteers. If you speak another language, you can help in a few minutes, no coding needed.
 
-`CLAUDE.md` is the detailed architecture guide; `CONSISTENCY.md` lists the shared UI components.
+<a href="https://hosted.weblate.org/projects/dartotsu/dartotsu/#languages"><img src="https://img.shields.io/badge/Weblate-90EE90?label=Translate%20On&style=for-the-badge" alt="Web"/></a>
 
-## Support Us
+## Support the project
+Dartotsu is free. If you enjoy it, these help a lot:
+
 <a href='https://buymeacoffee.com/aayush262' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi1.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+
 > [!TIP]
-> ⭐ **Star This Repository To Support The Developer And Encourage The Development Of The Application!**
+> ⭐ **Star this repository to support the developer and help more people find Dartotsu!**
 <details>
   <summary>Star History</summary>
   <a href="https://github.com/aayush2622/Dartotsu/stargazers">
@@ -158,36 +198,9 @@ Release builds: `flutter build apk --release --split-per-abi`, `flutter build li
   </a>
 </details>
 
-## Official Communities
-Join our communities to stay updated and contribute to the discussion 
+## Thank you
+Dartotsu exists thanks to everyone who has helped build and translate it.
 
-<a href="https://discord.gg/eyQdCpdubF" style="margin-right: 10px; display: inline-block;"><img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/discord-round-color-icon.png" alt="Discord" height="40" style="vertical-align: middle;"></a>
-<a href="https://www.reddit.com/r/dartotsu" style="display: inline-block;"><img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/reddit-icon.png" alt="Reddit" height="40" style="vertical-align: middle;"></a>
-
-## Contribute
-We welcome contributions, from translations to new features. For inquiries, join our [Discord server](https://discord.gg/eyQdCpdubF). Pull requests are welcome; check the [open issues](https://github.com/aayush2622/Dartotsu/issues) for guidance on major changes.
-
-**Want to understand the structure or contribute more efficiently?**  
-Check the full project documentation on **DeepWiki** for helpful guides and technical insights.
-
-<a href="https://deepwiki.com/aayush2622/Dartotsu" target="_blank" rel="noopener noreferrer">
-  <img src="https://img.shields.io/badge/DeepWiki-blueviolet?label=View%20on&style=for-the-badge&logo=read-the-docs&logoColor=white" alt="DeepWiki" />
-</a>
-
-### Translation
-You can help us by translating the app into your language here
-
-<a href="https://hosted.weblate.org/projects/dartotsu/dartotsu/#languages"><img src="https://img.shields.io/badge/Weblate-90EE90?label=Translate%20On&style=for-the-badge" alt="Web"/></a>
-<details>
-<summary>Weblate Translation Graph</summary>
-<a href="https://hosted.weblate.org/projects/dartotsu/dartotsu/#languages"><img src="https://hosted.weblate.org/widget/dartotsu/dartotsu/multi-auto.svg" alt="Translation status" /></a>
-</details>
-
-## Acknowledgments
-A heartfelt thank you to everyone who has contributed to the development of Dartotsu.
-Your efforts are invaluable.
-
-<a href="https://github.com/aayush2622/Dartotsu/graphs/contributors">
   <img alt="GitHub contributors" src="https://img.shields.io/github/contributors/aayush2622/Dartotsu?style=flat-square&label=Contributors%20%3A&labelColor=%230f1318&color=%230f1318" align="left">
 </a>
 <br>
@@ -195,8 +208,10 @@ Your efforts are invaluable.
   <img src="https://contrib.rocks/image?repo=aayush2622/Dartotsu" alt="Contributors">
 </a>
 
+
+## Visitors
+
+<img src="https://count.getloli.com/@aayush2622?name=dartotsu&theme=rule34&padding=8&offset=0&align=top&scale=1&pixelated=1&darkmode=auto" />
+
 ## License
 Dartotsu is licensed under the Unabandon Public License (UPL). More info can be found [here](LICENSE.md).
-
-
-
