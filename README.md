@@ -38,7 +38,6 @@
    <a href="https://github.com/aayush2622/Dartotsu/releases"><img src="https://img.shields.io/github/downloads/aayush2622/Dartotsu/total?label=Downloads&logo=android&logoColor=1a8fa6&style=for-the-badge&labelColor=00ffff&color=0d1117"></a>
 </p>
 
-
 <p align="center">
    <a href="https://www.codefactor.io/repository/github/aayush2622/Dartotsu"><img src="https://img.shields.io/codefactor/grade/github/aayush2622/Dartotsu?style=for-the-badge&label=Codefactor&labelColor=00ffff&color=0d1117" alt="CodeFactor"/></a>
    <a href="https://hosted.weblate.org/engage/dartotsu/"><img alt="Weblate project translated" src="https://img.shields.io/weblate/progress/dartotsu?label=Translated&labelColor=00ffff&color=0d1117&style=for-the-badge"></a>
@@ -47,55 +46,9 @@
 
 # Dartotsu
 
-**All your anime, manga and novel lists in one beautiful app.**
+**Dartotsu** is a Flutter rewrite of [Dantotsu](https://git.rebelonion.dev/rebelonion/Dantotsu/): one app to track and manage your anime, manga and novel lists, on Android, iOS, Windows, Linux and macOS.
 
-Keep track of what you are watching and reading, find your next favourite, and never lose your progress. Dartotsu works with the list sites you already use, on your phone, tablet or computer.
-
-## Take a look
-
-<p align="center">
-  <img src="docs/screenshots/anime-home.jpg" alt="Anime home with a featured title and recent updates" width="23%">
-  <img src="docs/screenshots/manga-home.jpg" alt="Manga home with trending shelves" width="23%">
-  <img src="docs/screenshots/search.jpg" alt="Search results with title cards and status chips" width="23%">
-  <img src="docs/screenshots/profile.jpg" alt="Profile with list shelves" width="23%">
-</p>
-
-<p align="center">
-  <img src="docs/screenshots/desktop-home.jpg" alt="Desktop home with a resume card and list shelves" width="100%">
-</p>
-
-<p align="center">
-  <img src="docs/screenshots/desktop-anime.jpg" alt="Desktop anime home with a featured title" width="49%">
-  <img src="docs/screenshots/desktop-title.jpg" alt="Title page with score, synopsis and details" width="49%">
-</p>
-
-## Why you'll like it
-
-**📚 One home for all your lists**
-Sign in to [AniList](https://anilist.co/), [MyAnimeList](https://myanimelist.net/), [Simkl](https://simkl.com/), [Kitsu](https://kitsu.app/), [MangaBaka](https://mangabaka.org/) or [MangaUpdates](https://www.mangaupdates.com/) and switch between them in a tap. Use one, use all, it is up to you.
-
-**🔄 Update once, everywhere**
-Change a score or an episode count in one place and Dartotsu can copy it to your other accounts, so your lists never drift apart.
-
-**🔍 Always something new to try**
-Browse what is trending and popular, search with filters, and even find an anime from a screenshot.
-
-**📅 Never miss a release**
-A calendar of what airs when, and notifications so you know the moment something new arrives.
-
-**👥 Share with friends**
-Profiles, activity feeds, stories, groups and a comment section on every title.
-
-**🎨 Make it yours**
-Colours that follow your phone's wallpaper, light, dark and pitch-black themes, a frosted-glass look, and card styles you can tweak until it feels right.
-
-**📴 Works without internet**
-Offline changes are saved and sent as soon as you are back online.
-
-**🌍 Speaks your language**
-Available in more than 40 languages.
-
-**And more:** backup and restore, move over from Dantotsu, show what you are up to on Discord, remote and keyboard friendly, and updates that install themselves.
+It tracks with [**AniList**](https://anilist.co/), [**MyAnimeList**](https://myanimelist.net/), [**Simkl**](https://simkl.com/), [**Kitsu**](https://kitsu.app/), [**MangaBaka**](https://mangabaka.org/) and [**MangaUpdates**](https://www.mangaupdates.com/).
 
 > [!WARNING]
 > **Dartotsu is a tracking and management tool only:** It does not host, provide, distribute, or maintain streaming content or extensions.
@@ -190,7 +143,7 @@ Dartotsu is free. If you enjoy it, these help a lot:
 <a href='https://buymeacoffee.com/aayush262' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi1.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
 
 > [!TIP]
-> ⭐ **Star this repository to support the developer and help more people find Dartotsu!**
+> **Star this repository to support the developer and help more people find Dartotsu!**
 <details>
   <summary>Star History</summary>
   <a href="https://github.com/aayush2622/Dartotsu/stargazers">
@@ -215,3 +168,52 @@ Dartotsu exists thanks to everyone who has helped build and translate it.
 
 ## License
 Dartotsu is licensed under the Unabandon Public License (UPL). More info can be found [here](LICENSE.md).
+
+## Why you'll like it
+
+**One home for all your lists**
+Sign in to [AniList](https://anilist.co/), [MyAnimeList](https://myanimelist.net/), [Simkl](https://simkl.com/), [Kitsu](https://kitsu.app/), [MangaBaka](https://mangabaka.org/) or [MangaUpdates](https://www.mangaupdates.com/) and switch between them in a tap. Use one, use all, it is up to you.
+
+**Update once, everywhere**
+Change a score or an episode count in one place and Dartotsu can copy it to your other accounts, so your lists never drift apart.
+
+**Always something new to try**
+Browse what is trending and popular, search with filters, and even find an anime from a screenshot.
+
+**Never miss a release**
+A calendar of what airs when, and notifications so you know the moment something new arrives.
+
+**Share with friends**
+Profiles, activity feeds, stories, groups and a comment section on every title.
+
+**Make it yours**
+Colours that follow your phone's wallpaper, light, dark and pitch-black themes, a frosted-glass look, and card styles you can tweak until it feels right.
+
+**Works without internet**
+Offline changes are saved and sent as soon as you are back online.
+
+**Speaks your language**
+Available in more than 40 languages.
+
+**And more:** backup and restore, move over from Dantotsu, show what you are up to on Discord, remote and keyboard friendly, and updates that install themselves.
+
+<details>
+<summary><b>Screenshots</b></summary>
+
+<p align="center">
+  <img src="docs/screenshots/anime-home.jpg" alt="Anime home with a featured title and recent updates" width="23%">
+  <img src="docs/screenshots/manga-home.jpg" alt="Manga home with trending shelves" width="23%">
+  <img src="docs/screenshots/search.jpg" alt="Search results with title cards and status chips" width="23%">
+  <img src="docs/screenshots/profile.jpg" alt="Profile with list shelves" width="23%">
+</p>
+
+<p align="center">
+  <img src="docs/screenshots/desktop-home.jpg" alt="Desktop home with a resume card and list shelves" width="100%">
+</p>
+
+<p align="center">
+  <img src="docs/screenshots/desktop-anime.jpg" alt="Desktop anime home with a featured title" width="49%">
+  <img src="docs/screenshots/desktop-title.jpg" alt="Title page with score, synopsis and details" width="49%">
+</p>
+
+</details>
