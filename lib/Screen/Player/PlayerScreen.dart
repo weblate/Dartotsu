@@ -54,10 +54,28 @@ class _PlayerScreenState extends State<PlayerScreen>
   @override
   void initState() {
     super.initState();
+    FocusManager.instance.addListener(_guardFocus);
     state.askStream = (list) =>
         showStreamSheet(context, state, list, selected: -1);
     state.askPendingStream = (pending) =>
         showPendingStreamSheet(context, state, pending);
+  }
+
+  @override
+  void dispose() {
+    FocusManager.instance.removeListener(_guardFocus);
+    super.dispose();
+  }
+
+  void _guardFocus() {
+    if (!mounted) return;
+    final route = ModalRoute.of(context);
+    if (route == null || !route.isCurrent) return;
+    final owner = FocusManager.instance.primaryFocus?.context;
+    if (owner != null && ModalRoute.of(owner) == route) return;
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted && route.isCurrent) state.focus.requestFocus();
+    });
   }
 
   @override
@@ -441,12 +459,18 @@ class _PlayerScreenState extends State<PlayerScreen>
         backgroundColor: context.colorScheme.surfaceContainerHigh,
       ),
     );
-    return SizedBox(
+    Widget row(List<Widget> children) => SizedBox(
       height: 48,
       child: ListView(
         scrollDirection: Axis.horizontal,
         padding: EdgeInsets.symmetric(horizontal: Dimens.pagePad),
-        children: [
+        children: children,
+      ),
+    );
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        row([
           chip(
             Icons.slow_motion_video_rounded,
             getString.playerSpeed,
@@ -462,17 +486,29 @@ class _PlayerScreenState extends State<PlayerScreen>
             getString.playerAudio,
             () => showTracksSheet(context, state, audio: true),
           ),
-          chip(
-            Icons.photo_filter_rounded,
-            getString.playerPicture,
-            () => showPictureSheet(context, state),
-          ),
           if (state.hasChapters)
             chip(
               Icons.list_alt_rounded,
               getString.playerChapters,
               () => showChaptersSheet(context, state),
             ),
+          chip(
+            Icons.fit_screen_rounded,
+            getString.playerResize,
+            state.cycleFit,
+          ),
+          chip(
+            Icons.video_settings_rounded,
+            getString.playerSettingsChip,
+            () => showPlayerOptions(context, state),
+          ),
+        ]),
+        row([
+          chip(
+            Icons.photo_filter_rounded,
+            getString.playerPicture,
+            () => showPictureSheet(context, state),
+          ),
           if (state.canSubmitSkips)
             chip(
               Icons.cloud_upload_rounded,
@@ -509,18 +545,8 @@ class _PlayerScreenState extends State<PlayerScreen>
               () => showCastSheet(context, state),
             ),
           ),
-          chip(
-            Icons.fit_screen_rounded,
-            getString.playerResize,
-            state.cycleFit,
-          ),
-          chip(
-            Icons.video_settings_rounded,
-            getString.playerSettingsChip,
-            () => showPlayerOptions(context, state),
-          ),
-        ],
-      ),
+        ]),
+      ],
     );
   }
 

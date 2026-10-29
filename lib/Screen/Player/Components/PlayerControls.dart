@@ -7,10 +7,8 @@ import '../../../Utils/Extensions/ContextExtensions.dart';
 import '../../../Utils/Functions/NavigateToScreen.dart';
 import '../Engine/Pip.dart';
 import '../PlayerState.dart';
-import 'CastSheet.dart';
 import 'PlayerSeekBar.dart';
 import 'PlayerSheets.dart';
-import 'SkipSubmitSheet.dart';
 import '../../../Widgets/Components/Clickable.dart';
 
 class PlayerControls extends StatelessWidget {
@@ -453,13 +451,6 @@ class PlayerControls extends StatelessWidget {
                         tooltip: getString.playerStreams,
                       ),
                     _icon(
-                      state.cast.active
-                          ? Icons.cast_connected_rounded
-                          : Icons.cast_rounded,
-                      () => showCastSheet(context, state),
-                      tooltip: getString.castTitle,
-                    ),
-                    _icon(
                       Icons.subtitles_rounded,
                       () => showTracksSheet(context, state, audio: false),
                       tooltip: getString.playerSubtitles,
@@ -469,22 +460,11 @@ class PlayerControls extends StatelessWidget {
                       () => showTracksSheet(context, state, audio: true),
                       tooltip: getString.playerAudio,
                     ),
-                    _icon(
-                      Icons.photo_filter_rounded,
-                      () => showPictureSheet(context, state),
-                      tooltip: getString.playerPicture,
-                    ),
                     if (state.hasChapters)
                       _icon(
                         Icons.list_alt_rounded,
                         () => showChaptersSheet(context, state),
                         tooltip: getString.playerChapters,
-                      ),
-                    if (state.canSubmitSkips)
-                      _icon(
-                        Icons.cloud_upload_rounded,
-                        () => showSkipSubmitSheet(context, state),
-                        tooltip: getString.playerSkipSubmit,
                       ),
                     const Spacer(),
                     if (PlayerPip.supported) _pipButton(),
