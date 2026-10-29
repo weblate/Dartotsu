@@ -2,9 +2,11 @@ import '../../Logger.dart';
 import '../../Utils/Animation/WidgetAnimations.dart';
 import 'dart:convert';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:html/dom.dart' as dom;
 import 'package:html/parser.dart' as html_parser;
@@ -16,6 +18,7 @@ import 'Clickable.dart';
 import '../../Core/State/State.dart';
 import '../../Core/ThemeManager/LanguageSwitcher.dart';
 import 'AppSpinner.dart';
+import 'SvgPrepare.dart';
 
 typedef AniLinkCardBuilder =
     Widget? Function(BuildContext context, String url, bool centered);
@@ -1147,6 +1150,25 @@ class _RemoteSvg extends StatefulWidget {
   State<_RemoteSvg> createState() => _RemoteSvgState();
 }
 
+final _loadedFonts = <String>{};
+
+Future<void> _registerFonts(Map<String, Uint8List> fonts) async {
+  for (final entry in fonts.entries) {
+    final family = fontFamilyFor(entry.key, entry.value);
+    if (!_loadedFonts.add(family)) continue;
+    try {
+      final loader = FontLoader(family)
+        ..addFont(Future.value(ByteData.sublistView(entry.value)));
+      await loader.load();
+    } catch (e, st) {
+      _loadedFonts.remove(family);
+      logError('AniHtml', e, st);
+    }
+  }
+}
+
+PreparedSvg _prepare(String svg) => prepareSvg(svg);
+
 class _RemoteSvgState extends State<_RemoteSvg> {
   late final Future<String?> _svg = _load();
 
@@ -1160,7 +1182,10 @@ class _RemoteSvgState extends State<_RemoteSvg> {
           : (res.rawBytes == null ? null : utf8.decode(res.rawBytes!));
       if (text == null || !_isSvgDocument(text)) return null;
       if (text.contains('<foreignObject')) return null;
-      return text;
+      if (!needsPreparing(text)) return text;
+      final prepared = await compute(_prepare, text);
+      await _registerFonts(prepared.fonts);
+      return prepared.svg;
     } catch (e, st) {
       logError('AniHtml', e, st);
       return null;
