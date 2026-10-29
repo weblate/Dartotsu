@@ -38,7 +38,6 @@ import '../../Core/Services/Model/Media.dart';
 import '../../Core/Preferences/Incognito.dart';
 import '../../Core/State/State.dart';
 import '../../Core/ThemeManager/LanguageSwitcher.dart';
-import '../Detail/Watch/Data/TitleMatch.dart';
 import '../../Logger.dart';
 import '../../Utils/Functions/SnackBar.dart';
 import '../../Widgets/Components/ScreenState.dart';
@@ -802,6 +801,9 @@ class PlayerState extends ScreenState {
   Future<void> _verifyAudio(int generation) async {
     for (var attempt = 0; attempt < 3; attempt++) {
       await Future<void>.delayed(const Duration(milliseconds: 2000));
+    for (var i = 0; i < 10 && engine.subtitleTracks.value.isEmpty; i++) {
+      await Future<void>.delayed(const Duration(milliseconds: 150));
+    }
       if (_closed || generation != _generation) return;
       final tracks = engine.audioTracks.value;
       if (tracks.isEmpty || !engine.playing.value) continue;
@@ -827,13 +829,14 @@ class PlayerState extends ScreenState {
   v.Track? _externalSubtitle(v.Video chosen) {
     final tracks = chosen.subtitles ?? const <v.Track>[];
     for (final wanted in languageList(settings.subtitleLanguage)) {
-      final key = wanted.toLowerCase();
-      final match = tracks.where((t) {
-        final label = (t.label ?? '').toLowerCase();
-        return label.isNotEmpty &&
-            (label == key || titleRatio(label, key) >= 80);
-      }).firstOrNull;
-      if (match?.file != null) return match;
+      final pattern = languagePattern(wanted);
+      if (pattern == null) continue;
+      final found = tracks
+          .where((t) => languageMatches(pattern, title: t.label))
+          .toList();
+      if (found.isEmpty) continue;
+      return found.where((t) => !labelIsSigns(t.label ?? '')).firstOrNull ??
+          found.first;
     }
     return null;
   }

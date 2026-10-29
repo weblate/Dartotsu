@@ -40,25 +40,34 @@ Set<String> languageKeys(String name) {
   return keys;
 }
 
-bool _matches(PlayerTrack track, Set<String> keys) {
-  final language = (track.language ?? '').toLowerCase();
-  if (language.isNotEmpty &&
-      (keys.contains(language) ||
-          keys.any((k) => language.startsWith('$k-')))) {
-    return true;
+final _rawPattern = RegExp(r'[\\|()\[\]{}^$*+?]');
+final _slashed = RegExp(r'^/(.+)/i?$');
+
+RegExp? languagePattern(String entry) {
+  final raw = entry.trim();
+  if (raw.isEmpty) return null;
+  try {
+    final slashed = _slashed.firstMatch(raw);
+    if (slashed != null) return RegExp(slashed[1]!, caseSensitive: false);
+    if (_rawPattern.hasMatch(raw)) return RegExp(raw, caseSensitive: false);
+    final keys = languageKeys(raw).map(RegExp.escape).join('|');
+    return RegExp('(?:^|[^a-z])(?:$keys)(?:[^a-z]|\$)', caseSensitive: false);
+  } catch (_) {
+    return null;
   }
-  final title = (track.title ?? '').toLowerCase();
-  if (title.isEmpty) return false;
-  final words = title.split(RegExp(r'[^a-z\-]+'));
-  return keys.any((k) => k.length > 2 ? title.contains(k) : words.contains(k));
 }
 
-bool _forcedOrSigns(PlayerTrack track) {
-  final title = (track.title ?? '').toLowerCase();
-  return title.contains('sign') ||
-      title.contains('song') ||
-      title.contains('forced');
-}
+bool languageMatches(RegExp pattern, {String? language, String? title}) =>
+    pattern.hasMatch(language ?? '') || pattern.hasMatch(title ?? '');
+
+bool _matches(PlayerTrack track, RegExp pattern) =>
+    languageMatches(pattern, language: track.language, title: track.title);
+
+final _signs = RegExp(r'sign|song|forced', caseSensitive: false);
+
+bool _forcedOrSigns(PlayerTrack track) => _signs.hasMatch(track.title ?? '');
+
+bool labelIsSigns(String label) => _signs.hasMatch(label);
 
 PlayerTrack? pickTrack(
   List<PlayerTrack> tracks,
@@ -66,8 +75,9 @@ PlayerTrack? pickTrack(
   bool avoidSigns = false,
 }) {
   for (final language in priority) {
-    final keys = languageKeys(language);
-    final found = tracks.where((t) => _matches(t, keys)).toList();
+    final pattern = languagePattern(language);
+    if (pattern == null) continue;
+    final found = tracks.where((t) => _matches(t, pattern)).toList();
     if (found.isEmpty) continue;
     if (avoidSigns) {
       final full = found.where((t) => !_forcedOrSigns(t));
