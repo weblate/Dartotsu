@@ -9,6 +9,7 @@ import '../../Model/CardStyle.dart';
 import '../../Utils/Extensions/CardStyleMetrics.dart';
 import '../../Utils/Extensions/ContextExtensions.dart';
 import '../../Utils/Extensions/Responsive.dart';
+import '../../Utils/Functions/NavigateToScreen.dart';
 import '../../Widgets/Components/AppControls.dart';
 import '../../Widgets/Components/AppBars.dart';
 import '../../Widgets/Components/BaseScreen.dart';
@@ -20,7 +21,9 @@ import '../../Core/State/State.dart';
 import '../../Core/ThemeManager/LanguageSwitcher.dart';
 import '../../Utils/Nav/DpadLayers.dart';
 import '../../Widgets/Components/ScreenState.dart';
+import '../Webview/WebView.dart';
 import 'SourceBrowseState.dart';
+import 'SourcePreferenceScreen.dart';
 import 'SourceFilterSheet.dart';
 
 class SourceBrowseScreen extends StatefulWidget {
@@ -46,9 +49,28 @@ class _SourceBrowseScreenState extends BaseScreen<SourceBrowseScreen>
   @override
   Widget buildContent(BuildContext context) {
     final scheme = context.colorScheme;
+    final baseUrl = widget.source.baseUrl?.trim();
+    final webUrl = baseUrl == null || baseUrl.isEmpty ? null : baseUrl;
     return Scaffold(
       backgroundColor: Colors.transparent,
       appBar: AppScreenBar(
+        actions: [
+          if (webUrl != null)
+            IconButton(
+              tooltip: getString.watchOpenWebView,
+              icon: const Icon(Icons.public_rounded),
+              onPressed: () =>
+                  navigateToPage<void>(context, WebView(url: webUrl)),
+            ),
+          IconButton(
+            tooltip: getString.watchSourceSettings,
+            icon: const Icon(Icons.tune_rounded),
+            onPressed: () => navigateToPage<void>(
+              context,
+              SourcePreferenceScreen(source: widget.source),
+            ),
+          ),
+        ],
         titleWidget: Row(
           children: [
             ClipRRect(
