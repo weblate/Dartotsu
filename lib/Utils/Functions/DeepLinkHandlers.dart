@@ -73,8 +73,10 @@ class ServiceLinks extends DeepLinkHandler {
   bool matches(Uri uri) => serviceFor(uri)?.parseUri(uri) != null;
 
   @override
-  Future<void> handle(BuildContext context, Uri uri) {
+  Future<void> handle(BuildContext context, Uri uri) async {
     final service = serviceFor(uri)!;
+    await service.ready();
+    if (!context.mounted) return;
     return openAppLink(
       context,
       service,

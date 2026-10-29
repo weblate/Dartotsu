@@ -2147,6 +2147,12 @@ abstract class AppLocalizations {
   /// **'Nothing to continue yet'**
   String get shortcutNothingToContinue;
 
+  /// No description provided for @shortcutNoCalendar.
+  ///
+  /// In en, this message translates to:
+  /// **'{service} has no calendar'**
+  String shortcutNoCalendar(String service);
+
   /// No description provided for @calendarEpisode.
   ///
   /// In en, this message translates to:

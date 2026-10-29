@@ -752,6 +752,8 @@
   "castReceiverFailed": "The Chromecast did not start its player",
   "castPlaybackFailed": "The device could not play this stream",
   "shortcutNothingToContinue": "Nothing to continue yet",
+  "shortcutNoCalendar": "{service} has no calendar",
+  "@shortcutNoCalendar": {"placeholders": {"service": {"type": "String"}}},
   "calendarEpisode": "Episode {n}",
   "@calendarEpisode": {
     "placeholders": {

@@ -1115,6 +1115,11 @@ class AppLocalizationsHa extends AppLocalizations {
   String get shortcutNothingToContinue => 'Nothing to continue yet';
 
   @override
+  String shortcutNoCalendar(String service) {
+    return '$service has no calendar';
+  }
+
+  @override
   String calendarEpisode(int n) {
     return 'Episode $n';
   }

@@ -114,6 +114,6 @@ class DartotsuWidgetService : RemoteViewsService() {
         const val RESUME = 1
         const val RELEASE = 2
         const val CONTINUE = "dartotsu://app/continue"
-        const val CALENDAR = "dartotsu://app/calendar"
+        const val CALENDAR = "dartotsu://app/calendar?service=extension"
     }
 }

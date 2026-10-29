@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:collection/collection.dart';
 
 import 'Api/Mutations.dart';
@@ -85,6 +87,20 @@ abstract class MediaService {
   SyncAdapter? get syncAdapter => null;
 
   CalendarScreenView? get calendarView => null;
+
+  Future<void>? _ready;
+
+  Future<void> ready() => _ready ??= _prepare();
+
+  Future<void> _prepare() async {
+    final account = auth;
+    if (account == null || !account.isLoggedIn) return;
+    try {
+      await account.refreshUser().timeout(const Duration(seconds: 8));
+    } on TimeoutException {
+      _ready = null;
+    }
+  }
 
   NewsScreenView? get newsView => null;
 

@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:collection/collection.dart';
 import 'package:flutter/widgets.dart';
 
-import '../../Api/Services/Extension/Services.dart';
 import '../../Core/Services/MediaServiceController.dart';
 import '../../Core/State/State.dart';
 import '../../Core/ThemeManager/LanguageSwitcher.dart';
@@ -37,8 +36,16 @@ class AppRouteLinks extends DeepLinkHandler {
   @override
   Future<void> handle(BuildContext context, Uri uri) async {
     final services = find<MediaServiceController>();
-    final service = services.currentService.value;
-    switch (_route(uri)) {
+    final route = _route(uri);
+    final named = uri.queryParameters['service'];
+    final service =
+        (named == null
+            ? null
+            : services.services.where((s) => s.id == named).firstOrNull) ??
+        services.currentService.value;
+    if (route != 'downloads') await service.ready();
+    if (!context.mounted) return;
+    switch (route) {
       case 'continue':
         final visible = ResumeStore.visible(service);
         final slot = uri.queryParameters['slot'];
@@ -54,10 +61,10 @@ class AppRouteLinks extends DeepLinkHandler {
       case 'downloads':
         unawaited(navigateToPage(context, const DownloadsScreen()));
       case 'calendar':
-        final extension = services.services
-            .where((s) => s.id == extensionServiceId)
-            .firstOrNull;
-        if (extension != null) openCalendar(context, extension);
+        if (service.calendarView == null) {
+          return snackString(getString.shortcutNoCalendar(service.name));
+        }
+        openCalendar(context, service);
     }
   }
 }
