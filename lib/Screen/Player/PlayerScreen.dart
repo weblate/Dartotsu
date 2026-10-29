@@ -113,7 +113,7 @@ class _PlayerScreenState extends State<PlayerScreen>
       child: Actions(
         actions: {
           _PlayPauseIntent: _PlayPauseAction(() {
-            unawaited(state.engine.toggle());
+            unawaited(state.togglePlayback());
             state.showControls();
           }),
         },
@@ -128,7 +128,7 @@ class _PlayerScreenState extends State<PlayerScreen>
     if (media == null) return wrapped;
     return Watch(() {
       final (positionSeconds, anchorMs) = state.presenceClock.value;
-      final duration = state.engine.duration.value.inSeconds;
+      final duration = state.duration.inSeconds;
       return PresenceScope(
         presence: DiscordPresence.consuming(
           media,
@@ -139,7 +139,7 @@ class _PlayerScreenState extends State<PlayerScreen>
           anchorMs: anchorMs,
           durationSeconds: duration > 0 ? duration : null,
           rate: state.engine.rate.value,
-          paused: !state.engine.playing.value,
+          paused: !state.isPlaying,
         ),
         child: wrapped,
       );
@@ -172,7 +172,7 @@ class _PlayerScreenState extends State<PlayerScreen>
           ),
           GestureDetector(
             behavior: HitTestBehavior.translucent,
-            onTap: () => unawaited(state.engine.toggle()),
+            onTap: () => unawaited(state.togglePlayback()),
           ),
         ],
       ),
@@ -792,7 +792,7 @@ class _PlayerScreenState extends State<PlayerScreen>
           state.toggleControls();
           return;
         }
-        unawaited(state.engine.toggle());
+        unawaited(state.togglePlayback());
         state.showControls();
       },
       onDoubleTapDown: (d) {
@@ -807,7 +807,7 @@ class _PlayerScreenState extends State<PlayerScreen>
         } else if (at.dx > width * 0.6) {
           state.doubleTapSeek(true);
         } else {
-          unawaited(state.engine.toggle());
+          unawaited(state.togglePlayback());
         }
       },
       onLongPressStart: (d) {
@@ -860,7 +860,7 @@ class _PlayerScreenState extends State<PlayerScreen>
     final shift = HardwareKeyboard.instance.isShiftPressed;
     final engine = state.engine;
     if (key == LogicalKeyboardKey.keyK) {
-      unawaited(engine.toggle());
+      unawaited(state.togglePlayback());
       state.showControls();
     } else if (key == LogicalKeyboardKey.arrowRight ||
         key == LogicalKeyboardKey.arrowLeft) {
@@ -890,7 +890,7 @@ class _PlayerScreenState extends State<PlayerScreen>
       state.panel.value = !state.panel.value;
     } else {
       final digit = int.tryParse(key.keyLabel);
-      final total = engine.duration.value;
+      final total = state.duration;
       if (digit != null && total > Duration.zero) {
         state.seekTo(total * (digit / 10));
       }

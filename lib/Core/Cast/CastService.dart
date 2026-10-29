@@ -11,6 +11,14 @@ import 'CastV2Client.dart';
 import 'DlnaClient.dart';
 
 export 'CastDevice.dart';
+export 'CastProxy.dart' show CastSubtitle;
+
+class CastTrack {
+  final int id;
+  final String label;
+
+  const CastTrack(this.id, this.label);
+}
 
 class CastService extends AppController {
   final devices = <CastDevice>[].liveList;
@@ -20,6 +28,12 @@ class CastService extends AppController {
   final position = Duration.zero.live;
   final duration = Duration.zero.live;
   final failure = Live<String?>(null);
+  final volume = 1.0.live;
+  final muted = false.live;
+  final rate = 1.0.live;
+  final tracks = <CastTrack>[].live;
+  final activeTrack = Live<int?>(null);
+  final ended = 0.live;
 
   final _proxy = CastProxy();
   late final _discovery = CastDiscovery(_found);
@@ -30,6 +44,7 @@ class CastService extends AppController {
   StreamSubscription<bool>? _state;
   Timer? _poll;
   int _request = 100;
+  bool _finished = false;
 
   bool get active => device.value != null;
 
@@ -69,18 +84,18 @@ class CastService extends AppController {
     required String url,
     required String title,
     Map<String, String>? headers,
-    String? subtitle,
-    String? subtitleLabel,
+    List<CastSubtitle> subtitles = const [],
+    int? subtitle,
     Duration start = Duration.zero,
   }) async {
     failure.value = null;
+    _finished = false;
     await _release();
     try {
       await _proxy.start(
         video: url,
         headers: headers,
-        subtitle: subtitle,
-        subtitleLabel: subtitleLabel,
+        subtitles: subtitles,
         towards: (host: target.host, port: target.port),
       );
       final media = _proxy.videoUrl!;
@@ -89,16 +104,20 @@ class CastService extends AppController {
       position.value = start;
       duration.value = Duration.zero;
       playing.value = true;
+      rate.value = 1.0;
+      final urls = _proxy.subtitleUrls;
+      tracks.value = [
+        if (target.protocol == CastProtocol.chromecast)
+          for (var i = 0; i < urls.length; i++)
+            CastTrack(i + 1, subtitles[i].label),
+      ];
+      activeTrack.value =
+          subtitle != null && subtitle >= 0 && subtitle < tracks.value.length
+          ? subtitle + 1
+          : null;
       switch (target.protocol) {
         case CastProtocol.chromecast:
-          await _loadChromecast(
-            target,
-            media,
-            title,
-            hls,
-            start,
-            subtitleLabel,
-          );
+          await _loadChromecast(target, media, title, start);
         case CastProtocol.dlna:
           await _loadDlna(target, media, title, hls, start);
         case CastProtocol.roku:
@@ -117,9 +136,7 @@ class CastService extends AppController {
     CastDevice target,
     String media,
     String title,
-    bool hls,
     Duration start,
-    String? subtitleLabel,
   ) async {
     final client = _chromecast = await CastV2Client.connect(
       target.host,
@@ -140,7 +157,8 @@ class CastService extends AppController {
     if (await client.awaitTransport() == null) {
       throw StateError(getString.castReceiverFailed);
     }
-    final subtitle = _proxy.subtitleUrl;
+    final urls = _proxy.subtitleUrls;
+    final active = activeTrack.value;
     client.sendMessage(
       namespace: CastV2Client.kNamespaceMedia,
       payload: {
@@ -152,22 +170,28 @@ class CastService extends AppController {
           'contentType': _proxy.contentType,
           'streamType': 'BUFFERED',
           'metadata': {'type': 0, 'metadataType': 0, 'title': title},
-          if (subtitle != null)
+          if (urls.isNotEmpty)
             'tracks': [
-              {
-                'trackId': 1,
-                'type': 'TEXT',
-                'trackContentId': subtitle,
-                'trackContentType': 'text/vtt',
-                'name': subtitleLabel ?? 'English',
-                'language': 'en-US',
-                'subtype': 'SUBTITLES',
-              },
+              for (final (i, url) in urls.indexed)
+                {
+                  'trackId': i + 1,
+                  'type': 'TEXT',
+                  'trackContentId': url,
+                  'trackContentType': 'text/vtt',
+                  'name': tracks.value[i].label,
+                  'language': 'en-US',
+                  'subtype': 'SUBTITLES',
+                },
             ],
         },
-        if (subtitle != null) 'activeTrackIds': [1],
+        if (active != null) 'activeTrackIds': [active],
         'requestId': 2,
       },
+    );
+    client.sendMessage(
+      namespace: CastV2Client.kNamespaceReceiver,
+      destinationId: 'receiver-0',
+      payload: {'type': 'GET_STATUS', 'requestId': _request++},
     );
     _poll = Timer.periodic(const Duration(seconds: 1), (_) {
       final session = _session;
@@ -185,6 +209,15 @@ class CastService extends AppController {
 
   void _onCastMessage(Map<String, dynamic> message) {
     final type = message['type'];
+    if (type == 'RECEIVER_STATUS') {
+      final level = ((message['status'] as Map?)?['volume'] as Map?);
+      if (level != null) {
+        final now = (level['level'] as num?)?.toDouble();
+        if (now != null) volume.value = now.clamp(0.0, 1.0);
+        muted.value = level['muted'] == true;
+      }
+      return;
+    }
     if (type == 'LOAD_FAILED' || type == 'INVALID_REQUEST') {
       failure.value = '${message['reason'] ?? type}';
       return;
@@ -199,6 +232,7 @@ class CastService extends AppController {
       playing.value = state == 'PLAYING' || state == 'BUFFERING';
       if (state == 'IDLE' && status['idleReason'] == 'FINISHED') {
         playing.value = false;
+        _markEnded();
       }
       if (state == 'IDLE' && status['idleReason'] == 'ERROR') {
         playing.value = false;
@@ -209,10 +243,22 @@ class CastService extends AppController {
     if (now != null) {
       position.value = Duration(milliseconds: (now * 1000).round());
     }
+    final speed = (status['playbackRate'] as num?)?.toDouble();
+    if (speed != null && speed > 0) rate.value = speed;
+    final active = status['activeTrackIds'];
+    if (active is List && tracks.value.isNotEmpty) {
+      activeTrack.value = active.isEmpty ? null : (active.first as num).toInt();
+    }
     final total = ((status['media'] as Map?)?['duration'] as num?)?.toDouble();
     if (total != null && total > 0) {
       duration.value = Duration(milliseconds: (total * 1000).round());
     }
+  }
+
+  void _markEnded() {
+    if (_finished) return;
+    _finished = true;
+    ended.value++;
   }
 
   Future<void> _loadDlna(
@@ -222,13 +268,16 @@ class CastService extends AppController {
     bool hls,
     Duration start,
   ) async {
-    final client = _dlna = DlnaClient(target.controlUrl!);
+    final client = _dlna = DlnaClient(
+      target.controlUrl!,
+      volumeUrl: target.volumeUrl,
+    );
     final loaded = await client.load(
       url: media,
       title: title,
       hls: hls,
       mime: _proxy.contentType,
-      subtitle: _proxy.subtitleUrl,
+      subtitle: _proxy.subtitleUrls.firstOrNull,
     );
     if (!loaded) throw StateError('The TV refused the stream');
     if (!await client.playWhenReady()) {
@@ -244,7 +293,14 @@ class CastService extends AppController {
       if (info.position > Duration.zero) position.value = info.position;
       if (info.duration > Duration.zero) duration.value = info.duration;
       if (info.state.isNotEmpty) playing.value = info.state == 'PLAYING';
+      if (info.state == 'STOPPED' &&
+          info.duration > Duration.zero &&
+          info.position >= info.duration - const Duration(seconds: 3)) {
+        _markEnded();
+      }
     });
+    final level = await client.volume();
+    if (level != null) volume.value = level;
   }
 
   Future<void> _loadRoku(CastDevice target, String media, bool hls) async {
@@ -312,6 +368,73 @@ class CastService extends AppController {
 
   bool get canSeek => device.value?.protocol != CastProtocol.roku;
 
+  bool get canVolume {
+    final target = device.value;
+    return switch (target?.protocol) {
+      CastProtocol.chromecast => true,
+      CastProtocol.dlna => target?.volumeUrl != null,
+      _ => false,
+    };
+  }
+
+  bool get canRate => device.value?.protocol == CastProtocol.chromecast;
+
+  bool get canTrack =>
+      device.value?.protocol == CastProtocol.chromecast &&
+      tracks.value.isNotEmpty;
+
+  Future<void> setVolume(double level) async {
+    final target = device.value;
+    if (target == null) return;
+    final at = level.clamp(0.0, 1.0);
+    volume.value = at;
+    switch (target.protocol) {
+      case CastProtocol.chromecast:
+        muted.value = false;
+        _chromecast?.sendMessage(
+          namespace: CastV2Client.kNamespaceReceiver,
+          destinationId: 'receiver-0',
+          payload: {
+            'type': 'SET_VOLUME',
+            'volume': {'level': at, 'muted': false},
+            'requestId': _request++,
+          },
+        );
+      case CastProtocol.dlna:
+        await _dlna?.setVolume(at);
+      case CastProtocol.roku:
+        break;
+    }
+  }
+
+  void toggleMute() {
+    if (device.value?.protocol != CastProtocol.chromecast) return;
+    muted.value = !muted.value;
+    _chromecast?.sendMessage(
+      namespace: CastV2Client.kNamespaceReceiver,
+      destinationId: 'receiver-0',
+      payload: {
+        'type': 'SET_VOLUME',
+        'volume': {'muted': muted.value},
+        'requestId': _request++,
+      },
+    );
+  }
+
+  void setRate(double speed) {
+    if (!canRate) return;
+    rate.value = speed;
+    _media('SET_PLAYBACK_RATE', {'playbackRate': speed});
+  }
+
+  void setTrack(int? id) {
+    if (!canTrack) return;
+    activeTrack.value = id;
+    _media('EDIT_TRACKS_INFO', {
+      'activeTrackIds': id == null ? <int>[] : [id],
+    });
+  }
+
   void _media(String type, [Map<String, Object?> extra = const {}]) {
     _chromecast?.sendMessage(
       namespace: CastV2Client.kNamespaceMedia,
@@ -348,6 +471,9 @@ class CastService extends AppController {
     playing.value = false;
     position.value = Duration.zero;
     duration.value = Duration.zero;
+    tracks.value = const [];
+    activeTrack.value = null;
+    rate.value = 1.0;
     return last;
   }
 

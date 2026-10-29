@@ -586,6 +586,7 @@ class PlayerEngine {
     Map<String, String>? headers,
     Duration start = Duration.zero,
     String? title,
+    bool autoplay = true,
   }) async {
     error.value = null;
     var target = url;
@@ -637,6 +638,7 @@ class PlayerEngine {
     }
     await player.open(
       Media(target, start: start, httpHeaders: sent.isEmpty ? null : sent),
+      play: autoplay,
     );
     _watchChapters();
   }

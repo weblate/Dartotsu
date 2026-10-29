@@ -10361,6 +10361,24 @@ abstract class AppLocalizations {
   /// **'Roku can\'t report or change the position'**
   String get castRokuNote;
 
+  /// No description provided for @castControls.
+  ///
+  /// In en, this message translates to:
+  /// **'Controls'**
+  String get castControls;
+
+  /// No description provided for @castVolume.
+  ///
+  /// In en, this message translates to:
+  /// **'TV volume'**
+  String get castVolume;
+
+  /// No description provided for @castSkipPart.
+  ///
+  /// In en, this message translates to:
+  /// **'Skip {name}'**
+  String castSkipPart(String name);
+
   /// No description provided for @trackProgressRemember.
   ///
   /// In en, this message translates to:

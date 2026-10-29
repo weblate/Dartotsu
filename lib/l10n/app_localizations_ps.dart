@@ -5692,6 +5692,17 @@ class AppLocalizationsPs extends AppLocalizations {
   String get castRokuNote => 'Roku can\'t report or change the position';
 
   @override
+  String get castControls => 'Controls';
+
+  @override
+  String get castVolume => 'TV volume';
+
+  @override
+  String castSkipPart(String name) {
+    return 'Skip $name';
+  }
+
+  @override
   String get trackProgressRemember => 'زما ټاکنه په یاد وساته';
 
   @override

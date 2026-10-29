@@ -7,6 +7,7 @@ class CastDevice {
   final int port;
   final CastProtocol protocol;
   final String? controlUrl;
+  final String? volumeUrl;
 
   const CastDevice({
     required this.id,
@@ -15,5 +16,6 @@ class CastDevice {
     required this.port,
     required this.protocol,
     this.controlUrl,
+    this.volumeUrl,
   });
 }

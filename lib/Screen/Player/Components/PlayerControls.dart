@@ -276,10 +276,10 @@ class PlayerControls extends StatelessWidget {
                   child: CircularProgressIndicator(color: Colors.white),
                 )
               : _icon(
-                  state.engine.playing.value
+                  state.isPlaying
                       ? Icons.pause_rounded
                       : Icons.play_arrow_rounded,
-                  state.engine.toggle,
+                  state.togglePlayback,
                   size: 48,
                 ),
         ),
@@ -303,10 +303,10 @@ class PlayerControls extends StatelessWidget {
                     child: CircularProgressIndicator(color: Colors.white),
                   )
                 : _icon(
-                    state.engine.playing.value
+                    state.isPlaying
                         ? Icons.pause_rounded
                         : Icons.play_arrow_rounded,
-                    state.engine.toggle,
+                    state.togglePlayback,
                     size: 56,
                   ),
           ),
@@ -335,7 +335,7 @@ class PlayerControls extends StatelessWidget {
             Watch(() {
               final stamp = state.activeStamp.value;
               final position = _position();
-              final duration = engine.duration.value;
+              final duration = state.duration;
               final label =
                   stamp?.name ??
                   engine.chapters.value
@@ -406,7 +406,7 @@ class PlayerControls extends StatelessWidget {
                     buffer: state.controlsVisible.value
                         ? (state.heldBuffer = engine.buffer.value)
                         : state.heldBuffer,
-                    duration: engine.duration.value,
+                    duration: state.duration,
                     stamps: state.stamps.toList(),
                     chapters: engine.chapters.value,
                     thumbless: state.settings.thumbLessSeekBar,
@@ -419,7 +419,7 @@ class PlayerControls extends StatelessWidget {
                     onScrubStart: () {
                       state.holdControls();
                       state.scrubbing.value = true;
-                      state.scrubPosition.value = engine.position.value;
+                      state.scrubPosition.value = state.shownPosition;
                     },
                     onScrub: (d) {
                       state.scrubPosition.value = d;

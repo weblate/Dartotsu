@@ -35,10 +35,58 @@ class DlnaPosition {
   const DlnaPosition(this.position, this.duration, this.state);
 }
 
+const _rendering = 'urn:schemas-upnp-org:service:RenderingControl:1';
+
 class DlnaClient {
   final String controlUrl;
+  final String? volumeUrl;
 
-  const DlnaClient(this.controlUrl);
+  const DlnaClient(this.controlUrl, {this.volumeUrl});
+
+  Future<String?> _rendered(String action, [String arguments = '']) {
+    final url = volumeUrl;
+    if (url == null) return Future.value(null);
+    return castPost(
+      url,
+      headers: {
+        'Content-Type': 'text/xml; charset="utf-8"',
+        'SOAPACTION': '"$_rendering#$action"',
+      },
+      body:
+          '<?xml version="1.0" encoding="utf-8"?>'
+          '<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/" '
+          's:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">'
+          '<s:Body><u:$action xmlns:u="$_rendering">'
+          '<InstanceID>0</InstanceID>$arguments'
+          '</u:$action></s:Body></s:Envelope>',
+    );
+  }
+
+  bool get hasVolume => volumeUrl != null;
+
+  Future<double?> volume() async {
+    final reply = await _rendered('GetVolume', '<Channel>Master</Channel>');
+    if (reply == null) return null;
+    try {
+      final level = int.tryParse(
+        XmlDocument.parse(
+              reply,
+            ).findAllElements('CurrentVolume').firstOrNull?.innerText ??
+            '',
+      );
+      return level == null ? null : (level / 100).clamp(0.0, 1.0);
+    } catch (_) {
+      return null;
+    }
+  }
+
+  Future<bool> setVolume(double level) async =>
+      await _rendered(
+        'SetVolume',
+        '<Channel>Master</Channel>'
+            '<DesiredVolume>${(level.clamp(0.0, 1.0) * 100).round()}</DesiredVolume>',
+      ) !=
+      null;
 
   Future<String?> _call(String action, [String arguments = '']) => castPost(
     controlUrl,

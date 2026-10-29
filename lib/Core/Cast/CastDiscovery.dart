@@ -190,11 +190,15 @@ class CastDiscovery {
           ?.innerText
           .trim();
       String? control;
+      String? volume;
       for (final service in doc.findAllElements('service')) {
         final type = service.getElement('serviceType')?.innerText ?? '';
         if (type.contains('AVTransport')) {
           final path = service.getElement('controlURL')?.innerText.trim();
           if (path != null) control = base.resolve(path).toString();
+        } else if (type.contains('RenderingControl')) {
+          final path = service.getElement('controlURL')?.innerText.trim();
+          if (path != null) volume = base.resolve(path).toString();
         }
       }
       if (control == null) return;
@@ -206,6 +210,7 @@ class CastDiscovery {
           port: base.port,
           protocol: CastProtocol.dlna,
           controlUrl: control,
+          volumeUrl: volume,
         ),
       );
     } catch (_) {}

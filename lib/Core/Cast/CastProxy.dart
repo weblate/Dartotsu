@@ -6,17 +6,23 @@ import 'CastHttp.dart';
 
 const _agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)';
 
+class CastSubtitle {
+  final String source;
+  final String label;
+
+  const CastSubtitle(this.source, this.label);
+}
+
 class CastProxy {
   HttpServer? _server;
   String? _video;
-  String? _subtitle;
-  String _subtitleLabel = 'English';
+  List<CastSubtitle> _subtitles = const [];
   Map<String, String> _headers = const {};
   String _host = '127.0.0.1';
   final _client = HttpClient()..autoUncompress = false;
 
   String? videoUrl;
-  String? subtitleUrl;
+  List<String> subtitleUrls = const [];
   bool isHls = false;
   String contentType = 'video/mp4';
 
@@ -25,14 +31,15 @@ class CastProxy {
   Future<void> start({
     required String video,
     Map<String, String>? headers,
-    String? subtitle,
-    String? subtitleLabel,
+    List<CastSubtitle> subtitles = const [],
     ({String host, int port})? towards,
   }) async {
     await stop();
     _video = video;
-    _subtitle = subtitle;
-    _subtitleLabel = subtitleLabel ?? 'English';
+    _subtitles = [
+      for (final s in subtitles)
+        if (s.source.isNotEmpty) s,
+    ];
     _headers = {...?headers};
     final server = _server = await HttpServer.bind(InternetAddress.anyIPv4, 0);
     _host = await _localIp(towards);
@@ -41,9 +48,9 @@ class CastProxy {
     isHls = sniffed.hls;
     contentType = isHls ? 'application/x-mpegURL' : sniffed.type;
     videoUrl = isHls ? '$base/hls/master.m3u8' : '$base/video';
-    subtitleUrl = subtitle == null || subtitle.isEmpty
-        ? null
-        : '$base/subtitles.vtt';
+    subtitleUrls = [
+      for (var i = 0; i < _subtitles.length; i++) '$base/subtitles/$i.vtt',
+    ];
     server.listen(_handle);
   }
 
@@ -51,11 +58,11 @@ class CastProxy {
     final server = _server;
     _server = null;
     videoUrl = null;
-    subtitleUrl = null;
+    subtitleUrls = const [];
     isHls = false;
     contentType = 'video/mp4';
     _video = null;
-    _subtitle = null;
+    _subtitles = const [];
     try {
       await server?.close(force: true);
     } catch (_) {}
@@ -214,8 +221,11 @@ class CastProxy {
           await _serveSegment(request);
         case '/hls/subtitles.m3u8':
           await _serveSubtitlePlaylist(request);
-        case '/subtitles.vtt':
-          await _serveSubtitle(request);
+        case final path when path.startsWith('/subtitles/'):
+          await _serveSubtitle(
+            request,
+            int.tryParse(path.substring(11).replaceAll('.vtt', '')) ?? -1,
+          );
         default:
           response.statusCode = HttpStatus.notFound;
           await response.close();
@@ -371,7 +381,7 @@ class CastProxy {
   }
 
   String _rewriteMaster(String manifest, Uri base) {
-    final withSubs = subtitleUrl != null;
+    final withSubs = subtitleUrls.isNotEmpty;
     final out = <String>[];
     final lines = manifest.split('\n').map((l) => l.trim()).toList();
     String variant(String line) =>
@@ -383,7 +393,7 @@ class CastProxy {
         out.add(line);
         if (withSubs) {
           out.add(
-            '#EXT-X-MEDIA:TYPE=SUBTITLES,GROUP-ID="subs",NAME="$_subtitleLabel",DEFAULT=YES,AUTOSELECT=YES,FORCED=NO,LANGUAGE="en",URI="$_base/hls/subtitles.m3u8"',
+            '#EXT-X-MEDIA:TYPE=SUBTITLES,GROUP-ID="subs",NAME="${_subtitles.first.label}",DEFAULT=YES,AUTOSELECT=YES,FORCED=NO,LANGUAGE="en",URI="$_base/hls/subtitles.m3u8"',
           );
         }
       } else if (line.startsWith('#EXT-X-STREAM-INF')) {
@@ -463,11 +473,13 @@ class CastProxy {
 
   Future<void> _serveSubtitlePlaylist(HttpRequest request) => _serveManifest(
     request,
-    '#EXTM3U\n#EXT-X-TARGETDURATION:7200\n#EXT-X-VERSION:3\n#EXT-X-MEDIA-SEQUENCE:0\n#EXTINF:7200.0,\n$_base/subtitles.vtt\n#EXT-X-ENDLIST\n',
+    '#EXTM3U\n#EXT-X-TARGETDURATION:7200\n#EXT-X-VERSION:3\n#EXT-X-MEDIA-SEQUENCE:0\n#EXTINF:7200.0,\n$_base/subtitles/0.vtt\n#EXT-X-ENDLIST\n',
   );
 
-  Future<void> _serveSubtitle(HttpRequest request) async {
-    final source = _subtitle;
+  Future<void> _serveSubtitle(HttpRequest request, int index) async {
+    final source = index >= 0 && index < _subtitles.length
+        ? _subtitles[index].source
+        : null;
     String? content;
     if (source != null && source.isNotEmpty) {
       if (_isLocal(source)) {

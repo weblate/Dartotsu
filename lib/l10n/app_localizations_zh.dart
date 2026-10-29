@@ -5577,6 +5577,17 @@ class AppLocalizationsZh extends AppLocalizations {
   String get castRokuNote => 'Roku can\'t report or change the position';
 
   @override
+  String get castControls => 'Controls';
+
+  @override
+  String get castVolume => 'TV volume';
+
+  @override
+  String castSkipPart(String name) {
+    return 'Skip $name';
+  }
+
+  @override
   String get trackProgressRemember => '记住我的选择';
 
   @override

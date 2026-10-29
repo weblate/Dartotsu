@@ -136,6 +136,8 @@ class PlayerState extends ScreenState {
   Disposer? _positionSub;
   Disposer? _completedSub;
   Disposer? _playingSub;
+  Disposer? _castPositionSub;
+  Disposer? _castEndedSub;
   int _generation = 0;
   late final mediaSession = PlayerMediaSession(this);
   TogetherController get together => find<TogetherController>();
@@ -298,6 +300,12 @@ class PlayerState extends ScreenState {
       onResume: _focusBack,
     );
     _bindEngine();
+    _castPositionSub = cast.position.listen((at) {
+      if (cast.active && !loading.value) _onPosition(at);
+    });
+    _castEndedSub = cast.ended.listen((_) {
+      if (cast.active) _onCompleted();
+    });
     focus.requestFocus();
     unawaited(mediaSession.start());
     unawaited(_initPip());
@@ -320,7 +328,7 @@ class PlayerState extends ScreenState {
 
   void _pauseForBlur() {
     if (_closed || pip.value || _pausedByBlur) return;
-    if (!engine.playing.value) return;
+    if (cast.active || !engine.playing.value) return;
     _pausedByBlur = true;
     unawaited(engine.pause());
   }
@@ -443,6 +451,8 @@ class PlayerState extends ScreenState {
     openCount--;
     _closed = true;
     if (cast.active) unawaited(cast.stop());
+    _castPositionSub?.dispose();
+    _castEndedSub?.dispose();
     _blurTimer?.cancel();
     _lifecycle?.dispose();
     together.detach(this);
@@ -656,8 +666,9 @@ class PlayerState extends ScreenState {
   }) async {
     if (choice < 0 || choice >= videos.length) return;
     final generation = _generation;
-    final keep = engine.position.value;
-    final switching = engine.duration.value > Duration.zero && !loading.value;
+    final keep = _watchPosition;
+    final casting = cast.device.value;
+    final switching = _watchDuration > Duration.zero && !loading.value;
     videoIndex.value = choice;
     final chosen = videos[choice];
     rememberStream(chosen);
@@ -685,9 +696,14 @@ class PlayerState extends ScreenState {
         headers: chosen.headers,
         start: start,
         title: item.title,
+        autoplay: casting == null,
       );
       if (generation != _generation) return;
       await engine.setRate(settings.speed);
+      if (casting != null) {
+        await _sendToCast(casting, start: start, hand: false);
+        if (generation != _generation) return;
+      }
       loading.value = false;
       unawaited(_afterOpen(chosen, generation));
       unawaited(_watchRender(generation));
@@ -785,6 +801,9 @@ class PlayerState extends ScreenState {
       );
       return;
     }
+    for (var i = 0; i < 10 && engine.subtitleTracks.value.isEmpty; i++) {
+      await Future<void>.delayed(const Duration(milliseconds: 150));
+    }
     final embedded = pickTrack(
       engine.subtitleTracks.value,
       priority,
@@ -801,9 +820,6 @@ class PlayerState extends ScreenState {
   Future<void> _verifyAudio(int generation) async {
     for (var attempt = 0; attempt < 3; attempt++) {
       await Future<void>.delayed(const Duration(milliseconds: 2000));
-    for (var i = 0; i < 10 && engine.subtitleTracks.value.isEmpty; i++) {
-      await Future<void>.delayed(const Duration(milliseconds: 150));
-    }
       if (_closed || generation != _generation) return;
       final tracks = engine.audioTracks.value;
       if (tracks.isEmpty || !engine.playing.value) continue;
@@ -827,7 +843,10 @@ class PlayerState extends ScreenState {
   }
 
   v.Track? _externalSubtitle(v.Video chosen) {
-    final tracks = chosen.subtitles ?? const <v.Track>[];
+    final tracks = [
+      for (final t in chosen.subtitles ?? const <v.Track>[])
+        if (t.file != null && t.file!.isNotEmpty) t,
+    ];
     for (final wanted in languageList(settings.subtitleLanguage)) {
       final pattern = languagePattern(wanted);
       if (pattern == null) continue;
@@ -937,10 +956,10 @@ class PlayerState extends ScreenState {
     }
     if (activeStamp.value != current) activeStamp.value = current;
     if (current != null) _autoSkip(current);
-    final total = engine.duration.value.inSeconds;
+    final total = _watchDuration.inSeconds;
     if (total > 0) {
       final fraction = position.inSeconds / total;
-      final remaining = engine.duration.value - position;
+      final remaining = _watchDuration - position;
       if (fraction > 0.6 || remaining < const Duration(minutes: 3)) {
         _preloadNext();
       }
@@ -981,15 +1000,15 @@ class PlayerState extends ScreenState {
   void _autoSkip(SkipStamp stamp) {
     if (!_wantsSkip(stamp.kind)) return;
     if (settings.skipOnce && !_skipped.add(stamp.kind)) return;
-    unawaited(engine.seek(Duration(seconds: stamp.end.ceil())));
+    seekTo(Duration(seconds: stamp.end.ceil()));
   }
 
   void skipStamp() {
     final stamp = activeStamp.value;
     if (stamp != null) {
-      unawaited(engine.seek(Duration(seconds: stamp.end.ceil())));
+      seekTo(Duration(seconds: stamp.end.ceil()));
     } else {
-      unawaited(engine.seekBy(Duration(seconds: settings.skipDuration)));
+      seekBy(Duration(seconds: settings.skipDuration));
     }
   }
 
@@ -1074,33 +1093,50 @@ class PlayerState extends ScreenState {
   Duration get _watchPosition =>
       cast.active ? cast.position.value : engine.position.value;
 
+  Duration get duration => _watchDuration;
+
   Duration get _watchDuration =>
       cast.active ? cast.duration.value : engine.duration.value;
 
   Future<void> castTo(CastDevice target) async {
+    final start = engine.position.value;
+    await engine.pause();
+    final ok = await _sendToCast(target, start: start);
+    if (!ok) await engine.play();
+  }
+
+  Future<bool> _sendToCast(
+    CastDevice target, {
+    required Duration start,
+    bool hand = true,
+  }) async {
     final list = videos.toList();
     final at = videoIndex.value;
     final chosen = at >= 0 && at < list.length ? list[at] : null;
     final url = engine.previewTarget ?? chosen?.url;
-    if (url == null) return;
-    final start = engine.position.value;
-    await engine.pause();
-    final sub = settings.showSubtitle && chosen != null
+    if (url == null) return false;
+    final subs = [
+      for (final t in chosen?.subtitles ?? const <v.Track>[])
+        if (t.file != null && t.file!.isNotEmpty)
+          CastSubtitle(t.file!, t.label ?? 'Subtitles'),
+    ];
+    final wanted = settings.showSubtitle && chosen != null
         ? _externalSubtitle(chosen)
         : null;
+    final active = wanted == null
+        ? null
+        : subs.indexWhere((s) => s.source == wanted.file);
     final ok = await cast.cast(
       target: target,
       url: url,
       title: item.title,
       headers: engine.previewHeaders,
-      subtitle: sub?.file,
-      subtitleLabel: sub?.label,
+      subtitles: subs,
+      subtitle: active != null && active >= 0 ? active : null,
       start: start,
     );
-    if (!ok) {
-      snackString(cast.failure.value ?? getString.castFailed);
-      await engine.play();
-    }
+    if (!ok) snackString(cast.failure.value ?? getString.castFailed);
+    return ok;
   }
 
   Future<void> saveFrame(Uint8List? original, {required bool processed}) async {
@@ -1309,7 +1345,7 @@ class PlayerState extends ScreenState {
   void holdControls() => _hideTimer?.cancel();
 
   Future<T?> whilePaused<T>(Future<T?> Function() open) async {
-    final wasPlaying = engine.playing.value;
+    final wasPlaying = !cast.active && engine.playing.value;
     holdControls();
     if (wasPlaying) await engine.pause();
     final result = await open();
@@ -1504,7 +1540,7 @@ class PlayerState extends ScreenState {
 
   void doubleTapSeek(bool forward) {
     final step = settings.seekDuration;
-    unawaited(engine.seekBy(Duration(seconds: forward ? step : -step)));
+    seekBy(Duration(seconds: forward ? step : -step));
     if (forward) {
       seekLabelForward.value += step;
       _seekForwardTimer?.cancel();
@@ -1593,8 +1629,17 @@ class PlayerState extends ScreenState {
     if (hasPrevious) unawaited(loadItem(index.value - 1));
   }
 
-  void seekTo(Duration to) => unawaited(engine.seek(to));
+  void seekTo(Duration to) =>
+      unawaited(cast.active ? cast.seek(to) : engine.seek(to));
+
+  void seekBy(Duration by) =>
+      unawaited(cast.active ? cast.seekBy(by) : engine.seekBy(by));
+
+  bool get isPlaying => cast.active ? cast.playing.value : engine.playing.value;
+
+  Future<void> togglePlayback() =>
+      cast.active ? cast.toggle() : engine.toggle();
 
   Duration get shownPosition =>
-      scrubbing.value ? scrubPosition.value : engine.position.value;
+      scrubbing.value ? scrubPosition.value : _watchPosition;
 }
