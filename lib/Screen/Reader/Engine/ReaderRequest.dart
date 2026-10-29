@@ -39,5 +39,7 @@ class ReaderRequest {
     file: file,
   );
 
-  bool get novel => media.format?.toLowerCase() == 'novel';
+  bool get novel =>
+      media.format?.toLowerCase() == 'novel' ||
+      (source ?? media.sourceData)?.itemType == ItemType.novel;
 }

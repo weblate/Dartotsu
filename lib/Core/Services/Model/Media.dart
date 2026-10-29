@@ -202,6 +202,7 @@ extension M on Pages {
         manga: isAnime ? null : Manga(),
         sourceData: source,
         relation: source?.name ?? '',
+        format: source?.itemType == ItemType.novel ? 'NOVEL' : null,
       );
     }).toList();
   }
