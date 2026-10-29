@@ -1346,8 +1346,19 @@ class PlayerState extends ScreenState {
     _busyTimer = Timer(const Duration(milliseconds: 900), () => _busy = false);
   }
 
+  bool _manualExit = false;
+
+  bool get _tablet {
+    try {
+      return MediaQuery.sizeOf(context).shortestSide >= 600;
+    } catch (_) {
+      return false;
+    }
+  }
+
   Future<void> enterFullscreen({bool rotate = true}) async {
     if (fullscreen.value) return;
+    _manualExit = false;
     fullscreen.value = true;
     commentsOpen.value = false;
     if (isMobilePlatform) {
@@ -1369,8 +1380,11 @@ class PlayerState extends ScreenState {
     panel.value = false;
     if (isMobilePlatform) {
       _hold();
+      if (rotate) _manualExit = true;
       await SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
-      if (rotate) {
+      if (rotate && _tablet) {
+        await SystemChrome.setPreferredOrientations(DeviceOrientation.values);
+      } else if (rotate) {
         await SystemChrome.setPreferredOrientations([
           DeviceOrientation.portraitUp,
         ]);
@@ -1388,11 +1402,13 @@ class PlayerState extends ScreenState {
   void followOrientation(Orientation orientation) {
     if (!isMobilePlatform || _busy || _closed) return;
     if (orientation == Orientation.landscape && !fullscreen.value) {
+      if (_manualExit) return;
       unawaited(enterFullscreen(rotate: false));
-    } else if (orientation == Orientation.portrait &&
-        fullscreen.value &&
-        settings.orientation != 'portrait') {
-      unawaited(exitFullscreen(rotate: false));
+    } else if (orientation == Orientation.portrait) {
+      _manualExit = false;
+      if (fullscreen.value && settings.orientation != 'portrait') {
+        unawaited(exitFullscreen(rotate: false));
+      }
     }
   }
 
