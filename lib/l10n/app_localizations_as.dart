@@ -919,7 +919,16 @@ class AppLocalizationsAs extends AppLocalizations {
   String get discordDesc => 'সম্প্ৰদায় আৰু সহায়';
 
   @override
-  String get donate => 'মোক এক কাপ কফি কিনি দিয়া';
+  String get supportDeveloper => 'Support the developer';
+
+  @override
+  String get buyMeCoffee => 'Buy me a coffee';
+
+  @override
+  String get upiId => 'UPI ID';
+
+  @override
+  String get upiCopied => 'UPI ID copied';
 
   @override
   String get donateDesc => 'ডেভেলপমেণ্টক সহায় কৰা';

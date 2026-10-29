@@ -929,7 +929,16 @@ class AppLocalizationsKn extends AppLocalizations {
   String get discordDesc => 'ಕಮ್ಯುನಿಟಿ ಮತ್ತು ಸಪೋರ್ಟ್';
 
   @override
-  String get donate => 'ಒಂದು ಕಾಫಿ ಕೊಡಿಸು';
+  String get supportDeveloper => 'Support the developer';
+
+  @override
+  String get buyMeCoffee => 'Buy me a coffee';
+
+  @override
+  String get upiId => 'UPI ID';
+
+  @override
+  String get upiCopied => 'UPI ID copied';
 
   @override
   String get donateDesc => 'ಡೆವಲಪ್‌ಮೆಂಟ್‌ಗೆ ಸಪೋರ್ಟ್ ಮಾಡು';

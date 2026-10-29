@@ -933,7 +933,16 @@ class AppLocalizationsMl extends AppLocalizations {
   String get discordDesc => 'കമ്മ്യൂണിറ്റിയും സപ്പോർട്ടും';
 
   @override
-  String get donate => 'ഒരു കാപ്പി വാങ്ങിത്തരൂ';
+  String get supportDeveloper => 'Support the developer';
+
+  @override
+  String get buyMeCoffee => 'Buy me a coffee';
+
+  @override
+  String get upiId => 'UPI ID';
+
+  @override
+  String get upiCopied => 'UPI ID copied';
 
   @override
   String get donateDesc => 'ഡെവലപ്മെന്റിനെ സപ്പോർട്ട് ചെയ്യൂ';

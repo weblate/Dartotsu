@@ -922,7 +922,16 @@ class AppLocalizationsFa extends AppLocalizations {
   String get discordDesc => 'انجمن و پشتیبانی';
 
   @override
-  String get donate => 'برام قهوه بخر';
+  String get supportDeveloper => 'Support the developer';
+
+  @override
+  String get buyMeCoffee => 'Buy me a coffee';
+
+  @override
+  String get upiId => 'UPI ID';
+
+  @override
+  String get upiCopied => 'UPI ID copied';
 
   @override
   String get donateDesc => 'حمایت از توسعه';

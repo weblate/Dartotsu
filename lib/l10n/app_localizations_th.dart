@@ -917,7 +917,16 @@ class AppLocalizationsTh extends AppLocalizations {
   String get discordDesc => 'ชุมชนและการช่วยเหลือ';
 
   @override
-  String get donate => 'เลี้ยงกาแฟหน่อย';
+  String get supportDeveloper => 'Support the developer';
+
+  @override
+  String get buyMeCoffee => 'Buy me a coffee';
+
+  @override
+  String get upiId => 'UPI ID';
+
+  @override
+  String get upiCopied => 'UPI ID copied';
 
   @override
   String get donateDesc => 'สนับสนุนการพัฒนา';

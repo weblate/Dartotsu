@@ -10,6 +10,7 @@ import '../../../Utils/Functions/CopyToClip.dart';
 import '../../../Utils/Functions/NavigateToScreen.dart';
 import '../../../Utils/Functions/SnackBar.dart';
 import '../Developer/DeveloperPage.dart';
+import '../Widgets/DonateSheet.dart';
 import '../Forks/ForksPage.dart';
 import '../../../Core/State/State.dart';
 
@@ -64,11 +65,10 @@ List<Setting> aboutSettings(BuildContext context) => [
     onClick: () => openLinkInBrowser('https://discord.gg/eyQdCpdubF'),
   ),
   Setting.normal(
-    name: getString.donate,
+    name: getString.supportDeveloper,
     description: getString.donateDesc,
     icon: Icons.favorite_rounded,
-    trailingIcon: Icons.open_in_new_rounded,
-    onClick: () => openLinkInBrowser(kDonateUrl),
+    onClick: () => showDonateSheet(context),
   ),
 ];
 

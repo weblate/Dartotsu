@@ -931,7 +931,16 @@ class AppLocalizationsTe extends AppLocalizations {
   String get discordDesc => 'కమ్యూనిటీ & సపోర్ట్';
 
   @override
-  String get donate => 'నాకు ఒక కాఫీ కొనివ్వు';
+  String get supportDeveloper => 'Support the developer';
+
+  @override
+  String get buyMeCoffee => 'Buy me a coffee';
+
+  @override
+  String get upiId => 'UPI ID';
+
+  @override
+  String get upiCopied => 'UPI ID copied';
 
   @override
   String get donateDesc => 'డెవలప్‌మెంట్‌కి సపోర్ట్ చెయ్యి';

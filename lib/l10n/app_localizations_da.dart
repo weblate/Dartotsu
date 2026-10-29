@@ -926,7 +926,16 @@ class AppLocalizationsDa extends AppLocalizations {
   String get discordDesc => 'Fællesskab og support';
 
   @override
-  String get donate => 'Køb mig en kaffe';
+  String get supportDeveloper => 'Support the developer';
+
+  @override
+  String get buyMeCoffee => 'Buy me a coffee';
+
+  @override
+  String get upiId => 'UPI ID';
+
+  @override
+  String get upiCopied => 'UPI ID copied';
 
   @override
   String get donateDesc => 'Støt udviklingen';

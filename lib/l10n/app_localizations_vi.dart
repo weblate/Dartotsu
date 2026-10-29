@@ -927,7 +927,16 @@ class AppLocalizationsVi extends AppLocalizations {
   String get discordDesc => 'Cộng đồng và hỗ trợ';
 
   @override
-  String get donate => 'Mời mình ly cà phê';
+  String get supportDeveloper => 'Support the developer';
+
+  @override
+  String get buyMeCoffee => 'Buy me a coffee';
+
+  @override
+  String get upiId => 'UPI ID';
+
+  @override
+  String get upiCopied => 'UPI ID copied';
 
   @override
   String get donateDesc => 'Ủng hộ phát triển';

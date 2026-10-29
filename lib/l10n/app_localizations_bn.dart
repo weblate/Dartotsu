@@ -921,7 +921,16 @@ class AppLocalizationsBn extends AppLocalizations {
   String get discordDesc => 'কমিউনিটি আর সাপোর্ট';
 
   @override
-  String get donate => 'আমাকে এক কাপ কফি কিনে দাও';
+  String get supportDeveloper => 'Support the developer';
+
+  @override
+  String get buyMeCoffee => 'Buy me a coffee';
+
+  @override
+  String get upiId => 'UPI ID';
+
+  @override
+  String get upiCopied => 'UPI ID copied';
 
   @override
   String get donateDesc => 'ডেভেলপমেন্টে সাপোর্ট করো';

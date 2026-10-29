@@ -43,6 +43,7 @@ Future<String?> loadEnv(String prop) async {
 }
 
 const kDonateUrl = 'https://www.buymeacoffee.com/aayush262';
+const kUpiId = 'aayush2622@ybl';
 
 String formatBytes(int bytes) {
   if (bytes < 1024) return '$bytes B';

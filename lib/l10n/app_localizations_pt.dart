@@ -933,7 +933,16 @@ class AppLocalizationsPt extends AppLocalizations {
   String get discordDesc => 'Comunidade e suporte';
 
   @override
-  String get donate => 'Me pague um café';
+  String get supportDeveloper => 'Support the developer';
+
+  @override
+  String get buyMeCoffee => 'Buy me a coffee';
+
+  @override
+  String get upiId => 'UPI ID';
+
+  @override
+  String get upiCopied => 'UPI ID copied';
 
   @override
   String get donateDesc => 'Apoiar o desenvolvimento';
@@ -7983,9 +7992,6 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String get discordDesc => 'Comunidade e suporte';
-
-  @override
-  String get donate => 'Me pague um café';
 
   @override
   String get donateDesc => 'Apoiar o desenvolvimento';

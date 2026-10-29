@@ -917,7 +917,16 @@ class AppLocalizationsNe extends AppLocalizations {
   String get discordDesc => 'समुदाय र सहयोग';
 
   @override
-  String get donate => 'मलाई एक कप कफी किन्देऊ';
+  String get supportDeveloper => 'Support the developer';
+
+  @override
+  String get buyMeCoffee => 'Buy me a coffee';
+
+  @override
+  String get upiId => 'UPI ID';
+
+  @override
+  String get upiCopied => 'UPI ID copied';
 
   @override
   String get donateDesc => 'विकासलाई सहयोग गर';

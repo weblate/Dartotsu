@@ -1793,11 +1793,29 @@ abstract class AppLocalizations {
   /// **'Community and support'**
   String get discordDesc;
 
-  /// No description provided for @donate.
+  /// No description provided for @supportDeveloper.
+  ///
+  /// In en, this message translates to:
+  /// **'Support the developer'**
+  String get supportDeveloper;
+
+  /// No description provided for @buyMeCoffee.
   ///
   /// In en, this message translates to:
   /// **'Buy me a coffee'**
-  String get donate;
+  String get buyMeCoffee;
+
+  /// No description provided for @upiId.
+  ///
+  /// In en, this message translates to:
+  /// **'UPI ID'**
+  String get upiId;
+
+  /// No description provided for @upiCopied.
+  ///
+  /// In en, this message translates to:
+  /// **'UPI ID copied'**
+  String get upiCopied;
 
   /// No description provided for @donateDesc.
   ///

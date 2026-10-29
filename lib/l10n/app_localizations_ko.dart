@@ -908,7 +908,16 @@ class AppLocalizationsKo extends AppLocalizations {
   String get discordDesc => '커뮤니티와 지원';
 
   @override
-  String get donate => '커피 한 잔 사주기';
+  String get supportDeveloper => 'Support the developer';
+
+  @override
+  String get buyMeCoffee => 'Buy me a coffee';
+
+  @override
+  String get upiId => 'UPI ID';
+
+  @override
+  String get upiCopied => 'UPI ID copied';
 
   @override
   String get donateDesc => '개발 후원';

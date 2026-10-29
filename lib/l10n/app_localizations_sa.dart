@@ -927,7 +927,16 @@ class AppLocalizationsSa extends AppLocalizations {
   String get discordDesc => 'समाजः साहाय्यं च';
 
   @override
-  String get donate => 'मह्यं कॉफीं देहि';
+  String get supportDeveloper => 'Support the developer';
+
+  @override
+  String get buyMeCoffee => 'Buy me a coffee';
+
+  @override
+  String get upiId => 'UPI ID';
+
+  @override
+  String get upiCopied => 'UPI ID copied';
 
   @override
   String get donateDesc => 'विकासम् आश्रय';

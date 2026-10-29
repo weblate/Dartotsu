@@ -925,7 +925,16 @@ class AppLocalizationsMs extends AppLocalizations {
   String get discordDesc => 'Komuniti dan sokongan';
 
   @override
-  String get donate => 'Belanja saya kopi';
+  String get supportDeveloper => 'Support the developer';
+
+  @override
+  String get buyMeCoffee => 'Buy me a coffee';
+
+  @override
+  String get upiId => 'UPI ID';
+
+  @override
+  String get upiCopied => 'UPI ID copied';
 
   @override
   String get donateDesc => 'Sokong pembangunan';

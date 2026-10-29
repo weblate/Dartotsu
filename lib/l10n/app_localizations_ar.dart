@@ -920,7 +920,16 @@ class AppLocalizationsAr extends AppLocalizations {
   String get discordDesc => 'المجتمع والدعم';
 
   @override
-  String get donate => 'اشترِ لي قهوة';
+  String get supportDeveloper => 'Support the developer';
+
+  @override
+  String get buyMeCoffee => 'Buy me a coffee';
+
+  @override
+  String get upiId => 'UPI ID';
+
+  @override
+  String get upiCopied => 'UPI ID copied';
 
   @override
   String get donateDesc => 'ادعم التطوير';
