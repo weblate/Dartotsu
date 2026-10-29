@@ -209,7 +209,18 @@ LocalListStore extensionStore(ItemType type) {
 }
 
 Future<void> ensureSourcesReady(ItemType type) async {
-  await extensionServiceFor(type)?.initializeInstalled(type);
+  final service = extensionServiceFor(type);
+  if (service == null) return;
+  await service.initializeInstalled(type);
+  final loading = service.state(type).loadingInstalled;
+  if (loading.value) {
+    final done = Completer<void>();
+    final sub = loading.listen((v) {
+      if (!v) done.complete();
+    });
+    await done.future;
+    await sub.cancel();
+  }
 }
 
 Source liveSource(Source source) {
